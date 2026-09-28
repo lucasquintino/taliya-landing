@@ -1,0 +1,100 @@
+[
+  {
+    "id": "step3a-human-price-typo",
+    "title": "Human typo price question should still answer official prices",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["qnt custa"],
+    "checks": [
+      "first_response_greeting",
+      "mentions_all_prices",
+      "diagnostic_price_hook",
+      "has_product_source",
+      "no_checkout_link",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3a-human-insta-typo",
+    "title": "Human social source plus understand intent may answer how-it-works and steer softly",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["oi vim pelo insta queria entender"],
+    "checks": [
+      "first_response_greeting",
+      "product_how_it_works_answer",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "asks_at_most_one_question",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3a-human-small-studio",
+    "title": "Small studio opening should not fake fit and should steer to diagnostic",
+    "channel": "widget",
+    "sender_name": "Ana Paula",
+    "messages": ["sou studio pequeno"],
+    "checks": [
+      "first_response_greeting",
+      "diagnostic_offered_or_started",
+      "not_fake_evidence",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3a-human-demo-direct",
+    "title": "Direct demo request should provide demo path and ask for studio problem",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["me manda demo"],
+    "checks": [
+      "first_response_greeting",
+      "mentions_demo_link",
+      "demo_context_prompt",
+      "has_product_source",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3a-human-size-pain",
+    "title": "Human size plus pain should use context and steer to diagnostic",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["tenho 80 aluno e agenda baguncada"],
+    "checks": [
+      "first_response_greeting",
+      "mentions_user_context",
+      "diagnostic_offered_or_started",
+      "whatsapp_max_three_chunks",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "step3a-human-how-works",
+    "title": "Human how-it-works opening should explain product, not generic intro",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["oi, vcs funcionam como?"],
+    "checks": [
+      "first_response_greeting",
+      "product_how_it_works_answer",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  }
+]

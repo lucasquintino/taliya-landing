@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "rendered": [],
+  "issues": [
+    "compile_completion_with_missing_keys:urgency: compiler blocked the turn: compile_completion_with_missing_keys:urgency"
+  ],
+  "cost_usd": 0.00626175
+}

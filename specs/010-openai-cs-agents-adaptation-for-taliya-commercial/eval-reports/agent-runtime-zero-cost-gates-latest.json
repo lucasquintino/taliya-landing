@@ -1,0 +1,68 @@
+{
+  "runId": "agent-runtime-zero-cost-gates-latest-1785894970852",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-08-05T01:56:10.852Z",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "python-contract-tests passed",
+      "details": {
+        "output": "........................................................................ [ 39%]\r\n........................................................................ [ 79%]\r\n.....................................                                    [100%]\r\n181 passed in 5.41s\r\n"
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-invariants passed",
+      "details": {
+        "output": "agent-runtime-invariants: 33/33 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\010-openai-cs-agents-adaptation-for-taliya-commercial\\eval-reports\\agent-runtime-invariants.json\n"
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-delivery passed",
+      "details": {
+        "output": "agent-runtime-delivery: 34/34 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\010-openai-cs-agents-adaptation-for-taliya-commercial\\eval-reports\\agent-runtime-delivery.json\n"
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-sales-inbox passed",
+      "details": {
+        "output": "agent-runtime-sales-inbox: 42/42 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\010-openai-cs-agents-adaptation-for-taliya-commercial\\eval-reports\\agent-runtime-sales-inbox.json\n"
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-completion-evidence passed",
+      "details": {
+        "output": "agent-runtime-completion-evidence: 21/21 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\010-openai-cs-agents-adaptation-for-taliya-commercial\\eval-reports\\agent-runtime-completion-evidence.json\n"
+      }
+    },
+    {
+      "ok": true,
+      "message": "next-production-build passed",
+      "details": {
+        "output": "▲ Next.js 16.2.4 (Turbopack)\n- Environments: .env.production.local, .env.local\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 7.7s\n  Running TypeScript ...\n  Finished TypeScript in 4.8s ...\n  Collecting page data using 15 workers ...\n  Generating static pages using 15 workers (0/13) ...\n  Generating static pages using 15 workers (3/13) \r\n  Generating static pages using 15 workers (6/13) \r\n  Generating static pages using 15 workers (9/13) \r\n✓ Generating static pages using 15 workers (13/13) in 299ms\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ƒ /api/internal/sales-inbox/[leadId]/handoff\n├ ƒ /api/internal/sales-inbox/leads\n├ ƒ /api/internal/sales-inbox/leads/[leadId]\n├ ƒ /api/internal/sales-inbox/leads/[leadId]/actions\n├ ƒ /api/landing/ai-attendant\n├ ƒ /api/landing/ai-attendant/whatsapp\n├ ƒ /api/landing/custom-agent-diagnostic\n├ ƒ /api/landing/custom-agent-diagnostic/cta\n├ ○ /icon.svg\n├ ƒ /internal/sales-inbox\n├ ○ /pilates\n├ ƒ /pilates/planos\n└ ○ /privacidade\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n"
+      }
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  },
+  "commands": [
+    "python -m pytest services/taliya-agent-runtime/tests/test_conversation_state_contract.py services/taliya-agent-runtime/tests/test_message_templates.py services/taliya-agent-runtime/tests/test_message_renderer.py services/taliya-agent-runtime/tests/test_runtime_behavior_regressions.py services/taliya-agent-runtime/tests/test_diagnostic_ledger.py services/taliya-agent-runtime/tests/test_waitlist_contract.py services/taliya-agent-runtime/tests/test_name_policy.py services/taliya-agent-runtime/tests/test_llm_output_repair.py services/taliya-agent-runtime/tests/test_idempotency_contract.py services/taliya-agent-runtime/tests/test_conversation_ordering.py services/taliya-agent-runtime/tests/test_widget_opening_policy.py services/taliya-agent-runtime/tests/test_settings.py services/taliya-agent-runtime/tests/test_agent_runs_api.py services/taliya-agent-runtime/tests/test_product_knowledge.py services/taliya-agent-runtime/tests/test_output_guardrails.py -q",
+    "node scripts/eval-agent-runtime-invariants.mjs",
+    "node scripts/eval-agent-runtime-delivery.mjs",
+    "node scripts/eval-agent-runtime-sales-inbox.mjs",
+    "node scripts/eval-agent-runtime-completion-evidence.mjs",
+    "C:\\Program Files\\nodejs\\node.exe node_modules/next/dist/bin/next build"
+  ]
+}

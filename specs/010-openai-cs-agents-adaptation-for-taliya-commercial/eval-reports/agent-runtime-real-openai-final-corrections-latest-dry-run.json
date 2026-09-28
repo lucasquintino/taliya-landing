@@ -1,0 +1,19 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-final-corrections-latest",
+  "dryRun": true,
+  "selectedScenarioCount": 8,
+  "estimatedModelCalls": 11,
+  "maxModelCalls": 12,
+  "maxCostUsd": 0.12,
+  "scenarioIds": [
+    "correction-direct-diagnostic-start",
+    "correction-diagnostic-in-progress-feedback",
+    "correction-completed-diagnostic-demo-not-offered",
+    "correction-completed-diagnostic-demo-already-offered",
+    "correction-whatsapp-reliable-name",
+    "correction-whatsapp-unreliable-name",
+    "correction-demo-curiosity-no-waitlist",
+    "correction-whatsapp-completed-diagnostic-staged"
+  ]
+}

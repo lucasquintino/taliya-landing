@@ -1,0 +1,452 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-post-waitlist-latest",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-22T22:03:52Z",
+  "finishedAt": "2026-05-22T22:04:08Z",
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "estimatedCostUsd": 0.021783,
+    "inputTokens": 21645,
+    "outputTokens": 1233
+  },
+  "releaseGate": "pass",
+  "scenarios": [
+    {
+      "id": "final-post-waitlist-product-question",
+      "title": "Post-waitlist product question preserves joined status",
+      "channel": "whatsapp",
+      "checks": [
+        "route:product",
+        "mentions_price",
+        "has_product_source",
+        "waitlist_status_preserved",
+        "template_ids_present",
+        "whatsapp_max_three_chunks",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_25fde876a86d4cc8b3235ac8c76cdd96",
+            "conversation_id": "real_eval_final-post-waitlist-product-question",
+            "lead_id": "lead_final-post-waitlist-product-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_waitlist_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "waitlist_offered",
+                "next_state": "waitlist_offered",
+                "route": "waitlist",
+                "opening_type": "none",
+                "detected_intents": [
+                  "buy_intent",
+                  "waitlist"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": true,
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "product_knowledge.checkout_status=unavailable",
+                  "product_knowledge.waitlist_status=limited_studios_waitlist",
+                  "product_knowledge.availability=Limited rollout for a small number of studios."
+                ],
+                "facts_missing": [
+                  "studio name",
+                  "city/state"
+                ],
+                "template_ids": [
+                  "waitlist.offer_after_contract_intent"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi esse ponto: product_knowledge.checkout_status=unavailable."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "waitlist.offer_after_contract_intent",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "waitlist_details",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Estamos trabalhando com um numero pequeno de studios agora.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "waitlist.offer_after_contract_intent",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se fizer sentido, posso colocar seu studio na lista de espera e chamar assim que abrir uma proxima janela.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "waitlist.offer_after_contract_intent",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "buy_intent",
+                  "value": "quero contratar",
+                  "confidence": "high",
+                  "evidence": [
+                    "User message: \"quero contratar, como faco para entrar?\""
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": {
+                "status": "offered",
+                "reason": "qualified_interest",
+                "missing_fields": []
+              },
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "availability",
+                    "checkout_status",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "mark_waitlist",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 6784,
+                "output_tokens": 408,
+                "cost_usd": 0.006924
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_8090c37dc071453895063ff31c9743c7"
+          },
+          "lead": "quero contratar, como faco para entrar?"
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_f5c8ec8b9e194f25a5890c05e9d9170c",
+            "conversation_id": "real_eval_final-post-waitlist-product-question",
+            "lead_id": "lead_final-post-waitlist-product-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_waitlist_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "waitlist_offered",
+                "current_state": "waitlist_joined",
+                "next_state": "waitlist_joined",
+                "route": "waitlist",
+                "opening_type": "returning_lead",
+                "detected_intents": [
+                  "waitlist",
+                  "product_question"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": true,
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "product_knowledge.checkout_status=unavailable",
+                  "product_knowledge.waitlist_status=limited_studios_waitlist",
+                  "product_knowledge.availability=Limited rollout for a small number of studios."
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "waitlist.joined"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi esse ponto: product_knowledge.checkout_status=unavailable."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "waitlist.joined",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "waitlist_details",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Perfeito, deixei seu studio na lista de espera da Taliya.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "waitlist.joined",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Quando abrir uma proxima janela, a equipe chama com o contexto dessa conversa.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "waitlist.joined",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "buy_intent",
+                  "value": "quero contratar",
+                  "confidence": "high",
+                  "evidence": [
+                    "Previous user message: \"quero contratar, como faco para entrar?\""
+                  ]
+                },
+                {
+                  "key": "studio_name",
+                  "value": "Studio Viva",
+                  "confidence": "high",
+                  "evidence": [
+                    "Current user message: \"pode colocar o Studio Viva em Vitoria ES\""
+                  ]
+                },
+                {
+                  "key": "city_state",
+                  "value": "Vitória/ES",
+                  "confidence": "high",
+                  "evidence": [
+                    "Current user message: \"pode colocar o Studio Viva em Vitoria ES\""
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": {
+                "status": "joined",
+                "reason": "lead_accepted_waitlist_with_actionable_details",
+                "missing_fields": []
+              },
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "product_knowledge.checkout_status",
+                    "product_knowledge.waitlist_status",
+                    "product_knowledge.availability"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "3"
+                },
+                {
+                  "name": "mark_waitlist",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "joined"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 7371,
+                "output_tokens": 479,
+                "cost_usd": 0.007684
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_def23bf562934928a75fac18df39e7ec"
+          },
+          "lead": "pode colocar o Studio Viva em Vitoria ES"
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_9cbf6ebf52b543a9b94ce301617026cf",
+            "conversation_id": "real_eval_final-post-waitlist-product-question",
+            "lead_id": "lead_final-post-waitlist-product-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "waitlist_joined",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "returning_lead",
+                "detected_intents": [
+                  "product",
+                  "post-waitlist"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "product_knowledge.plans.seven_agents.price_label=R$ 1.497/mes",
+                  "product_knowledge.plans.seven_agents.name=Completo",
+                  "lead already on waitlist"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_direct",
+                  "waitlist.status_preserved"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_direct",
+                    "channel": "whatsapp"
+                  },
+                  {
+                    "template_id": "waitlist.status_preserved",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.price_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Seu studio continua registrado na lista de espera.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "waitlist.status_preserved",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "waitlist_status",
+                  "value": "joined",
+                  "confidence": "high",
+                  "evidence": [
+                    "Histórico: lead já foi colocado na lista de espera"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "product_knowledge.plans.seven_agents.price_label",
+                    "product_knowledge.plans.seven_agents.name"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 7490,
+                "output_tokens": 346,
+                "cost_usd": 0.007175
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_dd1ab4fbbf374169840a96790df94023"
+          },
+          "lead": "quanto custa o Completo?"
+        }
+      ]
+    }
+  ]
+}

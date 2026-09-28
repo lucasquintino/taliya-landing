@@ -1,0 +1,179 @@
+[
+  {
+    "id": "p0-cold-greeting",
+    "title": "P0 cold greeting does not force diagnostic",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["oi"],
+    "checks": [
+      "first_response_greeting",
+      "no_diagnostic",
+      "no_waitlist",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "p0-widget-empty-acceptance",
+    "title": "P0 widget empty diagnostic offer acceptance starts official diagnostic",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["quero sim"],
+    "metadata": {
+      "client_pending_context": "widget_diagnostic_offer_pending",
+      "client_has_prior_assistant_messages": true,
+      "recent_client_messages": [
+        {
+          "role": "assistant",
+          "content": "Oi. Estou aqui pra te acompanhar e responder dúvidas sobre a Taliya."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido pra você, podemos fazer um diagnóstico gratuito do seu studio. O que você acha?"
+        },
+        {
+          "role": "user",
+          "content": "quero sim"
+        }
+      ]
+    },
+    "checks": [
+      "diagnostic_question_has_feedback",
+      "official_diagnostic_first_question",
+      "diagnostic_incomplete_requires_question",
+      "template_ids_present",
+      "all_messages_short",
+      "no_waitlist"
+    ]
+  },
+  {
+    "id": "p0-instagram-interest",
+    "title": "P0 Instagram interest explains Taliya naturally and steers softly",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["vim pelo instagram e queria saber mais"],
+    "checks": [
+      "first_response_greeting",
+      "landing_positioning_opening",
+      "not_generic_intro",
+      "diagnostic_offered_or_started",
+      "asks_at_most_one_question",
+      "no_waitlist",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "p0-price-first",
+    "title": "P0 price-first answers official prices and offers diagnostic",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["quanto custa?"],
+    "checks": [
+      "first_response_greeting",
+      "mentions_all_prices",
+      "diagnostic_price_hook",
+      "has_product_source",
+      "no_checkout_link",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "p0-price-plus-pain",
+    "title": "P0 price plus pain answers price first and recognizes pain",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["quanto custa? minha agenda e reposições estão bagunçadas"],
+    "checks": [
+      "first_response_greeting",
+      "mentions_price",
+      "mentions_user_context",
+      "direct_question_answered_first",
+      "has_product_source",
+      "whatsapp_max_three_chunks",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "p0-diagnostic-direct-start",
+    "title": "P0 direct diagnostic request orients before first question",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["quero fazer diagnostico gratuito"],
+    "checks": [
+      "first_response_greeting",
+      "diagnostic_question_has_feedback",
+      "official_diagnostic_first_question",
+      "diagnostic_incomplete_requires_question",
+      "whatsapp_max_three_chunks",
+      "template_ids_present",
+      "no_waitlist"
+    ]
+  },
+  {
+    "id": "p0-diagnostic-complete-rich",
+    "title": "P0 rich diagnostic completes with staged value delivery",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 120 alunos ativos, perco interessados no WhatsApp, hoje controlo tudo em planilha, a dor principal e atendimento e follow-up, a prioridade agora e vendas, e urgente resolver nesse mes. Quero comparar plano para a Taliya completa."
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "completed_diagnostic_staged",
+      "old_diagnostic_copy_blocked",
+      "final_plan_dynamic_line",
+      "final_demo_not_offered_line",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "p0-post-diagnostic-follow-up",
+    "title": "P0 post-diagnostic follow-up recalls plan and handles demo request",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+      "qual plano mesmo? e me manda demo"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "mentions_demo_link",
+      "has_product_source",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "p0-waitlist-intent",
+    "title": "P0 clear post-diagnostic start intent goes to waitlist path",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+      "quero começar, me coloca na lista"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "waitlist_offered_or_handoff",
+      "waitlist_offer_mentions_limited_windows",
+      "has_product_source",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "p0-handoff",
+    "title": "P0 explicit human request pauses automation",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["quero falar com uma pessoa"],
+    "checks": [
+      "route:handoff",
+      "handoff_requested",
+      "template_ids_present",
+      "whatsapp_max_three_chunks"
+    ]
+  }
+]

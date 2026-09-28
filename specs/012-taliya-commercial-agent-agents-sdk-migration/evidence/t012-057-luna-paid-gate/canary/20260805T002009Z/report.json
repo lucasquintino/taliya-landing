@@ -1,0 +1,754 @@
+{
+  "schema": "012.real_model_golden_transcripts.v1",
+  "task": "T012-057",
+  "fixture_path": "scripts/fixtures/agent-runtime/spec-012-luna-targeted.json",
+  "started_at": "2026-08-05T00:20:09.477501+00:00",
+  "finished_at": "2026-08-05T00:20:24.194973+00:00",
+  "model": "gpt-5.6-luna",
+  "paid_approval": "Aprovo o T012-057 com gpt-5.6-luna e teto cumulativo máximo de US$ 0,75.",
+  "paid_call_status": "attempted_real_openai",
+  "env_file_used": "/workspace/.env.local",
+  "budget": {
+    "max_total_cost_usd": 0.03,
+    "cap_policy": "conservative local hard cap for this approved run"
+  },
+  "summary": {
+    "scenario_count": 1,
+    "executed_scenarios": 1,
+    "passed_scenarios": 0,
+    "failed_scenarios": 1,
+    "total_model_operations": 5,
+    "total_cost_usd": 0.016029
+  },
+  "aborted": false,
+  "abort_reason": null,
+  "scenarios": [
+    {
+      "scenario_id": "luna-price-objection-context",
+      "title": "Short budget objection after the official price answer",
+      "status": "failed",
+      "messages": [
+        "quanto custa?",
+        "hmm, talvez fique pesado"
+      ],
+      "transcript": [
+        {
+          "role": "user",
+          "content": "quanto custa?"
+        },
+        {
+          "role": "assistant",
+          "content": "Oi, tudo bem?"
+        },
+        {
+          "role": "assistant",
+          "content": "Base: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia."
+        },
+        {
+          "role": "assistant",
+          "content": "Com poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+        },
+        {
+          "role": "assistant",
+          "content": "O que você acha?"
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "user_text": "quanto custa?",
+          "mode": "entry",
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true,
+          "status": "delivered",
+          "selected_action": "answer_direct_product_question",
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook"
+          ],
+          "rendered_messages": [
+            "Oi, tudo bem?",
+            "Base: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês.",
+            "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia.",
+            "Com poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+            "O que você acha?"
+          ],
+          "issues": [],
+          "issue_details": [],
+          "repairs": 0,
+          "model_operations": 2,
+          "cost_usd": 0.005523,
+          "next_state": "diagnostic_offered",
+          "sales_inbox_projection": {
+            "conversation_id": "t012-043-luna-price-objection-context",
+            "lead_id": "t012-043-luna-price-objection-context",
+            "commercial_stage": "diagnostic_offered",
+            "summary": "Estado comercial: diagnostic_offered",
+            "diagnostic_status": "offered",
+            "waitlist_status": "none",
+            "handoff_status": "none",
+            "identity": [],
+            "fields": {
+              "template_ids": [
+                "product.price_direct",
+                "diagnostic.price_hook"
+              ],
+              "validator_status": "passed",
+              "validator_final_disposition": "accepted",
+              "source_labels": {
+                "channel": "widget",
+                "source": "pilates_landing",
+                "state_source": "accepted_decision"
+              },
+              "operator_next_action": "none"
+            }
+          },
+          "trace": {
+            "trace_schema": "012.action_turn_trace.v1",
+            "trace_complete": true,
+            "inbound": {
+              "text": "quanto custa?",
+              "message_type": "text"
+            },
+            "turn_gate": {
+              "status": "accepted"
+            },
+            "context_snapshot": {
+              "state_snapshot": {
+                "conversation_id": "t012-043-luna-price-objection-context",
+                "lead_id": "t012-043-luna-price-objection-context",
+                "source": "pilates_landing",
+                "channel": "widget"
+              },
+              "compact_memory": null,
+              "official_fact_keys_available": [],
+              "post_diagnostic_context": null,
+              "profile_name_context": {
+                "usage": "not_available"
+              }
+            },
+            "turn_situation": {
+              "mode": "entry",
+              "pending_question_key": null,
+              "allowed_actions": [
+                "answer_general_interest",
+                "answer_source_opening",
+                "offer_diagnostic_from_pain",
+                "answer_direct_product_question",
+                "start_requested_diagnostic",
+                "handoff_requested",
+                "clarify_ambiguous_opening"
+              ],
+              "eligible_template_groups": [
+                "opening.",
+                "diagnostic.",
+                "product.",
+                "handoff.",
+                "fallback."
+              ],
+              "forbidden_actions_now": [],
+              "required_obligations": [],
+              "llm_turn_allowed": true,
+              "post_diagnostic_context": null,
+              "profile_name_context": {
+                "usage": "not_available"
+              }
+            },
+            "sdk_start": {
+              "starting_agent": "taliya_triage_agent",
+              "llm_called": true
+            },
+            "sdk_run_items": [
+              {
+                "item_type": "HandoffCallItem",
+                "raw_item_type": "ResponseFunctionToolCall",
+                "agent_name": "taliya_triage_agent",
+                "tool_name": "transfer_to_taliya_product_agent",
+                "handoff_target": null
+              },
+              {
+                "item_type": "HandoffOutputItem",
+                "raw_item_type": "dict",
+                "agent_name": "taliya_triage_agent",
+                "tool_name": null,
+                "handoff_target": "taliya_product_agent"
+              },
+              {
+                "item_type": "MessageOutputItem",
+                "raw_item_type": "ResponseOutputMessage",
+                "agent_name": "taliya_product_agent",
+                "tool_name": null,
+                "handoff_target": null
+              }
+            ],
+            "sdk_final_output": {
+              "schema_version": "012.conductor_action_decision.v1",
+              "decision_id": "",
+              "turn_id": "",
+              "selected_action": "answer_direct_product_question",
+              "interpreted_intents": [
+                "pergunta sobre preço"
+              ],
+              "direct_question": "quanto custa?",
+              "direct_answer_obligations": [
+                {
+                  "obligation": "Informar o preço oficial do produto/planos.",
+                  "evidence": [
+                    "Mensagem atual do lead: \"quanto custa?\""
+                  ]
+                }
+              ],
+              "captured_slots": [],
+              "product_fact_keys_used": [
+                "prices"
+              ],
+              "numeric_interpretations": [],
+              "diagnostic_intent": "none",
+              "demo_intent": "none",
+              "waitlist_intent": "none",
+              "handoff_intent": "none",
+              "composition_variables": [],
+              "reply_goal": "Responder diretamente à pergunta sobre preço usando os preços oficiais.",
+              "confidence": "high",
+              "evidence": [
+                "Mensagem atual do lead: \"quanto custa?\""
+              ],
+              "needs_clarification": false,
+              "repair_hints": []
+            },
+            "taliya_proposal": {
+              "boundary": "action_first",
+              "superseded_schema": "TaliyaTurnProposal",
+              "action_decision": {
+                "schema_version": "012.conductor_action_decision.v1",
+                "decision_id": "",
+                "turn_id": "",
+                "selected_action": "answer_direct_product_question",
+                "interpreted_intents": [
+                  "pergunta sobre preço"
+                ],
+                "direct_question": "quanto custa?",
+                "direct_answer_obligations": [
+                  {
+                    "obligation": "Informar o preço oficial do produto/planos.",
+                    "evidence": [
+                      "Mensagem atual do lead: \"quanto custa?\""
+                    ]
+                  }
+                ],
+                "captured_slots": [],
+                "product_fact_keys_used": [
+                  "prices"
+                ],
+                "numeric_interpretations": [],
+                "diagnostic_intent": "none",
+                "demo_intent": "none",
+                "waitlist_intent": "none",
+                "handoff_intent": "none",
+                "composition_variables": [],
+                "reply_goal": "Responder diretamente à pergunta sobre preço usando os preços oficiais.",
+                "confidence": "high",
+                "evidence": [
+                  "Mensagem atual do lead: \"quanto custa?\""
+                ],
+                "needs_clarification": false,
+                "repair_hints": []
+              },
+              "direct_sdk_delivery_allowed": false
+            },
+            "action_decision": {
+              "schema_version": "012.conductor_action_decision.v1",
+              "decision_id": "",
+              "turn_id": "",
+              "selected_action": "answer_direct_product_question",
+              "interpreted_intents": [
+                "pergunta sobre preço"
+              ],
+              "direct_question": "quanto custa?",
+              "direct_answer_obligations": [
+                {
+                  "obligation": "Informar o preço oficial do produto/planos.",
+                  "evidence": [
+                    "Mensagem atual do lead: \"quanto custa?\""
+                  ]
+                }
+              ],
+              "captured_slots": [],
+              "product_fact_keys_used": [
+                "prices"
+              ],
+              "numeric_interpretations": [],
+              "diagnostic_intent": "none",
+              "demo_intent": "none",
+              "waitlist_intent": "none",
+              "handoff_intent": "none",
+              "composition_variables": [],
+              "reply_goal": "Responder diretamente à pergunta sobre preço usando os preços oficiais.",
+              "confidence": "high",
+              "evidence": [
+                "Mensagem atual do lead: \"quanto custa?\""
+              ],
+              "needs_clarification": false,
+              "repair_hints": []
+            },
+            "compiler": {
+              "selected_action": "answer_direct_product_question",
+              "previous_state": "new_lead",
+              "current_state": "product_question",
+              "next_state": "diagnostic_offered",
+              "template_ids": [
+                "product.price_direct",
+                "diagnostic.price_hook"
+              ],
+              "issues": []
+            },
+            "validators": {
+              "decision_id": "action_answer_direct_product_question",
+              "status": "passed",
+              "errors": [],
+              "warnings": [],
+              "repair_attempt_count": 0,
+              "final_disposition": "accepted"
+            },
+            "repair_or_escalation": {
+              "repair_attempt_count": 0,
+              "validator_feedback": [],
+              "repair_sdk_run_items": []
+            },
+            "render_plan": {
+              "template_ids": [
+                "product.price_direct",
+                "diagnostic.price_hook"
+              ],
+              "variables": {
+                "plan_price_summary": {
+                  "kind": "long_text",
+                  "value": "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes.",
+                  "source": "official_product_knowledge",
+                  "evidence": [
+                    "product_knowledge.plans"
+                  ],
+                  "max_length": 360
+                }
+              },
+              "chunk_policy": "default"
+            },
+            "rendered_messages": [
+              "Oi, tudo bem?",
+              "Base: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês.",
+              "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia.",
+              "Com poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+              "O que você acha?"
+            ],
+            "state_diff": {
+              "next_state": "diagnostic_offered",
+              "state_patch": {},
+              "ledger_updates": []
+            },
+            "sales_inbox_projection": {
+              "conversation_id": "t012-043-luna-price-objection-context",
+              "lead_id": "t012-043-luna-price-objection-context",
+              "commercial_stage": "diagnostic_offered",
+              "summary": "Estado comercial: diagnostic_offered",
+              "diagnostic_status": "offered",
+              "waitlist_status": "none",
+              "handoff_status": "none",
+              "identity": [],
+              "fields": {
+                "template_ids": [
+                  "product.price_direct",
+                  "diagnostic.price_hook"
+                ],
+                "validator_status": "passed",
+                "validator_final_disposition": "accepted",
+                "source_labels": {
+                  "channel": "widget",
+                  "source": "pilates_landing",
+                  "state_source": "accepted_decision"
+                },
+                "operator_next_action": "none"
+              }
+            },
+            "delivery": {
+              "public_delivery": false,
+              "outbox_reserved": false,
+              "rendered_count": 5,
+              "chunk_policy": "default"
+            },
+            "usage_cost": {
+              "model_operations": 2,
+              "input_tokens": 4305,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 203,
+              "reasoning_tokens": 0,
+              "latency_ms": 7050.922,
+              "cost_usd": 0.005523
+            },
+            "failure_labels": []
+          }
+        },
+        {
+          "turn": 2,
+          "user_text": "hmm, talvez fique pesado",
+          "mode": "entry",
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true,
+          "status": "failed",
+          "selected_action": "answer_price_objection",
+          "template_ids": [
+            "product.price_objection_value"
+          ],
+          "rendered_messages": [],
+          "issues": [
+            "price_question_missing_diagnostic_offer"
+          ],
+          "issue_details": [
+            "price_question_missing_diagnostic_offer: price hook requires diagnostic.action=offer"
+          ],
+          "repairs": 1,
+          "model_operations": 3,
+          "cost_usd": 0.010506,
+          "next_state": null,
+          "sales_inbox_projection": {},
+          "trace": {
+            "trace_schema": "012.action_turn_trace.v1",
+            "trace_complete": true,
+            "inbound": {
+              "text": "hmm, talvez fique pesado",
+              "message_type": "text"
+            },
+            "turn_gate": {
+              "status": "accepted"
+            },
+            "context_snapshot": {
+              "state_snapshot": {
+                "conversation_id": "t012-043-luna-price-objection-context",
+                "lead_id": "t012-043-luna-price-objection-context",
+                "source": "pilates_landing",
+                "channel": "widget",
+                "canonical_state": "diagnostic_offered",
+                "answered_obligations": [
+                  "quanto custa?"
+                ]
+              },
+              "compact_memory": null,
+              "official_fact_keys_available": [],
+              "post_diagnostic_context": null,
+              "profile_name_context": {
+                "usage": "not_available"
+              }
+            },
+            "turn_situation": {
+              "mode": "entry",
+              "pending_question_key": null,
+              "allowed_actions": [
+                "answer_general_interest",
+                "answer_source_opening",
+                "offer_diagnostic_from_pain",
+                "answer_direct_product_question",
+                "start_requested_diagnostic",
+                "handoff_requested",
+                "clarify_ambiguous_opening"
+              ],
+              "eligible_template_groups": [
+                "opening.",
+                "diagnostic.",
+                "product.",
+                "handoff.",
+                "fallback."
+              ],
+              "forbidden_actions_now": [],
+              "required_obligations": [],
+              "llm_turn_allowed": true,
+              "post_diagnostic_context": null,
+              "profile_name_context": {
+                "usage": "not_available"
+              }
+            },
+            "sdk_start": {
+              "starting_agent": "taliya_triage_agent",
+              "llm_called": true
+            },
+            "sdk_run_items": [
+              {
+                "item_type": "HandoffCallItem",
+                "raw_item_type": "ResponseFunctionToolCall",
+                "agent_name": "taliya_triage_agent",
+                "tool_name": "transfer_to_taliya_product_agent",
+                "handoff_target": null
+              },
+              {
+                "item_type": "HandoffOutputItem",
+                "raw_item_type": "dict",
+                "agent_name": "taliya_triage_agent",
+                "tool_name": null,
+                "handoff_target": "taliya_product_agent"
+              },
+              {
+                "item_type": "MessageOutputItem",
+                "raw_item_type": "ResponseOutputMessage",
+                "agent_name": "taliya_product_agent",
+                "tool_name": null,
+                "handoff_target": null
+              }
+            ],
+            "sdk_final_output": {
+              "schema_version": "012.conductor_action_decision.v1",
+              "decision_id": "dec_7f3b2e8f9a1c4d6e",
+              "turn_id": "turn_entry_price_objection_001",
+              "selected_action": "answer_price_objection",
+              "interpreted_intents": [
+                "price_objection",
+                "budget_concern"
+              ],
+              "direct_question": null,
+              "direct_answer_obligations": [],
+              "captured_slots": [],
+              "product_fact_keys_used": [
+                "prices"
+              ],
+              "numeric_interpretations": [],
+              "diagnostic_intent": "none",
+              "demo_intent": "none",
+              "waitlist_intent": "none",
+              "handoff_intent": "none",
+              "composition_variables": [],
+              "reply_goal": "Acolher a percepção de que o valor pode pesar, sem pressionar, e abrir espaço para entender melhor o orçamento ou a necessidade do studio.",
+              "confidence": "high",
+              "evidence": [
+                "Lead disse: \"hmm, talvez fique pesado\"",
+                "A mensagem ocorre imediatamente após a apresentação dos preços."
+              ],
+              "needs_clarification": false,
+              "repair_hints": []
+            },
+            "taliya_proposal": {
+              "boundary": "action_first",
+              "superseded_schema": "TaliyaTurnProposal",
+              "action_decision": {
+                "schema_version": "012.conductor_action_decision.v1",
+                "decision_id": "dec_7f3b2e8f9a1c4d6e",
+                "turn_id": "turn_entry_price_objection_001",
+                "selected_action": "answer_price_objection",
+                "interpreted_intents": [
+                  "price_objection",
+                  "budget_concern"
+                ],
+                "direct_question": null,
+                "direct_answer_obligations": [],
+                "captured_slots": [],
+                "product_fact_keys_used": [
+                  "prices"
+                ],
+                "numeric_interpretations": [],
+                "diagnostic_intent": "none",
+                "demo_intent": "none",
+                "waitlist_intent": "none",
+                "handoff_intent": "none",
+                "composition_variables": [],
+                "reply_goal": "Acolher a percepção de que o valor pode pesar, sem pressionar, e abrir espaço para entender melhor o orçamento ou a necessidade do studio.",
+                "confidence": "high",
+                "evidence": [
+                  "Lead disse: \"hmm, talvez fique pesado\"",
+                  "A mensagem ocorre imediatamente após a apresentação dos preços."
+                ],
+                "needs_clarification": false,
+                "repair_hints": []
+              },
+              "direct_sdk_delivery_allowed": false
+            },
+            "action_decision": {
+              "schema_version": "012.conductor_action_decision.v1",
+              "decision_id": "dec_7f3b2e8f9a1c4d6e",
+              "turn_id": "turn_entry_price_objection_001",
+              "selected_action": "answer_price_objection",
+              "interpreted_intents": [
+                "price_objection",
+                "budget_concern"
+              ],
+              "direct_question": null,
+              "direct_answer_obligations": [],
+              "captured_slots": [],
+              "product_fact_keys_used": [
+                "prices"
+              ],
+              "numeric_interpretations": [],
+              "diagnostic_intent": "none",
+              "demo_intent": "none",
+              "waitlist_intent": "none",
+              "handoff_intent": "none",
+              "composition_variables": [],
+              "reply_goal": "Acolher a percepção de que o valor pode pesar, sem pressionar, e abrir espaço para entender melhor o orçamento ou a necessidade do studio.",
+              "confidence": "high",
+              "evidence": [
+                "Lead disse: \"hmm, talvez fique pesado\"",
+                "A mensagem ocorre imediatamente após a apresentação dos preços."
+              ],
+              "needs_clarification": false,
+              "repair_hints": []
+            },
+            "compiler": {
+              "selected_action": "answer_price_objection",
+              "previous_state": "diagnostic_offered",
+              "current_state": "price_question",
+              "next_state": "diagnostic_offered",
+              "template_ids": [
+                "product.price_objection_value"
+              ],
+              "issues": []
+            },
+            "validators": {
+              "decision_id": "action_answer_price_objection",
+              "status": "failed",
+              "errors": [
+                {
+                  "code": "price_question_missing_diagnostic_offer",
+                  "message": "price hook requires diagnostic.action=offer"
+                }
+              ],
+              "warnings": [],
+              "repair_attempt_count": 0,
+              "final_disposition": "blocked"
+            },
+            "repair_or_escalation": {
+              "repair_attempt_count": 1,
+              "validator_feedback": [
+                {
+                  "code": "price_question_missing_diagnostic_offer",
+                  "message": "price hook requires diagnostic.action=offer"
+                }
+              ],
+              "repair_sdk_run_items": [
+                {
+                  "item_type": "MessageOutputItem",
+                  "raw_item_type": "ResponseOutputMessage",
+                  "agent_name": "taliya_product_agent",
+                  "tool_name": null,
+                  "handoff_target": null
+                }
+              ]
+            },
+            "render_plan": {
+              "template_ids": [
+                "product.price_objection_value"
+              ],
+              "variables": {},
+              "chunk_policy": "default"
+            },
+            "rendered_messages": [],
+            "state_diff": {
+              "next_state": "diagnostic_offered",
+              "state_patch": {},
+              "ledger_updates": []
+            },
+            "sales_inbox_projection": null,
+            "delivery": {
+              "public_delivery": false,
+              "outbox_reserved": false,
+              "rendered_count": 0,
+              "chunk_policy": "default"
+            },
+            "usage_cost": {
+              "model_operations": 3,
+              "input_tokens": 7758,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 458,
+              "reasoning_tokens": 0,
+              "latency_ms": 7476.779,
+              "cost_usd": 0.010506000000000001
+            },
+            "failure_labels": [
+              "price_question_missing_diagnostic_offer"
+            ]
+          }
+        }
+      ],
+      "final_state": {
+        "conversation_id": "t012-043-luna-price-objection-context",
+        "lead_id": "t012-043-luna-price-objection-context",
+        "source": "pilates_landing",
+        "channel": "widget",
+        "canonical_state": "diagnostic_offered",
+        "answered_obligations": [
+          "quanto custa?"
+        ]
+      },
+      "checks": [
+        "answer_price_first",
+        "interpret_followup_from_immediate_context",
+        "price_objection_not_operational_pain"
+      ],
+      "check_results": [
+        {
+          "check": "turn_statuses_acceptable",
+          "passed": false,
+          "detail": ""
+        },
+        {
+          "check": "includes:R$ 197",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "includes:valor para olhar com calma",
+          "passed": false,
+          "detail": "missing expected rendered text"
+        },
+        {
+          "check": "excludes:rotina pesada",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "excludes:agenda pesada",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "excludes:reposição pesada",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "excludes:checkout",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "excludes:desconto",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "template_present:product.price_direct",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "template_present:product.price_objection_value",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "check": "no_failed_turns",
+          "passed": false,
+          "detail": "price_question_missing_diagnostic_offer"
+        }
+      ],
+      "issues": [
+        "turn_statuses_acceptable",
+        "includes:valor para olhar com calma: missing expected rendered text",
+        "no_failed_turns: price_question_missing_diagnostic_offer"
+      ],
+      "total_model_operations": 5,
+      "total_cost_usd": 0.016029,
+      "cost_cap_exceeded": false
+    }
+  ]
+}

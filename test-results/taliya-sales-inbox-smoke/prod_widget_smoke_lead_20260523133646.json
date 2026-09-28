@@ -1,0 +1,315 @@
+{
+  "status": "pass",
+  "leadId": "prod_widget_smoke_lead_20260523133646",
+  "transcript": [
+    {
+      "lead": "quero fazer diagnostico gratuito",
+      "taliya": [
+        "Oi, tudo bem? Perfeito, faço esse diagnóstico sim. Vou te fazer poucas perguntas para entender a rotina do studio e depois te devolvo uma leitura prática.",
+        "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?"
+      ],
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_0578344a7b994170bb68a440c0b45ef0",
+        "agentRuntimeTraceId": "trace_8b560ef904674cfab956ae75e3ec6d3c",
+        "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+        "agentRuntimePreviousState": "new_lead",
+        "agentRuntimeCurrentState": "diagnostic_in_progress",
+        "agentRuntimeNextState": "diagnostic_in_progress",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "diagnostic",
+        "agentRuntimeTemplateIds": "diagnostic.ask_active_students",
+        "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+        "agentRuntimeDemoStatus": "not_offered",
+        "agentRuntimeDemoNextStep": "none",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.007898",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "in_progress",
+        "diagnosticNextStep": "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?",
+        "demoStatus": "not_offered"
+      },
+      "runtime": {
+        "state": "diagnostic_in_progress",
+        "next": "diagnostic_in_progress",
+        "route": "diagnostic",
+        "templates": "diagnostic.ask_active_students",
+        "cost": "0.007898"
+      }
+    },
+    {
+      "lead": "Lucas",
+      "taliya": [
+        "Entendi, isso ajuda a deixar o diagnóstico mais preso ao que você contou.",
+        "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?"
+      ],
+      "patch": {
+        "name": "Lucas",
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_067584e84fc145beaba5d04430f8dbff",
+        "agentRuntimeTraceId": "trace_4987be2b236f4576958a537b2f4fcfb0",
+        "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+        "agentRuntimePreviousState": "diagnostic_in_progress",
+        "agentRuntimeCurrentState": "diagnostic_in_progress",
+        "agentRuntimeNextState": "diagnostic_in_progress",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "greeting",
+        "agentRuntimeTemplateIds": "diagnostic.ask_active_students",
+        "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+        "agentRuntimeDemoStatus": "not_offered",
+        "agentRuntimeDemoNextStep": "none",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.010826",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "in_progress",
+        "diagnosticNextStep": "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?",
+        "demoStatus": "not_offered"
+      },
+      "runtime": {
+        "state": "diagnostic_in_progress",
+        "next": "diagnostic_in_progress",
+        "route": "diagnostic",
+        "templates": "diagnostic.ask_active_students",
+        "cost": "0.010826"
+      }
+    },
+    {
+      "lead": "Tenho 80 alunos, uso planilha e minha maior dor e agenda e reposicoes. Esta urgente agora.",
+      "taliya": [
+        "Boa, esse tamanho já ajuda a entender o volume da rotina.",
+        "Se fosse para escolher uma prioridade agora, o que teria mais impacto no studio?"
+      ],
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_dfe44b34ceac42039331f09b26c7bb8b",
+        "agentRuntimeTraceId": "trace_31beb27b70764dbb9551d24a2c1f048a",
+        "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+        "agentRuntimePreviousState": "diagnostic_in_progress",
+        "agentRuntimeCurrentState": "diagnostic_in_progress",
+        "agentRuntimeNextState": "diagnostic_in_progress",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "diagnostic, pain, urgency",
+        "agentRuntimeTemplateIds": "diagnostic.ask_priority",
+        "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+        "agentRuntimeDemoStatus": "not_offered",
+        "agentRuntimeDemoNextStep": "none",
+        "agentRuntimeFinalPlanLine": "Pelo que você trouxe, eu compararia primeiro Essencial ou Avance.",
+        "agentRuntimeCrmBaseRecommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, status e próximos passos claros.",
+        "agentRuntimeAgentRecommendations": "Agenda",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.010919",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "in_progress",
+        "diagnosticSummary": "rotina de agenda e reposições",
+        "diagnosticNextStep": "Se fosse para escolher uma prioridade agora, o que teria mais impacto no studio?",
+        "recommendedPlan": "Essencial ou Avance",
+        "recommendedAgents": "Agenda",
+        "demoStatus": "not_offered"
+      },
+      "runtime": {
+        "state": "diagnostic_in_progress",
+        "next": "diagnostic_in_progress",
+        "route": "diagnostic",
+        "templates": "diagnostic.ask_priority",
+        "cost": "0.010919"
+      }
+    },
+    {
+      "lead": "Quero organizar reposicoes primeiro e entender qual plano faz sentido.",
+      "taliya": [
+        "Ok, já tenho as informações necessárias para montar seu diagnóstico. Já te retorno.",
+        "Pelo que você contou, o ponto principal parece ser a rotina prioritária do studio ainda sem processo claro.",
+        "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros.",
+        "organizar primeiro a rotina informada e centralizar o acompanhamento em um CRM com contexto da conversa",
+        "atendimento: faria sentido porque ajuda com agenda, faltas e reposições escapando. Eu indicaria aqui porque essa rotina apareceu como prioridade; na prática, ele organiza avisos, próximos encaixes e pendências para a equipe agir.",
+        "vendas: faria sentido porque ajuda com agenda, faltas e reposições escapando. Eu indicaria aqui porque essa rotina apareceu como prioridade; na prática, ele organiza avisos, próximos encaixes e pendências para a equipe agir.",
+        "agenda: faria sentido porque ajuda com agenda, faltas e reposições escapando. Eu indicaria aqui porque essa rotina apareceu como prioridade; na prática, ele organiza avisos, próximos encaixes e pendências para a equipe agir.",
+        "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra voce a faixa mais aderente depois de validar a rotina prioritária.",
+        "Temos algumas demonstracoes para voce conhecer melhor. O que voce acha?"
+      ],
+      "conversionPath": "crm_agent_diagnostic",
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_f78c6ea7763644aca8230422d4b4d236",
+        "agentRuntimeTraceId": "trace_3bdb48248c9c4ae6a35986b7f4826913",
+        "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+        "agentRuntimePreviousState": "diagnostic_in_progress",
+        "agentRuntimeCurrentState": "diagnostic_delivered",
+        "agentRuntimeNextState": "diagnostic_delivered",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "diagnostic, pain, plan_fit",
+        "agentRuntimeTemplateIds": "diagnostic.deliver_hold, diagnostic.deliver_context, diagnostic.deliver_crm_base, diagnostic.deliver_operational_step, diagnostic.deliver_agent_recommendation, diagnostic.deliver_agent_recommendation, diagnostic.deliver_agent_recommendation, diagnostic.deliver_plan_recommendation, diagnostic.deliver_demo_not_offered",
+        "agentRuntimeDiagnosticLedgerStatus": "complete",
+        "agentRuntimeDemoStatus": "not_offered",
+        "agentRuntimeDemoNextStep": "ask_demo_reaction",
+        "agentRuntimeFinalPlanLine": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra voce a faixa mais aderente depois de validar a rotina prioritária.",
+        "agentRuntimeFinalDemoLine": "Temos algumas demonstracoes para voce conhecer melhor. O que voce acha?",
+        "agentRuntimeCrmBaseRecommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros.",
+        "agentRuntimeAgentRecommendations": "atendimento: atendimento: agenda, faltas e reposições escapando: ele organiza avisos, próximos encaixes e pendências para a equipe agir | vendas: vendas: agenda, faltas e reposições escapando: ele organiza avisos, próximos encaixes e pendências para a equipe agir | agenda: agenda: agenda, faltas e reposições escapando: ele organiza avisos, próximos encaixes e pendências para a equipe agir",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.013632",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "completed",
+        "diagnosticSummary": "a rotina prioritária do studio ainda sem processo claro",
+        "diagnosticNextStep": "Temos algumas demonstracoes para voce conhecer melhor. O que voce acha?",
+        "recommendedPlan": "a faixa mais aderente depois de validar a rotina prioritária",
+        "recommendedAgents": "atendimento: atendimento: agenda, faltas e reposições escapando: ele organiza avisos, próximos encaixes e pendências para a equipe agir | vendas: vendas: agenda, faltas e reposições escapando: ele organiza avisos, próximos encaixes e pendências para a equipe agir | agenda: agenda: agenda, faltas e reposições escapando: ele organiza avisos, próximos encaixes e pendências para a equipe agir",
+        "diagnosticCompletedAt": "2026-05-23T13:37:37.124Z",
+        "commercialStage": "diagnostic_completed",
+        "demoStatus": "not_offered"
+      },
+      "runtime": {
+        "state": "diagnostic_delivered",
+        "next": "diagnostic_delivered",
+        "route": "diagnostic",
+        "templates": "diagnostic.deliver_hold, diagnostic.deliver_context, diagnostic.deliver_crm_base, diagnostic.deliver_operational_step, diagnostic.deliver_agent_recommendation, diagnostic.deliver_agent_recommendation, diagnostic.deliver_agent_recommendation, diagnostic.deliver_plan_recommendation, diagnostic.deliver_demo_not_offered",
+        "cost": "0.013632"
+      }
+    },
+    {
+      "lead": "Quero entrar na lista de espera. Meu studio e Flow Pilates, em Sao Paulo. Meu WhatsApp e 11999999999.",
+      "taliya": [
+        "Perfeito, deixei seu studio na lista de espera da Taliya.",
+        "Quando abrir uma próxima janela, a equipe chama com o contexto dessa conversa."
+      ],
+      "conversionPath": "waitlist_intent",
+      "patch": {
+        "whatsapp": "11999999999",
+        "studioName": "Flow Pilates",
+        "cityState": "Sao Paulo",
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_d081c871f45c45f59df282e265a5e5ad",
+        "agentRuntimeTraceId": "trace_d96ac9813c1e4aaf8635d8dcd1fe3db3",
+        "agentRuntimeCurrentAgent": "taliya_commercial_waitlist_agent",
+        "agentRuntimePreviousState": "diagnostic_delivered",
+        "agentRuntimeCurrentState": "waitlist_joined",
+        "agentRuntimeNextState": "waitlist_joined",
+        "agentRuntimeRoute": "waitlist",
+        "agentRuntimeDetectedIntents": "waitlist, direct_question, contact_share",
+        "agentRuntimeTemplateIds": "waitlist.joined",
+        "agentRuntimeDiagnosticLedgerStatus": "complete",
+        "agentRuntimeDemoStatus": "not_offered",
+        "agentRuntimeDemoNextStep": "none",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeWaitlistIntentEvidence": "lead pediu lista de espera | studio informado: Flow Pilates | cidade informada: Sao Paulo | produto informa waitlist para poucos studios | checkout indisponível | WhatsApp não deve ser solicitado",
+        "agentRuntimeCostEstimateUsd": "0.010769",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "waitlistStatus": "joined",
+        "missingWaitlistFields": "",
+        "waitlistJoinedAt": "2026-05-23T13:37:50.606Z",
+        "commercialStage": "waitlist_joined",
+        "closureState": "waitlist_joined",
+        "demoStatus": "not_offered"
+      },
+      "runtime": {
+        "state": "waitlist_joined",
+        "next": "waitlist_joined",
+        "route": "waitlist",
+        "templates": "waitlist.joined",
+        "waitlistStatus": "joined",
+        "cost": "0.010769"
+      }
+    },
+    {
+      "lead": "quero falar com humano",
+      "taliya": [
+        "Claro. Vou deixar uma pessoa assumir daqui.",
+        "Também deixo o contexto salvo para você não precisar repetir tudo."
+      ],
+      "conversionPath": "human_whatsapp_assist",
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_eba30fa2b55f424092f01517bd93dd80",
+        "agentRuntimeTraceId": "trace_dc608d94c0724377913b03b1eef267e8",
+        "agentRuntimeCurrentAgent": "taliya_commercial_handoff_agent",
+        "agentRuntimePreviousState": "waitlist_joined",
+        "agentRuntimeCurrentState": "human_handoff",
+        "agentRuntimeNextState": "paused_by_human",
+        "agentRuntimeRoute": "handoff",
+        "agentRuntimeDetectedIntents": "handoff",
+        "agentRuntimeTemplateIds": "handoff.acknowledge",
+        "agentRuntimeDiagnosticLedgerStatus": "not_started",
+        "agentRuntimeDemoStatus": "not_offered",
+        "agentRuntimeDemoNextStep": "none",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.008399",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "demoStatus": "not_offered",
+        "humanActive": "requested",
+        "aiPaused": "true",
+        "commercialStage": "human_handoff",
+        "closureState": "human_active",
+        "nextAction": "Humano deve assumir a conversa; automacao pausada."
+      },
+      "runtime": {
+        "state": "human_handoff",
+        "next": "paused_by_human",
+        "route": "handoff",
+        "templates": "handoff.acknowledge",
+        "cost": "0.008399"
+      }
+    }
+  ],
+  "assertions": {
+    "diagnosticSaved": true,
+    "waitlistSaved": true,
+    "contactSaved": true,
+    "studioSaved": true,
+    "citySaved": true,
+    "conversationSaved": true,
+    "handoffPaused": true
+  },
+  "leadSummary": {
+    "status": "handoff_requested",
+    "priority": "manual",
+    "channel": "web",
+    "conversionPath": "human_whatsapp_assist",
+    "waitlistStatus": "joined",
+    "diagnosticStatus": "completed",
+    "demoStatus": "not_offered",
+    "contact": {
+      "name": "Lucas",
+      "whatsapp": "11999999999",
+      "normalizedWhatsapp": "+5511999999999"
+    },
+    "qualification": {
+      "name": "Lucas",
+      "studioName": "Flow Pilates",
+      "cityState": "Sao Paulo",
+      "whatsapp": "11999999999"
+    },
+    "agentRuntime": {
+      "route": "handoff",
+      "runId": "run_eba30fa2b55f424092f01517bd93dd80",
+      "traceId": "trace_dc608d94c0724377913b03b1eef267e8",
+      "nextState": "paused_by_human",
+      "demoStatus": "not_offered",
+      "templateIds": "handoff.acknowledge",
+      "currentAgent": "taliya_commercial_handoff_agent",
+      "currentState": "human_handoff",
+      "demoNextStep": "none",
+      "previousState": "waitlist_joined",
+      "guardrailFlags": "",
+      "detectedIntents": "handoff",
+      "estimatedCostUsd": 0.008399,
+      "productSourceVersion": "taliya-commercial-2026-05-22",
+      "diagnosticLedgerStatus": "not_started"
+    },
+    "nextAction": "Humano deve assumir a conversa; automacao pausada."
+  },
+  "detailMessageCount": 29,
+  "handoff": {
+    "ok": true,
+    "runtimeSync": {
+      "ok": true,
+      "status": "human_paused",
+      "traceId": "trace_693cfa5f496b4857b1c9798366fc8e05"
+    }
+  },
+  "afterHandoff": {
+    "status": "human_active",
+    "aiPaused": true,
+    "humanActive": true,
+    "lastOperatorActionAt": "2026-05-23T13:38:06.165Z"
+  }
+}

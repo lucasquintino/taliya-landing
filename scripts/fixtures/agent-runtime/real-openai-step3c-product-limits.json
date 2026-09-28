@@ -1,0 +1,97 @@
+[
+  {
+    "id": "step3c-how-it-works",
+    "title": "How it works should explain product in owner language",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["como funciona?"],
+    "checks": [
+      "product_how_it_works_answer",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3c-whatsapp-students",
+    "title": "Student WhatsApp question should explain no app/password and demo",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["isso responde meus alunos no whatsapp? eles precisam baixar app?"],
+    "checks": [
+      "first_response_greeting",
+      "whatsapp_student_no_app",
+      "mentions_demo_link",
+      "has_product_source",
+      "whatsapp_max_three_chunks",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "step3c-whatsapp-business-scope",
+    "title": "WhatsApp Business scope should not confuse commercial WhatsApp with studio product setup",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["preciso ter whatsapp business?"],
+    "checks": [
+      "integration_scope_safe",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3c-instagram-integration",
+    "title": "Instagram integration should not be overpromised",
+    "channel": "whatsapp",
+    "sender_name": "Ana Paula",
+    "messages": ["integra com instagram?"],
+    "checks": [
+      "integration_scope_safe",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "whatsapp_max_three_chunks"
+    ]
+  },
+  {
+    "id": "step3c-tecnofit-integration",
+    "title": "Tecnofit integration should be conservative",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["integra com tecnofit?"],
+    "checks": [
+      "integration_scope_safe",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3c-security-lgpd",
+    "title": "Security LGPD should be conservative",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["é seguro? tem LGPD?"],
+    "checks": [
+      "security_data_safe",
+      "product_followup_source_keys",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  }
+]

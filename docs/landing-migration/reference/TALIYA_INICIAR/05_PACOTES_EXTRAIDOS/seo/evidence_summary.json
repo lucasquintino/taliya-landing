@@ -1,0 +1,88 @@
+{
+  "date": "2026-09-19",
+  "status": "PUBLIC_AUDIT_NOT_SOURCE_CODE_AUDIT",
+  "observations": [
+    {
+      "id": "A01",
+      "url": "https://www.taliya.com.br/",
+      "result": "external_fetch_final_url",
+      "value": "https://www.taliya.com.br/pilates"
+    },
+    {
+      "id": "A02",
+      "url": "https://www.taliya.com.br/pilates",
+      "result": "title",
+      "value": "Taliya | IA para studios de Pilates"
+    },
+    {
+      "id": "A03",
+      "url": "https://www.taliya.com.br/pilates",
+      "result": "OG_and_Twitter_recovered",
+      "value": "Legacy Pilates copy"
+    },
+    {
+      "id": "A04",
+      "url": "https://www.taliya.com.br/pilates/planos",
+      "result": "old_offer_accessible",
+      "value": "Pilates plans including Base R$197/mês"
+    },
+    {
+      "id": "FILE-1",
+      "url": "https://www.taliya.com.br/robots.txt",
+      "result": "external_fetch_error",
+      "reported_error": "page_not_found",
+      "reported_status": 404,
+      "limitation": "Exact path tested; not origin raw headers."
+    },
+    {
+      "id": "FILE-2",
+      "url": "https://www.taliya.com.br/sitemap.xml",
+      "result": "external_fetch_error",
+      "reported_error": "page_not_found",
+      "reported_status": 404,
+      "limitation": "Exact path tested; not origin raw headers."
+    },
+    {
+      "id": "FILE-3",
+      "url": "https://www.taliya.com.br/llms.txt",
+      "result": "external_fetch_error",
+      "reported_error": "page_not_found",
+      "reported_status": 404,
+      "limitation": "Exact path tested; not origin raw headers."
+    },
+    {
+      "id": "A08",
+      "url": "https://www.taliya.com.br/privacidade",
+      "result": "legacy_policy",
+      "value": "27/05/2026 commercial lead/studio context"
+    },
+    {
+      "id": "A09",
+      "query": "Taliya WhatsApp",
+      "result": "brand_search_sample",
+      "value": "Result titled IA para studios de Pilates",
+      "limitation": "Not fixed Google rank or full index coverage"
+    }
+  ],
+  "unverified": [
+    "canonical exact current value (conflicting extraction)",
+    "H1 raw count (browser report not corroborated)",
+    "all JSON-LD scripts",
+    "SSR of all tab subtypes",
+    "image dimensions",
+    "Core Web Vitals",
+    "real mobile viewport",
+    "Search Console property",
+    "Bing property",
+    "analytics",
+    "server logs",
+    "verified bot IP access"
+  ],
+  "browserRun": {
+    "id": "36fea777-bcc4-4eb8-875f-279fdbe8dfc1",
+    "steps": 23,
+    "durationSeconds": 169,
+    "kind": "public_read_only"
+  },
+  "localNetworkFailure": "Runtime DNS failure was not attributed to the public site."
+}

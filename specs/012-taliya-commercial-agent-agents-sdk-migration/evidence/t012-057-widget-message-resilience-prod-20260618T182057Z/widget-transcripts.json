@@ -1,0 +1,1577 @@
+{
+  "title": "T012-057 Widget Message Resilience Production Test",
+  "started_at": "2026-06-18T18:20:57.931Z",
+  "url": "https://www.taliya.com.br/pilates",
+  "cost_cap_usd": 0.15,
+  "calibration": {
+    "user_text": "quanto custa?",
+    "cost_usd": 0.0040995,
+    "note": "Calibration/probe sent through production widget to discover selectors and API cost field."
+  },
+  "aborted_partial_attempt": {
+    "evidence_dir": "t012-057-widget-message-resilience-prod-20260618T181650Z",
+    "screenshot_turns": 11,
+    "conservative_cost_reserve_usd": 0.055,
+    "note": "Previous automation timed out before response bodies were written; screenshots show 11 widget turns were sent. Reserve is used only for cap safety."
+  },
+  "scenarios": [
+    {
+      "id": "opening-ambiguous-with-pain",
+      "title": "Abertura ambigua com dor",
+      "expectation": "Reconhecer Instagram/indecisao + dor de agenda e conduzir naturalmente.",
+      "started_at": "2026-06-18T18:21:05.132Z",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "Vi no insta, acho que preciso disso mas não sei bem. Meu problema é agenda.",
+          "http_status": 200,
+          "cost_usd": 0.004437,
+          "cumulative_observed_cost_usd": 0.008536499999999999,
+          "assistant_messages": [
+            "Oi, tudo bem?\n\nEntendi.",
+            "A rotina está apertada e isso parece estar atrapalhando a organização das aulas.\n\nPosso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+            "O que você acha?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_e4c82daec76f43fd834ed10a1492a13f",
+            "agentRuntimeTraceId": "trace_52928058b0c94d78b66f94a8c2cf7bb3",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "pain_detected",
+            "agentRuntimeNextState": "diagnostic_offered",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "opening.contextual_ack, diagnostic.offer_soft",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.004437",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781806879313_30",
+                "role": "assistant",
+                "content": "Oi, tudo bem?\n\nEntendi.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806879313_31",
+                "role": "assistant",
+                "content": "A rotina está apertada e isso parece estar atrapalhando a organização das aulas.\n\nPosso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806879313_32",
+                "role": "assistant",
+                "content": "O que você acha?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_e4c82daec76f43fd834ed10a1492a13f",
+              "agentRuntimeTraceId": "trace_52928058b0c94d78b66f94a8c2cf7bb3",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "new_lead",
+              "agentRuntimeCurrentState": "pain_detected",
+              "agentRuntimeNextState": "diagnostic_offered",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "opening.contextual_ack, diagnostic.offer_soft",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.004437",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\opening-ambiguous-with-pain-turn-1.png",
+          "error": null
+        }
+      ],
+      "initial_widget_text": "Oi. Estou aqui para te acompanhar e responder dúvidas sobre a Taliya.\nDigitando",
+      "finished_at": "2026-06-18T18:21:20.472Z",
+      "checks": {
+        "no_instability_fallback": true,
+        "no_early_name_request": true,
+        "no_discount_or_checkout_promise": true,
+        "http_all_ok": true,
+        "acknowledges_agenda_context": true,
+        "conducts_next_step": true
+      },
+      "verdict": "pass",
+      "review": "PASS pelos critérios automáticos e revisão inicial.",
+      "manual_review": {
+        "status": "pass",
+        "notes": []
+      }
+    },
+    {
+      "id": "diagnostic-size-vague",
+      "title": "Diagnostico com tamanho ambiguo",
+      "expectation": "Pedir media aproximada e nao avancar como se soubesse o numero.",
+      "started_at": "2026-06-18T18:21:21.681Z",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "Quero fazer diagnóstico gratuito",
+          "http_status": 200,
+          "cost_usd": 0.0039375,
+          "cumulative_observed_cost_usd": 0.012473999999999999,
+          "assistant_messages": [
+            "Oi, tudo bem?\n\nEm que posso ajudar?",
+            "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_6682e552523c4eaab6c8f1e368f772bb",
+            "agentRuntimeTraceId": "trace_0549d428140d4b19bcc326e36a9b669a",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "diagnostic_requested",
+            "agentRuntimeNextState": "diagnostic_waiting_answer",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "opening.cold_greeting, diagnostic.start, diagnostic.ask_active_students",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.0039375",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781806895055_33",
+                "role": "assistant",
+                "content": "Oi, tudo bem?\n\nEm que posso ajudar?",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806895055_34",
+                "role": "assistant",
+                "content": "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806895055_35",
+                "role": "assistant",
+                "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_6682e552523c4eaab6c8f1e368f772bb",
+              "agentRuntimeTraceId": "trace_0549d428140d4b19bcc326e36a9b669a",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "new_lead",
+              "agentRuntimeCurrentState": "diagnostic_requested",
+              "agentRuntimeNextState": "diagnostic_waiting_answer",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "opening.cold_greeting, diagnostic.start, diagnostic.ask_active_students",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.0039375",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\diagnostic-size-vague-turn-1.png",
+          "error": null
+        },
+        {
+          "turn_index": 2,
+          "user_text": "varia bastante",
+          "http_status": 200,
+          "cost_usd": 0.00291375,
+          "cumulative_observed_cost_usd": 0.015387749999999999,
+          "assistant_messages": [
+            "Você consegue me passar uma média aproximada de alunas hoje? Pode ser um número aproximado, tipo 30, 80 ou 150."
+          ],
+          "qualification_patch": {
+            "name": "Varia Bastante",
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_e67ba26827c1463daf942584f5211afe",
+            "agentRuntimeTraceId": "trace_e2a53fc9b2d94952a280953cadcd9ffb",
+            "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_waiting_answer",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_waiting_answer",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "fallback.unmapped_adaptive",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.00291375",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781806904537_36",
+                "role": "assistant",
+                "content": "Você consegue me passar uma média aproximada de alunas hoje? Pode ser um número aproximado, tipo 30, 80 ou 150.",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "name": "Varia Bastante",
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_e67ba26827c1463daf942584f5211afe",
+              "agentRuntimeTraceId": "trace_e2a53fc9b2d94952a280953cadcd9ffb",
+              "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+              "agentRuntimePreviousState": "diagnostic_waiting_answer",
+              "agentRuntimeCurrentState": "diagnostic_in_progress",
+              "agentRuntimeNextState": "diagnostic_waiting_answer",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "fallback.unmapped_adaptive",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.00291375",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\diagnostic-size-vague-turn-2.png",
+          "error": null
+        }
+      ],
+      "initial_widget_text": "Oi. Estou aqui para te acompanhar e responder dúvidas sobre a Taliya.\nDigitando",
+      "finished_at": "2026-06-18T18:21:45.131Z",
+      "checks": {
+        "no_instability_fallback": true,
+        "no_early_name_request": true,
+        "no_discount_or_checkout_promise": true,
+        "http_all_ok": true,
+        "clarifies_vague_size": true,
+        "does_not_advance_to_bottleneck": true
+      },
+      "verdict": "pass",
+      "review": "PASS pelos critérios automáticos e revisão inicial.",
+      "manual_review": {
+        "status": "pass_with_quality_note",
+        "notes": [
+          "Good clarification, but used \"alunas\" when the previous wording was \"alunos ativos\"; acceptable but should stay neutral/studio wording."
+        ]
+      }
+    },
+    {
+      "id": "diagnostic-price-interruption",
+      "title": "Diagnostico com mudanca para preco",
+      "expectation": "Responder preco primeiro com fatos oficiais e depois retomar diagnostico.",
+      "started_at": "2026-06-18T18:22:11.117Z",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "Quero fazer diagnóstico gratuito",
+          "http_status": 200,
+          "cost_usd": 0.003924,
+          "cumulative_observed_cost_usd": 0.01931175,
+          "assistant_messages": [
+            "Oi, tudo bem?\n\nEm que posso ajudar?",
+            "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_9726231baaef4036a0fad708487110ec",
+            "agentRuntimeTraceId": "trace_3251f4465f6849aba93c6bcc30018e19",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "diagnostic_requested",
+            "agentRuntimeNextState": "diagnostic_waiting_answer",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "opening.cold_greeting, diagnostic.start, diagnostic.ask_active_students",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.003924",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781806944755_37",
+                "role": "assistant",
+                "content": "Oi, tudo bem?\n\nEm que posso ajudar?",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806944755_38",
+                "role": "assistant",
+                "content": "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806944755_39",
+                "role": "assistant",
+                "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_9726231baaef4036a0fad708487110ec",
+              "agentRuntimeTraceId": "trace_3251f4465f6849aba93c6bcc30018e19",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "new_lead",
+              "agentRuntimeCurrentState": "diagnostic_requested",
+              "agentRuntimeNextState": "diagnostic_waiting_answer",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "opening.cold_greeting, diagnostic.start, diagnostic.ask_active_students",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.003924",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\diagnostic-price-interruption-turn-1.png",
+          "error": null
+        },
+        {
+          "turn_index": 2,
+          "user_text": "100",
+          "http_status": 200,
+          "cost_usd": 0.00251175,
+          "cumulative_observed_cost_usd": 0.0218235,
+          "assistant_messages": [
+            "Entendi. Já dá para ter uma noção do tamanho do studio.",
+            "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_ca865ae28a164978807f4dbd088fa151",
+            "agentRuntimeTraceId": "trace_5580e994cbc74d10977a71b0bf2152d2",
+            "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_waiting_answer",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_waiting_answer",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.00251175",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781806953402_40",
+                "role": "assistant",
+                "content": "Entendi. Já dá para ter uma noção do tamanho do studio.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806953402_41",
+                "role": "assistant",
+                "content": "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_ca865ae28a164978807f4dbd088fa151",
+              "agentRuntimeTraceId": "trace_5580e994cbc74d10977a71b0bf2152d2",
+              "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+              "agentRuntimePreviousState": "diagnostic_waiting_answer",
+              "agentRuntimeCurrentState": "diagnostic_in_progress",
+              "agentRuntimeNextState": "diagnostic_waiting_answer",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.00251175",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\diagnostic-price-interruption-turn-2.png",
+          "error": null
+        },
+        {
+          "turn_index": 3,
+          "user_text": "antes, quanto custa?",
+          "http_status": 200,
+          "cost_usd": 0.00249375,
+          "cumulative_observed_cost_usd": 0.02431725,
+          "assistant_messages": [
+            "Oi, tudo bem?",
+            "Base: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês.",
+            "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_fb8eb12e7ffe40a18e258b6545d22b9f",
+            "agentRuntimeTraceId": "trace_fe838b9a2fd74aafb8b7aa5e3c033547",
+            "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_waiting_answer",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_waiting_answer",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "product.price_direct, diagnostic.ask_main_pain",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.00249375",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781806961991_42",
+                "role": "assistant",
+                "content": "Oi, tudo bem?",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806961991_43",
+                "role": "assistant",
+                "content": "Base: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806961991_44",
+                "role": "assistant",
+                "content": "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_fb8eb12e7ffe40a18e258b6545d22b9f",
+              "agentRuntimeTraceId": "trace_fe838b9a2fd74aafb8b7aa5e3c033547",
+              "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+              "agentRuntimePreviousState": "diagnostic_waiting_answer",
+              "agentRuntimeCurrentState": "diagnostic_in_progress",
+              "agentRuntimeNextState": "diagnostic_waiting_answer",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "product.price_direct, diagnostic.ask_main_pain",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.00249375",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\diagnostic-price-interruption-turn-3.png",
+          "error": null
+        }
+      ],
+      "initial_widget_text": "Oi. Estou aqui para te acompanhar e responder dúvidas sobre a Taliya.\nDigitando",
+      "finished_at": "2026-06-18T18:22:42.569Z",
+      "checks": {
+        "no_instability_fallback": true,
+        "no_early_name_request": true,
+        "no_discount_or_checkout_promise": true,
+        "http_all_ok": true,
+        "answers_price": true,
+        "retains_diagnostic_context": true
+      },
+      "verdict": "pass",
+      "review": "PASS pelos critérios automáticos e revisão inicial.",
+      "manual_review": {
+        "status": "pass_with_quality_note",
+        "notes": [
+          "Correctly answered price and resumed diagnostic, but inserted a fresh greeting mid-conversation. Minor polish issue."
+        ]
+      }
+    },
+    {
+      "id": "diagnostic-bottleneck-ambiguous",
+      "title": "Diagnostico com gargalo ambiguo",
+      "expectation": "Pedir esclarecimento curto e manter o slot.",
+      "started_at": "2026-06-18T18:22:43.634Z",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "Quero fazer diagnóstico gratuito",
+          "http_status": 200,
+          "cost_usd": 0.0039195,
+          "cumulative_observed_cost_usd": 0.028236749999999998,
+          "assistant_messages": [
+            "Oi, tudo bem?\n\nEm que posso ajudar?",
+            "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_9f37c145569f47f9845a4280c1635184",
+            "agentRuntimeTraceId": "trace_068bfb6661df4adfb84cf597afd9ec74",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "diagnostic_requested",
+            "agentRuntimeNextState": "diagnostic_waiting_answer",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "opening.cold_greeting, diagnostic.start, diagnostic.ask_active_students",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.0039195",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781806977156_45",
+                "role": "assistant",
+                "content": "Oi, tudo bem?\n\nEm que posso ajudar?",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806977156_46",
+                "role": "assistant",
+                "content": "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806977156_47",
+                "role": "assistant",
+                "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_9f37c145569f47f9845a4280c1635184",
+              "agentRuntimeTraceId": "trace_068bfb6661df4adfb84cf597afd9ec74",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "new_lead",
+              "agentRuntimeCurrentState": "diagnostic_requested",
+              "agentRuntimeNextState": "diagnostic_waiting_answer",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "opening.cold_greeting, diagnostic.start, diagnostic.ask_active_students",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.0039195",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\diagnostic-bottleneck-ambiguous-turn-1.png",
+          "error": null
+        },
+        {
+          "turn_index": 2,
+          "user_text": "100",
+          "http_status": 200,
+          "cost_usd": 0.00253875,
+          "cumulative_observed_cost_usd": 0.030775499999999997,
+          "assistant_messages": [
+            "Entendi. Já dá para ter uma noção do tamanho do studio.",
+            "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_0a36e774953645faa28a99afdb6f899a",
+            "agentRuntimeTraceId": "trace_44e326cea1bc45da9c3493c0201b2285",
+            "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_waiting_answer",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_waiting_answer",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.00253875",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781806989574_48",
+                "role": "assistant",
+                "content": "Entendi. Já dá para ter uma noção do tamanho do studio.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781806989574_49",
+                "role": "assistant",
+                "content": "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_0a36e774953645faa28a99afdb6f899a",
+              "agentRuntimeTraceId": "trace_44e326cea1bc45da9c3493c0201b2285",
+              "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+              "agentRuntimePreviousState": "diagnostic_waiting_answer",
+              "agentRuntimeCurrentState": "diagnostic_in_progress",
+              "agentRuntimeNextState": "diagnostic_waiting_answer",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.00253875",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\diagnostic-bottleneck-ambiguous-turn-2.png",
+          "error": null
+        },
+        {
+          "turn_index": 3,
+          "user_text": "depende do dia",
+          "http_status": 200,
+          "cost_usd": 0.002934,
+          "cumulative_observed_cost_usd": 0.033709499999999996,
+          "assistant_messages": [
+            "Entendi. Pensando no que mais pega no dia a dia, hoje o principal incômodo é atrair alunas, manter as alunas ativas ou organizar as aulas?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_3ca2972f394c42f7ab722888e6faddc3",
+            "agentRuntimeTraceId": "trace_05fddd9f1eec4e329b308933d6ebdb64",
+            "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_waiting_answer",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_waiting_answer",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "fallback.unmapped_adaptive",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.002934",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781806998917_50",
+                "role": "assistant",
+                "content": "Entendi. Pensando no que mais pega no dia a dia, hoje o principal incômodo é atrair alunas, manter as alunas ativas ou organizar as aulas?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_3ca2972f394c42f7ab722888e6faddc3",
+              "agentRuntimeTraceId": "trace_05fddd9f1eec4e329b308933d6ebdb64",
+              "agentRuntimeCurrentAgent": "taliya_diagnostic_agent",
+              "agentRuntimePreviousState": "diagnostic_waiting_answer",
+              "agentRuntimeCurrentState": "diagnostic_in_progress",
+              "agentRuntimeNextState": "diagnostic_waiting_answer",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "fallback.unmapped_adaptive",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.002934",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\diagnostic-bottleneck-ambiguous-turn-3.png",
+          "error": null
+        }
+      ],
+      "initial_widget_text": "Oi. Estou aqui para te acompanhar e responder dúvidas sobre a Taliya.\nDigitando",
+      "finished_at": "2026-06-18T18:23:19.519Z",
+      "checks": {
+        "no_instability_fallback": true,
+        "no_early_name_request": true,
+        "no_discount_or_checkout_promise": true,
+        "http_all_ok": true,
+        "clarifies_bottleneck": true,
+        "does_not_complete_or_advance": true
+      },
+      "verdict": "pass",
+      "review": "PASS pelos critérios automáticos e revisão inicial.",
+      "manual_review": {
+        "status": "pass",
+        "notes": []
+      }
+    },
+    {
+      "id": "price-vague-objection",
+      "title": "Preco com objecao vaga",
+      "expectation": "Reconhecer objecao sem inventar desconto e tentar entender contexto.",
+      "started_at": "2026-06-18T18:23:25.028Z",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "quanto custa?",
+          "http_status": 200,
+          "cost_usd": 0.004104,
+          "cumulative_observed_cost_usd": 0.0378135,
+          "assistant_messages": [
+            "Oi, tudo bem?\n\nBase: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês.",
+            "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia.\n\nCom poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+            "O que você acha?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_bef79bacf07642eb97696d90511ceddf",
+            "agentRuntimeTraceId": "trace_cc98ef9e67974907abb5f2e18eebf750",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "price_question",
+            "agentRuntimeNextState": "diagnostic_offered",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "product.price_direct, diagnostic.price_hook",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.004104",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781807018828_51",
+                "role": "assistant",
+                "content": "Oi, tudo bem?\n\nBase: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781807018828_52",
+                "role": "assistant",
+                "content": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia.\n\nCom poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781807018828_53",
+                "role": "assistant",
+                "content": "O que você acha?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_bef79bacf07642eb97696d90511ceddf",
+              "agentRuntimeTraceId": "trace_cc98ef9e67974907abb5f2e18eebf750",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "new_lead",
+              "agentRuntimeCurrentState": "price_question",
+              "agentRuntimeNextState": "diagnostic_offered",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "product.price_direct, diagnostic.price_hook",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.004104",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\price-vague-objection-turn-1.png",
+          "error": null
+        },
+        {
+          "turn_index": 2,
+          "user_text": "hmm, talvez fique pesado",
+          "http_status": 200,
+          "cost_usd": 0.004131,
+          "cumulative_observed_cost_usd": 0.0419445,
+          "assistant_messages": [
+            "há uma preocupação de que a rotina possa ficar pesada demais para tocar tudo sem sobrecarga",
+            "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+            "O que você acha?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_a4e6be04edb346f3b6d18605b5a69870",
+            "agentRuntimeTraceId": "trace_30c758424abc4b8aa579238582f1d83f",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "diagnostic_offered",
+            "agentRuntimeCurrentState": "pain_detected",
+            "agentRuntimeNextState": "diagnostic_offered",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "diagnostic.offer_soft",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.004131",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781807028975_54",
+                "role": "assistant",
+                "content": "há uma preocupação de que a rotina possa ficar pesada demais para tocar tudo sem sobrecarga",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781807028975_55",
+                "role": "assistant",
+                "content": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781807028975_56",
+                "role": "assistant",
+                "content": "O que você acha?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_a4e6be04edb346f3b6d18605b5a69870",
+              "agentRuntimeTraceId": "trace_30c758424abc4b8aa579238582f1d83f",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "diagnostic_offered",
+              "agentRuntimeCurrentState": "pain_detected",
+              "agentRuntimeNextState": "diagnostic_offered",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "diagnostic.offer_soft",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.004131",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\price-vague-objection-turn-2.png",
+          "error": null
+        }
+      ],
+      "initial_widget_text": "Oi. Estou aqui para te acompanhar e responder dúvidas sobre a Taliya.\nDigitando",
+      "finished_at": "2026-06-18T18:23:49.575Z",
+      "checks": {
+        "no_instability_fallback": true,
+        "no_early_name_request": true,
+        "no_discount_or_checkout_promise": true,
+        "http_all_ok": true,
+        "acknowledges_objection": true,
+        "no_fake_discount": true,
+        "recognizes_budget_objection": false
+      },
+      "verdict": "needs_quality_fix",
+      "review": "Needs quality fix: price objection was routed to pain/diagnostic language and sounded like a sentence fragment.",
+      "manual_review": {
+        "status": "needs_quality_fix",
+        "notes": [
+          "Turn 2 misread \"talvez fique pesado\" as operational workload instead of likely price/budget objection after a price answer. It did not invent discount, but the conversational understanding is off."
+        ]
+      }
+    },
+    {
+      "id": "demo-confused-reaction",
+      "title": "Demo com reacao confusa",
+      "expectation": "Esclarecer ou perguntar o que ficou confuso, sem assumir interesse forte.",
+      "started_at": "2026-06-18T18:23:50.204Z",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "tem demo?",
+          "http_status": 200,
+          "cost_usd": 0.004077,
+          "cumulative_observed_cost_usd": 0.0460215,
+          "assistant_messages": [
+            "Oi, tudo bem?",
+            "Ver demonstração: https://www.taliya.com.br/pilates/planos/demonstracao",
+            "Depois que você olhar, retorna aqui se fez sentido para você, ou se não entendeu alguma coisa, pode ser?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_ea4a38c0a550408bac73124b6242c927",
+            "agentRuntimeTraceId": "trace_d726d6c380eb44699aa205ff1a8d8773",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "diagnostic_offered",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "product.demo_direct",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.004077",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781807045696_57",
+                "role": "assistant",
+                "content": "Oi, tudo bem?",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781807045696_58",
+                "role": "assistant",
+                "content": "Ver demonstração: https://www.taliya.com.br/pilates/planos/demonstracao",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781807045696_59",
+                "role": "assistant",
+                "content": "Depois que você olhar, retorna aqui se fez sentido para você, ou se não entendeu alguma coisa, pode ser?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_ea4a38c0a550408bac73124b6242c927",
+              "agentRuntimeTraceId": "trace_d726d6c380eb44699aa205ff1a8d8773",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "new_lead",
+              "agentRuntimeCurrentState": "product_question",
+              "agentRuntimeNextState": "diagnostic_offered",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "product.demo_direct",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.004077",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\demo-confused-reaction-turn-1.png",
+          "error": null
+        },
+        {
+          "turn_index": 2,
+          "user_text": "não sei, achei meio confuso",
+          "http_status": 200,
+          "cost_usd": 0.0041865,
+          "cumulative_observed_cost_usd": 0.050208,
+          "assistant_messages": [
+            "Pode me dizer o que ficou confuso para eu te responder melhor?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_b5af40cf29354a1db45440dacf8c7c04",
+            "agentRuntimeTraceId": "trace_b7a3398d0c3848e6aba5c2aba1514716",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "diagnostic_offered",
+            "agentRuntimeCurrentState": "unknown_or_low_confidence",
+            "agentRuntimeNextState": "general_interest",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "fallback.unmapped_adaptive",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.0041865",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781807056242_60",
+                "role": "assistant",
+                "content": "Pode me dizer o que ficou confuso para eu te responder melhor?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_b5af40cf29354a1db45440dacf8c7c04",
+              "agentRuntimeTraceId": "trace_b7a3398d0c3848e6aba5c2aba1514716",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "diagnostic_offered",
+              "agentRuntimeCurrentState": "unknown_or_low_confidence",
+              "agentRuntimeNextState": "general_interest",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "fallback.unmapped_adaptive",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.0041865",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\demo-confused-reaction-turn-2.png",
+          "error": null
+        }
+      ],
+      "initial_widget_text": "Oi. Estou aqui para te acompanhar e responder dúvidas sobre a Taliya.\nDigitando",
+      "finished_at": "2026-06-18T18:24:16.841Z",
+      "checks": {
+        "no_instability_fallback": true,
+        "no_early_name_request": true,
+        "no_discount_or_checkout_promise": true,
+        "http_all_ok": true,
+        "addresses_confusion": true,
+        "does_not_assume_strong_interest": true
+      },
+      "verdict": "pass",
+      "review": "PASS pelos critérios automáticos e revisão inicial.",
+      "manual_review": {
+        "status": "pass",
+        "notes": []
+      }
+    },
+    {
+      "id": "waitlist-ambiguous-interest",
+      "title": "Waitlist/interesse ambiguo",
+      "expectation": "Nao tratar talvez como entrada confirmada; explicar ou clarificar.",
+      "started_at": "2026-06-18T18:24:22.566Z",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "quero entrar na lista",
+          "http_status": 200,
+          "cost_usd": 0.0068055,
+          "cumulative_observed_cost_usd": 0.0570135,
+          "assistant_messages": [],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_d75ff816794442609ab50a3f261f5586",
+            "agentRuntimeTraceId": "trace_34c3d54a7cc2444583e5c118315365b4",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "waitlist_eligible",
+            "agentRuntimeNextState": "waitlist_offered",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "waitlist.offer_after_contract_intent",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeCostEstimateUsd": "0.0068055",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "provider_failure",
+            "action": "fallback",
+            "reason": "agent_runtime:failed"
+          },
+          "response_json": {
+            "assistantMessages": [],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_d75ff816794442609ab50a3f261f5586",
+              "agentRuntimeTraceId": "trace_34c3d54a7cc2444583e5c118315365b4",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "new_lead",
+              "agentRuntimeCurrentState": "waitlist_eligible",
+              "agentRuntimeNextState": "waitlist_offered",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "waitlist.offer_after_contract_intent",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeCostEstimateUsd": "0.0068055",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "provider_failure",
+              "action": "fallback",
+              "reason": "agent_runtime:failed"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\waitlist-ambiguous-interest-turn-1.png",
+          "error": null
+        },
+        {
+          "turn_index": 2,
+          "user_text": "talvez, antes queria entender melhor",
+          "http_status": 200,
+          "cost_usd": 0.00523575,
+          "cumulative_observed_cost_usd": 0.06224925,
+          "assistant_messages": [],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_837dafb7d9ed46ff8a934b31464cb18e",
+            "agentRuntimeTraceId": "trace_f2188a7062aa414a9b5bff15d2436ea3",
+            "agentRuntimeCurrentAgent": "taliya_waitlist_agent",
+            "agentRuntimePreviousState": "waitlist_offered",
+            "agentRuntimeCurrentState": "waitlist_pending_data",
+            "agentRuntimeNextState": "waitlist_pending_data",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "product.overview_short, waitlist.ask_missing_contact_path",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeCostEstimateUsd": "0.00523575",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "provider_failure",
+            "action": "fallback",
+            "reason": "agent_runtime:failed"
+          },
+          "response_json": {
+            "assistantMessages": [],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_837dafb7d9ed46ff8a934b31464cb18e",
+              "agentRuntimeTraceId": "trace_f2188a7062aa414a9b5bff15d2436ea3",
+              "agentRuntimeCurrentAgent": "taliya_waitlist_agent",
+              "agentRuntimePreviousState": "waitlist_offered",
+              "agentRuntimeCurrentState": "waitlist_pending_data",
+              "agentRuntimeNextState": "waitlist_pending_data",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "product.overview_short, waitlist.ask_missing_contact_path",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeCostEstimateUsd": "0.00523575",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "provider_failure",
+              "action": "fallback",
+              "reason": "agent_runtime:failed"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\waitlist-ambiguous-interest-turn-2.png",
+          "error": null
+        }
+      ],
+      "initial_widget_text": "Oi. Estou aqui para te acompanhar e responder dúvidas sobre a Taliya.\nDigitando",
+      "finished_at": "2026-06-18T18:24:46.793Z",
+      "checks": {
+        "no_instability_fallback": true,
+        "no_early_name_request": true,
+        "no_discount_or_checkout_promise": true,
+        "http_all_ok": true,
+        "does_not_confirm_joined": true,
+        "explains_or_clarifies": false,
+        "no_provider_failure": false,
+        "assistant_messages_rendered": false
+      },
+      "verdict": "fail_runtime_delivery",
+      "review": "FAIL: waitlist intent/ambiguous follow-up produced no assistant response in the widget despite HTTP 200.",
+      "manual_review": {
+        "status": "fail_runtime_delivery",
+        "notes": [
+          "Both waitlist turns returned HTTP 200 but guardrailDecision provider_failure/fallback with reason agent_runtime:failed and assistantMessages empty. Screenshots show the widget displayed only user bubbles, no assistant reply."
+        ]
+      }
+    },
+    {
+      "id": "hard-mixed-message",
+      "title": "Mensagem mista dificil",
+      "expectation": "Responder WhatsApp e preco, e usar agenda/reposicao como contexto.",
+      "started_at": "2026-06-18T18:24:47.721Z",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "meu problema é agenda e reposição, mas antes queria saber se isso é pelo WhatsApp e quanto custa",
+          "http_status": 200,
+          "cost_usd": 0.004875,
+          "cumulative_observed_cost_usd": 0.06712425,
+          "assistant_messages": [
+            "Oi, tudo bem?\n\nBase: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês.\n\nOi, tudo bem?",
+            "O aluno não precisa baixar aplicativo nem criar senha. Ele conversa no WhatsApp; a Taliya registra a ação, atualiza o painel e avisa o responsável.\n\nSe quiser ver isso funcionando na prática, aqui está uma demonstração: https://www.taliya.com.br/pilates/planos/demonstracao\n\nComo você já trouxe um ponto da rotina que está te incomodando, vale olhar com um pouco mais de calma para entender o que está travando hoje.",
+            "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\n\nO que você acha?"
+          ],
+          "qualification_patch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_1db6f7c5cc5b4a95ba81f226a28e6cac",
+            "agentRuntimeTraceId": "trace_4f402f3ca37a48bea2acb21aff743c87",
+            "agentRuntimeCurrentAgent": "taliya_triage_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "diagnostic_offered",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "",
+            "agentRuntimeTemplateIds": "product.price_direct, product.whatsapp_direct, diagnostic.price_hook_with_context",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeDemoStatus": "not_offered",
+            "agentRuntimeDemoNextStep": "none",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimePostDiagnosticContextUsed": "false",
+            "agentRuntimeHumanConfirmationOffered": "false",
+            "agentRuntimeCostEstimateUsd": "0.004875",
+            "demoStatus": "not_offered"
+          },
+          "guardrail_decision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "response_json": {
+            "assistantMessages": [
+              {
+                "id": "assistant_1781807103038_61",
+                "role": "assistant",
+                "content": "Oi, tudo bem?\n\nBase: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês.\n\nOi, tudo bem?",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781807103038_62",
+                "role": "assistant",
+                "content": "O aluno não precisa baixar aplicativo nem criar senha. Ele conversa no WhatsApp; a Taliya registra a ação, atualiza o painel e avisa o responsável.\n\nSe quiser ver isso funcionando na prática, aqui está uma demonstração: https://www.taliya.com.br/pilates/planos/demonstracao\n\nComo você já trouxe um ponto da rotina que está te incomodando, vale olhar com um pouco mais de calma para entender o que está travando hoje.",
+                "intent": "answer_question"
+              },
+              {
+                "id": "assistant_1781807103038_63",
+                "role": "assistant",
+                "content": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\n\nO que você acha?",
+                "intent": "answer_question"
+              }
+            ],
+            "capturedPainIds": [],
+            "recommendedAgentIds": [],
+            "shouldOfferDiagnostic": false,
+            "qualificationPatch": {
+              "leadSourceChannel": "widget",
+              "agentRuntimeRunId": "run_1db6f7c5cc5b4a95ba81f226a28e6cac",
+              "agentRuntimeTraceId": "trace_4f402f3ca37a48bea2acb21aff743c87",
+              "agentRuntimeCurrentAgent": "taliya_triage_agent",
+              "agentRuntimePreviousState": "new_lead",
+              "agentRuntimeCurrentState": "product_question",
+              "agentRuntimeNextState": "diagnostic_offered",
+              "agentRuntimeRoute": "entry",
+              "agentRuntimeDetectedIntents": "",
+              "agentRuntimeTemplateIds": "product.price_direct, product.whatsapp_direct, diagnostic.price_hook_with_context",
+              "agentRuntimeDiagnosticLedgerStatus": "not_started",
+              "agentRuntimeDemoStatus": "not_offered",
+              "agentRuntimeDemoNextStep": "none",
+              "agentRuntimeGuardrailFlags": "",
+              "agentRuntimePostDiagnosticContextUsed": "false",
+              "agentRuntimeHumanConfirmationOffered": "false",
+              "agentRuntimeCostEstimateUsd": "0.004875",
+              "demoStatus": "not_offered"
+            },
+            "guardrailDecision": {
+              "category": "allowed",
+              "action": "respond",
+              "reason": "agent_runtime:succeeded"
+            }
+          },
+          "screenshot": "C:\\Users\\lucas\\agentes-landing-system\\specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-057-widget-message-resilience-prod-20260618T182057Z\\screenshots\\hard-mixed-message-turn-1.png",
+          "error": null
+        }
+      ],
+      "initial_widget_text": "Oi. Estou aqui para te acompanhar e responder dúvidas sobre a Taliya.\nDigitando",
+      "finished_at": "2026-06-18T18:25:04.212Z",
+      "checks": {
+        "no_instability_fallback": true,
+        "no_early_name_request": true,
+        "no_discount_or_checkout_promise": true,
+        "http_all_ok": true,
+        "answers_whatsapp_scope": true,
+        "answers_price": true,
+        "uses_pain_context": true,
+        "no_duplicate_greeting": false
+      },
+      "verdict": "pass",
+      "review": "PASS with quality note: answered the mixed message, but duplicated greeting.",
+      "manual_review": {
+        "status": "pass_with_quality_note",
+        "notes": [
+          "Handled WhatsApp + price + pain context, but duplicated greeting (\"Oi, tudo bem?\") inside one response. Not a functional failure, but should be polished."
+        ]
+      }
+    }
+  ],
+  "updated_at": "2026-06-18T18:26:53.481Z",
+  "observed_reported_cost_usd": 0.06712425,
+  "cap_accounting_with_reserve_usd": 0.12212424999999999,
+  "remaining_cap_after_reserve_usd": 0.027875750000000005,
+  "final_verdict": "needs_fix",
+  "manual_findings": [
+    {
+      "severity": "P0/P1",
+      "id": "waitlist_no_reply_on_provider_failure",
+      "scenario": "waitlist-ambiguous-interest",
+      "summary": "Waitlist intent and ambiguous waitlist follow-up returned no assistant messages in the widget. HTTP was 200, but guardrailDecision was provider_failure/fallback: agent_runtime:failed."
+    },
+    {
+      "severity": "P1 quality",
+      "id": "price_objection_misread_as_workload",
+      "scenario": "price-vague-objection",
+      "summary": "After price answer, ?talvez fique pesado? was interpreted as routine overload instead of budget/price concern."
+    },
+    {
+      "severity": "P2 polish",
+      "id": "duplicate_greeting_mixed_or_interruption",
+      "scenario": "diagnostic-price-interruption/hard-mixed-message",
+      "summary": "Some mid-conversation/product responses prepend ?Oi, tudo bem?? unnecessarily or twice."
+    },
+    {
+      "severity": "P2 polish",
+      "id": "diagnostic_clarification_wording",
+      "scenario": "diagnostic-size-vague",
+      "summary": "Clarification worked, but wording should avoid switching to ?alunas? unless user supplied that context."
+    }
+  ]
+}

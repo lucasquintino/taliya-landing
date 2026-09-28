@@ -1,0 +1,405 @@
+{
+  "turns": [
+    {
+      "user_text": "oi, vi o perfil de voces no Instagram",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "answer_source_opening",
+      "templates": [
+        "opening.instagram_source"
+      ],
+      "rendered": [
+        "Oi, tudo bem?",
+        "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar.",
+        "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00397725
+    },
+    {
+      "user_text": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "offer_diagnostic_from_pain",
+      "templates": [
+        "diagnostic.offer_soft"
+      ],
+      "rendered": [
+        "o atendimento no WhatsApp está demorando e isso está fazendo o studio perder novos alunos",
+        "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+        "O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00464925
+    },
+    {
+      "user_text": "quanto custa isso?",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "answer_price",
+      "templates": [
+        "product.price_direct"
+      ],
+      "rendered": [
+        "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00445275
+    },
+    {
+      "user_text": "faz sentido... como funciona esse diagnostico gratuito?",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "answer_how_it_works",
+      "templates": [
+        "product.how_it_works_direct"
+      ],
+      "rendered": [
+        "Funciona assim: a Taliya ajuda o studio a organizar o que acontece no dia a dia.",
+        "Ela junta conversas, alunos, agenda, reposicoes, cobrancas, interessados e acompanhamentos para a equipe enxergar melhor o que precisa de acao.",
+        "Quando o WhatsApp Business do studio esta conectado, os agentes podem apoiar conversas com alunos e interessados, sempre com a equipe podendo acompanhar e assumir quando precisar. Se fizer sentido, posso fazer um diagnostico gratuito para entender se a Taliya encaixa na rotina do seu studio. O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00469425
+    },
+    {
+      "user_text": "120",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "clarify_ambiguous_opening",
+      "templates": [
+        "fallback.unmapped_adaptive"
+      ],
+      "rendered": [
+        "Você quis dizer 120 alunos no studio, ou estava falando de outro número?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 3,
+      "repairs": 1,
+      "cost_usd": 0.00795825
+    },
+    {
+      "user_text": "minha maior dor e perder interessado porque demoramos pra responder",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "offer_diagnostic_from_pain",
+      "templates": [
+        "diagnostic.offer_soft"
+      ],
+      "rendered": [
+        "perder interessados porque a resposta demora",
+        "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+        "O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.0049995
+    },
+    {
+      "user_text": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "offer_diagnostic_from_pain",
+      "templates": [
+        "diagnostic.offer_soft"
+      ],
+      "rendered": [
+        "o time só consegue responder à noite e, nesse intervalo, o interessado acaba fechando com outro studio",
+        "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+        "O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.005289
+    },
+    {
+      "user_text": "hoje e planilha e caderno mesmo, nada organizado",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "offer_diagnostic_from_pain",
+      "templates": [
+        "diagnostic.offer_soft"
+      ],
+      "rendered": [
+        "O gargalo parece ser atendimento lento: quando a equipe só responde à noite, o interessado já vai embora para outro studio.",
+        "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+        "O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 3,
+      "repairs": 1,
+      "cost_usd": 0.01017825
+    },
+    {
+      "user_text": "minha prioridade e nao perder mais nenhum lead novo",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "start_requested_diagnostic",
+      "templates": [
+        "diagnostic.start",
+        "diagnostic.ask_active_students"
+      ],
+      "rendered": [
+        "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje.",
+        "prioridade em parar de perder leads novos",
+        "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.0055635
+    },
+    {
+      "user_text": "quero resolver isso agora, esse mes ainda",
+      "status": "delivered",
+      "mode": "diagnostic",
+      "starting_agent": "taliya_diagnostic_agent",
+      "action": "clarify_ambiguous_diagnostic_answer",
+      "templates": [
+        "fallback.unmapped_adaptive"
+      ],
+      "rendered": [
+        "quantos alunos ativos voce tem hoje no studio?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 1,
+      "cost_usd": 0.00711975
+    },
+    {
+      "user_text": "consigo ver funcionando antes?",
+      "status": "delivered",
+      "mode": "diagnostic",
+      "starting_agent": "taliya_diagnostic_agent",
+      "action": "answer_direct_question_then_continue_diagnostic",
+      "templates": [
+        "product.how_it_works_direct",
+        "diagnostic.ask_active_students"
+      ],
+      "rendered": [
+        "Funciona assim: a Taliya ajuda o studio a organizar o que acontece no dia a dia.\n\nEla junta conversas, alunos, agenda, reposicoes, cobrancas, interessados e acompanhamentos para a equipe enxergar melhor o que precisa de acao.",
+        "Quando o WhatsApp Business do studio esta conectado, os agentes podem apoiar conversas com alunos e interessados, sempre com a equipe podendo acompanhar e assumir quando precisar. Se fizer sentido, posso fazer um diagnostico gratuito para entender se a Taliya encaixa na rotina do seu studio. O que voce acha?\n\nfaz sentido querer ver antes de decidir",
+        "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 1,
+      "repairs": 0,
+      "cost_usd": 0.003378
+    },
+    {
+      "user_text": "gostei. quero entrar na lista pra contratar",
+      "status": "failed",
+      "mode": "diagnostic",
+      "starting_agent": "taliya_diagnostic_agent",
+      "action": "offer_or_join_waitlist_if_eligible",
+      "templates": [
+        "waitlist.offer_after_contract_intent"
+      ],
+      "rendered": [],
+      "issues": [
+        "conductor_action_not_in_allowed_menu",
+        "compile_template_outside_mode_groups:waitlist.offer_after_contract_intent"
+      ],
+      "issue_details": [
+        "conductor_action_not_in_allowed_menu: compiler blocked the turn: conductor_action_not_in_allowed_menu; allowed actions this turn: capture_pending_diagnostic_answer, answer_direct_question_then_continue_diagnostic, ask_next_diagnostic_ques",
+        "compile_template_outside_mode_groups:waitlist.offer_after_contract_intent: compiler blocked the turn: compile_template_outside_mode_groups:waitlist.offer_after_contract_intent"
+      ],
+      "ops": 2,
+      "repairs": 1,
+      "cost_usd": 0.00761325
+    }
+  ],
+  "final_state": {
+    "canonical_state": "diagnostic_waiting_answer",
+    "answered_obligations": [
+      "quanto custa isso?",
+      "como funciona esse diagnostico gratuito?",
+      "consigo ver funcionando antes?"
+    ]
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "content": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "content": "o atendimento no WhatsApp está demorando e isso está fazendo o studio perder novos alunos"
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "content": "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+    },
+    {
+      "role": "user",
+      "content": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "content": "Funciona assim: a Taliya ajuda o studio a organizar o que acontece no dia a dia."
+    },
+    {
+      "role": "assistant",
+      "content": "Ela junta conversas, alunos, agenda, reposicoes, cobrancas, interessados e acompanhamentos para a equipe enxergar melhor o que precisa de acao."
+    },
+    {
+      "role": "assistant",
+      "content": "Quando o WhatsApp Business do studio esta conectado, os agentes podem apoiar conversas com alunos e interessados, sempre com a equipe podendo acompanhar e assumir quando precisar. Se fizer sentido, posso fazer um diagnostico gratuito para entender se a Taliya encaixa na rotina do seu studio. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "120"
+    },
+    {
+      "role": "assistant",
+      "content": "Você quis dizer 120 alunos no studio, ou estava falando de outro número?"
+    },
+    {
+      "role": "user",
+      "content": "minha maior dor e perder interessado porque demoramos pra responder"
+    },
+    {
+      "role": "assistant",
+      "content": "perder interessados porque a resposta demora"
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+    },
+    {
+      "role": "assistant",
+      "content": "o time só consegue responder à noite e, nesse intervalo, o interessado acaba fechando com outro studio"
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "hoje e planilha e caderno mesmo, nada organizado"
+    },
+    {
+      "role": "assistant",
+      "content": "O gargalo parece ser atendimento lento: quando a equipe só responde à noite, o interessado já vai embora para outro studio."
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "minha prioridade e nao perder mais nenhum lead novo"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "assistant",
+      "content": "prioridade em parar de perder leads novos"
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "content": "quero resolver isso agora, esse mes ainda"
+    },
+    {
+      "role": "assistant",
+      "content": "quantos alunos ativos voce tem hoje no studio?"
+    },
+    {
+      "role": "user",
+      "content": "consigo ver funcionando antes?"
+    },
+    {
+      "role": "assistant",
+      "content": "Funciona assim: a Taliya ajuda o studio a organizar o que acontece no dia a dia.\n\nEla junta conversas, alunos, agenda, reposicoes, cobrancas, interessados e acompanhamentos para a equipe enxergar melhor o que precisa de acao."
+    },
+    {
+      "role": "assistant",
+      "content": "Quando o WhatsApp Business do studio esta conectado, os agentes podem apoiar conversas com alunos e interessados, sempre com a equipe podendo acompanhar e assumir quando precisar. Se fizer sentido, posso fazer um diagnostico gratuito para entender se a Taliya encaixa na rotina do seu studio. O que voce acha?\n\nfaz sentido querer ver antes de decidir"
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    }
+  ],
+  "total_cost_usd": 0.06987299999999999
+}

@@ -1,0 +1,470 @@
+{
+  "number": 14,
+  "scenario_id": "do_not_do_checkout_discount_date_vip",
+  "channel": "whatsapp",
+  "required_proof": "No checkout, date, discount, or VIP promise.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "tem checkout, desconto, data garantida ou VIP?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"fallback.unmapped_adaptive\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "fallback.unmapped_adaptive",
+          "templates": [
+            {
+              "template_id": "fallback.unmapped_adaptive",
+              "required_variables": [
+                "clarification_question"
+              ],
+              "optional_variables": []
+            }
+          ],
+          "variable_specs": {
+            "clarification_question": {
+              "kind": "short_text",
+              "max_length": 140,
+              "allowed_sources": [
+                "model_decision"
+              ],
+              "validation_rule": "One neutral clarification question; no product claim, no side effect."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "price",
+        "plan",
+        "availability",
+        "vip"
+      ],
+      "direct_question": "tem checkout, desconto, data garantida ou VIP?",
+      "customer_need": "Saber se há checkout, desconto, data garantida ou VIP.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "checkout",
+          "kind": "other",
+          "raw_text": "checkout",
+          "value_text": "checkout",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        },
+        {
+          "key": "desconto",
+          "kind": "other",
+          "raw_text": "desconto",
+          "value_text": "desconto",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        },
+        {
+          "key": "data_garantida",
+          "kind": "date_time",
+          "raw_text": "data garantida",
+          "value_text": "data garantida",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        },
+        {
+          "key": "vip",
+          "kind": "other",
+          "raw_text": "VIP",
+          "value_text": "VIP",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "tem checkout, desconto, data garantida ou VIP?",
+        "answering_template_id": "fallback.unmapped_adaptive",
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_applicable",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "fallback.unmapped_adaptive"
+      ],
+      "variables": [
+        {
+          "name": "clarification_question",
+          "kind": "short_text",
+          "value": "Você quer saber sobre checkout, desconto, data garantida ou VIP?",
+          "source": "model_decision",
+          "evidence": [
+            "user_message"
+          ],
+          "max_length": 140
+        }
+      ],
+      "evidence": [
+        "template_registry",
+        "user_message"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "opening",
+      "last_intent": "mixed_intent",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "clarify commercial question"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "medium",
+    "risks": [
+      "Mixed intent may need clarification before product claims."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_do_not_do_checkout_discount_date_vip",
+    "conversation_id": "spike_conv_do_not_do_checkout_discount_date_vip",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "price",
+        "plan",
+        "availability",
+        "vip"
+      ],
+      "direct_question": "tem checkout, desconto, data garantida ou VIP?",
+      "customer_need": "Saber se há checkout, desconto, data garantida ou VIP.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "checkout",
+          "kind": "other",
+          "raw_text": "checkout",
+          "value": "checkout",
+          "evidence": [
+            "user_message"
+          ]
+        },
+        {
+          "key": "desconto",
+          "kind": "other",
+          "raw_text": "desconto",
+          "value": "desconto",
+          "evidence": [
+            "user_message"
+          ]
+        },
+        {
+          "key": "data_garantida",
+          "kind": "date_time",
+          "raw_text": "data garantida",
+          "value": "data garantida",
+          "evidence": [
+            "user_message"
+          ]
+        },
+        {
+          "key": "vip",
+          "kind": "other",
+          "raw_text": "VIP",
+          "value": "VIP",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "tem checkout, desconto, data garantida ou VIP?",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_applicable",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "fallback.unmapped_adaptive"
+      ],
+      "variables": {
+        "clarification_question": {
+          "kind": "short_text",
+          "value": "Você quer saber sobre checkout, desconto, data garantida ou VIP?",
+          "source": "model_decision",
+          "evidence": [
+            "user_message"
+          ],
+          "max_length": 140
+        }
+      },
+      "evidence": [
+        "template_registry",
+        "user_message"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "opening",
+      "last_intent": "mixed_intent",
+      "next_action_hint": "clarify commercial question"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": [
+        "template_registry",
+        "user_message"
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "Mixed intent may need clarification before product claims."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 7853,
+      "output_tokens": 571,
+      "cost_usd": 0.003621,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_do_not_do_checkout_discount_date_vip",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Você quer saber sobre checkout, desconto, data garantida ou VIP?",
+      "template_id": "fallback.unmapped_adaptive",
+      "channel": "whatsapp",
+      "sequence": 1
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "opening",
+    "last_intent": "mixed_intent",
+    "next_action_hint": "clarify commercial question"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 7853,
+    "output_tokens": 571,
+    "cost_usd": 0.003621,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

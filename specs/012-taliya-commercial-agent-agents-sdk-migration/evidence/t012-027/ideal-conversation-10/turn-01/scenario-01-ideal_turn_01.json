@@ -1,0 +1,346 @@
+{
+  "number": 1,
+  "scenario_id": "ideal_turn_01",
+  "channel": "whatsapp",
+  "required_proof": "Source opening: greet naturally, acknowledge source, no invented pain.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "oi, vi o perfil de voces no Instagram"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": "taliya_entry_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_entry_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_entry_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_entry_agent"
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "social/source opening",
+        "cold opening"
+      ],
+      "direct_question": null,
+      "customer_need": "Quer iniciar conversa após ver o perfil no Instagram",
+      "pain_context": null,
+      "source_context": "Instagram",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "source",
+          "kind": "source",
+          "raw_text": "vi o perfil de voces no Instagram",
+          "value_text": "Instagram",
+          "currency": null,
+          "evidence": [
+            "vi o perfil de voces no Instagram"
+          ]
+        }
+      ],
+      "evidence": [
+        "oi, vi o perfil de voces no Instagram"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "oi, vi o perfil de voces no Instagram"
+      ]
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "opening.instagram_source"
+      ],
+      "variables": [],
+      "evidence": [
+        "oi, vi o perfil de voces no Instagram"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "opening",
+      "last_intent": "social/source opening",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "respond_with_source_aware_greeting"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_ideal_turn_01",
+    "conversation_id": "spike_conv_ideal_turn_01",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": "taliya_entry_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_entry_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_entry_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "social/source opening",
+        "cold opening"
+      ],
+      "direct_question": null,
+      "customer_need": "Quer iniciar conversa após ver o perfil no Instagram",
+      "pain_context": null,
+      "source_context": "Instagram",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "source",
+          "kind": "source",
+          "raw_text": "vi o perfil de voces no Instagram",
+          "value": "Instagram",
+          "evidence": [
+            "vi o perfil de voces no Instagram"
+          ]
+        }
+      ],
+      "evidence": [
+        "oi, vi o perfil de voces no Instagram"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "oi, vi o perfil de voces no Instagram"
+      ]
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "opening.instagram_source"
+      ],
+      "variables": {},
+      "evidence": [
+        "oi, vi o perfil de voces no Instagram"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "opening",
+      "last_intent": "social/source opening",
+      "next_action_hint": "respond_with_source_aware_greeting"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "oi, vi o perfil de voces no Instagram"
+      ]
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 7330,
+      "output_tokens": 368,
+      "cost_usd": 0.005425,
+      "handoffs": 1,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_ideal_turn_01",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Oi, tudo bem?",
+      "template_id": "opening.instagram_source",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar.",
+      "template_id": "opening.instagram_source",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?",
+      "template_id": "opening.instagram_source",
+      "channel": "whatsapp",
+      "sequence": 3
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "opening",
+    "last_intent": "social/source opening",
+    "next_action_hint": "respond_with_source_aware_greeting"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 7330,
+    "output_tokens": 368,
+    "cost_usd": 0.005425,
+    "handoffs": 1,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

@@ -1,0 +1,80 @@
+{
+  "turns_total": 12,
+  "turns_passed": 3,
+  "stopped_at_turn": 4,
+  "total_model_operations": 10,
+  "total_cost_usd": 0.029722,
+  "final_state": {
+    "demo": {
+      "status": "not_applicable",
+      "next_step": ""
+    },
+    "waitlist": {
+      "eligibility": "not_applicable",
+      "intent": ""
+    },
+    "summary": "Conversa comercial em andamento no WhatsApp da Taliya. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"not_applicable\", \"intent\": \"\"}.",
+    "diagnostic": {
+      "status": "in_progress",
+      "next_question_key": "impact"
+    }
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "text": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Você está perdendo alunos novos porque o WhatsApp do studio vive atrasado."
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Planos mensais: Base R$ 197/mes; Essencial R$ 497/mes; Avance R$ 897/mes; Completo R$ 1.497/mes."
+    },
+    {
+      "role": "assistant",
+      "text": "voce esta perdendo aluno novo porque o WhatsApp do studio vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    }
+  ]
+}

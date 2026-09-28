@@ -1,0 +1,194 @@
+{
+  "number": 10,
+  "scenario_id": "waitlist_curiosity",
+  "channel": "whatsapp",
+  "required_proof": "Curiosity does not become waitlist offer.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "como funciona essa lista de espera?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"waitlist\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "waitlist",
+          "templates": [
+            {
+              "template_id": "waitlist.ask_missing_city",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_contact_path",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_studio",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.joined",
+              "required_variables": [],
+              "optional_variables": [
+                "studio_name",
+                "city_state",
+                "contact_path"
+              ]
+            },
+            {
+              "template_id": "waitlist.offer_after_contract_intent",
+              "required_variables": [
+                "waitlist_context_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "waitlist.status_preserved",
+              "required_variables": [],
+              "optional_variables": [
+                "waitlist_context_summary"
+              ]
+            }
+          ],
+          "variable_specs": {
+            "city_state": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "City/state supplied or confirmed by the lead."
+            },
+            "contact_path": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Approved contact-path enum; never ask WhatsApp leads for their phone."
+            },
+            "missing_detail_label": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state"
+              ],
+              "validation_rule": "Approved enum for one missing waitlist detail."
+            },
+            "studio_name": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Studio name supplied or confirmed by the lead; separate from person name."
+            },
+            "waitlist_context_summary": {
+              "kind": "long_text",
+              "max_length": 220,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "runtime_state"
+              ],
+              "validation_rule": "Why waitlist is allowed now, grounded in clear intent and saved context."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "get_diagnostic_ledger",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_diagnostic_ledger",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_waitlist_curiosity",
+          "diagnostic": {},
+          "source": "not_connected_in_spike"
+        },
+        "evidence": [],
+        "uncertainty": "high"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_waitlist_curiosity",
+          "summary": null,
+          "lead_fact_count": 0,
+          "source": "not_connected_in_spike"
+        },
+        "evidence": [],
+        "uncertainty": "high"
+      }
+    }
+  ],
+  "sdk_final_output": null,
+  "turn_proposal": null,
+  "validator_result": null,
+  "rendered_preview": [],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {},
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 12543,
+    "output_tokens": 57,
+    "cost_usd": 0.00448,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "max_turns_exceeded: scenario needed more than the approved 3 model operations; partial run items recorded for diagnosis.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

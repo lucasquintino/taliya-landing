@@ -1,0 +1,17 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-full-required-product-delta",
+  "dryRun": true,
+  "selectedScenarioCount": 6,
+  "estimatedModelCalls": 6,
+  "maxModelCalls": 10,
+  "maxCostUsd": 0.3,
+  "scenarioIds": [
+    "product-delta-how-it-works",
+    "product-delta-comparison-planilha",
+    "product-delta-integration-scope",
+    "product-delta-security-data",
+    "product-delta-out-of-profile",
+    "product-delta-diagnostic-refusal"
+  ]
+}

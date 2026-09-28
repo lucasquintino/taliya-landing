@@ -1,0 +1,656 @@
+{
+  "number": 10,
+  "scenario_id": "waitlist_curiosity",
+  "channel": "whatsapp",
+  "required_proof": "Curiosity does not become waitlist offer.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "como funciona essa lista de espera?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_conversation_summary",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_demo_waitlist_handoff_state",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "propose_template_plan",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"waitlist\"}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"waitlist\"]}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_demo_waitlist_handoff_state",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "waitlist",
+          "templates": [
+            {
+              "template_id": "waitlist.ask_missing_city",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_contact_path",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_studio",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.joined",
+              "required_variables": [],
+              "optional_variables": [
+                "studio_name",
+                "city_state",
+                "contact_path"
+              ]
+            },
+            {
+              "template_id": "waitlist.offer_after_contract_intent",
+              "required_variables": [
+                "waitlist_context_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "waitlist.status_preserved",
+              "required_variables": [],
+              "optional_variables": [
+                "waitlist_context_summary"
+              ]
+            }
+          ],
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "waitlist",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.waitlist"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "waitlist"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.waitlist"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_waitlist_curiosity",
+          "summary": null,
+          "lead_fact_count": 0,
+          "source": "not_connected_in_spike"
+        },
+        "evidence": [],
+        "uncertainty": "high"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_waitlist_curiosity",
+          "demo": {},
+          "waitlist": {},
+          "human_status": null,
+          "human_reason": null,
+          "source": "not_connected_in_spike"
+        },
+        "evidence": [],
+        "uncertainty": "high"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "propose_template_plan",
+      "arguments": "{\"template_ids\":[\"waitlist.ask_missing_studio\"],\"variables_json\":\"{}\",\"evidence\":[\"User asked how the waitlist works.\",\"Conversation has no prior context and no lead facts.\",\"Approved waitlist template catalog includes waitlist.ask_missing_studio.\"],\"uncertainty\":\"medium\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "propose_template_plan",
+        "side_effect_class": "proposal_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "proposal_type": "template_plan",
+          "proposal": {
+            "template_ids": [
+              "waitlist.ask_missing_studio"
+            ],
+            "variables": {}
+          },
+          "validation_required": true,
+          "commit_after_validation_only": true,
+          "missing_evidence": false,
+          "evidence": [
+            "User asked how the waitlist works.",
+            "Conversation has no prior context and no lead facts.",
+            "Approved waitlist template catalog includes waitlist.ask_missing_studio."
+          ],
+          "uncertainty": "medium"
+        },
+        "evidence": [
+          "User asked how the waitlist works.",
+          "Conversation has no prior context and no lead facts.",
+          "Approved waitlist template catalog includes waitlist.ask_missing_studio."
+        ],
+        "uncertainty": "medium"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "waitlist"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "Entender como funciona a lista de espera.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "User asked how the waitlist works."
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Explain how the waitlist works.",
+        "answered_before_steering": false,
+        "evidence": [
+          "User asked how the waitlist works."
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "user asked how the waitlist works",
+      "missing_details": [
+        "studio_name"
+      ],
+      "evidence": [
+        "User asked how the waitlist works.",
+        "Conversation has no prior context and no lead facts."
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "waitlist.ask_missing_studio"
+      ],
+      "variables": [],
+      "evidence": [
+        "User asked how the waitlist works.",
+        "Conversation has no prior context and no lead facts.",
+        "Approved waitlist template catalog includes waitlist.ask_missing_studio."
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "waitlist_curiosity",
+      "last_intent": "waitlist",
+      "diagnostic_status": null,
+      "waitlist_status": "missing_studio",
+      "handoff_status": null,
+      "next_action_hint": "ask_for_studio"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "medium",
+    "risks": [
+      "No official waitlist product facts were available to explain mechanics directly."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_waitlist_curiosity",
+    "conversation_id": "spike_conv_waitlist_curiosity",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_conversation_summary",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "propose_template_plan",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "waitlist"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "Entender como funciona a lista de espera.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "User asked how the waitlist works."
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Explain how the waitlist works.",
+        "answered_before_steering": false,
+        "evidence": [
+          "User asked how the waitlist works."
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "user asked how the waitlist works",
+      "missing_details": [
+        "studio_name"
+      ],
+      "evidence": [
+        "User asked how the waitlist works.",
+        "Conversation has no prior context and no lead facts."
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "waitlist.ask_missing_studio"
+      ],
+      "variables": {},
+      "evidence": [
+        "User asked how the waitlist works.",
+        "Conversation has no prior context and no lead facts.",
+        "Approved waitlist template catalog includes waitlist.ask_missing_studio."
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "waitlist_curiosity",
+      "last_intent": "waitlist",
+      "waitlist_status": "missing_studio",
+      "next_action_hint": "ask_for_studio"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "User asked how the waitlist works.",
+        "Conversation has no prior context and no lead facts.",
+        "Approved waitlist template catalog includes waitlist.ask_missing_studio."
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "No official waitlist product facts were available to explain mechanics directly."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 11508,
+      "output_tokens": 573,
+      "cost_usd": 0.006717,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_waitlist_curiosity",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_direct_question_not_answered_first",
+        "severity": "P0",
+        "message": "Answer obligations not marked answered first: Explain how the waitlist works.",
+        "path": "answer_obligations"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "waitlist_curiosity",
+    "last_intent": "waitlist",
+    "waitlist_status": "missing_studio",
+    "next_action_hint": "ask_for_studio"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 11508,
+    "output_tokens": 573,
+    "cost_usd": 0.006717,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_direct_question_not_answered_first",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

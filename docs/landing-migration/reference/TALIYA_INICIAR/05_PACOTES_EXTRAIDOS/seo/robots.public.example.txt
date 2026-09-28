@@ -1,0 +1,7 @@
+# EXEMPLO: conteúdo público da landing. Não é política aprovada de todo o produto.
+# Revisar rotas reais de app/API, mídia privada e CDN antes de publicar.
+# Robots não é autenticação e não garante exclusão do índice.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.taliya.com.br/sitemap.xml

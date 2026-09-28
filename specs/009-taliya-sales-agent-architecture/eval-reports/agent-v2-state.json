@@ -1,0 +1,48 @@
+{
+  "runId": "agent-v2-state-1779416635249",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:23:55.249Z",
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "state contract contains diagnostic_in_progress",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "state contract contains waitlist_joined",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "state contract contains human_active",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "state contract contains askedQuestions",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "state contract contains knownFacts",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "state contract contains pendingQuestion",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "state contract contains cost:",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

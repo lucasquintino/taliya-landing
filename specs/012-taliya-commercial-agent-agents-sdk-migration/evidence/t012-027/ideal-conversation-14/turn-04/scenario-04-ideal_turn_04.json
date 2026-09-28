@@ -1,0 +1,454 @@
+{
+  "number": 4,
+  "scenario_id": "ideal_turn_04",
+  "channel": "whatsapp",
+  "required_proof": "Diagnostic start: begin and ask exactly one question (active students).",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Demo: {\"status\": \"\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"\", \"intent\": \"\"}. Perguntas diretas ja respondidas em turnos anteriores (nao criam novas obrigacoes): quanto custa isso?.\nstate: {\"diagnostic\": {\"status\": \"in_progress\", \"next_question_key\": \"active_students_or_size\"}, \"demo\": {\"status\": \"\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "user",
+      "content": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi: o atraso no WhatsApp já está fazendo voce perder aluno novo."
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "content": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "content": "studio perdendo aluno novo por atraso no WhatsApp"
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi: o atraso no WhatsApp já está fazendo voce perder aluno novo."
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "content": "faz sentido... como funciona esse diagnostico gratuito?"
+    }
+  ],
+  "starting_agent": "taliya_diagnostic_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic",
+        "pricing_question",
+        "how_it_works"
+      ],
+      "direct_question": "como funciona esse diagnostico gratuito?",
+      "customer_need": "entender o fluxo do diagnostico gratuito antes de seguir",
+      "pain_context": "studio de pilates perdendo aluno novo porque o WhatsApp vive atrasado",
+      "source_context": "Instagram",
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "pain_whatsapp_delay",
+          "kind": "pain",
+          "raw_text": "to perdendo aluno novo porque o WhatsApp vive atrasado",
+          "value_text": "atraso no WhatsApp está causando perda de aluno novo",
+          "currency": null,
+          "evidence": [
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        {
+          "key": "source_instagram",
+          "kind": "source",
+          "raw_text": "vi o perfil de voces no Instagram",
+          "value_text": "Instagram",
+          "currency": null,
+          "evidence": [
+            "oi, vi o perfil de voces no Instagram"
+          ]
+        }
+      ],
+      "evidence": [
+        "quanto custa isso?",
+        "faz sentido... como funciona esse diagnostico gratuito?",
+        "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Explaining how the free diagnostic works, while not forgetting the already-open diagnostic flow.",
+        "answering_template_id": "diagnostic.partial_progress",
+        "evidence": [
+          "faz sentido... como funciona esse diagnostico gratuito?",
+          "state diagnostic in_progress next_question_key active_students_or_size"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "active_students_or_size",
+          "status": "pending",
+          "answer_value": null,
+          "evidence": [
+            "state diagnostic in_progress next_question_key active_students_or_size"
+          ]
+        }
+      ],
+      "next_question_key": "active_students_or_size",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "state diagnostic in_progress next_question_key active_students_or_size",
+        "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+      ]
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_active_students"
+      ],
+      "variables": [
+        {
+          "name": "answer_feedback",
+          "kind": "short_text",
+          "value": "Claro — é um passo a passo rápido para entender seu cenário e indicar o melhor caminho.",
+          "source": "model_decision",
+          "evidence": [
+            "faz sentido... como funciona esse diagnostico gratuito?"
+          ],
+          "max_length": 180
+        }
+      ],
+      "evidence": [
+        "faz sentido... como funciona esse diagnostico gratuito?",
+        "state diagnostic in_progress next_question_key active_students_or_size"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "diagnostic_in_progress",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "awaiting_active_students_or_size",
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "ask active_students_or_size after answering the diagnostic-process question"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "medium",
+    "risks": [
+      "User asked how the free diagnostic works; current diagnostic flow is already open and must continue with the pending question.",
+      "Need to avoid inventing pricing or process details not grounded in official facts."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_ideal_turn_04",
+    "conversation_id": "spike_conv_ideal_turn_04",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_diagnostic_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic",
+        "pricing_question",
+        "how_it_works"
+      ],
+      "direct_question": "como funciona esse diagnostico gratuito?",
+      "customer_need": "entender o fluxo do diagnostico gratuito antes de seguir",
+      "pain_context": "studio de pilates perdendo aluno novo porque o WhatsApp vive atrasado",
+      "source_context": "Instagram",
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "pain_whatsapp_delay",
+          "kind": "pain",
+          "raw_text": "to perdendo aluno novo porque o WhatsApp vive atrasado",
+          "value": "atraso no WhatsApp está causando perda de aluno novo",
+          "evidence": [
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        {
+          "key": "source_instagram",
+          "kind": "source",
+          "raw_text": "vi o perfil de voces no Instagram",
+          "value": "Instagram",
+          "evidence": [
+            "oi, vi o perfil de voces no Instagram"
+          ]
+        }
+      ],
+      "evidence": [
+        "quanto custa isso?",
+        "faz sentido... como funciona esse diagnostico gratuito?",
+        "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Explaining how the free diagnostic works, while not forgetting the already-open diagnostic flow.",
+        "answered_before_steering": true,
+        "evidence": [
+          "faz sentido... como funciona esse diagnostico gratuito?",
+          "state diagnostic in_progress next_question_key active_students_or_size"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "active_students_or_size",
+          "status": "pending",
+          "answer_value": null,
+          "evidence": [
+            "state diagnostic in_progress next_question_key active_students_or_size"
+          ]
+        }
+      ],
+      "next_question_key": "active_students_or_size",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "state diagnostic in_progress next_question_key active_students_or_size",
+        "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+      ]
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_active_students"
+      ],
+      "variables": {
+        "answer_feedback": {
+          "kind": "short_text",
+          "value": "Claro — é um passo a passo rápido para entender seu cenário e indicar o melhor caminho.",
+          "source": "user_message",
+          "evidence": [
+            "faz sentido... como funciona esse diagnostico gratuito?"
+          ],
+          "max_length": 180
+        }
+      },
+      "evidence": [
+        "faz sentido... como funciona esse diagnostico gratuito?",
+        "state diagnostic in_progress next_question_key active_students_or_size"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "diagnostic_in_progress",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "awaiting_active_students_or_size",
+      "next_action_hint": "ask active_students_or_size after answering the diagnostic-process question"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "faz sentido... como funciona esse diagnostico gratuito?",
+        "state diagnostic in_progress next_question_key active_students_or_size"
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "User asked how the free diagnostic works; current diagnostic flow is already open and must continue with the pending question.",
+      "Need to avoid inventing pricing or process details not grounded in official facts."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 1,
+      "input_tokens": 5122,
+      "output_tokens": 739,
+      "cost_usd": 0.004057,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_ideal_turn_04",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Claro — é um passo a passo rápido para entender seu cenário e indicar o melhor caminho.",
+      "template_id": "diagnostic.partial_progress",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+      "template_id": "diagnostic.partial_progress",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Claro — é um passo a passo rápido para entender seu cenário e indicar o melhor caminho.",
+      "template_id": "diagnostic.ask_active_students",
+      "channel": "whatsapp",
+      "sequence": 3
+    },
+    {
+      "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+      "template_id": "diagnostic.ask_active_students",
+      "channel": "whatsapp",
+      "sequence": 4
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "diagnostic_in_progress",
+    "last_intent": "diagnostic",
+    "diagnostic_status": "awaiting_active_students_or_size",
+    "next_action_hint": "ask active_students_or_size after answering the diagnostic-process question"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 1,
+    "input_tokens": 5122,
+    "output_tokens": 739,
+    "cost_usd": 0.004057,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

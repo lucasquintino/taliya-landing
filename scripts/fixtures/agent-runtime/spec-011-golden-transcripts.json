@@ -1,0 +1,441 @@
+[
+  {
+    "id": "final-price-first",
+    "fixture_schema_version": "011.golden_transcript.v1",
+    "title": "Golden RC-011-052 direct price",
+    "golden_case_ids": [
+      "RC-011-052"
+    ],
+    "channel": "widget",
+    "source": "pilates_landing",
+    "messages": [
+      "quanto custa?"
+    ],
+    "checks": [
+      "route:product",
+      "opening_type:direct_question_opening",
+      "mentions_all_prices",
+      "direct_question_answered_first",
+      "diagnostic_price_hook",
+      "first_response_greeting",
+      "has_product_source",
+      "no_waitlist",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {
+        "route": "product",
+        "direct_question_answered_first": true,
+        "template_ids": [
+          "product.price_direct",
+          "diagnostic.price_hook"
+        ]
+      },
+      "rendered_text_must_include": [
+        "R$ 197",
+        "R$ 497",
+        "R$ 897",
+        "R$ 1.497"
+      ],
+      "rendered_text_must_not_include": [
+        "checkout",
+        "link de pagamento",
+        "Reliable profile first name"
+      ],
+      "sales_inbox": {
+        "validator_status": "passed"
+      }
+    }
+  },
+  {
+    "id": "final-price-plus-pain",
+    "fixture_schema_version": "011.golden_transcript.v1",
+    "title": "Golden RC-011-053 price plus pain",
+    "golden_case_ids": [
+      "RC-011-053"
+    ],
+    "channel": "whatsapp",
+    "source": "taliya_whatsapp",
+    "messages": [
+      "tenho reposicao baguncada na agenda e queria saber preco"
+    ],
+    "checks": [
+      "route:product",
+      "mentions_all_prices",
+      "direct_question_answered_first",
+      "diagnostic_offered_or_started",
+      "mentions_user_context",
+      "has_product_source",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "whatsapp_max_three_chunks",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {
+        "route": "product",
+        "direct_question_answered_first": true,
+        "template_ids": [
+          "product.price_direct",
+          "diagnostic.price_hook_with_context"
+        ]
+      },
+      "rendered_text_must_include": [
+        "R$ 497",
+        "diagnostico gratuito"
+      ],
+      "rendered_text_must_not_include": [
+        "497 alunos",
+        "checkout",
+        "lista VIP"
+      ],
+      "sales_inbox": {
+        "validator_status": "passed"
+      }
+    },
+    "fixture_note": "Revised on 2026-06-15: accepts the contextual price-plus-pain hook about reposição/replacement scheduling."
+  },
+  {
+    "id": "final-pain-first",
+    "fixture_schema_version": "011.golden_transcript.v1",
+    "title": "Golden RC-011-053A pain-first opening",
+    "golden_case_ids": [
+      "RC-011-053A"
+    ],
+    "channel": "widget",
+    "source": "pilates_landing",
+    "messages": [
+      "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+    ],
+    "checks": [
+      "route:diagnostic",
+      "diagnostic_offered_or_started",
+      "mentions_user_context",
+      "first_response_greeting",
+      "no_waitlist",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {
+        "route": "diagnostic",
+        "template_ids": [
+          "diagnostic.offer_soft"
+        ]
+      },
+      "rendered_text_must_include": [
+        "diagnostico gratuito",
+        "WhatsApp"
+      ],
+      "rendered_text_must_not_include": [
+        "lead loses",
+        "interested leads",
+        "team takes too long",
+        "clientes",
+        "consumidores",
+        "alunos ativos"
+      ],
+      "sales_inbox": {
+        "validator_status": "passed"
+      }
+    },
+    "fixture_note": "Revised on 2026-06-15: pain-first opening offers diagnostic and waits for acceptance before asking active students."
+  },
+  {
+    "id": "final-instagram-interest",
+    "fixture_schema_version": "011.golden_transcript.v1",
+    "title": "Golden RC-011-054 Instagram/source opening",
+    "golden_case_ids": [
+      "RC-011-054"
+    ],
+    "channel": "whatsapp",
+    "source": "instagram",
+    "metadata": {
+      "utm_source": "instagram"
+    },
+    "messages": [
+      "vim pelo Instagram e gostaria de saber mais"
+    ],
+    "checks": [
+      "route:entry",
+      "opening_type:social_source_opening",
+      "no_waitlist",
+      "not_generic_intro",
+      "no_internal_agent_text",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "whatsapp_max_three_chunks",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {
+        "route": "entry",
+        "template_ids": [
+          "opening.instagram_source"
+        ]
+      },
+      "rendered_text_must_include": [
+        "studio"
+      ],
+      "rendered_text_must_not_include": [
+        "lead came from the site",
+        "utm_source",
+        "source_label"
+      ],
+      "sales_inbox": {
+        "validator_status": "passed"
+      }
+    }
+  },
+  {
+    "id": "final-whatsapp-question",
+    "fixture_schema_version": "011.golden_transcript.v1",
+    "title": "Golden RC-011-055 WhatsApp product behavior",
+    "golden_case_ids": [
+      "RC-011-055"
+    ],
+    "channel": "whatsapp",
+    "source": "taliya_whatsapp",
+    "messages": [
+      "como funciona no WhatsApp?"
+    ],
+    "checks": [
+      "route:product",
+      "direct_question_answered_first",
+      "whatsapp_student_no_app",
+      "mentions_demo_link",
+      "first_response_greeting",
+      "has_product_source",
+      "no_phone_request",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "whatsapp_max_three_chunks",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {
+        "route": "product",
+        "direct_question_answered_first": true,
+        "template_ids": [
+          "product.whatsapp_direct"
+        ]
+      },
+      "rendered_text_must_include": [
+        "WhatsApp",
+        "aluno",
+        "nao precisa baixar aplicativo"
+      ],
+      "rendered_text_must_not_include": [
+        "me passa o WhatsApp",
+        "manda o telefone",
+        "instalar app"
+      ],
+      "sales_inbox": {
+        "validator_status": "passed"
+      }
+    }
+  },
+  {
+    "id": "step3g-long-conversation",
+    "fixture_schema_version": "011.golden_transcript.v1",
+    "title": "Golden RC-011-056/060 diagnostic question-by-question and long conversation",
+    "golden_case_ids": [
+      "RC-011-056",
+      "RC-011-060"
+    ],
+    "channel": "widget",
+    "source": "pilates_landing",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quanto custa?",
+      "pode fazer diagnostico",
+      "95 alunos ativos",
+      "whatsapp e follow-up dao mais trabalho",
+      "nao consigo ver quem precisa de retorno no dia",
+      "hoje fica em planilha e whatsapp",
+      "prioridade e vendas primeiro",
+      "quero resolver agora",
+      "me manda demo",
+      "achei caro",
+      "quero comecar, me coloca na lista",
+      "como funciona mesmo?",
+      "quero falar com alguem"
+    ],
+    "checks": [
+      "mentions_all_prices",
+      "diagnostic_question_has_feedback",
+      "no_repeat_answered_size_question",
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "mentions_demo_link",
+      "price_objection_value_argument",
+      "no_roi_promise",
+      "waitlist_offered_or_handoff",
+      "handoff_requested",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {
+        "route": "handoff",
+        "handoff_status": "requested"
+      },
+      "rendered_text_must_include": [
+        "R$ 497",
+        "diagnostico",
+        "demonstra"
+      ],
+      "rendered_text_must_not_include": [
+        "nao entendi",
+        "95 alunos ativos?",
+        "retorno garantido",
+        "checkout"
+      ],
+      "sales_inbox": {
+        "validator_status": "passed"
+      }
+    },
+    "fixture_note": "Revised on 2026-06-15: ideal long golden now follows the agent questions. Messy/out-of-order lead inputs remain covered by T012-038B fixtures."
+  },
+  {
+    "id": "final-waitlist-joined",
+    "fixture_schema_version": "011.golden_transcript.v1",
+    "title": "Golden RC-011-057 waitlist after fit/intent",
+    "golden_case_ids": [
+      "RC-011-057"
+    ],
+    "channel": "whatsapp",
+    "source": "taliya_whatsapp",
+    "messages": [
+      "pode colocar o Studio Viva em Vitoria ES"
+    ],
+    "checks": [
+      "route:waitlist",
+      "waitlist_joined",
+      "no_checkout_link",
+      "no_phone_request",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "whatsapp_max_three_chunks",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {
+        "route": "waitlist"
+      },
+      "waitlist_status": "joined",
+      "rendered_text_must_include": [
+        "Studio Viva",
+        "Vitoria"
+      ],
+      "rendered_text_must_not_include": [
+        "checkout",
+        "VIP",
+        "desconto"
+      ],
+      "sales_inbox": {
+        "validator_status": "passed"
+      }
+    },
+    "initial_state": {
+      "canonical_state": "waitlist_pending_data",
+      "waitlist": {
+        "status": "pending_data",
+        "eligibility": "eligible",
+        "missing_details": [
+          "studio_name",
+          "city_state"
+        ]
+      },
+      "summary": "Lead already asked to start and was asked for studio name and city/state."
+    },
+    "fixture_note": "Revised on 2026-06-15: joined waitlist golden starts from pending waitlist state; cold buy intent belongs to a separate offer/pending-details fixture."
+  },
+  {
+    "id": "final-human-request-silent-after",
+    "fixture_schema_version": "011.golden_transcript.v1",
+    "title": "Golden RC-011-058 human handoff pause",
+    "golden_case_ids": [
+      "RC-011-058"
+    ],
+    "channel": "whatsapp",
+    "source": "taliya_whatsapp",
+    "messages": [
+      "quero falar com uma pessoa",
+      "ainda estou aqui"
+    ],
+    "checks": [
+      "route:handoff",
+      "handoff_requested",
+      "second_turn_silent",
+      "template_ids_present"
+    ],
+    "expected": {
+      "decision": {
+        "route": "handoff",
+        "handoff_status": "active"
+      },
+      "rendered_text_must_include": [
+        "pessoa"
+      ],
+      "rendered_text_must_not_include": [
+        "diagnostico gratuito",
+        "checkout"
+      ],
+      "second_turn_must_be_silent": true,
+      "sales_inbox": {
+        "validator_status": "passed"
+      }
+    }
+  },
+  {
+    "id": "final-demo-request",
+    "fixture_schema_version": "011.golden_transcript.v1",
+    "title": "Golden RC-011-059 product demo",
+    "golden_case_ids": [
+      "RC-011-059"
+    ],
+    "channel": "widget",
+    "source": "pilates_landing",
+    "messages": [
+      "quero ver uma demonstracao"
+    ],
+    "checks": [
+      "route:product",
+      "direct_question_answered_first",
+      "mentions_demo_link",
+      "demo_context_prompt",
+      "first_response_greeting",
+      "has_product_source",
+      "no_waitlist",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {
+        "route": "product",
+        "direct_question_answered_first": true,
+        "template_ids": [
+          "product.demo_direct"
+        ]
+      },
+      "rendered_text_must_include": [
+        "/pilates/planos/demonstracao",
+        "demo"
+      ],
+      "rendered_text_must_not_include": [
+        "checkout",
+        "video production",
+        "demo da OpenAI"
+      ],
+      "sales_inbox": {
+        "validator_status": "passed"
+      }
+    }
+  }
+]

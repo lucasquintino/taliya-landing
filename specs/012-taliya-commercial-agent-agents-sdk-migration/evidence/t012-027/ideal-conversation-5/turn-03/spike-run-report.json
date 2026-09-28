@@ -1,0 +1,476 @@
+{
+  "proof_type": "isolated_spike_paid",
+  "model": "gpt-5.4-mini",
+  "tracing_disabled": true,
+  "public_cutover": false,
+  "paid_call_status": "run",
+  "started_at": "2026-06-10T11:17:59.406636+00:00",
+  "budget": {
+    "max_total_model_operations": 56,
+    "max_total_cost_usd": 1.34036,
+    "max_model_operations_per_scenario": 4
+  },
+  "total_model_operations": 3,
+  "total_cost_usd": 0.013225,
+  "aborted": false,
+  "abort_reason": null,
+  "scenarios": [
+    {
+      "number": 3,
+      "scenario_id": "ideal_turn_03",
+      "channel": "whatsapp",
+      "required_proof": "Price-first: answer official price directly before any steering.",
+      "input_transcript": [
+        {
+          "role": "system",
+          "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"not_applicable\", \"intent\": \"\"}.\nstate: {\"demo\": {\"status\": \"not_applicable\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"not_applicable\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+        },
+        {
+          "role": "user",
+          "content": "oi, vi o perfil de voces no Instagram"
+        },
+        {
+          "role": "assistant",
+          "content": "Oi, tudo bem?"
+        },
+        {
+          "role": "assistant",
+          "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+        },
+        {
+          "role": "user",
+          "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+        },
+        {
+          "role": "assistant",
+          "content": "voce esta perdendo aluno novo porque o WhatsApp do studio vive atrasado"
+        },
+        {
+          "role": "assistant",
+          "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+        },
+        {
+          "role": "assistant",
+          "content": "O que voce acha?"
+        },
+        {
+          "role": "user",
+          "content": "quanto custa isso?"
+        }
+      ],
+      "starting_agent": "taliya_triage_agent",
+      "agent_path": [
+        {
+          "event": "start",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": null,
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_product_agent",
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "final",
+          "agent": "taliya_product_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        }
+      ],
+      "tool_calls": [
+        {
+          "event": "handoff",
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_product_agent"
+        }
+      ],
+      "sdk_final_output": {
+        "schema_version": "012.sdk_turn_output.v1",
+        "commercial_understanding": {
+          "intents": [
+            "price"
+          ],
+          "direct_question": "quanto custa isso?",
+          "customer_need": "saber o preco da Taliya para o studio",
+          "pain_context": "o WhatsApp do studio vive atrasado e isso pode estar fazendo perder aluno novo",
+          "source_context": "Instagram",
+          "mixed_intent": false,
+          "extracted_facts": [
+            {
+              "key": "source_instagram",
+              "kind": "source",
+              "raw_text": "vi o perfil de voces no Instagram",
+              "value_text": "Instagram",
+              "currency": null,
+              "evidence": [
+                "vi o perfil de voces no Instagram"
+              ]
+            },
+            {
+              "key": "pain_whatsapp_delay",
+              "kind": "pain",
+              "raw_text": "to perdendo aluno novo porque o WhatsApp vive atrasado",
+              "value_text": "WhatsApp do studio vive atrasado",
+              "currency": null,
+              "evidence": [
+                "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+              ]
+            }
+          ],
+          "evidence": [
+            "quanto custa isso?",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "answer_obligations": [
+          {
+            "obligation": "quanto custa isso?",
+            "answering_template_id": "product.price_direct",
+            "evidence": [
+              "quanto custa isso?"
+            ]
+          }
+        ],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": null,
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "quanto custa isso?"
+          ]
+        },
+        "demo_proposal": {
+          "status": "not_applicable",
+          "next_step": "",
+          "evidence": [
+            "quanto custa isso?"
+          ]
+        },
+        "waitlist_proposal": {
+          "eligibility": "not_applicable",
+          "intent": "",
+          "missing_details": [],
+          "evidence": [
+            "quanto custa isso?"
+          ]
+        },
+        "handoff_proposal": {
+          "status": "not_applicable",
+          "reason": null,
+          "pause_required": false,
+          "evidence": [
+            "quanto custa isso?"
+          ]
+        },
+        "template_plan": {
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.offer_soft"
+          ],
+          "variables": [
+            {
+              "name": "plan_price_summary",
+              "kind": "long_text",
+              "value": "Preciso da base oficial de planos e precos para te passar o valor correto.",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "quanto custa isso?"
+              ],
+              "max_length": 360
+            },
+            {
+              "name": "pain_context_human",
+              "kind": "long_text",
+              "value": "Voce tem um studio de Pilates e comentou que esta perdendo aluno novo porque o WhatsApp vive atrasado.",
+              "source": "user_message",
+              "evidence": [
+                "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+              ],
+              "max_length": 420
+            }
+          ],
+          "evidence": [
+            "quanto custa isso?",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "state_patch": {
+          "handoff": null,
+          "delivery": null
+        },
+        "safety": {
+          "guardrail_flags": [
+            "missing_official_price_data"
+          ],
+          "uncertainty": "high"
+        },
+        "sales_inbox_projection": {
+          "commercial_stage": "price_inquiry",
+          "last_intent": "price",
+          "diagnostic_status": null,
+          "waitlist_status": null,
+          "handoff_status": null,
+          "next_action_hint": "Answer price with official plan data, then offer soft diagnostic if appropriate"
+        },
+        "delivery": {
+          "chunk_policy": "default"
+        },
+        "confidence": "low",
+        "risks": [
+          "Nao tenho ainda dados oficiais de preco para responder com valor."
+        ]
+      },
+      "turn_proposal": {
+        "schema_version": "012.turn_proposal.v1",
+        "turn_id": "spike_turn_ideal_turn_03",
+        "conversation_id": "spike_conv_ideal_turn_03",
+        "channel": "whatsapp",
+        "starting_agent": "taliya_triage_agent",
+        "agent_path": [
+          {
+            "event": "start",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": null,
+            "from_agent": "taliya_triage_agent",
+            "to_agent": "taliya_product_agent",
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "final",
+            "agent": "taliya_product_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          }
+        ],
+        "commercial_understanding": {
+          "intents": [
+            "price"
+          ],
+          "direct_question": "quanto custa isso?",
+          "customer_need": "saber o preco da Taliya para o studio",
+          "pain_context": "o WhatsApp do studio vive atrasado e isso pode estar fazendo perder aluno novo",
+          "source_context": "Instagram",
+          "mixed_intent": false,
+          "extracted_facts": [
+            {
+              "key": "source_instagram",
+              "kind": "source",
+              "raw_text": "vi o perfil de voces no Instagram",
+              "value": "Instagram",
+              "evidence": [
+                "vi o perfil de voces no Instagram"
+              ]
+            },
+            {
+              "key": "pain_whatsapp_delay",
+              "kind": "pain",
+              "raw_text": "to perdendo aluno novo porque o WhatsApp vive atrasado",
+              "value": "WhatsApp do studio vive atrasado",
+              "evidence": [
+                "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+              ]
+            }
+          ],
+          "evidence": [
+            "quanto custa isso?",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "answer_obligations": [
+          {
+            "obligation": "quanto custa isso?",
+            "answered_before_steering": true,
+            "evidence": [
+              "quanto custa isso?"
+            ]
+          }
+        ],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": null,
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "quanto custa isso?"
+          ]
+        },
+        "demo_proposal": {
+          "status": "not_applicable",
+          "next_step": "",
+          "evidence": [
+            "quanto custa isso?"
+          ]
+        },
+        "waitlist_proposal": {
+          "eligibility": "not_applicable",
+          "intent": "",
+          "missing_details": [],
+          "evidence": [
+            "quanto custa isso?"
+          ]
+        },
+        "handoff_proposal": {
+          "status": "not_applicable",
+          "reason": null,
+          "pause_required": false,
+          "evidence": [
+            "quanto custa isso?"
+          ]
+        },
+        "template_proposal": {
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.offer_soft"
+          ],
+          "variables": {
+            "plan_price_summary": {
+              "kind": "long_text",
+              "value": "Preciso da base oficial de planos e precos para te passar o valor correto.",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "quanto custa isso?"
+              ],
+              "max_length": 360
+            },
+            "pain_context_human": {
+              "kind": "long_text",
+              "value": "Voce tem um studio de Pilates e comentou que esta perdendo aluno novo porque o WhatsApp vive atrasado.",
+              "source": "user_message",
+              "evidence": [
+                "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+              ],
+              "max_length": 420
+            }
+          },
+          "evidence": [
+            "quanto custa isso?",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "safety": {
+          "guardrails": [
+            {
+              "name": "missing_official_price_data",
+              "outcome": "flagged"
+            }
+          ],
+          "uncertainty": "high"
+        },
+        "state_patch_proposal": {},
+        "sales_inbox_projection_proposal": {
+          "commercial_stage": "price_inquiry",
+          "last_intent": "price",
+          "next_action_hint": "Answer price with official plan data, then offer soft diagnostic if appropriate"
+        },
+        "delivery_proposal": {
+          "chunk_policy": "default",
+          "render_plan_only": true,
+          "evidence": [
+            "quanto custa isso?",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "confidence": "low",
+        "risks": [
+          "Nao tenho ainda dados oficiais de preco para responder com valor."
+        ],
+        "usage": {
+          "model": "gpt-5.4-mini",
+          "model_operations": 3,
+          "input_tokens": 13154,
+          "output_tokens": 1361,
+          "cost_usd": 0.013225,
+          "handoffs": 1,
+          "repairs": 1
+        }
+      },
+      "validator_result": {
+        "decision_id": "sdk_spike_turn_ideal_turn_03",
+        "status": "passed",
+        "errors": [],
+        "warnings": [],
+        "repair_attempt_count": 0,
+        "final_disposition": "accepted"
+      },
+      "rendered_preview": [
+        {
+          "text": "Oi, tudo bem?",
+          "template_id": "product.price_direct",
+          "channel": "whatsapp",
+          "sequence": 1
+        },
+        {
+          "text": "Preciso da base oficial de planos e precos para te passar o valor correto.",
+          "template_id": "product.price_direct",
+          "channel": "whatsapp",
+          "sequence": 2
+        },
+        {
+          "text": "Voce tem um studio de Pilates e comentou que esta perdendo aluno novo porque o WhatsApp vive atrasado.",
+          "template_id": "diagnostic.offer_soft",
+          "channel": "whatsapp",
+          "sequence": 3
+        },
+        {
+          "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+          "template_id": "diagnostic.offer_soft",
+          "channel": "whatsapp",
+          "sequence": 4
+        },
+        {
+          "text": "O que voce acha?",
+          "template_id": "diagnostic.offer_soft",
+          "channel": "whatsapp",
+          "sequence": 5
+        }
+      ],
+      "proposed_state_diff": {},
+      "proposed_sales_inbox_projection": {
+        "commercial_stage": "price_inquiry",
+        "last_intent": "price",
+        "next_action_hint": "Answer price with official plan data, then offer soft diagnostic if appropriate"
+      },
+      "usage": {
+        "model": "gpt-5.4-mini",
+        "model_operations": 3,
+        "input_tokens": 13154,
+        "output_tokens": 1361,
+        "cost_usd": 0.013225,
+        "handoffs": 1,
+        "repairs": 1
+      },
+      "status": "passed_structural",
+      "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+      "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+    }
+  ]
+}

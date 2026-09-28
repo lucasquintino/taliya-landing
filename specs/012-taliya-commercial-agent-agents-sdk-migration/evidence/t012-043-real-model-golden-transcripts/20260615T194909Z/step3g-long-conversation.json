@@ -1,0 +1,5161 @@
+{
+  "scenario_id": "step3g-long-conversation",
+  "title": "Golden RC-011-056/060 diagnostic question-by-question and long conversation",
+  "status": "failed",
+  "messages": [
+    "quanto custa?",
+    "pode fazer diagnostico",
+    "95 alunos ativos",
+    "whatsapp e follow-up dao mais trabalho",
+    "nao consigo ver quem precisa de retorno no dia",
+    "hoje fica em planilha e whatsapp",
+    "prioridade e vendas primeiro",
+    "quero resolver agora",
+    "me manda demo",
+    "achei caro",
+    "quero comecar, me coloca na lista",
+    "como funciona mesmo?",
+    "quero falar com alguem"
+  ],
+  "transcript": [
+    {
+      "role": "user",
+      "content": "quanto custa?"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?\n\nBase: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido para voce, estamos oferecendo um diagnostico gratuito para o seu studio. Assim voce entende se algum dos nossos planos te atenderia.\n\nCom poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "pode fazer diagnostico"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "assistant",
+      "content": "Perfeito, vamos fazer o diagnóstico."
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "content": "95 alunos ativos"
+    },
+    {
+      "role": "assistant",
+      "content": "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "content": "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos."
+    },
+    {
+      "role": "assistant",
+      "content": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+    },
+    {
+      "role": "user",
+      "content": "whatsapp e follow-up dao mais trabalho"
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar."
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?"
+    },
+    {
+      "role": "user",
+      "content": "nao consigo ver quem precisa de retorno no dia"
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia."
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+    },
+    {
+      "role": "user",
+      "content": "hoje fica em planilha e whatsapp"
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi — hoje o controle fica dividido entre planilha e WhatsApp.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi — hoje o controle fica dividido entre planilha e WhatsApp."
+    },
+    {
+      "role": "assistant",
+      "content": "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+    },
+    {
+      "role": "user",
+      "content": "prioridade e vendas primeiro"
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi — pra voce, o mais urgente agora e vender melhor primeiro.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "content": "Entendi — pra voce, o mais urgente agora e vender melhor primeiro."
+    },
+    {
+      "role": "assistant",
+      "content": "Voces estao buscando resolver isso agora ou so pesquisando por enquanto?"
+    },
+    {
+      "role": "user",
+      "content": "quero resolver agora"
+    },
+    {
+      "role": "assistant",
+      "content": "Perfeito. Ja da para te devolver uma leitura pratica. Vou organizar em partes.\n\nHoje o studio tem cerca de 95 alunos ativos, o WhatsApp e o follow-up dao mais trabalho, e o controle fica em planilha e WhatsApp, o que dificulta ver quem precisa de retorno no dia.\n\nPara o seu momento, faz mais sentido organizar primeiro o fluxo de vendas e retorno, para nao perder contato com quem ja demonstrou interesse."
+    },
+    {
+      "role": "assistant",
+      "content": "O primeiro passo e centralizar os retornos do dia para sua equipe conseguir agir mais rapido nas conversas que estao quentes.\n\nAgente Atendimento e vendas: ajuda com Interessados, aulas experimentais, proximos passos e follow-up ficam organizados.. Na pratica: A equipe enxerga o que precisa resolver primeiro.."
+    },
+    {
+      "role": "assistant",
+      "content": "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Essencial (R$ 497/mes).\n\nComo eu ainda nao tinha te enviado a demonstracao. Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+    },
+    {
+      "role": "user",
+      "content": "me manda demo"
+    },
+    {
+      "role": "assistant",
+      "content": "Ver demonstracao: https://www.taliya.com.br/pilates/planos/demonstracao"
+    },
+    {
+      "role": "assistant",
+      "content": "Depois que voce olhar, retorna aqui se fez sentido pra voce, ou se nao entendeu alguma coisa, pode ser?"
+    },
+    {
+      "role": "user",
+      "content": "achei caro"
+    },
+    {
+      "role": "assistant",
+      "content": "Entendo. E um valor para olhar com calma mesmo."
+    },
+    {
+      "role": "assistant",
+      "content": "O ponto e que a Taliya nao e so mais uma ferramenta: ela ajuda nas rotinas que fazem o studio girar, como WhatsApp, retorno de interessados, agenda, reposicoes, cobrancas e acompanhamento."
+    },
+    {
+      "role": "assistant",
+      "content": "Para decidir sem pressa, podemos usar o diagnostico gratuito para comparar prioridade e plano, ou deixar seu interesse na lista de espera se voce ja quiser seguir."
+    },
+    {
+      "role": "user",
+      "content": "quero comecar, me coloca na lista"
+    },
+    {
+      "role": "assistant",
+      "content": "Entendo. E um valor para olhar com calma mesmo."
+    },
+    {
+      "role": "assistant",
+      "content": "O ponto e que a Taliya nao e so mais uma ferramenta: ela ajuda nas rotinas que fazem o studio girar, como WhatsApp, retorno de interessados, agenda, reposicoes, cobrancas e acompanhamento."
+    },
+    {
+      "role": "assistant",
+      "content": "Para decidir sem pressa, podemos usar o diagnostico gratuito para comparar prioridade e plano, ou deixar seu interesse na lista de espera se voce ja quiser seguir."
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "user_text": "quanto custa?",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "answer_direct_product_question",
+      "template_ids": [
+        "product.price_direct",
+        "diagnostic.price_hook"
+      ],
+      "rendered_messages": [
+        "Oi, tudo bem?\n\nBase: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes.",
+        "Se fizer sentido para voce, estamos oferecendo um diagnostico gratuito para o seu studio. Assim voce entende se algum dos nossos planos te atenderia.\n\nCom poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+        "O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 2,
+      "cost_usd": 0.004197,
+      "next_state": "diagnostic_offered",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_offered",
+        "summary": "Estado comercial: diagnostic_offered",
+        "diagnostic_status": "offered",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "quanto custa?",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget"
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "entry",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_general_interest",
+            "answer_source_opening",
+            "offer_diagnostic_from_pain",
+            "answer_direct_product_question",
+            "start_requested_diagnostic",
+            "ask_name_at_diagnostic_entry",
+            "handoff_requested",
+            "clarify_ambiguous_opening"
+          ],
+          "eligible_template_groups": [
+            "opening.",
+            "diagnostic.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "HandoffCallItem",
+            "raw_item_type": "ResponseFunctionToolCall",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": "transfer_to_taliya_product_agent",
+            "handoff_target": null
+          },
+          {
+            "item_type": "HandoffOutputItem",
+            "raw_item_type": "dict",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": null,
+            "handoff_target": "taliya_product_agent"
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_0",
+          "turn_id": "turn_0",
+          "selected_action": "answer_direct_product_question",
+          "interpreted_intents": [
+            "price_question"
+          ],
+          "direct_question": "quanto custa?",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Answer the price question using official product facts.",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [
+            {
+              "kind": "unknown_number",
+              "raw_text": "custa",
+              "value_text": "price asked, no amount provided",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [],
+          "reply_goal": "Responder o preço solicitado e seguir com a condução da conversa.",
+          "confidence": "high",
+          "evidence": [
+            "\"quanto custa?\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "dec_0",
+            "turn_id": "turn_0",
+            "selected_action": "answer_direct_product_question",
+            "interpreted_intents": [
+              "price_question"
+            ],
+            "direct_question": "quanto custa?",
+            "direct_answer_obligations": [
+              {
+                "obligation": "Answer the price question using official product facts.",
+                "evidence": [
+                  "\"quanto custa?\""
+                ]
+              }
+            ],
+            "captured_slots": [],
+            "product_fact_keys_used": [
+              "prices"
+            ],
+            "numeric_interpretations": [
+              {
+                "kind": "unknown_number",
+                "raw_text": "custa",
+                "value_text": "price asked, no amount provided",
+                "evidence": [
+                  "\"quanto custa?\""
+                ]
+              }
+            ],
+            "diagnostic_intent": "none",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [],
+            "reply_goal": "Responder o preço solicitado e seguir com a condução da conversa.",
+            "confidence": "high",
+            "evidence": [
+              "\"quanto custa?\""
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_0",
+          "turn_id": "turn_0",
+          "selected_action": "answer_direct_product_question",
+          "interpreted_intents": [
+            "price_question"
+          ],
+          "direct_question": "quanto custa?",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Answer the price question using official product facts.",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [
+            {
+              "kind": "unknown_number",
+              "raw_text": "custa",
+              "value_text": "price asked, no amount provided",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [],
+          "reply_goal": "Responder o preço solicitado e seguir com a condução da conversa.",
+          "confidence": "high",
+          "evidence": [
+            "\"quanto custa?\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "answer_direct_product_question",
+          "previous_state": "new_lead",
+          "current_state": "product_question",
+          "next_state": "diagnostic_offered",
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_answer_direct_product_question",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook"
+          ],
+          "variables": {
+            "plan_price_summary": {
+              "kind": "long_text",
+              "value": "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes.",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "product_knowledge.plans"
+              ],
+              "max_length": 360
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Oi, tudo bem?\n\nBase: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes.",
+          "Se fizer sentido para voce, estamos oferecendo um diagnostico gratuito para o seu studio. Assim voce entende se algum dos nossos planos te atenderia.\n\nCom poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+          "O que voce acha?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_offered",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "diagnostic_offered",
+          "summary": "Estado comercial: diagnostic_offered",
+          "diagnostic_status": "offered",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "product.price_direct",
+              "diagnostic.price_hook"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "cost_usd": 0.004197
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 2,
+      "user_text": "pode fazer diagnostico",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "start_requested_diagnostic",
+      "template_ids": [
+        "diagnostic.start",
+        "diagnostic.ask_active_students"
+      ],
+      "rendered_messages": [
+        "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje.",
+        "Perfeito, vamos fazer o diagnóstico.",
+        "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 2,
+      "cost_usd": 0.004225,
+      "next_state": "diagnostic_waiting_answer",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_offered",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.start",
+            "diagnostic.ask_active_students"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "pode fazer diagnostico",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "diagnostic_offered",
+            "answered_obligations": [
+              "quanto custa?"
+            ]
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "entry",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_general_interest",
+            "answer_source_opening",
+            "offer_diagnostic_from_pain",
+            "answer_direct_product_question",
+            "start_requested_diagnostic",
+            "ask_name_at_diagnostic_entry",
+            "handoff_requested",
+            "clarify_ambiguous_opening"
+          ],
+          "eligible_template_groups": [
+            "opening.",
+            "diagnostic.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "HandoffCallItem",
+            "raw_item_type": "ResponseFunctionToolCall",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": "transfer_to_taliya_diagnostic_agent",
+            "handoff_target": null
+          },
+          {
+            "item_type": "HandoffOutputItem",
+            "raw_item_type": "dict",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": null,
+            "handoff_target": "taliya_diagnostic_agent"
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_001",
+          "turn_id": "turn_001",
+          "selected_action": "start_requested_diagnostic",
+          "interpreted_intents": [
+            "accepts_diagnostic",
+            "wants_to_start"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "start",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Perfeito, vamos fazer o diagnóstico.",
+              "evidence": [
+                "pode fazer diagnostico"
+              ]
+            }
+          ],
+          "reply_goal": "Iniciar o diagnóstico com uma confirmação curta e acolhedora.",
+          "confidence": "high",
+          "evidence": [
+            "pode fazer diagnostico"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "dec_001",
+            "turn_id": "turn_001",
+            "selected_action": "start_requested_diagnostic",
+            "interpreted_intents": [
+              "accepts_diagnostic",
+              "wants_to_start"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "start",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Perfeito, vamos fazer o diagnóstico.",
+                "evidence": [
+                  "pode fazer diagnostico"
+                ]
+              }
+            ],
+            "reply_goal": "Iniciar o diagnóstico com uma confirmação curta e acolhedora.",
+            "confidence": "high",
+            "evidence": [
+              "pode fazer diagnostico"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_001",
+          "turn_id": "turn_001",
+          "selected_action": "start_requested_diagnostic",
+          "interpreted_intents": [
+            "accepts_diagnostic",
+            "wants_to_start"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "start",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Perfeito, vamos fazer o diagnóstico.",
+              "evidence": [
+                "pode fazer diagnostico"
+              ]
+            }
+          ],
+          "reply_goal": "Iniciar o diagnóstico com uma confirmação curta e acolhedora.",
+          "confidence": "high",
+          "evidence": [
+            "pode fazer diagnostico"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "start_requested_diagnostic",
+          "previous_state": "diagnostic_offered",
+          "current_state": "diagnostic_requested",
+          "next_state": "diagnostic_waiting_answer",
+          "template_ids": [
+            "diagnostic.start",
+            "diagnostic.ask_active_students"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_start_requested_diagnostic",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "diagnostic.start",
+            "diagnostic.ask_active_students"
+          ],
+          "variables": {
+            "answer_feedback": {
+              "kind": "short_text",
+              "value": "Perfeito, vamos fazer o diagnóstico.",
+              "source": "user_message",
+              "evidence": [
+                "pode fazer diagnostico"
+              ],
+              "max_length": 180
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje.",
+          "Perfeito, vamos fazer o diagnóstico.",
+          "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_waiting_answer",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "diagnostic_waiting_answer",
+          "summary": "Estado comercial: diagnostic_offered",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "diagnostic.start",
+              "diagnostic.ask_active_students"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "cost_usd": 0.00422475
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 3,
+      "user_text": "95 alunos ativos",
+      "mode": "diagnostic",
+      "starting_agent": "taliya_diagnostic_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_main_pain"
+      ],
+      "rendered_messages": [
+        "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+        "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos.",
+        "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 1,
+      "cost_usd": 0.002866,
+      "next_state": "diagnostic_waiting_answer",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_main_pain"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "95 alunos ativos",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "diagnostic_waiting_answer",
+            "answered_obligations": [
+              "quanto custa?"
+            ]
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "diagnostic",
+          "pending_question_key": "active_students_or_size",
+          "allowed_actions": [
+            "capture_pending_diagnostic_answer",
+            "answer_direct_question_then_continue_diagnostic",
+            "ask_next_diagnostic_question",
+            "clarify_ambiguous_diagnostic_answer",
+            "respect_diagnostic_refusal",
+            "handoff_requested"
+          ],
+          "eligible_template_groups": [
+            "diagnostic.",
+            "product.",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [
+            "complete_diagnostic"
+          ],
+          "required_obligations": [
+            "resume the pending diagnostic question (active_students_or_size) after answering any direct question"
+          ],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_diagnostic_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_1",
+          "turn_id": "turn_1",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "answers_pending_diagnostic_question"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "active_students_or_size",
+              "value_text": "95 alunos ativos",
+              "status": "answered",
+              "evidence": [
+                "95 alunos ativos"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [
+            {
+              "kind": "student_count",
+              "raw_text": "95",
+              "value_text": "95",
+              "evidence": [
+                "95 alunos ativos"
+              ]
+            }
+          ],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos.",
+              "evidence": [
+                "95 alunos ativos"
+              ]
+            }
+          ],
+          "reply_goal": "Confirmar o porte do studio e seguir para a próxima pergunta do diagnóstico.",
+          "confidence": "high",
+          "evidence": [
+            "95 alunos ativos"
+          ],
+          "needs_clarification": false,
+          "repair_hints": [
+            "Faça a próxima pergunta do diagnóstico, mantendo o tom curto e objetivo."
+          ]
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "dec_1",
+            "turn_id": "turn_1",
+            "selected_action": "capture_pending_diagnostic_answer",
+            "interpreted_intents": [
+              "answers_pending_diagnostic_question"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [
+              {
+                "key": "active_students_or_size",
+                "value_text": "95 alunos ativos",
+                "status": "answered",
+                "evidence": [
+                  "95 alunos ativos"
+                ]
+              }
+            ],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [
+              {
+                "kind": "student_count",
+                "raw_text": "95",
+                "value_text": "95",
+                "evidence": [
+                  "95 alunos ativos"
+                ]
+              }
+            ],
+            "diagnostic_intent": "capture_answer",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos.",
+                "evidence": [
+                  "95 alunos ativos"
+                ]
+              }
+            ],
+            "reply_goal": "Confirmar o porte do studio e seguir para a próxima pergunta do diagnóstico.",
+            "confidence": "high",
+            "evidence": [
+              "95 alunos ativos"
+            ],
+            "needs_clarification": false,
+            "repair_hints": [
+              "Faça a próxima pergunta do diagnóstico, mantendo o tom curto e objetivo."
+            ]
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_1",
+          "turn_id": "turn_1",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "answers_pending_diagnostic_question"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "active_students_or_size",
+              "value_text": "95 alunos ativos",
+              "status": "answered",
+              "evidence": [
+                "95 alunos ativos"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [
+            {
+              "kind": "student_count",
+              "raw_text": "95",
+              "value_text": "95",
+              "evidence": [
+                "95 alunos ativos"
+              ]
+            }
+          ],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos.",
+              "evidence": [
+                "95 alunos ativos"
+              ]
+            }
+          ],
+          "reply_goal": "Confirmar o porte do studio e seguir para a próxima pergunta do diagnóstico.",
+          "confidence": "high",
+          "evidence": [
+            "95 alunos ativos"
+          ],
+          "needs_clarification": false,
+          "repair_hints": [
+            "Faça a próxima pergunta do diagnóstico, mantendo o tom curto e objetivo."
+          ]
+        },
+        "compiler": {
+          "selected_action": "capture_pending_diagnostic_answer",
+          "previous_state": "diagnostic_waiting_answer",
+          "current_state": "diagnostic_in_progress",
+          "next_state": "diagnostic_waiting_answer",
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_main_pain"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_capture_pending_diagnostic_answer",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_main_pain"
+          ],
+          "variables": {
+            "answer_feedback": {
+              "kind": "short_text",
+              "value": "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos.",
+              "source": "user_message",
+              "evidence": [
+                "95 alunos ativos"
+              ],
+              "max_length": 180
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+          "Perfeito, entendi que hoje voce atende cerca de 95 alunos ativos.",
+          "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_waiting_answer",
+          "state_patch": {},
+          "ledger_updates": [
+            {
+              "question_key": "active_students_or_size",
+              "status": "answered",
+              "answer_value": "95 alunos ativos",
+              "evidence": [
+                "95 alunos ativos"
+              ]
+            }
+          ]
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "diagnostic_waiting_answer",
+          "summary": "Estado comercial: diagnostic_waiting_answer",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "diagnostic.partial_progress",
+              "diagnostic.ask_main_pain"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 1,
+          "cost_usd": 0.00286575
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 4,
+      "user_text": "whatsapp e follow-up dao mais trabalho",
+      "mode": "diagnostic",
+      "starting_agent": "taliya_diagnostic_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_pain_detail"
+      ],
+      "rendered_messages": [
+        "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+        "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar.",
+        "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 1,
+      "cost_usd": 0.002973,
+      "next_state": "diagnostic_waiting_answer",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_pain_detail"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "whatsapp e follow-up dao mais trabalho",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "diagnostic_waiting_answer",
+            "answered_obligations": [
+              "quanto custa?"
+            ],
+            "diagnostic": {
+              "status": "in_progress",
+              "ledger": {
+                "active_students_or_size": {
+                  "status": "answered",
+                  "answer_value": "95 alunos ativos"
+                },
+                "main_pain": {
+                  "status": "answered",
+                  "answer_value": "WhatsApp e follow-up dão mais trabalho"
+                }
+              }
+            }
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "diagnostic",
+          "pending_question_key": "main_pain",
+          "allowed_actions": [
+            "capture_pending_diagnostic_answer",
+            "answer_direct_question_then_continue_diagnostic",
+            "ask_next_diagnostic_question",
+            "clarify_ambiguous_diagnostic_answer",
+            "respect_diagnostic_refusal",
+            "handoff_requested"
+          ],
+          "eligible_template_groups": [
+            "diagnostic.",
+            "product.",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [
+            "complete_diagnostic"
+          ],
+          "required_obligations": [
+            "resume the pending diagnostic question (main_pain) after answering any direct question"
+          ],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_diagnostic_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_7",
+          "turn_id": "turn_7",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "diagnostic_answer"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "main_pain",
+              "value_text": "WhatsApp e follow-up dão mais trabalho",
+              "status": "answered",
+              "evidence": [
+                "\"whatsapp e follow-up dao mais trabalho\""
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar.",
+              "evidence": [
+                "\"whatsapp e follow-up dao mais trabalho\""
+              ]
+            }
+          ],
+          "reply_goal": "Registrar a dor principal e reconhecer o volume de atendimento no WhatsApp sem ainda fechar o diagnóstico.",
+          "confidence": "high",
+          "evidence": [
+            "\"whatsapp e follow-up dao mais trabalho\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "decision_7",
+            "turn_id": "turn_7",
+            "selected_action": "capture_pending_diagnostic_answer",
+            "interpreted_intents": [
+              "diagnostic_answer"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [
+              {
+                "key": "main_pain",
+                "value_text": "WhatsApp e follow-up dão mais trabalho",
+                "status": "answered",
+                "evidence": [
+                  "\"whatsapp e follow-up dao mais trabalho\""
+                ]
+              }
+            ],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "capture_answer",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar.",
+                "evidence": [
+                  "\"whatsapp e follow-up dao mais trabalho\""
+                ]
+              }
+            ],
+            "reply_goal": "Registrar a dor principal e reconhecer o volume de atendimento no WhatsApp sem ainda fechar o diagnóstico.",
+            "confidence": "high",
+            "evidence": [
+              "\"whatsapp e follow-up dao mais trabalho\""
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_7",
+          "turn_id": "turn_7",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "diagnostic_answer"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "main_pain",
+              "value_text": "WhatsApp e follow-up dão mais trabalho",
+              "status": "answered",
+              "evidence": [
+                "\"whatsapp e follow-up dao mais trabalho\""
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar.",
+              "evidence": [
+                "\"whatsapp e follow-up dao mais trabalho\""
+              ]
+            }
+          ],
+          "reply_goal": "Registrar a dor principal e reconhecer o volume de atendimento no WhatsApp sem ainda fechar o diagnóstico.",
+          "confidence": "high",
+          "evidence": [
+            "\"whatsapp e follow-up dao mais trabalho\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "capture_pending_diagnostic_answer",
+          "previous_state": "diagnostic_waiting_answer",
+          "current_state": "diagnostic_in_progress",
+          "next_state": "diagnostic_waiting_answer",
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_pain_detail"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_capture_pending_diagnostic_answer",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_pain_detail"
+          ],
+          "variables": {
+            "answer_feedback": {
+              "kind": "short_text",
+              "value": "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar.",
+              "source": "user_message",
+              "evidence": [
+                "\"whatsapp e follow-up dao mais trabalho\""
+              ],
+              "max_length": 180
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+          "Entendi — hoje o que mais pesa para voce e dar conta das conversas no WhatsApp e nao deixar o follow-up esfriar.",
+          "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_waiting_answer",
+          "state_patch": {},
+          "ledger_updates": [
+            {
+              "question_key": "main_pain",
+              "status": "answered",
+              "answer_value": "WhatsApp e follow-up dão mais trabalho",
+              "evidence": [
+                "\"whatsapp e follow-up dao mais trabalho\""
+              ]
+            }
+          ]
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "diagnostic_waiting_answer",
+          "summary": "Estado comercial: diagnostic_waiting_answer",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "diagnostic.partial_progress",
+              "diagnostic.ask_pain_detail"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 1,
+          "cost_usd": 0.002973
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 5,
+      "user_text": "nao consigo ver quem precisa de retorno no dia",
+      "mode": "diagnostic",
+      "starting_agent": "taliya_diagnostic_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_current_process"
+      ],
+      "rendered_messages": [
+        "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+        "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia.",
+        "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 1,
+      "model_operations": 2,
+      "cost_usd": 0.006607,
+      "next_state": "diagnostic_waiting_answer",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_current_process"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "nao consigo ver quem precisa de retorno no dia",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "diagnostic_waiting_answer",
+            "answered_obligations": [
+              "quanto custa?"
+            ],
+            "diagnostic": {
+              "status": "in_progress",
+              "ledger": {
+                "active_students_or_size": {
+                  "status": "answered",
+                  "answer_value": "95 alunos ativos"
+                },
+                "main_pain": {
+                  "status": "answered",
+                  "answer_value": "WhatsApp e follow-up dão mais trabalho"
+                },
+                "pain_detail": {
+                  "status": "answered",
+                  "answer_value": "não consigo ver quem precisa de retorno no dia"
+                }
+              }
+            }
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "diagnostic",
+          "pending_question_key": "pain_detail",
+          "allowed_actions": [
+            "capture_pending_diagnostic_answer",
+            "answer_direct_question_then_continue_diagnostic",
+            "ask_next_diagnostic_question",
+            "clarify_ambiguous_diagnostic_answer",
+            "respect_diagnostic_refusal",
+            "handoff_requested"
+          ],
+          "eligible_template_groups": [
+            "diagnostic.",
+            "product.",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [
+            "complete_diagnostic"
+          ],
+          "required_obligations": [
+            "resume the pending diagnostic question (pain_detail) after answering any direct question"
+          ],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_diagnostic_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_1",
+          "turn_id": "turn_1",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "diagnostic_answer"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "pain_detail",
+              "value_text": "não consigo ver quem precisa de retorno no dia",
+              "status": "answered",
+              "evidence": [
+                "\"nao consigo ver quem precisa de retorno no dia\""
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia.",
+              "evidence": [
+                "\"nao consigo ver quem precisa de retorno no dia\""
+              ]
+            }
+          ],
+          "reply_goal": "Acknowledge the pain_detail answer and continue the diagnostic without repeating the same question.",
+          "confidence": "high",
+          "evidence": [
+            "\"nao consigo ver quem precisa de retorno no dia\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "decision_1",
+            "turn_id": "turn_1",
+            "selected_action": "capture_pending_diagnostic_answer",
+            "interpreted_intents": [
+              "diagnostic_answer"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [
+              {
+                "key": "pain_detail",
+                "value_text": "não consigo ver quem precisa de retorno no dia",
+                "status": "answered",
+                "evidence": [
+                  "\"nao consigo ver quem precisa de retorno no dia\""
+                ]
+              }
+            ],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "capture_answer",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia.",
+                "evidence": [
+                  "\"nao consigo ver quem precisa de retorno no dia\""
+                ]
+              }
+            ],
+            "reply_goal": "Acknowledge the pain_detail answer and continue the diagnostic without repeating the same question.",
+            "confidence": "high",
+            "evidence": [
+              "\"nao consigo ver quem precisa de retorno no dia\""
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_1",
+          "turn_id": "turn_1",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "diagnostic_answer"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "pain_detail",
+              "value_text": "não consigo ver quem precisa de retorno no dia",
+              "status": "answered",
+              "evidence": [
+                "\"nao consigo ver quem precisa de retorno no dia\""
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia.",
+              "evidence": [
+                "\"nao consigo ver quem precisa de retorno no dia\""
+              ]
+            }
+          ],
+          "reply_goal": "Acknowledge the pain_detail answer and continue the diagnostic without repeating the same question.",
+          "confidence": "high",
+          "evidence": [
+            "\"nao consigo ver quem precisa de retorno no dia\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "capture_pending_diagnostic_answer",
+          "previous_state": "diagnostic_waiting_answer",
+          "current_state": "diagnostic_in_progress",
+          "next_state": "diagnostic_waiting_answer",
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_current_process"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_capture_pending_diagnostic_answer",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 1,
+          "validator_feedback": [
+            {
+              "code": "compile_repeated_pending_question_without_capture",
+              "message": "compiler blocked the turn: compile_repeated_pending_question_without_capture"
+            }
+          ],
+          "repair_sdk_run_items": [
+            {
+              "item_type": "MessageOutputItem",
+              "raw_item_type": "ResponseOutputMessage",
+              "agent_name": "taliya_diagnostic_agent",
+              "tool_name": null,
+              "handoff_target": null
+            }
+          ]
+        },
+        "render_plan": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_current_process"
+          ],
+          "variables": {
+            "answer_feedback": {
+              "kind": "short_text",
+              "value": "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia.",
+              "source": "user_message",
+              "evidence": [
+                "\"nao consigo ver quem precisa de retorno no dia\""
+              ],
+              "max_length": 180
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+          "Entendi — hoje fica difícil enxergar quem ainda precisa de retorno no dia.",
+          "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_waiting_answer",
+          "state_patch": {},
+          "ledger_updates": [
+            {
+              "question_key": "pain_detail",
+              "status": "answered",
+              "answer_value": "não consigo ver quem precisa de retorno no dia",
+              "evidence": [
+                "\"nao consigo ver quem precisa de retorno no dia\""
+              ]
+            }
+          ]
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "diagnostic_waiting_answer",
+          "summary": "Estado comercial: diagnostic_waiting_answer",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "diagnostic.partial_progress",
+              "diagnostic.ask_current_process"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "cost_usd": 0.0066075
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 6,
+      "user_text": "hoje fica em planilha e whatsapp",
+      "mode": "diagnostic",
+      "starting_agent": "taliya_diagnostic_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_priority"
+      ],
+      "rendered_messages": [
+        "Entendi — hoje o controle fica dividido entre planilha e WhatsApp.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+        "Entendi — hoje o controle fica dividido entre planilha e WhatsApp.",
+        "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 1,
+      "cost_usd": 0.004333,
+      "next_state": "diagnostic_waiting_answer",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_priority"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "hoje fica em planilha e whatsapp",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "diagnostic_waiting_answer",
+            "answered_obligations": [
+              "quanto custa?"
+            ],
+            "diagnostic": {
+              "status": "in_progress",
+              "ledger": {
+                "active_students_or_size": {
+                  "status": "answered",
+                  "answer_value": "95 alunos ativos"
+                },
+                "main_pain": {
+                  "status": "answered",
+                  "answer_value": "WhatsApp e follow-up dão mais trabalho"
+                },
+                "pain_detail": {
+                  "status": "answered",
+                  "answer_value": "não consigo ver quem precisa de retorno no dia"
+                },
+                "current_process": {
+                  "status": "answered",
+                  "answer_value": "em planilha e WhatsApp"
+                }
+              }
+            }
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "diagnostic",
+          "pending_question_key": "current_process",
+          "allowed_actions": [
+            "capture_pending_diagnostic_answer",
+            "answer_direct_question_then_continue_diagnostic",
+            "ask_next_diagnostic_question",
+            "clarify_ambiguous_diagnostic_answer",
+            "respect_diagnostic_refusal",
+            "handoff_requested"
+          ],
+          "eligible_template_groups": [
+            "diagnostic.",
+            "product.",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [
+            "complete_diagnostic"
+          ],
+          "required_obligations": [
+            "resume the pending diagnostic question (current_process) after answering any direct question"
+          ],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_diagnostic_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "handoff_target": null
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_1",
+          "turn_id": "turn_1",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "answers_pending_diagnostic_question"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "current_process",
+              "value_text": "em planilha e WhatsApp",
+              "status": "answered",
+              "evidence": [
+                "\"hoje fica em planilha e whatsapp\""
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — hoje o controle fica dividido entre planilha e WhatsApp.",
+              "evidence": [
+                "\"hoje fica em planilha e whatsapp\""
+              ]
+            }
+          ],
+          "reply_goal": "Registrar como o studio acompanha os retornos hoje e preparar a próxima pergunta do diagnóstico.",
+          "confidence": "high",
+          "evidence": [
+            "\"hoje fica em planilha e whatsapp\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": [
+            "Ask the next diagnostic question, grounded in the current workflow context."
+          ]
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "decision_1",
+            "turn_id": "turn_1",
+            "selected_action": "capture_pending_diagnostic_answer",
+            "interpreted_intents": [
+              "answers_pending_diagnostic_question"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [
+              {
+                "key": "current_process",
+                "value_text": "em planilha e WhatsApp",
+                "status": "answered",
+                "evidence": [
+                  "\"hoje fica em planilha e whatsapp\""
+                ]
+              }
+            ],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "capture_answer",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Entendi — hoje o controle fica dividido entre planilha e WhatsApp.",
+                "evidence": [
+                  "\"hoje fica em planilha e whatsapp\""
+                ]
+              }
+            ],
+            "reply_goal": "Registrar como o studio acompanha os retornos hoje e preparar a próxima pergunta do diagnóstico.",
+            "confidence": "high",
+            "evidence": [
+              "\"hoje fica em planilha e whatsapp\""
+            ],
+            "needs_clarification": false,
+            "repair_hints": [
+              "Ask the next diagnostic question, grounded in the current workflow context."
+            ]
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_1",
+          "turn_id": "turn_1",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "answers_pending_diagnostic_question"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "current_process",
+              "value_text": "em planilha e WhatsApp",
+              "status": "answered",
+              "evidence": [
+                "\"hoje fica em planilha e whatsapp\""
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — hoje o controle fica dividido entre planilha e WhatsApp.",
+              "evidence": [
+                "\"hoje fica em planilha e whatsapp\""
+              ]
+            }
+          ],
+          "reply_goal": "Registrar como o studio acompanha os retornos hoje e preparar a próxima pergunta do diagnóstico.",
+          "confidence": "high",
+          "evidence": [
+            "\"hoje fica em planilha e whatsapp\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": [
+            "Ask the next diagnostic question, grounded in the current workflow context."
+          ]
+        },
+        "compiler": {
+          "selected_action": "capture_pending_diagnostic_answer",
+          "previous_state": "diagnostic_waiting_answer",
+          "current_state": "diagnostic_in_progress",
+          "next_state": "diagnostic_waiting_answer",
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_priority"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_capture_pending_diagnostic_answer",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_priority"
+          ],
+          "variables": {
+            "answer_feedback": {
+              "kind": "short_text",
+              "value": "Entendi — hoje o controle fica dividido entre planilha e WhatsApp.",
+              "source": "user_message",
+              "evidence": [
+                "\"hoje fica em planilha e whatsapp\""
+              ],
+              "max_length": 180
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Entendi — hoje o controle fica dividido entre planilha e WhatsApp.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+          "Entendi — hoje o controle fica dividido entre planilha e WhatsApp.",
+          "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_waiting_answer",
+          "state_patch": {},
+          "ledger_updates": [
+            {
+              "question_key": "current_process",
+              "status": "answered",
+              "answer_value": "em planilha e WhatsApp",
+              "evidence": [
+                "\"hoje fica em planilha e whatsapp\""
+              ]
+            }
+          ]
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "diagnostic_waiting_answer",
+          "summary": "Estado comercial: diagnostic_waiting_answer",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "diagnostic.partial_progress",
+              "diagnostic.ask_priority"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 1,
+          "cost_usd": 0.00433275
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 7,
+      "user_text": "prioridade e vendas primeiro",
+      "mode": "diagnostic",
+      "starting_agent": "taliya_diagnostic_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_urgency"
+      ],
+      "rendered_messages": [
+        "Entendi — pra voce, o mais urgente agora e vender melhor primeiro.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+        "Entendi — pra voce, o mais urgente agora e vender melhor primeiro.",
+        "Voces estao buscando resolver isso agora ou so pesquisando por enquanto?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 1,
+      "cost_usd": 0.003086,
+      "next_state": "diagnostic_waiting_answer",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_urgency"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "prioridade e vendas primeiro",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "diagnostic_waiting_answer",
+            "answered_obligations": [
+              "quanto custa?"
+            ],
+            "diagnostic": {
+              "status": "in_progress",
+              "ledger": {
+                "active_students_or_size": {
+                  "status": "answered",
+                  "answer_value": "95 alunos ativos"
+                },
+                "main_pain": {
+                  "status": "answered",
+                  "answer_value": "WhatsApp e follow-up dão mais trabalho"
+                },
+                "pain_detail": {
+                  "status": "answered",
+                  "answer_value": "não consigo ver quem precisa de retorno no dia"
+                },
+                "current_process": {
+                  "status": "answered",
+                  "answer_value": "em planilha e WhatsApp"
+                },
+                "priority": {
+                  "status": "answered",
+                  "answer_value": "vendas primeiro"
+                }
+              }
+            }
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "diagnostic",
+          "pending_question_key": "priority",
+          "allowed_actions": [
+            "capture_pending_diagnostic_answer",
+            "answer_direct_question_then_continue_diagnostic",
+            "ask_next_diagnostic_question",
+            "clarify_ambiguous_diagnostic_answer",
+            "respect_diagnostic_refusal",
+            "handoff_requested"
+          ],
+          "eligible_template_groups": [
+            "diagnostic.",
+            "product.",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [
+            "complete_diagnostic"
+          ],
+          "required_obligations": [
+            "resume the pending diagnostic question (priority) after answering any direct question"
+          ],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_diagnostic_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_001",
+          "turn_id": "turn_001",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "diagnostic_answer"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "priority",
+              "value_text": "vendas primeiro",
+              "status": "answered",
+              "evidence": [
+                "prioridade e vendas primeiro"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — pra voce, o mais urgente agora e vender melhor primeiro.",
+              "evidence": [
+                "prioridade e vendas primeiro"
+              ]
+            }
+          ],
+          "reply_goal": "Registrar a prioridade do studio como vendas primeiro e seguir o diagnóstico.",
+          "confidence": "high",
+          "evidence": [
+            "prioridade e vendas primeiro"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "decision_001",
+            "turn_id": "turn_001",
+            "selected_action": "capture_pending_diagnostic_answer",
+            "interpreted_intents": [
+              "diagnostic_answer"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [
+              {
+                "key": "priority",
+                "value_text": "vendas primeiro",
+                "status": "answered",
+                "evidence": [
+                  "prioridade e vendas primeiro"
+                ]
+              }
+            ],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "capture_answer",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Entendi — pra voce, o mais urgente agora e vender melhor primeiro.",
+                "evidence": [
+                  "prioridade e vendas primeiro"
+                ]
+              }
+            ],
+            "reply_goal": "Registrar a prioridade do studio como vendas primeiro e seguir o diagnóstico.",
+            "confidence": "high",
+            "evidence": [
+              "prioridade e vendas primeiro"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_001",
+          "turn_id": "turn_001",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "interpreted_intents": [
+            "diagnostic_answer"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "priority",
+              "value_text": "vendas primeiro",
+              "status": "answered",
+              "evidence": [
+                "prioridade e vendas primeiro"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "capture_answer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — pra voce, o mais urgente agora e vender melhor primeiro.",
+              "evidence": [
+                "prioridade e vendas primeiro"
+              ]
+            }
+          ],
+          "reply_goal": "Registrar a prioridade do studio como vendas primeiro e seguir o diagnóstico.",
+          "confidence": "high",
+          "evidence": [
+            "prioridade e vendas primeiro"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "capture_pending_diagnostic_answer",
+          "previous_state": "diagnostic_waiting_answer",
+          "current_state": "diagnostic_in_progress",
+          "next_state": "diagnostic_waiting_answer",
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_urgency"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_capture_pending_diagnostic_answer",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_urgency"
+          ],
+          "variables": {
+            "answer_feedback": {
+              "kind": "short_text",
+              "value": "Entendi — pra voce, o mais urgente agora e vender melhor primeiro.",
+              "source": "user_message",
+              "evidence": [
+                "prioridade e vendas primeiro"
+              ],
+              "max_length": 180
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Entendi — pra voce, o mais urgente agora e vender melhor primeiro.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+          "Entendi — pra voce, o mais urgente agora e vender melhor primeiro.",
+          "Voces estao buscando resolver isso agora ou so pesquisando por enquanto?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_waiting_answer",
+          "state_patch": {},
+          "ledger_updates": [
+            {
+              "question_key": "priority",
+              "status": "answered",
+              "answer_value": "vendas primeiro",
+              "evidence": [
+                "prioridade e vendas primeiro"
+              ]
+            }
+          ]
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "diagnostic_waiting_answer",
+          "summary": "Estado comercial: diagnostic_waiting_answer",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "diagnostic.partial_progress",
+              "diagnostic.ask_urgency"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 1,
+          "cost_usd": 0.0030855
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 8,
+      "user_text": "quero resolver agora",
+      "mode": "diagnostic",
+      "starting_agent": "taliya_diagnostic_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "complete_diagnostic",
+      "template_ids": [
+        "diagnostic.deliver_hold",
+        "diagnostic.deliver_context",
+        "diagnostic.deliver_crm_base",
+        "diagnostic.deliver_operational_step",
+        "diagnostic.deliver_agent_recommendation",
+        "diagnostic.deliver_plan_recommendation",
+        "diagnostic.deliver_demo_not_offered"
+      ],
+      "rendered_messages": [
+        "Perfeito. Ja da para te devolver uma leitura pratica. Vou organizar em partes.\n\nHoje o studio tem cerca de 95 alunos ativos, o WhatsApp e o follow-up dao mais trabalho, e o controle fica em planilha e WhatsApp, o que dificulta ver quem precisa de retorno no dia.\n\nPara o seu momento, faz mais sentido organizar primeiro o fluxo de vendas e retorno, para nao perder contato com quem ja demonstrou interesse.",
+        "O primeiro passo e centralizar os retornos do dia para sua equipe conseguir agir mais rapido nas conversas que estao quentes.\n\nAgente Atendimento e vendas: ajuda com Interessados, aulas experimentais, proximos passos e follow-up ficam organizados.. Na pratica: A equipe enxerga o que precisa resolver primeiro..",
+        "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Essencial (R$ 497/mes).\n\nComo eu ainda nao tinha te enviado a demonstracao. Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 1,
+      "cost_usd": 0.00426,
+      "next_state": "diagnostic_delivered",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_delivered",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "completed",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.deliver_hold",
+            "diagnostic.deliver_context",
+            "diagnostic.deliver_crm_base",
+            "diagnostic.deliver_operational_step",
+            "diagnostic.deliver_agent_recommendation",
+            "diagnostic.deliver_plan_recommendation",
+            "diagnostic.deliver_demo_not_offered"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "review_completed_diagnostic",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "not_offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "quero resolver agora",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "diagnostic_waiting_answer",
+            "answered_obligations": [
+              "quanto custa?"
+            ],
+            "diagnostic": {
+              "status": "delivered",
+              "ledger": {
+                "active_students_or_size": {
+                  "status": "answered",
+                  "answer_value": "95 alunos ativos"
+                },
+                "main_pain": {
+                  "status": "answered",
+                  "answer_value": "WhatsApp e follow-up dão mais trabalho"
+                },
+                "pain_detail": {
+                  "status": "answered",
+                  "answer_value": "não consigo ver quem precisa de retorno no dia"
+                },
+                "current_process": {
+                  "status": "answered",
+                  "answer_value": "em planilha e WhatsApp"
+                },
+                "priority": {
+                  "status": "answered",
+                  "answer_value": "vendas primeiro"
+                },
+                "urgency": {
+                  "status": "answered",
+                  "answer_value": "quero resolver agora"
+                }
+              },
+              "final_fields": {
+                "final_plan_or_range": "Essencial (R$ 497/mes)",
+                "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+              }
+            }
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "diagnostic",
+          "pending_question_key": "urgency",
+          "allowed_actions": [
+            "capture_pending_diagnostic_answer",
+            "answer_direct_question_then_continue_diagnostic",
+            "ask_next_diagnostic_question",
+            "complete_diagnostic",
+            "clarify_ambiguous_diagnostic_answer",
+            "respect_diagnostic_refusal",
+            "handoff_requested"
+          ],
+          "eligible_template_groups": [
+            "diagnostic.",
+            "product.",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [
+            "resume the pending diagnostic question (urgency) after answering any direct question"
+          ],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_diagnostic_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_1",
+          "turn_id": "turn_1",
+          "selected_action": "complete_diagnostic",
+          "interpreted_intents": [
+            "diagnostic_answer",
+            "urgency_confirmed"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "urgency",
+              "value_text": "quero resolver agora",
+              "status": "answered",
+              "evidence": [
+                "quero resolver agora"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "complete",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — voce quer resolver isso agora.",
+              "evidence": [
+                "quero resolver agora"
+              ]
+            },
+            {
+              "name": "pain_context_human",
+              "value": "Hoje o studio tem cerca de 95 alunos ativos, o WhatsApp e o follow-up dao mais trabalho, e o controle fica em planilha e WhatsApp, o que dificulta ver quem precisa de retorno no dia.",
+              "evidence": [
+                "95 alunos ativos",
+                "whatsapp e follow-up dao mais trabalho",
+                "nao consigo ver quem precisa de retorno no dia",
+                "hoje fica em planilha e whatsapp"
+              ]
+            },
+            {
+              "name": "crm_base_recommendation",
+              "value": "Para o seu momento, faz mais sentido organizar primeiro o fluxo de vendas e retorno, para nao perder contato com quem ja demonstrou interesse.",
+              "evidence": [
+                "prioridade e vendas primeiro",
+                "whatsapp e follow-up dao mais trabalho"
+              ]
+            },
+            {
+              "name": "operational_first_step",
+              "value": "O primeiro passo e centralizar os retornos do dia para sua equipe conseguir agir mais rapido nas conversas que estao quentes.",
+              "evidence": [
+                "nao consigo ver quem precisa de retorno no dia",
+                "hoje fica em planilha e whatsapp"
+              ]
+            }
+          ],
+          "reply_goal": "Encerrar o diagnostico com leitura do contexto e orientar o proximo passo comercial.",
+          "confidence": "high",
+          "evidence": [
+            "quero resolver agora",
+            "95 alunos ativos",
+            "whatsapp e follow-up dao mais trabalho",
+            "nao consigo ver quem precisa de retorno no dia",
+            "hoje fica em planilha e whatsapp",
+            "prioridade e vendas primeiro"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "dec_1",
+            "turn_id": "turn_1",
+            "selected_action": "complete_diagnostic",
+            "interpreted_intents": [
+              "diagnostic_answer",
+              "urgency_confirmed"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [
+              {
+                "key": "urgency",
+                "value_text": "quero resolver agora",
+                "status": "answered",
+                "evidence": [
+                  "quero resolver agora"
+                ]
+              }
+            ],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "complete",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Entendi — voce quer resolver isso agora.",
+                "evidence": [
+                  "quero resolver agora"
+                ]
+              },
+              {
+                "name": "pain_context_human",
+                "value": "Hoje o studio tem cerca de 95 alunos ativos, o WhatsApp e o follow-up dao mais trabalho, e o controle fica em planilha e WhatsApp, o que dificulta ver quem precisa de retorno no dia.",
+                "evidence": [
+                  "95 alunos ativos",
+                  "whatsapp e follow-up dao mais trabalho",
+                  "nao consigo ver quem precisa de retorno no dia",
+                  "hoje fica em planilha e whatsapp"
+                ]
+              },
+              {
+                "name": "crm_base_recommendation",
+                "value": "Para o seu momento, faz mais sentido organizar primeiro o fluxo de vendas e retorno, para nao perder contato com quem ja demonstrou interesse.",
+                "evidence": [
+                  "prioridade e vendas primeiro",
+                  "whatsapp e follow-up dao mais trabalho"
+                ]
+              },
+              {
+                "name": "operational_first_step",
+                "value": "O primeiro passo e centralizar os retornos do dia para sua equipe conseguir agir mais rapido nas conversas que estao quentes.",
+                "evidence": [
+                  "nao consigo ver quem precisa de retorno no dia",
+                  "hoje fica em planilha e whatsapp"
+                ]
+              }
+            ],
+            "reply_goal": "Encerrar o diagnostico com leitura do contexto e orientar o proximo passo comercial.",
+            "confidence": "high",
+            "evidence": [
+              "quero resolver agora",
+              "95 alunos ativos",
+              "whatsapp e follow-up dao mais trabalho",
+              "nao consigo ver quem precisa de retorno no dia",
+              "hoje fica em planilha e whatsapp",
+              "prioridade e vendas primeiro"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_1",
+          "turn_id": "turn_1",
+          "selected_action": "complete_diagnostic",
+          "interpreted_intents": [
+            "diagnostic_answer",
+            "urgency_confirmed"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "urgency",
+              "value_text": "quero resolver agora",
+              "status": "answered",
+              "evidence": [
+                "quero resolver agora"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "complete",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendi — voce quer resolver isso agora.",
+              "evidence": [
+                "quero resolver agora"
+              ]
+            },
+            {
+              "name": "pain_context_human",
+              "value": "Hoje o studio tem cerca de 95 alunos ativos, o WhatsApp e o follow-up dao mais trabalho, e o controle fica em planilha e WhatsApp, o que dificulta ver quem precisa de retorno no dia.",
+              "evidence": [
+                "95 alunos ativos",
+                "whatsapp e follow-up dao mais trabalho",
+                "nao consigo ver quem precisa de retorno no dia",
+                "hoje fica em planilha e whatsapp"
+              ]
+            },
+            {
+              "name": "crm_base_recommendation",
+              "value": "Para o seu momento, faz mais sentido organizar primeiro o fluxo de vendas e retorno, para nao perder contato com quem ja demonstrou interesse.",
+              "evidence": [
+                "prioridade e vendas primeiro",
+                "whatsapp e follow-up dao mais trabalho"
+              ]
+            },
+            {
+              "name": "operational_first_step",
+              "value": "O primeiro passo e centralizar os retornos do dia para sua equipe conseguir agir mais rapido nas conversas que estao quentes.",
+              "evidence": [
+                "nao consigo ver quem precisa de retorno no dia",
+                "hoje fica em planilha e whatsapp"
+              ]
+            }
+          ],
+          "reply_goal": "Encerrar o diagnostico com leitura do contexto e orientar o proximo passo comercial.",
+          "confidence": "high",
+          "evidence": [
+            "quero resolver agora",
+            "95 alunos ativos",
+            "whatsapp e follow-up dao mais trabalho",
+            "nao consigo ver quem precisa de retorno no dia",
+            "hoje fica em planilha e whatsapp",
+            "prioridade e vendas primeiro"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "complete_diagnostic",
+          "previous_state": "diagnostic_waiting_answer",
+          "current_state": "diagnostic_ready",
+          "next_state": "diagnostic_delivered",
+          "template_ids": [
+            "diagnostic.deliver_hold",
+            "diagnostic.deliver_context",
+            "diagnostic.deliver_crm_base",
+            "diagnostic.deliver_operational_step",
+            "diagnostic.deliver_agent_recommendation",
+            "diagnostic.deliver_plan_recommendation",
+            "diagnostic.deliver_demo_not_offered"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_complete_diagnostic",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "diagnostic.deliver_hold",
+            "diagnostic.deliver_context",
+            "diagnostic.deliver_crm_base",
+            "diagnostic.deliver_operational_step",
+            "diagnostic.deliver_agent_recommendation",
+            "diagnostic.deliver_plan_recommendation",
+            "diagnostic.deliver_demo_not_offered"
+          ],
+          "variables": {
+            "pain_context_human": {
+              "kind": "long_text",
+              "value": "Hoje o studio tem cerca de 95 alunos ativos, o WhatsApp e o follow-up dao mais trabalho, e o controle fica em planilha e WhatsApp, o que dificulta ver quem precisa de retorno no dia.",
+              "source": "user_message",
+              "evidence": [
+                "95 alunos ativos",
+                "whatsapp e follow-up dao mais trabalho",
+                "nao consigo ver quem precisa de retorno no dia",
+                "hoje fica em planilha e whatsapp"
+              ],
+              "max_length": 420
+            },
+            "crm_base_recommendation": {
+              "kind": "long_text",
+              "value": "Para o seu momento, faz mais sentido organizar primeiro o fluxo de vendas e retorno, para nao perder contato com quem ja demonstrou interesse.",
+              "source": "diagnostic_ledger",
+              "evidence": [
+                "prioridade e vendas primeiro",
+                "whatsapp e follow-up dao mais trabalho"
+              ],
+              "max_length": 260
+            },
+            "operational_first_step": {
+              "kind": "long_text",
+              "value": "O primeiro passo e centralizar os retornos do dia para sua equipe conseguir agir mais rapido nas conversas que estao quentes.",
+              "source": "diagnostic_ledger",
+              "evidence": [
+                "nao consigo ver quem precisa de retorno no dia",
+                "hoje fica em planilha e whatsapp"
+              ],
+              "max_length": 240
+            },
+            "recommended_plan_or_range": {
+              "kind": "short_text",
+              "value": "Essencial (R$ 497/mes)",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "product_knowledge.plans.essencial"
+              ],
+              "max_length": 90
+            },
+            "demo_status": {
+              "kind": "enum",
+              "value": "not_offered",
+              "source": "runtime_state",
+              "evidence": [
+                "demo_state.status"
+              ]
+            },
+            "agent_name": {
+              "kind": "short_text",
+              "value": "Atendimento e vendas",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "product_knowledge.routine_areas"
+              ],
+              "max_length": 60
+            },
+            "agent_pain_resolved": {
+              "kind": "long_text",
+              "value": "Interessados, aulas experimentais, proximos passos e follow-up ficam organizados.",
+              "source": "diagnostic_ledger",
+              "evidence": [
+                "product_knowledge.routine_areas"
+              ],
+              "max_length": 180
+            },
+            "agent_practical_action": {
+              "kind": "long_text",
+              "value": "A equipe enxerga o que precisa resolver primeiro.",
+              "source": "diagnostic_ledger",
+              "evidence": [
+                "product_knowledge.routine_areas"
+              ],
+              "max_length": 280
+            }
+          },
+          "chunk_policy": "staged_diagnostic"
+        },
+        "rendered_messages": [
+          "Perfeito. Ja da para te devolver uma leitura pratica. Vou organizar em partes.\n\nHoje o studio tem cerca de 95 alunos ativos, o WhatsApp e o follow-up dao mais trabalho, e o controle fica em planilha e WhatsApp, o que dificulta ver quem precisa de retorno no dia.\n\nPara o seu momento, faz mais sentido organizar primeiro o fluxo de vendas e retorno, para nao perder contato com quem ja demonstrou interesse.",
+          "O primeiro passo e centralizar os retornos do dia para sua equipe conseguir agir mais rapido nas conversas que estao quentes.\n\nAgente Atendimento e vendas: ajuda com Interessados, aulas experimentais, proximos passos e follow-up ficam organizados.. Na pratica: A equipe enxerga o que precisa resolver primeiro..",
+          "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Essencial (R$ 497/mes).\n\nComo eu ainda nao tinha te enviado a demonstracao. Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_delivered",
+          "state_patch": {
+            "diagnostic": {
+              "status": "delivered"
+            }
+          },
+          "ledger_updates": [
+            {
+              "question_key": "urgency",
+              "status": "answered",
+              "answer_value": "quero resolver agora",
+              "evidence": [
+                "quero resolver agora"
+              ]
+            }
+          ]
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "diagnostic_delivered",
+          "summary": "Estado comercial: diagnostic_waiting_answer",
+          "diagnostic_status": "completed",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "diagnostic.deliver_hold",
+              "diagnostic.deliver_context",
+              "diagnostic.deliver_crm_base",
+              "diagnostic.deliver_operational_step",
+              "diagnostic.deliver_agent_recommendation",
+              "diagnostic.deliver_plan_recommendation",
+              "diagnostic.deliver_demo_not_offered"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "review_completed_diagnostic",
+            "diagnostic_ledger_complete": true,
+            "required_diagnostic_keys": [
+              "active_students_or_size",
+              "main_pain",
+              "pain_detail",
+              "current_process",
+              "priority",
+              "urgency"
+            ],
+            "demo_status": "not_offered",
+            "final_plan_or_range": "Essencial (R$ 497/mes)",
+            "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "staged_diagnostic"
+        },
+        "usage_cost": {
+          "model_operations": 1,
+          "cost_usd": 0.00426
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 9,
+      "user_text": "me manda demo",
+      "mode": "post_diagnostic",
+      "starting_agent": "taliya_product_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "send_demo",
+      "template_ids": [
+        "product.demo_direct"
+      ],
+      "rendered_messages": [
+        "Ver demonstracao: https://www.taliya.com.br/pilates/planos/demonstracao",
+        "Depois que voce olhar, retorna aqui se fez sentido pra voce, ou se nao entendeu alguma coisa, pode ser?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 1,
+      "model_operations": 2,
+      "cost_usd": 0.007882,
+      "next_state": "demo_reaction_pending",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "demo_reaction_pending",
+        "summary": "Estado comercial: diagnostic_delivered",
+        "diagnostic_status": "completed",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "product.demo_direct"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "review_completed_diagnostic",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+          "demo_customer_facing_concept": "commercial_product_demo",
+          "demo_next_step": "offer_demo"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "me manda demo",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "diagnostic_delivered",
+            "answered_obligations": [
+              "quanto custa?"
+            ],
+            "diagnostic": {
+              "status": "delivered",
+              "ledger": {
+                "active_students_or_size": {
+                  "status": "answered",
+                  "answer_value": "95 alunos ativos"
+                },
+                "main_pain": {
+                  "status": "answered",
+                  "answer_value": "WhatsApp e follow-up dão mais trabalho"
+                },
+                "pain_detail": {
+                  "status": "answered",
+                  "answer_value": "não consigo ver quem precisa de retorno no dia"
+                },
+                "current_process": {
+                  "status": "answered",
+                  "answer_value": "em planilha e WhatsApp"
+                },
+                "priority": {
+                  "status": "answered",
+                  "answer_value": "vendas primeiro"
+                },
+                "urgency": {
+                  "status": "answered",
+                  "answer_value": "quero resolver agora"
+                }
+              },
+              "final_fields": {
+                "final_plan_or_range": "Essencial (R$ 497/mes)",
+                "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+              }
+            }
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "post_diagnostic",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_product_question_with_saved_context",
+            "send_demo",
+            "answer_price_objection_with_context",
+            "offer_or_join_waitlist_if_eligible",
+            "handoff_requested",
+            "ask_demo_reaction",
+            "clarify_ambiguous_followup"
+          ],
+          "eligible_template_groups": [
+            "product.",
+            "diagnostic.price_hook",
+            "diagnostic.deliver_demo_already_offered",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_product_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "runtime-overwritten",
+          "turn_id": "runtime-overwritten",
+          "selected_action": "send_demo",
+          "interpreted_intents": [
+            "demo_request"
+          ],
+          "direct_question": "me manda demo",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Responder ao pedido de demonstração enviando a demo.",
+              "evidence": [
+                "me manda demo"
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "demo_link"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "requested",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "demo_context_human",
+              "value": "Pelo que voce me contou, o principal hoje e organizar melhor os retornos do WhatsApp e do follow-up, sem perder quem precisa de resposta no dia.",
+              "evidence": [
+                "95 alunos ativos",
+                "whatsapp e follow-up dao mais trabalho",
+                "nao consigo ver quem precisa de retorno no dia",
+                "hoje fica em planilha e whatsapp",
+                "prioridade e vendas primeiro"
+              ]
+            }
+          ],
+          "reply_goal": "Enviar a demonstracao pedida, contextualizando com a dor do studio.",
+          "confidence": "high",
+          "evidence": [
+            "me manda demo"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "runtime-overwritten",
+            "turn_id": "runtime-overwritten",
+            "selected_action": "send_demo",
+            "interpreted_intents": [
+              "demo_request"
+            ],
+            "direct_question": "me manda demo",
+            "direct_answer_obligations": [
+              {
+                "obligation": "Responder ao pedido de demonstração enviando a demo.",
+                "evidence": [
+                  "me manda demo"
+                ]
+              }
+            ],
+            "captured_slots": [],
+            "product_fact_keys_used": [
+              "demo_link"
+            ],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "requested",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "demo_context_human",
+                "value": "Pelo que voce me contou, o principal hoje e organizar melhor os retornos do WhatsApp e do follow-up, sem perder quem precisa de resposta no dia.",
+                "evidence": [
+                  "95 alunos ativos",
+                  "whatsapp e follow-up dao mais trabalho",
+                  "nao consigo ver quem precisa de retorno no dia",
+                  "hoje fica em planilha e whatsapp",
+                  "prioridade e vendas primeiro"
+                ]
+              }
+            ],
+            "reply_goal": "Enviar a demonstracao pedida, contextualizando com a dor do studio.",
+            "confidence": "high",
+            "evidence": [
+              "me manda demo"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "runtime-overwritten",
+          "turn_id": "runtime-overwritten",
+          "selected_action": "send_demo",
+          "interpreted_intents": [
+            "demo_request"
+          ],
+          "direct_question": "me manda demo",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Responder ao pedido de demonstração enviando a demo.",
+              "evidence": [
+                "me manda demo"
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "demo_link"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "requested",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "demo_context_human",
+              "value": "Pelo que voce me contou, o principal hoje e organizar melhor os retornos do WhatsApp e do follow-up, sem perder quem precisa de resposta no dia.",
+              "evidence": [
+                "95 alunos ativos",
+                "whatsapp e follow-up dao mais trabalho",
+                "nao consigo ver quem precisa de retorno no dia",
+                "hoje fica em planilha e whatsapp",
+                "prioridade e vendas primeiro"
+              ]
+            }
+          ],
+          "reply_goal": "Enviar a demonstracao pedida, contextualizando com a dor do studio.",
+          "confidence": "high",
+          "evidence": [
+            "me manda demo"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "send_demo",
+          "previous_state": "diagnostic_delivered",
+          "current_state": "demo_offered",
+          "next_state": "demo_reaction_pending",
+          "template_ids": [
+            "product.demo_direct"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_send_demo",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 1,
+          "validator_feedback": [
+            {
+              "code": "demo_direct_question_flags_missing",
+              "message": "product.demo_direct is a direct product-demo answer and must mark the direct request as answered first"
+            }
+          ],
+          "repair_sdk_run_items": [
+            {
+              "item_type": "MessageOutputItem",
+              "raw_item_type": "ResponseOutputMessage",
+              "agent_name": "taliya_product_agent",
+              "tool_name": null,
+              "handoff_target": null
+            }
+          ]
+        },
+        "render_plan": {
+          "template_ids": [
+            "product.demo_direct"
+          ],
+          "variables": {
+            "official_demo_link": {
+              "kind": "url",
+              "value": "https://www.taliya.com.br/pilates/planos/demonstracao",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "product_knowledge.links.demo"
+              ]
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Ver demonstracao: https://www.taliya.com.br/pilates/planos/demonstracao",
+          "Depois que voce olhar, retorna aqui se fez sentido pra voce, ou se nao entendeu alguma coisa, pode ser?"
+        ],
+        "state_diff": {
+          "next_state": "demo_reaction_pending",
+          "state_patch": {
+            "demo": {
+              "status": "offered"
+            }
+          },
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "demo_reaction_pending",
+          "summary": "Estado comercial: diagnostic_delivered",
+          "diagnostic_status": "completed",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "product.demo_direct"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "review_completed_diagnostic",
+            "diagnostic_ledger_complete": true,
+            "required_diagnostic_keys": [
+              "active_students_or_size",
+              "main_pain",
+              "pain_detail",
+              "current_process",
+              "priority",
+              "urgency"
+            ],
+            "demo_status": "offered",
+            "final_plan_or_range": "Essencial (R$ 497/mes)",
+            "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+            "demo_customer_facing_concept": "commercial_product_demo",
+            "demo_next_step": "offer_demo"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 2,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "cost_usd": 0.00788175
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 10,
+      "user_text": "achei caro",
+      "mode": "post_diagnostic",
+      "starting_agent": "taliya_product_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "answer_price_objection_with_context",
+      "template_ids": [
+        "product.price_objection_value"
+      ],
+      "rendered_messages": [
+        "Entendo. E um valor para olhar com calma mesmo.",
+        "O ponto e que a Taliya nao e so mais uma ferramenta: ela ajuda nas rotinas que fazem o studio girar, como WhatsApp, retorno de interessados, agenda, reposicoes, cobrancas e acompanhamento.",
+        "Para decidir sem pressa, podemos usar o diagnostico gratuito para comparar prioridade e plano, ou deixar seu interesse na lista de espera se voce ja quiser seguir."
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 1,
+      "cost_usd": 0.004253,
+      "next_state": "post_diagnostic_questions",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "post_diagnostic_questions",
+        "summary": "Estado comercial: demo_reaction_pending",
+        "diagnostic_status": "completed",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "product.price_objection_value"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "review_completed_diagnostic",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "achei caro",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "demo_reaction_pending",
+            "answered_obligations": [
+              "quanto custa?",
+              "me manda demo"
+            ],
+            "diagnostic": {
+              "status": "delivered",
+              "ledger": {
+                "active_students_or_size": {
+                  "status": "answered",
+                  "answer_value": "95 alunos ativos"
+                },
+                "main_pain": {
+                  "status": "answered",
+                  "answer_value": "WhatsApp e follow-up dão mais trabalho"
+                },
+                "pain_detail": {
+                  "status": "answered",
+                  "answer_value": "não consigo ver quem precisa de retorno no dia"
+                },
+                "current_process": {
+                  "status": "answered",
+                  "answer_value": "em planilha e WhatsApp"
+                },
+                "priority": {
+                  "status": "answered",
+                  "answer_value": "vendas primeiro"
+                },
+                "urgency": {
+                  "status": "answered",
+                  "answer_value": "quero resolver agora"
+                }
+              },
+              "final_fields": {
+                "final_plan_or_range": "Essencial (R$ 497/mes)",
+                "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+              }
+            },
+            "demo": {
+              "status": "offered"
+            }
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": {
+            "demo_status": "offered"
+          },
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "post_diagnostic",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_product_question_with_saved_context",
+            "send_demo",
+            "answer_price_objection_with_context",
+            "offer_or_join_waitlist_if_eligible",
+            "handoff_requested",
+            "ask_demo_reaction",
+            "clarify_ambiguous_followup"
+          ],
+          "eligible_template_groups": [
+            "product.",
+            "diagnostic.price_hook",
+            "diagnostic.deliver_demo_already_offered",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": {
+            "demo_status": "offered"
+          },
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_product_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_001",
+          "turn_id": "turn_001",
+          "selected_action": "answer_price_objection_with_context",
+          "interpreted_intents": [
+            "price_objection",
+            "demo_acknowledgement"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "reaction_pending",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendo. Pelo que voce me contou, o ponto hoje nao e so custo; e o tempo que se perde tentando acompanhar quem precisa de retorno no WhatsApp e na planilha.",
+              "evidence": [
+                "\"achei caro\"",
+                "\"whatsapp e follow-up dao mais trabalho\"",
+                "\"nao consigo ver quem precisa de retorno no dia\"",
+                "\"hoje fica em planilha e whatsapp\""
+              ]
+            },
+            {
+              "name": "plan_fit_context",
+              "value": "Com 95 alunos ativos e foco em vendas agora, o plano Essencial faz mais sentido para organizar os retornos e nao deixar oportunidade esfriar.",
+              "evidence": [
+                "\"95 alunos ativos\"",
+                "\"prioridade e vendas primeiro\"",
+                "\"quero resolver agora\"",
+                "final_plan_or_range: \"Essencial (R$ 497/mes)\""
+              ]
+            }
+          ],
+          "reply_goal": "Responder a objeção de preço sem pressionar, puxando de volta o contexto do diagnóstico e reforçando o encaixe do plano Essencial.",
+          "confidence": "high",
+          "evidence": [
+            "\"achei caro\"",
+            "diagnostic ledger with 95 alunos, WhatsApp/follow-up, planilha, vendas primeiro, quero resolver agora"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "decision_001",
+            "turn_id": "turn_001",
+            "selected_action": "answer_price_objection_with_context",
+            "interpreted_intents": [
+              "price_objection",
+              "demo_acknowledgement"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [],
+            "product_fact_keys_used": [
+              "prices"
+            ],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "reaction_pending",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Entendo. Pelo que voce me contou, o ponto hoje nao e so custo; e o tempo que se perde tentando acompanhar quem precisa de retorno no WhatsApp e na planilha.",
+                "evidence": [
+                  "\"achei caro\"",
+                  "\"whatsapp e follow-up dao mais trabalho\"",
+                  "\"nao consigo ver quem precisa de retorno no dia\"",
+                  "\"hoje fica em planilha e whatsapp\""
+                ]
+              },
+              {
+                "name": "plan_fit_context",
+                "value": "Com 95 alunos ativos e foco em vendas agora, o plano Essencial faz mais sentido para organizar os retornos e nao deixar oportunidade esfriar.",
+                "evidence": [
+                  "\"95 alunos ativos\"",
+                  "\"prioridade e vendas primeiro\"",
+                  "\"quero resolver agora\"",
+                  "final_plan_or_range: \"Essencial (R$ 497/mes)\""
+                ]
+              }
+            ],
+            "reply_goal": "Responder a objeção de preço sem pressionar, puxando de volta o contexto do diagnóstico e reforçando o encaixe do plano Essencial.",
+            "confidence": "high",
+            "evidence": [
+              "\"achei caro\"",
+              "diagnostic ledger with 95 alunos, WhatsApp/follow-up, planilha, vendas primeiro, quero resolver agora"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_001",
+          "turn_id": "turn_001",
+          "selected_action": "answer_price_objection_with_context",
+          "interpreted_intents": [
+            "price_objection",
+            "demo_acknowledgement"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "reaction_pending",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Entendo. Pelo que voce me contou, o ponto hoje nao e so custo; e o tempo que se perde tentando acompanhar quem precisa de retorno no WhatsApp e na planilha.",
+              "evidence": [
+                "\"achei caro\"",
+                "\"whatsapp e follow-up dao mais trabalho\"",
+                "\"nao consigo ver quem precisa de retorno no dia\"",
+                "\"hoje fica em planilha e whatsapp\""
+              ]
+            },
+            {
+              "name": "plan_fit_context",
+              "value": "Com 95 alunos ativos e foco em vendas agora, o plano Essencial faz mais sentido para organizar os retornos e nao deixar oportunidade esfriar.",
+              "evidence": [
+                "\"95 alunos ativos\"",
+                "\"prioridade e vendas primeiro\"",
+                "\"quero resolver agora\"",
+                "final_plan_or_range: \"Essencial (R$ 497/mes)\""
+              ]
+            }
+          ],
+          "reply_goal": "Responder a objeção de preço sem pressionar, puxando de volta o contexto do diagnóstico e reforçando o encaixe do plano Essencial.",
+          "confidence": "high",
+          "evidence": [
+            "\"achei caro\"",
+            "diagnostic ledger with 95 alunos, WhatsApp/follow-up, planilha, vendas primeiro, quero resolver agora"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "answer_price_objection_with_context",
+          "previous_state": "demo_reaction_pending",
+          "current_state": "post_diagnostic_questions",
+          "next_state": "post_diagnostic_questions",
+          "template_ids": [
+            "product.price_objection_value"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_answer_price_objection_with_context",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "product.price_objection_value"
+          ],
+          "variables": {},
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Entendo. E um valor para olhar com calma mesmo.",
+          "O ponto e que a Taliya nao e so mais uma ferramenta: ela ajuda nas rotinas que fazem o studio girar, como WhatsApp, retorno de interessados, agenda, reposicoes, cobrancas e acompanhamento.",
+          "Para decidir sem pressa, podemos usar o diagnostico gratuito para comparar prioridade e plano, ou deixar seu interesse na lista de espera se voce ja quiser seguir."
+        ],
+        "state_diff": {
+          "next_state": "post_diagnostic_questions",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "post_diagnostic_questions",
+          "summary": "Estado comercial: demo_reaction_pending",
+          "diagnostic_status": "completed",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "product.price_objection_value"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "review_completed_diagnostic",
+            "diagnostic_ledger_complete": true,
+            "required_diagnostic_keys": [
+              "active_students_or_size",
+              "main_pain",
+              "pain_detail",
+              "current_process",
+              "priority",
+              "urgency"
+            ],
+            "demo_status": "offered",
+            "final_plan_or_range": "Essencial (R$ 497/mes)",
+            "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 1,
+          "cost_usd": 0.0042525
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 11,
+      "user_text": "quero comecar, me coloca na lista",
+      "mode": "post_diagnostic",
+      "starting_agent": "taliya_product_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "answer_price_objection_with_context",
+      "template_ids": [
+        "product.price_objection_value"
+      ],
+      "rendered_messages": [
+        "Entendo. E um valor para olhar com calma mesmo.",
+        "O ponto e que a Taliya nao e so mais uma ferramenta: ela ajuda nas rotinas que fazem o studio girar, como WhatsApp, retorno de interessados, agenda, reposicoes, cobrancas e acompanhamento.",
+        "Para decidir sem pressa, podemos usar o diagnostico gratuito para comparar prioridade e plano, ou deixar seu interesse na lista de espera se voce ja quiser seguir."
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 1,
+      "model_operations": 2,
+      "cost_usd": 0.009893,
+      "next_state": "post_diagnostic_questions",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "post_diagnostic_questions",
+        "summary": "Estado comercial: post_diagnostic_questions",
+        "diagnostic_status": "completed",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "product.price_objection_value"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "review_completed_diagnostic",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "quero comecar, me coloca na lista",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "post_diagnostic_questions",
+            "answered_obligations": [
+              "quanto custa?",
+              "me manda demo"
+            ],
+            "diagnostic": {
+              "status": "delivered",
+              "ledger": {
+                "active_students_or_size": {
+                  "status": "answered",
+                  "answer_value": "95 alunos ativos"
+                },
+                "main_pain": {
+                  "status": "answered",
+                  "answer_value": "WhatsApp e follow-up dão mais trabalho"
+                },
+                "pain_detail": {
+                  "status": "answered",
+                  "answer_value": "não consigo ver quem precisa de retorno no dia"
+                },
+                "current_process": {
+                  "status": "answered",
+                  "answer_value": "em planilha e WhatsApp"
+                },
+                "priority": {
+                  "status": "answered",
+                  "answer_value": "vendas primeiro"
+                },
+                "urgency": {
+                  "status": "answered",
+                  "answer_value": "quero resolver agora"
+                }
+              },
+              "final_fields": {
+                "final_plan_or_range": "Essencial (R$ 497/mes)",
+                "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+              }
+            },
+            "demo": {
+              "status": "offered"
+            }
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": {
+            "demo_status": "offered"
+          },
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "post_diagnostic",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_product_question_with_saved_context",
+            "send_demo",
+            "answer_price_objection_with_context",
+            "offer_or_join_waitlist_if_eligible",
+            "handoff_requested",
+            "ask_demo_reaction",
+            "clarify_ambiguous_followup"
+          ],
+          "eligible_template_groups": [
+            "product.",
+            "diagnostic.price_hook",
+            "diagnostic.deliver_demo_already_offered",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": {
+            "demo_status": "offered"
+          },
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_product_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "runtime",
+          "turn_id": "runtime",
+          "selected_action": "answer_price_objection_with_context",
+          "interpreted_intents": [
+            "price objection",
+            "wants to start"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [
+            {
+              "obligation": "Acknowledge that the price felt high, while answering with the official plan value and keeping the tone light.",
+              "evidence": [
+                "achei caro",
+                "quero comecar, me coloca na lista"
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "waitlist_context_summary",
+              "value": "Você quer começar e já deixou claro que o preço pesou.",
+              "evidence": [
+                "quero comecar, me coloca na lista",
+                "achei caro"
+              ]
+            },
+            {
+              "name": "price_value_language",
+              "value": "Entendo que o valor pareceu alto. O plano Essencial fica em R$ 497/mês, e ele faz sentido para studio que quer organizar WhatsApp e follow-up sem perder retorno no dia.",
+              "evidence": [
+                "achei caro",
+                "quero comecar, me coloca na lista",
+                "plano Essencial (R$ 497/mes)",
+                "WhatsApp e follow-up dão mais trabalho",
+                "não consigo ver quem precisa de retorno no dia"
+              ]
+            }
+          ],
+          "reply_goal": "Responder à objeção de preço com o valor oficial e contexto da dor, antes de seguir para a próxima etapa.",
+          "confidence": "high",
+          "evidence": [
+            "achei caro",
+            "quero comecar, me coloca na lista"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "runtime",
+            "turn_id": "runtime",
+            "selected_action": "answer_price_objection_with_context",
+            "interpreted_intents": [
+              "price objection",
+              "wants to start"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [
+              {
+                "obligation": "Acknowledge that the price felt high, while answering with the official plan value and keeping the tone light.",
+                "evidence": [
+                  "achei caro",
+                  "quero comecar, me coloca na lista"
+                ]
+              }
+            ],
+            "captured_slots": [],
+            "product_fact_keys_used": [
+              "prices"
+            ],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "waitlist_context_summary",
+                "value": "Você quer começar e já deixou claro que o preço pesou.",
+                "evidence": [
+                  "quero comecar, me coloca na lista",
+                  "achei caro"
+                ]
+              },
+              {
+                "name": "price_value_language",
+                "value": "Entendo que o valor pareceu alto. O plano Essencial fica em R$ 497/mês, e ele faz sentido para studio que quer organizar WhatsApp e follow-up sem perder retorno no dia.",
+                "evidence": [
+                  "achei caro",
+                  "quero comecar, me coloca na lista",
+                  "plano Essencial (R$ 497/mes)",
+                  "WhatsApp e follow-up dão mais trabalho",
+                  "não consigo ver quem precisa de retorno no dia"
+                ]
+              }
+            ],
+            "reply_goal": "Responder à objeção de preço com o valor oficial e contexto da dor, antes de seguir para a próxima etapa.",
+            "confidence": "high",
+            "evidence": [
+              "achei caro",
+              "quero comecar, me coloca na lista"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "runtime",
+          "turn_id": "runtime",
+          "selected_action": "answer_price_objection_with_context",
+          "interpreted_intents": [
+            "price objection",
+            "wants to start"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [
+            {
+              "obligation": "Acknowledge that the price felt high, while answering with the official plan value and keeping the tone light.",
+              "evidence": [
+                "achei caro",
+                "quero comecar, me coloca na lista"
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "waitlist_context_summary",
+              "value": "Você quer começar e já deixou claro que o preço pesou.",
+              "evidence": [
+                "quero comecar, me coloca na lista",
+                "achei caro"
+              ]
+            },
+            {
+              "name": "price_value_language",
+              "value": "Entendo que o valor pareceu alto. O plano Essencial fica em R$ 497/mês, e ele faz sentido para studio que quer organizar WhatsApp e follow-up sem perder retorno no dia.",
+              "evidence": [
+                "achei caro",
+                "quero comecar, me coloca na lista",
+                "plano Essencial (R$ 497/mes)",
+                "WhatsApp e follow-up dão mais trabalho",
+                "não consigo ver quem precisa de retorno no dia"
+              ]
+            }
+          ],
+          "reply_goal": "Responder à objeção de preço com o valor oficial e contexto da dor, antes de seguir para a próxima etapa.",
+          "confidence": "high",
+          "evidence": [
+            "achei caro",
+            "quero comecar, me coloca na lista"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "answer_price_objection_with_context",
+          "previous_state": "post_diagnostic_questions",
+          "current_state": "post_diagnostic_questions",
+          "next_state": "post_diagnostic_questions",
+          "template_ids": [
+            "product.price_objection_value"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_answer_price_objection_with_context",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 1,
+          "validator_feedback": [
+            {
+              "code": "price_question_missing_price_answer",
+              "message": "price questions must answer with official prices before steering"
+            },
+            {
+              "code": "price_objection_value_template_missing",
+              "message": "price objections require the approved value-language template before steering to diagnostic, waitlist, demo, or handoff"
+            }
+          ],
+          "repair_sdk_run_items": [
+            {
+              "item_type": "MessageOutputItem",
+              "raw_item_type": "ResponseOutputMessage",
+              "agent_name": "taliya_product_agent",
+              "tool_name": null,
+              "handoff_target": null
+            }
+          ]
+        },
+        "render_plan": {
+          "template_ids": [
+            "product.price_objection_value"
+          ],
+          "variables": {},
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Entendo. E um valor para olhar com calma mesmo.",
+          "O ponto e que a Taliya nao e so mais uma ferramenta: ela ajuda nas rotinas que fazem o studio girar, como WhatsApp, retorno de interessados, agenda, reposicoes, cobrancas e acompanhamento.",
+          "Para decidir sem pressa, podemos usar o diagnostico gratuito para comparar prioridade e plano, ou deixar seu interesse na lista de espera se voce ja quiser seguir."
+        ],
+        "state_diff": {
+          "next_state": "post_diagnostic_questions",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-step3g-long-conversation",
+          "lead_id": "t012-043-step3g-long-conversation",
+          "commercial_stage": "post_diagnostic_questions",
+          "summary": "Estado comercial: post_diagnostic_questions",
+          "diagnostic_status": "completed",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "product.price_objection_value"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "review_completed_diagnostic",
+            "diagnostic_ledger_complete": true,
+            "required_diagnostic_keys": [
+              "active_students_or_size",
+              "main_pain",
+              "pain_detail",
+              "current_process",
+              "priority",
+              "urgency"
+            ],
+            "demo_status": "offered",
+            "final_plan_or_range": "Essencial (R$ 497/mes)",
+            "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "cost_usd": 0.0098925
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 12,
+      "user_text": "como funciona mesmo?",
+      "mode": "post_diagnostic",
+      "starting_agent": "taliya_product_agent",
+      "llm_called": true,
+      "status": "failed",
+      "selected_action": "answer_how_it_works",
+      "template_ids": [
+        "product.how_it_works_direct"
+      ],
+      "rendered_messages": [],
+      "issues": [
+        "conductor_action_not_in_allowed_menu"
+      ],
+      "issue_details": [
+        "conductor_action_not_in_allowed_menu: compiler blocked the turn: conductor_action_not_in_allowed_menu; allowed actions this turn: answer_product_question_with_saved_context, send_demo, answer_price_objection_with_context, offer_or_join_wa"
+      ],
+      "repairs": 1,
+      "model_operations": 2,
+      "cost_usd": 0.009541,
+      "next_state": null,
+      "sales_inbox_projection": {},
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "como funciona mesmo?",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget",
+            "canonical_state": "post_diagnostic_questions",
+            "answered_obligations": [
+              "quanto custa?",
+              "me manda demo"
+            ],
+            "diagnostic": {
+              "status": "delivered",
+              "ledger": {
+                "active_students_or_size": {
+                  "status": "answered",
+                  "answer_value": "95 alunos ativos"
+                },
+                "main_pain": {
+                  "status": "answered",
+                  "answer_value": "WhatsApp e follow-up dão mais trabalho"
+                },
+                "pain_detail": {
+                  "status": "answered",
+                  "answer_value": "não consigo ver quem precisa de retorno no dia"
+                },
+                "current_process": {
+                  "status": "answered",
+                  "answer_value": "em planilha e WhatsApp"
+                },
+                "priority": {
+                  "status": "answered",
+                  "answer_value": "vendas primeiro"
+                },
+                "urgency": {
+                  "status": "answered",
+                  "answer_value": "quero resolver agora"
+                }
+              },
+              "final_fields": {
+                "final_plan_or_range": "Essencial (R$ 497/mes)",
+                "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+              }
+            },
+            "demo": {
+              "status": "offered"
+            }
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": {
+            "demo_status": "offered"
+          },
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "post_diagnostic",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_product_question_with_saved_context",
+            "send_demo",
+            "answer_price_objection_with_context",
+            "offer_or_join_waitlist_if_eligible",
+            "handoff_requested",
+            "ask_demo_reaction",
+            "clarify_ambiguous_followup"
+          ],
+          "eligible_template_groups": [
+            "product.",
+            "diagnostic.price_hook",
+            "diagnostic.deliver_demo_already_offered",
+            "waitlist.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": {
+            "demo_status": "offered"
+          },
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_product_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_1",
+          "turn_id": "turn_1",
+          "selected_action": "answer_how_it_works",
+          "interpreted_intents": [
+            "product_question",
+            "request_how_it_works",
+            "post_diagnostic_follow_up"
+          ],
+          "direct_question": "como funciona mesmo?",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Explicar como a Taliya funciona de forma simples, no contexto do studio de Pilates.",
+              "evidence": [
+                "\"como funciona mesmo?\"",
+                "contexto do diagnóstico já mostrou dor em WhatsApp, follow-up e vendas"
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "how_it_works",
+            "availability_and_onboarding"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Funciona para organizar o atendimento do studio e deixar mais claro quem precisa de retorno, sem você precisar controlar tudo na mão.",
+              "evidence": [
+                "\"whatsapp e follow-up dao mais trabalho\"",
+                "\"nao consigo ver quem precisa de retorno no dia\"",
+                "\"hoje fica em planilha e whatsapp\""
+              ]
+            },
+            {
+              "name": "post_diagnostic_context",
+              "value": "Pelo que você me contou, o foco principal é vendas e follow-up, então a explicação pode ficar nesse fluxo.",
+              "evidence": [
+                "\"prioridade e vendas primeiro\"",
+                "\"quero resolver agora\""
+              ]
+            }
+          ],
+          "reply_goal": "Responder como funciona em linguagem simples, usando o contexto já diagnosticado e sem reiniciar perguntas.",
+          "confidence": "high",
+          "evidence": [
+            "A lead já recebeu diagnóstico completo e agora pede explicação de funcionamento.",
+            "O contexto salvo indica dor principal em WhatsApp/follow-up e prioridade em vendas."
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "decision_1",
+            "turn_id": "turn_1",
+            "selected_action": "answer_how_it_works",
+            "interpreted_intents": [
+              "product_question",
+              "request_how_it_works",
+              "post_diagnostic_follow_up"
+            ],
+            "direct_question": "como funciona mesmo?",
+            "direct_answer_obligations": [
+              {
+                "obligation": "Explicar como a Taliya funciona de forma simples, no contexto do studio de Pilates.",
+                "evidence": [
+                  "\"como funciona mesmo?\"",
+                  "contexto do diagnóstico já mostrou dor em WhatsApp, follow-up e vendas"
+                ]
+              }
+            ],
+            "captured_slots": [],
+            "product_fact_keys_used": [
+              "how_it_works",
+              "availability_and_onboarding"
+            ],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Funciona para organizar o atendimento do studio e deixar mais claro quem precisa de retorno, sem você precisar controlar tudo na mão.",
+                "evidence": [
+                  "\"whatsapp e follow-up dao mais trabalho\"",
+                  "\"nao consigo ver quem precisa de retorno no dia\"",
+                  "\"hoje fica em planilha e whatsapp\""
+                ]
+              },
+              {
+                "name": "post_diagnostic_context",
+                "value": "Pelo que você me contou, o foco principal é vendas e follow-up, então a explicação pode ficar nesse fluxo.",
+                "evidence": [
+                  "\"prioridade e vendas primeiro\"",
+                  "\"quero resolver agora\""
+                ]
+              }
+            ],
+            "reply_goal": "Responder como funciona em linguagem simples, usando o contexto já diagnosticado e sem reiniciar perguntas.",
+            "confidence": "high",
+            "evidence": [
+              "A lead já recebeu diagnóstico completo e agora pede explicação de funcionamento.",
+              "O contexto salvo indica dor principal em WhatsApp/follow-up e prioridade em vendas."
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_1",
+          "turn_id": "turn_1",
+          "selected_action": "answer_how_it_works",
+          "interpreted_intents": [
+            "product_question",
+            "request_how_it_works",
+            "post_diagnostic_follow_up"
+          ],
+          "direct_question": "como funciona mesmo?",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Explicar como a Taliya funciona de forma simples, no contexto do studio de Pilates.",
+              "evidence": [
+                "\"como funciona mesmo?\"",
+                "contexto do diagnóstico já mostrou dor em WhatsApp, follow-up e vendas"
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "how_it_works",
+            "availability_and_onboarding"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Funciona para organizar o atendimento do studio e deixar mais claro quem precisa de retorno, sem você precisar controlar tudo na mão.",
+              "evidence": [
+                "\"whatsapp e follow-up dao mais trabalho\"",
+                "\"nao consigo ver quem precisa de retorno no dia\"",
+                "\"hoje fica em planilha e whatsapp\""
+              ]
+            },
+            {
+              "name": "post_diagnostic_context",
+              "value": "Pelo que você me contou, o foco principal é vendas e follow-up, então a explicação pode ficar nesse fluxo.",
+              "evidence": [
+                "\"prioridade e vendas primeiro\"",
+                "\"quero resolver agora\""
+              ]
+            }
+          ],
+          "reply_goal": "Responder como funciona em linguagem simples, usando o contexto já diagnosticado e sem reiniciar perguntas.",
+          "confidence": "high",
+          "evidence": [
+            "A lead já recebeu diagnóstico completo e agora pede explicação de funcionamento.",
+            "O contexto salvo indica dor principal em WhatsApp/follow-up e prioridade em vendas."
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "answer_how_it_works",
+          "previous_state": "post_diagnostic_questions",
+          "current_state": "product_question",
+          "next_state": "diagnostic_offered",
+          "template_ids": [
+            "product.how_it_works_direct"
+          ],
+          "issues": [
+            "conductor_action_not_in_allowed_menu"
+          ]
+        },
+        "validators": {
+          "decision_id": "action_answer_how_it_works",
+          "status": "failed",
+          "errors": [
+            {
+              "code": "conductor_action_not_in_allowed_menu",
+              "message": "compiler blocked the turn: conductor_action_not_in_allowed_menu; allowed actions this turn: answer_product_question_with_saved_context, send_demo, answer_price_objection_with_context, offer_or_join_waitlist_if_eligible, handoff_requested, ask_demo_reaction, clarify_ambiguous_followup"
+            }
+          ],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "blocked"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 1,
+          "validator_feedback": [
+            {
+              "code": "conductor_action_not_in_allowed_menu",
+              "message": "compiler blocked the turn: conductor_action_not_in_allowed_menu; allowed actions this turn: answer_product_question_with_saved_context, send_demo, answer_price_objection_with_context, offer_or_join_waitlist_if_eligible, handoff_requested, ask_demo_reaction, clarify_ambiguous_followup"
+            }
+          ],
+          "repair_sdk_run_items": [
+            {
+              "item_type": "MessageOutputItem",
+              "raw_item_type": "ResponseOutputMessage",
+              "agent_name": "taliya_product_agent",
+              "tool_name": null,
+              "handoff_target": null
+            }
+          ]
+        },
+        "render_plan": {
+          "template_ids": [
+            "product.how_it_works_direct"
+          ],
+          "variables": {
+            "contextual_next_step": {
+              "kind": "enum",
+              "value": "no_cta",
+              "source": "runtime_state",
+              "evidence": [
+                "turn_situation.mode"
+              ]
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [],
+        "state_diff": {
+          "next_state": "diagnostic_offered",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": null,
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 0,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "cost_usd": 0.00954075
+        },
+        "failure_labels": [
+          "conductor_action_not_in_allowed_menu"
+        ]
+      }
+    }
+  ],
+  "final_state": {
+    "conversation_id": "t012-043-step3g-long-conversation",
+    "lead_id": "t012-043-step3g-long-conversation",
+    "source": "pilates_landing",
+    "channel": "widget",
+    "canonical_state": "post_diagnostic_questions",
+    "answered_obligations": [
+      "quanto custa?",
+      "me manda demo"
+    ],
+    "diagnostic": {
+      "status": "delivered",
+      "ledger": {
+        "active_students_or_size": {
+          "status": "answered",
+          "answer_value": "95 alunos ativos"
+        },
+        "main_pain": {
+          "status": "answered",
+          "answer_value": "WhatsApp e follow-up dão mais trabalho"
+        },
+        "pain_detail": {
+          "status": "answered",
+          "answer_value": "não consigo ver quem precisa de retorno no dia"
+        },
+        "current_process": {
+          "status": "answered",
+          "answer_value": "em planilha e WhatsApp"
+        },
+        "priority": {
+          "status": "answered",
+          "answer_value": "vendas primeiro"
+        },
+        "urgency": {
+          "status": "answered",
+          "answer_value": "quero resolver agora"
+        }
+      },
+      "final_fields": {
+        "final_plan_or_range": "Essencial (R$ 497/mes)",
+        "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+      }
+    },
+    "demo": {
+      "status": "offered"
+    }
+  },
+  "checks": [
+    "mentions_all_prices",
+    "diagnostic_question_has_feedback",
+    "no_repeat_answered_size_question",
+    "diagnostic_completed",
+    "diagnostic_ledger_complete",
+    "mentions_demo_link",
+    "price_objection_value_argument",
+    "no_roi_promise",
+    "waitlist_offered_or_handoff",
+    "handoff_requested",
+    "template_ids_present",
+    "sales_inbox_projection_consistent",
+    "all_messages_short"
+  ],
+  "check_results": [
+    {
+      "check": "turn_statuses_acceptable",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "check": "includes:R$ 497",
+      "passed": true,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "includes:diagnostico",
+      "passed": true,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "includes:demonstra",
+      "passed": true,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "excludes:nao entendi",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:95 alunos ativos?",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:retorno garantido",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:checkout",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "no_failed_turns",
+      "passed": false,
+      "detail": "conductor_action_not_in_allowed_menu"
+    }
+  ],
+  "issues": [
+    "turn_statuses_acceptable",
+    "no_failed_turns: conductor_action_not_in_allowed_menu"
+  ],
+  "total_model_operations": 18,
+  "total_cost_usd": 0.064114,
+  "cost_cap_exceeded": false
+}

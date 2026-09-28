@@ -1,0 +1,255 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-full-required-final-matrix-coverage-1",
+  "fixture": "scripts\\fixtures\\agent-runtime\\final-behavior-matrix.json",
+  "reports": [
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-remaining-budgeted-1.json"
+  ],
+  "summary": {
+    "total": 29,
+    "passed": 29,
+    "missing": 0,
+    "failed": 0,
+    "estimatedCostUsd": 0.533415
+  },
+  "releaseGate": "pass",
+  "passedScenarioIds": [
+    "final-ambiguous-two-questions",
+    "final-checkout-buy-intent",
+    "final-cold-bom-dia",
+    "final-cold-oi",
+    "final-demo-curiosity-no-waitlist",
+    "final-demo-request",
+    "final-diagnostic-request",
+    "final-human-request-silent-after",
+    "final-instagram-interest",
+    "final-irritated-lead",
+    "final-pain-first",
+    "final-plan-fit-thin",
+    "final-post-waitlist-product-question",
+    "final-preanswered-diagnostic-no-repeat",
+    "final-price-first",
+    "final-price-plus-pain",
+    "final-prompt-injection",
+    "final-reliable-name",
+    "final-rich-diagnostic-completes",
+    "final-sensitive-data",
+    "final-site-cta-opening",
+    "final-thin-diagnostic-blocks-completion",
+    "final-unreliable-name",
+    "final-unsupported-media",
+    "final-waitlist-joined",
+    "final-waitlist-pending-details",
+    "final-whatsapp-question",
+    "final-whatsapp-site-cta-opening",
+    "final-widget-empty-opening"
+  ],
+  "missingScenarioIds": [],
+  "failedScenarios": [],
+  "selectedEvidence": [
+    {
+      "id": "final-ambiguous-two-questions",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.016972
+    },
+    {
+      "id": "final-checkout-buy-intent",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014581
+    },
+    {
+      "id": "final-cold-bom-dia",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013985
+    },
+    {
+      "id": "final-cold-oi",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013912
+    },
+    {
+      "id": "final-demo-curiosity-no-waitlist",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013876
+    },
+    {
+      "id": "final-demo-request",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013885
+    },
+    {
+      "id": "final-diagnostic-request",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.015313
+    },
+    {
+      "id": "final-human-request-silent-after",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-remaining-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014059
+    },
+    {
+      "id": "final-instagram-interest",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013968
+    },
+    {
+      "id": "final-irritated-lead",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013877
+    },
+    {
+      "id": "final-pain-first",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.015337
+    },
+    {
+      "id": "final-plan-fit-thin",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.015386
+    },
+    {
+      "id": "final-post-waitlist-product-question",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-remaining-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.044987
+    },
+    {
+      "id": "final-preanswered-diagnostic-no-repeat",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.037369
+    },
+    {
+      "id": "final-price-first",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013925
+    },
+    {
+      "id": "final-price-plus-pain",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.015925
+    },
+    {
+      "id": "final-prompt-injection",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-remaining-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013693
+    },
+    {
+      "id": "final-reliable-name",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013931
+    },
+    {
+      "id": "final-rich-diagnostic-completes",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.033486
+    },
+    {
+      "id": "final-sensitive-data",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-remaining-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013726
+    },
+    {
+      "id": "final-site-cta-opening",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.01414
+    },
+    {
+      "id": "final-thin-diagnostic-blocks-completion",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014573
+    },
+    {
+      "id": "final-unreliable-name",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013756
+    },
+    {
+      "id": "final-unsupported-media",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-remaining-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.028278
+    },
+    {
+      "id": "final-waitlist-joined",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.029096
+    },
+    {
+      "id": "final-waitlist-pending-details",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.028610999999999998
+    },
+    {
+      "id": "final-whatsapp-question",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014859
+    },
+    {
+      "id": "final-whatsapp-site-cta-opening",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014201
+    },
+    {
+      "id": "final-widget-empty-opening",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013708
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[
+  { "id": "DIA-001", "message": "perco muitos interessados no WhatsApp", "expect": ["diagnostico gratuito", "o que organizar primeiro"] },
+  { "id": "DIA-002", "message": "quero ver como a Taliya ficaria no meu studio", "expect": ["diagnostico gratuito"] },
+  { "id": "DIA-003", "message": "qual plano voce recomenda?", "expect": ["diagnostico gratuito"] }
+]
+

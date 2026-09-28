@@ -1,0 +1,47 @@
+{
+  "version": "1.1",
+  "date": "2026-09-19",
+  "status": "SPECIFICATION_NOT_DEPLOYED",
+  "mode": "prelaunch",
+  "canonicalOrigin": "https://www.taliya.com.br",
+  "locale": "pt-BR",
+  "home": {
+    "path": "/",
+    "title": "Taliya | Organize serviços, agenda e recebimentos pelo WhatsApp",
+    "h1": "Seu negócio organizado. É só falar.",
+    "description": {
+      "prelaunch": "Conheça a proposta da Taliya para organizar serviços, agenda, orçamentos e recebimentos pelo WhatsApp e app. Acompanhe os primeiros testes.",
+      "launch": "Organize serviços, agenda, orçamentos e recebimentos pelo WhatsApp. Consulte e corrija sua rotina na conversa ou veja os mesmos registros no app."
+    },
+    "ogTitle": "Taliya — Seu negócio organizado. É só falar.",
+    "ogDescription": "A proposta de organização da rotina de quem presta serviços, pelo WhatsApp e app.",
+    "ogImageUrl": null,
+    "ogImageDesign": {
+      "width": 1200,
+      "height": 630
+    },
+    "notes": [
+      "Não publicar ogImageUrl null como atributo literal; criar asset real.",
+      "Descrição launch só pode ser usada após gate de produto.",
+      "Copy do OG também deve mudar quando o estágio mudar."
+    ]
+  },
+  "tracking": {
+    "chatgptSource": "chatgpt.com",
+    "prelaunchConversion": "lead_submit_success",
+    "excludePersonalData": true,
+    "neverFireFromDemo": [
+      "first_operation",
+      "purchase",
+      "trial_start"
+    ]
+  },
+  "releaseChecks": [
+    "HTML e DOM consistentes",
+    "URLs respondem conforme mapa",
+    "Nenhum noindex acidental",
+    "Páginas privadas autenticadas",
+    "Schema validado",
+    "Sitemap sem páginas inexistentes"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema": "012.real_model_golden_transcripts.v1",
+  "task": "T012-043",
+  "fixture_path": "scripts\\fixtures\\agent-runtime\\spec-012-luna-targeted.json",
+  "started_at": "2026-08-04T23:42:06.407688+00:00",
+  "finished_at": "2026-08-04T23:42:06.407688+00:00",
+  "model": "gpt-5.6-luna",
+  "paid_approval": "missing_current_approval",
+  "paid_call_status": "blocked_before_openai_call",
+  "env_file_used": "C:\\Users\\lucas\\agentes-landing-system\\.env.local",
+  "budget": {
+    "max_total_cost_usd": 0.01,
+    "cap_policy": "conservative local hard cap for this approved run"
+  },
+  "summary": {
+    "scenario_count": 3,
+    "executed_scenarios": 0,
+    "passed_scenarios": 0,
+    "failed_scenarios": 0,
+    "total_model_operations": 0,
+    "total_cost_usd": 0.0
+  },
+  "aborted": true,
+  "abort_reason": "A current paid-run approval note is required.",
+  "scenarios": [
+    {
+      "scenario_id": "luna-price-objection-context",
+      "title": "Short budget objection after the official price answer",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "quanto custa?",
+        "hmm, talvez fique pesado"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "answer_price_first",
+        "interpret_followup_from_immediate_context",
+        "price_objection_not_operational_pain"
+      ],
+      "check_results": [],
+      "issues": [
+        "A current paid-run approval note is required."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "luna-waitlist-hesitation",
+      "title": "Lead pauses a waitlist decision to understand more",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "quero começar, me coloca na lista",
+        "talvez, antes eu queria entender melhor"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "offer_waitlist_from_post_diagnostic_intent",
+        "pause_without_collecting_details",
+        "do_not_mark_joined"
+      ],
+      "check_results": [],
+      "issues": [
+        "A current paid-run approval note is required."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "luna-diagnostic-acceptance-no-regreeting",
+      "title": "Diagnostic acceptance continues without restarting the greeting",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "sim"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "accept_existing_diagnostic_offer",
+        "start_diagnostic_directly",
+        "no_duplicate_greeting"
+      ],
+      "check_results": [],
+      "issues": [
+        "A current paid-run approval note is required."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    }
+  ]
+}

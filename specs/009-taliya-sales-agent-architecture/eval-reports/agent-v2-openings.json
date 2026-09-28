@@ -1,0 +1,43 @@
+{
+  "runId": "agent-v2-openings-1779416637873",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:23:57.873Z",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "opening fixtures cover SRC-001..SRC-007",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "opening generator contains Em que posso te ajudar?",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "opening generator contains Oi,",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "identity classifier contains studio",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "identity classifier contains pilates",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "identity classifier contains firstName",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

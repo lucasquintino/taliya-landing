@@ -1,0 +1,533 @@
+{
+  "number": 7,
+  "scenario_id": "diagnostic_urgency_final",
+  "channel": "whatsapp",
+  "required_proof": "Mandatory diagnostic keys complete; final staged diagnostic renders.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Diagnostico em andamento: alunos ativos, dor principal, detalhe da dor, processo atual e prioridade ja respondidos. Falta apenas a urgencia.\nstate: {\"diagnostic\": {\"status\": \"in_progress\", \"next_question_key\": \"urgency\", \"ledger\": {\"active_students_or_size\": {\"status\": \"answered\", \"answer_value\": \"120\"}, \"main_pain\": {\"status\": \"answered\", \"answer_value\": \"perde leads no WhatsApp\"}, \"pain_detail\": {\"status\": \"answered\", \"answer_value\": \"equipe demora a responder interessados\"}, \"current_process\": {\"status\": \"answered\", \"answer_value\": \"controle manual em planilha e WhatsApp\"}, \"priority\": {\"status\": \"answered\", \"answer_value\": \"organizar follow-up de leads\"}, \"urgency\": {\"status\": \"pending\"}}}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "assistant",
+      "content": "Ultima pergunta do diagnostico: isso e algo que voce quer resolver agora ou pode esperar alguns meses?"
+    },
+    {
+      "role": "user",
+      "content": "quero resolver agora"
+    }
+  ],
+  "starting_agent": "taliya_diagnostic_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "Entender a urgência para fechar o diagnóstico",
+      "pain_context": "120 alunos; perde leads no WhatsApp; equipe demora a responder interessados; controle manual em planilha e WhatsApp; prioridade em organizar follow-up de leads",
+      "source_context": "conversation_state",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "active_students_or_size",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value_text": "120",
+          "currency": null,
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "main_pain",
+          "kind": "pain",
+          "raw_text": "perde leads no WhatsApp",
+          "value_text": "perde leads no WhatsApp",
+          "currency": null,
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "pain_detail",
+          "kind": "pain",
+          "raw_text": "equipe demora a responder interessados",
+          "value_text": "equipe demora a responder interessados",
+          "currency": null,
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "current_process",
+          "kind": "other",
+          "raw_text": "controle manual em planilha e WhatsApp",
+          "value_text": "controle manual em planilha e WhatsApp",
+          "currency": null,
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "priority",
+          "kind": "other",
+          "raw_text": "organizar follow-up de leads",
+          "value_text": "organizar follow-up de leads",
+          "currency": null,
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "urgency",
+          "kind": "other",
+          "raw_text": "quero resolver agora",
+          "value_text": "quero resolver agora",
+          "currency": null,
+          "evidence": [
+            "user message"
+          ]
+        }
+      ],
+      "evidence": [
+        "state snapshot",
+        "user message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Falta apenas a urgência; o lead respondeu que quer resolver agora.",
+        "answering_template_id": "diagnostic.deliver",
+        "evidence": [
+          "user message",
+          "state snapshot"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "urgency",
+          "status": "answered",
+          "answer_value": "quero resolver agora",
+          "evidence": [
+            "user message"
+          ]
+        }
+      ],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "user message",
+        "state snapshot"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "state snapshot"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "state snapshot"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "state snapshot"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "diagnostic.deliver"
+      ],
+      "variables": [
+        {
+          "name": "pain_context_human",
+          "kind": "long_text",
+          "value": "Voce tem 120 alunos, perde leads no WhatsApp, a equipe demora a responder interessados e hoje o controle e manual em planilha e WhatsApp.",
+          "source": "user_message",
+          "evidence": [
+            "state snapshot",
+            "user message"
+          ],
+          "max_length": 420
+        },
+        {
+          "name": "crm_base_recommendation",
+          "kind": "long_text",
+          "value": "Para esse cenario, a base ideal e organizar o funil e o follow-up dos leads em um fluxo unico, reduzindo dependência de planilha e WhatsApp manual.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "state snapshot",
+            "user message"
+          ],
+          "max_length": 260
+        },
+        {
+          "name": "operational_first_step",
+          "kind": "long_text",
+          "value": "Primeiro passo: mapear de onde entram os leads, quem responde, em quanto tempo respondem e quais etapas precisam de lembrete automatico para nao perder interessados.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "state snapshot",
+            "user message"
+          ],
+          "max_length": 240
+        },
+        {
+          "name": "recommended_plan_or_range",
+          "kind": "short_text",
+          "value": "Plano de CRM para follow-up",
+          "source": "model_decision",
+          "evidence": [
+            "state snapshot",
+            "user message"
+          ],
+          "max_length": 90
+        },
+        {
+          "name": "demo_status",
+          "kind": "enum",
+          "value": "not_offered",
+          "source": "runtime_state",
+          "evidence": [
+            "state snapshot"
+          ],
+          "max_length": null
+        }
+      ],
+      "evidence": [
+        "state snapshot",
+        "user message"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "diagnostic_ready",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "complete",
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "Move to deliver diagnostic and recommend next step"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_diagnostic_urgency_final",
+    "conversation_id": "spike_conv_diagnostic_urgency_final",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_diagnostic_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "Entender a urgência para fechar o diagnóstico",
+      "pain_context": "120 alunos; perde leads no WhatsApp; equipe demora a responder interessados; controle manual em planilha e WhatsApp; prioridade em organizar follow-up de leads",
+      "source_context": "conversation_state",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "active_students_or_size",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value": 120,
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "main_pain",
+          "kind": "pain",
+          "raw_text": "perde leads no WhatsApp",
+          "value": "perde leads no WhatsApp",
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "pain_detail",
+          "kind": "pain",
+          "raw_text": "equipe demora a responder interessados",
+          "value": "equipe demora a responder interessados",
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "current_process",
+          "kind": "other",
+          "raw_text": "controle manual em planilha e WhatsApp",
+          "value": "controle manual em planilha e WhatsApp",
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "priority",
+          "kind": "other",
+          "raw_text": "organizar follow-up de leads",
+          "value": "organizar follow-up de leads",
+          "evidence": [
+            "state snapshot"
+          ]
+        },
+        {
+          "key": "urgency",
+          "kind": "other",
+          "raw_text": "quero resolver agora",
+          "value": "quero resolver agora",
+          "evidence": [
+            "user message"
+          ]
+        }
+      ],
+      "evidence": [
+        "state snapshot",
+        "user message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Falta apenas a urgência; o lead respondeu que quer resolver agora.",
+        "answered_before_steering": true,
+        "evidence": [
+          "user message",
+          "state snapshot"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "urgency",
+          "status": "answered",
+          "answer_value": "quero resolver agora",
+          "evidence": [
+            "user message"
+          ]
+        }
+      ],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "user message",
+        "state snapshot"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "state snapshot"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "state snapshot"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "state snapshot"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "diagnostic.deliver"
+      ],
+      "variables": {
+        "pain_context_human": {
+          "kind": "long_text",
+          "value": "Voce tem 120 alunos, perde leads no WhatsApp, a equipe demora a responder interessados e hoje o controle e manual em planilha e WhatsApp.",
+          "source": "user_message",
+          "evidence": [
+            "state snapshot",
+            "user message"
+          ],
+          "max_length": 420
+        },
+        "crm_base_recommendation": {
+          "kind": "long_text",
+          "value": "Para esse cenario, a base ideal e organizar o funil e o follow-up dos leads em um fluxo unico, reduzindo dependência de planilha e WhatsApp manual.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "state snapshot",
+            "user message"
+          ],
+          "max_length": 260
+        },
+        "operational_first_step": {
+          "kind": "long_text",
+          "value": "Primeiro passo: mapear de onde entram os leads, quem responde, em quanto tempo respondem e quais etapas precisam de lembrete automatico para nao perder interessados.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "state snapshot",
+            "user message"
+          ],
+          "max_length": 240
+        },
+        "recommended_plan_or_range": {
+          "kind": "short_text",
+          "value": "Plano de CRM para follow-up",
+          "source": "model_decision",
+          "evidence": [
+            "state snapshot",
+            "user message"
+          ],
+          "max_length": 90
+        },
+        "demo_status": {
+          "kind": "enum",
+          "value": "not_offered",
+          "source": "runtime_state",
+          "evidence": [
+            "state snapshot"
+          ],
+          "max_length": 0
+        }
+      },
+      "evidence": [
+        "state snapshot",
+        "user message"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "diagnostic_ready",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "complete",
+      "next_action_hint": "Move to deliver diagnostic and recommend next step"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "state snapshot",
+        "user message"
+      ]
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 1,
+      "input_tokens": 4524,
+      "output_tokens": 931,
+      "cost_usd": 0.006546,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_diagnostic_urgency_final",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_render_preview_failed",
+        "severity": "P0",
+        "message": "source_not_allowed:recommended_plan_or_range:model_decision",
+        "path": "template_proposal"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "diagnostic_ready",
+    "last_intent": "diagnostic",
+    "diagnostic_status": "complete",
+    "next_action_hint": "Move to deliver diagnostic and recommend next step"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 10138,
+    "output_tokens": 1862,
+    "cost_usd": 0.013909,
+    "handoffs": 0,
+    "repairs": 1
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_render_preview_failed",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

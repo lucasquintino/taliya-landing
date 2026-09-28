@@ -1,0 +1,519 @@
+{
+  "number": 9,
+  "scenario_id": "demo_request",
+  "channel": "whatsapp",
+  "required_proof": "Official demo path only; demo interest proposed.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "consigo ver funcionando?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"opening\"}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"demo\",\"general_capabilities\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "opening",
+          "templates": [
+            {
+              "template_id": "opening.cold_greeting",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.cold_greeting_named",
+              "required_variables": [
+                "first_name"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.diagnostic_cta",
+              "required_variables": [],
+              "optional_variables": [
+                "first_name"
+              ]
+            },
+            {
+              "template_id": "opening.general_interest",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.instagram_source",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.site_cta",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.widget_empty_diagnostic",
+              "required_variables": [],
+              "optional_variables": []
+            }
+          ],
+          "variable_specs": {
+            "first_name": {
+              "kind": "short_text",
+              "max_length": 40,
+              "allowed_sources": [
+                "channel_metadata",
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Only a verified real person first name; never a studio name, handle, phone, internal reliability label, or unverified profile value."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "demo",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.demo"
+              ]
+            },
+            {
+              "key": "general_capabilities",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.general_capabilities"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "demo",
+            "general_capabilities"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.demo",
+          "product_knowledge.general_capabilities"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "opening",
+        "general_interest"
+      ],
+      "direct_question": "consigo ver funcionando?",
+      "customer_need": "quer ver o funcionamento",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "direct_question",
+          "kind": "other",
+          "raw_text": "consigo ver funcionando?",
+          "value_text": "can see it working",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "consigo ver funcionando?",
+        "answering_template_id": "opening.general_interest",
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "demo_proposal": {
+      "status": "unknown",
+      "next_step": "none",
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "opening.general_interest"
+      ],
+      "variables": [],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "opening",
+      "last_intent": "general_interest",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "Answer general interest and invite next step"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": [
+      "No approved product facts available for demo claims"
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_demo_request",
+    "conversation_id": "spike_conv_demo_request",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "opening",
+        "general_interest"
+      ],
+      "direct_question": "consigo ver funcionando?",
+      "customer_need": "quer ver o funcionamento",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "direct_question",
+          "kind": "other",
+          "raw_text": "consigo ver funcionando?",
+          "value": "can see it working",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "consigo ver funcionando?",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "demo_proposal": {
+      "status": "unknown",
+      "next_step": "none",
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "opening.general_interest"
+      ],
+      "variables": {},
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "opening",
+      "last_intent": "general_interest",
+      "next_action_hint": "Answer general interest and invite next step"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "No approved product facts available for demo claims"
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 8246,
+      "output_tokens": 433,
+      "cost_usd": 0.005714,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_demo_request",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Oi, tudo bem?",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "A Taliya e a IA do seu studio de Pilates para organizar a rotina que faz o studio girar: agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento.",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 3
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "opening",
+    "last_intent": "general_interest",
+    "next_action_hint": "Answer general interest and invite next step"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 8246,
+    "output_tokens": 433,
+    "cost_usd": 0.005714,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

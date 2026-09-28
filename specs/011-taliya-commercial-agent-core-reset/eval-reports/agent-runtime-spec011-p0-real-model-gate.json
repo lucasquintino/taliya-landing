@@ -1,0 +1,207 @@
+{
+  "runId": "agent-runtime-spec011-p0-real-model-gate-1780243785338",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "createdAt": "2026-05-31T16:09:45.338Z",
+  "releaseGate": "pass",
+  "summary": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "real-model fixture covers required P0 behavior cases",
+      "details": {
+        "fixture": "scripts\\fixtures\\agent-runtime\\spec-011-real-openai-p0.json",
+        "scenarioCount": 9,
+        "expected": [
+          "RC-011-001",
+          "RC-011-002",
+          "RC-011-003",
+          "RC-011-004",
+          "RC-011-005",
+          "RC-011-006",
+          "RC-011-007",
+          "RC-011-008",
+          "RC-011-009",
+          "RC-011-012",
+          "RC-011-013",
+          "RC-011-014"
+        ],
+        "covered": [
+          "RC-011-001",
+          "RC-011-002",
+          "RC-011-003",
+          "RC-011-004",
+          "RC-011-005",
+          "RC-011-006",
+          "RC-011-007",
+          "RC-011-008",
+          "RC-011-009",
+          "RC-011-012",
+          "RC-011-013",
+          "RC-011-014"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "RC-011-014A known red baseline exists and actually failed",
+      "details": {
+        "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-current-red-full.json",
+        "releaseGate": "fail",
+        "summary": {
+          "total": 8,
+          "passed": 4,
+          "failed": 4,
+          "estimatedCostUsd": 0.068774,
+          "inputTokens": 62717,
+          "outputTokens": 6867
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "RC-011-014A report contract rejects incomplete red baseline evidence",
+      "details": {
+        "command": "node scripts/eval-agent-runtime-spec011-report-contract.mjs specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-current-red-full.json",
+        "startedAt": "2026-05-31T16:08:15.618Z",
+        "finishedAt": "2026-05-31T16:08:15.704Z",
+        "status": 1,
+        "signal": null,
+        "stdout": "",
+        "stderr": "agent-runtime-spec011-report-contract: 10 failure(s). Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-report-contract.json\n- scenario spec011-rc001-rc002-internal-metadata-leak turn 1 has mandatory Spec 011 artifacts\n- scenario spec011-rc003-price-497-not-student-count turn 1 has mandatory Spec 011 artifacts\n- scenario spec011-rc004-urgency-before-final turn 1 has mandatory Spec 011 artifacts\n- scenario spec011-rc005-rc006-rc008-simple-number-answer turn 1 has mandatory Spec 011 artifacts\n- scenario spec011-rc005-rc006-rc008-simple-number-answer turn 2 has mandatory Spec 011 artifacts\n- scenario spec011-rc007-valid-short-answer-does-not-stall turn 1 has mandatory Spec 011 artifacts\n- scenario spec011-rc007-valid-short-answer-does-not-stall turn 2 has mandatory Spec 011 artifacts\n- scenario spec011-rc009-final-diagnostic-not-truncated turn 1 has mandatory Spec 011 artifacts\n- scenario spec011-rc012-final-diagnostic-plain-studio-language turn 1 has mandatory Spec 011 artifacts\n- scenario spec011-rc014-false-pass-protection turn 1 has mandatory Spec 011 artifacts\n",
+        "error": null
+      }
+    },
+    {
+      "ok": true,
+      "message": "real OpenAI P0 fixture passes against Spec 011 endpoint",
+      "details": {
+        "command": "python scripts/eval-agent-runtime-real-openai.py --fixture scripts\\fixtures\\agent-runtime\\spec-011-real-openai-p0.json --report-name agent-runtime-spec011-p0-real-model --max-scenarios 0 --max-model-calls 11 --max-cost-usd 0.35",
+        "startedAt": "2026-05-31T16:08:15.704Z",
+        "finishedAt": "2026-05-31T16:09:45.182Z",
+        "status": 0,
+        "signal": null,
+        "stdout": "agent-runtime-real-openai: 9/9 passed\r\nReport JSON: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-real-model.json\r\nTranscript MD: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-real-model.md\r\n",
+        "stderr": "",
+        "error": null
+      }
+    },
+    {
+      "ok": true,
+      "message": "real OpenAI P0 report has pass release gate",
+      "details": {
+        "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-real-model.json",
+        "model": "gpt-5.4-mini",
+        "summary": {
+          "total": 9,
+          "passed": 9,
+          "failed": 0,
+          "estimatedCostUsd": 0.159867,
+          "inputTokens": 150749,
+          "outputTokens": 10401
+        },
+        "releaseGate": "pass"
+      }
+    },
+    {
+      "ok": true,
+      "message": "real OpenAI P0 report has mandatory trace artifacts",
+      "details": {
+        "command": "node scripts/eval-agent-runtime-spec011-report-contract.mjs specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-real-model.json",
+        "startedAt": "2026-05-31T16:09:45.187Z",
+        "finishedAt": "2026-05-31T16:09:45.269Z",
+        "status": 0,
+        "signal": null,
+        "stdout": "agent-runtime-spec011-report-contract: 41/41 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-report-contract.json\n",
+        "stderr": "",
+        "error": null
+      }
+    },
+    {
+      "ok": true,
+      "message": "RC-011-010/011 delivery duplicate and interleaving gate passes",
+      "details": {
+        "command": "node scripts/eval-agent-runtime-spec011-delivery-turn-gate.mjs",
+        "startedAt": "2026-05-31T16:09:45.269Z",
+        "finishedAt": "2026-05-31T16:09:45.337Z",
+        "status": 0,
+        "signal": null,
+        "stdout": "agent-runtime-spec011-delivery-turn-gate: 7/7 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-delivery-turn-gate.json\n",
+        "stderr": "",
+        "error": null
+      }
+    },
+    {
+      "ok": true,
+      "message": "Spec 011 P0 gate has explicit evidence mapping for all required cases",
+      "details": {
+        "expected": [
+          "RC-011-001",
+          "RC-011-002",
+          "RC-011-003",
+          "RC-011-004",
+          "RC-011-005",
+          "RC-011-006",
+          "RC-011-007",
+          "RC-011-008",
+          "RC-011-009",
+          "RC-011-012",
+          "RC-011-013",
+          "RC-011-014",
+          "RC-011-010",
+          "RC-011-011",
+          "RC-011-014A"
+        ],
+        "proven": [
+          "RC-011-001",
+          "RC-011-002",
+          "RC-011-003",
+          "RC-011-004",
+          "RC-011-005",
+          "RC-011-006",
+          "RC-011-007",
+          "RC-011-008",
+          "RC-011-009",
+          "RC-011-010",
+          "RC-011-011",
+          "RC-011-012",
+          "RC-011-013",
+          "RC-011-014",
+          "RC-011-014A"
+        ],
+        "missing": [],
+        "realModelReport": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-real-model.json",
+        "deliveryReport": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-delivery-turn-gate.json",
+        "redBaselineReport": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-current-red-full.json"
+      }
+    }
+  ],
+  "realModelReport": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-real-model.json",
+  "redBaselineReport": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-current-red-full.json",
+  "coveredCases": [
+    "RC-011-001",
+    "RC-011-002",
+    "RC-011-003",
+    "RC-011-004",
+    "RC-011-005",
+    "RC-011-006",
+    "RC-011-007",
+    "RC-011-008",
+    "RC-011-009",
+    "RC-011-012",
+    "RC-011-013",
+    "RC-011-014",
+    "RC-011-010",
+    "RC-011-011",
+    "RC-011-014A"
+  ],
+  "supplementalCases": [
+    "RC-011-010",
+    "RC-011-011",
+    "RC-011-014A"
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "reposicoes-with-size-system-goal",
+    "message": "Tenho 90 alunos, uso planilha e o maior problema e reposicao baguncada. Quero aliviar agenda primeiro.",
+    "expectedStatus": "completed"
+  },
+  {
+    "id": "sales-whatsapp-followup",
+    "message": "Meu studio tem 120 alunos, interessados chegam no WhatsApp e somem porque ninguem retorna no mesmo dia.",
+    "expectedStatus": "completed"
+  }
+]

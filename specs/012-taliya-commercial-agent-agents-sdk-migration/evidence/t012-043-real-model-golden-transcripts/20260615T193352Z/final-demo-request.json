@@ -1,0 +1,378 @@
+{
+  "scenario_id": "final-demo-request",
+  "title": "Golden RC-011-059 product demo",
+  "status": "failed",
+  "messages": [
+    "quero ver uma demonstracao"
+  ],
+  "transcript": [],
+  "turns": [
+    {
+      "turn": 1,
+      "user_text": "quero ver uma demonstracao",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "llm_called": true,
+      "status": "failed",
+      "selected_action": "send_demo",
+      "template_ids": [
+        "product.demo_direct"
+      ],
+      "rendered_messages": [],
+      "issues": [
+        "demo_direct_question_flags_missing"
+      ],
+      "issue_details": [
+        "demo_direct_question_flags_missing: product.demo_direct is a direct product-demo answer and must mark the direct request as answered first"
+      ],
+      "repairs": 1,
+      "model_operations": 3,
+      "cost_usd": 0.007333,
+      "next_state": null,
+      "sales_inbox_projection": {},
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "quero ver uma demonstracao",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-final-demo-request",
+            "lead_id": "t012-043-final-demo-request",
+            "source": "pilates_landing",
+            "channel": "widget"
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "entry",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_general_interest",
+            "answer_source_opening",
+            "offer_diagnostic_from_pain",
+            "answer_direct_product_question",
+            "start_requested_diagnostic",
+            "ask_name_at_diagnostic_entry",
+            "handoff_requested",
+            "clarify_ambiguous_opening"
+          ],
+          "eligible_template_groups": [
+            "opening.",
+            "diagnostic.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "HandoffCallItem",
+            "raw_item_type": "ResponseFunctionToolCall",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": "transfer_to_taliya_product_agent",
+            "handoff_target": null
+          },
+          {
+            "item_type": "HandoffOutputItem",
+            "raw_item_type": "dict",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": null,
+            "handoff_target": "taliya_product_agent"
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "00000000-0000-0000-0000-000000000000",
+          "turn_id": "00000000-0000-0000-0000-000000000000",
+          "selected_action": "send_demo",
+          "interpreted_intents": [
+            "demo_request"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "demo_link"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "requested",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "demo_reaction_prompt",
+              "value": "Claro — posso te mostrar uma demonstração.",
+              "evidence": [
+                "quero ver uma demonstracao"
+              ]
+            }
+          ],
+          "reply_goal": "Responder ao pedido de demonstração e encaminhar a próxima etapa com a demo oficial.",
+          "confidence": "high",
+          "evidence": [
+            "quero ver uma demonstracao"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "00000000-0000-0000-0000-000000000000",
+            "turn_id": "00000000-0000-0000-0000-000000000000",
+            "selected_action": "send_demo",
+            "interpreted_intents": [
+              "demo_request"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [],
+            "product_fact_keys_used": [
+              "demo_link"
+            ],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "requested",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "demo_reaction_prompt",
+                "value": "Claro — posso te mostrar uma demonstração.",
+                "evidence": [
+                  "quero ver uma demonstracao"
+                ]
+              }
+            ],
+            "reply_goal": "Responder ao pedido de demonstração e encaminhar a próxima etapa com a demo oficial.",
+            "confidence": "high",
+            "evidence": [
+              "quero ver uma demonstracao"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "00000000-0000-0000-0000-000000000000",
+          "turn_id": "00000000-0000-0000-0000-000000000000",
+          "selected_action": "send_demo",
+          "interpreted_intents": [
+            "demo_request"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "demo_link"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "requested",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "demo_reaction_prompt",
+              "value": "Claro — posso te mostrar uma demonstração.",
+              "evidence": [
+                "quero ver uma demonstracao"
+              ]
+            }
+          ],
+          "reply_goal": "Responder ao pedido de demonstração e encaminhar a próxima etapa com a demo oficial.",
+          "confidence": "high",
+          "evidence": [
+            "quero ver uma demonstracao"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "send_demo",
+          "previous_state": "new_lead",
+          "current_state": "demo_offered",
+          "next_state": "demo_reaction_pending",
+          "template_ids": [
+            "product.demo_direct"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_send_demo",
+          "status": "failed",
+          "errors": [
+            {
+              "code": "demo_direct_question_flags_missing",
+              "message": "product.demo_direct is a direct product-demo answer and must mark the direct request as answered first"
+            }
+          ],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "blocked"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 1,
+          "validator_feedback": [
+            {
+              "code": "demo_direct_question_flags_missing",
+              "message": "product.demo_direct is a direct product-demo answer and must mark the direct request as answered first"
+            }
+          ],
+          "repair_sdk_run_items": [
+            {
+              "item_type": "MessageOutputItem",
+              "raw_item_type": "ResponseOutputMessage",
+              "agent_name": "taliya_product_agent",
+              "tool_name": null,
+              "handoff_target": null
+            }
+          ]
+        },
+        "render_plan": {
+          "template_ids": [
+            "product.demo_direct"
+          ],
+          "variables": {
+            "official_demo_link": {
+              "kind": "url",
+              "value": "https://www.taliya.com.br/pilates/planos/demonstracao",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "product_knowledge.links.demo"
+              ]
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [],
+        "state_diff": {
+          "next_state": "demo_reaction_pending",
+          "state_patch": {
+            "demo": {
+              "status": "offered"
+            }
+          },
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": null,
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 0,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 3,
+          "cost_usd": 0.007332750000000001
+        },
+        "failure_labels": [
+          "demo_direct_question_flags_missing"
+        ]
+      }
+    }
+  ],
+  "final_state": {
+    "conversation_id": "t012-043-final-demo-request",
+    "lead_id": "t012-043-final-demo-request",
+    "source": "pilates_landing",
+    "channel": "widget"
+  },
+  "checks": [
+    "route:product",
+    "direct_question_answered_first",
+    "mentions_demo_link",
+    "demo_context_prompt",
+    "first_response_greeting",
+    "has_product_source",
+    "no_waitlist",
+    "template_ids_present",
+    "sales_inbox_projection_consistent",
+    "all_messages_short"
+  ],
+  "check_results": [
+    {
+      "check": "turn_statuses_acceptable",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "check": "includes:/pilates/planos/demonstracao",
+      "passed": false,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "includes:demo",
+      "passed": false,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "excludes:checkout",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:video production",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:demo da OpenAI",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "template_present:product.demo_direct",
+      "passed": true,
+      "detail": "template was not selected"
+    },
+    {
+      "check": "no_failed_turns",
+      "passed": false,
+      "detail": "demo_direct_question_flags_missing"
+    }
+  ],
+  "issues": [
+    "turn_statuses_acceptable",
+    "includes:/pilates/planos/demonstracao: missing expected rendered text",
+    "includes:demo: missing expected rendered text",
+    "no_failed_turns: demo_direct_question_flags_missing"
+  ],
+  "total_model_operations": 3,
+  "total_cost_usd": 0.007333,
+  "cost_cap_exceeded": false
+}

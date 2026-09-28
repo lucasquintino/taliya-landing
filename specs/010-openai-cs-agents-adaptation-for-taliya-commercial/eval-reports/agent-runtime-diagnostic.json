@@ -1,0 +1,37 @@
+{
+  "runId": "agent-runtime-diagnostic-1780089883091",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-05-29T21:24:43.091Z",
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "rich diagnostic fixtures are present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "thin diagnostic fixtures are present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "diagnostic runtime and fake-certainty tests pass",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  },
+  "fixtureCounts": {
+    "rich": 2,
+    "thin": 2
+  }
+}

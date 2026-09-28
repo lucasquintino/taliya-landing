@@ -1,0 +1,53 @@
+{
+  "runId": "agent-v2-delivery-1779416641098",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:24:01.098Z",
+  "summary": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "channel parity fixtures exist",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "delivery contains typingDelayMs",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "delivery contains 2500",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "delivery contains 9000",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "delivery contains 260",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "delivery contains attachWidgetActions",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "delivery contains sendMetaWhatsAppTypingIndicator",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "delivery contains waitForWhatsAppReplyDelay",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

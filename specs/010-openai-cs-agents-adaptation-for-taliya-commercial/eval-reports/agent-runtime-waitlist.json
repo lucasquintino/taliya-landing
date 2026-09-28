@@ -1,0 +1,44 @@
+{
+  "runId": "agent-runtime-waitlist-1780089885644",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-05-29T21:24:45.644Z",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "no-early-waitlist fixture is present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "post-waitlist join fixture is present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "post-waitlist product question must answer directly without repeating joined status",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "waitlist timing and idempotency tests pass",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  },
+  "fixtures": [
+    "cold-greeting-no-waitlist",
+    "direct-buy-offers-waitlist",
+    "accept-after-offer-joins",
+    "accept-after-offer-missing-details"
+  ]
+}

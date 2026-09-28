@@ -1,0 +1,297 @@
+{
+  "number": 9,
+  "scenario_id": "demo_request",
+  "channel": "whatsapp",
+  "required_proof": "Official demo path only; demo interest proposed.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "consigo ver funcionando?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "demo_request",
+        "product_question"
+      ],
+      "direct_question": "consigo ver funcionando?",
+      "customer_need": "quer ver o sistema em funcionamento",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "O lead quer ver funcionando",
+        "answering_template_id": "opening.general_interest",
+        "evidence": [
+          "\"consigo ver funcionando?\""
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_started",
+      "next_step": "responder interesse e puxar para demonstração/explicação do funcionamento",
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "não avaliada",
+      "intent": "não aplicável",
+      "missing_details": [],
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "opening.general_interest"
+      ],
+      "variables": [],
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "interest",
+      "last_intent": "demo_request",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "send_demo_or_explain_functioning"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "medium",
+    "risks": [
+      "sem contexto de produto específico para prometer demo ao vivo"
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_demo_request",
+    "conversation_id": "spike_conv_demo_request",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "demo_request",
+        "product_question"
+      ],
+      "direct_question": "consigo ver funcionando?",
+      "customer_need": "quer ver o sistema em funcionamento",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "O lead quer ver funcionando",
+        "answered_before_steering": true,
+        "evidence": [
+          "\"consigo ver funcionando?\""
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_started",
+      "next_step": "responder interesse e puxar para demonstração/explicação do funcionamento",
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "não avaliada",
+      "intent": "não aplicável",
+      "missing_details": [],
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "opening.general_interest"
+      ],
+      "variables": {},
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "interest",
+      "last_intent": "demo_request",
+      "next_action_hint": "send_demo_or_explain_functioning"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "\"consigo ver funcionando?\""
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "sem contexto de produto específico para prometer demo ao vivo"
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 1,
+      "input_tokens": 3819,
+      "output_tokens": 396,
+      "cost_usd": 0.002227,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_demo_request",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Oi, tudo bem?",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "A Taliya e a IA do seu studio de Pilates para organizar a rotina que faz o studio girar: agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento.",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 3
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "interest",
+    "last_intent": "demo_request",
+    "next_action_hint": "send_demo_or_explain_functioning"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 1,
+    "input_tokens": 3819,
+    "output_tokens": 396,
+    "cost_usd": 0.002227,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

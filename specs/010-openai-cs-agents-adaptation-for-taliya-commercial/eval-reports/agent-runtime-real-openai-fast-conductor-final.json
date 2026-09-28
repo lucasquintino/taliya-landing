@@ -1,0 +1,773 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-fast-conductor-final",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-24T13:26:19Z",
+  "finishedAt": "2026-05-24T13:26:35Z",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "estimatedCostUsd": 0.007119,
+    "inputTokens": 5200,
+    "outputTokens": 861
+  },
+  "releaseGate": "pass",
+  "scenarios": [
+    {
+      "id": "real-price-direct",
+      "title": "Pergunta direta de preco deve responder sem esconder",
+      "channel": "widget",
+      "checks": [
+        "mentions_all_prices",
+        "has_product_source",
+        "no_checkout_link",
+        "not_generic_intro"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_c53caca26ec14c3e8eef9879b0f3dc91",
+            "conversation_id": "real_eval_real-price-direct",
+            "lead_id": "lead_real-price-direct",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "direct_question_opening",
+                "detected_intents": [
+                  "product",
+                  "price"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_direct",
+                  "diagnostic.price_hook"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_pain_resolved": "perda de interessados e follow-up",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele responde, registra contexto e avisa a equipe quando precisa de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  }
+                },
+                "render_plan": [],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.price_hook",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [],
+                "confidence": "high",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "plans",
+                    "prices",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "ok"
+                }
+              ],
+              "usage": {
+                "model": "gpt-4.1-mini",
+                "input_tokens": 297,
+                "output_tokens": 41,
+                "cost_usd": 0.000184
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_da1f0b3e88f74226a666ea6c02db00ca"
+          },
+          "lead": "Quanto custa a Taliya e quais planos existem?"
+        }
+      ]
+    },
+    {
+      "id": "real-plan-fit-with-context",
+      "title": "Plano ideal com contexto nao pode virar abertura generica",
+      "channel": "widget",
+      "checks": [
+        "mentions_user_context",
+        "has_product_source",
+        "not_generic_intro",
+        "asks_at_most_one_question"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_e9d47731cfd24975a8a68b919e765508",
+            "conversation_id": "real_eval_real-plan-fit-with-context",
+            "lead_id": "lead_real-plan-fit-with-context",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "direct_question_opening",
+                "detected_intents": [
+                  "product",
+                  "plan_fit"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "Lead tem 80 alunos",
+                  "Lead relata reposicao baguncada",
+                  "Perguntou qual o plano ideal",
+                  "Planos oficiais: Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, Completo R$ 1.497/mes"
+                ],
+                "facts_missing": [
+                  "Quantos processos/routines quer organizar primeiro",
+                  "Se o foco principal é reposicao, atendimento, agenda, vendas ou financeiro"
+                ],
+                "template_ids": [
+                  "diagnostic.offer_soft"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: com 80 alunos e reposição bagunçada, já dá para ver por onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: com 80 alunos e reposição bagunçada, já dá para ver por onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Reposição bagunçada com base de 80 alunos."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "diagnóstico gratuito",
+                    "agent_pain_resolved": "agenda, faltas e reposições escapando",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele organiza avisos, próximos encaixes e pendências para a equipe agir"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial R$ 497/mes"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "Essencial R$ 497/mes"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.offer_soft",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Entendi: com 80 alunos e reposição bagunçada, já dá para ver por onde o diagnóstico deve começar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "alunos",
+                  "value": "80",
+                  "confidence": "high",
+                  "evidence": [
+                    "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal."
+                  ]
+                },
+                {
+                  "key": "pain",
+                  "value": "reposição bagunçada",
+                  "confidence": "high",
+                  "evidence": [
+                    "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal."
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal.",
+                    "evidence": [
+                      "widget:real-plan-fit-with-context:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal.",
+                    "evidence": [
+                      "widget:real-plan-fit-with-context:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal.",
+                    "evidence": [
+                      "widget:real-plan-fit-with-context:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [
+                  "80 alunos",
+                  "reposição bagunçada"
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": "Reposição bagunçada com base de 80 alunos.",
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [
+                  "diagnóstico gratuito"
+                ],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": "Essencial R$ 497/mes",
+                "final_plan_line": "Essencial costuma ser o primeiro plano a comparar quando há uma dor principal para organizar.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [
+                  "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal."
+                ],
+                "unknowns": [
+                  "Se a dor principal é só reposição ou também atendimento/agenda/vendas",
+                  "Se precisa de 1 agente ou mais",
+                  "Qual rotina quer organizar primeiro"
+                ],
+                "confidence": "low",
+                "next_question": "A dor principal hoje é só reposição, ou também atendimento e agenda?",
+                "validation_question": "Se eu te mostrar o plano mais provável e o que organizar primeiro, faz sentido para o seu studio?",
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message",
+                    "initial_policy_read",
+                    "profile_name_assessment",
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "2"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4315,
+                "output_tokens": 742,
+                "cost_usd": 0.006575
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_f5e35f8f8eb7467f859d77338c0dc28b"
+          },
+          "lead": "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal."
+        }
+      ]
+    },
+    {
+      "id": "real-thin-diagnostic",
+      "title": "Diagnostico com pouco dado nao pode fingir conclusao",
+      "channel": "widget",
+      "checks": [
+        "diagnostic_not_completed",
+        "asks_at_most_one_question",
+        "not_fake_evidence"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_e91579abc35944e0a4e3d6e6963a8bb6",
+            "conversation_id": "real_eval_real-thin-diagnostic",
+            "lead_id": "lead_real-thin-diagnostic",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_in_progress",
+                "route": "diagnostic",
+                "opening_type": "diagnostic_cta_opening",
+                "detected_intents": [
+                  "diagnostic_request"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "ask_next",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "diagnostic.ask_active_students"
+                ],
+                "template_variables": {
+                  "diagnostic.ask_active_students": {
+                    "answer_feedback": "Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje."
+                  },
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_pain_resolved": "perda de interessados e follow-up",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele responde, registra contexto e avisa a equipe quando precisa de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  }
+                },
+                "render_plan": [],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_active_students",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_active_students",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "in_progress",
+                "ledger": [],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [
+                  "active_students_or_size"
+                ],
+                "confidence": "high",
+                "next_question": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "ok"
+                }
+              ],
+              "usage": {
+                "model": "gpt-4.1-mini",
+                "input_tokens": 291,
+                "output_tokens": 36,
+                "cost_usd": 0.000174
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_44a8de3b56f44c4ba3a17c2bb087ba19"
+          },
+          "lead": "Quero um diagnostico."
+        }
+      ]
+    },
+    {
+      "id": "real-demo-link",
+      "title": "Demo deve usar link oficial",
+      "channel": "widget",
+      "checks": [
+        "mentions_demo_link",
+        "has_product_source",
+        "no_checkout_link"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_7d92965e9b954d608360b07a70121e12",
+            "conversation_id": "real_eval_real-demo-link",
+            "lead_id": "lead_real-demo-link",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "direct_question_opening",
+                "detected_intents": [
+                  "product",
+                  "demo_request"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "offered",
+                "demo_next_step": "ask_demo_reaction",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.demo_direct"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  }
+                },
+                "render_plan": [],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.demo_direct",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Ver demonstração: https://www.taliya.com.br/pilates/planos/demonstracao",
+                  "channel_hint": "widget",
+                  "kind": "action",
+                  "template_id": "product.demo_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Conte mais sobre os problemas do seu studio, posso te indicar uma demonstração que resolva algo seu.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.demo_direct",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "demo_status",
+                    "links",
+                    "unsupported_claims"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-4.1-mini",
+                "input_tokens": 297,
+                "output_tokens": 42,
+                "cost_usd": 0.000186
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_2ad8bd50e67d4f3484919a41f201e46e"
+          },
+          "lead": "Tem demo ou pagina para eu ver como funciona?"
+        }
+      ]
+    }
+  ]
+}

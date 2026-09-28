@@ -1,0 +1,68 @@
+{
+  "turns_total": 12,
+  "turns_passed": 2,
+  "stopped_at_turn": 3,
+  "total_model_operations": 7,
+  "total_cost_usd": 0.017387,
+  "final_state": {
+    "demo": {
+      "status": "not_applicable",
+      "next_step": ""
+    },
+    "waitlist": {
+      "eligibility": "not_applicable",
+      "intent": "not_applicable"
+    },
+    "summary": "Conversa comercial em andamento no WhatsApp da Taliya. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"not_applicable\", \"intent\": \"not_applicable\"}.",
+    "diagnostic": {
+      "status": "in_progress",
+      "next_question_key": "pain_context"
+    }
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "text": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "text": "Perda de alunos novos porque o WhatsApp do studio fica atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    }
+  ]
+}

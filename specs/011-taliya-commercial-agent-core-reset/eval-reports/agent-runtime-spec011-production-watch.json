@@ -1,0 +1,278 @@
+{
+  "runId": "agent-runtime-spec011-production-watch-1780234697839",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-099",
+  "createdAt": "2026-05-31T13:38:17.839Z",
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0
+  },
+  "releaseGate": "pass_watch_ready_no_production_activation",
+  "checkedFiles": [
+    "specs\\011-taliya-commercial-agent-core-reset\\production-cutover-watch-plan.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\production-cutover-watch-plan.md"
+  ],
+  "requiredMonitorIds": [
+    "trace_quality",
+    "handoff_behavior",
+    "sales_inbox_completeness",
+    "model_usage",
+    "cost",
+    "fallback_error_rate",
+    "duplicate_interleaved_delivery",
+    "p0_behavior",
+    "rollback_readiness"
+  ],
+  "requiredWatchFields": [
+    "channel",
+    "conversation_id",
+    "lead_id",
+    "request_id",
+    "idempotency_key",
+    "trace_id",
+    "turn_id",
+    "conductor_schema_version",
+    "selected_template_ids",
+    "validator_status",
+    "repair_status",
+    "rendered_message_count",
+    "delivery_control",
+    "delivery_events",
+    "model_usage",
+    "cost_usd",
+    "runtime_state_diff",
+    "sales_inbox_projection",
+    "handoff_status",
+    "fallback_reason",
+    "error_code"
+  ],
+  "requiredP0AbortIds": [
+    "internal_text_leak",
+    "wrong_product_fact",
+    "wrong_numeric_grounding",
+    "diagnostic_required_question_skipped",
+    "duplicate_or_interleaved_delivery",
+    "human_pause_violation",
+    "sales_inbox_missing_or_wrong",
+    "false_pass_eval_or_trace_gap"
+  ],
+  "requiredEvidenceIds": [
+    "shadow_mode",
+    "shadow_compare",
+    "rollback",
+    "runner_quarantine",
+    "public_fallback_quarantine",
+    "pilates_no_drift"
+  ],
+  "evidenceResults": [
+    {
+      "id": "shadow_mode",
+      "ok": true,
+      "reason": "pass",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-shadow-mode.json",
+      "releaseGate": "pass",
+      "summary": {
+        "total": 7,
+        "passed": 7,
+        "failed": 0
+      },
+      "allowedReleaseGates": [
+        "pass"
+      ]
+    },
+    {
+      "id": "shadow_compare",
+      "ok": true,
+      "reason": "pass",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-shadow-compare.json",
+      "releaseGate": "pass_with_manual_review_samples",
+      "summary": {
+        "assertion_count": 110,
+        "failed": 0,
+        "failed_assertion_count": 0,
+        "passed": 2,
+        "scenario_count": 2
+      },
+      "allowedReleaseGates": [
+        "pass_with_manual_review_samples"
+      ]
+    },
+    {
+      "id": "rollback",
+      "ok": true,
+      "reason": "pass",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-rollback.json",
+      "releaseGate": "pass",
+      "summary": {
+        "total": 7,
+        "passed": 7,
+        "failed": 0
+      },
+      "allowedReleaseGates": [
+        "pass"
+      ]
+    },
+    {
+      "id": "runner_quarantine",
+      "ok": true,
+      "reason": "pass",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-runner-quarantine.json",
+      "releaseGate": "pass",
+      "summary": {
+        "total": 5,
+        "passed": 5,
+        "failed": 0
+      },
+      "allowedReleaseGates": [
+        "pass"
+      ]
+    },
+    {
+      "id": "public_fallback_quarantine",
+      "ok": true,
+      "reason": "pass",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-public-fallback-quarantine.json",
+      "releaseGate": "pass",
+      "summary": {
+        "total": 4,
+        "passed": 4,
+        "failed": 0
+      },
+      "allowedReleaseGates": [
+        "pass"
+      ]
+    },
+    {
+      "id": "pilates_no_drift",
+      "ok": true,
+      "reason": "pass",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-pilates-no-drift.json",
+      "releaseGate": "pass_with_manual_visual_review",
+      "summary": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0
+      },
+      "allowedReleaseGates": [
+        "pass_with_manual_visual_review"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "ok": true,
+      "message": "machine-readable production watch plan exists with the expected schema and task",
+      "details": {
+        "planJson": "specs\\011-taliya-commercial-agent-core-reset\\production-cutover-watch-plan.json",
+        "schema": "011.production_watch.v1",
+        "task": "T011-099"
+      }
+    },
+    {
+      "ok": true,
+      "message": "rollout is explicitly 100 percent, not canary, while final activation remains blocked until Phase 10 approval",
+      "details": {
+        "rollout": {
+          "mode": "one_hundred_percent",
+          "canaryEnabled": false,
+          "trafficScope": "all Taliya-owned commercial leads from widget and Taliya-owned WhatsApp after approval",
+          "requiresPhase10ApprovalBeforeActivation": true,
+          "finalProductionActivationApproved": false,
+          "activationDecisionOwner": "lucas_product_owner_with_codex_support",
+          "featureFlag": {
+            "env": "TALIYA_SPEC011_COMMERCIAL_CORE_ENABLED",
+            "enabledValue": "true",
+            "rollbackValue": "false",
+            "rollbackExpectedDisposition": "operational fallback or retryable spec011_core_disabled; never old TS v2 or Python runner commercial answering",
+            "proofTask": "T011-098",
+            "proofReport": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-rollback.json"
+          }
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "rollback switch is explicit and points to the proven Spec 011 operational fallback path",
+      "details": {
+        "featureFlag": {
+          "env": "TALIYA_SPEC011_COMMERCIAL_CORE_ENABLED",
+          "enabledValue": "true",
+          "rollbackValue": "false",
+          "rollbackExpectedDisposition": "operational fallback or retryable spec011_core_disabled; never old TS v2 or Python runner commercial answering",
+          "proofTask": "T011-098",
+          "proofReport": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-rollback.json"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "first-hours watch window covers widget and Taliya-owned WhatsApp with an immediate first check",
+      "details": {
+        "watchWindow": {
+          "durationMinutes": 240,
+          "firstCheckWithinMinutes": 5,
+          "defaultCheckCadenceMinutes": 15,
+          "channels": [
+            "widget",
+            "taliya_whatsapp"
+          ],
+          "trafficScope": "100_percent_taliya_owned_commercial_leads",
+          "evidenceFolder": "specs/011-taliya-commercial-agent-core-reset/eval-reports",
+          "manualReviewFolder": "specs/011-taliya-commercial-agent-core-reset/manual-review-samples"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "all required monitors define source, fields, healthy criteria, abort criteria, owner, cadence, and operator action",
+      "details": {
+        "missingMonitorIds": [],
+        "monitorProblems": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "watch plan names every required runtime, trace, delivery, cost, fallback, and Sales Inbox field",
+      "details": {
+        "missingWatchFields": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "P0 abort criteria cover internal leaks, product facts, numeric grounding, diagnostics, delivery, handoff, Sales Inbox, and false PASS risk",
+      "details": {
+        "missingP0AbortIds": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "watch readiness links to passing shadow, rollback, quarantine, and no-drift evidence",
+      "details": {
+        "missingEvidenceIds": [],
+        "badEvidence": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "human-readable watch runbook exists and keeps activation blocked without Phase 10 approval",
+      "details": {
+        "planMarkdown": "specs\\011-taliya-commercial-agent-core-reset\\production-cutover-watch-plan.md"
+      }
+    },
+    {
+      "ok": true,
+      "message": "production watch work produced no protected /pilates, landing visual, floating-agent, or Sales Inbox UI source diff",
+      "details": {
+        "protectedDiff": [],
+        "protectedPaths": [
+          "app/pilates",
+          "components/landing",
+          "data/landing",
+          "lib/landing/floating-agent.ts",
+          "components/internal/SalesInboxClient.tsx"
+        ]
+      }
+    }
+  ]
+}

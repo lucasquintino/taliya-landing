@@ -1,0 +1,482 @@
+{
+  "scenario_id": "final-pain-first",
+  "title": "Golden RC-011-053A pain-first opening",
+  "status": "passed",
+  "messages": [
+    "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+  ],
+  "transcript": [
+    {
+      "role": "user",
+      "content": "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?\n\nEm que posso ajudar?"
+    },
+    {
+      "role": "assistant",
+      "content": "vocês estão deixando oportunidades escaparem porque as mensagens ficam sem resposta a tempo no WhatsApp\n\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "user_text": "perco muitos interessados no WhatsApp porque a equipe demora para responder",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "offer_diagnostic_from_pain",
+      "template_ids": [
+        "opening.cold_greeting",
+        "diagnostic.offer_soft"
+      ],
+      "rendered_messages": [
+        "Oi, tudo bem?\n\nEm que posso ajudar?",
+        "vocês estão deixando oportunidades escaparem porque as mensagens ficam sem resposta a tempo no WhatsApp\n\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+        "O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 2,
+      "cost_usd": 0.004501,
+      "next_state": "diagnostic_offered",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-final-pain-first",
+        "lead_id": "t012-043-final-pain-first",
+        "commercial_stage": "diagnostic_offered",
+        "summary": "Estado comercial: diagnostic_offered",
+        "diagnostic_status": "offered",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "opening.cold_greeting",
+            "diagnostic.offer_soft"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "perco muitos interessados no WhatsApp porque a equipe demora para responder",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-final-pain-first",
+            "lead_id": "t012-043-final-pain-first",
+            "source": "pilates_landing",
+            "channel": "widget"
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "entry",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_general_interest",
+            "answer_source_opening",
+            "offer_diagnostic_from_pain",
+            "answer_direct_product_question",
+            "start_requested_diagnostic",
+            "ask_name_at_diagnostic_entry",
+            "handoff_requested",
+            "clarify_ambiguous_opening"
+          ],
+          "eligible_template_groups": [
+            "opening.",
+            "diagnostic.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "HandoffCallItem",
+            "raw_item_type": "ResponseFunctionToolCall",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": "transfer_to_taliya_entry_agent",
+            "handoff_target": null
+          },
+          {
+            "item_type": "HandoffOutputItem",
+            "raw_item_type": "dict",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": null,
+            "handoff_target": "taliya_entry_agent"
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_entry_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec-1",
+          "turn_id": "turn-1",
+          "selected_action": "offer_diagnostic_from_pain",
+          "interpreted_intents": [
+            "pain_statement",
+            "implicit_interest"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "main_pain",
+              "value_text": "perda de interessados no WhatsApp por demora no atendimento da equipe",
+              "status": "answered",
+              "evidence": [
+                "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+              ]
+            },
+            {
+              "key": "pain_detail",
+              "value_text": "a equipe demora para responder no WhatsApp",
+              "status": "answered",
+              "evidence": [
+                "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "offer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "pain_context_human",
+              "value": "vocês estão deixando oportunidades escaparem porque as mensagens ficam sem resposta a tempo no WhatsApp",
+              "evidence": [
+                "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+              ]
+            }
+          ],
+          "reply_goal": "Reconhecer a dor de demora no WhatsApp e abrir suavemente o diagnóstico a partir desse contexto.",
+          "confidence": "high",
+          "evidence": [
+            "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "dec-1",
+            "turn_id": "turn-1",
+            "selected_action": "offer_diagnostic_from_pain",
+            "interpreted_intents": [
+              "pain_statement",
+              "implicit_interest"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [
+              {
+                "key": "main_pain",
+                "value_text": "perda de interessados no WhatsApp por demora no atendimento da equipe",
+                "status": "answered",
+                "evidence": [
+                  "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+                ]
+              },
+              {
+                "key": "pain_detail",
+                "value_text": "a equipe demora para responder no WhatsApp",
+                "status": "answered",
+                "evidence": [
+                  "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+                ]
+              }
+            ],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "offer",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "pain_context_human",
+                "value": "vocês estão deixando oportunidades escaparem porque as mensagens ficam sem resposta a tempo no WhatsApp",
+                "evidence": [
+                  "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+                ]
+              }
+            ],
+            "reply_goal": "Reconhecer a dor de demora no WhatsApp e abrir suavemente o diagnóstico a partir desse contexto.",
+            "confidence": "high",
+            "evidence": [
+              "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec-1",
+          "turn_id": "turn-1",
+          "selected_action": "offer_diagnostic_from_pain",
+          "interpreted_intents": [
+            "pain_statement",
+            "implicit_interest"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "main_pain",
+              "value_text": "perda de interessados no WhatsApp por demora no atendimento da equipe",
+              "status": "answered",
+              "evidence": [
+                "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+              ]
+            },
+            {
+              "key": "pain_detail",
+              "value_text": "a equipe demora para responder no WhatsApp",
+              "status": "answered",
+              "evidence": [
+                "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "offer",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "pain_context_human",
+              "value": "vocês estão deixando oportunidades escaparem porque as mensagens ficam sem resposta a tempo no WhatsApp",
+              "evidence": [
+                "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+              ]
+            }
+          ],
+          "reply_goal": "Reconhecer a dor de demora no WhatsApp e abrir suavemente o diagnóstico a partir desse contexto.",
+          "confidence": "high",
+          "evidence": [
+            "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "offer_diagnostic_from_pain",
+          "previous_state": "new_lead",
+          "current_state": "pain_detected",
+          "next_state": "diagnostic_offered",
+          "template_ids": [
+            "opening.cold_greeting",
+            "diagnostic.offer_soft"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_offer_diagnostic_from_pain",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "opening.cold_greeting",
+            "diagnostic.offer_soft"
+          ],
+          "variables": {
+            "pain_context_human": {
+              "kind": "long_text",
+              "value": "vocês estão deixando oportunidades escaparem porque as mensagens ficam sem resposta a tempo no WhatsApp",
+              "source": "user_message",
+              "evidence": [
+                "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+              ],
+              "max_length": 420
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Oi, tudo bem?\n\nEm que posso ajudar?",
+          "vocês estão deixando oportunidades escaparem porque as mensagens ficam sem resposta a tempo no WhatsApp\n\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+          "O que voce acha?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_offered",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-final-pain-first",
+          "lead_id": "t012-043-final-pain-first",
+          "commercial_stage": "diagnostic_offered",
+          "summary": "Estado comercial: diagnostic_offered",
+          "diagnostic_status": "offered",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "opening.cold_greeting",
+              "diagnostic.offer_soft"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "cost_usd": 0.00450075
+        },
+        "failure_labels": []
+      }
+    }
+  ],
+  "final_state": {
+    "conversation_id": "t012-043-final-pain-first",
+    "lead_id": "t012-043-final-pain-first",
+    "source": "pilates_landing",
+    "channel": "widget",
+    "canonical_state": "diagnostic_offered"
+  },
+  "checks": [
+    "route:diagnostic",
+    "diagnostic_offered_or_started",
+    "mentions_user_context",
+    "first_response_greeting",
+    "no_waitlist",
+    "template_ids_present",
+    "sales_inbox_projection_consistent",
+    "all_messages_short"
+  ],
+  "check_results": [
+    {
+      "check": "turn_statuses_acceptable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "includes:diagnostico gratuito",
+      "passed": true,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "includes:WhatsApp",
+      "passed": true,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "excludes:lead loses",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:interested leads",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:team takes too long",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:clientes",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:consumidores",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:alunos ativos",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "template_present:diagnostic.offer_soft",
+      "passed": true,
+      "detail": "template was not selected"
+    },
+    {
+      "check": "no_failed_turns",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "issues": [],
+  "total_model_operations": 2,
+  "total_cost_usd": 0.004501,
+  "cost_cap_exceeded": false
+}

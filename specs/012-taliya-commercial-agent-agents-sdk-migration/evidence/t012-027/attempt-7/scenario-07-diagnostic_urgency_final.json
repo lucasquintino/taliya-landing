@@ -1,0 +1,681 @@
+{
+  "number": 7,
+  "scenario_id": "diagnostic_urgency_final",
+  "channel": "whatsapp",
+  "required_proof": "Mandatory diagnostic keys complete; final staged diagnostic renders.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Diagnostico em andamento: alunos ativos, dor principal, detalhe da dor, processo atual e prioridade ja respondidos. Falta apenas a urgencia.\nstate: {\"diagnostic\": {\"status\": \"in_progress\", \"next_question_key\": \"urgency\", \"ledger\": {\"active_students_or_size\": {\"status\": \"answered\", \"answer_value\": \"120\"}, \"main_pain\": {\"status\": \"answered\", \"answer_value\": \"perde leads no WhatsApp\"}, \"pain_detail\": {\"status\": \"answered\", \"answer_value\": \"equipe demora a responder interessados\"}, \"current_process\": {\"status\": \"answered\", \"answer_value\": \"controle manual em planilha e WhatsApp\"}, \"priority\": {\"status\": \"answered\", \"answer_value\": \"organizar follow-up de leads\"}, \"urgency\": {\"status\": \"pending\"}}}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "assistant",
+      "content": "Ultima pergunta do diagnostico: isso e algo que voce quer resolver agora ou pode esperar alguns meses?"
+    },
+    {
+      "role": "user",
+      "content": "quero resolver agora"
+    }
+  ],
+  "starting_agent": "taliya_diagnostic_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"plans\",\"prices\",\"demo\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "plans",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": [
+                {
+                  "id": "base",
+                  "name": "Base",
+                  "monthly_price_brl": 197,
+                  "price_label": "R$ 197/mes",
+                  "best_for": "Studios that want to organize the routine before active AI.",
+                  "included_agents": [],
+                  "whatsapp_availability": "No automatic WhatsApp AI replies.",
+                  "usage_boundary": "1 studio, 1 user, no AI message quota."
+                },
+                {
+                  "id": "one_agent",
+                  "name": "Essencial",
+                  "monthly_price_brl": 497,
+                  "price_label": "R$ 497/mes",
+                  "best_for": "Studios that want to solve one clear pain first.",
+                  "included_agents": [
+                    "1 main agent chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for that agent.",
+                  "usage_boundary": "1 studio, up to 2 users, 1,500 AI messages/month with hard cap."
+                },
+                {
+                  "id": "three_agents",
+                  "name": "Avance",
+                  "monthly_price_brl": 897,
+                  "price_label": "R$ 897/mes",
+                  "best_for": "Studios that want help in some priority routines.",
+                  "included_agents": [
+                    "3 main agents chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for included agents.",
+                  "usage_boundary": "1 studio, up to 5 users, 5,000 AI messages/month with hard cap."
+                },
+                {
+                  "id": "seven_agents",
+                  "name": "Completo",
+                  "monthly_price_brl": 1497,
+                  "price_label": "R$ 1.497/mes",
+                  "best_for": "Studios that want the complete Taliya.",
+                  "included_agents": [
+                    "Atendimento",
+                    "Agenda",
+                    "Vendas",
+                    "Financeiro",
+                    "Retencao",
+                    "Gestao",
+                    "Historico/Evolucao"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for the complete team.",
+                  "usage_boundary": "1 studio, up to 10 users, 15,000 AI messages/month with hard cap."
+                }
+              ],
+              "excerpt": "Base (base) R$ 197/mes best_for=Studios that want to organize the routine before active AI. included=no active AI agents whatsapp=No automatic WhatsApp AI replies. usage=1 studio, 1 user, no AI message quota. | Essencial (one_agent) R$ 497/mes best_for=Studios that want to solve one clear pain first. included=1 main agent chosen during setup whatsapp=Requires the studio WhatsApp Business connected for that agent. usage=1 studio, up to 2 users, 1,500 AI messages/month with hard cap. | Avance (three_agents) R$ 897/mes best_for=Studios that want help in some priority routines. included=3 main agents chosen during setup whatsapp=Requires the studio WhatsApp Business connected for included agents. usage=1 studio, up to 5 users, 5,000 AI messages/month with hard cap. | Completo (seven_agents) R$ 1.497/mes best_for=Studios that want the complete Taliya. included=Atendimento, Agenda, Vendas, Financeiro, Retencao, Gestao, Historico/Evolucao whatsapp=Requires the studio WhatsApp Business connected for the complete team. usage=1 studio, up to 10 users, 15,000 AI messages/month with hard cap.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.plans"
+              ]
+            },
+            {
+              "key": "prices",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": {
+                "base": "R$ 197/mes",
+                "one_agent": "R$ 497/mes",
+                "three_agents": "R$ 897/mes",
+                "seven_agents": "R$ 1.497/mes"
+              },
+              "excerpt": "{\"base\":\"R$ 197/mes\",\"one_agent\":\"R$ 497/mes\",\"seven_agents\":\"R$ 1.497/mes\",\"three_agents\":\"R$ 897/mes\"}",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.prices"
+              ]
+            },
+            {
+              "key": "demo",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.demo"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "plans",
+            "prices",
+            "demo"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.plans",
+          "product_knowledge.prices",
+          "product_knowledge.demo"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "Resolver agora a perda de leads no WhatsApp e organizar follow-up",
+      "pain_context": "120 alunos ativos; perde leads no WhatsApp porque a equipe demora a responder interessados; hoje usa controle manual em planilha e WhatsApp; prioridade é organizar follow-up de leads; urgência alta, quer resolver agora",
+      "source_context": "user_message",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "active_students_or_size",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value_text": "120",
+          "currency": null,
+          "evidence": [
+            "runtime_state.diagnostic.ledger.active_students_or_size",
+            "user_message"
+          ]
+        },
+        {
+          "key": "main_pain",
+          "kind": "pain",
+          "raw_text": "perde leads no WhatsApp",
+          "value_text": "perde leads no WhatsApp",
+          "currency": null,
+          "evidence": [
+            "runtime_state.diagnostic.ledger.main_pain",
+            "user_message"
+          ]
+        },
+        {
+          "key": "pain_detail",
+          "kind": "pain",
+          "raw_text": "equipe demora a responder interessados",
+          "value_text": "equipe demora a responder interessados",
+          "currency": null,
+          "evidence": [
+            "runtime_state.diagnostic.ledger.pain_detail",
+            "user_message"
+          ]
+        },
+        {
+          "key": "current_process",
+          "kind": "source",
+          "raw_text": "controle manual em planilha e WhatsApp",
+          "value_text": "controle manual em planilha e WhatsApp",
+          "currency": null,
+          "evidence": [
+            "runtime_state.diagnostic.ledger.current_process",
+            "user_message"
+          ]
+        },
+        {
+          "key": "priority",
+          "kind": "other",
+          "raw_text": "organizar follow-up de leads",
+          "value_text": "organizar follow-up de leads",
+          "currency": null,
+          "evidence": [
+            "runtime_state.diagnostic.ledger.priority",
+            "user_message"
+          ]
+        },
+        {
+          "key": "urgency",
+          "kind": "other",
+          "raw_text": "quero resolver agora",
+          "value_text": "quero resolver agora",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "runtime_state.diagnostic.ledger",
+        "user_message"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "urgency",
+          "status": "answered",
+          "answer_value": "quero resolver agora",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "user_message",
+        "runtime_state.diagnostic.ledger"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "diagnostic_complete",
+      "evidence": [
+        "runtime_state.diagnostic.ledger"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "diagnostic_continuation",
+      "missing_details": [],
+      "evidence": [
+        "runtime_state.diagnostic.ledger"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_applicable",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "runtime_state.diagnostic.ledger"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "diagnostic.deliver_context",
+        "diagnostic.deliver_crm_base",
+        "diagnostic.deliver_operational_step",
+        "diagnostic.deliver_plan_recommendation",
+        "diagnostic.deliver_demo_not_offered"
+      ],
+      "variables": [
+        {
+          "name": "pain_context_human",
+          "kind": "long_text",
+          "value": "Voce tem 120 alunos ativos e hoje perde leads no WhatsApp porque a equipe demora a responder. O processo atual ainda e manual, com planilha e WhatsApp, e a prioridade e organizar o follow-up de leads.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "runtime_state.diagnostic.ledger",
+            "user_message"
+          ],
+          "max_length": 420
+        },
+        {
+          "name": "crm_base_recommendation",
+          "kind": "long_text",
+          "value": "Para esse momento, a base do CRM precisa centralizar os leads do WhatsApp e dar visibilidade do follow-up para reduzir demora de resposta e organizar o fluxo manual. Se quiser começar enxuto, o plano Essencial e o mais aderente a uma dor clara.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.plans"
+          ],
+          "max_length": 260
+        },
+        {
+          "name": "operational_first_step",
+          "kind": "long_text",
+          "value": "Primeiro passo: mapear de onde entram os leads, quem responde hoje e em quanto tempo; depois, organizar uma rotina unica de follow-up para eliminar a planilha paralela e reduzir atrasos.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "runtime_state.diagnostic.ledger"
+          ],
+          "max_length": 240
+        },
+        {
+          "name": "recommended_plan_or_range",
+          "kind": "short_text",
+          "value": "Essencial - R$ 497/mes",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.plans",
+            "product_knowledge.prices"
+          ],
+          "max_length": 90
+        },
+        {
+          "name": "demo_status",
+          "kind": "enum",
+          "value": "not_offered",
+          "source": "runtime_state",
+          "evidence": [
+            "product_knowledge.demo"
+          ],
+          "max_length": null
+        }
+      ],
+      "evidence": [
+        "runtime_state.diagnostic.ledger",
+        "product_knowledge.plans",
+        "product_knowledge.prices"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "diagnostic_complete",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "ready",
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "present_final_diagnostic_and_plan_recommendation"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_diagnostic_urgency_final",
+    "conversation_id": "spike_conv_diagnostic_urgency_final",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_diagnostic_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "Resolver agora a perda de leads no WhatsApp e organizar follow-up",
+      "pain_context": "120 alunos ativos; perde leads no WhatsApp porque a equipe demora a responder interessados; hoje usa controle manual em planilha e WhatsApp; prioridade é organizar follow-up de leads; urgência alta, quer resolver agora",
+      "source_context": "user_message",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "active_students_or_size",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value": 120,
+          "evidence": [
+            "runtime_state.diagnostic.ledger.active_students_or_size",
+            "user_message"
+          ]
+        },
+        {
+          "key": "main_pain",
+          "kind": "pain",
+          "raw_text": "perde leads no WhatsApp",
+          "value": "perde leads no WhatsApp",
+          "evidence": [
+            "runtime_state.diagnostic.ledger.main_pain",
+            "user_message"
+          ]
+        },
+        {
+          "key": "pain_detail",
+          "kind": "pain",
+          "raw_text": "equipe demora a responder interessados",
+          "value": "equipe demora a responder interessados",
+          "evidence": [
+            "runtime_state.diagnostic.ledger.pain_detail",
+            "user_message"
+          ]
+        },
+        {
+          "key": "current_process",
+          "kind": "source",
+          "raw_text": "controle manual em planilha e WhatsApp",
+          "value": "controle manual em planilha e WhatsApp",
+          "evidence": [
+            "runtime_state.diagnostic.ledger.current_process",
+            "user_message"
+          ]
+        },
+        {
+          "key": "priority",
+          "kind": "other",
+          "raw_text": "organizar follow-up de leads",
+          "value": "organizar follow-up de leads",
+          "evidence": [
+            "runtime_state.diagnostic.ledger.priority",
+            "user_message"
+          ]
+        },
+        {
+          "key": "urgency",
+          "kind": "other",
+          "raw_text": "quero resolver agora",
+          "value": "quero resolver agora",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "runtime_state.diagnostic.ledger",
+        "user_message"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "urgency",
+          "status": "answered",
+          "answer_value": "quero resolver agora",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "user_message",
+        "runtime_state.diagnostic.ledger"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "diagnostic_complete",
+      "evidence": [
+        "runtime_state.diagnostic.ledger"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "diagnostic_continuation",
+      "missing_details": [],
+      "evidence": [
+        "runtime_state.diagnostic.ledger"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_applicable",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "runtime_state.diagnostic.ledger"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "diagnostic.deliver_context",
+        "diagnostic.deliver_crm_base",
+        "diagnostic.deliver_operational_step",
+        "diagnostic.deliver_plan_recommendation",
+        "diagnostic.deliver_demo_not_offered"
+      ],
+      "variables": {
+        "pain_context_human": {
+          "kind": "long_text",
+          "value": "Voce tem 120 alunos ativos e hoje perde leads no WhatsApp porque a equipe demora a responder. O processo atual ainda e manual, com planilha e WhatsApp, e a prioridade e organizar o follow-up de leads.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "runtime_state.diagnostic.ledger",
+            "user_message"
+          ],
+          "max_length": 420
+        },
+        "crm_base_recommendation": {
+          "kind": "long_text",
+          "value": "Para esse momento, a base do CRM precisa centralizar os leads do WhatsApp e dar visibilidade do follow-up para reduzir demora de resposta e organizar o fluxo manual. Se quiser começar enxuto, o plano Essencial e o mais aderente a uma dor clara.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.plans"
+          ],
+          "max_length": 260
+        },
+        "operational_first_step": {
+          "kind": "long_text",
+          "value": "Primeiro passo: mapear de onde entram os leads, quem responde hoje e em quanto tempo; depois, organizar uma rotina unica de follow-up para eliminar a planilha paralela e reduzir atrasos.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "runtime_state.diagnostic.ledger"
+          ],
+          "max_length": 240
+        },
+        "recommended_plan_or_range": {
+          "kind": "short_text",
+          "value": "Essencial - R$ 497/mes",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.plans",
+            "product_knowledge.prices"
+          ],
+          "max_length": 90
+        },
+        "demo_status": {
+          "kind": "enum",
+          "value": "not_offered",
+          "source": "runtime_state",
+          "evidence": [
+            "product_knowledge.demo"
+          ],
+          "max_length": 0
+        }
+      },
+      "evidence": [
+        "runtime_state.diagnostic.ledger",
+        "product_knowledge.plans",
+        "product_knowledge.prices"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "diagnostic_complete",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "ready",
+      "next_action_hint": "present_final_diagnostic_and_plan_recommendation"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": [
+        "runtime_state.diagnostic.ledger",
+        "product_knowledge.plans",
+        "product_knowledge.prices"
+      ]
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 17215,
+      "output_tokens": 2170,
+      "cost_usd": 0.017147,
+      "handoffs": 0,
+      "repairs": 1
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_diagnostic_urgency_final",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Voce tem 120 alunos ativos e hoje perde leads no WhatsApp porque a equipe demora a responder. O processo atual ainda e manual, com planilha e WhatsApp, e a prioridade e organizar o follow-up de leads.",
+      "template_id": "diagnostic.deliver_context",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Para esse momento, a base do CRM precisa centralizar os leads do WhatsApp e dar visibilidade do follow-up para reduzir demora de resposta e organizar o fluxo manual. Se quiser começar enxuto, o plano Essencial e o mais aderente a uma dor clara.",
+      "template_id": "diagnostic.deliver_crm_base",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Primeiro passo: mapear de onde entram os leads, quem responde hoje e em quanto tempo; depois, organizar uma rotina unica de follow-up para eliminar a planilha paralela e reduzir atrasos.",
+      "template_id": "diagnostic.deliver_operational_step",
+      "channel": "whatsapp",
+      "sequence": 3
+    },
+    {
+      "text": "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Essencial - R$ 497/mes.",
+      "template_id": "diagnostic.deliver_plan_recommendation",
+      "channel": "whatsapp",
+      "sequence": 4
+    },
+    {
+      "text": "Como eu ainda nao tinha te enviado a demonstracao. Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+      "template_id": "diagnostic.deliver_demo_not_offered",
+      "channel": "whatsapp",
+      "sequence": 5
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "diagnostic_complete",
+    "last_intent": "diagnostic",
+    "diagnostic_status": "ready",
+    "next_action_hint": "present_final_diagnostic_and_plan_recommendation"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 17215,
+    "output_tokens": 2170,
+    "cost_usd": 0.017147,
+    "handoffs": 0,
+    "repairs": 1
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

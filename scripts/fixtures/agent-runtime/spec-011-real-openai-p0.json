@@ -1,0 +1,171 @@
+[
+  {
+    "id": "spec011-rc001-rc002-internal-metadata-leak",
+    "title": "Spec 011 RC-011-001/002 internal profile/source metadata never reaches user text",
+    "regression_case_ids": ["RC-011-001", "RC-011-002"],
+    "channel": "whatsapp",
+    "sender_name": "Reliable profile first name: Marina",
+    "source": "lead came from the site",
+    "messages": ["como funciona a Taliya na pratica?"],
+    "metadata": {
+      "source_label": "lead came from the site",
+      "profile_name_note": "Reliable profile first name"
+    },
+    "checks": [
+      "product_how_it_works_answer",
+      "no_internal_agent_text",
+      "no_internal_agent_artifacts",
+      "no_internal_metadata_as_reliable_fact",
+      "unreliable_internal_profile_name_not_used",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "whatsapp_max_three_chunks"
+    ]
+  },
+  {
+    "id": "spec011-rc003-price-497-not-student-count",
+    "title": "Spec 011 RC-011-003 price 497 is not interpreted as active students",
+    "regression_case_ids": ["RC-011-003"],
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["Vi o plano de 497 e tenho reposicao baguncada no studio"],
+    "checks": [
+      "mentions_user_context",
+      "price_497_not_student_count",
+      "has_product_source",
+      "no_internal_agent_text",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "spec011-rc004-urgency-before-final",
+    "title": "Spec 011 RC-011-004 diagnostic cannot finish before urgency",
+    "regression_case_ids": ["RC-011-004"],
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 120 alunos ativos, perco interessados no WhatsApp, hoje controlo tudo em planilha, a dor principal e atendimento e follow-up, a prioridade agora e vendas. Quero comparar plano para a Taliya completa."
+    ],
+    "checks": [
+      "asks_urgency_before_final",
+      "diagnostic_incomplete_requires_question",
+      "no_internal_agent_text",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "spec011-rc005-rc006-rc008-simple-number-answer",
+    "title": "Spec 011 RC-011-005/006/008 simple numeric diagnostic answer advances without repeat or misunderstanding",
+    "regression_case_ids": ["RC-011-005", "RC-011-006", "RC-011-008"],
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero fazer diagnostico gratuito",
+      "120"
+    ],
+    "checks": [
+      "official_diagnostic_first_question",
+      "ledger_answered:active_students_or_size",
+      "no_repeat_answered_size_question",
+      "no_misunderstanding_on_simple_number",
+      "diagnostic_incomplete_requires_question",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "spec011-rc007-valid-short-answer-does-not-stall",
+    "title": "Spec 011 RC-011-007 valid short diagnostic answer continues the diagnostic",
+    "regression_case_ids": ["RC-011-007"],
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero fazer diagnostico gratuito",
+      "agenda e reposicoes"
+    ],
+    "checks": [
+      "diagnostic_incomplete_requires_question",
+      "no_misunderstanding_on_simple_number",
+      "no_repeated_diagnostic_offer",
+      "no_internal_agent_text",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "spec011-rc009-final-diagnostic-not-truncated",
+    "title": "Spec 011 RC-011-009 completed diagnostic keeps final demo or next-step line complete",
+    "regression_case_ids": ["RC-011-009"],
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 120 alunos ativos, perco interessados no WhatsApp, hoje controlo tudo em planilha, a dor principal e atendimento e follow-up, a prioridade agora e vendas, e urgente resolver nesse mes. Quero comparar plano para a Taliya completa."
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "completed_diagnostic_staged",
+      "final_demo_not_offered_line",
+      "old_diagnostic_copy_blocked",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "spec011-rc012-final-diagnostic-plain-studio-language",
+    "title": "Spec 011 RC-011-012 final diagnostic uses practical studio-owner language",
+    "regression_case_ids": ["RC-011-012"],
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano para atendimento e vendas."
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "completed_diagnostic_staged",
+      "old_diagnostic_copy_blocked",
+      "owner_language_no_technical",
+      "no_internal_agent_text",
+      "llm_usage_required",
+      "template_ids_present",
+      "whatsapp_max_three_chunks"
+    ]
+  },
+  {
+    "id": "spec011-rc013-sales-inbox-projection-consistency",
+    "title": "Spec 011 RC-011-013 Sales Inbox projection stays aligned with real-model state",
+    "regression_case_ids": ["RC-011-013"],
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["quanto custa? Meu principal problema hoje e follow-up dos interessados."],
+    "checks": [
+      "sales_inbox_projection_consistent",
+      "mentions_user_context",
+      "has_product_source",
+      "no_internal_agent_text",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "spec011-rc014-false-pass-protection",
+    "title": "Spec 011 RC-011-014 eval must require model usage, traceable structure, and non-empty rendered behavior",
+    "regression_case_ids": ["RC-011-014"],
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["quanto custa?"],
+    "checks": [
+      "mentions_all_prices",
+      "diagnostic_price_hook",
+      "has_product_source",
+      "no_checkout_link",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  }
+]

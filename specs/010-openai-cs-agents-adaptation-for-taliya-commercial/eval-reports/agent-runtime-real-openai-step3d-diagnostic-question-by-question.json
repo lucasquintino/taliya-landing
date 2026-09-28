@@ -1,0 +1,2160 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-step3d-diagnostic-question-by-question",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-26T14:10:28Z",
+  "finishedAt": "2026-05-26T14:11:25Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "estimatedCostUsd": 0.058905,
+    "inputTokens": 40937,
+    "outputTokens": 6882
+  },
+  "releaseGate": "fail",
+  "scenarios": [
+    {
+      "id": "step3d-diagnostic-question-by-question",
+      "title": "Diagnostic should ask every official question with feedback and not repeat answered facts",
+      "channel": "widget",
+      "checks": [
+        "diagnostic_question_has_feedback",
+        "official_diagnostic_first_question",
+        "no_repeat_answered_size_question",
+        "diagnostic_completed",
+        "diagnostic_ledger_complete",
+        "completed_diagnostic_staged",
+        "old_diagnostic_copy_blocked",
+        "final_plan_dynamic_line",
+        "final_demo_not_offered_line",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [
+        "completed diagnostic did not use staged template order: ['product.overview_short']",
+        "completed diagnostic did not render the approved staged delivery"
+      ],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_e1fdca4a28644d558b327e0c51f9ec02",
+            "conversation_id": "real_eval_step3d-diagnostic-question-by-question",
+            "lead_id": "lead_step3d-diagnostic-question-by-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_in_progress",
+                "route": "diagnostic",
+                "opening_type": "diagnostic_cta_opening",
+                "detected_intents": [
+                  "diagnostic"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "ask_next",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "diagnostic.ask_active_students"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "diagnostic.ask_active_students": {
+                    "answer_feedback": "Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.ask_active_students",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_active_students",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_active_students",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "in_progress",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [
+                  "active_students_or_size"
+                ],
+                "confidence": "low",
+                "next_question": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "in_progress"
+                }
+              ],
+              "usage": {
+                "model": "gpt-4.1-mini",
+                "input_tokens": 4674,
+                "output_tokens": 390,
+                "cost_usd": 0.002494
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_223a3cc830c9410fbc7ec1225441b2d3"
+          },
+          "lead": "quero fazer diagnostico gratuito"
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_77fafc22b27e4d5abe7a57544c742a67",
+            "conversation_id": "real_eval_step3d-diagnostic-question-by-question",
+            "lead_id": "lead_step3d-diagnostic-question-by-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_in_progress",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_in_progress",
+                "route": "diagnostic",
+                "opening_type": "none",
+                "detected_intents": [
+                  "diagnostic",
+                  "provide_studio_size"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "ask_next",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas."
+                ],
+                "facts_missing": [
+                  "main_pain",
+                  "pain_detail",
+                  "current_process",
+                  "priority",
+                  "urgency"
+                ],
+                "template_ids": [
+                  "diagnostic.ask_main_pain"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi esse ponto: Lead disse que tem 90 alunos ativos.."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi esse ponto: Lead disse que tem 90 alunos ativos.."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "diagnostic.ask_main_pain": {
+                    "answer_feedback": "Boa, esse tamanho já ajuda a entender o volume da rotina."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.ask_main_pain",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Boa, esse tamanho já ajuda a entender o volume da rotina.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_main_pain",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_main_pain",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "active_students",
+                  "value": "90 alunos ativos",
+                  "confidence": "high",
+                  "evidence": [
+                    "tenho 90 alunos ativos"
+                  ]
+                },
+                {
+                  "key": "profile_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name = Lucas"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "in_progress",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho 90 alunos ativos",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:2"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas."
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [
+                  "tenho 90 alunos ativos"
+                ],
+                "unknowns": [
+                  "main_pain",
+                  "pain_detail",
+                  "current_process",
+                  "priority",
+                  "urgency"
+                ],
+                "confidence": "low",
+                "next_question": "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?",
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "profile_name_assessment",
+                    "previous_state.diagnostic",
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "2"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "in_progress"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 5385,
+                "output_tokens": 791,
+                "cost_usd": 0.007598
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_5e93109cfb14463a90568c53d836be69"
+          },
+          "lead": "tenho 90 alunos ativos"
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_b099c961b45943de9c636c9c2fb207a2",
+            "conversation_id": "real_eval_step3d-diagnostic-question-by-question",
+            "lead_id": "lead_step3d-diagnostic-question-by-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_in_progress",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_in_progress",
+                "route": "diagnostic",
+                "opening_type": "none",
+                "detected_intents": [
+                  "diagnostic",
+                  "provide_pain_detail"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "ask_next",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas.",
+                  "A dor citada é que agenda e reposições dão mais trabalho."
+                ],
+                "facts_missing": [
+                  "current_process",
+                  "priority",
+                  "urgency"
+                ],
+                "template_ids": [
+                  "diagnostic.ask_pain_detail"
+                ],
+                "template_variables": {
+                  "name": {
+                    "value": "Lucas"
+                  },
+                  "pain": {
+                    "value": "agenda e reposições"
+                  },
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "diagnostic.ask_pain_detail": {
+                    "answer_feedback": "Entendi, agenda e reposições já mostram uma rotina importante para organizar."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.ask_pain_detail",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Entendi, agenda e reposições já mostram uma rotina importante para organizar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_pain_detail",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Hoje você consegue ver facilmente o que precisa ser resolvido no dia?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_pain_detail",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "active_students",
+                  "value": "90 alunos ativos",
+                  "confidence": "high",
+                  "evidence": [
+                    "tenho 90 alunos ativos"
+                  ]
+                },
+                {
+                  "key": "profile_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name = Lucas"
+                  ]
+                },
+                {
+                  "key": "main_pain",
+                  "value": "agenda e reposições dão mais trabalho",
+                  "confidence": "medium",
+                  "evidence": [
+                    "agenda e reposicoes dao mais trabalho"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "in_progress",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho 90 alunos ativos",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:2"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas.",
+                  "A dor citada é que agenda e reposições dão mais trabalho."
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [
+                  "current_process",
+                  "priority",
+                  "urgency"
+                ],
+                "confidence": "low",
+                "next_question": "Hoje você consegue ver facilmente o que precisa ser resolvido no dia?",
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "previous_state.diagnostic",
+                    "lead_facts",
+                    "profile_name_assessment"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "3"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "in_progress"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 5601,
+                "output_tokens": 957,
+                "cost_usd": 0.008507
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_a2b1e0d706d7450e958959ae6569eeec"
+          },
+          "lead": "agenda e reposicoes dao mais trabalho"
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_8bfd338e939148b5a07952971a00f030",
+            "conversation_id": "real_eval_step3d-diagnostic-question-by-question",
+            "lead_id": "lead_step3d-diagnostic-question-by-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_in_progress",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_in_progress",
+                "route": "diagnostic",
+                "opening_type": "none",
+                "detected_intents": [
+                  "diagnostic",
+                  "provide_pain_detail"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "ask_next",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas.",
+                  "A dor citada é que agenda e reposições dão mais trabalho.",
+                  "O lead disse que não consegue ver fácil o que precisa resolver no dia."
+                ],
+                "facts_missing": [
+                  "priority",
+                  "urgency"
+                ],
+                "template_ids": [
+                  "diagnostic.ask_priority"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser agenda e reposições dão mais trabalho."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "entender o que pesa mais hoje entre agenda, reposições e atendimento"
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_agent_recommendation#2": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_agent_recommendation#3": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "agenda e reposições dão mais trabalho",
+                    "first_step": "entender o que pesa mais hoje entre agenda, reposições e atendimento",
+                    "plan_range": "Base ou Essencial"
+                  },
+                  "diagnostic.ask_priority": {
+                    "answer_feedback": "Entendi, quando não fica claro o que resolver no dia, a equipe tende a agir no improviso."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.ask_priority",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Entendi, quando não fica claro o que resolver no dia, a equipe tende a agir no improviso.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_priority",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Pensando na rotina do studio, qual tarefa você mais gostaria de deixar mais leve primeiro?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_priority",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "active_students",
+                  "value": "90 alunos ativos",
+                  "confidence": "high",
+                  "evidence": [
+                    "tenho 90 alunos ativos"
+                  ]
+                },
+                {
+                  "key": "profile_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name = Lucas"
+                  ]
+                },
+                {
+                  "key": "main_pain",
+                  "value": "agenda e reposições dão mais trabalho",
+                  "confidence": "medium",
+                  "evidence": [
+                    "agenda e reposicoes dao mais trabalho"
+                  ]
+                },
+                {
+                  "key": "day_visibility_pain",
+                  "value": "não consegue ver fácil o que precisa ser resolvido no dia",
+                  "confidence": "medium",
+                  "evidence": [
+                    "nao consigo ver facil o que precisa resolver no dia"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "in_progress",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho 90 alunos ativos",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:2"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "nao consigo ver facil o que precisa resolver no dia",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:4"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas.",
+                  "A dor citada é que agenda e reposições dão mais trabalho.",
+                  "O lead disse que não consegue ver fácil o que precisa resolver no dia."
+                ],
+                "main_bottleneck": "agenda e reposições dão mais trabalho",
+                "pain_context_human": null,
+                "likely_cause": "falta de rotina clara para organizar o dia e priorizar pendências",
+                "crm_base_recommendation": null,
+                "first_recommended_step": "entender o que pesa mais hoje entre agenda, reposições e atendimento",
+                "indicated_routines_or_agents": [
+                  "Atendimento",
+                  "Agenda",
+                  "Reposições"
+                ],
+                "indicated_agents": [
+                  {
+                    "agent": "Agente Atendimento faria sentido primeiro:",
+                    "reason": "o lead citou dificuldade de ver o que precisa resolver no dia e isso costuma aparecer no fluxo de atendimento."
+                  },
+                  {
+                    "agent": "Agente Agenda faria sentido depois:",
+                    "reason": "agenda foi apontada como uma das partes que mais dão trabalho."
+                  },
+                  {
+                    "agent": "Agente Reposições faria sentido em seguida:",
+                    "reason": "reposições também aparecem como dor principal no dia a dia."
+                  }
+                ],
+                "plan_or_range_to_compare": "Base ou Essencial",
+                "final_plan_line": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Base ou Essencial.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                "evidence": [
+                  "tenho 90 alunos ativos",
+                  "agenda e reposicoes dao mais trabalho",
+                  "nao consigo ver facil o que precisa resolver no dia"
+                ],
+                "unknowns": [
+                  "priority",
+                  "urgency"
+                ],
+                "confidence": "medium",
+                "next_question": "Pensando na rotina do studio, qual tarefa você mais gostaria de deixar mais leve primeiro?",
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message",
+                    "previous_state",
+                    "lead_facts",
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "4"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "in_progress"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 5722,
+                "output_tokens": 1206,
+                "cost_usd": 0.009719
+              },
+              "confidence": "medium"
+            },
+            "trace_id": "trace_e519acdc470845c99057eeb99c725c31"
+          },
+          "lead": "nao consigo ver facil o que precisa resolver no dia"
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_4f419057d9154c33bfe71dd8d18e75e2",
+            "conversation_id": "real_eval_step3d-diagnostic-question-by-question",
+            "lead_id": "lead_step3d-diagnostic-question-by-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_in_progress",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "comparison_current_tool",
+                  "product_how_it_works"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "ask_next",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead disse que hoje usa planilha e WhatsApp.",
+                  "Nome confiável no perfil: Lucas."
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.comparison_current_tool"
+                ],
+                "template_variables": {
+                  "first_name": {
+                    "value": "Lucas"
+                  },
+                  "current_tool": {
+                    "value": "planilha e WhatsApp"
+                  },
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Hoje a rotina está espalhada entre planilha e WhatsApp, e isso deixa mais difícil ver o que precisa resolver no dia."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "entender o que pesa mais hoje entre agenda, reposições e atendimento"
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_agent_recommendation#2": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_agent_recommendation#3": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "agenda e reposições dão mais trabalho",
+                    "first_step": "entender o que pesa mais hoje entre agenda, reposições e atendimento",
+                    "plan_range": "Base ou Essencial"
+                  },
+                  "product.comparison_current_tool": {
+                    "current_tool_context": "planilha"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.comparison_current_tool",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Se o que vocês usam hoje resolve parte da rotina, faz sentido manter o que funciona.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.comparison_current_tool",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "A diferença da Taliya é ajudar a organizar o que costuma ficar espalhado: conversas, agenda, reposições, cobranças, interessados e acompanhamento dos alunos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.comparison_current_tool",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Para comparar sem chute, vale olhar onde a rotina do seu studio mais perde tempo hoje.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.comparison_current_tool",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "current_tool",
+                  "value": "planilha e WhatsApp",
+                  "confidence": "high",
+                  "evidence": [
+                    "hoje fica em planilha e whatsapp"
+                  ]
+                },
+                {
+                  "key": "profile_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name = Lucas"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "in_progress",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho 90 alunos ativos",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:2"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "nao consigo ver facil o que precisa resolver no dia",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:4"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "hoje fica em planilha e whatsapp",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:5"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas.",
+                  "A dor citada é que agenda e reposições dão mais trabalho.",
+                  "O lead disse que não consegue ver fácil o que precisa resolver no dia.",
+                  "Hoje usa planilha e WhatsApp."
+                ],
+                "main_bottleneck": "agenda e reposições dão mais trabalho",
+                "pain_context_human": "Hoje a rotina está espalhada entre planilha e WhatsApp, e isso deixa mais difícil ver o que precisa resolver no dia.",
+                "likely_cause": "falta de uma rotina mais clara para centralizar e priorizar pendências do studio",
+                "crm_base_recommendation": null,
+                "first_recommended_step": "entender o que pesa mais hoje entre agenda, reposições e atendimento",
+                "indicated_routines_or_agents": [
+                  "Atendimento",
+                  "Agenda",
+                  "Reposições"
+                ],
+                "indicated_agents": [
+                  {
+                    "agent": "Agente Atendimento faria sentido primeiro:",
+                    "why": "para concentrar as mensagens e dúvidas comuns."
+                  },
+                  {
+                    "agent": "Agente Agenda faria sentido primeiro:",
+                    "why": "para dar mais clareza a horários, faltas e encaixes."
+                  },
+                  {
+                    "agent": "Agente Reposições faria sentido primeiro:",
+                    "why": "para organizar pedidos e pendências de reposição."
+                  }
+                ],
+                "plan_or_range_to_compare": "Base ou Essencial",
+                "final_plan_line": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Base ou Essencial.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                "evidence": [
+                  "tem 90 alunos ativos",
+                  "agenda e reposicoes dao mais trabalho",
+                  "nao consigo ver facil o que precisa resolver no dia",
+                  "hoje fica em planilha e whatsapp"
+                ],
+                "unknowns": [
+                  "priority",
+                  "urgency"
+                ],
+                "confidence": "medium",
+                "next_question": "Vocês estão buscando resolver isso agora ou só pesquisando por enquanto?",
+                "validation_question": null,
+                "final_demo_next_step_question": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?"
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message",
+                    "previous_state",
+                    "product_knowledge",
+                    "profile_name_assessment",
+                    "comparison_management_system",
+                    "comparison_spreadsheet",
+                    "how_it_works",
+                    "routine_areas",
+                    "whatsapp_scope"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "2"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "in_progress"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 6431,
+                "output_tokens": 1251,
+                "cost_usd": 0.010453
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_c3c5e5bb8c894d338d5012a904801d49"
+          },
+          "lead": "hoje fica em planilha e whatsapp"
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_c2dfce0212f248049a2b721c15ba0d3f",
+            "conversation_id": "real_eval_step3d-diagnostic-question-by-question",
+            "lead_id": "lead_step3d-diagnostic-question-by-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "product_question",
+                "current_state": "diagnostic_delivered",
+                "next_state": "diagnostic_delivered",
+                "route": "diagnostic",
+                "opening_type": "returning_lead",
+                "detected_intents": [
+                  "diagnostic_progress",
+                  "priority_question"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "complete",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "ask_demo_reaction",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas.",
+                  "A dor citada é que agenda e reposições dão mais trabalho.",
+                  "O lead disse que não consegue ver fácil o que precisa resolver no dia.",
+                  "Hoje usa planilha e WhatsApp."
+                ],
+                "facts_missing": [
+                  "urgency"
+                ],
+                "template_ids": [
+                  "diagnostic.deliver_hold",
+                  "diagnostic.deliver_context",
+                  "diagnostic.deliver_crm_base",
+                  "diagnostic.deliver_operational_step",
+                  "diagnostic.deliver_agent_recommendation",
+                  "diagnostic.deliver_agent_recommendation",
+                  "diagnostic.deliver_agent_recommendation",
+                  "diagnostic.deliver_plan_recommendation",
+                  "diagnostic.deliver_demo_not_offered"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria a agenda em um só lugar: aulas, faltas, reposições, encaixes e o que a equipe precisa resolver."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria entender o que pesa mais hoje entre agenda, reposições e atendimento."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_agent_recommendation#2": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_agent_recommendation#3": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "agenda e reposições dão mais trabalho",
+                    "first_step": "entender o que pesa mais hoje entre agenda, reposições e atendimento",
+                    "plan_range": "Base ou Essencial"
+                  },
+                  "product.post_diagnostic_plan_recap": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.deliver_hold",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_context",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_crm_base",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_operational_step",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_agent_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_agent_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_agent_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_plan_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_demo_not_offered",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "complete",
+                "next_question_kind": "urgency",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Perfeito. Já dá pra te devolver uma leitura prática. Vou organizar em partes.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_hold",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_context",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Antes dos agentes, eu organizaria a agenda em um só lugar: aulas, faltas, reposições, encaixes e o que a equipe precisa resolver.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_crm_base",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "O primeiro passo seria entender o que pesa mais hoje entre agenda, reposições e atendimento.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_operational_step",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Agente Atendimento faria sentido primeiro: ele ajuda com interessados que ficam sem resposta. Faz sentido aqui porque essa foi a dor comercial mais clara; na prática, ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_agent_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Agente Agenda também faria sentido: ele ajuda com faltas, reposições e encaixes. Faz sentido aqui porque essa rotina apareceu como prioridade; na prática, ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_agent_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Agente Agenda também faria sentido: ele ajuda com faltas, reposições e encaixes. Faz sentido aqui porque essa rotina apareceu como prioridade; na prática, ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_agent_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance ou Completo.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_plan_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_demo_not_offered",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "current_tool",
+                  "value": "planilha e WhatsApp",
+                  "confidence": "high",
+                  "evidence": [
+                    "hoje fica em planilha e whatsapp"
+                  ]
+                },
+                {
+                  "key": "profile_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name = Lucas"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "completed",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho 90 alunos ativos",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:2"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "nao consigo ver facil o que precisa resolver no dia",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:4"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "hoje fica em planilha e whatsapp",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:5"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "prioridade e organizar reposicoes primeiro",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:6"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  }
+                ],
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas.",
+                  "A dor citada é que agenda e reposições dão mais trabalho.",
+                  "O lead disse que não consegue ver fácil o que precisa resolver no dia.",
+                  "Hoje usa planilha e WhatsApp."
+                ],
+                "main_bottleneck": "agenda e reposições dão mais trabalho",
+                "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual.",
+                "likely_cause": "falta de uma rotina mais clara para centralizar e priorizar pendências do studio",
+                "crm_base_recommendation": "Antes dos agentes, eu organizaria a agenda em um só lugar: aulas, faltas, reposições, encaixes e o que a equipe precisa resolver.",
+                "first_recommended_step": "O primeiro passo seria entender o que pesa mais hoje entre agenda, reposições e atendimento.",
+                "indicated_routines_or_agents": [
+                  "Atendimento",
+                  "Agenda",
+                  "Reposições"
+                ],
+                "indicated_agents": [
+                  {
+                    "name": "Atendimento",
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  {
+                    "name": "Agenda",
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  {
+                    "name": "Agenda",
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  }
+                ],
+                "plan_or_range_to_compare": "Avance ou Completo",
+                "final_plan_line": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance ou Completo.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                "evidence": [
+                  "widget:step3d-diagnostic-question-by-question:2",
+                  "widget:step3d-diagnostic-question-by-question:3",
+                  "widget:step3d-diagnostic-question-by-question:4",
+                  "widget:step3d-diagnostic-question-by-question:5"
+                ],
+                "unknowns": [],
+                "confidence": "medium",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?"
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "initial_policy_read",
+                    "profile_name_assessment",
+                    "user_message",
+                    "previous_state",
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "2"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "completed"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 6007,
+                "output_tokens": 1092,
+                "cost_usd": 0.009419
+              },
+              "confidence": "medium"
+            },
+            "trace_id": "trace_cce32022ca434e7496c9bc06fb2da6c9"
+          },
+          "lead": "prioridade e organizar reposicoes primeiro"
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_4b9af8ba05a74b9fbab7f055f33a737a",
+            "conversation_id": "real_eval_step3d-diagnostic-question-by-question",
+            "lead_id": "lead_step3d-diagnostic-question-by-question",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_delivered",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "conversation_resume",
+                  "general_interest"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead quer resolver ainda neste mês.",
+                  "Nome confiável no perfil: Lucas.",
+                  "Diagnóstico já foi entregue e o contexto indica prioridade em agenda e reposições.",
+                  "Há interesse de compra/urgência implícita no pedido."
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.overview_short"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria a agenda em um só lugar: aulas, faltas, reposições, encaixes e o que a equipe precisa resolver."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria entender o que pesa mais hoje entre agenda, reposições e atendimento."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_agent_recommendation#2": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_agent_recommendation#3": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "agenda e reposições dão mais trabalho",
+                    "first_step": "O primeiro passo seria entender o que pesa mais hoje entre agenda, reposições e atendimento",
+                    "plan_range": "Avance ou Completo"
+                  },
+                  "product.post_diagnostic_plan_recap": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.overview_short",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "complete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "A Taliya é a IA do seu studio de Pilates: ela ajuda a organizar agenda, reposições, cobranças, gestão, atendimento e acompanhamento em um só lugar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.overview_short",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "current_tool",
+                  "value": "planilha e WhatsApp",
+                  "confidence": "high",
+                  "evidence": [
+                    "hoje fica em planilha e whatsapp"
+                  ]
+                },
+                {
+                  "key": "profile_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name = Lucas"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "completed",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho 90 alunos ativos",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:2"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "nao consigo ver facil o que precisa resolver no dia",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:4"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "agenda e reposicoes dao mais trabalho",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:3"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "hoje fica em planilha e whatsapp",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:5"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "prioridade e organizar reposicoes primeiro",
+                    "evidence": [
+                      "widget:step3d-diagnostic-question-by-question:6"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  }
+                ],
+                "facts_used": [
+                  "Lead disse que tem 90 alunos ativos.",
+                  "Nome confiável no perfil: Lucas.",
+                  "A dor citada é que agenda e reposições dão mais trabalho.",
+                  "O lead disse que não consegue ver fácil o que precisa resolver no dia.",
+                  "Hoje usa planilha e WhatsApp."
+                ],
+                "main_bottleneck": "agenda e reposições dão mais trabalho",
+                "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual.",
+                "likely_cause": "falta de uma rotina mais clara para centralizar e priorizar pendências do studio",
+                "crm_base_recommendation": "Antes dos agentes, eu organizaria a agenda em um só lugar: aulas, faltas, reposições, encaixes e o que a equipe precisa resolver.",
+                "first_recommended_step": "O primeiro passo seria entender o que pesa mais hoje entre agenda, reposições e atendimento.",
+                "indicated_routines_or_agents": [
+                  "Atendimento",
+                  "Agenda",
+                  "Reposições"
+                ],
+                "indicated_agents": [
+                  {
+                    "name": "Atendimento",
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  {
+                    "name": "Agenda",
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  {
+                    "name": "Agenda",
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  }
+                ],
+                "plan_or_range_to_compare": "Avance ou Completo",
+                "final_plan_line": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance ou Completo.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                "evidence": [
+                  "widget:step3d-diagnostic-question-by-question:2",
+                  "widget:step3d-diagnostic-question-by-question:3",
+                  "widget:step3d-diagnostic-question-by-question:4",
+                  "widget:step3d-diagnostic-question-by-question:5"
+                ],
+                "unknowns": [],
+                "confidence": "medium",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?"
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message",
+                    "previous_state",
+                    "product_knowledge",
+                    "lead_facts",
+                    "availability_and_onboarding",
+                    "how_it_works",
+                    "routine_areas"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "2"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "completed"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 7117,
+                "output_tokens": 1195,
+                "cost_usd": 0.010715
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_97d5dbcc15954012a7517945c36552bb"
+          },
+          "lead": "quero resolver agora, nesse mes"
+        }
+      ]
+    }
+  ]
+}

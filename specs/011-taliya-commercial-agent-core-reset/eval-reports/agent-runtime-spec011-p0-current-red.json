@@ -1,0 +1,215 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-p0-current-red",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-30T01:03:12Z",
+  "finishedAt": "2026-05-30T01:03:25Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "estimatedCostUsd": 0.007622,
+    "inputTokens": 6028,
+    "outputTokens": 689
+  },
+  "releaseGate": "fail",
+  "scenarios": [
+    {
+      "id": "spec011-rc001-rc002-internal-metadata-leak",
+      "title": "Spec 011 RC-011-001/002 internal profile/source metadata never reaches user text",
+      "channel": "whatsapp",
+      "checks": [
+        "product_how_it_works_answer",
+        "no_internal_agent_text",
+        "no_internal_agent_artifacts",
+        "no_internal_metadata_as_reliable_fact",
+        "unreliable_internal_profile_name_not_used",
+        "owner_language_no_technical",
+        "llm_usage_required",
+        "template_ids_present",
+        "whatsapp_max_three_chunks"
+      ],
+      "failures": [
+        "internal metadata was persisted as lead fact: ['lead came from the site']",
+        "metadata source was persisted as a high-confidence lead fact",
+        "internal metadata was persisted as lead fact: ['reliable profile first name']",
+        "internal profile-name label was treated as reliable sender name",
+        "turn 1 has more than 3 WhatsApp chunks"
+      ],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_6c109584c9de46eeac076fc4cac68c5a",
+            "conversation_id": "real_eval_spec011-rc001-rc002-internal-metadata-leak",
+            "lead_id": "lead_spec011-rc001-rc002-internal-metadata-leak",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "product_how_it_works"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "A lead veio do site (/pilates).",
+                  "O nome do perfil foi considerado confiável: Marina.",
+                  "A pergunta foi sobre como a Taliya funciona na prática."
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.how_it_works_direct"
+                ],
+                "template_variables": {
+                  "first_name": {
+                    "value": "Marina"
+                  },
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi esse ponto: A lead veio do site (/pilates).."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi esse ponto: A lead veio do site (/pilates).."
+                  },
+                  "product.how_it_works_direct": {
+                    "contextual_next_step": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim podemos entender como a Taliya encaixaria na sua rotina e por onde começar. O que você acha?",
+                    "recommended_area": ""
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.how_it_works_direct",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Funciona assim: a Taliya ajuda o studio a organizar o que acontece no dia a dia.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.how_it_works_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Ela junta conversas, alunos, agenda, reposições, cobranças, interessados e acompanhamentos para a equipe enxergar melhor o que precisa de ação.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.how_it_works_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Quando o WhatsApp Business do studio está conectado, os agentes podem apoiar conversas com alunos e interessados, sempre com a equipe podendo acompanhar e assumir quando precisar.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.how_it_works_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim podemos entender como a Taliya encaixaria na sua rotina e por onde começar. O que você acha?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.how_it_works_direct",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "source",
+                  "value": "lead veio do site",
+                  "confidence": "high",
+                  "evidence": [
+                    "source: lead came from the site",
+                    "metadata page_path /pilates"
+                  ]
+                },
+                {
+                  "key": "profile_name",
+                  "value": "Marina",
+                  "confidence": "high",
+                  "evidence": [
+                    "Reliable profile first name: Marina",
+                    "profile_name_assessment: Reliable profile first name"
+                  ]
+                },
+                {
+                  "key": "intent",
+                  "value": "pergunta sobre funcionamento prático",
+                  "confidence": "high",
+                  "evidence": [
+                    "como funciona a Taliya na pratica?"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "product_knowledge.how_it_works",
+                    "product_knowledge.routine_areas",
+                    "product_knowledge.whatsapp_scope",
+                    "how_it_works",
+                    "routine_areas",
+                    "whatsapp_scope"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "3"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 6028,
+                "output_tokens": 689,
+                "cost_usd": 0.007622
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_2d593e2443a6434491ff3fc90fc08c2a"
+          },
+          "lead": "como funciona a Taliya na pratica?"
+        }
+      ]
+    }
+  ]
+}

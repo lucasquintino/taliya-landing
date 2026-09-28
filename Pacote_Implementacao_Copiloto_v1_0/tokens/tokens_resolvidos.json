@@ -1,0 +1,1004 @@
+{
+  "meta": {
+    "product": "Copiloto",
+    "version": "1.1",
+    "date": "2026-09-14",
+    "status": "Especificação de trabalho consolidada no lote 1; aceite visual e propagação possuem registros próprios.",
+    "units": "unidades lógicas de interface, exceto hexadecimais, pesos de fonte e razões de contraste",
+    "scope": "base visual e componentes; não implementa comportamento ou altera domínio",
+    "primaryAuthority": "decisões do produto e Bibles vigentes",
+    "originalBaseColorsPreserved": true,
+    "semanticHexCompletion": "Os papéis já existiam; os hexadecimais complementares foram fixados no lote 1, não extraídos de raster.",
+    "rasterCertification": false
+  },
+  "color": {
+    "background": "#F4F8FA",
+    "surface": "#FFFFFF",
+    "textPrimary": "#14182F",
+    "action": "#24272B",
+    "textSecondary": "#5D637A",
+    "borderDecorative": "#DCE2EA",
+    "borderControl": "#878F99",
+    "onAction": "#FFFFFF",
+    "disabledBackground": "#EEF1F4",
+    "disabledForeground": "#5D637A",
+    "focus": "#24272B",
+    "pressedAction": "#14182F",
+    "semantic": {
+      "neutral": {
+        "foreground": "#5D637A",
+        "background": "#EEF1F4"
+      },
+      "amber": {
+        "foreground": "#8A5A10",
+        "background": "#FFF1D6"
+      },
+      "teal": {
+        "foreground": "#246C60",
+        "background": "#E2F3F0"
+      },
+      "blue": {
+        "foreground": "#315E89",
+        "background": "#E8F0FA"
+      },
+      "green": {
+        "foreground": "#356E46",
+        "background": "#E7F3EA"
+      },
+      "rose": {
+        "foreground": "#B54C4C",
+        "background": "#FDF0F0"
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": "Manrope",
+    "fallback": "sans-serif de sistema da plataforma, declarar a substituição",
+    "lufgaExactMatchClaimed": false,
+    "scale": {
+      "display": {
+        "fontSize": 32,
+        "lineHeight": 40,
+        "fontWeight": 700
+      },
+      "title": {
+        "fontSize": 24,
+        "lineHeight": 32,
+        "fontWeight": 700
+      },
+      "section": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 700
+      },
+      "body": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 400
+      },
+      "control": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 600
+      },
+      "label": {
+        "fontSize": 14,
+        "lineHeight": 20,
+        "fontWeight": 600
+      },
+      "secondary": {
+        "fontSize": 14,
+        "lineHeight": 20,
+        "fontWeight": 400
+      },
+      "caption": {
+        "fontSize": 12,
+        "lineHeight": 16,
+        "fontWeight": 400
+      },
+      "navigation": {
+        "fontSize": 12,
+        "lineHeight": 16,
+        "fontWeight": 600
+      },
+      "rowTitle": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 600
+      },
+      "highlightTitle": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 700
+      },
+      "appBarTitle": {
+        "fontSize": 20,
+        "lineHeight": 28,
+        "fontWeight": 700
+      },
+      "filterLabel": {
+        "fontSize": 14,
+        "lineHeight": 20,
+        "fontWeight": 600
+      },
+      "composerText": {
+        "fontSize": 14,
+        "lineHeight": 20,
+        "fontWeight": 400
+      }
+    },
+    "textScalingEnabled": true,
+    "shrinkTextToFit": false
+  },
+  "icon": {
+    "family": "Lucide",
+    "size": 24,
+    "compactSize": 20,
+    "strokeWidth": 2,
+    "filled": false,
+    "touchTargetMin": 48,
+    "canonical": {
+      "today": "House",
+      "service": "BriefcaseBusiness",
+      "agenda": "CalendarDays",
+      "client": "User",
+      "receipt": "Banknote",
+      "reminder": "Bell",
+      "document": "FileText",
+      "copiloto": "MessageSquare",
+      "back": "ChevronLeft",
+      "openOrAdvance": "ChevronRight",
+      "openSelection": "ChevronDown",
+      "contextMenu": "Ellipsis",
+      "closePanel": "X",
+      "createContextual": "Plus",
+      "search": "Search",
+      "timeDuration": "Clock",
+      "edit": "Pencil",
+      "delete": "Trash2",
+      "processing": "LoaderCircle",
+      "confirmedSuccess": "CircleCheck",
+      "attentionError": "TriangleAlert",
+      "documentStatus": "File",
+      "documentSection": "File",
+      "information": "Info",
+      "attachment": "Paperclip",
+      "microphone": "Mic",
+      "send": "ArrowUp",
+      "expandPanel": "Maximize2",
+      "settings": "Settings"
+    },
+    "exceptions": [
+      "logos próprios de provedores"
+    ],
+    "clientGlyph": "User de contorno aberto, sem busto fechado ou preenchimento",
+    "documentVariants": {
+      "entityRowAndContent": "FileText",
+      "statusAndAgreementLabels": "File",
+      "sectionShortcut": "File",
+      "rule": "Variantes fixas por papel da mesma família Lucide, preservando C03/C04/C05; não uma escolha distinta por tela."
+    }
+  },
+  "space": {
+    "scale": [
+      8,
+      12,
+      16,
+      24
+    ],
+    "screenHorizontal": 24,
+    "screenHorizontalCompact360": 20,
+    "cardPanelPadding": 20,
+    "controlHorizontal": 16,
+    "sectionGap": 24,
+    "componentGap": 16,
+    "relatedItemGap": 12,
+    "labelToControl": 8,
+    "iconToText": 8,
+    "controlToHelp": 8,
+    "rowIconToText": 16,
+    "highlightIconToText": 12,
+    "copilotoIconToText": 12,
+    "headerIconActionToTitle": 8,
+    "feedbackTitleToBody": 4,
+    "sectionTitleToContent": 8,
+    "relatedRowGap": 8,
+    "relatedButtonGap": 12
+  },
+  "radius": {
+    "control": 16,
+    "card": 24,
+    "panelTop": 24,
+    "entityIconContainer": 16,
+    "status": "capsule",
+    "iconAction": 16,
+    "copilotoTrigger": 16,
+    "button": 12
+  },
+  "border": {
+    "normalWidth": 1,
+    "focusSelectedWidth": 2,
+    "decorativeColorToken": "color.borderDecorative",
+    "controlColorToken": "color.borderControl",
+    "focusColorToken": "color.focus",
+    "controlHairlineWidth": 0.75
+  },
+  "size": {
+    "controlMinHeight": 52,
+    "compactActionMinHeight": 48,
+    "optionMinHeight": 48,
+    "iconAction": 48,
+    "touchTargetMin": 48,
+    "multilineMinHeight": 112,
+    "compactRowMinHeight": 80,
+    "compactRowVerticalPadding": 16,
+    "entityIconContainer": 48,
+    "statusMinHeight": 28,
+    "statusHorizontalPadding": 12,
+    "statusDotDiameter": 8,
+    "tabBarContentMinHeight": 72,
+    "copilotoTriggerMinHeight": 48
+  },
+  "layout": {
+    "studyWidth": 390,
+    "studyHeight": 844,
+    "requiredWidthRange": [
+      360,
+      430
+    ],
+    "compactWidth": 360,
+    "contentScrolls": true,
+    "textWraps": true,
+    "allowComponentHeightGrowth": true,
+    "stackFieldsWhenNeeded": true,
+    "requireSafeAreaFromPlatform": true,
+    "scaleWholeScreenToFit": false,
+    "desktopVariantDefined": false,
+    "contentClearance": 16
+  },
+  "navigation": {
+    "destinations": [
+      {
+        "label": "Hoje",
+        "icon": "House"
+      },
+      {
+        "label": "Serviços",
+        "icon": "BriefcaseBusiness"
+      },
+      {
+        "label": "Agenda",
+        "icon": "CalendarDays"
+      },
+      {
+        "label": "Clientes",
+        "icon": "User"
+      },
+      {
+        "label": "Recebimentos",
+        "icon": "Banknote"
+      }
+    ],
+    "copilotoSeparate": true,
+    "labelsComplete": true,
+    "truncateLabels": false,
+    "minimumTouchTarget": 48,
+    "tabWidthRule": "Cinco slots de mesma largura e só ícones visíveis; nomes completos ficam em accessibilityLabel.",
+    "showOn": [
+      "principal"
+    ],
+    "notOn": [
+      "detalhe",
+      "formulário",
+      "guiado",
+      "painel"
+    ],
+    "visibleLabels": false,
+    "selection": {
+      "iconColorToken": "color.onAction",
+      "backgroundToken": "color.action",
+      "radiusToken": "navigation.floating.radius",
+      "inset": 2,
+      "accessibilitySelectedRequired": true
+    },
+    "unselected": {
+      "iconColorToken": "color.textSecondary"
+    },
+    "floating": {
+      "sideInset": 12,
+      "bottomGap": 8,
+      "minHeight": 72,
+      "radius": 36,
+      "padding": 4,
+      "backgroundToken": "color.surface",
+      "glass": {
+        "tint": "light",
+        "intensity": 60,
+        "borderToken": "color.borderDecorative",
+        "borderWidth": 1,
+        "reducedTransparencyFallbackToken": "color.surface"
+      }
+    },
+    "item": {
+      "minTarget": 48,
+      "iconSize": 24
+    }
+  },
+  "footer": {
+    "surfaceToken": "color.surface",
+    "horizontalPaddingToken": "space.screenHorizontal",
+    "topPadding": 12,
+    "primaryMinHeight": 52,
+    "bottomPaddingExpression": "max(16, safeAreaBottom)",
+    "copilotoGap": 12,
+    "copilotoReservedHeightExpression": "copilotoTriggerEffectiveHeight + 12",
+    "scrollInsetExpression": "altura efetiva de todas as regiões inferiores",
+    "canMoveActionsIntoScrollForAccessibility": true,
+    "overlapContent": false
+  },
+  "states": {
+    "domain": {
+      "service": {
+        "Novo": "neutral",
+        "Em negociação": "amber",
+        "Confirmado": "teal",
+        "Em andamento": "blue",
+        "Concluído": "green",
+        "Perdido": "rose",
+        "Cancelado": "neutral"
+      },
+      "receipt": {
+        "Pendente": "neutral",
+        "Parcial": "amber",
+        "Recebido": "green",
+        "Cancelado": "neutral"
+      },
+      "reminder": {
+        "Ativo": "teal",
+        "Pausado": "amber",
+        "Concluído": "green",
+        "Cancelado": "neutral"
+      },
+      "occurrence": {
+        "Agendada": "neutral",
+        "Realizada": "green",
+        "Cancelada": "neutral"
+      },
+      "document": {
+        "Rascunho": "neutral",
+        "Finalizado": "neutral",
+        "Cancelado": "neutral",
+        "Substituído": "neutral"
+      }
+    },
+    "supplementaryInformation": {
+      "Vencido": {
+        "semanticPair": "amber",
+        "kind": "condição de data, não quinto estado de Recebimento"
+      },
+      "Passada sem confirmação": {
+        "semanticPair": "neutral",
+        "kind": "informação da ocorrência"
+      },
+      "Início provisório · sem duração": {
+        "semanticPair": "neutral",
+        "kind": "informação da ocorrência"
+      },
+      "Versão vigente": {
+        "semanticPair": "neutral",
+        "icon": "File",
+        "kind": "etiqueta de Combinado"
+      },
+      "Revisão proposta": {
+        "semanticPair": "neutral",
+        "icon": "File",
+        "kind": "etiqueta de Combinado"
+      }
+    },
+    "feedback": {
+      "informação": "blue",
+      "processamento": "blue",
+      "desconhecido": "neutral",
+      "sucesso": "green",
+      "parcial": "amber",
+      "erro": "rose",
+      "não salvo": "amber"
+    },
+    "selection": {
+      "foreground": "#FFFFFF",
+      "background": "#24272B",
+      "neverUsesDomainColor": true,
+      "radio": "círculo com centro visível",
+      "checkbox": "quadrado com marca branca",
+      "switchOn": "posição à direita e indicação acessível",
+      "wholeOptionClickableMinHeight": 48
+    },
+    "processingInPrimaryButton": {
+      "icon": "LoaderCircle",
+      "foregroundToken": "color.onAction",
+      "rule": "Mantém contraste no botão charcoal, sem alterar semântica do estado."
+    }
+  },
+  "componentFamilies": [
+    {
+      "id": "CMP-01",
+      "name": "Estrutura e cabeçalho",
+      "base": [
+        "C05",
+        "C06"
+      ],
+      "variants": [
+        "principal",
+        "detalhe",
+        "formulário",
+        "guiado",
+        "painel"
+      ],
+      "anatomy": [
+        "cabeçalho",
+        "conteúdo rolável",
+        "regiões inferiores medidas"
+      ],
+      "application": [
+        "ON01",
+        "CF01",
+        "S03",
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "id": "CMP-02",
+      "name": "Botão e ação contextual",
+      "base": [
+        "C01",
+        "C02",
+        "C06"
+      ],
+      "variants": [
+        "primário",
+        "secundário",
+        "contextual textual",
+        "destrutivo"
+      ],
+      "states": [
+        "normal",
+        "pressionado",
+        "desabilitado",
+        "processando"
+      ],
+      "application": [
+        "R02",
+        "A05"
+      ]
+    },
+    {
+      "id": "CMP-03",
+      "name": "Campo, busca e seleção",
+      "base": [
+        "C02",
+        "C03"
+      ],
+      "anatomy": [
+        "rótulo persistente",
+        "controle",
+        "ajuda ou erro"
+      ],
+      "variants": [
+        "texto",
+        "valor",
+        "número",
+        "data",
+        "duração",
+        "livre",
+        "multilinha",
+        "busca",
+        "rádio",
+        "checkbox",
+        "switch",
+        "segmentos"
+      ],
+      "application": [
+        "S02",
+        "ON04",
+        "CL03"
+      ]
+    },
+    {
+      "id": "CMP-04",
+      "name": "Linha de entidade e destaque",
+      "base": [
+        "C01",
+        "C04"
+      ],
+      "anatomy": [
+        "ícone opcional",
+        "título e estado no topo",
+        "informação secundária",
+        "acesso ao detalhe"
+      ],
+      "variants": [
+        "linha compacta",
+        "destaque com ação"
+      ],
+      "application": [
+        "S01",
+        "CL02",
+        "R01",
+        "IA02"
+      ]
+    },
+    {
+      "id": "CMP-05",
+      "name": "Seção modular",
+      "base": [
+        "C04",
+        "C05"
+      ],
+      "anatomy": [
+        "título externo",
+        "ação contextual opcional",
+        "conteúdo aberto ou grupo de linhas"
+      ],
+      "variants": [
+        "conteúdo",
+        "vazio local",
+        "expansão",
+        "erro local"
+      ],
+      "application": [
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "ON04",
+        "CF02",
+        "L01"
+      ]
+    },
+    {
+      "id": "CMP-06",
+      "name": "Estado de domínio",
+      "base": [
+        "C03"
+      ],
+      "anatomy": [
+        "rótulo textual",
+        "par semântico",
+        "símbolo opcional"
+      ],
+      "variants": [
+        "serviço",
+        "recebimento",
+        "lembrete",
+        "ocorrência",
+        "documento"
+      ],
+      "application": [
+        "A05",
+        "D03"
+      ]
+    },
+    {
+      "id": "CMP-07",
+      "name": "Editor de condições",
+      "base": [
+        "C02",
+        "C03"
+      ],
+      "variants": [
+        "onboarding",
+        "padrão",
+        "contratação"
+      ],
+      "anatomy": [
+        "contexto",
+        "modalidade",
+        "condições pertinentes",
+        "efeito da ação final"
+      ],
+      "application": [
+        "S02",
+        "ON04",
+        "CF02"
+      ],
+      "flowClosureLot": 2
+    },
+    {
+      "id": "CMP-08",
+      "name": "Resumo de uso e ciclo",
+      "base": [
+        "C04"
+      ],
+      "anatomy": [
+        "título e período",
+        "valores com rótulos",
+        "informações faltantes e exceções"
+      ],
+      "application": [
+        "S04",
+        "S05",
+        "S06",
+        "A06"
+      ]
+    },
+    {
+      "id": "CMP-09",
+      "name": "Resumo e editor financeiro",
+      "base": [
+        "C04",
+        "C06"
+      ],
+      "variants": [
+        "registrar",
+        "corrigir",
+        "alocar",
+        "definir vencimentos",
+        "registrar devolução"
+      ],
+      "anatomy": [
+        "contexto",
+        "esperado recebido restante",
+        "campos pertinentes",
+        "ação de efeito explícito"
+      ],
+      "application": [
+        "R01",
+        "R02",
+        "R03",
+        "S04",
+        "S05"
+      ],
+      "flowClosureLot": 3
+    },
+    {
+      "id": "CMP-10",
+      "name": "Formulário de Agenda",
+      "base": [
+        "C02",
+        "C03",
+        "C06"
+      ],
+      "variants": [
+        "uma vez",
+        "datas",
+        "recorrência",
+        "período"
+      ],
+      "anatomy": [
+        "contexto",
+        "modo de agendamento",
+        "início fim duração",
+        "alcance da mudança",
+        "ciclo quando pertinente"
+      ],
+      "application": [
+        "A03",
+        "A04",
+        "A05",
+        "A06"
+      ],
+      "flowClosureLot": 4
+    },
+    {
+      "id": "CMP-11",
+      "name": "Feedback e confirmação",
+      "base": [
+        "C06"
+      ],
+      "anatomy": [
+        "ícone",
+        "título",
+        "contexto e efeito",
+        "ação pertinente"
+      ],
+      "variants": [
+        "informação",
+        "processamento",
+        "desconhecido",
+        "sucesso",
+        "parcial",
+        "erro",
+        "não salvo",
+        "confirmação"
+      ],
+      "application": [
+        "IA05",
+        "D03",
+        "Q02"
+      ]
+    },
+    {
+      "id": "CMP-12",
+      "name": "Documento e conversa contextual",
+      "base": [
+        "C04",
+        "C06"
+      ],
+      "variants": [
+        "documento com estado versão e ações",
+        "mensagem",
+        "compositor",
+        "cartão canônico de entidade"
+      ],
+      "application": [
+        "D01",
+        "D02",
+        "D03",
+        "IA00",
+        "IA01",
+        "IA02",
+        "IA03",
+        "IA04",
+        "IA05"
+      ],
+      "reuses": [
+        "CMP-04",
+        "CMP-08",
+        "CMP-09"
+      ]
+    }
+  ],
+  "invariants": [
+    "Abrir um item não muda seu estado.",
+    "Agendar reserva; realizar consome; horário passado não confirma realização.",
+    "Conclusão de Serviço não prova recebimento.",
+    "Quantidade desconhecida é diferente de não controlar quantidade; nenhuma significa ilimitado.",
+    "Configurar padrão não cria contratação, Agenda ou Recebimento.",
+    "Erro de salvamento preserva conteúdo quando possível.",
+    "Resultado desconhecido exige conferir antes de repetir.",
+    "Rótulos e símbolos acompanham a cor.",
+    "Imagens não certificam responsividade, foco, toque, persistência ou integrações."
+  ],
+  "sources": [
+    "deliverables/Plano_de_Ajustes_Galeria_Copiloto_v1.md",
+    "deliverables/Registro_Lote1_Copiloto.md",
+    "deliverables/Galeria_Oficial_Copiloto_v1/BASE_VISUAL_E_PENDENCIAS.md",
+    "deliverables/Auditoria_Galeria_Copiloto_v1/contrato_componentes.csv"
+  ],
+  "visuallyReopened": [
+    "COP-C01_r02.png",
+    "COP-C02_r02.png",
+    "COP-C03_r03.png",
+    "COP-C04_r02.png",
+    "COP-C05_r02.png",
+    "COP-C06_r02.png"
+  ],
+  "componentVariantOverrides": {
+    "CMP-01": {
+      "headerAction": {
+        "target": [
+          48,
+          48
+        ],
+        "radius": 16,
+        "iconSize": 24,
+        "strokeWidth": 2,
+        "supersedes": "radius.iconAction=circle",
+        "source": "editaveis/gerar.py:Board.iaction"
+      },
+      "navigation": {
+        "contentMinHeight": 72,
+        "baseVisualHeight": 72,
+        "iconOnly": true,
+        "slotCount": 5,
+        "selection": {
+          "backgroundToken": "color.action",
+          "iconColorToken": "color.onAction",
+          "borderRadiusToken": "navigation.floating.radius",
+          "inset": 2
+        },
+        "unselectedIconColorToken": "color.textSecondary",
+        "implementation": "Cinco slots iguais em uma linha, só ícones visíveis; nome e estado selecionado permanecem acessíveis. O estado ativo usa superfície charcoal inset com o mesmo raio da cápsula pai. Não escalar os ícones com a fonte.",
+        "supersedes": "Rótulos visíveis em duas linhas e marcador curto da revisão anterior.",
+        "source": "editaveis/gerar_produto.py:Art.bottomnav"
+      }
+    },
+    "CMP-03": {
+      "segments": {
+        "fontSize": 14,
+        "lineHeight": 20,
+        "fontWeight": 600,
+        "minHeight": 52,
+        "inset": 3,
+        "radius": 16,
+        "activeRadius": 12,
+        "minSegmentWidth": 88,
+        "iconGap": 4,
+        "source": "Decisão visual CMP-03 aprovada em 2026-09-25; baseada em editaveis/gerar_produto.py:Art.block segments"
+      }
+    },
+    "CMP-04": {
+      "compact": {
+        "title": {
+          "fontSize": 16,
+          "lineHeight": 24,
+          "fontWeight": 600
+        },
+        "secondary": {
+          "fontSize": 14,
+          "lineHeight": 20,
+          "fontWeight": 400
+        },
+        "entityIconToText": 16,
+        "stateAlignment": "top-with-title",
+        "minHeight": 80,
+        "verticalPadding": 16,
+        "followingRelatedGap": 8,
+        "radius": 16,
+        "surfaceToken": "color.surface",
+        "elevationToken": "elevation.card",
+        "source": "editaveis/gerar_produto.py:Art.row"
+      },
+      "highlight": {
+        "baseHeight": 244,
+        "heightIsFixedInImplementation": false,
+        "radius": 24,
+        "padding": 20,
+        "surfaceToken": "color.surface",
+        "elevationToken": "elevation.card",
+        "title": {
+          "fontSize": 16,
+          "lineHeight": 24,
+          "fontWeight": 700
+        },
+        "entityIconToText": 12,
+        "stateAlignment": "own-row-below-title",
+        "primaryWidth": "containerWidth - 40",
+        "primaryMinHeight": 52,
+        "source": "editaveis/gerar.py:Board.destaque",
+        "supersedes": "Contrato anterior manda título/estado no topo em todas as variantes; a última galeria aprovada diferencia linha e destaque."
+      }
+    },
+    "CMP-05": {
+      "title": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 700
+      },
+      "titleToContent": 8,
+      "contentInset": 16,
+      "radius": 24,
+      "surfaceToken": "color.surface",
+      "elevationToken": "elevation.card",
+      "outerSectionGap": 24,
+      "source": "editaveis/gerar_produto.py:Art.block section",
+      "implementation": "Título+conteúdo é unidade semântica. Espaço externo24 entre seções, quando não fizer parte da mesma lista; não duplicar padding interno com externo."
+    },
+    "CMP-10": {
+      "daySelector": {
+        "baseContentWidth": 342,
+        "visibleDayWidth": 46.857142857142854,
+        "cellStep": 48.857142857142854,
+        "height": 52,
+        "hitTargetMin": 48,
+        "compact360": "Conteúdo rolável horizontal com células mínimas 48; não reduzir alvo para 45,714.",
+        "source": "editaveis/gerar_produto.py:Art.block calendar"
+      }
+    },
+    "CMP-11": {
+      "titleToBody": 4,
+      "iconToText": 16,
+      "title": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 600
+      },
+      "secondary": {
+        "fontSize": 14,
+        "lineHeight": 20,
+        "fontWeight": 400
+      },
+      "source": "editaveis/gerar_produto.py:Art.block info"
+    },
+    "CMP-12": {
+      "trigger": {
+        "baseSize": [
+          142,
+          48
+        ],
+        "radius": 16,
+        "iconSize": 24,
+        "iconToText": 12,
+        "text": {
+          "fontSize": 16,
+          "lineHeight": 24,
+          "fontWeight": 600
+        },
+        "border": "#858D9A",
+        "supersedes": "radius.copilotoTrigger=capsule",
+        "source": "editaveis/gerar.py:Board.copilot"
+      },
+      "composer": {
+        "baseSize": [
+          342,
+          96
+        ],
+        "text": {
+          "fontSize": 14,
+          "lineHeight": 20,
+          "fontWeight": 400
+        },
+        "radius": 16,
+        "controlTargets": 48,
+        "source": "editaveis/gerar_produto.py:Art.screen composer",
+        "implementation": "A altura e a largura são de referência. O editor de mensagem cresce/rola e respeita tamanho de texto do sistema e teclado."
+      }
+    },
+    "CMP-02": {
+      "contextualButton": {
+        "surface": "#FFFFFF",
+        "borderWidth": 0,
+        "minHeight": 52,
+        "radius": 16,
+        "text": {
+          "fontSize": 16,
+          "lineHeight": 24,
+          "fontWeight": 600
+        },
+        "source": "editaveis/gerar_produto.py:Art.button"
+      }
+    }
+  },
+  "copilot": {
+    "fab": {
+      "size": 56,
+      "radius": 28,
+      "iconSize": 24,
+      "edge": 16,
+      "gap": 12,
+      "detailBottomGap": 16,
+      "backgroundToken": "color.action",
+      "foregroundToken": "color.onAction",
+      "accessibilityLabel": "Abrir Copiloto da Taliya"
+    }
+  },
+  "header": {
+    "minHeight": 56
+  },
+  "overlay": {
+    "radius": 24,
+    "padding": 24,
+    "compactPadding360": 20,
+    "maxHeightRatio": 0.7,
+    "backdropColor": "#000000",
+    "backdropOpacity": 0.32
+  },
+  "elevation": {
+    "shadowColor": "#000000",
+    "shadowOpacity": 0.12,
+    "shadowOffsetY": 4,
+    "shadowRadius": 12,
+    "android": 4,
+    "control": {
+      "shadowOpacity": 0.06,
+      "shadowOffsetY": 1,
+      "shadowRadius": 3,
+      "android": 1
+    },
+    "controlPressed": {
+      "shadowOpacity": 0.025,
+      "shadowOffsetY": 0,
+      "shadowRadius": 1,
+      "android": 0
+    },
+    "card": {
+      "shadowOpacity": 0.08,
+      "shadowOffsetY": 2,
+      "shadowRadius": 6,
+      "android": 2
+    }
+  },
+  "implementationProvenance": {
+    "base": "tokens_base.json",
+    "overlay": "tokens_implementacao.json",
+    "merge": "Objetos mesclados recursivamente; listas existentes preservadas; propriedades novas adicionadas.",
+    "aceite": {
+      "source": "Conversa atual, aprovação visual da navegação em 2026-09-24",
+      "user_message": "ok, aprovado",
+      "subsequent_authorization": "Aplicar a barra glass sem rótulos visíveis e o estado ativo Hoje nas cinco raízes compartilhadas, atualizando tokens, contrato, testes e evidências.",
+      "meaning": "Aprovação do mockup da navegação; não comprova runtime, acessibilidade nativa ou aceite da família CMP-01."
+    },
+    "runtimeVerified": false
+  }
+}

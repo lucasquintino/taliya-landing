@@ -1,0 +1,20 @@
+[
+  {
+    "id": "price-plus-fit",
+    "channel": "web",
+    "message": "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal.",
+    "expect": ["plano"]
+  },
+  {
+    "id": "human-request",
+    "channel": "whatsapp",
+    "message": "Quero falar com uma pessoa da Taliya.",
+    "expect": ["pausar", "pessoa"]
+  },
+  {
+    "id": "diagnostic-pain",
+    "channel": "web",
+    "message": "Perco interessados no WhatsApp e nao sei quem precisa de retorno.",
+    "expect": ["diagnostico"]
+  }
+]

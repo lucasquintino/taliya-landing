@@ -1,0 +1,68 @@
+{
+  "runId": "agent-runtime-naming-1780089891674",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-05-29T21:24:51.674Z",
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "taliya_commercial remains the only active implemented key",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "future Taliya configuration key is reserved",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "future studio operation keys are reserved",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "schemas expose generic scope fields",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "migration persists agent_family",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "migration persists owner_scope",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "migration persists nullable tenant_id",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "migration creates no sales_agent_* or agent_v2_* tables",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "README documents future agent boundaries",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "rollout docs state future agents are out of scope",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  }
+}

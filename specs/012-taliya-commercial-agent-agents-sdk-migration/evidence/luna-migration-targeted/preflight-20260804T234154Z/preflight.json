@@ -1,0 +1,31 @@
+{
+  "schema": "012.real_model_golden_transcripts_preflight.v1",
+  "task": "T012-043",
+  "created_at": "2026-08-04T23:41:54.298899+00:00",
+  "model": "gpt-5.6-luna",
+  "fixture_path": "scripts\\fixtures\\agent-runtime\\spec-012-luna-targeted.json",
+  "scenario_count": 3,
+  "scenario_ids": [
+    "luna-price-objection-context",
+    "luna-waitlist-hesitation",
+    "luna-diagnostic-acceptance-no-regreeting"
+  ],
+  "messages_by_scenario": {
+    "luna-price-objection-context": [
+      "quanto custa?",
+      "hmm, talvez fique pesado"
+    ],
+    "luna-waitlist-hesitation": [
+      "quero começar, me coloca na lista",
+      "talvez, antes eu queria entender melhor"
+    ],
+    "luna-diagnostic-acceptance-no-regreeting": [
+      "sim"
+    ]
+  },
+  "openai_api_key_available": true,
+  "env_file_checked": "C:\\Users\\lucas\\agentes-landing-system\\.env.local",
+  "model_has_recorded_pricing": true,
+  "max_total_cost_usd": 0.25,
+  "paid_call_status": "not_attempted_preflight_only"
+}

@@ -1,0 +1,223 @@
+{
+  "schema": "012.simulated_shadow_comparison.v1",
+  "source_report": "specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-043-real-model-golden-transcripts\\20260616T121413Z\\report.json",
+  "manual_review_summary": "specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-047-manual-transcript-review-package\\summary.json",
+  "trace_summary": "specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-045-mandatory-trace-evidence\\summary.json",
+  "projection_summary": "specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-046-sales-inbox-projection-evidence\\summary.json",
+  "shadow_mode_evidence": "specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-050-simulated-shadow-mode.md",
+  "comparison_mode": "simulated_no_real_leads",
+  "real_lead_traffic_used": false,
+  "public_activation": false,
+  "paid_openai_calls_for_this_task": 0,
+  "scenario_count": 9,
+  "all_compared_scenarios_passed": true,
+  "failures": [],
+  "source_golden_passed": "9/9",
+  "manual_review_status": "pending_manual_review",
+  "trace_all_complete": true,
+  "projection_all_complete": true,
+  "rows": [
+    {
+      "scenario_id": "final-price-first",
+      "checks": {
+        "golden_passed": true,
+        "manual_package_present": true,
+        "manual_decision_pending": true,
+        "transcript_present": true,
+        "trace_complete": true,
+        "projection_complete": true,
+        "no_missing_trace": true,
+        "no_missing_projection": true
+      },
+      "failed_checks": [],
+      "turn_count": 1,
+      "trace_count": 1,
+      "projection_count": 1,
+      "actions": [
+        "answer_direct_product_question"
+      ],
+      "source_cost_usd": 0.004206
+    },
+    {
+      "scenario_id": "final-price-plus-pain",
+      "checks": {
+        "golden_passed": true,
+        "manual_package_present": true,
+        "manual_decision_pending": true,
+        "transcript_present": true,
+        "trace_complete": true,
+        "projection_complete": true,
+        "no_missing_trace": true,
+        "no_missing_projection": true
+      },
+      "failed_checks": [],
+      "turn_count": 1,
+      "trace_count": 1,
+      "projection_count": 1,
+      "actions": [
+        "answer_direct_product_question"
+      ],
+      "source_cost_usd": 0.007814
+    },
+    {
+      "scenario_id": "final-pain-first",
+      "checks": {
+        "golden_passed": true,
+        "manual_package_present": true,
+        "manual_decision_pending": true,
+        "transcript_present": true,
+        "trace_complete": true,
+        "projection_complete": true,
+        "no_missing_trace": true,
+        "no_missing_projection": true
+      },
+      "failed_checks": [],
+      "turn_count": 1,
+      "trace_count": 1,
+      "projection_count": 1,
+      "actions": [
+        "offer_diagnostic_from_pain"
+      ],
+      "source_cost_usd": 0.004431
+    },
+    {
+      "scenario_id": "final-instagram-interest",
+      "checks": {
+        "golden_passed": true,
+        "manual_package_present": true,
+        "manual_decision_pending": true,
+        "transcript_present": true,
+        "trace_complete": true,
+        "projection_complete": true,
+        "no_missing_trace": true,
+        "no_missing_projection": true
+      },
+      "failed_checks": [],
+      "turn_count": 1,
+      "trace_count": 1,
+      "projection_count": 1,
+      "actions": [
+        "answer_source_opening"
+      ],
+      "source_cost_usd": 0.004432
+    },
+    {
+      "scenario_id": "final-whatsapp-question",
+      "checks": {
+        "golden_passed": true,
+        "manual_package_present": true,
+        "manual_decision_pending": true,
+        "transcript_present": true,
+        "trace_complete": true,
+        "projection_complete": true,
+        "no_missing_trace": true,
+        "no_missing_projection": true
+      },
+      "failed_checks": [],
+      "turn_count": 1,
+      "trace_count": 1,
+      "projection_count": 1,
+      "actions": [
+        "answer_whatsapp_scope"
+      ],
+      "source_cost_usd": 0.004188
+    },
+    {
+      "scenario_id": "step3g-long-conversation",
+      "checks": {
+        "golden_passed": true,
+        "manual_package_present": true,
+        "manual_decision_pending": true,
+        "transcript_present": true,
+        "trace_complete": true,
+        "projection_complete": true,
+        "no_missing_trace": true,
+        "no_missing_projection": true
+      },
+      "failed_checks": [],
+      "turn_count": 13,
+      "trace_count": 13,
+      "projection_count": 13,
+      "actions": [
+        "answer_direct_product_question",
+        "start_requested_diagnostic",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "complete_diagnostic",
+        "send_demo",
+        "answer_price_objection_with_context",
+        "offer_or_join_waitlist_if_eligible",
+        "answer_question_then_continue_waitlist",
+        "handoff_requested"
+      ],
+      "source_cost_usd": 0.048401
+    },
+    {
+      "scenario_id": "final-waitlist-joined",
+      "checks": {
+        "golden_passed": true,
+        "manual_package_present": true,
+        "manual_decision_pending": true,
+        "transcript_present": true,
+        "trace_complete": true,
+        "projection_complete": true,
+        "no_missing_trace": true,
+        "no_missing_projection": true
+      },
+      "failed_checks": [],
+      "turn_count": 1,
+      "trace_count": 1,
+      "projection_count": 1,
+      "actions": [
+        "join_waitlist"
+      ],
+      "source_cost_usd": 0.002439
+    },
+    {
+      "scenario_id": "final-human-request-silent-after",
+      "checks": {
+        "golden_passed": true,
+        "manual_package_present": true,
+        "manual_decision_pending": true,
+        "transcript_present": true,
+        "trace_complete": true,
+        "projection_complete": true,
+        "no_missing_trace": true,
+        "no_missing_projection": true
+      },
+      "failed_checks": [],
+      "turn_count": 2,
+      "trace_count": 1,
+      "projection_count": 1,
+      "actions": [
+        "handoff_requested",
+        null
+      ],
+      "source_cost_usd": 0.003932
+    },
+    {
+      "scenario_id": "final-demo-request",
+      "checks": {
+        "golden_passed": true,
+        "manual_package_present": true,
+        "manual_decision_pending": true,
+        "transcript_present": true,
+        "trace_complete": true,
+        "projection_complete": true,
+        "no_missing_trace": true,
+        "no_missing_projection": true
+      },
+      "failed_checks": [],
+      "turn_count": 1,
+      "trace_count": 1,
+      "projection_count": 1,
+      "actions": [
+        "send_demo"
+      ],
+      "source_cost_usd": 0.007316
+    }
+  ]
+}

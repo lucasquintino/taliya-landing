@@ -1,0 +1,485 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-fast-conductor-final-check",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-24T13:27:30Z",
+  "finishedAt": "2026-05-24T13:27:50Z",
+  "summary": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "estimatedCostUsd": 0.00892,
+    "inputTokens": 8613,
+    "outputTokens": 1080
+  },
+  "releaseGate": "pass",
+  "scenarios": [
+    {
+      "id": "real-price-direct",
+      "title": "Pergunta direta de preco deve responder sem esconder",
+      "channel": "widget",
+      "checks": [
+        "mentions_all_prices",
+        "has_product_source",
+        "no_checkout_link",
+        "not_generic_intro"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_b291c2a2047c43f8bca1ceeeaa496760",
+            "conversation_id": "real_eval_real-price-direct",
+            "lead_id": "lead_real-price-direct",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "direct_question_opening",
+                "detected_intents": [
+                  "product"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_direct",
+                  "diagnostic.price_hook"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_pain_resolved": "perda de interessados e follow-up",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele responde, registra contexto e avisa a equipe quando precisa de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_direct",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.price_hook",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.price_hook",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-4.1-mini",
+                "input_tokens": 4298,
+                "output_tokens": 309,
+                "cost_usd": 0.002214
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_7f27cacc139f49a2b23386e7bcf12eb9"
+          },
+          "lead": "Quanto custa a Taliya e quais planos existem?"
+        }
+      ]
+    },
+    {
+      "id": "real-plan-fit-with-context",
+      "title": "Plano ideal com contexto nao pode virar abertura generica",
+      "channel": "widget",
+      "checks": [
+        "mentions_user_context",
+        "has_product_source",
+        "not_generic_intro",
+        "asks_at_most_one_question"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_db40c5ff89b545968a32004405e5bd12",
+            "conversation_id": "real_eval_real-plan-fit-with-context",
+            "lead_id": "lead_real-plan-fit-with-context",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "direct_question_opening",
+                "detected_intents": [
+                  "product",
+                  "plan_fit"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "Lead tem 80 alunos",
+                  "Lead relata reposicao baguncada",
+                  "Lead quer saber o plano ideal",
+                  "Planos oficiais: Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, Completo R$ 1.497/mes"
+                ],
+                "facts_missing": [
+                  "Qual rotina está mais crítica além da reposição"
+                ],
+                "template_ids": [
+                  "diagnostic.offer_soft"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: com 80 alunos e reposição bagunçada, já dá para ver por onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: com 80 alunos e reposição bagunçada, já dá para ver por onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Reposição bagunçada no studio"
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Diagnóstico gratuito para entender a rotina antes de indicar o plano"
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "Perguntar qual parte da reposição está mais crítica"
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Agenda",
+                    "agent_pain_resolved": "agenda, faltas e reposições escapando",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele organiza avisos, próximos encaixes e pendências para a equipe agir"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Base, Essencial, Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "Perguntar qual parte da reposição está mais crítica",
+                    "plan_range": "Base, Essencial, Avance ou Completo"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.offer_soft",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Entendi: com 80 alunos e reposição bagunçada, já dá para ver por onde o diagnóstico deve começar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "student_count",
+                  "value": "80 alunos",
+                  "confidence": "high",
+                  "evidence": [
+                    "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal."
+                  ]
+                },
+                {
+                  "key": "pain",
+                  "value": "reposicao baguncada",
+                  "confidence": "high",
+                  "evidence": [
+                    "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal."
+                  ]
+                },
+                {
+                  "key": "intent",
+                  "value": "quer saber o plano ideal",
+                  "confidence": "high",
+                  "evidence": [
+                    "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal."
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal.",
+                    "evidence": [
+                      "widget:real-plan-fit-with-context:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal.",
+                    "evidence": [
+                      "widget:real-plan-fit-with-context:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal.",
+                    "evidence": [
+                      "widget:real-plan-fit-with-context:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [
+                  "80 alunos",
+                  "reposicao baguncada"
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": "Reposição bagunçada no studio",
+                "likely_cause": null,
+                "crm_base_recommendation": "Diagnóstico gratuito para entender a rotina antes de indicar o plano",
+                "first_recommended_step": "Perguntar qual parte da reposição está mais crítica",
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": "Base, Essencial, Avance ou Completo",
+                "final_plan_line": "Ainda não dá para fechar o plano ideal com segurança.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [
+                  "Lead tem 80 alunos",
+                  "Lead relata reposicao baguncada"
+                ],
+                "unknowns": [
+                  "Qual rotina está mais crítica",
+                  "Se a dor principal é atendimento, agenda, vendas ou retenção"
+                ],
+                "confidence": "low",
+                "next_question": "Qual é hoje a parte mais crítica da reposição?",
+                "validation_question": "Faz sentido esse diagnóstico inicial?",
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message",
+                    "product_knowledge",
+                    "initial_policy_read"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "3"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4315,
+                "output_tokens": 771,
+                "cost_usd": 0.006706
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_8cf19ac991a544839f7319138ee9b4a9"
+          },
+          "lead": "Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal."
+        }
+      ]
+    }
+  ]
+}

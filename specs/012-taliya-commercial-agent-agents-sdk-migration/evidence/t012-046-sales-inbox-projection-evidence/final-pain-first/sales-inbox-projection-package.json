@@ -1,0 +1,73 @@
+{
+  "schema": "012.sales_inbox_projection_export.v1",
+  "scenario_id": "final-pain-first",
+  "proof_mode": "real_model_t012_043_approved_9_of_9",
+  "required_projection_fields": [
+    "conversation_id",
+    "lead_id",
+    "commercial_stage",
+    "diagnostic_status",
+    "fields"
+  ],
+  "required_nested_fields": [
+    "template_ids",
+    "validator_status",
+    "source_labels"
+  ],
+  "turn_count": 1,
+  "projection_count": 1,
+  "projection_complete": true,
+  "missing_required_fields": {},
+  "missing_projection_turn_indexes": [],
+  "conversation_summary": {
+    "turns_passed": 1,
+    "final_state": {
+      "conversation_id": "t012-043-final-pain-first",
+      "lead_id": "t012-043-final-pain-first",
+      "source": "pilates_landing",
+      "channel": "widget",
+      "canonical_state": "diagnostic_offered"
+    },
+    "total_model_operations": 2,
+    "total_cost_usd": 0.004431
+  },
+  "turns": [
+    {
+      "index": 0,
+      "status": "delivered",
+      "mode": "entry",
+      "selected_action": "offer_diagnostic_from_pain",
+      "template_ids": [
+        "opening.contextual_ack",
+        "diagnostic.offer_soft"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-final-pain-first",
+        "lead_id": "t012-043-final-pain-first",
+        "commercial_stage": "diagnostic_offered",
+        "summary": "Estado comercial: diagnostic_offered",
+        "diagnostic_status": "offered",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "opening.contextual_ack",
+            "diagnostic.offer_soft"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    }
+  ]
+}

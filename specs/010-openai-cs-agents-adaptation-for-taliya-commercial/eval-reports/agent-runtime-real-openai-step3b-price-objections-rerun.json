@@ -1,0 +1,1957 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-step3b-price-objections-rerun",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-26T14:03:45Z",
+  "finishedAt": "2026-05-26T14:04:54Z",
+  "summary": {
+    "total": 6,
+    "passed": 5,
+    "failed": 1,
+    "estimatedCostUsd": 0.050822,
+    "inputTokens": 42625,
+    "outputTokens": 5366
+  },
+  "releaseGate": "fail",
+  "scenarios": [
+    {
+      "id": "step3b-objection-after-price",
+      "title": "Price objection after price should explain value and offer a next step",
+      "channel": "widget",
+      "checks": [
+        "mentions_all_prices",
+        "price_objection_value_argument",
+        "price_objection_next_step",
+        "no_roi_promise",
+        "no_checkout_link",
+        "has_product_source",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_f9a98a8293d942678b029c9fbae365ba",
+            "conversation_id": "real_eval_step3b-objection-after-price",
+            "lead_id": "lead_step3b-objection-after-price",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "direct_question_opening",
+                "detected_intents": [
+                  "product_price_question"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_direct",
+                  "diagnostic.price_hook"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_direct",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.price_hook",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.price_hook",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-4.1-mini",
+                "input_tokens": 5143,
+                "output_tokens": 287,
+                "cost_usd": 0.002516
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_4e10dfdcb4084a83b43ef614b9663864"
+          },
+          "lead": "quanto custa?"
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_9d7b29cdc918472ebaf6c8fa7c5f8db7",
+            "conversation_id": "real_eval_step3b-objection-after-price",
+            "lead_id": "lead_step3b-objection-after-price",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "product_question",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "general_objection",
+                  "price_objection"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "lead said 'achei caro'",
+                  "previous turn answered price question",
+                  "official plan prices are Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, Completo R$ 1.497/mes"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_objection_value"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "product.price_objection_value": {
+                    "value_context": "A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                    "next_step": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_objection_value",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Entendo. É um valor para olhar com calma mesmo. A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [
+                  "lead said 'achei caro'",
+                  "previous turn answered price question",
+                  "official plan prices are Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, Completo R$ 1.497/mes"
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message",
+                    "previous_state",
+                    "product_knowledge",
+                    "availability_and_onboarding",
+                    "how_it_works",
+                    "routine_areas",
+                    "plans",
+                    "prices",
+                    "plan_comparison"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 5050,
+                "output_tokens": 601,
+                "cost_usd": 0.006492
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_53b3dca3d7074ce1a453a8d42def3772"
+          },
+          "lead": "achei caro"
+        }
+      ]
+    },
+    {
+      "id": "step3b-objection-why-costs",
+      "title": "Why it costs this should explain value without ROI promise",
+      "channel": "widget",
+      "checks": [
+        "price_objection_value_argument",
+        "price_objection_next_step",
+        "no_roi_promise",
+        "no_checkout_link",
+        "has_product_source",
+        "llm_usage_required",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_361ecad857fb42ed902693d3eb785da8",
+            "conversation_id": "real_eval_step3b-objection-why-costs",
+            "lead_id": "lead_step3b-objection-why-costs",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "general_objection",
+                  "price_objection"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_objection_value"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "product.price_objection_value": {
+                    "value_context": "A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                    "next_step": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_objection_value",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Entendo. É um valor para olhar com calma mesmo. A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "availability_and_onboarding",
+                    "how_it_works",
+                    "routine_areas",
+                    "plans",
+                    "prices",
+                    "plan_comparison"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-4.1-mini",
+                "input_tokens": 5157,
+                "output_tokens": 295,
+                "cost_usd": 0.002535
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_620643f84907413b9239950037b9a0f3"
+          },
+          "lead": "por que custa isso?"
+        }
+      ]
+    },
+    {
+      "id": "step3b-objection-compensa",
+      "title": "Not sure it compensates should answer value and steer safely",
+      "channel": "whatsapp",
+      "checks": [
+        "first_response_greeting",
+        "price_objection_value_argument",
+        "price_objection_next_step",
+        "no_roi_promise",
+        "no_checkout_link",
+        "whatsapp_max_three_chunks",
+        "llm_usage_required",
+        "template_ids_present"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_6f50f34dbd39422196cefc0e63dff2df",
+            "conversation_id": "real_eval_step3b-objection-compensa",
+            "lead_id": "lead_step3b-objection-compensa",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "general_objection",
+                  "price_objection"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Nome confiável no perfil: Marina"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_objection_value"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "product.price_objection_value": {
+                    "value_context": "A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                    "next_step": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_objection_value",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Marina, tudo bem? Entendo. É um valor para olhar com calma mesmo. A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "profile_first_name",
+                  "value": "Marina",
+                  "confidence": "high",
+                  "evidence": [
+                    "Nome confiável no perfil: Marina"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [
+                  "Nome confiável no perfil: Marina"
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "profile_name_assessment",
+                    "product_knowledge",
+                    "availability_and_onboarding",
+                    "how_it_works",
+                    "routine_areas",
+                    "plans",
+                    "prices",
+                    "plan_comparison"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4670,
+                "output_tokens": 750,
+                "cost_usd": 0.006877
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_44d2421be5154f4e9c58c2eb1632dd90"
+          },
+          "lead": "nao sei se compensa pra mim"
+        }
+      ]
+    },
+    {
+      "id": "step3b-objection-discount",
+      "title": "Discount request should not invent commercial condition",
+      "channel": "widget",
+      "checks": [
+        "price_objection_value_argument",
+        "price_objection_next_step",
+        "no_roi_promise",
+        "no_checkout_link",
+        "has_product_source",
+        "llm_usage_required",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_a4b54ec4a3a6461e9153f02d5729fdef",
+            "conversation_id": "real_eval_step3b-objection-discount",
+            "lead_id": "lead_step3b-objection-discount",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "general_objection",
+                  "price_question",
+                  "price_objection"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead perguntou sobre desconto e disse que achou salgado.",
+                  "Nome confiável no perfil: Lucas."
+                ],
+                "facts_missing": [
+                  "Se ele quer comparar planos ou seguir para diagnóstico."
+                ],
+                "template_ids": [
+                  "product.price_objection_value"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "product.price_objection_value": {
+                    "value_context": "A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                    "next_step": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_objection_value",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Entendo. É um valor para olhar com calma mesmo. A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "lead_objection",
+                  "value": "achou salgado e perguntou se tem desconto",
+                  "confidence": "high",
+                  "evidence": [
+                    "tem desconto? achei salgado"
+                  ]
+                },
+                {
+                  "key": "profile_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name: Lucas"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [
+                  "Lead perguntou sobre desconto e disse que achou salgado.",
+                  "Nome confiável no perfil: Lucas."
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [
+                  "Se ele quer comparar planos ou seguir para diagnóstico."
+                ],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "profile_name_assessment",
+                    "product_knowledge.facts",
+                    "availability_and_onboarding",
+                    "how_it_works",
+                    "routine_areas",
+                    "plans",
+                    "prices",
+                    "plan_comparison"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "2"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4657,
+                "output_tokens": 428,
+                "cost_usd": 0.005419
+              },
+              "confidence": "medium"
+            },
+            "trace_id": "trace_b0010384426b47cc80fb5fea290f5067"
+          },
+          "lead": "tem desconto? achei salgado"
+        }
+      ]
+    },
+    {
+      "id": "step3b-objection-roi",
+      "title": "ROI challenge should not promise results",
+      "channel": "widget",
+      "checks": [
+        "price_objection_value_argument",
+        "price_objection_next_step",
+        "no_roi_promise",
+        "no_checkout_link",
+        "has_product_source",
+        "llm_usage_required",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_51715156ff8a4251b068000193531158",
+            "conversation_id": "real_eval_step3b-objection-roi",
+            "lead_id": "lead_step3b-objection-roi",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "general_objection",
+                  "price_objection"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "checkout_status unavailable",
+                  "unsupported_claims include guaranteed ROI"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_objection_value"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "product.price_objection_value": {
+                    "value_context": "A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                    "next_step": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_objection_value",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Entendo. É um valor para olhar com calma mesmo. A Taliya não é só uma agenda ou uma planilha mais bonita. Ela ajuda nas rotinas que fazem o studio girar: atendimento, retornos, agenda, reposições, cobranças e acompanhamento dos alunos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Pra saber se esse valor faz sentido para você, eu prefiro olhar a rotina do seu studio antes de falar plano no escuro. Se fizer sentido, faço um diagnóstico gratuito para ver se a Taliya realmente conseguiria te atender ou não. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "lead_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable first_name Lucas"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [
+                  "checkout_status unavailable",
+                  "unsupported_claims include guaranteed ROI"
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "profile_name_assessment",
+                    "product_knowledge",
+                    "availability_and_onboarding",
+                    "how_it_works",
+                    "routine_areas",
+                    "plans",
+                    "prices",
+                    "plan_comparison"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4657,
+                "output_tokens": 627,
+                "cost_usd": 0.006314
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_f5fbdd2cd7074d54aa0b4a00f445bad2"
+          },
+          "lead": "isso se paga? garante resultado?"
+        }
+      ]
+    },
+    {
+      "id": "step3b-objection-after-diagnostic",
+      "title": "Price objection after diagnostic should use saved context and not restart diagnostic",
+      "channel": "widget",
+      "checks": [
+        "diagnostic_completed",
+        "diagnostic_ledger_complete",
+        "price_objection_value_argument",
+        "price_objection_contextual",
+        "price_objection_next_step",
+        "no_roi_promise",
+        "no_checkout_link",
+        "has_product_source",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [
+        "price objection did not explain value beyond a simple tool/system"
+      ],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_9aeae67d29934a5196ed0bb2e4fb0be1",
+            "conversation_id": "real_eval_step3b-objection-after-diagnostic",
+            "lead_id": "lead_step3b-objection-after-diagnostic",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_delivered",
+                "next_state": "diagnostic_delivered",
+                "route": "diagnostic",
+                "opening_type": "diagnostic_cta_opening",
+                "detected_intents": [
+                  "diagnostic_request",
+                  "product_compare_plan",
+                  "pain_present"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "complete",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "ask_demo_reaction",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "diagnostic.deliver_hold",
+                  "diagnostic.deliver_context",
+                  "diagnostic.deliver_crm_base",
+                  "diagnostic.deliver_operational_step",
+                  "diagnostic.deliver_agent_recommendation",
+                  "diagnostic.deliver_agent_recommendation",
+                  "diagnostic.deliver_plan_recommendation",
+                  "diagnostic.deliver_demo_not_offered"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_agent_recommendation#2": {
+                    "agent_name": "Vendas",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "follow-ups e conversas que esfriam",
+                    "agent_recommendation_reason": "vendas apareceu como prioridade de impacto",
+                    "agent_practical_action": "ele lembra próximos passos e ajuda a não deixar interessado parado"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "interessados chegando pelo WhatsApp e ficando sem retorno claro",
+                    "first_step": "separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas",
+                    "plan_range": "Essencial ou Avance"
+                  },
+                  "product.post_diagnostic_plan_recap": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.deliver_hold",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_context",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_crm_base",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_operational_step",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_agent_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_agent_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_plan_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_demo_not_offered",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "complete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Perfeito. Já dá pra te devolver uma leitura prática. Vou organizar em partes.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_hold",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_context",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_crm_base",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "O primeiro passo seria separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_operational_step",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Agente Atendimento faria sentido primeiro: ele ajuda com interessados que ficam sem resposta. Faz sentido aqui porque essa foi a dor comercial mais clara; na prática, ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_agent_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Agente Vendas também faria sentido: ele ajuda com follow-ups e conversas que esfriam. Faz sentido aqui porque vendas apareceu como prioridade de impacto; na prática, ele lembra próximos passos e ajuda a não deixar interessado parado.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_agent_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance ou Completo.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_plan_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_demo_not_offered",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "studio_size",
+                  "value": "110 alunos ativos",
+                  "confidence": "high",
+                  "evidence": [
+                    "Tenho 110 alunos ativos"
+                  ]
+                },
+                {
+                  "key": "main_pain",
+                  "value": "perda de interessados no WhatsApp",
+                  "confidence": "high",
+                  "evidence": [
+                    "perco interessados no WhatsApp"
+                  ]
+                },
+                {
+                  "key": "current_process",
+                  "value": "planilha",
+                  "confidence": "high",
+                  "evidence": [
+                    "hoje controlo em planilha"
+                  ]
+                },
+                {
+                  "key": "priority",
+                  "value": "vendas e retorno comercial",
+                  "confidence": "high",
+                  "evidence": [
+                    "a prioridade e vendas",
+                    "a dor principal e retorno comercial"
+                  ]
+                },
+                {
+                  "key": "urgency",
+                  "value": "urgente para este mes",
+                  "confidence": "high",
+                  "evidence": [
+                    "urgente para esse mes"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "completed",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  }
+                ],
+                "facts_used": [
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano."
+                ],
+                "main_bottleneck": "interessados chegando pelo WhatsApp e ficando sem retorno claro",
+                "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual.",
+                "likely_cause": "o atendimento e o acompanhamento ainda dependem demais de controle manual.",
+                "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos.",
+                "first_recommended_step": "O primeiro passo seria separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas.",
+                "indicated_routines_or_agents": [
+                  "Atendimento",
+                  "Vendas"
+                ],
+                "indicated_agents": [
+                  {
+                    "name": "Atendimento",
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  {
+                    "name": "Vendas",
+                    "agent_name": "Vendas",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "follow-ups e conversas que esfriam",
+                    "agent_recommendation_reason": "vendas apareceu como prioridade de impacto",
+                    "agent_practical_action": "ele lembra próximos passos e ajuda a não deixar interessado parado"
+                  }
+                ],
+                "plan_or_range_to_compare": "Avance ou Completo",
+                "final_plan_line": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance ou Completo.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                "evidence": [
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano."
+                ],
+                "unknowns": [],
+                "confidence": "medium",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?"
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message",
+                    "initial_policy_read",
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "5"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "completed"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 5632,
+                "output_tokens": 860,
+                "cost_usd": 0.008094
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_de921cca994e4155b2c16bfd6bcb2160"
+          },
+          "lead": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano."
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_a4d4d068c60f4ff796d8c5a5f15f90fb",
+            "conversation_id": "real_eval_step3b-objection-after-diagnostic",
+            "lead_id": "lead_step3b-objection-after-diagnostic",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_delivered",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "price_objection",
+                  "general_objection"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "complete",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "110 alunos ativos",
+                  "perda de interessados no WhatsApp",
+                  "controle em planilha",
+                  "prioridade em vendas e retorno comercial",
+                  "urgente para este mês",
+                  "diagnóstico já entregue"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_objection_value"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser interessados chegando pelo WhatsApp e ficando sem retorno claro."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_agent_recommendation#2": {
+                    "agent_name": "Vendas",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "follow-ups e conversas que esfriam",
+                    "agent_recommendation_reason": "vendas apareceu como prioridade de impacto",
+                    "agent_practical_action": "ele lembra próximos passos e ajuda a não deixar interessado parado"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "interessados chegando pelo WhatsApp e ficando sem retorno claro",
+                    "first_step": "O primeiro passo seria separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas",
+                    "plan_range": "Avance ou Completo"
+                  },
+                  "product.post_diagnostic_plan_recap": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "product.price_objection_value": {
+                    "value_context": "Pelo diagnóstico, o ponto é comparar esse valor com o que está pesando hoje: interessados chegando pelo WhatsApp e ficando sem retorno claro.",
+                    "next_step": "Com o diagnóstico em mãos, o melhor próximo passo é ver a demonstração prática e comparar se o plano recomendado faz sentido para você."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_objection_value",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "complete",
+                "next_question_kind": "validation",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Entendo. É um valor para olhar com calma mesmo. Pelo diagnóstico, o ponto é comparar esse valor com o que está pesando hoje: interessados chegando pelo WhatsApp e ficando sem retorno claro.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Com o diagnóstico em mãos, o melhor próximo passo é ver a demonstração prática e comparar se o plano recomendado faz sentido para você.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "studio_size",
+                  "value": "110 alunos ativos",
+                  "confidence": "high",
+                  "evidence": [
+                    "Tenho 110 alunos ativos"
+                  ]
+                },
+                {
+                  "key": "main_pain",
+                  "value": "perda de interessados no WhatsApp",
+                  "confidence": "high",
+                  "evidence": [
+                    "perco interessados no WhatsApp"
+                  ]
+                },
+                {
+                  "key": "current_process",
+                  "value": "planilha",
+                  "confidence": "high",
+                  "evidence": [
+                    "hoje controlo em planilha"
+                  ]
+                },
+                {
+                  "key": "priority",
+                  "value": "vendas e retorno comercial",
+                  "confidence": "high",
+                  "evidence": [
+                    "a prioridade e vendas",
+                    "a dor principal e retorno comercial"
+                  ]
+                },
+                {
+                  "key": "urgency",
+                  "value": "urgente para este mes",
+                  "confidence": "high",
+                  "evidence": [
+                    "urgente para esse mes"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "completed",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3b-objection-after-diagnostic:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  }
+                ],
+                "facts_used": [
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano."
+                ],
+                "main_bottleneck": "interessados chegando pelo WhatsApp e ficando sem retorno claro",
+                "pain_context_human": null,
+                "likely_cause": "o atendimento e o acompanhamento ainda dependem demais de controle manual.",
+                "crm_base_recommendation": null,
+                "first_recommended_step": "O primeiro passo seria separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas.",
+                "indicated_routines_or_agents": [
+                  "Atendimento",
+                  "Vendas"
+                ],
+                "indicated_agents": [
+                  {
+                    "name": "Atendimento",
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  {
+                    "name": "Vendas",
+                    "agent_name": "Vendas",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "follow-ups e conversas que esfriam",
+                    "agent_recommendation_reason": "vendas apareceu como prioridade de impacto",
+                    "agent_practical_action": "ele lembra próximos passos e ajuda a não deixar interessado parado"
+                  }
+                ],
+                "plan_or_range_to_compare": "Avance ou Completo",
+                "final_plan_line": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance ou Completo.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                "evidence": [
+                  "110 alunos ativos",
+                  "perda de interessados no WhatsApp",
+                  "controle em planilha",
+                  "prioridade em vendas e retorno comercial",
+                  "urgente para este mês"
+                ],
+                "unknowns": [],
+                "confidence": "medium",
+                "next_question": "Posso te mandar as demonstrações?",
+                "validation_question": null,
+                "final_demo_next_step_question": "Posso te mandar as demonstrações?"
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "previous_state",
+                    "product_knowledge",
+                    "availability_and_onboarding",
+                    "how_it_works",
+                    "routine_areas",
+                    "plans",
+                    "prices",
+                    "plan_comparison"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "5"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "completed"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 7659,
+                "output_tokens": 1518,
+                "cost_usd": 0.012575
+              },
+              "confidence": "medium"
+            },
+            "trace_id": "trace_90fd83d2c1654361949505a255b87a43"
+          },
+          "lead": "achei caro"
+        }
+      ]
+    }
+  ]
+}

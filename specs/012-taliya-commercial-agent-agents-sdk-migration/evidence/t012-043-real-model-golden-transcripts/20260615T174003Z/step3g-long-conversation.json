@@ -1,0 +1,448 @@
+{
+  "scenario_id": "step3g-long-conversation",
+  "title": "Golden RC-011-056/060 diagnostic question-by-question and long conversation",
+  "status": "failed",
+  "messages": [
+    "quanto custa?",
+    "pode fazer diagnostico",
+    "95 alunos ativos",
+    "whatsapp e follow-up dao mais trabalho",
+    "nao consigo ver quem precisa de retorno no dia",
+    "hoje fica em planilha e whatsapp",
+    "prioridade e vendas primeiro",
+    "quero resolver agora",
+    "me manda demo",
+    "achei caro",
+    "quero comecar, me coloca na lista",
+    "como funciona mesmo?",
+    "quero falar com alguem"
+  ],
+  "transcript": [],
+  "turns": [
+    {
+      "turn": 1,
+      "user_text": "quanto custa?",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "llm_called": true,
+      "status": "failed",
+      "selected_action": "clarify_ambiguous_opening",
+      "template_ids": [
+        "fallback.unmapped_adaptive"
+      ],
+      "rendered_messages": [],
+      "issues": [
+        "compile_missing_composition:clarification_question",
+        "compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+      ],
+      "issue_details": [
+        "compile_missing_composition:clarification_question: compiler blocked the turn: compile_missing_composition:clarification_question",
+        "compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question: compiler blocked the turn: compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+      ],
+      "repairs": 1,
+      "model_operations": 3,
+      "cost_usd": 0.007551,
+      "next_state": null,
+      "sales_inbox_projection": {},
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "quanto custa?",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-step3g-long-conversation",
+            "lead_id": "t012-043-step3g-long-conversation",
+            "source": "pilates_landing",
+            "channel": "widget"
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "entry",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_general_interest",
+            "answer_source_opening",
+            "offer_diagnostic_from_pain",
+            "answer_direct_product_question",
+            "start_requested_diagnostic",
+            "ask_name_at_diagnostic_entry",
+            "handoff_requested",
+            "clarify_ambiguous_opening"
+          ],
+          "eligible_template_groups": [
+            "opening.",
+            "diagnostic.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "HandoffCallItem",
+            "raw_item_type": "ResponseFunctionToolCall",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": "transfer_to_taliya_product_agent",
+            "handoff_target": null
+          },
+          {
+            "item_type": "HandoffOutputItem",
+            "raw_item_type": "dict",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": null,
+            "handoff_target": "taliya_product_agent"
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_1",
+          "turn_id": "turn_1",
+          "selected_action": "clarify_ambiguous_opening",
+          "interpreted_intents": [
+            "price_question"
+          ],
+          "direct_question": "quanto custa?",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Responder ao pedido de preço com a informação oficial antes de avançar a conversa.",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [
+            {
+              "kind": "unknown_number",
+              "raw_text": "quanto custa",
+              "value_text": "pedido de preço",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Claro — te passo o valor certinho.",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "reply_goal": "Responder ao preço oficial e seguir a conversa com contexto útil.",
+          "confidence": "high",
+          "evidence": [
+            "\"quanto custa?\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "dec_1",
+            "turn_id": "turn_1",
+            "selected_action": "clarify_ambiguous_opening",
+            "interpreted_intents": [
+              "price_question"
+            ],
+            "direct_question": "quanto custa?",
+            "direct_answer_obligations": [
+              {
+                "obligation": "Responder ao pedido de preço com a informação oficial antes de avançar a conversa.",
+                "evidence": [
+                  "\"quanto custa?\""
+                ]
+              }
+            ],
+            "captured_slots": [],
+            "product_fact_keys_used": [
+              "prices"
+            ],
+            "numeric_interpretations": [
+              {
+                "kind": "unknown_number",
+                "raw_text": "quanto custa",
+                "value_text": "pedido de preço",
+                "evidence": [
+                  "\"quanto custa?\""
+                ]
+              }
+            ],
+            "diagnostic_intent": "none",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Claro — te passo o valor certinho.",
+                "evidence": [
+                  "\"quanto custa?\""
+                ]
+              }
+            ],
+            "reply_goal": "Responder ao preço oficial e seguir a conversa com contexto útil.",
+            "confidence": "high",
+            "evidence": [
+              "\"quanto custa?\""
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec_1",
+          "turn_id": "turn_1",
+          "selected_action": "clarify_ambiguous_opening",
+          "interpreted_intents": [
+            "price_question"
+          ],
+          "direct_question": "quanto custa?",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Responder ao pedido de preço com a informação oficial antes de avançar a conversa.",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [
+            {
+              "kind": "unknown_number",
+              "raw_text": "quanto custa",
+              "value_text": "pedido de preço",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Claro — te passo o valor certinho.",
+              "evidence": [
+                "\"quanto custa?\""
+              ]
+            }
+          ],
+          "reply_goal": "Responder ao preço oficial e seguir a conversa com contexto útil.",
+          "confidence": "high",
+          "evidence": [
+            "\"quanto custa?\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "clarify_ambiguous_opening",
+          "previous_state": "new_lead",
+          "current_state": "unknown_or_low_confidence",
+          "next_state": "general_interest",
+          "template_ids": [
+            "fallback.unmapped_adaptive"
+          ],
+          "issues": [
+            "compile_missing_composition:clarification_question",
+            "compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+          ]
+        },
+        "validators": {
+          "decision_id": "action_clarify_ambiguous_opening",
+          "status": "failed",
+          "errors": [
+            {
+              "code": "compile_missing_composition:clarification_question",
+              "message": "compiler blocked the turn: compile_missing_composition:clarification_question"
+            },
+            {
+              "code": "compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question",
+              "message": "compiler blocked the turn: compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+            }
+          ],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "blocked"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 1,
+          "validator_feedback": [
+            {
+              "code": "compile_missing_composition:clarification_question",
+              "message": "compiler blocked the turn: compile_missing_composition:clarification_question"
+            },
+            {
+              "code": "compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question",
+              "message": "compiler blocked the turn: compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+            }
+          ],
+          "repair_sdk_run_items": [
+            {
+              "item_type": "MessageOutputItem",
+              "raw_item_type": "ResponseOutputMessage",
+              "agent_name": "taliya_product_agent",
+              "tool_name": null,
+              "handoff_target": null
+            }
+          ]
+        },
+        "render_plan": {
+          "template_ids": [
+            "fallback.unmapped_adaptive"
+          ],
+          "variables": {},
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [],
+        "state_diff": {
+          "next_state": "general_interest",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": null,
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 0,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 3,
+          "cost_usd": 0.007551
+        },
+        "failure_labels": [
+          "compile_missing_composition:clarification_question",
+          "compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+        ]
+      }
+    }
+  ],
+  "final_state": {
+    "conversation_id": "t012-043-step3g-long-conversation",
+    "lead_id": "t012-043-step3g-long-conversation",
+    "source": "pilates_landing",
+    "channel": "widget"
+  },
+  "checks": [
+    "mentions_all_prices",
+    "diagnostic_question_has_feedback",
+    "no_repeat_answered_size_question",
+    "diagnostic_completed",
+    "diagnostic_ledger_complete",
+    "mentions_demo_link",
+    "price_objection_value_argument",
+    "no_roi_promise",
+    "waitlist_offered_or_handoff",
+    "handoff_requested",
+    "template_ids_present",
+    "sales_inbox_projection_consistent",
+    "all_messages_short"
+  ],
+  "check_results": [
+    {
+      "check": "turn_statuses_acceptable",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "check": "includes:R$ 497",
+      "passed": false,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "includes:diagnostico",
+      "passed": false,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "includes:demonstra",
+      "passed": false,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "excludes:nao entendi",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:95 alunos ativos?",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:retorno garantido",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:checkout",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "no_failed_turns",
+      "passed": false,
+      "detail": "compile_missing_composition:clarification_question, compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+    }
+  ],
+  "issues": [
+    "turn_statuses_acceptable",
+    "includes:R$ 497: missing expected rendered text",
+    "includes:diagnostico: missing expected rendered text",
+    "includes:demonstra: missing expected rendered text",
+    "no_failed_turns: compile_missing_composition:clarification_question, compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+  ],
+  "total_model_operations": 3,
+  "total_cost_usd": 0.007551,
+  "cost_cap_exceeded": false
+}

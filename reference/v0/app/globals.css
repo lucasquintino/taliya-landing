@@ -1,0 +1,172 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Agentes Pilates - Warm Premium Identity */
+  --background: #FAF7F1;
+  --background-secondary: #F3EFE7;
+  --foreground: #151515;
+  --card: #FFFFFF;
+  --card-foreground: #151515;
+  --popover: #FFFFFF;
+  --popover-foreground: #151515;
+  --primary: #151515;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3EFE7;
+  --secondary-foreground: #151515;
+  --muted: #F3EFE7;
+  --muted-foreground: #5F625F;
+  --accent: #3447D4;
+  --accent-foreground: #FFFFFF;
+  --destructive: #D96B5F;
+  --destructive-foreground: #FFFFFF;
+  --border: #E7E0D6;
+  --input: #E7E0D6;
+  --ring: #3447D4;
+  
+  /* Brand Colors */
+  --recovery: #24B47E;
+  --amber: #F2A93B;
+  --soft-red: #D96B5F;
+  --blue: #3447D4;
+  --purple: #7C5CFF;
+  --teal: #18A999;
+  --dark-panel: #111315;
+  
+  /* Charts */
+  --chart-1: #24B47E;
+  --chart-2: #3447D4;
+  --chart-3: #F2A93B;
+  --chart-4: #7C5CFF;
+  --chart-5: #18A999;
+  
+  --radius: 0.75rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #151515;
+  --sidebar-primary: #151515;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F3EFE7;
+  --sidebar-accent-foreground: #151515;
+  --sidebar-border: #E7E0D6;
+  --sidebar-ring: #3447D4;
+}
+
+.dark {
+  --background: #111315;
+  --background-secondary: #1a1c1e;
+  --foreground: #FAF7F1;
+  --card: #1a1c1e;
+  --card-foreground: #FAF7F1;
+  --popover: #1a1c1e;
+  --popover-foreground: #FAF7F1;
+  --primary: #FAF7F1;
+  --primary-foreground: #111315;
+  --secondary: #252729;
+  --secondary-foreground: #FAF7F1;
+  --muted: #252729;
+  --muted-foreground: #9ca3af;
+  --accent: #3447D4;
+  --accent-foreground: #FFFFFF;
+  --destructive: #D96B5F;
+  --destructive-foreground: #FFFFFF;
+  --border: #333537;
+  --input: #333537;
+  --ring: #3447D4;
+  --sidebar: #1a1c1e;
+  --sidebar-foreground: #FAF7F1;
+  --sidebar-primary: #3447D4;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #252729;
+  --sidebar-accent-foreground: #FAF7F1;
+  --sidebar-border: #333537;
+  --sidebar-ring: #3447D4;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-recovery: var(--recovery);
+  --color-amber: var(--amber);
+  --color-soft-red: var(--soft-red);
+  --color-blue: var(--blue);
+  --color-purple: var(--purple);
+  --color-teal: var(--teal);
+  --color-dark-panel: var(--dark-panel);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

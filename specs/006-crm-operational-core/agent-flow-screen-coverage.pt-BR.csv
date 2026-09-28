@@ -1,0 +1,10 @@
+flow_family,current_count,primary_sources,coverage_status,notes
+Atendimento,10,"flow-coverage-matrix.md; round-3-attendance-students-history-spec.pt-BR.md","coberto v0.1","Inbox, contatos, privacidade, handoff, midia e SLA."
+Agenda,16,"flow-coverage-matrix.md; round-4-schedule-classes-replacements-spec.pt-BR.md","coberto v0.1","Chamada, reposicao, encaixe, lista, grade e eventos."
+Vendas,14,"flow-coverage-matrix.md; round-5-sales-trials-enrollment-communications-spec.pt-BR.md","coberto v0.1","Pipeline, experimental, follow-up, matricula e origem."
+Financeiro,14,"flow-coverage-matrix.md; round-6-finance-retention-sensitive-spec.pt-BR.md","coberto v0.1","Cobranca, comprovante, contrato, excecao e acordos."
+Retencao,12,"flow-coverage-matrix.md; round-6-finance-retention-sensitive-spec.pt-BR.md","coberto v0.1","Risco, cancelamento, reativacao, reclamacao e satisfacao."
+Gestao/governanca,13,"flow-coverage-matrix.md; round-7-agents-quotas-governance-spec.pt-BR.md","coberto v0.1","Agentes, incidentes, cotas, politicas, auditoria e suporte."
+Historico/evolucao,12,"flow-coverage-matrix.md; round-3-attendance-students-history-spec.pt-BR.md","coberto v0.1","Professor, notas, documentos, permissao e linha do tempo."
+Adicoes fortes,5,"agent-flow-cardinality-audit.md; Rodadas 1-7","candidato","Manter como camada de revisao ate fechamento final."
+Opcionais,2,"agent-flow-cardinality-audit.md","validar","Decidir se ficam standalone ou subfluxos."

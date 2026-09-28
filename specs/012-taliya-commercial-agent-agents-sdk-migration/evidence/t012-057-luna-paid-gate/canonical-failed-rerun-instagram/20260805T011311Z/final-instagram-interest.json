@@ -1,0 +1,402 @@
+{
+  "scenario_id": "final-instagram-interest",
+  "title": "Golden RC-011-054 Instagram/source opening",
+  "status": "passed",
+  "messages": [
+    "vim pelo Instagram e gostaria de saber mais"
+  ],
+  "transcript": [
+    {
+      "role": "user",
+      "content": "vim pelo Instagram e gostaria de saber mais"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "A Taliya é a IA do seu studio de Pilates para organizar agenda, reposições, cobranças, gestão, atendimento e acompanhamento em um só lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnóstico gratuito com poucas perguntas para entender a rotina, os gargalos e a prioridade do seu studio. O que você acha?"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "user_text": "vim pelo Instagram e gostaria de saber mais",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "answer_source_opening",
+      "template_ids": [
+        "opening.instagram_source"
+      ],
+      "rendered_messages": [
+        "Oi, tudo bem?",
+        "A Taliya é a IA do seu studio de Pilates para organizar agenda, reposições, cobranças, gestão, atendimento e acompanhamento em um só lugar.",
+        "Se fizer sentido, posso fazer um diagnóstico gratuito com poucas perguntas para entender a rotina, os gargalos e a prioridade do seu studio. O que você acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 2,
+      "cost_usd": 0.005639,
+      "next_state": "general_interest",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-final-instagram-interest",
+        "lead_id": "t012-043-final-instagram-interest",
+        "commercial_stage": "general_interest",
+        "summary": "Estado comercial: general_interest",
+        "diagnostic_status": "offered",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "opening.instagram_source"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "instagram",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "vim pelo Instagram e gostaria de saber mais",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-final-instagram-interest",
+            "lead_id": "t012-043-final-instagram-interest",
+            "source": "instagram",
+            "channel": "whatsapp"
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "entry",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_general_interest",
+            "answer_source_opening",
+            "offer_diagnostic_from_pain",
+            "answer_direct_product_question",
+            "start_requested_diagnostic",
+            "handoff_requested",
+            "clarify_ambiguous_opening"
+          ],
+          "eligible_template_groups": [
+            "opening.",
+            "diagnostic.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "HandoffCallItem",
+            "raw_item_type": "ResponseFunctionToolCall",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": "transfer_to_taliya_entry_agent",
+            "handoff_target": null
+          },
+          {
+            "item_type": "HandoffOutputItem",
+            "raw_item_type": "dict",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": null,
+            "handoff_target": "taliya_entry_agent"
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_entry_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "entry-instagram-001",
+          "turn_id": "entry-001",
+          "selected_action": "answer_source_opening",
+          "interpreted_intents": [
+            "veio do Instagram",
+            "quer saber mais sobre a solução"
+          ],
+          "direct_question": "gostaria de saber mais",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Explicar brevemente o que a solução faz",
+              "evidence": [
+                "\"gostaria de saber mais\""
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [],
+          "reply_goal": "Acolher a origem pelo Instagram e apresentar uma visão geral breve da solução.",
+          "confidence": "high",
+          "evidence": [
+            "\"vim pelo Instagram e gostaria de saber mais\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "entry-instagram-001",
+            "turn_id": "entry-001",
+            "selected_action": "answer_source_opening",
+            "interpreted_intents": [
+              "veio do Instagram",
+              "quer saber mais sobre a solução"
+            ],
+            "direct_question": "gostaria de saber mais",
+            "direct_answer_obligations": [
+              {
+                "obligation": "Explicar brevemente o que a solução faz",
+                "evidence": [
+                  "\"gostaria de saber mais\""
+                ]
+              }
+            ],
+            "captured_slots": [],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [],
+            "reply_goal": "Acolher a origem pelo Instagram e apresentar uma visão geral breve da solução.",
+            "confidence": "high",
+            "evidence": [
+              "\"vim pelo Instagram e gostaria de saber mais\""
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "entry-instagram-001",
+          "turn_id": "entry-001",
+          "selected_action": "answer_source_opening",
+          "interpreted_intents": [
+            "veio do Instagram",
+            "quer saber mais sobre a solução"
+          ],
+          "direct_question": "gostaria de saber mais",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Explicar brevemente o que a solução faz",
+              "evidence": [
+                "\"gostaria de saber mais\""
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [],
+          "reply_goal": "Acolher a origem pelo Instagram e apresentar uma visão geral breve da solução.",
+          "confidence": "high",
+          "evidence": [
+            "\"vim pelo Instagram e gostaria de saber mais\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "answer_source_opening",
+          "previous_state": "new_lead",
+          "current_state": "source_instagram",
+          "next_state": "general_interest",
+          "template_ids": [
+            "opening.instagram_source"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_answer_source_opening",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "opening.instagram_source"
+          ],
+          "variables": {},
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Oi, tudo bem?",
+          "A Taliya é a IA do seu studio de Pilates para organizar agenda, reposições, cobranças, gestão, atendimento e acompanhamento em um só lugar.",
+          "Se fizer sentido, posso fazer um diagnóstico gratuito com poucas perguntas para entender a rotina, os gargalos e a prioridade do seu studio. O que você acha?"
+        ],
+        "state_diff": {
+          "next_state": "general_interest",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-final-instagram-interest",
+          "lead_id": "t012-043-final-instagram-interest",
+          "commercial_stage": "general_interest",
+          "summary": "Estado comercial: general_interest",
+          "diagnostic_status": "offered",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "opening.instagram_source"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "instagram",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "input_tokens": 4301,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 223,
+          "reasoning_tokens": 0,
+          "latency_ms": 4760.392,
+          "cost_usd": 0.005639
+        },
+        "failure_labels": []
+      }
+    }
+  ],
+  "final_state": {
+    "conversation_id": "t012-043-final-instagram-interest",
+    "lead_id": "t012-043-final-instagram-interest",
+    "source": "instagram",
+    "channel": "whatsapp",
+    "canonical_state": "general_interest",
+    "answered_obligations": [
+      "gostaria de saber mais"
+    ]
+  },
+  "checks": [
+    "route:entry",
+    "opening_type:social_source_opening",
+    "no_waitlist",
+    "not_generic_intro",
+    "no_internal_agent_text",
+    "template_ids_present",
+    "sales_inbox_projection_consistent",
+    "whatsapp_max_three_chunks",
+    "all_messages_short"
+  ],
+  "check_results": [
+    {
+      "check": "turn_statuses_acceptable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "includes:studio",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:lead came from the site",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:utm_source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:source_label",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "template_present:opening.instagram_source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_failed_turns",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "issues": [],
+  "total_model_operations": 2,
+  "total_cost_usd": 0.005639,
+  "cost_cap_exceeded": false
+}

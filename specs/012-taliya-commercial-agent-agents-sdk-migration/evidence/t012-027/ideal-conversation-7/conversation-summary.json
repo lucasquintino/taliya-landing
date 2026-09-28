@@ -1,0 +1,159 @@
+{
+  "turns_total": 12,
+  "turns_passed": 6,
+  "stopped_at_turn": 7,
+  "total_model_operations": 17,
+  "total_cost_usd": 0.083994,
+  "final_state": {
+    "demo": {
+      "status": "not_applicable",
+      "next_step": ""
+    },
+    "waitlist": {
+      "eligibility": "not_applicable",
+      "intent": ""
+    },
+    "summary": "Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico em andamento. Respondido: active_students_or_size=120; main_pain=perder interessado porque demoramos pra responder. Proxima pergunta pendente: pain_detail. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"not_applicable\", \"intent\": \"\"}.",
+    "diagnostic": {
+      "ledger": {
+        "active_students_or_size": {
+          "status": "answered",
+          "answer_value": "120"
+        },
+        "main_pain": {
+          "status": "answered",
+          "answer_value": "perder interessado porque demoramos pra responder"
+        }
+      },
+      "status": "in_progress",
+      "next_question_key": "pain_detail"
+    },
+    "current_sdk_agent": "taliya_diagnostic_agent"
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "text": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "text": "voce tem um studio de pilates e esta perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Nao tenho a faixa de preco oficial nesta conversa; preciso do catalogo oficial para responder com seguranca."
+    },
+    {
+      "role": "user",
+      "text": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "text": "Perfeito, faz sentido querer entender o processo antes de seguir."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "text": "120"
+    },
+    {
+      "role": "assistant",
+      "text": "Com 120 alunos e WhatsApp atrasado, vale comparar planos que resolvem atendimento e fila de leads."
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "text": "120 alunos ja mostra uma operação com fluxo real de leads."
+    },
+    {
+      "role": "assistant",
+      "text": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+    },
+    {
+      "role": "user",
+      "text": "minha maior dor e perder interessado porque demoramos pra responder"
+    },
+    {
+      "role": "assistant",
+      "text": "Com 120 alunos e perda de interessados por demora no WhatsApp, o ponto e resolver atendimento primeiro."
+    },
+    {
+      "role": "assistant",
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Seu caso pede foco em atendimento rapido e captura de leads."
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "text": "Com 120 alunos e perda de interessados por demora no WhatsApp, o ponto e resolver atendimento primeiro."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?"
+    }
+  ]
+}

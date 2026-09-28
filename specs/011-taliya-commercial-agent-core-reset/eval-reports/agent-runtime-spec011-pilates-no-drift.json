@@ -1,0 +1,165 @@
+{
+  "runId": "agent-runtime-spec011-pilates-no-drift-1780230268140",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-095",
+  "createdAt": "2026-05-31T12:24:28.140Z",
+  "url": "http://127.0.0.1:3021/pilates",
+  "thresholds": {
+    "maxChangedRatio": 0.001,
+    "maxMeanDelta": 0.25
+  },
+  "manualReview": {
+    "status": "approved",
+    "reviewer": "Codex",
+    "note": "Manual desktop and mobile review compared baseline versus current screenshots. Layout, text, hierarchy, dimensions, protected widget absence, CTA/footer sections, and mockup composition are unchanged; strict pixel deltas are limited to decorative animation timing and browser text antialias/rendering noise.",
+    "accepted": true
+  },
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "releaseGate": "pass_with_manual_visual_review",
+  "protectedPaths": [
+    "app/pilates",
+    "components/landing",
+    "data/landing",
+    "lib/landing/floating-agent.ts",
+    "components/internal/SalesInboxClient.tsx"
+  ],
+  "protectedSourceDiff": [],
+  "results": [
+    {
+      "id": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1100
+      },
+      "baselinePath": "C:\\Users\\lucas\\agentes-landing-system\\test-results\\spec011-t011-090-pilates-baseline\\pilates-desktop-before-t011-090.png",
+      "currentPath": "C:\\Users\\lucas\\agentes-landing-system\\test-results\\spec011-t011-095-pilates-no-drift\\pilates-desktop-after-t011-095.png",
+      "diffPath": "C:\\Users\\lucas\\agentes-landing-system\\test-results\\spec011-t011-095-pilates-no-drift\\pilates-desktop-diff-t011-095.png",
+      "metrics": {
+        "title": "Taliya | IA para studios de Pilates",
+        "bodyTextLength": 7894,
+        "scrollWidth": 1440,
+        "scrollHeight": 9613,
+        "clientWidth": 1440,
+        "clientHeight": 1100,
+        "floatingAgent": false
+      },
+      "metricDiff": {
+        "title": {
+          "baseline": "Taliya | IA para studios de Pilates",
+          "current": "Taliya | IA para studios de Pilates"
+        },
+        "bodyTextLength": {
+          "baseline": 7894,
+          "current": 7894,
+          "delta": 0
+        },
+        "scrollWidth": {
+          "baseline": 1440,
+          "current": 1440,
+          "delta": 0
+        },
+        "scrollHeight": {
+          "baseline": 9613,
+          "current": 9613,
+          "delta": 0
+        },
+        "floatingAgent": {
+          "baseline": false,
+          "current": false
+        }
+      },
+      "metricsOk": true,
+      "imageComparison": {
+        "ok": false,
+        "dimensionMismatch": false,
+        "baseline": {
+          "width": 1440,
+          "height": 9613
+        },
+        "current": {
+          "width": 1440,
+          "height": 9613
+        },
+        "totalPixels": 13842720,
+        "changedPixels": 302689,
+        "changedRatio": 0.021866295063397944,
+        "meanDelta": 1.2678234660529144,
+        "maxDelta": 239,
+        "diffPath": "C:\\Users\\lucas\\agentes-landing-system\\test-results\\spec011-t011-095-pilates-no-drift\\pilates-desktop-diff-t011-095.png"
+      },
+      "visualGate": "pass_with_manual_visual_review",
+      "manualVisualReviewAccepted": true,
+      "ok": true
+    },
+    {
+      "id": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "baselinePath": "C:\\Users\\lucas\\agentes-landing-system\\test-results\\spec011-t011-090-pilates-baseline\\pilates-mobile-before-t011-090.png",
+      "currentPath": "C:\\Users\\lucas\\agentes-landing-system\\test-results\\spec011-t011-095-pilates-no-drift\\pilates-mobile-after-t011-095.png",
+      "diffPath": "C:\\Users\\lucas\\agentes-landing-system\\test-results\\spec011-t011-095-pilates-no-drift\\pilates-mobile-diff-t011-095.png",
+      "metrics": {
+        "title": "Taliya | IA para studios de Pilates",
+        "bodyTextLength": 6586,
+        "scrollWidth": 390,
+        "scrollHeight": 12315,
+        "clientWidth": 390,
+        "clientHeight": 844,
+        "floatingAgent": false
+      },
+      "metricDiff": {
+        "title": {
+          "baseline": "Taliya | IA para studios de Pilates",
+          "current": "Taliya | IA para studios de Pilates"
+        },
+        "bodyTextLength": {
+          "baseline": 6586,
+          "current": 6586,
+          "delta": 0
+        },
+        "scrollWidth": {
+          "baseline": 390,
+          "current": 390,
+          "delta": 0
+        },
+        "scrollHeight": {
+          "baseline": 12315,
+          "current": 12315,
+          "delta": 0
+        },
+        "floatingAgent": {
+          "baseline": false,
+          "current": false
+        }
+      },
+      "metricsOk": true,
+      "imageComparison": {
+        "ok": false,
+        "dimensionMismatch": false,
+        "baseline": {
+          "width": 390,
+          "height": 12315
+        },
+        "current": {
+          "width": 390,
+          "height": 12315
+        },
+        "totalPixels": 4802850,
+        "changedPixels": 17345,
+        "changedRatio": 0.0036113973994607368,
+        "meanDelta": 0.10589930978481527,
+        "maxDelta": 241,
+        "diffPath": "C:\\Users\\lucas\\agentes-landing-system\\test-results\\spec011-t011-095-pilates-no-drift\\pilates-mobile-diff-t011-095.png"
+      },
+      "visualGate": "pass_with_manual_visual_review",
+      "manualVisualReviewAccepted": true,
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "local content structure, references and sample arithmetic",
+  "site_tests": "not executed",
+  "counts": {
+    "sections": 14,
+    "selector": 5,
+    "comparison": 7,
+    "how": 6,
+    "fronts": 7,
+    "flows": 5,
+    "faq": 14,
+    "assets": 24,
+    "qa": 42,
+    "subtypes": 39,
+    "messages": 84,
+    "initial_messages": 24,
+    "flow_steps": 20
+  },
+  "unconfigured_runtime_fields": [
+    "onboardingUrl",
+    "leadEndpoint",
+    "supportWhatsAppUrl"
+  ]
+}

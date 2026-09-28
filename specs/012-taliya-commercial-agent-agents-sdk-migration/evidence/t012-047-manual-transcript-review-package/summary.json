@@ -1,0 +1,293 @@
+{
+  "schema": "012.manual_transcript_review_summary.v1",
+  "source_report": "specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-043-real-model-golden-transcripts\\20260616T121413Z\\report.json",
+  "source_started_at": "2026-06-16T12:14:13.388512+00:00",
+  "source_finished_at": "2026-06-16T12:15:29.883430+00:00",
+  "model": "gpt-5.4-mini",
+  "paid_call_status": "attempted_real_openai",
+  "source_passed_scenarios": 9,
+  "source_total_scenarios": 9,
+  "source_total_cost_usd": 0.087158,
+  "source_total_model_operations": 33,
+  "review_status": "pending_manual_review",
+  "manual_decision": "pending",
+  "reviewer": "product_owner",
+  "checklist": [
+    {
+      "id": "answers_direct_questions_first",
+      "label": "Direct questions are answered before steering",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "studio_owner_language",
+      "label": "Language sounds natural for a Pilates studio owner",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "official_facts_only",
+      "label": "Prices, demo link, availability, and product claims use official facts",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "diagnostic_flow_quality",
+      "label": "Diagnostic questions progress naturally without repeats",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "final_diagnostic_quality",
+      "label": "Final diagnostic is complete, practical, and not truncated",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "handoff_and_suppression",
+      "label": "Human handoff pauses AI replies after acknowledgement",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "no_unsafe_promises",
+      "label": "No checkout, discount, VIP, date, or integration promises are invented",
+      "status": "pending",
+      "notes": ""
+    }
+  ],
+  "scenario_count": 9,
+  "all_source_scenarios_passed": true,
+  "total_turn_count": 22,
+  "delivered_turn_count": 21,
+  "suppressed_turn_count": 1,
+  "trace_present_turn_count": 21,
+  "projection_present_turn_count": 21,
+  "known_editorial_notes": [
+    {
+      "scenario_id": "final-pain-first",
+      "note": "Automated gate passed. Manual spot review noted the pain acknowledgement still sounds slightly repetitive, but not a blocker for T012-043/T012-047 packaging."
+    },
+    {
+      "scenario_id": "step3g-long-conversation",
+      "note": "Automated gate passed. Manual spot review noted minor editorial polish opportunities in final diagnostic wording, including report-like phrasing and capitalization, but no unsafe promise or internal leak."
+    }
+  ],
+  "scenario_summaries": [
+    {
+      "scenario_id": "final-price-first",
+      "source_status": "passed",
+      "turn_count": 1,
+      "delivered_turn_count": 1,
+      "suppressed_turn_count": 0,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004206,
+      "actions": [
+        "answer_direct_product_question"
+      ],
+      "templates": [
+        [
+          "product.price_direct",
+          "diagnostic.price_hook"
+        ]
+      ]
+    },
+    {
+      "scenario_id": "final-price-plus-pain",
+      "source_status": "passed",
+      "turn_count": 1,
+      "delivered_turn_count": 1,
+      "suppressed_turn_count": 0,
+      "total_model_operations": 3,
+      "total_cost_usd": 0.007814,
+      "actions": [
+        "answer_direct_product_question"
+      ],
+      "templates": [
+        [
+          "product.price_direct",
+          "diagnostic.price_hook_with_context"
+        ]
+      ]
+    },
+    {
+      "scenario_id": "final-pain-first",
+      "source_status": "passed",
+      "turn_count": 1,
+      "delivered_turn_count": 1,
+      "suppressed_turn_count": 0,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004431,
+      "actions": [
+        "offer_diagnostic_from_pain"
+      ],
+      "templates": [
+        [
+          "opening.contextual_ack",
+          "diagnostic.offer_soft"
+        ]
+      ]
+    },
+    {
+      "scenario_id": "final-instagram-interest",
+      "source_status": "passed",
+      "turn_count": 1,
+      "delivered_turn_count": 1,
+      "suppressed_turn_count": 0,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004432,
+      "actions": [
+        "answer_source_opening"
+      ],
+      "templates": [
+        [
+          "opening.instagram_source"
+        ]
+      ]
+    },
+    {
+      "scenario_id": "final-whatsapp-question",
+      "source_status": "passed",
+      "turn_count": 1,
+      "delivered_turn_count": 1,
+      "suppressed_turn_count": 0,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004188,
+      "actions": [
+        "answer_whatsapp_scope"
+      ],
+      "templates": [
+        [
+          "product.whatsapp_direct"
+        ]
+      ]
+    },
+    {
+      "scenario_id": "step3g-long-conversation",
+      "source_status": "passed",
+      "turn_count": 13,
+      "delivered_turn_count": 13,
+      "suppressed_turn_count": 0,
+      "total_model_operations": 16,
+      "total_cost_usd": 0.048401,
+      "actions": [
+        "answer_direct_product_question",
+        "start_requested_diagnostic",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "complete_diagnostic",
+        "send_demo",
+        "answer_price_objection_with_context",
+        "offer_or_join_waitlist_if_eligible",
+        "answer_question_then_continue_waitlist",
+        "handoff_requested"
+      ],
+      "templates": [
+        [
+          "product.price_direct",
+          "diagnostic.price_hook"
+        ],
+        [
+          "diagnostic.start",
+          "diagnostic.ask_active_students"
+        ],
+        [
+          "diagnostic.ask_main_pain"
+        ],
+        [
+          "diagnostic.ask_pain_detail"
+        ],
+        [
+          "diagnostic.ask_current_process"
+        ],
+        [
+          "diagnostic.ask_priority"
+        ],
+        [
+          "diagnostic.ask_urgency"
+        ],
+        [
+          "diagnostic.deliver_hold",
+          "diagnostic.deliver_context",
+          "diagnostic.deliver_crm_base",
+          "diagnostic.deliver_operational_step",
+          "diagnostic.deliver_agent_recommendation",
+          "diagnostic.deliver_plan_recommendation",
+          "diagnostic.deliver_demo_not_offered"
+        ],
+        [
+          "product.demo_direct"
+        ],
+        [
+          "product.price_objection_value"
+        ],
+        [
+          "waitlist.offer_after_contract_intent"
+        ],
+        [
+          "waitlist.current_path_explained",
+          "waitlist.ask_missing_contact_path"
+        ],
+        [
+          "handoff.acknowledge"
+        ]
+      ]
+    },
+    {
+      "scenario_id": "final-waitlist-joined",
+      "source_status": "passed",
+      "turn_count": 1,
+      "delivered_turn_count": 1,
+      "suppressed_turn_count": 0,
+      "total_model_operations": 1,
+      "total_cost_usd": 0.002439,
+      "actions": [
+        "join_waitlist"
+      ],
+      "templates": [
+        [
+          "waitlist.joined"
+        ]
+      ]
+    },
+    {
+      "scenario_id": "final-human-request-silent-after",
+      "source_status": "passed",
+      "turn_count": 2,
+      "delivered_turn_count": 1,
+      "suppressed_turn_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.003932,
+      "actions": [
+        "handoff_requested",
+        null
+      ],
+      "templates": [
+        [
+          "handoff.acknowledge"
+        ],
+        []
+      ]
+    },
+    {
+      "scenario_id": "final-demo-request",
+      "source_status": "passed",
+      "turn_count": 1,
+      "delivered_turn_count": 1,
+      "suppressed_turn_count": 0,
+      "total_model_operations": 3,
+      "total_cost_usd": 0.007316,
+      "actions": [
+        "send_demo"
+      ],
+      "templates": [
+        [
+          "product.demo_direct"
+        ]
+      ]
+    }
+  ]
+}

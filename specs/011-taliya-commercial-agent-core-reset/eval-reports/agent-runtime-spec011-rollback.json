@@ -1,0 +1,172 @@
+{
+  "runId": "agent-runtime-spec011-rollback-1780583230247",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-098",
+  "createdAt": "2026-06-04T14:27:10.247Z",
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "releaseGate": "pass",
+  "checkedFiles": [
+    "services/taliya-agent-runtime/app/settings.py",
+    "services/taliya-agent-runtime/app/main.py",
+    "lib/landing/ai-attendant/runtime-client.ts",
+    "services/taliya-agent-runtime/tests/test_settings.py",
+    "services/taliya-agent-runtime/tests/test_agent_runs_api.py",
+    "scripts/eval-agent-runtime-spec011-widget-adapter.mjs"
+  ],
+  "publicEntrypoints": [
+    "app/api/landing/ai-attendant/route.ts",
+    "app/api/landing/ai-attendant/whatsapp/route.ts",
+    "lib/landing/floating-agent.ts",
+    "lib/landing/ai-attendant/runtime-client.ts"
+  ],
+  "forbiddenPublicModules": [
+    "lib/landing/ai-attendant/agent-v2-loop.ts",
+    "lib/landing/ai-attendant/agent-v2-orchestrator.ts",
+    "lib/landing/ai-attendant/agent-v2-response-generator.ts",
+    "lib/landing/ai-attendant/agent-v2-semantic-interpreter.ts",
+    "lib/landing/ai-attendant/agent-v2-tools.ts",
+    "lib/landing/ai-attendant/fallback.ts",
+    "lib/landing/ai-attendant/provider.ts"
+  ],
+  "reachability": [
+    {
+      "entrypoint": "app/api/landing/ai-attendant/route.ts",
+      "visited": [
+        "app/api/landing/ai-attendant/route.ts",
+        "data/landing/niches/pilates.ts",
+        "data/landing/niches/types.ts",
+        "lib/landing/ai-attendant/commercial-knowledge.ts",
+        "lib/landing/ai-attendant/context.ts",
+        "lib/landing/ai-attendant/conversion.ts",
+        "lib/landing/ai-attendant/follow-up.ts",
+        "lib/landing/ai-attendant/funnel-events.ts",
+        "lib/landing/ai-attendant/leads.ts",
+        "lib/landing/ai-attendant/n8n.ts",
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "lib/landing/ai-attendant/sales-inbox-store.ts",
+        "lib/landing/ai-attendant/schema.ts",
+        "lib/landing/ai-attendant/storage/postgres.ts",
+        "lib/landing/ai-attendant/summarize.ts"
+      ],
+      "forbiddenHits": []
+    },
+    {
+      "entrypoint": "app/api/landing/ai-attendant/whatsapp/route.ts",
+      "visited": [
+        "app/api/landing/ai-attendant/whatsapp/route.ts",
+        "data/landing/niches/pilates.ts",
+        "data/landing/niches/types.ts",
+        "lib/landing/ai-attendant/channels.ts",
+        "lib/landing/ai-attendant/commercial-knowledge.ts",
+        "lib/landing/ai-attendant/context.ts",
+        "lib/landing/ai-attendant/conversion.ts",
+        "lib/landing/ai-attendant/delivery-timing.ts",
+        "lib/landing/ai-attendant/follow-up.ts",
+        "lib/landing/ai-attendant/funnel-events.ts",
+        "lib/landing/ai-attendant/guardrails.ts",
+        "lib/landing/ai-attendant/leads.ts",
+        "lib/landing/ai-attendant/n8n.ts",
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "lib/landing/ai-attendant/sales-inbox-store.ts",
+        "lib/landing/ai-attendant/schema.ts",
+        "lib/landing/ai-attendant/session-store.ts",
+        "lib/landing/ai-attendant/storage/postgres.ts",
+        "lib/landing/ai-attendant/summarize.ts",
+        "lib/landing/ai-attendant/usage.ts",
+        "lib/landing/ai-attendant/whatsapp.ts"
+      ],
+      "forbiddenHits": []
+    },
+    {
+      "entrypoint": "lib/landing/floating-agent.ts",
+      "visited": [
+        "data/landing/niches/types.ts",
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "lib/landing/ai-attendant/schema.ts",
+        "lib/landing/floating-agent.ts"
+      ],
+      "forbiddenHits": []
+    },
+    {
+      "entrypoint": "lib/landing/ai-attendant/runtime-client.ts",
+      "visited": [
+        "data/landing/niches/types.ts",
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "lib/landing/ai-attendant/schema.ts"
+      ],
+      "forbiddenHits": []
+    }
+  ],
+  "results": [
+    {
+      "ok": true,
+      "message": "runtime settings expose an explicit Spec 011 commercial core rollback flag",
+      "details": {
+        "settingsPath": "services/taliya-agent-runtime/app/settings.py"
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime API returns controlled operational error before running the core when flag is disabled",
+      "details": {
+        "mainPath": "services/taliya-agent-runtime/app/main.py",
+        "disabledCheckIndex": 10902,
+        "runCoreIndex": 11164
+      }
+    },
+    {
+      "ok": true,
+      "message": "public runtime client short-circuits to operational fallback before fetch when flag is disabled",
+      "details": {
+        "runtimeClientPath": "lib/landing/ai-attendant/runtime-client.ts",
+        "clientDisabledCheckIndex": 2701,
+        "fetchIndex": 3711
+      }
+    },
+    {
+      "ok": true,
+      "message": "rollback path does not import or call the old Python runner",
+      "details": {
+        "mainRunnerHits": [],
+        "coreRunnerHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "public widget/WhatsApp paths still cannot reach old TS v2 commercial modules",
+      "details": {
+        "forbiddenReachability": [],
+        "allowedLegacyOperationalModules": [
+          "lib/landing/ai-attendant/agent-v2-idempotency.ts"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "rollback behavior is covered by settings, runtime API, widget, and WhatsApp tests",
+      "details": {
+        "testSettingsPath": "services/taliya-agent-runtime/tests/test_settings.py",
+        "testApiPath": "services/taliya-agent-runtime/tests/test_agent_runs_api.py",
+        "widgetAdapterTestPath": "scripts/eval-agent-runtime-spec011-widget-adapter.mjs"
+      }
+    },
+    {
+      "ok": true,
+      "message": "rollback implementation produced no protected /pilates, landing visual, floating-agent, or Sales Inbox UI source diff",
+      "details": {
+        "protectedDiff": [],
+        "protectedPaths": [
+          "app/pilates",
+          "components/landing",
+          "data/landing",
+          "lib/landing/floating-agent.ts",
+          "components/internal/SalesInboxClient.tsx"
+        ]
+      }
+    }
+  ]
+}

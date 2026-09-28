@@ -1,0 +1,443 @@
+{
+  "number": 5,
+  "scenario_id": "diagnostic_start",
+  "channel": "whatsapp",
+  "required_proof": "Diagnostic begins and asks one next question.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "quero fazer o diagnostico gratuito"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "propose_template_plan",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "propose_sales_inbox_projection",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": "taliya_diagnostic_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_diagnostic_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "propose_template_plan",
+      "arguments": "{\"template_ids\":[\"opening.diagnostic_cta\"],\"variables_json\":\"[{\\\"name\\\":\\\"first_name\\\",\\\"kind\\\":\\\"short_text\\\",\\\"value\\\":\\\"\\\",\\\"source\\\":\\\"user_message\\\",\\\"evidence\\\":[\\\"quero fazer o diagnostico gratuito\\\"]}]\",\"evidence\":[\"quero fazer o diagnostico gratuito\"],\"uncertainty\":\"low\"}"
+    },
+    {
+      "event": "tool_call",
+      "name": "propose_sales_inbox_projection",
+      "arguments": "{\"fields_json\":\"{\\\"commercial_stage\\\":\\\"diagnostic_interest\\\",\\\"last_intent\\\":\\\"diagnostic_request\\\",\\\"diagnostic_status\\\":\\\"requested\\\",\\\"waitlist_status\\\":null,\\\"handoff_status\\\":null,\\\"next_action_hint\\\":\\\"route_to_diagnostic\\\"}\",\"evidence\":[\"quero fazer o diagnostico gratuito\"],\"uncertainty\":\"low\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": "An error occurred while running the tool. Please try again. Error: Expected a JSON object"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "propose_sales_inbox_projection",
+        "side_effect_class": "proposal_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "proposal_type": "sales_inbox_projection",
+          "proposal": {
+            "commercial_stage": "diagnostic_interest",
+            "last_intent": "diagnostic_request",
+            "diagnostic_status": "requested",
+            "waitlist_status": null,
+            "handoff_status": null,
+            "next_action_hint": "route_to_diagnostic"
+          },
+          "validation_required": true,
+          "commit_after_validation_only": true,
+          "missing_evidence": false,
+          "evidence": [
+            "quero fazer o diagnostico gratuito"
+          ],
+          "uncertainty": "low"
+        },
+        "evidence": [
+          "quero fazer o diagnostico gratuito"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_diagnostic_agent"
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic_request"
+      ],
+      "direct_question": null,
+      "customer_need": "quer fazer o diagnóstico gratuito",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "diagnostic.start"
+      ],
+      "variables": [],
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "diagnostic_interest",
+      "last_intent": "diagnostic_request",
+      "diagnostic_status": "requested",
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "route_to_diagnostic"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_diagnostic_start",
+    "conversation_id": "spike_conv_diagnostic_start",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "propose_template_plan",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "propose_sales_inbox_projection",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": "taliya_diagnostic_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_diagnostic_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic_request"
+      ],
+      "direct_question": null,
+      "customer_need": "quer fazer o diagnóstico gratuito",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "diagnostic.start"
+      ],
+      "variables": {},
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "diagnostic_interest",
+      "last_intent": "diagnostic_request",
+      "diagnostic_status": "requested",
+      "next_action_hint": "route_to_diagnostic"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "quero fazer o diagnostico gratuito"
+      ]
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 8583,
+      "output_tokens": 523,
+      "cost_usd": 0.007754,
+      "handoffs": 1,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_diagnostic_start",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje.",
+      "template_id": "diagnostic.start",
+      "channel": "whatsapp",
+      "sequence": 1
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "diagnostic_interest",
+    "last_intent": "diagnostic_request",
+    "diagnostic_status": "requested",
+    "next_action_hint": "route_to_diagnostic"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 8583,
+    "output_tokens": 523,
+    "cost_usd": 0.007754,
+    "handoffs": 1,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

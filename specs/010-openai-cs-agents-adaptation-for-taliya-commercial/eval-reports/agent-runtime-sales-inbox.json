@@ -1,0 +1,232 @@
+{
+  "runId": "agent-runtime-sales-inbox-1785894954112",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-08-05T01:55:54.112Z",
+  "summary": {
+    "total": 42,
+    "passed": 42,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "Sales Inbox runtime projection fixture is present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter only promotes textual agent recommendations after completed diagnostic",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter hides provisional diagnostic recommendation details from Sales Inbox",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter only projects diagnostic summary inside completed-diagnostic block",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter projects diagnostic urgency answer into Sales Inbox qualification",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter records final diagnostic demo invitation as demo offered",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "LeadRecord has agentRuntime projection",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "lead creation extracts runtime metadata",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox list API returns agentRuntime",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox UI exposes runtime trace summary",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox store adds runtime operator next-action flags",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "cost-cap next action is visible to operators",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox clears premature agent recommendations while diagnostic is still in progress",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "LeadRecord persists template IDs and diagnostic ledger status",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "LeadRecord persists demo status and final diagnostic lines",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "LeadRecord persists CRM base and per-agent recommendation details",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox UI exposes final demo and plan lines",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox UI exposes CRM base and agent recommendation details",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "qualification projection reads final diagnostic runtime fields",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox priority and urgency use completed diagnostic urgency signals",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox avoids collapsing plan ranges into a single recommended plan id",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter prefers structured ledger areas before text fallback for selected pain ids",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter only promotes plan recommendation after completed diagnostic",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter projects in-progress diagnostic stage and operator next action",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter projects offered diagnostic stage and operator next action",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter avoids overriding waitlist next action after diagnostic completion",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter does not project recommended agents before diagnostic completion",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "LeadRecord hides provisional plan recommendations until diagnostic completion",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "LeadRecord persists waitlist evidence and guardrail flags",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "LeadRecord persists product-followup source keys and latest intent",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "LeadRecord persists post-diagnostic context and unsupported fact signal",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "LeadRecord persists human confirmation and diagnostic-refusal observability",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox UI exposes product-followup intent and source keys",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox UI exposes post-diagnostic context and unsupported fact signal",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox UI exposes human confirmation and diagnostic-refusal signals",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox UI exposes template and ledger runtime fields",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime schema exposes previous/current/next state for Sales Inbox projection",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime schema exposes template and diagnostic ledger status",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox contract requires template IDs",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox contract requires diagnostic ledger",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox contract requires final plan line",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox contract requires final demo line",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  },
+  "fixtures": [
+    "runtime-product-answer",
+    "runtime-cost-cap"
+  ]
+}

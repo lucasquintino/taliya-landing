@@ -1,0 +1,50 @@
+{
+  "runId": "agent-v2-quality-judge-1779416642193",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:24:02.193Z",
+  "summary": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "quality judge rubric dimensions defined",
+      "details": {
+        "rubric": [
+          {
+            "dimension": "directness",
+            "min": 4
+          },
+          {
+            "dimension": "naturalness",
+            "min": 3
+          },
+          {
+            "dimension": "commercialCorrectness",
+            "min": 4
+          },
+          {
+            "dimension": "stateContinuity",
+            "min": 3
+          },
+          {
+            "dimension": "safetyPrivacy",
+            "min": 3
+          },
+          {
+            "dimension": "costDiscipline",
+            "min": 3
+          }
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "directness is blocking quality dimension",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

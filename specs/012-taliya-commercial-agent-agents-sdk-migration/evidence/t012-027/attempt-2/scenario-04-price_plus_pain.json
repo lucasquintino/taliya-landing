@@ -1,0 +1,861 @@
+{
+  "number": 4,
+  "scenario_id": "price_plus_pain",
+  "channel": "whatsapp",
+  "required_proof": "Price answered first; pain context preserved for natural next step.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "qual o preco? meu WhatsApp esta caotico no follow-up"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_conversation_summary",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_spec006_product_contracts",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "propose_template_plan",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"product\"}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"pricing\",\"whatsapp_follow_up\"]}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_spec006_product_contracts",
+      "arguments": "{\"keys\":[\"pricing\",\"whatsapp_scope\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "product",
+          "templates": [
+            {
+              "template_id": "product.agents_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.comparison_current_tool",
+              "required_variables": [
+                "current_tool_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.crm_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.demo_direct",
+              "required_variables": [
+                "official_demo_link"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.how_it_works_direct",
+              "required_variables": [
+                "contextual_next_step"
+              ],
+              "optional_variables": [
+                "recommended_area"
+              ]
+            },
+            {
+              "template_id": "product.integration_scope_direct",
+              "required_variables": [
+                "integration_topic"
+              ],
+              "optional_variables": [
+                "human_confirmation_topic"
+              ]
+            },
+            {
+              "template_id": "product.out_of_profile_redirect",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.overview_short",
+              "required_variables": [],
+              "optional_variables": [
+                "product_fact_summary"
+              ]
+            },
+            {
+              "template_id": "product.plan_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_name"
+              ]
+            },
+            {
+              "template_id": "product.plan_fit_with_diagnostic",
+              "required_variables": [
+                "plan_fit_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.price_complete_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_fit_context"
+              ]
+            },
+            {
+              "template_id": "product.price_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_fit_context"
+              ]
+            },
+            {
+              "template_id": "product.price_objection_value",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.security_data_direct",
+              "required_variables": [],
+              "optional_variables": [
+                "human_confirmation_topic"
+              ]
+            },
+            {
+              "template_id": "product.whatsapp_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": [
+                "official_demo_link"
+              ]
+            }
+          ],
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_price_plus_pain",
+          "summary": null,
+          "lead_fact_count": 0,
+          "source": "not_connected_in_spike"
+        },
+        "evidence": [],
+        "uncertainty": "high"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "pricing",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.pricing"
+              ]
+            },
+            {
+              "key": "whatsapp_follow_up",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.whatsapp_follow_up"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "pricing",
+            "whatsapp_follow_up"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.pricing",
+          "product_knowledge.whatsapp_follow_up"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_spec006_product_contracts",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "spec006.pricing",
+              "source": "spec_006_product_contract",
+              "version": "spec006-bd19cd6ba6dd",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "specs/006-crm-operational-core#pricing"
+              ]
+            },
+            {
+              "key": "spec006.whatsapp_scope",
+              "source": "spec_006_product_contract",
+              "version": "spec006-bd19cd6ba6dd",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "specs/006-crm-operational-core#whatsapp_scope"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "pricing",
+            "whatsapp_scope"
+          ]
+        },
+        "evidence": [
+          "specs/006-crm-operational-core#pricing",
+          "specs/006-crm-operational-core#whatsapp_scope"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "propose_template_plan",
+      "arguments": "{\"template_ids\":[\"product.price_direct\",\"product.whatsapp_direct\"],\"variables_json\":\"{\\\"plan_price_summary\\\":\\\"Não encontrei preço oficial disponível nas fontes consultadas para esta conversa.\\\",\\\"product_fact_summary\\\":\\\"Não há fato oficial renderizável sobre preço ou escopo de WhatsApp nas fontes consultadas.\\\",\\\"official_demo_link\\\":\\\"\\\"}\",\"evidence\":[\"product_knowledge.pricing\",\"product_knowledge.whatsapp_follow_up\",\"specs/006-crm-operational-core#pricing\",\"specs/006-crm-operational-core#whatsapp_scope\"],\"uncertainty\":\"high\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "propose_template_plan",
+        "side_effect_class": "proposal_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "proposal_type": "template_plan",
+          "proposal": {
+            "template_ids": [
+              "product.price_direct",
+              "product.whatsapp_direct"
+            ],
+            "variables": {
+              "plan_price_summary": "Não encontrei preço oficial disponível nas fontes consultadas para esta conversa.",
+              "product_fact_summary": "Não há fato oficial renderizável sobre preço ou escopo de WhatsApp nas fontes consultadas.",
+              "official_demo_link": ""
+            }
+          },
+          "validation_required": true,
+          "commit_after_validation_only": true,
+          "missing_evidence": false,
+          "evidence": [
+            "product_knowledge.pricing",
+            "product_knowledge.whatsapp_follow_up",
+            "specs/006-crm-operational-core#pricing",
+            "specs/006-crm-operational-core#whatsapp_scope"
+          ],
+          "uncertainty": "high"
+        },
+        "evidence": [
+          "product_knowledge.pricing",
+          "product_knowledge.whatsapp_follow_up",
+          "specs/006-crm-operational-core#pricing",
+          "specs/006-crm-operational-core#whatsapp_scope"
+        ],
+        "uncertainty": "high"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "price_question",
+        "pain_context"
+      ],
+      "direct_question": "qual o preco?",
+      "customer_need": "resolver follow-up caótico no WhatsApp",
+      "pain_context": "meu WhatsApp esta caotico no follow-up",
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [],
+      "evidence": [
+        "qual o preco?",
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder o preço solicitado.",
+        "answered_before_steering": true,
+        "evidence": [
+          "qual o preco?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "qual o preco?",
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_proposed",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "product.price_direct",
+        "product.whatsapp_direct"
+      ],
+      "variables": [
+        {
+          "name": "plan_price_summary",
+          "kind": "short_text",
+          "value": "Não encontrei preço oficial disponível nas fontes consultadas para esta conversa.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.pricing",
+            "specs/006-crm-operational-core#pricing"
+          ],
+          "max_length": null
+        },
+        {
+          "name": "product_fact_summary",
+          "kind": "long_text",
+          "value": "Não há fato oficial renderizável sobre preço ou escopo de WhatsApp nas fontes consultadas.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.whatsapp_follow_up",
+            "specs/006-crm-operational-core#whatsapp_scope"
+          ],
+          "max_length": null
+        },
+        {
+          "name": "official_demo_link",
+          "kind": "url",
+          "value": "",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.pricing"
+          ],
+          "max_length": null
+        }
+      ],
+      "evidence": [
+        "product_knowledge.pricing",
+        "product_knowledge.whatsapp_follow_up",
+        "specs/006-crm-operational-core#pricing",
+        "specs/006-crm-operational-core#whatsapp_scope"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [
+        "missing_official_price",
+        "missing_official_whatsapp_scope"
+      ],
+      "uncertainty": "high"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "product_inquiry",
+      "last_intent": "price_question",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "Price and WhatsApp scope requested; official facts missing in current knowledge snapshot."
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "low",
+    "risks": [
+      "Fontes oficiais consultadas não trouxeram preço nem escopo renderizável para WhatsApp."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_price_plus_pain",
+    "conversation_id": "spike_conv_price_plus_pain",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_conversation_summary",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_spec006_product_contracts",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "propose_template_plan",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "price_question",
+        "pain_context"
+      ],
+      "direct_question": "qual o preco?",
+      "customer_need": "resolver follow-up caótico no WhatsApp",
+      "pain_context": "meu WhatsApp esta caotico no follow-up",
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [],
+      "evidence": [
+        "qual o preco?",
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder o preço solicitado.",
+        "answered_before_steering": true,
+        "evidence": [
+          "qual o preco?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "qual o preco?",
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_proposed",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "product.price_direct",
+        "product.whatsapp_direct"
+      ],
+      "variables": {
+        "plan_price_summary": {
+          "kind": "short_text",
+          "value": "Não encontrei preço oficial disponível nas fontes consultadas para esta conversa.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.pricing",
+            "specs/006-crm-operational-core#pricing"
+          ]
+        },
+        "product_fact_summary": {
+          "kind": "long_text",
+          "value": "Não há fato oficial renderizável sobre preço ou escopo de WhatsApp nas fontes consultadas.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.whatsapp_follow_up",
+            "specs/006-crm-operational-core#whatsapp_scope"
+          ]
+        },
+        "official_demo_link": {
+          "kind": "url",
+          "value": "",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.pricing"
+          ]
+        }
+      },
+      "evidence": [
+        "product_knowledge.pricing",
+        "product_knowledge.whatsapp_follow_up",
+        "specs/006-crm-operational-core#pricing",
+        "specs/006-crm-operational-core#whatsapp_scope"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "missing_official_price",
+          "outcome": "flagged"
+        },
+        {
+          "name": "missing_official_whatsapp_scope",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "high"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "product_inquiry",
+      "last_intent": "price_question",
+      "next_action_hint": "Price and WhatsApp scope requested; official facts missing in current knowledge snapshot."
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "product_knowledge.pricing",
+        "product_knowledge.whatsapp_follow_up",
+        "specs/006-crm-operational-core#pricing",
+        "specs/006-crm-operational-core#whatsapp_scope"
+      ]
+    },
+    "confidence": "low",
+    "risks": [
+      "Fontes oficiais consultadas não trouxeram preço nem escopo renderizável para WhatsApp."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 12584,
+      "output_tokens": 862,
+      "cost_usd": 0.006405,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_price_plus_pain",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_template_variable_invalid",
+        "severity": "P0",
+        "message": "1 validation error for TemplateVariableValue\n  Value error, long_text variables require max_length [type=value_error, input_value={'kind': 'long_text', 'va...l-core#whatsapp_scope']}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+        "path": "template_proposal.variables.product_fact_summary"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "product_inquiry",
+    "last_intent": "price_question",
+    "next_action_hint": "Price and WhatsApp scope requested; official facts missing in current knowledge snapshot."
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 12584,
+    "output_tokens": 862,
+    "cost_usd": 0.006405,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_template_variable_invalid",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

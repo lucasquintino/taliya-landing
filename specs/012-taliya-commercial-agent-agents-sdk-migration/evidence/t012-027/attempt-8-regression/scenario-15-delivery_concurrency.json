@@ -1,0 +1,369 @@
+{
+  "number": 15,
+  "scenario_id": "delivery_concurrency",
+  "channel": "whatsapp",
+  "required_proof": "Render remains local; defer proposal recorded, no public delivery.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: A resposta anterior ainda esta sendo entregue em chunks no WhatsApp (2 chunks restantes). Uma nova mensagem do lead chegou durante a entrega.\nstate: {\"delivery\": {\"status\": \"delivering\", \"chunks_remaining\": 2}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "user",
+      "content": "me explica como a Taliya funciona?"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro! Vou te explicar em algumas mensagens curtas..."
+    },
+    {
+      "role": "user",
+      "content": "e mais uma coisa, voces atendem studios pequenos?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": "taliya_entry_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_entry_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_entry_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_entry_agent"
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "broad_interest",
+        "company_fit"
+      ],
+      "direct_question": null,
+      "customer_need": "Entender se a Taliya atende studios pequenos, após pedir explicação de como funciona.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [],
+      "evidence": [
+        "\"e mais uma coisa, voces atendem studios pequenos?\""
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder se a Taliya atende studios pequenos.",
+        "answering_template_id": "opening.general_interest",
+        "evidence": [
+          "\"voces atendem studios pequenos?\""
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "opening.general_interest"
+      ],
+      "variables": [],
+      "evidence": [
+        "\"voces atendem studios pequenos?\""
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": true,
+        "deferred_inbound_count": 1
+      }
+    },
+    "safety": {
+      "guardrail_flags": [
+        "reply_during_active_chunk_delivery"
+      ],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "opening",
+      "last_intent": "company_fit",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "defer_inbound_until_chunks_finish"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "high",
+    "risks": [
+      "Responder enquanto ainda havia 2 chunks da mensagem anterior em entrega."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_delivery_concurrency",
+    "conversation_id": "spike_conv_delivery_concurrency",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": "taliya_entry_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_entry_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_entry_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "broad_interest",
+        "company_fit"
+      ],
+      "direct_question": null,
+      "customer_need": "Entender se a Taliya atende studios pequenos, após pedir explicação de como funciona.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [],
+      "evidence": [
+        "\"e mais uma coisa, voces atendem studios pequenos?\""
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder se a Taliya atende studios pequenos.",
+        "answered_before_steering": true,
+        "evidence": [
+          "\"voces atendem studios pequenos?\""
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "opening.general_interest"
+      ],
+      "variables": {},
+      "evidence": [
+        "\"voces atendem studios pequenos?\""
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "reply_during_active_chunk_delivery",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": true,
+        "deferred_inbound_count": 1
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "opening",
+      "last_intent": "company_fit",
+      "next_action_hint": "defer_inbound_until_chunks_finish"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": [
+        "\"voces atendem studios pequenos?\""
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "Responder enquanto ainda havia 2 chunks da mensagem anterior em entrega."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 7562,
+      "output_tokens": 404,
+      "cost_usd": 0.003774,
+      "handoffs": 1,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_delivery_concurrency",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Oi, tudo bem?",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "A Taliya e a IA do seu studio de Pilates para organizar a rotina que faz o studio girar: agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento.",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 3
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": true,
+      "deferred_inbound_count": 1
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "opening",
+    "last_intent": "company_fit",
+    "next_action_hint": "defer_inbound_until_chunks_finish"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 7562,
+    "output_tokens": 404,
+    "cost_usd": 0.003774,
+    "handoffs": 1,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

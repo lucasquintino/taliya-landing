@@ -1,0 +1,37 @@
+{
+  "number": 7,
+  "scenario_id": "diagnostic_urgency_final",
+  "channel": "whatsapp",
+  "required_proof": "Mandatory diagnostic keys complete; final staged diagnostic renders.",
+  "input_transcript": [
+    {
+      "role": "assistant",
+      "content": "Ultima pergunta do diagnostico: isso e algo que voce quer resolver agora ou pode esperar alguns meses?"
+    },
+    {
+      "role": "user",
+      "content": "quero resolver agora"
+    }
+  ],
+  "starting_agent": "taliya_diagnostic_agent",
+  "agent_path": [],
+  "tool_calls": [],
+  "sdk_final_output": null,
+  "turn_proposal": null,
+  "validator_result": null,
+  "rendered_preview": [],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {},
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 24000,
+    "output_tokens": 4500,
+    "cost_usd": 0.03825,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "max_turns_exceeded: scenario needed more than the approved 3 model operations; usage charged at worst-case estimate for budget safety.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

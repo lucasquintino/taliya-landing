@@ -1,0 +1,47 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-fast-conductor-price-final",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-24T13:28:16Z",
+  "finishedAt": "2026-05-24T13:29:08Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "estimatedCostUsd": 0.0,
+    "inputTokens": 0,
+    "outputTokens": 0
+  },
+  "releaseGate": "fail",
+  "scenarios": [
+    {
+      "id": "real-price-direct",
+      "title": "Pergunta direta de preco deve responder sem esconder",
+      "channel": "widget",
+      "checks": [
+        "mentions_all_prices",
+        "has_product_source",
+        "no_checkout_link",
+        "not_generic_intro"
+      ],
+      "failures": [
+        "runtime returned non-200 status: [500]"
+      ],
+      "turns": [
+        {
+          "http_status": 500,
+          "payload": {
+            "error": {
+              "code": "internal_error",
+              "message": "Invalid JSON when parsing {\"current_agent\":\"taliya_commercial_product_agent\",\"decision\":{\"previous_state\":\"new_lead\",\"current_state\":\"product_question\",\"next_state\":\"product_question\",\"route\":\"product\",\"opening_type\":\"direct_question_opening\",\"detected_intents\":[\"product\"],\"direct_question_present\":true,\"direct_question_answered_first\":true,\"diagnostic_action\":\"none\",\"diagnostic_allowed_now\":false,\"waitlist_allowed_now\":false,\"demo_status\":\"not_offered\",\"demo_next_step\":\"none\",\"profile_name_usage\":\"not_available\",\"template_ids\":[],\"template_variables\":{},\"render_plan\":[],\"diagnostic_ledger_status\":\"not_started\",\"next_question_kind\":\"none\",\"policy_checks\":{\"direct_question_answered_first\":true,\"diagnostic_timing_ok\":true,\"waitlist_timing_ok\":true,\"official_facts_only\":true,\"no_early_contact_capture\":true,\"no_whatsapp_phone_request\":true,\"no_fake_certainty\":true,\"no_human_overlap\":true,\"channel_brevity_ok\":true}},\"messages\":[\"A Taliya oferece quatro planos:\", \"1. Base: R$ 197/mês, ideal para studios que querem organizar a rotina antes da IA ativa.\",\"2. Essencial: R$ 497/mês, indicado para studios que querem resolver uma dor clara primeiro.\",\"3. Avance: R$ 897/mês, para studios que buscam ajuda em rotinas prioritárias.\",\"4. Completo: R$ 1.497/mês, para studios que desejam o pacote completo da Taliya com vários agentes.\",\"Posso ajudar a entender qual plano pode fazer mais sentido para seu studio, se quiser? Oferecemos também um diagnóstico gratuito para isso.\"],\"lead_facts\":[],\"diagnostic\":null,\"waitlist_action\":null,\"handoff\":null,\"confidence\":\"high\"} for TypeAdapter(LLMStructuredDraft); 1 validation error for LLMStructuredDraft\nmessages\n  List should have at most 5 items after validation, not 6 [type=too_long, input_value=['A Taliya oferece quatro...co gratuito para isso.'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/too_long",
+              "retryable": true
+            }
+          },
+          "lead": "Quanto custa a Taliya e quais planos existem?"
+        }
+      ]
+    }
+  ]
+}

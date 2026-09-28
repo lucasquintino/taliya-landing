@@ -1,0 +1,715 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-p0-validation-waitlist-final",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-26T00:14:42Z",
+  "finishedAt": "2026-05-26T00:14:57Z",
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "estimatedCostUsd": 0.015045,
+    "inputTokens": 12937,
+    "outputTokens": 1187
+  },
+  "releaseGate": "pass",
+  "scenarios": [
+    {
+      "id": "p0-waitlist-intent",
+      "title": "P0 clear post-diagnostic start intent goes to waitlist path",
+      "channel": "widget",
+      "checks": [
+        "diagnostic_completed",
+        "waitlist_offered_or_handoff",
+        "waitlist_offer_mentions_limited_windows",
+        "has_product_source",
+        "template_ids_present"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_cbd830a1aa3943968fe5e5c028d25e88",
+            "conversation_id": "real_eval_p0-waitlist-intent",
+            "lead_id": "lead_p0-waitlist-intent",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_delivered",
+                "next_state": "diagnostic_delivered",
+                "route": "diagnostic",
+                "opening_type": "none",
+                "detected_intents": [
+                  "product_how_it_works",
+                  "diagnostic_request",
+                  "comparison_current_tool",
+                  "urgency",
+                  "plan_fit"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "complete",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "ask_demo_reaction",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead pediu diagnóstico gratuito",
+                  "Tem 100 alunos ativos",
+                  "Hoje controla em planilha",
+                  "Dor principal: agenda",
+                  "Prioridade: organizar reposições",
+                  "Urgente para este mês",
+                  "Quer comparar plano para rotina completa",
+                  "Nome confiável no perfil: Lucas"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "diagnostic.deliver_hold",
+                  "diagnostic.deliver_context",
+                  "diagnostic.deliver_crm_base",
+                  "diagnostic.deliver_operational_step",
+                  "diagnostic.deliver_agent_recommendation",
+                  "diagnostic.deliver_plan_recommendation",
+                  "diagnostic.deliver_demo_not_offered"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é manter agenda, faltas e reposições em ordem sem depender de planilha, caderno ou memória da equipe."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria colocar as pendências do dia em uma lista simples para a equipe saber por onde começar."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária do studio ainda sem processo claro",
+                    "first_step": "colocar as pendências do dia em uma lista simples para a equipe saber por onde começar",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "product.post_diagnostic_plan_recap": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "product.comparison_current_tool": {
+                    "current_tool_context": "planilha"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.deliver_hold",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_context",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_crm_base",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_operational_step",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_agent_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_plan_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_demo_not_offered",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "complete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Perfeito. Já dá pra te devolver uma leitura prática. Vou organizar em partes.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_hold",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é manter agenda, faltas e reposições em ordem sem depender de planilha, caderno ou memória da equipe.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_context",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_crm_base",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "O primeiro passo seria colocar as pendências do dia em uma lista simples para a equipe saber por onde começar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_operational_step",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Agente Agenda faria sentido primeiro: ele ajuda com faltas, reposições e encaixes. Faz sentido aqui porque essa rotina apareceu como prioridade; na prática, ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_agent_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra voce o plano Avance ou Completo.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_plan_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_demo_not_offered",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name"
+                  ]
+                },
+                {
+                  "key": "students_active",
+                  "value": "100 alunos ativos",
+                  "confidence": "high",
+                  "evidence": [
+                    "user_message.text"
+                  ]
+                },
+                {
+                  "key": "current_tool",
+                  "value": "planilha",
+                  "confidence": "high",
+                  "evidence": [
+                    "user_message.text"
+                  ]
+                },
+                {
+                  "key": "main_pain",
+                  "value": "agenda e reposições se perdem",
+                  "confidence": "high",
+                  "evidence": [
+                    "user_message.text"
+                  ]
+                },
+                {
+                  "key": "priority",
+                  "value": "organizar reposições",
+                  "confidence": "high",
+                  "evidence": [
+                    "user_message.text"
+                  ]
+                },
+                {
+                  "key": "urgency",
+                  "value": "para este mês",
+                  "confidence": "high",
+                  "evidence": [
+                    "user_message.text"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "completed",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  }
+                ],
+                "facts_used": [
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa."
+                ],
+                "main_bottleneck": "a rotina prioritária do studio ainda sem processo claro",
+                "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é manter agenda, faltas e reposições em ordem sem depender de planilha, caderno ou memória da equipe.",
+                "likely_cause": "o atendimento e o acompanhamento ainda dependem demais de controle manual.",
+                "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos.",
+                "first_recommended_step": "O primeiro passo seria colocar as pendências do dia em uma lista simples para a equipe saber por onde começar.",
+                "indicated_routines_or_agents": [
+                  "Agenda"
+                ],
+                "indicated_agents": [
+                  {
+                    "name": "Agenda",
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  }
+                ],
+                "plan_or_range_to_compare": "Avance ou Completo",
+                "final_plan_line": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra voce o plano Avance ou Completo.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+                "evidence": [
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa."
+                ],
+                "unknowns": [],
+                "confidence": "medium",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message",
+                    "profile_name_assessment",
+                    "product_knowledge",
+                    "comparison_management_system",
+                    "comparison_spreadsheet",
+                    "how_it_works",
+                    "routine_areas",
+                    "whatsapp_scope"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "6"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "completed"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 5479,
+                "output_tokens": 763,
+                "cost_usd": 0.007543
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_833992d6edc3437b87e7b06513adc2fb"
+          },
+          "lead": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa."
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_4da5bff2dddd4fb79015b561ce208cc3",
+            "conversation_id": "real_eval_p0-waitlist-intent",
+            "lead_id": "lead_p0-waitlist-intent",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_waitlist_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_delivered",
+                "current_state": "waitlist_offered",
+                "next_state": "waitlist_offered",
+                "route": "waitlist",
+                "opening_type": "returning_lead",
+                "detected_intents": [
+                  "waitlist",
+                  "buy_intent"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": true,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Nome confiável no perfil: Lucas",
+                  "Lead quer começar e pediu lista de espera",
+                  "Diagnóstico já foi entregue antes",
+                  "Waitlist permitida agora",
+                  "Disponibilidade é limitada para um número pequeno de studios"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "waitlist.offer_after_contract_intent"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é manter agenda, faltas e reposições em ordem sem depender de planilha, caderno ou memória da equipe."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria colocar as pendências do dia em uma lista simples para a equipe saber por onde começar."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária do studio ainda sem processo claro",
+                    "first_step": "O primeiro passo seria colocar as pendências do dia em uma lista simples para a equipe saber por onde começar",
+                    "plan_range": "Avance ou Completo"
+                  },
+                  "product.post_diagnostic_plan_recap": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "waitlist.offer_after_contract_intent",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "waitlist_details",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Estamos trabalhando com um número pequeno de studios agora.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "waitlist.offer_after_contract_intent",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se fizer sentido, posso colocar seu studio na lista de espera e chamar assim que abrir uma próxima janela.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "waitlist.offer_after_contract_intent",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "completed",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                    "evidence": [
+                      "widget:p0-waitlist-intent:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  }
+                ],
+                "facts_used": [
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa."
+                ],
+                "main_bottleneck": "a rotina prioritária do studio ainda sem processo claro",
+                "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é manter agenda, faltas e reposições em ordem sem depender de planilha, caderno ou memória da equipe.",
+                "likely_cause": "o atendimento e o acompanhamento ainda dependem demais de controle manual.",
+                "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos.",
+                "first_recommended_step": "O primeiro passo seria colocar as pendências do dia em uma lista simples para a equipe saber por onde começar.",
+                "indicated_routines_or_agents": [
+                  "Agenda"
+                ],
+                "indicated_agents": [
+                  {
+                    "name": "Agenda",
+                    "agent_name": "Agenda",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "faltas, reposições e encaixes",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele mostra reposições pendentes, próximos encaixes e o que a equipe precisa resolver"
+                  }
+                ],
+                "plan_or_range_to_compare": "Avance ou Completo",
+                "final_plan_line": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra voce o plano Avance ou Completo.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+                "evidence": [
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+                  "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa."
+                ],
+                "unknowns": [],
+                "confidence": "medium",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+              },
+              "waitlist_action": {
+                "status": "offered",
+                "reason": "Lead demonstrou intenção clara de entrar na lista e waitlist está permitida após diagnóstico e interesse real.",
+                "missing_fields": []
+              },
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "initial_policy_read",
+                    "previous_state.diagnostic",
+                    "product_knowledge.facts"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "completed"
+                },
+                {
+                  "name": "mark_waitlist",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 7458,
+                "output_tokens": 424,
+                "cost_usd": 0.007502
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_99c8902336754efe924ff719ad7072e5"
+          },
+          "lead": "quero começar, me coloca na lista"
+        }
+      ]
+    }
+  ]
+}

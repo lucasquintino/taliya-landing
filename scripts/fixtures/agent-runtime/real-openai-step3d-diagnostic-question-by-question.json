@@ -1,0 +1,30 @@
+[
+  {
+    "id": "step3d-diagnostic-question-by-question",
+    "title": "Diagnostic should ask every official question with feedback and not repeat answered facts",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero fazer diagnostico gratuito",
+      "tenho 90 alunos ativos",
+      "agenda e reposicoes dao mais trabalho",
+      "nao consigo ver facil o que precisa resolver no dia",
+      "hoje fica em planilha e whatsapp",
+      "prioridade e organizar reposicoes primeiro",
+      "quero resolver agora, nesse mes"
+    ],
+    "checks": [
+      "diagnostic_question_has_feedback",
+      "official_diagnostic_first_question",
+      "no_repeat_answered_size_question",
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "completed_diagnostic_staged",
+      "old_diagnostic_copy_blocked",
+      "final_plan_dynamic_line",
+      "final_demo_not_offered_line",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  }
+]

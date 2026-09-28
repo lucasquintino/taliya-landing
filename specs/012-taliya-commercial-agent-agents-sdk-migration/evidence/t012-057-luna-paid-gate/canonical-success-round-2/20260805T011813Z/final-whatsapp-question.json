@@ -1,0 +1,429 @@
+{
+  "scenario_id": "final-whatsapp-question",
+  "title": "Golden RC-011-055 WhatsApp product behavior",
+  "status": "passed",
+  "messages": [
+    "como funciona no WhatsApp?"
+  ],
+  "transcript": [
+    {
+      "role": "user",
+      "content": "como funciona no WhatsApp?"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "O aluno não precisa baixar aplicativo nem criar senha. Ele conversa no WhatsApp; a Taliya registra a ação, atualiza o painel e avisa o responsável."
+    },
+    {
+      "role": "assistant",
+      "content": "Se quiser ver isso funcionando na prática, aqui está uma demonstração: https://www.taliya.com.br/pilates/planos/demonstracao"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "user_text": "como funciona no WhatsApp?",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "answer_whatsapp_scope",
+      "template_ids": [
+        "product.whatsapp_direct"
+      ],
+      "rendered_messages": [
+        "Oi, tudo bem?",
+        "O aluno não precisa baixar aplicativo nem criar senha. Ele conversa no WhatsApp; a Taliya registra a ação, atualiza o painel e avisa o responsável.",
+        "Se quiser ver isso funcionando na prática, aqui está uma demonstração: https://www.taliya.com.br/pilates/planos/demonstracao"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 2,
+      "cost_usd": 0.005993,
+      "next_state": "diagnostic_offered",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-final-whatsapp-question",
+        "lead_id": "t012-043-final-whatsapp-question",
+        "commercial_stage": "diagnostic_offered",
+        "summary": "Estado comercial: diagnostic_offered",
+        "diagnostic_status": "not_started",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "product.whatsapp_direct"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "taliya_whatsapp",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "como funciona no WhatsApp?",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-final-whatsapp-question",
+            "lead_id": "t012-043-final-whatsapp-question",
+            "source": "taliya_whatsapp",
+            "channel": "whatsapp"
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "entry",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_general_interest",
+            "answer_source_opening",
+            "offer_diagnostic_from_pain",
+            "answer_direct_product_question",
+            "start_requested_diagnostic",
+            "handoff_requested",
+            "clarify_ambiguous_opening"
+          ],
+          "eligible_template_groups": [
+            "opening.",
+            "diagnostic.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "HandoffCallItem",
+            "raw_item_type": "ResponseFunctionToolCall",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": "transfer_to_taliya_product_agent",
+            "handoff_target": null
+          },
+          {
+            "item_type": "HandoffOutputItem",
+            "raw_item_type": "dict",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": null,
+            "handoff_target": "taliya_product_agent"
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "entry-whatsapp-001",
+          "turn_id": "entry-whatsapp-001",
+          "selected_action": "answer_whatsapp_scope",
+          "interpreted_intents": [
+            "pergunta sobre funcionamento no WhatsApp"
+          ],
+          "direct_question": "como funciona no WhatsApp?",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Explicar como o produto funciona no WhatsApp e quais são os limites desse uso.",
+              "evidence": [
+                "Mensagem atual: \"como funciona no WhatsApp?\""
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "whatsapp_scope",
+            "how_it_works"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [],
+          "reply_goal": "Responder diretamente como o produto funciona no WhatsApp, com escopo seguro e sem prometer conexão indevida com o WhatsApp do estúdio.",
+          "confidence": "high",
+          "evidence": [
+            "Mensagem atual pergunta especificamente sobre funcionamento no WhatsApp."
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "entry-whatsapp-001",
+            "turn_id": "entry-whatsapp-001",
+            "selected_action": "answer_whatsapp_scope",
+            "interpreted_intents": [
+              "pergunta sobre funcionamento no WhatsApp"
+            ],
+            "direct_question": "como funciona no WhatsApp?",
+            "direct_answer_obligations": [
+              {
+                "obligation": "Explicar como o produto funciona no WhatsApp e quais são os limites desse uso.",
+                "evidence": [
+                  "Mensagem atual: \"como funciona no WhatsApp?\""
+                ]
+              }
+            ],
+            "captured_slots": [],
+            "product_fact_keys_used": [
+              "whatsapp_scope",
+              "how_it_works"
+            ],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [],
+            "reply_goal": "Responder diretamente como o produto funciona no WhatsApp, com escopo seguro e sem prometer conexão indevida com o WhatsApp do estúdio.",
+            "confidence": "high",
+            "evidence": [
+              "Mensagem atual pergunta especificamente sobre funcionamento no WhatsApp."
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "entry-whatsapp-001",
+          "turn_id": "entry-whatsapp-001",
+          "selected_action": "answer_whatsapp_scope",
+          "interpreted_intents": [
+            "pergunta sobre funcionamento no WhatsApp"
+          ],
+          "direct_question": "como funciona no WhatsApp?",
+          "direct_answer_obligations": [
+            {
+              "obligation": "Explicar como o produto funciona no WhatsApp e quais são os limites desse uso.",
+              "evidence": [
+                "Mensagem atual: \"como funciona no WhatsApp?\""
+              ]
+            }
+          ],
+          "captured_slots": [],
+          "product_fact_keys_used": [
+            "whatsapp_scope",
+            "how_it_works"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [],
+          "reply_goal": "Responder diretamente como o produto funciona no WhatsApp, com escopo seguro e sem prometer conexão indevida com o WhatsApp do estúdio.",
+          "confidence": "high",
+          "evidence": [
+            "Mensagem atual pergunta especificamente sobre funcionamento no WhatsApp."
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "answer_whatsapp_scope",
+          "previous_state": "new_lead",
+          "current_state": "product_question",
+          "next_state": "diagnostic_offered",
+          "template_ids": [
+            "product.whatsapp_direct"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_answer_whatsapp_scope",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "product.whatsapp_direct"
+          ],
+          "variables": {
+            "official_demo_link": {
+              "kind": "url",
+              "value": "https://www.taliya.com.br/pilates/planos/demonstracao",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "product_knowledge.links.demo"
+              ]
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Oi, tudo bem?",
+          "O aluno não precisa baixar aplicativo nem criar senha. Ele conversa no WhatsApp; a Taliya registra a ação, atualiza o painel e avisa o responsável.",
+          "Se quiser ver isso funcionando na prática, aqui está uma demonstração: https://www.taliya.com.br/pilates/planos/demonstracao"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_offered",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-final-whatsapp-question",
+          "lead_id": "t012-043-final-whatsapp-question",
+          "commercial_stage": "diagnostic_offered",
+          "summary": "Estado comercial: diagnostic_offered",
+          "diagnostic_status": "not_started",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "product.whatsapp_direct"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "taliya_whatsapp",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "input_tokens": 4481,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 252,
+          "reasoning_tokens": 0,
+          "latency_ms": 4158.156,
+          "cost_usd": 0.005993
+        },
+        "failure_labels": []
+      }
+    }
+  ],
+  "final_state": {
+    "conversation_id": "t012-043-final-whatsapp-question",
+    "lead_id": "t012-043-final-whatsapp-question",
+    "source": "taliya_whatsapp",
+    "channel": "whatsapp",
+    "canonical_state": "diagnostic_offered",
+    "answered_obligations": [
+      "como funciona no WhatsApp?"
+    ]
+  },
+  "checks": [
+    "route:product",
+    "direct_question_answered_first",
+    "whatsapp_student_no_app",
+    "mentions_demo_link",
+    "first_response_greeting",
+    "has_product_source",
+    "no_phone_request",
+    "template_ids_present",
+    "sales_inbox_projection_consistent",
+    "whatsapp_max_three_chunks",
+    "all_messages_short"
+  ],
+  "check_results": [
+    {
+      "check": "turn_statuses_acceptable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "includes:WhatsApp",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "includes:aluno",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "includes:nao precisa baixar aplicativo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:me passa o WhatsApp",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:manda o telefone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:instalar app",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "template_present:product.whatsapp_direct",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_failed_turns",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "issues": [],
+  "total_model_operations": 2,
+  "total_cost_usd": 0.005993,
+  "cost_cap_exceeded": false
+}

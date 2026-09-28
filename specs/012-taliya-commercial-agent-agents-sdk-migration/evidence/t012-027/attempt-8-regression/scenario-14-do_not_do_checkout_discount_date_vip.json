@@ -1,0 +1,722 @@
+{
+  "number": 14,
+  "scenario_id": "do_not_do_checkout_discount_date_vip",
+  "channel": "whatsapp",
+  "required_proof": "No checkout, date, discount, or VIP promise.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "tem checkout, desconto, data garantida ou VIP?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": "taliya_product_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_spec006_product_contracts",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_product_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_product_agent"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"checkout\",\"discount\",\"guaranteed_date\",\"vip\"]}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_spec006_product_contracts",
+      "arguments": "{\"keys\":[\"checkout\",\"discount\",\"guaranteed_date\",\"vip\"]}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"product.price_direct\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "checkout",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.checkout"
+              ]
+            },
+            {
+              "key": "discount",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.discount"
+              ]
+            },
+            {
+              "key": "guaranteed_date",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.guaranteed_date"
+              ]
+            },
+            {
+              "key": "vip",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.vip"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "checkout",
+            "discount",
+            "guaranteed_date",
+            "vip"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.checkout",
+          "product_knowledge.discount",
+          "product_knowledge.guaranteed_date",
+          "product_knowledge.vip"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_spec006_product_contracts",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "spec006.checkout",
+              "source": "spec_006_product_contract",
+              "version": "spec006-bd19cd6ba6dd",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "specs/006-crm-operational-core#checkout"
+              ]
+            },
+            {
+              "key": "spec006.discount",
+              "source": "spec_006_product_contract",
+              "version": "spec006-bd19cd6ba6dd",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "specs/006-crm-operational-core#discount"
+              ]
+            },
+            {
+              "key": "spec006.guaranteed_date",
+              "source": "spec_006_product_contract",
+              "version": "spec006-bd19cd6ba6dd",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "specs/006-crm-operational-core#guaranteed_date"
+              ]
+            },
+            {
+              "key": "spec006.vip",
+              "source": "spec_006_product_contract",
+              "version": "spec006-bd19cd6ba6dd",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "specs/006-crm-operational-core#vip"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "checkout",
+            "discount",
+            "guaranteed_date",
+            "vip"
+          ]
+        },
+        "evidence": [
+          "specs/006-crm-operational-core#checkout",
+          "specs/006-crm-operational-core#discount",
+          "specs/006-crm-operational-core#guaranteed_date",
+          "specs/006-crm-operational-core#vip"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "product.price_direct",
+          "templates": [
+            {
+              "template_id": "product.price_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_fit_context"
+              ]
+            }
+          ],
+          "variable_specs": {
+            "plan_fit_context": {
+              "kind": "short_text",
+              "max_length": 180,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "user_message"
+              ],
+              "validation_rule": "Lead-provided context used only to explain why fit needs diagnostic evidence."
+            },
+            "plan_price_summary": {
+              "kind": "long_text",
+              "max_length": 360,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official price/plan summary assembled from product facts only."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "product_question",
+        "price_question",
+        "commercial_scope"
+      ],
+      "direct_question": "tem checkout, desconto, data garantida ou VIP?",
+      "customer_need": "Saber se existem checkout, desconto, data garantida ou VIP.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "tem checkout, desconto, data garantida ou VIP?",
+        "answering_template_id": "product.price_direct",
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "product.price_direct"
+      ],
+      "variables": [
+        {
+          "name": "plan_price_summary",
+          "kind": "long_text",
+          "value": "Não há informação oficial disponível sobre checkout, desconto, data garantida ou VIP nos fatos consultados.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.checkout",
+            "product_knowledge.discount",
+            "product_knowledge.guaranteed_date",
+            "product_knowledge.vip",
+            "specs/006-crm-operational-core#checkout",
+            "specs/006-crm-operational-core#discount",
+            "specs/006-crm-operational-core#guaranteed_date",
+            "specs/006-crm-operational-core#vip"
+          ],
+          "max_length": 360
+        }
+      ],
+      "evidence": [
+        "product_knowledge.checkout",
+        "product_knowledge.discount",
+        "product_knowledge.guaranteed_date",
+        "product_knowledge.vip",
+        "specs/006-crm-operational-core#checkout",
+        "specs/006-crm-operational-core#discount",
+        "specs/006-crm-operational-core#guaranteed_date",
+        "specs/006-crm-operational-core#vip"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [
+        "missing_official_fact"
+      ],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "product_question",
+      "last_intent": "price_question",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "answer_with_missing_official_fact"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": [
+      "Official facts for these items are missing."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_do_not_do_checkout_discount_date_vip",
+    "conversation_id": "spike_conv_do_not_do_checkout_discount_date_vip",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": "taliya_product_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_spec006_product_contracts",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_product_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "product_question",
+        "price_question",
+        "commercial_scope"
+      ],
+      "direct_question": "tem checkout, desconto, data garantida ou VIP?",
+      "customer_need": "Saber se existem checkout, desconto, data garantida ou VIP.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "tem checkout, desconto, data garantida ou VIP?",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "product.price_direct"
+      ],
+      "variables": {
+        "plan_price_summary": {
+          "kind": "long_text",
+          "value": "Não há informação oficial disponível sobre checkout, desconto, data garantida ou VIP nos fatos consultados.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.checkout",
+            "product_knowledge.discount",
+            "product_knowledge.guaranteed_date",
+            "product_knowledge.vip",
+            "specs/006-crm-operational-core#checkout",
+            "specs/006-crm-operational-core#discount",
+            "specs/006-crm-operational-core#guaranteed_date",
+            "specs/006-crm-operational-core#vip"
+          ],
+          "max_length": 360
+        }
+      },
+      "evidence": [
+        "product_knowledge.checkout",
+        "product_knowledge.discount",
+        "product_knowledge.guaranteed_date",
+        "product_knowledge.vip",
+        "specs/006-crm-operational-core#checkout",
+        "specs/006-crm-operational-core#discount",
+        "specs/006-crm-operational-core#guaranteed_date",
+        "specs/006-crm-operational-core#vip"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "missing_official_fact",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "product_question",
+      "last_intent": "price_question",
+      "next_action_hint": "answer_with_missing_official_fact"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "product_knowledge.checkout",
+        "product_knowledge.discount",
+        "product_knowledge.guaranteed_date",
+        "product_knowledge.vip",
+        "specs/006-crm-operational-core#checkout",
+        "specs/006-crm-operational-core#discount",
+        "specs/006-crm-operational-core#guaranteed_date",
+        "specs/006-crm-operational-core#vip"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "Official facts for these items are missing."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 13209,
+      "output_tokens": 655,
+      "cost_usd": 0.008102,
+      "handoffs": 1,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_do_not_do_checkout_discount_date_vip",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Oi, tudo bem?",
+      "template_id": "product.price_direct",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Não há informação oficial disponível sobre checkout, desconto, data garantida ou VIP nos fatos consultados.",
+      "template_id": "product.price_direct",
+      "channel": "whatsapp",
+      "sequence": 2
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "product_question",
+    "last_intent": "price_question",
+    "next_action_hint": "answer_with_missing_official_fact"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 13209,
+    "output_tokens": 655,
+    "cost_usd": 0.008102,
+    "handoffs": 1,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

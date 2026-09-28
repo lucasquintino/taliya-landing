@@ -1,0 +1,1178 @@
+{
+  "number": 8,
+  "scenario_id": "ideal_turn_08",
+  "channel": "whatsapp",
+  "required_proof": "current_process captured.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico em andamento. Respondido: student_count=120; main_pain=perde interessado porque demoramos pra responder no WhatsApp; current_process=so conseguem responder de noite; leads desistem e fecham com outro studio. Proxima pergunta pendente: current_process. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"\", \"intent\": \"\"}.\nstate: {\"diagnostic\": {\"ledger\": {\"student_count\": {\"status\": \"answered\", \"answer_value\": \"120\"}, \"main_pain\": {\"status\": \"answered\", \"answer_value\": \"perde interessado porque demoramos pra responder no WhatsApp\"}, \"current_process\": {\"status\": \"answered\", \"answer_value\": \"so conseguem responder de noite; leads desistem e fecham com outro studio\"}}, \"status\": \"in_progress\", \"next_question_key\": \"current_process\"}, \"demo\": {\"status\": \"not_applicable\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "user",
+      "content": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "content": "Voce esta perdendo aluno novo porque o WhatsApp do studio vive atrasado."
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Nao tenho o preco oficial nesta conversa."
+    },
+    {
+      "role": "assistant",
+      "content": "Voce comentou que seu studio de pilates esta perdendo aluno novo porque o WhatsApp vive atrasado."
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "assistant",
+      "content": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+    },
+    {
+      "role": "user",
+      "content": "120"
+    },
+    {
+      "role": "assistant",
+      "content": "O studio perde alunos novos porque o WhatsApp vive atrasado."
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "minha maior dor e perder interessado porque demoramos pra responder"
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+    },
+    {
+      "role": "user",
+      "content": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+    },
+    {
+      "role": "user",
+      "content": "hoje e planilha e caderno mesmo, nada organizado"
+    }
+  ],
+  "starting_agent": "taliya_product_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_diagnostic_ledger",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_diagnostic_ledger",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"diagnostic\"}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"agents\",\"whatsapp\",\"security\",\"how_it_works\",\"demo_link\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_diagnostic_ledger",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_ideal_turn_08",
+          "diagnostic": {
+            "ledger": {
+              "student_count": {
+                "status": "answered",
+                "answer_value": "120"
+              },
+              "main_pain": {
+                "status": "answered",
+                "answer_value": "perde interessado porque demoramos pra responder no WhatsApp"
+              },
+              "current_process": {
+                "status": "answered",
+                "answer_value": "so conseguem responder de noite; leads desistem e fecham com outro studio"
+              }
+            },
+            "status": "in_progress",
+            "next_question_key": "current_process"
+          },
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_ideal_turn_08.diagnostic"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "diagnostic",
+          "templates": [
+            {
+              "template_id": "diagnostic.ask_active_students",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_current_process",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_main_pain",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_pain_detail",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_priority",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_urgency",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.deliver",
+              "required_variables": [
+                "pain_context_human",
+                "crm_base_recommendation",
+                "operational_first_step",
+                "recommended_plan_or_range",
+                "demo_status"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_agent_recommendation",
+              "required_variables": [
+                "agent_name",
+                "agent_pain_resolved",
+                "agent_practical_action"
+              ],
+              "optional_variables": [
+                "agent_fit_phrase",
+                "agent_recommendation_reason"
+              ]
+            },
+            {
+              "template_id": "diagnostic.deliver_context",
+              "required_variables": [
+                "pain_context_human"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_crm_base",
+              "required_variables": [
+                "crm_base_recommendation"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_demo_already_offered",
+              "required_variables": [
+                "demo_status"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_demo_not_offered",
+              "required_variables": [
+                "demo_status"
+              ],
+              "optional_variables": [
+                "official_demo_link"
+              ]
+            },
+            {
+              "template_id": "diagnostic.deliver_hold",
+              "required_variables": [],
+              "optional_variables": [
+                "first_name"
+              ]
+            },
+            {
+              "template_id": "diagnostic.deliver_operational_step",
+              "required_variables": [
+                "operational_first_step"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_plan_recommendation",
+              "required_variables": [
+                "recommended_plan_or_range"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.insufficient_evidence",
+              "required_variables": [],
+              "optional_variables": [
+                "clarification_question"
+              ]
+            },
+            {
+              "template_id": "diagnostic.offer_soft",
+              "required_variables": [],
+              "optional_variables": [
+                "pain_context_human"
+              ]
+            },
+            {
+              "template_id": "diagnostic.partial_progress",
+              "required_variables": [
+                "answer_feedback"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.price_hook",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.price_hook_with_context",
+              "required_variables": [
+                "plan_fit_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.start",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.start_named",
+              "required_variables": [
+                "first_name"
+              ],
+              "optional_variables": []
+            }
+          ],
+          "variable_specs": {
+            "agent_fit_phrase": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "model_decision"
+              ],
+              "validation_rule": "Approved enum phrase such as first_fit or also_fit; renderer owns copy."
+            },
+            "agent_name": {
+              "kind": "short_text",
+              "max_length": 60,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official routine or agent name from product knowledge."
+            },
+            "agent_pain_resolved": {
+              "kind": "long_text",
+              "max_length": 180,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Concrete pain this routine/agent helps with, grounded in diagnostic facts."
+            },
+            "agent_practical_action": {
+              "kind": "long_text",
+              "max_length": 280,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Practical action the studio can understand without technical SaaS terms."
+            },
+            "agent_recommendation_reason": {
+              "kind": "long_text",
+              "max_length": 280,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Reason this routine/agent fits the diagnostic evidence."
+            },
+            "answer_feedback": {
+              "kind": "short_text",
+              "max_length": 180,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "user_message"
+              ],
+              "validation_rule": "Grounded reflection on the immediately previous diagnostic answer; not generic filler and not mechanical repetition."
+            },
+            "clarification_question": {
+              "kind": "short_text",
+              "max_length": 140,
+              "allowed_sources": [
+                "model_decision"
+              ],
+              "validation_rule": "One neutral clarification question; no product claim, no side effect."
+            },
+            "crm_base_recommendation": {
+              "kind": "long_text",
+              "max_length": 260,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Grounded recommendation for organizing the base/routine before agents; no technical CRM jargon unless the lead used it."
+            },
+            "demo_status": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state"
+              ],
+              "validation_rule": "Persisted demo state: not_offered, offered, viewed_or_asked, or reacted_positive."
+            },
+            "first_name": {
+              "kind": "short_text",
+              "max_length": 40,
+              "allowed_sources": [
+                "channel_metadata",
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Only a verified real person first name; never a studio name, handle, phone, internal reliability label, or unverified profile value."
+            },
+            "official_demo_link": {
+              "kind": "url",
+              "max_length": null,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official demo URL from product knowledge; never invented or shortened ad hoc."
+            },
+            "operational_first_step": {
+              "kind": "long_text",
+              "max_length": 240,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "First practical operational step tied to the lead's stated priority."
+            },
+            "pain_context_human": {
+              "kind": "long_text",
+              "max_length": 420,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "user_message"
+              ],
+              "validation_rule": "Practical studio-owner reading grounded in diagnostic facts or the lead's own pain/context message."
+            },
+            "plan_fit_context": {
+              "kind": "short_text",
+              "max_length": 180,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "user_message"
+              ],
+              "validation_rule": "Lead-provided context used only to explain why fit needs diagnostic evidence."
+            },
+            "recommended_plan_or_range": {
+              "kind": "short_text",
+              "max_length": 90,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official plan or range from product knowledge; never inferred from one number without diagnostic evidence."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "how_it_works",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "Taliya helps a Pilates studio organize the daily routine in one place: conversations, students, agenda, reposicoes, cobrancas, interested leads, and follow-ups. The team can see what needs action. When the studio WhatsApp Business is connected and configured, agents can support conversations with students and interested leads while the team follows and takes over when needed.",
+              "excerpt": "Taliya helps a Pilates studio organize the daily routine in one place: conversations, students, agenda, reposicoes, cobrancas, interested leads, and follow-ups. The team can see what needs action. When the studio WhatsApp Business is connected and configured, agents can support conversations with students and interested leads while the team follows and takes over when needed.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.how_it_works"
+              ]
+            },
+            {
+              "key": "agents",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.agents"
+              ]
+            },
+            {
+              "key": "whatsapp",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.whatsapp"
+              ]
+            },
+            {
+              "key": "security",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.security"
+              ]
+            },
+            {
+              "key": "demo_link",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.demo_link"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "agents",
+            "whatsapp",
+            "security",
+            "how_it_works",
+            "demo_link"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.how_it_works",
+          "product_knowledge.agents",
+          "product_knowledge.whatsapp",
+          "product_knowledge.security",
+          "product_knowledge.demo_link"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic",
+        "price"
+      ],
+      "direct_question": "quanto custa isso?",
+      "customer_need": "organizar o atendimento para responder mais rapido e nao perder lead novo",
+      "pain_context": "o studio responde so de noite, usa planilha e caderno, e os interessados acabam fechando com outro studio",
+      "source_context": "Instagram e conversa comercial",
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "student_count",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value_text": "120",
+          "currency": null,
+          "evidence": [
+            "conversation.spike_conv_ideal_turn_08.diagnostic"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message: quanto custa isso?",
+        "user_message: so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+        "user_message: hoje e planilha e caderno mesmo, nada organizado"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "quanto custa isso?",
+        "answering_template_id": "product.price_direct",
+        "evidence": [
+          "user_message: quanto custa isso?"
+        ]
+      }
+    ],
+    "product_claims": [
+      {
+        "claim": "Taliya ajuda o studio de Pilates a organizar conversas, agenda, reposicoes, cobrancas, interessados e follow-ups em um so lugar.",
+        "fact_refs": [
+          "product_knowledge.how_it_works"
+        ],
+        "evidence": [
+          "product_knowledge.how_it_works"
+        ]
+      },
+      {
+        "claim": "Quando o WhatsApp Business esta conectado e configurado, os agentes podem apoiar conversas com alunos e interessados enquanto a equipe acompanha e assume quando preciso.",
+        "fact_refs": [
+          "product_knowledge.how_it_works"
+        ],
+        "evidence": [
+          "product_knowledge.how_it_works"
+        ]
+      }
+    ],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "current_process",
+          "status": "answered",
+          "answer_value": "so conseguimos responder de noite; leads desistem e fecham com outro studio",
+          "evidence": [
+            "user_message: so conseguimos responder de noite, ai o lead ja fechou com outro studio"
+          ]
+        }
+      ],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "user_message: so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+        "user_message: hoje e planilha e caderno mesmo, nada organizado"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "runtime_state.demo.status not_applicable"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "product.price_direct",
+        "diagnostic.deliver"
+      ],
+      "variables": [
+        {
+          "name": "plan_price_summary",
+          "kind": "long_text",
+          "value": "Nao tenho o preco oficial nesta conversa; se voce quiser, eu te mostro o plano certo depois do diagnostico.",
+          "source": "model_decision",
+          "evidence": [
+            "product_knowledge.demo_link missing",
+            "product_knowledge.agents missing"
+          ],
+          "max_length": 360
+        },
+        {
+          "name": "pain_context_human",
+          "kind": "long_text",
+          "value": "Voce esta perdendo aluno novo porque o studio responde so no fim do dia, enquanto o interessado esfria e fecha com outro studio. Hoje a operacao esta em planilha e caderno, sem organizacao central.",
+          "source": "user_message",
+          "evidence": [
+            "user_message: so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+            "user_message: hoje e planilha e caderno mesmo, nada organizado"
+          ],
+          "max_length": 420
+        },
+        {
+          "name": "crm_base_recommendation",
+          "kind": "long_text",
+          "value": "O primeiro passo e organizar o fluxo de atendimento e follow-up do studio em um unico lugar, antes de pensar em rotina mais avancada. Pelo que voce descreveu, o problema nao e so responder: e nao perder o lead enquanto a equipe esta fora do horario.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "conversation.spike_conv_ideal_turn_08.diagnostic"
+          ],
+          "max_length": 260
+        },
+        {
+          "name": "operational_first_step",
+          "kind": "long_text",
+          "value": "Mapear recebimento de leads, tempo de primeira resposta e quem assume cada conversa, para parar de depender de resposta so a noite.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "conversation.spike_conv_ideal_turn_08.diagnostic"
+          ],
+          "max_length": 240
+        },
+        {
+          "name": "recommended_plan_or_range",
+          "kind": "short_text",
+          "value": "plano a definir",
+          "source": "model_decision",
+          "evidence": [
+            "diagnostic in progress"
+          ],
+          "max_length": 90
+        },
+        {
+          "name": "demo_status",
+          "kind": "enum",
+          "value": "not_offered",
+          "source": "runtime_state",
+          "evidence": [
+            "runtime_state.demo.status not_applicable"
+          ],
+          "max_length": 0
+        }
+      ],
+      "evidence": [
+        "user_message: quanto custa isso?",
+        "conversation.spike_conv_ideal_turn_08.diagnostic",
+        "product_knowledge.how_it_works"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [
+        "missing_official_price"
+      ],
+      "uncertainty": "high"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "diagnostic_in_progress",
+      "last_intent": "price",
+      "diagnostic_status": "final_ready",
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "answer price with official pricing facts if available, otherwise use fallback or continue diagnostic"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "medium",
+    "risks": [
+      "nao ha preco oficial recuperado nesta conversa",
+      "template plan references a price template without official price facts"
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_ideal_turn_08",
+    "conversation_id": "spike_conv_ideal_turn_08",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_product_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_diagnostic_ledger",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic",
+        "price"
+      ],
+      "direct_question": "quanto custa isso?",
+      "customer_need": "organizar o atendimento para responder mais rapido e nao perder lead novo",
+      "pain_context": "o studio responde so de noite, usa planilha e caderno, e os interessados acabam fechando com outro studio",
+      "source_context": "Instagram e conversa comercial",
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "student_count",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value": 120,
+          "evidence": [
+            "conversation.spike_conv_ideal_turn_08.diagnostic"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message: quanto custa isso?",
+        "user_message: so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+        "user_message: hoje e planilha e caderno mesmo, nada organizado"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "quanto custa isso?",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message: quanto custa isso?"
+        ]
+      }
+    ],
+    "product_claims": [
+      {
+        "claim": "Taliya ajuda o studio de Pilates a organizar conversas, agenda, reposicoes, cobrancas, interessados e follow-ups em um so lugar.",
+        "fact_refs": [
+          "product_knowledge.how_it_works"
+        ],
+        "evidence": [
+          "product_knowledge.how_it_works"
+        ]
+      },
+      {
+        "claim": "Quando o WhatsApp Business esta conectado e configurado, os agentes podem apoiar conversas com alunos e interessados enquanto a equipe acompanha e assume quando preciso.",
+        "fact_refs": [
+          "product_knowledge.how_it_works"
+        ],
+        "evidence": [
+          "product_knowledge.how_it_works"
+        ]
+      }
+    ],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "current_process",
+          "status": "answered",
+          "answer_value": "so conseguimos responder de noite; leads desistem e fecham com outro studio",
+          "evidence": [
+            "user_message: so conseguimos responder de noite, ai o lead ja fechou com outro studio"
+          ]
+        }
+      ],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "user_message: so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+        "user_message: hoje e planilha e caderno mesmo, nada organizado"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "runtime_state.demo.status not_applicable"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "product.price_direct",
+        "diagnostic.deliver"
+      ],
+      "variables": {
+        "plan_price_summary": {
+          "kind": "long_text",
+          "value": "Nao tenho o preco oficial nesta conversa; se voce quiser, eu te mostro o plano certo depois do diagnostico.",
+          "source": "model_decision",
+          "evidence": [
+            "product_knowledge.demo_link missing",
+            "product_knowledge.agents missing"
+          ],
+          "max_length": 360
+        },
+        "pain_context_human": {
+          "kind": "long_text",
+          "value": "Voce esta perdendo aluno novo porque o studio responde so no fim do dia, enquanto o interessado esfria e fecha com outro studio. Hoje a operacao esta em planilha e caderno, sem organizacao central.",
+          "source": "user_message",
+          "evidence": [
+            "user_message: so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+            "user_message: hoje e planilha e caderno mesmo, nada organizado"
+          ],
+          "max_length": 420
+        },
+        "crm_base_recommendation": {
+          "kind": "long_text",
+          "value": "O primeiro passo e organizar o fluxo de atendimento e follow-up do studio em um unico lugar, antes de pensar em rotina mais avancada. Pelo que voce descreveu, o problema nao e so responder: e nao perder o lead enquanto a equipe esta fora do horario.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "conversation.spike_conv_ideal_turn_08.diagnostic"
+          ],
+          "max_length": 260
+        },
+        "operational_first_step": {
+          "kind": "long_text",
+          "value": "Mapear recebimento de leads, tempo de primeira resposta e quem assume cada conversa, para parar de depender de resposta so a noite.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "conversation.spike_conv_ideal_turn_08.diagnostic"
+          ],
+          "max_length": 240
+        },
+        "recommended_plan_or_range": {
+          "kind": "short_text",
+          "value": "plano a definir",
+          "source": "model_decision",
+          "evidence": [
+            "diagnostic in progress"
+          ],
+          "max_length": 90
+        },
+        "demo_status": {
+          "kind": "enum",
+          "value": "not_offered",
+          "source": "runtime_state",
+          "evidence": [
+            "runtime_state.demo.status not_applicable"
+          ],
+          "max_length": 0
+        }
+      },
+      "evidence": [
+        "user_message: quanto custa isso?",
+        "conversation.spike_conv_ideal_turn_08.diagnostic",
+        "product_knowledge.how_it_works"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "missing_official_price",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "high"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "diagnostic_in_progress",
+      "last_intent": "price",
+      "diagnostic_status": "final_ready",
+      "next_action_hint": "answer price with official pricing facts if available, otherwise use fallback or continue diagnostic"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "user_message: quanto custa isso?",
+        "conversation.spike_conv_ideal_turn_08.diagnostic",
+        "product_knowledge.how_it_works"
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "nao ha preco oficial recuperado nesta conversa",
+      "template plan references a price template without official price facts"
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 12219,
+      "output_tokens": 1226,
+      "cost_usd": 0.009152,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_ideal_turn_08",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_render_preview_failed",
+        "severity": "P0",
+        "message": "source_not_allowed:plan_price_summary:model_decision",
+        "path": "template_proposal"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "diagnostic_in_progress",
+    "last_intent": "price",
+    "diagnostic_status": "final_ready",
+    "next_action_hint": "answer price with official pricing facts if available, otherwise use fallback or continue diagnostic"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 20853,
+    "output_tokens": 2364,
+    "cost_usd": 0.019711,
+    "handoffs": 0,
+    "repairs": 1
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_render_preview_failed",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

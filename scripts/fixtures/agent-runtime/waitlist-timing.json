@@ -1,0 +1,22 @@
+[
+  {
+    "id": "cold-greeting-no-waitlist",
+    "message": "oi",
+    "expectWaitlist": false
+  },
+  {
+    "id": "direct-buy-offers-waitlist",
+    "message": "Quero assinar agora",
+    "expectWaitlist": "offered"
+  },
+  {
+    "id": "accept-after-offer-joins",
+    "messages": ["Quero assinar agora", "Pode colocar o Studio Viva em Vitoria. ana@example.com"],
+    "expectWaitlist": "joined"
+  },
+  {
+    "id": "accept-after-offer-missing-details",
+    "messages": ["Quero assinar agora", "Pode colocar"],
+    "expectWaitlist": "pending_details"
+  }
+]

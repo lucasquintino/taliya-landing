@@ -1,0 +1,131 @@
+{
+  "turns": [
+    {
+      "user_text": "oi, vi o perfil de voces no Instagram",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "answer_source_opening",
+      "templates": [
+        "opening.instagram_source"
+      ],
+      "rendered": [
+        "Oi, tudo bem?",
+        "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar.",
+        "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.0039225
+    },
+    {
+      "user_text": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "offer_diagnostic_from_pain",
+      "templates": [
+        "diagnostic.offer_soft"
+      ],
+      "rendered": [
+        "o WhatsApp atrasado está fazendo o studio perder alunos novos",
+        "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+        "O que voce acha?"
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.0046395
+    },
+    {
+      "user_text": "quanto custa isso?",
+      "status": "delivered",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "answer_price",
+      "templates": [
+        "product.price_direct"
+      ],
+      "rendered": [
+        "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+      ],
+      "issues": [],
+      "issue_details": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00405375
+    },
+    {
+      "user_text": "faz sentido... como funciona esse diagnostico gratuito?",
+      "status": "failed",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "answer_how_it_works",
+      "templates": [
+        "product.how_it_works_direct"
+      ],
+      "rendered": [],
+      "issues": [
+        "action_render_failed"
+      ],
+      "issue_details": [
+        "action_render_failed: missing_required_variable:contextual_next_step;unknown_variable:answer_feedback"
+      ],
+      "ops": 3,
+      "repairs": 1,
+      "cost_usd": 0.007323
+    }
+  ],
+  "final_state": {
+    "canonical_state": "diagnostic_offered",
+    "answered_obligations": [
+      "quanto custa isso?"
+    ]
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "content": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "content": "o WhatsApp atrasado está fazendo o studio perder alunos novos"
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "content": "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+    }
+  ],
+  "total_cost_usd": 0.019938749999999998
+}

@@ -1,0 +1,1770 @@
+{
+  "checked_files": [
+    "specs/011-taliya-commercial-agent-core-reset/manual-review-samples/shadow-mode-comparison-samples.json",
+    "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_adapter.py",
+    "services/taliya-agent-runtime/app/main.py"
+  ],
+  "created_at": "2026-05-31T12:58:36.588200Z",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "golden_transcript_status": {
+    "comparison_basis": "manual_review_samples_until_phase_10_goldens",
+    "open_tasks": [
+      "T011-019",
+      "T011-019A"
+    ],
+    "phase_10_claim": "not_satisfied_by_this_shadow_comparison",
+    "tasks_md_t011_019_checked": false,
+    "tasks_md_t011_019a_checked": false,
+    "versioned_golden_transcripts_complete": false
+  },
+  "release_gate": "pass_with_manual_review_samples",
+  "scenarios": [
+    {
+      "artifact_paths": [
+        "specs/011-taliya-commercial-agent-core-reset/manual-review-samples/shadow-mode-comparison-samples.json",
+        "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-shadow-compare.json",
+        "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-shadow-compare.md"
+      ],
+      "assertions": [
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "shadow_widget_price_497_plan_fit_manual:provider_called_once",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_widget_price_497_plan_fit_manual:shadow_mode_true",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_widget_price_497_plan_fit_manual:delivery_suppressed_true",
+          "ok": true
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "shadow_widget_price_497_plan_fit_manual:public_messages_empty",
+          "ok": true
+        },
+        {
+          "actual": 812,
+          "expected": "truthy",
+          "id": "shadow_widget_price_497_plan_fit_manual:response_model_usage_present",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_widget_price_497_plan_fit_manual:trace_complete",
+          "ok": true
+        },
+        {
+          "actual": "product",
+          "expected": "product",
+          "id": "shadow_widget_price_497_plan_fit_manual:decision_role",
+          "ok": true
+        },
+        {
+          "actual": "product",
+          "expected": "product",
+          "id": "shadow_widget_price_497_plan_fit_manual:decision_route",
+          "ok": true
+        },
+        {
+          "actual": "product_question",
+          "expected": "product_question",
+          "id": "shadow_widget_price_497_plan_fit_manual:decision_current_state",
+          "ok": true
+        },
+        {
+          "actual": "product_question",
+          "expected": "product_question",
+          "id": "shadow_widget_price_497_plan_fit_manual:decision_next_state",
+          "ok": true
+        },
+        {
+          "actual": [
+            "price_question",
+            "plan_fit_question"
+          ],
+          "expected": [
+            "price_question",
+            "plan_fit_question"
+          ],
+          "id": "shadow_widget_price_497_plan_fit_manual:detected_intents",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_widget_price_497_plan_fit_manual:direct_question_answered_first",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_widget_price_497_plan_fit_manual:diagnostic_action",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_widget_price_497_plan_fit_manual:waitlist_status",
+          "ok": true
+        },
+        {
+          "actual": "not_offered",
+          "expected": "not_offered",
+          "id": "shadow_widget_price_497_plan_fit_manual:demo_status",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_widget_price_497_plan_fit_manual:handoff_status",
+          "ok": true
+        },
+        {
+          "actual": [
+            {
+              "confidence": "high",
+              "currency": "BRL",
+              "evidence": [
+                "inbound.text"
+              ],
+              "kind": "plan_price",
+              "raw_text": "497",
+              "value": 497
+            },
+            {
+              "confidence": "high",
+              "currency": null,
+              "evidence": [
+                "inbound.text"
+              ],
+              "kind": "student_count",
+              "raw_text": "80",
+              "value": 80
+            }
+          ],
+          "expected": [
+            {
+              "kind": "plan_price",
+              "raw_text": "497",
+              "value": 497
+            },
+            {
+              "kind": "student_count",
+              "raw_text": "80",
+              "value": 80
+            }
+          ],
+          "id": "shadow_widget_price_497_plan_fit_manual:numeric_interpretations",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "actual": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "expected": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "id": "shadow_widget_price_497_plan_fit_manual:render_plan_template_ids",
+          "ok": true
+        },
+        {
+          "actual": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "expected": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_trace_template_ids",
+          "ok": true
+        },
+        {
+          "actual": [
+            {
+              "channel": "widget",
+              "sequence": 1,
+              "template_id": "product.price_direct",
+              "text": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes."
+            },
+            {
+              "channel": "widget",
+              "sequence": 2,
+              "template_id": "product.plan_fit_with_diagnostic",
+              "text": "Com 80 alunos, eu nao fecharia o plano so por esse numero."
+            },
+            {
+              "channel": "widget",
+              "sequence": 3,
+              "template_id": "product.plan_fit_with_diagnostic",
+              "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+            },
+            {
+              "channel": "widget",
+              "sequence": 4,
+              "template_id": "product.plan_fit_with_diagnostic",
+              "text": "O que voce acha?"
+            }
+          ],
+          "expected": "truthy",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_trace_messages_present",
+          "ok": true
+        },
+        {
+          "actual": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "expected": "contains:Base R$ 197/mes",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_contains:Base R$ 197/mes",
+          "ok": true
+        },
+        {
+          "actual": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "expected": "contains:Essencial R$ 497/mes",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_contains:Essencial R$ 497/mes",
+          "ok": true
+        },
+        {
+          "actual": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "expected": "contains:Com 80 alunos",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_contains:Com 80 alunos",
+          "ok": true
+        },
+        {
+          "actual": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "expected": "contains:diagnostico gratuito",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_contains:diagnostico gratuito",
+          "ok": true
+        },
+        {
+          "actual": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "expected": "excludes:Reliable profile first name",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_excludes:Reliable profile first name",
+          "ok": true
+        },
+        {
+          "actual": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "expected": "excludes:lead came from the site",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_excludes:lead came from the site",
+          "ok": true
+        },
+        {
+          "actual": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "expected": "excludes:497 alunos",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_excludes:497 alunos",
+          "ok": true
+        },
+        {
+          "actual": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "expected": "excludes:checkout",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_excludes:checkout",
+          "ok": true
+        },
+        {
+          "actual": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "expected": "excludes:VIP",
+          "id": "shadow_widget_price_497_plan_fit_manual:rendered_excludes:VIP",
+          "ok": true
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "shadow_widget_price_497_plan_fit_manual:product_variables_use_official_sources",
+          "ok": true
+        },
+        {
+          "actual": "passed",
+          "expected": "passed",
+          "id": "shadow_widget_price_497_plan_fit_manual:validator_passed",
+          "ok": true
+        },
+        {
+          "actual": "accepted",
+          "expected": "accepted",
+          "id": "shadow_widget_price_497_plan_fit_manual:validator_accepted",
+          "ok": true
+        },
+        {
+          "actual": "not_needed",
+          "expected": "not_needed",
+          "id": "shadow_widget_price_497_plan_fit_manual:repair_not_needed",
+          "ok": true
+        },
+        {
+          "actual": "gpt-5.4-mini",
+          "expected": "truthy",
+          "id": "shadow_widget_price_497_plan_fit_manual:trace_model_usage_model",
+          "ok": true
+        },
+        {
+          "actual": 812,
+          "expected": ">0",
+          "id": "shadow_widget_price_497_plan_fit_manual:trace_model_usage_input",
+          "ok": true
+        },
+        {
+          "actual": 246,
+          "expected": ">0",
+          "id": "shadow_widget_price_497_plan_fit_manual:trace_model_usage_output",
+          "ok": true
+        },
+        {
+          "actual": "product_question",
+          "expected": "product_question",
+          "id": "shadow_widget_price_497_plan_fit_manual:sales_inbox_commercial_stage",
+          "ok": true
+        },
+        {
+          "actual": "not_started",
+          "expected": "not_started",
+          "id": "shadow_widget_price_497_plan_fit_manual:sales_inbox_diagnostic_status",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_widget_price_497_plan_fit_manual:sales_inbox_waitlist_status",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_widget_price_497_plan_fit_manual:sales_inbox_handoff_status",
+          "ok": true
+        },
+        {
+          "actual": "lead_shadow_compare_widget_1",
+          "expected": "lead_shadow_compare_widget_1",
+          "id": "shadow_widget_price_497_plan_fit_manual:sales_inbox_lead_id",
+          "ok": true
+        },
+        {
+          "actual": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "expected": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "id": "shadow_widget_price_497_plan_fit_manual:sales_inbox_template_ids",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_widget_price_497_plan_fit_manual:sales_inbox_operator_next_action",
+          "ok": true
+        },
+        {
+          "actual": {
+            "channel": "widget",
+            "channel_conversation_id": "widget_shadow_compare_channel_1",
+            "entry_intent": "floating_agent",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "expected": {
+            "channel": "widget",
+            "channel_conversation_id": "widget_shadow_compare_channel_1",
+            "entry_intent": "floating_agent",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "id": "shadow_widget_price_497_plan_fit_manual:sales_inbox_source_labels",
+          "ok": true
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "shadow_widget_price_497_plan_fit_manual:sales_inbox_unverified_identity_not_promoted",
+          "ok": true
+        },
+        {
+          "actual": "accepted_decision",
+          "expected": "accepted_decision",
+          "id": "shadow_widget_price_497_plan_fit_manual:runtime_state_source",
+          "ok": true
+        },
+        {
+          "actual": "product_question",
+          "expected": "product_question",
+          "id": "shadow_widget_price_497_plan_fit_manual:runtime_state_current_state",
+          "ok": true
+        },
+        {
+          "actual": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "expected": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "id": "shadow_widget_price_497_plan_fit_manual:runtime_state_template_ids",
+          "ok": true
+        },
+        {
+          "actual": null,
+          "expected": null,
+          "id": "shadow_widget_price_497_plan_fit_manual:shadow_state_not_mutated",
+          "ok": true
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "shadow_widget_price_497_plan_fit_manual:one_shadow_event",
+          "ok": true
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "shadow_widget_price_497_plan_fit_manual:model_usage_recorded_once",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_widget_price_497_plan_fit_manual:model_usage_marked_shadow",
+          "ok": true
+        },
+        {
+          "actual": [
+            "delivery_suppressed"
+          ],
+          "expected": [
+            "delivery_suppressed"
+          ],
+          "id": "shadow_widget_price_497_plan_fit_manual:delivery_events_suppressed_only",
+          "ok": true
+        },
+        {
+          "actual": [
+            "suppressed"
+          ],
+          "expected": [
+            "suppressed"
+          ],
+          "id": "shadow_widget_price_497_plan_fit_manual:delivery_events_status_suppressed",
+          "ok": true
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "static:old_python_runner_not_called",
+          "ok": true
+        }
+      ],
+      "channel": "widget",
+      "decision_json": {
+        "agent_key": "taliya_commercial",
+        "channel": "widget",
+        "confidence": "high",
+        "conversation_id": "shadow_compare_widget_price_plan_fit_1",
+        "current_state": "product_question",
+        "decision_id": "decision_22476328775043e9b05e4a7c112a749b",
+        "demo": {
+          "customer_facing_concept": "commercial_product_demo",
+          "next_step": "none",
+          "status": "not_offered"
+        },
+        "detected_intents": [
+          "price_question",
+          "plan_fit_question"
+        ],
+        "diagnostic": {
+          "action": "none",
+          "final_fields": {},
+          "ledger_updates": [],
+          "next_question_key": null
+        },
+        "direct_question_answered_first": true,
+        "direct_question_present": true,
+        "facts": [
+          {
+            "confidence": "high",
+            "evidence": [
+              "inbound.text"
+            ],
+            "key": "active_students_or_size",
+            "reliability": "customer_provided",
+            "renderable": false,
+            "source": "user_message",
+            "value": 80
+          }
+        ],
+        "handoff": {
+          "reason": null,
+          "status": "none"
+        },
+        "language_policy": {
+          "crm_allowed_reasons": [],
+          "crm_evidence": [],
+          "crm_term_policy": "avoid_by_default",
+          "language_register": "studio_owner_practical"
+        },
+        "next_state": "product_question",
+        "numeric_interpretations": [
+          {
+            "confidence": "high",
+            "currency": "BRL",
+            "evidence": [
+              "inbound.text"
+            ],
+            "kind": "plan_price",
+            "raw_text": "497",
+            "value": 497
+          },
+          {
+            "confidence": "high",
+            "currency": null,
+            "evidence": [
+              "inbound.text"
+            ],
+            "kind": "student_count",
+            "raw_text": "80",
+            "value": 80
+          }
+        ],
+        "policy_checks": {
+          "diagnostic_timing_ok": true,
+          "direct_question_answered_first": true,
+          "no_early_contact_capture": true,
+          "no_human_overlap": true,
+          "no_internal_text_leak": true,
+          "official_facts_only": true,
+          "waitlist_timing_ok": true
+        },
+        "previous_state": "new_lead",
+        "repair_hints": [],
+        "role": "product",
+        "route": "product",
+        "schema_version": "011.0",
+        "template_plan": {
+          "chunk_policy": "default",
+          "items": [
+            {
+              "channel": "widget",
+              "template_id": "product.price_direct",
+              "variables": {
+                "plan_price_summary": {
+                  "evidence": [
+                    "product_knowledge.prices"
+                  ],
+                  "kind": "long_text",
+                  "max_length": 360,
+                  "source": "official_product_knowledge",
+                  "value": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes."
+                }
+              }
+            },
+            {
+              "channel": "widget",
+              "template_id": "product.plan_fit_with_diagnostic",
+              "variables": {
+                "plan_fit_context": {
+                  "evidence": [
+                    "inbound.text"
+                  ],
+                  "kind": "short_text",
+                  "max_length": 180,
+                  "source": "user_message",
+                  "value": "Com 80 alunos, eu nao fecharia o plano so por esse numero."
+                }
+              }
+            }
+          ]
+        },
+        "turn_id": "turn_widget_a84276ca154a3509",
+        "waitlist": {
+          "eligibility": "unknown",
+          "missing_details": [],
+          "status": "none"
+        }
+      },
+      "delivery_events": [
+        {
+          "event": "delivery_suppressed",
+          "idempotency_key": "widget:shadow_compare:price_plan_fit:1",
+          "metadata": {
+            "delivery_suppressed": true,
+            "message_count": 4,
+            "shadow_mode": true,
+            "suppression_reason": "t011_097_shadow_compare:shadow_widget_price_497_plan_fit_manual"
+          },
+          "status": "suppressed"
+        }
+      ],
+      "failure_reason": null,
+      "golden_transcript_diff": {
+        "basis": "manual_review_sample_until_t011_019_t011_019a_complete",
+        "expected": {
+          "current_state": "product_question",
+          "demo_status": "not_offered",
+          "detected_intents": [
+            "price_question",
+            "plan_fit_question"
+          ],
+          "diagnostic_action": "none",
+          "direct_question_answered_first": true,
+          "handoff_status": "none",
+          "next_state": "product_question",
+          "numeric_interpretations": [
+            {
+              "kind": "plan_price",
+              "raw_text": "497",
+              "value": 497
+            },
+            {
+              "kind": "student_count",
+              "raw_text": "80",
+              "value": 80
+            }
+          ],
+          "rendered_text_must_include": [
+            "Base R$ 197/mes",
+            "Essencial R$ 497/mes",
+            "Com 80 alunos",
+            "diagnostico gratuito"
+          ],
+          "rendered_text_must_not_include": [
+            "Reliable profile first name",
+            "lead came from the site",
+            "497 alunos",
+            "checkout",
+            "VIP"
+          ],
+          "role": "product",
+          "route": "product",
+          "sales_inbox": {
+            "commercial_stage": "product_question",
+            "diagnostic_status": "not_started",
+            "handoff_status": "none",
+            "operator_next_action": "none",
+            "source_labels": {
+              "channel": "widget",
+              "channel_conversation_id": "widget_shadow_compare_channel_1",
+              "entry_intent": "floating_agent",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "waitlist_status": "none"
+          },
+          "template_ids": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "waitlist_status": "none"
+        },
+        "observed": {
+          "detected_intents": [
+            "price_question",
+            "plan_fit_question"
+          ],
+          "rendered_text_excerpt": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\nCom 80 alunos, eu nao fecharia o plano so por esse numero.\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.\nO que voce acha?",
+          "role": "product",
+          "route": "product",
+          "sales_inbox": {
+            "commercial_stage": "product_question",
+            "diagnostic_status": "not_started",
+            "handoff_status": "none",
+            "source_labels": {
+              "channel": "widget",
+              "channel_conversation_id": "widget_shadow_compare_channel_1",
+              "entry_intent": "floating_agent",
+              "source": "pilates_landing",
+              "state_source": "accepted_decision"
+            },
+            "waitlist_status": "none"
+          },
+          "template_ids": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ]
+        },
+        "phase_10_golden_gate_satisfied": false,
+        "status": "matched_manual_sample",
+        "versioned_golden_transcripts_complete": false
+      },
+      "input_messages": [
+        {
+          "channel_message_id": "widget_shadow_compare_msg_1",
+          "idempotency_key": "widget:shadow_compare:price_plan_fit:1",
+          "text": "Vi o plano de 497 e tenho 80 alunos. Quanto custa e serve pro meu studio?",
+          "timestamp": "2026-05-31T12:10:00Z",
+          "type": "text"
+        }
+      ],
+      "model_usage": {
+        "cost_usd": 0.0021,
+        "input_tokens": 812,
+        "model": "gpt-5.4-mini",
+        "output_tokens": 246
+      },
+      "public_messages": [],
+      "rendered_messages": [
+        {
+          "channel": "widget",
+          "sequence": 1,
+          "template_id": "product.price_direct",
+          "text": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes."
+        },
+        {
+          "channel": "widget",
+          "sequence": 2,
+          "template_id": "product.plan_fit_with_diagnostic",
+          "text": "Com 80 alunos, eu nao fecharia o plano so por esse numero."
+        },
+        {
+          "channel": "widget",
+          "sequence": 3,
+          "template_id": "product.plan_fit_with_diagnostic",
+          "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+        },
+        {
+          "channel": "widget",
+          "sequence": 4,
+          "template_id": "product.plan_fit_with_diagnostic",
+          "text": "O que voce acha?"
+        }
+      ],
+      "repair_attempts": [
+        {
+          "attempt_count": 0,
+          "attempted": false,
+          "errors_sent": [],
+          "model_usage": null,
+          "repaired_decision": null,
+          "status": "not_needed"
+        }
+      ],
+      "review_cases": [
+        "RC-011-003",
+        "RC-011-017",
+        "RC-011-019",
+        "RC-011-040",
+        "RC-011-072"
+      ],
+      "runtime_state": {
+        "agent_key": "taliya_commercial",
+        "append": {
+          "diagnostic_ledger": [],
+          "fact_updates": [
+            {
+              "confidence": "high",
+              "evidence": [
+                "inbound.text"
+              ],
+              "key": "active_students_or_size",
+              "reliability": "customer_provided",
+              "renderable": false,
+              "source": "user_message",
+              "value": 80
+            }
+          ]
+        },
+        "channel": "widget",
+        "conversation_id": "shadow_compare_widget_price_plan_fit_1",
+        "decision_id": "decision_22476328775043e9b05e4a7c112a749b",
+        "schema_version": "011.runtime_state_diff.v1",
+        "set": {
+          "current_state": "product_question",
+          "last_confidence": "high",
+          "last_decision_id": "decision_22476328775043e9b05e4a7c112a749b",
+          "last_role": "product",
+          "last_route": "product",
+          "last_selected_template_ids": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "last_turn_id": "turn_widget_a84276ca154a3509"
+        },
+        "source": "accepted_decision",
+        "state_transition": {
+          "decision_current_state": "product_question",
+          "next_state": "product_question",
+          "previous_state": "new_lead"
+        },
+        "turn_id": "turn_widget_a84276ca154a3509",
+        "validation": {
+          "final_disposition": "accepted",
+          "repair_attempt_count": 0,
+          "status": "passed"
+        }
+      },
+      "sales_inbox_projection": {
+        "commercial_stage": "product_question",
+        "conversation_id": "shadow_compare_widget_price_plan_fit_1",
+        "diagnostic_status": "not_started",
+        "fields": {
+          "operator_next_action": "none",
+          "source_labels": {
+            "channel": "widget",
+            "channel_conversation_id": "widget_shadow_compare_channel_1",
+            "entry_intent": "floating_agent",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "template_ids": [
+            "product.price_direct",
+            "product.plan_fit_with_diagnostic"
+          ],
+          "validator_final_disposition": "accepted",
+          "validator_status": "passed"
+        },
+        "handoff_status": "none",
+        "identity": [
+          {
+            "key": "profile_name",
+            "source": "channel_provided",
+            "value": "Ana",
+            "verified": false
+          }
+        ],
+        "lead_id": "lead_shadow_compare_widget_1",
+        "summary": "Estado comercial: product_question",
+        "waitlist_status": "none"
+      },
+      "scenario_id": "shadow_widget_price_497_plan_fit_manual",
+      "schema_version": "011.0",
+      "severity": "P0",
+      "status": "PASS",
+      "title": "Widget price plus plan-fit with 497 as plan price and 80 as student count",
+      "trace_complete": true,
+      "validator_results": [
+        {
+          "decision_id": "decision_22476328775043e9b05e4a7c112a749b",
+          "errors": [],
+          "final_disposition": "accepted",
+          "repair_attempt_count": 0,
+          "status": "passed",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "artifact_paths": [
+        "specs/011-taliya-commercial-agent-core-reset/manual-review-samples/shadow-mode-comparison-samples.json",
+        "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-shadow-compare.json",
+        "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-shadow-compare.md"
+      ],
+      "assertions": [
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "shadow_whatsapp_diagnostic_priority_manual:provider_called_once",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_whatsapp_diagnostic_priority_manual:shadow_mode_true",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_whatsapp_diagnostic_priority_manual:delivery_suppressed_true",
+          "ok": true
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:public_messages_empty",
+          "ok": true
+        },
+        {
+          "actual": 754,
+          "expected": "truthy",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:response_model_usage_present",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_whatsapp_diagnostic_priority_manual:trace_complete",
+          "ok": true
+        },
+        {
+          "actual": "diagnostic",
+          "expected": "diagnostic",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:decision_role",
+          "ok": true
+        },
+        {
+          "actual": "diagnostic",
+          "expected": "diagnostic",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:decision_route",
+          "ok": true
+        },
+        {
+          "actual": "diagnostic_in_progress",
+          "expected": "diagnostic_in_progress",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:decision_current_state",
+          "ok": true
+        },
+        {
+          "actual": "diagnostic_in_progress",
+          "expected": "diagnostic_in_progress",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:decision_next_state",
+          "ok": true
+        },
+        {
+          "actual": [
+            "diagnostic_answer"
+          ],
+          "expected": [
+            "diagnostic_answer"
+          ],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:detected_intents",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_whatsapp_diagnostic_priority_manual:direct_question_answered_first",
+          "ok": true
+        },
+        {
+          "actual": "ask_next",
+          "expected": "ask_next",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:diagnostic_action",
+          "ok": true
+        },
+        {
+          "actual": "priority",
+          "expected": "priority",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:diagnostic_next_question",
+          "ok": true
+        },
+        {
+          "actual": [
+            {
+              "answer_value": "planilha e WhatsApp",
+              "confidence": "high",
+              "evidence": [
+                "inbound.text"
+              ],
+              "may_ask_again": false,
+              "question_key": "current_process",
+              "status": "answered"
+            }
+          ],
+          "expected": [
+            {
+              "answer_value": "planilha e WhatsApp",
+              "question_key": "current_process",
+              "status": "answered"
+            }
+          ],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:diagnostic_ledger_updates",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:waitlist_status",
+          "ok": true
+        },
+        {
+          "actual": "not_offered",
+          "expected": "not_offered",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:demo_status",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:handoff_status",
+          "ok": true
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:numeric_interpretations",
+          "missing": [],
+          "ok": true
+        },
+        {
+          "actual": [
+            "diagnostic.ask_priority"
+          ],
+          "expected": [
+            "diagnostic.ask_priority"
+          ],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:render_plan_template_ids",
+          "ok": true
+        },
+        {
+          "actual": [
+            "diagnostic.ask_priority"
+          ],
+          "expected": [
+            "diagnostic.ask_priority"
+          ],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:rendered_trace_template_ids",
+          "ok": true
+        },
+        {
+          "actual": [
+            {
+              "channel": "whatsapp",
+              "sequence": 1,
+              "template_id": "diagnostic.ask_priority",
+              "text": "Entendi: hoje a reposicao passa por planilha e WhatsApp."
+            },
+            {
+              "channel": "whatsapp",
+              "sequence": 2,
+              "template_id": "diagnostic.ask_priority",
+              "text": "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+            }
+          ],
+          "expected": "truthy",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:rendered_trace_messages_present",
+          "ok": true
+        },
+        {
+          "actual": "Entendi: hoje a reposicao passa por planilha e WhatsApp.\nPensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?",
+          "expected": "contains:reposicao passa por planilha e WhatsApp",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:rendered_contains:reposicao passa por planilha e WhatsApp",
+          "ok": true
+        },
+        {
+          "actual": "Entendi: hoje a reposicao passa por planilha e WhatsApp.\nPensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?",
+          "expected": "contains:qual tarefa voce mais gostaria",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:rendered_contains:qual tarefa voce mais gostaria",
+          "ok": true
+        },
+        {
+          "actual": "Entendi: hoje a reposicao passa por planilha e WhatsApp.\nPensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?",
+          "expected": "excludes:nao entendi",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:rendered_excludes:nao entendi",
+          "ok": true
+        },
+        {
+          "actual": "Entendi: hoje a reposicao passa por planilha e WhatsApp.\nPensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?",
+          "expected": "excludes:quantos alunos",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:rendered_excludes:quantos alunos",
+          "ok": true
+        },
+        {
+          "actual": "Entendi: hoje a reposicao passa por planilha e WhatsApp.\nPensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?",
+          "expected": "excludes:Reliable profile first name",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:rendered_excludes:Reliable profile first name",
+          "ok": true
+        },
+        {
+          "actual": "Entendi: hoje a reposicao passa por planilha e WhatsApp.\nPensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?",
+          "expected": "excludes:lead came from the site",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:rendered_excludes:lead came from the site",
+          "ok": true
+        },
+        {
+          "actual": "Entendi: hoje a reposicao passa por planilha e WhatsApp.\nPensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?",
+          "expected": "excludes:gargalo principal",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:rendered_excludes:gargalo principal",
+          "ok": true
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:product_variables_use_official_sources",
+          "ok": true
+        },
+        {
+          "actual": "passed",
+          "expected": "passed",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:validator_passed",
+          "ok": true
+        },
+        {
+          "actual": "accepted",
+          "expected": "accepted",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:validator_accepted",
+          "ok": true
+        },
+        {
+          "actual": "not_needed",
+          "expected": "not_needed",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:repair_not_needed",
+          "ok": true
+        },
+        {
+          "actual": "gpt-5.4-mini",
+          "expected": "truthy",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:trace_model_usage_model",
+          "ok": true
+        },
+        {
+          "actual": 754,
+          "expected": ">0",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:trace_model_usage_input",
+          "ok": true
+        },
+        {
+          "actual": 219,
+          "expected": ">0",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:trace_model_usage_output",
+          "ok": true
+        },
+        {
+          "actual": "diagnostic_in_progress",
+          "expected": "diagnostic_in_progress",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:sales_inbox_commercial_stage",
+          "ok": true
+        },
+        {
+          "actual": "in_progress",
+          "expected": "in_progress",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:sales_inbox_diagnostic_status",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:sales_inbox_waitlist_status",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:sales_inbox_handoff_status",
+          "ok": true
+        },
+        {
+          "actual": "lead_shadow_compare_whatsapp_1",
+          "expected": "lead_shadow_compare_whatsapp_1",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:sales_inbox_lead_id",
+          "ok": true
+        },
+        {
+          "actual": [
+            "diagnostic.ask_priority"
+          ],
+          "expected": [
+            "diagnostic.ask_priority"
+          ],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:sales_inbox_template_ids",
+          "ok": true
+        },
+        {
+          "actual": "none",
+          "expected": "none",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:sales_inbox_operator_next_action",
+          "ok": true
+        },
+        {
+          "actual": {
+            "channel": "whatsapp",
+            "channel_conversation_id": "wa_shadow_compare_channel_1",
+            "entry_intent": "taliya_owned_whatsapp",
+            "source": "taliya_whatsapp",
+            "state_source": "accepted_decision"
+          },
+          "expected": {
+            "channel": "whatsapp",
+            "channel_conversation_id": "wa_shadow_compare_channel_1",
+            "entry_intent": "taliya_owned_whatsapp",
+            "source": "taliya_whatsapp",
+            "state_source": "accepted_decision"
+          },
+          "id": "shadow_whatsapp_diagnostic_priority_manual:sales_inbox_source_labels",
+          "ok": true
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:sales_inbox_unverified_identity_not_promoted",
+          "ok": true
+        },
+        {
+          "actual": "accepted_decision",
+          "expected": "accepted_decision",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:runtime_state_source",
+          "ok": true
+        },
+        {
+          "actual": "diagnostic_in_progress",
+          "expected": "diagnostic_in_progress",
+          "id": "shadow_whatsapp_diagnostic_priority_manual:runtime_state_current_state",
+          "ok": true
+        },
+        {
+          "actual": [
+            "diagnostic.ask_priority"
+          ],
+          "expected": [
+            "diagnostic.ask_priority"
+          ],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:runtime_state_template_ids",
+          "ok": true
+        },
+        {
+          "actual": {
+            "agent_key": "taliya_commercial",
+            "answered_direct_questions": [],
+            "asked_questions": [],
+            "conversation_id": "shadow_compare_whatsapp_diagnostic_1",
+            "cost_usd": 0.0,
+            "current_agent_name": "taliya_commercial_spec011_diagnostic_agent",
+            "demo": {
+              "status": "not_offered"
+            },
+            "diagnostic": {
+              "ledger": [
+                {
+                  "answer_value": "120 alunos",
+                  "confidence": "high",
+                  "evidence": [
+                    "historical:user said 120 alunos"
+                  ],
+                  "may_ask_again": false,
+                  "question_key": "active_students_or_size",
+                  "status": "answered"
+                },
+                {
+                  "answer_value": "reposicao baguncada",
+                  "confidence": "high",
+                  "evidence": [
+                    "historical:reposicao baguncada"
+                  ],
+                  "may_ask_again": false,
+                  "question_key": "main_pain",
+                  "status": "answered"
+                },
+                {
+                  "answer_value": "equipe perde tempo conferindo faltas e encaixes",
+                  "confidence": "high",
+                  "evidence": [
+                    "historical:faltas e encaixes"
+                  ],
+                  "may_ask_again": false,
+                  "question_key": "pain_detail",
+                  "status": "answered"
+                },
+                {
+                  "confidence": "low",
+                  "evidence": [],
+                  "may_ask_again": true,
+                  "question_key": "current_process",
+                  "status": "missing"
+                },
+                {
+                  "confidence": "low",
+                  "evidence": [],
+                  "may_ask_again": true,
+                  "question_key": "priority",
+                  "status": "missing"
+                },
+                {
+                  "confidence": "low",
+                  "evidence": [],
+                  "may_ask_again": true,
+                  "question_key": "urgency",
+                  "status": "missing"
+                }
+              ],
+              "status": "in_progress"
+            },
+            "human_reason": null,
+            "human_status": "none",
+            "input_items": [],
+            "last_decision": null,
+            "last_opening_type": null,
+            "last_route": null,
+            "lead_facts": [],
+            "product_source_version": null,
+            "profile_name_status": null,
+            "summary": "Lead esta no diagnostico gratuito e ja respondeu tamanho, dor principal e detalhe da dor.",
+            "waitlist": {
+              "status": "none"
+            }
+          },
+          "expected": {
+            "agent_key": "taliya_commercial",
+            "answered_direct_questions": [],
+            "asked_questions": [],
+            "conversation_id": "shadow_compare_whatsapp_diagnostic_1",
+            "cost_usd": 0.0,
+            "current_agent_name": "taliya_commercial_spec011_diagnostic_agent",
+            "demo": {
+              "status": "not_offered"
+            },
+            "diagnostic": {
+              "ledger": [
+                {
+                  "answer_value": "120 alunos",
+                  "confidence": "high",
+                  "evidence": [
+                    "historical:user said 120 alunos"
+                  ],
+                  "may_ask_again": false,
+                  "question_key": "active_students_or_size",
+                  "status": "answered"
+                },
+                {
+                  "answer_value": "reposicao baguncada",
+                  "confidence": "high",
+                  "evidence": [
+                    "historical:reposicao baguncada"
+                  ],
+                  "may_ask_again": false,
+                  "question_key": "main_pain",
+                  "status": "answered"
+                },
+                {
+                  "answer_value": "equipe perde tempo conferindo faltas e encaixes",
+                  "confidence": "high",
+                  "evidence": [
+                    "historical:faltas e encaixes"
+                  ],
+                  "may_ask_again": false,
+                  "question_key": "pain_detail",
+                  "status": "answered"
+                },
+                {
+                  "confidence": "low",
+                  "evidence": [],
+                  "may_ask_again": true,
+                  "question_key": "current_process",
+                  "status": "missing"
+                },
+                {
+                  "confidence": "low",
+                  "evidence": [],
+                  "may_ask_again": true,
+                  "question_key": "priority",
+                  "status": "missing"
+                },
+                {
+                  "confidence": "low",
+                  "evidence": [],
+                  "may_ask_again": true,
+                  "question_key": "urgency",
+                  "status": "missing"
+                }
+              ],
+              "status": "in_progress"
+            },
+            "human_reason": null,
+            "human_status": "none",
+            "input_items": [],
+            "last_decision": null,
+            "last_opening_type": null,
+            "last_route": null,
+            "lead_facts": [],
+            "product_source_version": null,
+            "profile_name_status": null,
+            "summary": "Lead esta no diagnostico gratuito e ja respondeu tamanho, dor principal e detalhe da dor.",
+            "waitlist": {
+              "status": "none"
+            }
+          },
+          "id": "shadow_whatsapp_diagnostic_priority_manual:shadow_state_not_mutated",
+          "ok": true
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "shadow_whatsapp_diagnostic_priority_manual:one_shadow_event",
+          "ok": true
+        },
+        {
+          "actual": 1,
+          "expected": 1,
+          "id": "shadow_whatsapp_diagnostic_priority_manual:model_usage_recorded_once",
+          "ok": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "id": "shadow_whatsapp_diagnostic_priority_manual:model_usage_marked_shadow",
+          "ok": true
+        },
+        {
+          "actual": [
+            "delivery_suppressed"
+          ],
+          "expected": [
+            "delivery_suppressed"
+          ],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:delivery_events_suppressed_only",
+          "ok": true
+        },
+        {
+          "actual": [
+            "suppressed"
+          ],
+          "expected": [
+            "suppressed"
+          ],
+          "id": "shadow_whatsapp_diagnostic_priority_manual:delivery_events_status_suppressed",
+          "ok": true
+        },
+        {
+          "actual": [],
+          "expected": [],
+          "id": "static:old_python_runner_not_called",
+          "ok": true
+        }
+      ],
+      "channel": "whatsapp",
+      "decision_json": {
+        "agent_key": "taliya_commercial",
+        "channel": "whatsapp",
+        "confidence": "high",
+        "conversation_id": "shadow_compare_whatsapp_diagnostic_1",
+        "current_state": "diagnostic_in_progress",
+        "decision_id": "decision_3910de759e8a4c3da10abfa2fdbf38a5",
+        "demo": {
+          "customer_facing_concept": "commercial_product_demo",
+          "next_step": "none",
+          "status": "not_offered"
+        },
+        "detected_intents": [
+          "diagnostic_answer"
+        ],
+        "diagnostic": {
+          "action": "ask_next",
+          "final_fields": {},
+          "ledger_updates": [
+            {
+              "answer_value": "planilha e WhatsApp",
+              "confidence": "high",
+              "evidence": [
+                "inbound.text"
+              ],
+              "may_ask_again": false,
+              "question_key": "current_process",
+              "status": "answered"
+            }
+          ],
+          "next_question_key": "priority"
+        },
+        "direct_question_answered_first": true,
+        "direct_question_present": false,
+        "facts": [],
+        "handoff": {
+          "reason": null,
+          "status": "none"
+        },
+        "language_policy": {
+          "crm_allowed_reasons": [],
+          "crm_evidence": [],
+          "crm_term_policy": "avoid_by_default",
+          "language_register": "studio_owner_practical"
+        },
+        "next_state": "diagnostic_in_progress",
+        "numeric_interpretations": [],
+        "policy_checks": {
+          "diagnostic_timing_ok": true,
+          "direct_question_answered_first": true,
+          "no_early_contact_capture": true,
+          "no_human_overlap": true,
+          "no_internal_text_leak": true,
+          "official_facts_only": true,
+          "waitlist_timing_ok": true
+        },
+        "previous_state": "diagnostic_in_progress",
+        "repair_hints": [],
+        "role": "diagnostic",
+        "route": "diagnostic",
+        "schema_version": "011.0",
+        "template_plan": {
+          "chunk_policy": "default",
+          "items": [
+            {
+              "channel": "whatsapp",
+              "template_id": "diagnostic.ask_priority",
+              "variables": {
+                "answer_feedback": {
+                  "evidence": [
+                    "inbound.text"
+                  ],
+                  "kind": "short_text",
+                  "max_length": 180,
+                  "source": "user_message",
+                  "value": "Entendi: hoje a reposicao passa por planilha e WhatsApp."
+                }
+              }
+            }
+          ]
+        },
+        "turn_id": "turn_whatsapp_6d1a11a1d16395f9",
+        "waitlist": {
+          "eligibility": "unknown",
+          "missing_details": [],
+          "status": "none"
+        }
+      },
+      "delivery_events": [
+        {
+          "event": "delivery_suppressed",
+          "idempotency_key": "wa:shadow_compare:diagnostic_priority:1",
+          "metadata": {
+            "delivery_suppressed": true,
+            "message_count": 2,
+            "shadow_mode": true,
+            "suppression_reason": "t011_097_shadow_compare:shadow_whatsapp_diagnostic_priority_manual"
+          },
+          "status": "suppressed"
+        }
+      ],
+      "failure_reason": null,
+      "golden_transcript_diff": {
+        "basis": "manual_review_sample_until_t011_019_t011_019a_complete",
+        "expected": {
+          "current_state": "diagnostic_in_progress",
+          "demo_status": "not_offered",
+          "detected_intents": [
+            "diagnostic_answer"
+          ],
+          "diagnostic_action": "ask_next",
+          "direct_question_answered_first": true,
+          "handoff_status": "none",
+          "ledger_updates": [
+            {
+              "answer_value": "planilha e WhatsApp",
+              "question_key": "current_process",
+              "status": "answered"
+            }
+          ],
+          "next_question_key": "priority",
+          "next_state": "diagnostic_in_progress",
+          "rendered_text_must_include": [
+            "reposicao passa por planilha e WhatsApp",
+            "qual tarefa voce mais gostaria"
+          ],
+          "rendered_text_must_not_include": [
+            "nao entendi",
+            "quantos alunos",
+            "Reliable profile first name",
+            "lead came from the site",
+            "gargalo principal"
+          ],
+          "role": "diagnostic",
+          "route": "diagnostic",
+          "sales_inbox": {
+            "commercial_stage": "diagnostic_in_progress",
+            "diagnostic_status": "in_progress",
+            "handoff_status": "none",
+            "operator_next_action": "none",
+            "source_labels": {
+              "channel": "whatsapp",
+              "channel_conversation_id": "wa_shadow_compare_channel_1",
+              "entry_intent": "taliya_owned_whatsapp",
+              "source": "taliya_whatsapp",
+              "state_source": "accepted_decision"
+            },
+            "waitlist_status": "none"
+          },
+          "template_ids": [
+            "diagnostic.ask_priority"
+          ],
+          "waitlist_status": "none"
+        },
+        "observed": {
+          "detected_intents": [
+            "diagnostic_answer"
+          ],
+          "rendered_text_excerpt": "Entendi: hoje a reposicao passa por planilha e WhatsApp.\nPensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?",
+          "role": "diagnostic",
+          "route": "diagnostic",
+          "sales_inbox": {
+            "commercial_stage": "diagnostic_in_progress",
+            "diagnostic_status": "in_progress",
+            "handoff_status": "none",
+            "source_labels": {
+              "channel": "whatsapp",
+              "channel_conversation_id": "wa_shadow_compare_channel_1",
+              "entry_intent": "taliya_owned_whatsapp",
+              "source": "taliya_whatsapp",
+              "state_source": "accepted_decision"
+            },
+            "waitlist_status": "none"
+          },
+          "template_ids": [
+            "diagnostic.ask_priority"
+          ]
+        },
+        "phase_10_golden_gate_satisfied": false,
+        "status": "matched_manual_sample",
+        "versioned_golden_transcripts_complete": false
+      },
+      "input_messages": [
+        {
+          "channel_message_id": "wamid_shadow_compare_1",
+          "idempotency_key": "wa:shadow_compare:diagnostic_priority:1",
+          "text": "Hoje eu controlo reposicao em planilha e WhatsApp, mas esta ficando pesado.",
+          "timestamp": "2026-05-31T12:12:00Z",
+          "type": "text"
+        }
+      ],
+      "model_usage": {
+        "cost_usd": 0.0019,
+        "input_tokens": 754,
+        "model": "gpt-5.4-mini",
+        "output_tokens": 219
+      },
+      "public_messages": [],
+      "rendered_messages": [
+        {
+          "channel": "whatsapp",
+          "sequence": 1,
+          "template_id": "diagnostic.ask_priority",
+          "text": "Entendi: hoje a reposicao passa por planilha e WhatsApp."
+        },
+        {
+          "channel": "whatsapp",
+          "sequence": 2,
+          "template_id": "diagnostic.ask_priority",
+          "text": "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+        }
+      ],
+      "repair_attempts": [
+        {
+          "attempt_count": 0,
+          "attempted": false,
+          "errors_sent": [],
+          "model_usage": null,
+          "repaired_decision": null,
+          "status": "not_needed"
+        }
+      ],
+      "review_cases": [
+        "RC-011-005",
+        "RC-011-006",
+        "RC-011-007",
+        "RC-011-032",
+        "RC-011-040",
+        "RC-011-072"
+      ],
+      "runtime_state": {
+        "agent_key": "taliya_commercial",
+        "append": {
+          "diagnostic_ledger": [
+            {
+              "answer_value": "planilha e WhatsApp",
+              "confidence": "high",
+              "evidence": [
+                "inbound.text"
+              ],
+              "may_ask_again": false,
+              "question_key": "current_process",
+              "status": "answered"
+            }
+          ],
+          "fact_updates": []
+        },
+        "channel": "whatsapp",
+        "conversation_id": "shadow_compare_whatsapp_diagnostic_1",
+        "decision_id": "decision_3910de759e8a4c3da10abfa2fdbf38a5",
+        "schema_version": "011.runtime_state_diff.v1",
+        "set": {
+          "current_state": "diagnostic_in_progress",
+          "diagnostic": {
+            "action": "ask_next",
+            "final_fields": {},
+            "next_question_key": "priority",
+            "status": "in_progress"
+          },
+          "last_confidence": "high",
+          "last_decision_id": "decision_3910de759e8a4c3da10abfa2fdbf38a5",
+          "last_role": "diagnostic",
+          "last_route": "diagnostic",
+          "last_selected_template_ids": [
+            "diagnostic.ask_priority"
+          ],
+          "last_turn_id": "turn_whatsapp_6d1a11a1d16395f9"
+        },
+        "source": "accepted_decision",
+        "state_transition": {
+          "decision_current_state": "diagnostic_in_progress",
+          "next_state": "diagnostic_in_progress",
+          "previous_state": "diagnostic_in_progress"
+        },
+        "turn_id": "turn_whatsapp_6d1a11a1d16395f9",
+        "validation": {
+          "final_disposition": "accepted",
+          "repair_attempt_count": 0,
+          "status": "passed"
+        }
+      },
+      "sales_inbox_projection": {
+        "commercial_stage": "diagnostic_in_progress",
+        "conversation_id": "shadow_compare_whatsapp_diagnostic_1",
+        "diagnostic_status": "in_progress",
+        "fields": {
+          "operator_next_action": "none",
+          "source_labels": {
+            "channel": "whatsapp",
+            "channel_conversation_id": "wa_shadow_compare_channel_1",
+            "entry_intent": "taliya_owned_whatsapp",
+            "source": "taliya_whatsapp",
+            "state_source": "accepted_decision"
+          },
+          "template_ids": [
+            "diagnostic.ask_priority"
+          ],
+          "validator_final_disposition": "accepted",
+          "validator_status": "passed"
+        },
+        "handoff_status": "none",
+        "identity": [
+          {
+            "key": "profile_name",
+            "source": "channel_provided",
+            "value": "Bruna",
+            "verified": false
+          },
+          {
+            "key": "whatsapp_phone",
+            "source": "channel_provided",
+            "value": "+5511999991111",
+            "verified": false
+          }
+        ],
+        "lead_id": "lead_shadow_compare_whatsapp_1",
+        "summary": "Lead esta no diagnostico gratuito e ja respondeu tamanho, dor principal e detalhe da dor.",
+        "waitlist_status": "none"
+      },
+      "scenario_id": "shadow_whatsapp_diagnostic_priority_manual",
+      "schema_version": "011.0",
+      "severity": "P0",
+      "status": "PASS",
+      "title": "Taliya-owned WhatsApp diagnostic continues without repeating answered fields",
+      "trace_complete": true,
+      "validator_results": [
+        {
+          "decision_id": "decision_3910de759e8a4c3da10abfa2fdbf38a5",
+          "errors": [],
+          "final_disposition": "accepted",
+          "repair_attempt_count": 0,
+          "status": "passed",
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "schema_version": "011.shadow_compare.report.v1",
+  "summary": {
+    "assertion_count": 110,
+    "failed": 0,
+    "failed_assertion_count": 0,
+    "passed": 2,
+    "scenario_count": 2
+  },
+  "task": "T011-097"
+}

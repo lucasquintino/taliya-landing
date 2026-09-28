@@ -1,0 +1,6 @@
+[
+  { "id": "HUM-001", "message": "quero falar com uma pessoa", "expect": ["pessoa assumir", "contexto salvo"] },
+  { "id": "HUM-002", "event": "manual_whatsapp_reply", "expect": ["human_active"] },
+  { "id": "HUM-003", "event": "operator_resume", "expect": ["resume_ai"] }
+]
+

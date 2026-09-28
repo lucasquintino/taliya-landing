@@ -1,0 +1,813 @@
+{
+  "number": 5,
+  "scenario_id": "ideal_turn_05",
+  "channel": "whatsapp",
+  "required_proof": "Numeric answer: 120 becomes active students; next question, no repeat.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"not_applicable\", \"intent\": \"\"}.\nstate: {\"demo\": {\"status\": \"not_applicable\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"not_applicable\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "user",
+      "content": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "content": "voce esta perdendo aluno novo porque o WhatsApp do studio vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Preciso da base oficial de planos e precos para te passar o valor correto."
+    },
+    {
+      "role": "assistant",
+      "content": "Voce tem um studio de Pilates e comentou que esta perdendo aluno novo porque o WhatsApp vive atrasado."
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "content": "120"
+    }
+  ],
+  "starting_agent": "taliya_diagnostic_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_diagnostic_ledger",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_conversation_summary",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_demo_waitlist_handoff_state",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"plans\",\"prices\"]}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_diagnostic_ledger",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_demo_waitlist_handoff_state",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "plans",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": [
+                {
+                  "id": "base",
+                  "name": "Base",
+                  "monthly_price_brl": 197,
+                  "price_label": "R$ 197/mes",
+                  "best_for": "Studios that want to organize the routine before active AI.",
+                  "included_agents": [],
+                  "whatsapp_availability": "No automatic WhatsApp AI replies.",
+                  "usage_boundary": "1 studio, 1 user, no AI message quota."
+                },
+                {
+                  "id": "one_agent",
+                  "name": "Essencial",
+                  "monthly_price_brl": 497,
+                  "price_label": "R$ 497/mes",
+                  "best_for": "Studios that want to solve one clear pain first.",
+                  "included_agents": [
+                    "1 main agent chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for that agent.",
+                  "usage_boundary": "1 studio, up to 2 users, 1,500 AI messages/month with hard cap."
+                },
+                {
+                  "id": "three_agents",
+                  "name": "Avance",
+                  "monthly_price_brl": 897,
+                  "price_label": "R$ 897/mes",
+                  "best_for": "Studios that want help in some priority routines.",
+                  "included_agents": [
+                    "3 main agents chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for included agents.",
+                  "usage_boundary": "1 studio, up to 5 users, 5,000 AI messages/month with hard cap."
+                },
+                {
+                  "id": "seven_agents",
+                  "name": "Completo",
+                  "monthly_price_brl": 1497,
+                  "price_label": "R$ 1.497/mes",
+                  "best_for": "Studios that want the complete Taliya.",
+                  "included_agents": [
+                    "Atendimento",
+                    "Agenda",
+                    "Vendas",
+                    "Financeiro",
+                    "Retencao",
+                    "Gestao",
+                    "Historico/Evolucao"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for the complete team.",
+                  "usage_boundary": "1 studio, up to 10 users, 15,000 AI messages/month with hard cap."
+                }
+              ],
+              "excerpt": "Base (base) R$ 197/mes best_for=Studios that want to organize the routine before active AI. included=no active AI agents whatsapp=No automatic WhatsApp AI replies. usage=1 studio, 1 user, no AI message quota. | Essencial (one_agent) R$ 497/mes best_for=Studios that want to solve one clear pain first. included=1 main agent chosen during setup whatsapp=Requires the studio WhatsApp Business connected for that agent. usage=1 studio, up to 2 users, 1,500 AI messages/month with hard cap. | Avance (three_agents) R$ 897/mes best_for=Studios that want help in some priority routines. included=3 main agents chosen during setup whatsapp=Requires the studio WhatsApp Business connected for included agents. usage=1 studio, up to 5 users, 5,000 AI messages/month with hard cap. | Completo (seven_agents) R$ 1.497/mes best_for=Studios that want the complete Taliya. included=Atendimento, Agenda, Vendas, Financeiro, Retencao, Gestao, Historico/Evolucao whatsapp=Requires the studio WhatsApp Business connected for the complete team. usage=1 studio, up to 10 users, 15,000 AI messages/month with hard cap.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.plans"
+              ]
+            },
+            {
+              "key": "prices",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": {
+                "base": "R$ 197/mes",
+                "one_agent": "R$ 497/mes",
+                "three_agents": "R$ 897/mes",
+                "seven_agents": "R$ 1.497/mes"
+              },
+              "excerpt": "{\"base\":\"R$ 197/mes\",\"one_agent\":\"R$ 497/mes\",\"seven_agents\":\"R$ 1.497/mes\",\"three_agents\":\"R$ 897/mes\"}",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.prices"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "plans",
+            "prices"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.plans",
+          "product_knowledge.prices"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_diagnostic_ledger",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_ideal_turn_05",
+          "diagnostic": {},
+          "source": "not_connected_in_spike"
+        },
+        "evidence": [],
+        "uncertainty": "high"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_ideal_turn_05",
+          "summary": "Conversa comercial em andamento no WhatsApp da Taliya. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"not_applicable\", \"intent\": \"\"}.",
+          "lead_fact_count": 0,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_ideal_turn_05.summary"
+        ],
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_ideal_turn_05",
+          "demo": {
+            "status": "not_applicable",
+            "next_step": ""
+          },
+          "waitlist": {
+            "eligibility": "not_applicable",
+            "intent": ""
+          },
+          "human_status": null,
+          "human_reason": null,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_ideal_turn_05.operational_state"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic",
+        "price"
+      ],
+      "direct_question": "quanto custa isso?",
+      "customer_need": "entender preco e funcionamento do diagnostico gratuito",
+      "pain_context": "studio de pilates perdendo aluno novo porque o WhatsApp vive atrasado",
+      "source_context": "vi o perfil de voces no Instagram",
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "student_count",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value_text": "120",
+          "currency": null,
+          "evidence": [
+            "user_message:120"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message:tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado",
+        "user_message:quanto custa isso?",
+        "user_message:faz sentido... como funciona esse diagnostico gratuito?",
+        "user_message:120",
+        "user_message:oi, vi o perfil de voces no Instagram"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "quanto custa isso?",
+        "answering_template_id": "diagnostic.deliver_plan_recommendation",
+        "evidence": [
+          "product_knowledge.plans",
+          "product_knowledge.prices"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "active_students",
+          "status": "answered",
+          "answer_value": "120",
+          "evidence": [
+            "user_message:120"
+          ]
+        }
+      ],
+      "next_question_key": "current_process",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message:120",
+        "conversation.spike_conv_ideal_turn_05.summary"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "conversation.spike_conv_ideal_turn_05.operational_state"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "",
+      "missing_details": [],
+      "evidence": [
+        "conversation.spike_conv_ideal_turn_05.operational_state"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_current_process",
+        "diagnostic.deliver_plan_recommendation"
+      ],
+      "variables": [
+        {
+          "name": "answer_feedback",
+          "kind": "short_text",
+          "value": "120 alunos no studio",
+          "source": "user_message",
+          "evidence": [
+            "user_message:120"
+          ],
+          "max_length": 180
+        },
+        {
+          "name": "recommended_plan_or_range",
+          "kind": "short_text",
+          "value": "Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, Completo R$ 1.497/mes",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.plans",
+            "product_knowledge.prices"
+          ],
+          "max_length": 90
+        }
+      ],
+      "evidence": [
+        "user_message:120",
+        "product_knowledge.plans",
+        "product_knowledge.prices"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "diagnostic",
+      "last_intent": "price",
+      "diagnostic_status": "in_progress",
+      "waitlist_status": "not_applicable",
+      "handoff_status": "none",
+      "next_action_hint": "ask_current_process"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "medium",
+    "risks": [
+      "Prazo do diagnostico ainda incompleto; falta entender o processo atual do WhatsApp."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_ideal_turn_05",
+    "conversation_id": "spike_conv_ideal_turn_05",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_diagnostic_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_diagnostic_ledger",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_conversation_summary",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic",
+        "price"
+      ],
+      "direct_question": "quanto custa isso?",
+      "customer_need": "entender preco e funcionamento do diagnostico gratuito",
+      "pain_context": "studio de pilates perdendo aluno novo porque o WhatsApp vive atrasado",
+      "source_context": "vi o perfil de voces no Instagram",
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "student_count",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value": 120,
+          "evidence": [
+            "user_message:120"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message:tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado",
+        "user_message:quanto custa isso?",
+        "user_message:faz sentido... como funciona esse diagnostico gratuito?",
+        "user_message:120",
+        "user_message:oi, vi o perfil de voces no Instagram"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "quanto custa isso?",
+        "answered_before_steering": true,
+        "evidence": [
+          "product_knowledge.plans",
+          "product_knowledge.prices"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "active_students",
+          "status": "answered",
+          "answer_value": "120",
+          "evidence": [
+            "user_message:120"
+          ]
+        }
+      ],
+      "next_question_key": "current_process",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message:120",
+        "conversation.spike_conv_ideal_turn_05.summary"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "conversation.spike_conv_ideal_turn_05.operational_state"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "",
+      "missing_details": [],
+      "evidence": [
+        "conversation.spike_conv_ideal_turn_05.operational_state"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_current_process",
+        "diagnostic.deliver_plan_recommendation"
+      ],
+      "variables": {
+        "answer_feedback": {
+          "kind": "short_text",
+          "value": "120 alunos no studio",
+          "source": "user_message",
+          "evidence": [
+            "user_message:120"
+          ],
+          "max_length": 180
+        },
+        "recommended_plan_or_range": {
+          "kind": "short_text",
+          "value": "Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, Completo R$ 1.497/mes",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.plans",
+            "product_knowledge.prices"
+          ],
+          "max_length": 90
+        }
+      },
+      "evidence": [
+        "user_message:120",
+        "product_knowledge.plans",
+        "product_knowledge.prices"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "diagnostic",
+      "last_intent": "price",
+      "diagnostic_status": "in_progress",
+      "waitlist_status": "not_applicable",
+      "handoff_status": "none",
+      "next_action_hint": "ask_current_process"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "user_message:120",
+        "product_knowledge.plans",
+        "product_knowledge.prices"
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "Prazo do diagnostico ainda incompleto; falta entender o processo atual do WhatsApp."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 11207,
+      "output_tokens": 768,
+      "cost_usd": 0.007714,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_ideal_turn_05",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "120 alunos no studio",
+      "template_id": "diagnostic.partial_progress",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+      "template_id": "diagnostic.partial_progress",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "120 alunos no studio",
+      "template_id": "diagnostic.ask_current_process",
+      "channel": "whatsapp",
+      "sequence": 3
+    },
+    {
+      "text": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?",
+      "template_id": "diagnostic.ask_current_process",
+      "channel": "whatsapp",
+      "sequence": 4
+    },
+    {
+      "text": "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, Completo R$ 1.497/mes.",
+      "template_id": "diagnostic.deliver_plan_recommendation",
+      "channel": "whatsapp",
+      "sequence": 5
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "diagnostic",
+    "last_intent": "price",
+    "diagnostic_status": "in_progress",
+    "waitlist_status": "not_applicable",
+    "handoff_status": "none",
+    "next_action_hint": "ask_current_process"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 11207,
+    "output_tokens": 768,
+    "cost_usd": 0.007714,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

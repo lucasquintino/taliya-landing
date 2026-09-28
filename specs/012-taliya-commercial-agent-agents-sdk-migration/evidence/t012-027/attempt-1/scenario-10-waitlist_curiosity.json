@@ -1,0 +1,710 @@
+{
+  "number": 10,
+  "scenario_id": "waitlist_curiosity",
+  "channel": "whatsapp",
+  "required_proof": "Curiosity does not become waitlist offer.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "como funciona essa lista de espera?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_conversation_summary",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_demo_waitlist_handoff_state",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_spec006_product_contracts",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_demo_waitlist_handoff_state",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"waitlist\"]}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_spec006_product_contracts",
+      "arguments": "{\"keys\":[\"waitlist\"]}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"waitlist\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_waitlist_curiosity",
+          "summary": null,
+          "lead_fact_count": 0,
+          "source": "not_connected_in_spike"
+        },
+        "evidence": [],
+        "uncertainty": "high"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_waitlist_curiosity",
+          "demo": {},
+          "waitlist": {},
+          "human_status": null,
+          "human_reason": null,
+          "source": "not_connected_in_spike"
+        },
+        "evidence": [],
+        "uncertainty": "high"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "waitlist",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.waitlist"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "waitlist"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.waitlist"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_spec006_product_contracts",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "spec006.waitlist",
+              "source": "spec_006_product_contract",
+              "version": "spec006-bd19cd6ba6dd",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "specs/006-crm-operational-core#waitlist"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "waitlist"
+          ]
+        },
+        "evidence": [
+          "specs/006-crm-operational-core#waitlist"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "waitlist",
+          "templates": [
+            {
+              "template_id": "waitlist.ask_missing_city",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_contact_path",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_studio",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.joined",
+              "required_variables": [],
+              "optional_variables": [
+                "studio_name",
+                "city_state",
+                "contact_path"
+              ]
+            },
+            {
+              "template_id": "waitlist.offer_after_contract_intent",
+              "required_variables": [
+                "waitlist_context_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "waitlist.status_preserved",
+              "required_variables": [],
+              "optional_variables": [
+                "waitlist_context_summary"
+              ]
+            }
+          ],
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_info"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "Entender como a lista de espera funciona",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder como funciona a lista de espera",
+        "answered_before_steering": false,
+        "evidence": [
+          "como funciona essa lista de espera?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "product_knowledge.waitlist",
+        "specs/006-crm-operational-core#waitlist"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "product_knowledge.waitlist"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "user asked how the waitlist works, but official waitlist details are missing",
+      "missing_details": [
+        "how it works",
+        "eligibility",
+        "contact path"
+      ],
+      "evidence": [
+        "product_knowledge.waitlist",
+        "specs/006-crm-operational-core#waitlist",
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_required",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "product_knowledge.waitlist",
+        "specs/006-crm-operational-core#waitlist"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "waitlist.offer_after_contract_intent"
+      ],
+      "variables": [
+        {
+          "name": "waitlist_context_summary",
+          "kind": "long_text",
+          "value": "User asked how the waitlist works; official waitlist details are missing in product knowledge and spec 006.",
+          "source": "model_decision",
+          "evidence": [
+            "product_knowledge.waitlist",
+            "specs/006-crm-operational-core#waitlist"
+          ],
+          "max_length": null
+        }
+      ],
+      "evidence": [
+        "template_registry",
+        "product_knowledge.waitlist",
+        "specs/006-crm-operational-core#waitlist"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [
+        "missing_official_waitlist_details"
+      ],
+      "uncertainty": "high"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "waitlist_intent",
+      "last_intent": "waitlist_info",
+      "diagnostic_status": "not_started",
+      "waitlist_status": "unclear",
+      "handoff_status": "not_required",
+      "next_action_hint": "clarify waitlist mechanics or route to product knowledge"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "high",
+    "risks": [
+      "No official waitlist mechanics available to answer definitively"
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_waitlist_curiosity",
+    "conversation_id": "spike_conv_waitlist_curiosity",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_conversation_summary",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_spec006_product_contracts",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_info"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "Entender como a lista de espera funciona",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder como funciona a lista de espera",
+        "answered_before_steering": false,
+        "evidence": [
+          "como funciona essa lista de espera?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "product_knowledge.waitlist",
+        "specs/006-crm-operational-core#waitlist"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "product_knowledge.waitlist"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "user asked how the waitlist works, but official waitlist details are missing",
+      "missing_details": [
+        "how it works",
+        "eligibility",
+        "contact path"
+      ],
+      "evidence": [
+        "product_knowledge.waitlist",
+        "specs/006-crm-operational-core#waitlist",
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_required",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "product_knowledge.waitlist",
+        "specs/006-crm-operational-core#waitlist"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "waitlist.offer_after_contract_intent"
+      ],
+      "variables": {
+        "waitlist_context_summary": {
+          "kind": "long_text",
+          "value": "User asked how the waitlist works; official waitlist details are missing in product knowledge and spec 006.",
+          "source": "model_decision",
+          "evidence": [
+            "product_knowledge.waitlist",
+            "specs/006-crm-operational-core#waitlist"
+          ]
+        }
+      },
+      "evidence": [
+        "template_registry",
+        "product_knowledge.waitlist",
+        "specs/006-crm-operational-core#waitlist"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "missing_official_waitlist_details",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "high"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "waitlist_intent",
+      "last_intent": "waitlist_info",
+      "diagnostic_status": "not_started",
+      "waitlist_status": "unclear",
+      "handoff_status": "not_required",
+      "next_action_hint": "clarify waitlist mechanics or route to product knowledge"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": [
+        "template_registry",
+        "product_knowledge.waitlist",
+        "specs/006-crm-operational-core#waitlist"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "No official waitlist mechanics available to answer definitively"
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 6946,
+      "output_tokens": 657,
+      "cost_usd": 0.006438,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_waitlist_curiosity",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_direct_question_not_answered_first",
+        "severity": "P0",
+        "message": "Answer obligations not marked answered first: Responder como funciona a lista de espera",
+        "path": "answer_obligations"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "waitlist_intent",
+    "last_intent": "waitlist_info",
+    "diagnostic_status": "not_started",
+    "waitlist_status": "unclear",
+    "handoff_status": "not_required",
+    "next_action_hint": "clarify waitlist mechanics or route to product knowledge"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 6946,
+    "output_tokens": 657,
+    "cost_usd": 0.006438,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_direct_question_not_answered_first",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

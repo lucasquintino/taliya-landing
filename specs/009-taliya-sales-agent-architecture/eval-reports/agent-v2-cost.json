@@ -1,0 +1,38 @@
+{
+  "runId": "agent-v2-cost-1779416636795",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:23:56.795Z",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "cost policy contains hard_cap_blocked",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "cost policy contains estimateCostUsd",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "cost policy contains hardCapFallbackText",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "cost policy contains AI_ATTENDANT_V2_HARD_COST_CAP_USD",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "cost policy contains 0.15",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

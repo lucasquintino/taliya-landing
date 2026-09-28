@@ -1,0 +1,634 @@
+{
+  "schema": "012.sales_inbox_projection_export.v1",
+  "scenario_id": "step3g-long-conversation",
+  "proof_mode": "real_model_t012_043_approved_9_of_9",
+  "required_projection_fields": [
+    "conversation_id",
+    "lead_id",
+    "commercial_stage",
+    "diagnostic_status",
+    "fields"
+  ],
+  "required_nested_fields": [
+    "template_ids",
+    "validator_status",
+    "source_labels"
+  ],
+  "turn_count": 13,
+  "projection_count": 13,
+  "projection_complete": true,
+  "missing_required_fields": {},
+  "missing_projection_turn_indexes": [],
+  "conversation_summary": {
+    "turns_passed": 13,
+    "final_state": {
+      "conversation_id": "t012-043-step3g-long-conversation",
+      "lead_id": "t012-043-step3g-long-conversation",
+      "source": "pilates_landing",
+      "channel": "widget",
+      "canonical_state": "human_handoff",
+      "answered_obligations": [
+        "quanto custa?",
+        "me manda demo",
+        "como funciona mesmo?"
+      ],
+      "diagnostic": {
+        "status": "delivered",
+        "ledger": {
+          "active_students_or_size": {
+            "status": "answered",
+            "answer_value": "95 alunos ativos"
+          },
+          "main_pain": {
+            "status": "answered",
+            "answer_value": "WhatsApp e follow-up dão mais trabalho"
+          },
+          "pain_detail": {
+            "status": "answered",
+            "answer_value": "não consigo ver quem precisa de retorno no dia"
+          },
+          "current_process": {
+            "status": "answered",
+            "answer_value": "planilha e WhatsApp"
+          },
+          "priority": {
+            "status": "answered",
+            "answer_value": "prioridade e vendas primeiro"
+          },
+          "urgency": {
+            "status": "answered",
+            "answer_value": "quero resolver agora"
+          }
+        },
+        "final_fields": {
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+        }
+      },
+      "demo": {
+        "status": "offered"
+      },
+      "waitlist": {
+        "status": "offered"
+      },
+      "human_status": "requested"
+    },
+    "total_model_operations": 16,
+    "total_cost_usd": 0.048401
+  },
+  "turns": [
+    {
+      "index": 0,
+      "status": "delivered",
+      "mode": "entry",
+      "selected_action": "answer_direct_product_question",
+      "template_ids": [
+        "product.price_direct",
+        "diagnostic.price_hook"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_offered",
+        "summary": "Estado comercial: diagnostic_offered",
+        "diagnostic_status": "offered",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "status": "delivered",
+      "mode": "entry",
+      "selected_action": "start_requested_diagnostic",
+      "template_ids": [
+        "diagnostic.start",
+        "diagnostic.ask_active_students"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_offered",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.start",
+            "diagnostic.ask_active_students"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "status": "delivered",
+      "mode": "diagnostic",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.ask_main_pain"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.ask_main_pain"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "status": "delivered",
+      "mode": "diagnostic",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.ask_pain_detail"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.ask_pain_detail"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "status": "delivered",
+      "mode": "diagnostic",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.ask_current_process"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.ask_current_process"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "status": "delivered",
+      "mode": "diagnostic",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.ask_priority"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.ask_priority"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "status": "delivered",
+      "mode": "diagnostic",
+      "selected_action": "capture_pending_diagnostic_answer",
+      "template_ids": [
+        "diagnostic.ask_urgency"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.ask_urgency"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "status": "delivered",
+      "mode": "diagnostic",
+      "selected_action": "complete_diagnostic",
+      "template_ids": [
+        "diagnostic.deliver_hold",
+        "diagnostic.deliver_context",
+        "diagnostic.deliver_crm_base",
+        "diagnostic.deliver_operational_step",
+        "diagnostic.deliver_agent_recommendation",
+        "diagnostic.deliver_plan_recommendation",
+        "diagnostic.deliver_demo_not_offered"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "diagnostic_delivered",
+        "summary": "Estado comercial: diagnostic_waiting_answer",
+        "diagnostic_status": "completed",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.deliver_hold",
+            "diagnostic.deliver_context",
+            "diagnostic.deliver_crm_base",
+            "diagnostic.deliver_operational_step",
+            "diagnostic.deliver_agent_recommendation",
+            "diagnostic.deliver_plan_recommendation",
+            "diagnostic.deliver_demo_not_offered"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "review_completed_diagnostic",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "not_offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "status": "delivered",
+      "mode": "post_diagnostic",
+      "selected_action": "send_demo",
+      "template_ids": [
+        "product.demo_direct"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "demo_reaction_pending",
+        "summary": "Estado comercial: diagnostic_delivered",
+        "diagnostic_status": "completed",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "product.demo_direct"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "review_completed_diagnostic",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+          "demo_customer_facing_concept": "commercial_product_demo",
+          "demo_next_step": "offer_demo"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "status": "delivered",
+      "mode": "post_diagnostic",
+      "selected_action": "answer_price_objection_with_context",
+      "template_ids": [
+        "product.price_objection_value"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "post_diagnostic_questions",
+        "summary": "Estado comercial: demo_reaction_pending",
+        "diagnostic_status": "completed",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "product.price_objection_value"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "review_completed_diagnostic",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "status": "delivered",
+      "mode": "post_diagnostic",
+      "selected_action": "offer_or_join_waitlist_if_eligible",
+      "template_ids": [
+        "waitlist.offer_after_contract_intent"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "waitlist_offered",
+        "summary": "Estado comercial: post_diagnostic_questions",
+        "diagnostic_status": "completed",
+        "waitlist_status": "offered",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "waitlist.offer_after_contract_intent"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "review_completed_diagnostic",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+          "waitlist_eligibility": "eligible"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "status": "delivered",
+      "mode": "waitlist",
+      "selected_action": "answer_question_then_continue_waitlist",
+      "template_ids": [
+        "waitlist.current_path_explained",
+        "waitlist.ask_missing_contact_path"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "waitlist_pending_data",
+        "summary": "Estado comercial: waitlist_offered",
+        "diagnostic_status": "completed",
+        "waitlist_status": "offered",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "waitlist.current_path_explained",
+            "waitlist.ask_missing_contact_path"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "review_completed_diagnostic",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+          "waitlist_eligibility": "eligible"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "status": "delivered",
+      "mode": "waitlist",
+      "selected_action": "handoff_requested",
+      "template_ids": [
+        "handoff.acknowledge"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "t012-043-step3g-long-conversation",
+        "lead_id": "t012-043-step3g-long-conversation",
+        "commercial_stage": "human_handoff",
+        "summary": "Estado comercial: waitlist_pending_data",
+        "diagnostic_status": "completed",
+        "waitlist_status": "offered",
+        "handoff_status": "requested",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "handoff.acknowledge"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "human_follow_up",
+          "diagnostic_ledger_complete": true,
+          "required_diagnostic_keys": [
+            "active_students_or_size",
+            "main_pain",
+            "pain_detail",
+            "current_process",
+            "priority",
+            "urgency"
+          ],
+          "demo_status": "offered",
+          "final_plan_or_range": "Essencial (R$ 497/mes)",
+          "final_demo_line": "Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?",
+          "waitlist_eligibility": "eligible",
+          "handoff_reason": "A pessoa pediu para falar com alguém.",
+          "human_active": true,
+          "ai_paused": true
+        }
+      }
+    }
+  ]
+}

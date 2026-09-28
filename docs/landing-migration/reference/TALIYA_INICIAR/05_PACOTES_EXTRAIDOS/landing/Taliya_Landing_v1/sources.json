@@ -1,0 +1,26 @@
+[
+  {
+    "id": "S1",
+    "name": "Taliya_Auditoria_Final_Landing_vs_Meu_Assessor_2026-09-18.pdf",
+    "location": "20 páginas; especialmente pp. 6–14 e 17–19",
+    "use": "Ordem, sete frentes, reaproveitamento, remoção do ROI, novos blocos e limites comerciais."
+  },
+  {
+    "id": "S2",
+    "name": "Product_Bible_Copiloto_Servicos_v1_7.md",
+    "location": "§§ 1–9, 12, 13 e 22; edição de 14/09/2026",
+    "use": "Serviço único; documentos e versões; agenda, reservas e recebimentos independentes; uso parcial; canais."
+  },
+  {
+    "id": "S3",
+    "name": "Documento_Mestre_Implementacao_Copiloto_v1_0(1).pdf",
+    "location": "p.25 COP-CF08; pp.45–46 OP-CFG-01 / OP-READ-01; pp.55–57 operações de agenda e pagamentos",
+    "use": "Oferta especificada; identidade/configuração; preferências por conversa; alterações atômicas; nenhuma movimentação bancária."
+  },
+  {
+    "id": "S4",
+    "name": "Decisões desta conversa",
+    "location": "Solicitação de manter componentes e aprofundar casos; produto ainda em desenvolvimento",
+    "use": "WhatsApp para rotina, app complementar; conteúdo de pré-lançamento; sem reauditoria ou publicação nesta entrega."
+  }
+]

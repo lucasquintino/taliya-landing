@@ -1,0 +1,419 @@
+{
+  "schema": "012.action_trace_export.v1",
+  "scenario_id": "final-price-plus-pain",
+  "proof_mode": "real_model_t012_043_approved_9_of_9",
+  "model_name": "gpt-5.4-mini",
+  "external_trace_export": {
+    "enabled": false,
+    "reason": "blocked_by_d_012_007_and_d_012_009"
+  },
+  "required_sections": [
+    "inbound",
+    "turn_gate",
+    "context_snapshot",
+    "turn_situation",
+    "sdk_start",
+    "sdk_run_items",
+    "sdk_final_output",
+    "taliya_proposal",
+    "action_decision",
+    "compiler",
+    "validators",
+    "repair_or_escalation",
+    "render_plan",
+    "rendered_messages",
+    "state_diff",
+    "sales_inbox_projection",
+    "delivery",
+    "usage_cost"
+  ],
+  "trace_count": 1,
+  "turn_count": 1,
+  "trace_complete": true,
+  "missing_required_sections": {},
+  "missing_trace_turn_indexes": [],
+  "incomplete_trace_turn_indexes": [],
+  "conversation_summary": {
+    "turns_passed": 1,
+    "final_state": {
+      "conversation_id": "t012-043-final-price-plus-pain",
+      "lead_id": "t012-043-final-price-plus-pain",
+      "source": "taliya_whatsapp",
+      "channel": "whatsapp",
+      "canonical_state": "diagnostic_offered"
+    },
+    "transcript": [
+      {
+        "role": "user",
+        "content": "tenho reposicao baguncada na agenda e queria saber preco"
+      },
+      {
+        "role": "assistant",
+        "content": "Oi, tudo bem?\n\nBase: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês."
+      },
+      {
+        "role": "assistant",
+        "content": "Como você já trouxe um ponto da rotina que está te incomodando, vale olhar com um pouco mais de calma para entender o que está travando hoje.\n\nPosso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+      },
+      {
+        "role": "assistant",
+        "content": "O que você acha?"
+      }
+    ],
+    "total_model_operations": 3,
+    "total_cost_usd": 0.007814
+  },
+  "turns": [
+    {
+      "index": 0,
+      "status": "delivered",
+      "mode": "entry",
+      "selected_action": "answer_direct_product_question",
+      "template_ids": [
+        "product.price_direct",
+        "diagnostic.price_hook_with_context"
+      ],
+      "trace_required": true,
+      "trace_present": true,
+      "trace_complete": true,
+      "missing_required_sections": [],
+      "sales_inbox_projection_present": true,
+      "usage_cost": {
+        "model_operations": 3,
+        "cost_usd": 0.007814
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "tenho reposicao baguncada na agenda e queria saber preco",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-final-price-plus-pain",
+            "lead_id": "t012-043-final-price-plus-pain",
+            "source": "taliya_whatsapp",
+            "channel": "whatsapp"
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "entry",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_general_interest",
+            "answer_source_opening",
+            "offer_diagnostic_from_pain",
+            "answer_direct_product_question",
+            "start_requested_diagnostic",
+            "ask_name_at_diagnostic_entry",
+            "handoff_requested",
+            "clarify_ambiguous_opening"
+          ],
+          "eligible_template_groups": [
+            "opening.",
+            "diagnostic.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "HandoffCallItem",
+            "raw_item_type": "ResponseFunctionToolCall",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": "transfer_to_taliya_product_agent",
+            "handoff_target": null
+          },
+          {
+            "item_type": "HandoffOutputItem",
+            "raw_item_type": "dict",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": null,
+            "handoff_target": "taliya_product_agent"
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_product_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec-0",
+          "turn_id": "turn-0",
+          "selected_action": "answer_direct_product_question",
+          "interpreted_intents": [
+            "price_request",
+            "pain_context_present"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "main_pain",
+              "value_text": "reposição bagunçada na agenda",
+              "status": "answered",
+              "evidence": [
+                "tenho reposicao baguncada na agenda e queria saber preco"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "plan_fit_context",
+              "value": "reposição bagunçada na agenda",
+              "evidence": [
+                "tenho reposicao baguncada na agenda e queria saber preco"
+              ]
+            }
+          ],
+          "reply_goal": "Responder o preço e conectar com a dor de reposição na agenda.",
+          "confidence": "high",
+          "evidence": [
+            "tenho reposicao baguncada na agenda e queria saber preco"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "dec-0",
+            "turn_id": "turn-0",
+            "selected_action": "answer_direct_product_question",
+            "interpreted_intents": [
+              "price_request",
+              "pain_context_present"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [
+              {
+                "key": "main_pain",
+                "value_text": "reposição bagunçada na agenda",
+                "status": "answered",
+                "evidence": [
+                  "tenho reposicao baguncada na agenda e queria saber preco"
+                ]
+              }
+            ],
+            "product_fact_keys_used": [
+              "prices"
+            ],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "plan_fit_context",
+                "value": "reposição bagunçada na agenda",
+                "evidence": [
+                  "tenho reposicao baguncada na agenda e queria saber preco"
+                ]
+              }
+            ],
+            "reply_goal": "Responder o preço e conectar com a dor de reposição na agenda.",
+            "confidence": "high",
+            "evidence": [
+              "tenho reposicao baguncada na agenda e queria saber preco"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "dec-0",
+          "turn_id": "turn-0",
+          "selected_action": "answer_direct_product_question",
+          "interpreted_intents": [
+            "price_request",
+            "pain_context_present"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "main_pain",
+              "value_text": "reposição bagunçada na agenda",
+              "status": "answered",
+              "evidence": [
+                "tenho reposicao baguncada na agenda e queria saber preco"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [
+            "prices"
+          ],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "plan_fit_context",
+              "value": "reposição bagunçada na agenda",
+              "evidence": [
+                "tenho reposicao baguncada na agenda e queria saber preco"
+              ]
+            }
+          ],
+          "reply_goal": "Responder o preço e conectar com a dor de reposição na agenda.",
+          "confidence": "high",
+          "evidence": [
+            "tenho reposicao baguncada na agenda e queria saber preco"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "answer_direct_product_question",
+          "previous_state": "new_lead",
+          "current_state": "product_question",
+          "next_state": "diagnostic_offered",
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook_with_context"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_answer_direct_product_question",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 1,
+          "validator_feedback": [
+            {
+              "code": "action_stale_direct_question",
+              "message": "direct_question 'qual o preço' is not asked in the current inbound message; clear it."
+            }
+          ],
+          "repair_sdk_run_items": [
+            {
+              "item_type": "MessageOutputItem",
+              "raw_item_type": "ResponseOutputMessage",
+              "agent_name": "taliya_product_agent",
+              "tool_name": null,
+              "handoff_target": null
+            }
+          ]
+        },
+        "render_plan": {
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook_with_context"
+          ],
+          "variables": {
+            "plan_fit_context": {
+              "kind": "short_text",
+              "value": "reposição bagunçada na agenda",
+              "source": "user_message",
+              "evidence": [
+                "tenho reposicao baguncada na agenda e queria saber preco"
+              ],
+              "max_length": 180
+            },
+            "plan_price_summary": {
+              "kind": "long_text",
+              "value": "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes.",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "product_knowledge.plans"
+              ],
+              "max_length": 360
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Oi, tudo bem?\n\nBase: R$ 197/mês. Essencial: R$ 497/mês. Avance: R$ 897/mês. Completo: R$ 1.497/mês.",
+          "Como você já trouxe um ponto da rotina que está te incomodando, vale olhar com um pouco mais de calma para entender o que está travando hoje.\n\nPosso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+          "O que você acha?"
+        ],
+        "state_diff": {
+          "next_state": "diagnostic_offered",
+          "state_patch": {},
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-final-price-plus-pain",
+          "lead_id": "t012-043-final-price-plus-pain",
+          "commercial_stage": "diagnostic_offered",
+          "summary": "Estado comercial: diagnostic_offered",
+          "diagnostic_status": "offered",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "product.price_direct",
+              "diagnostic.price_hook_with_context"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "taliya_whatsapp",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "none"
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 3,
+          "cost_usd": 0.007813500000000001
+        },
+        "failure_labels": []
+      }
+    }
+  ]
+}

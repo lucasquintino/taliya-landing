@@ -1,0 +1,43 @@
+{
+  "runId": "agent-v2-product-knowledge-1779416634715",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:23:54.715Z",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "product source contains version:",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product source contains plans:",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product source contains links:",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product source contains https://www.taliya.com.br/pilates/planos",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product source contains limited_studios_waitlist",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product source contains unsupportedClaims",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

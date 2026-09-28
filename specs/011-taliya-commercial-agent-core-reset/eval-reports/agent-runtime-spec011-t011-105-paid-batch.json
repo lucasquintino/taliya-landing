@@ -1,0 +1,77 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-105",
+  "startedAt": "2026-06-04T14:20:09.259Z",
+  "releaseGate": "fail_stopped_after_pain_first",
+  "approvalToken": "T011-105-US0.36",
+  "approvedBudgetUsd": 0.36,
+  "sourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "b6bc712960ac06a93f80eff575a732cfb7e3d86f22cc0e7a6cbfce54fe159c9b",
+    "fileCount": 50,
+    "targets": [
+      "services/taliya-agent-runtime/app/core/taliya_commercial",
+      "services/taliya-agent-runtime/app/main.py",
+      "services/taliya-agent-runtime/app/settings.py",
+      "services/taliya-agent-runtime/app/runtime/schemas.py",
+      "services/taliya-agent-runtime/app/shared/memory",
+      "scripts/eval-agent-runtime-spec011.py",
+      "scripts/spec011-t011-105-source-fingerprint.mjs",
+      "scripts/eval-agent-runtime-spec011-fixture-inventory.mjs",
+      "scripts/eval-agent-runtime-spec011-golden-do-not-do.mjs",
+      "scripts/eval-agent-runtime-spec011-known-validator-recovery.mjs",
+      "scripts/eval-agent-runtime-spec011-mocked-conductor.mjs",
+      "scripts/eval-agent-runtime-spec011-public-fallback-quarantine.mjs",
+      "scripts/eval-agent-runtime-spec011-rollback.mjs",
+      "scripts/eval-agent-runtime-spec011-runner-quarantine.mjs",
+      "scripts/eval-agent-runtime-spec011-static-audit.mjs",
+      "scripts/eval-agent-runtime-spec011-t011-105-paid-batch.mjs",
+      "scripts/eval-agent-runtime-spec011-t011-105-readiness.mjs",
+      "scripts/eval-agent-runtime-spec011-t011-105-safety-audit.mjs",
+      "scripts/eval-agent-runtime-spec011-unit-contract.mjs",
+      "scripts/eval-agent-runtime-spec011-widget-adapter.mjs",
+      "scripts/eval-agent-runtime-spec011-t011-105-closure.mjs",
+      "scripts/fixtures/agent-runtime/spec-011-golden-transcripts.json",
+      "scripts/fixtures/agent-runtime/spec-011-do-not-do-runtime.json"
+    ]
+  },
+  "summary": {
+    "paidCommandsStarted": 1,
+    "estimatedCostUsd": 0.005045
+  },
+  "commands": [
+    {
+      "id": "readiness_gate_before_paid_batch",
+      "ok": true,
+      "allowed": true,
+      "exitCode": 0,
+      "command": "node scripts\\eval-agent-runtime-spec011-t011-105-readiness.mjs",
+      "output": "agent-runtime-spec011-t011-105-readiness: 13/13 passed\nRelease gate: ready_for_paid_batch\nReport JSON: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-t011-105-readiness.json\nReport MD: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-t011-105-readiness.md"
+    },
+    {
+      "id": "source_stable_after_readiness",
+      "ok": true,
+      "allowed": true,
+      "exitCode": 0,
+      "command": "source fingerprint stability check",
+      "output": "Source fingerprint stable: b6bc712960ac06a93f80eff575a732cfb7e3d86f22cc0e7a6cbfce54fe159c9b"
+    },
+    {
+      "id": "paid_pain_first",
+      "ok": false,
+      "allowed": false,
+      "exitCode": 1,
+      "command": "python scripts\\eval-agent-runtime-spec011.py --fixture scripts\\fixtures\\agent-runtime\\spec-011-golden-transcripts.json --scenario-id final-pain-first --max-scenarios 1 --max-model-calls 1 --max-cost-usd 0.03 --report-name agent-runtime-spec011-golden-pain-first-1",
+      "output": "agent-runtime-real-openai: 0/1 passed\r\nReport JSON: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-pain-first-1.json\r\nTranscript MD: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-pain-first-1.md\r\n- final-pain-first: did not reuse lead context terms: ['whatsapp', 'interessado']",
+      "error": ""
+    },
+    {
+      "id": "source_stable_after_pain_first",
+      "ok": true,
+      "allowed": true,
+      "exitCode": 0,
+      "command": "source fingerprint stability check",
+      "output": "Source fingerprint stable: b6bc712960ac06a93f80eff575a732cfb7e3d86f22cc0e7a6cbfce54fe159c9b"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+[
+  { "id": "DIA-004", "known": { "mainPainOrIntent": "vendas e interessados" }, "expectNext": "active_students" },
+  { "id": "DIA-009", "known": { "activeStudents": "120", "mainPainOrIntent": "vendas", "currentWorkflowOrTool": "planilha", "priorityToMakeLighter": "retorno", "urgency": "now" }, "expectComplete": true }
+]
+

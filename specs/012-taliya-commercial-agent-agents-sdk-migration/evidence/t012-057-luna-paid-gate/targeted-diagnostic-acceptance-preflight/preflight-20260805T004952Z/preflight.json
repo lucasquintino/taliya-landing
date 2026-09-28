@@ -1,0 +1,23 @@
+{
+  "schema": "012.real_model_golden_transcripts_preflight.v1",
+  "task": "T012-057",
+  "created_at": "2026-08-05T00:49:52.739770+00:00",
+  "model": "gpt-5.6-luna",
+  "fixture_path": "scripts/fixtures/agent-runtime/spec-012-luna-targeted.json",
+  "scenario_count": 1,
+  "scenario_ids": [
+    "luna-diagnostic-acceptance-no-regreeting"
+  ],
+  "messages_by_scenario": {
+    "luna-diagnostic-acceptance-no-regreeting": [
+      "sim"
+    ]
+  },
+  "openai_api_key_available": true,
+  "env_file_checked": ".env.local",
+  "model_has_recorded_pricing": true,
+  "fixture_validation_status": "passed",
+  "fixture_validation_issues": [],
+  "max_total_cost_usd": 0.015,
+  "paid_call_status": "not_attempted_preflight_only"
+}

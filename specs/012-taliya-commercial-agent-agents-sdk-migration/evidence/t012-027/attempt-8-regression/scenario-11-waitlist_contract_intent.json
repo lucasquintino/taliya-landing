@@ -1,0 +1,381 @@
+{
+  "number": 11,
+  "scenario_id": "waitlist_contract_intent",
+  "channel": "whatsapp",
+  "required_proof": "Waitlist offer only after qualified intent.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Diagnostico completo entregue e demo oficial enviada. Lead conhece o plano recomendado e demonstrou interesse em seguir.\nstate: {\"diagnostic\": {\"status\": \"complete\", \"next_question_key\": null, \"ledger\": {\"active_students_or_size\": {\"status\": \"answered\", \"answer_value\": \"120\"}, \"main_pain\": {\"status\": \"answered\", \"answer_value\": \"perde leads no WhatsApp\"}, \"pain_detail\": {\"status\": \"answered\", \"answer_value\": \"equipe demora a responder interessados\"}, \"current_process\": {\"status\": \"answered\", \"answer_value\": \"controle manual em planilha e WhatsApp\"}, \"priority\": {\"status\": \"answered\", \"answer_value\": \"organizar follow-up de leads\"}, \"urgency\": {\"status\": \"answered\", \"answer_value\": \"quer resolver este mes\"}}}, \"demo\": {\"status\": \"link_sent\"}, \"waitlist\": {\"status\": \"not_offered\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "assistant",
+      "content": "Esse foi o seu diagnostico completo. Tambem te enviei a demo oficial para ver a Taliya funcionando."
+    },
+    {
+      "role": "user",
+      "content": "quero entrar na lista para contratar"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": "taliya_waitlist_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_waitlist_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_waitlist_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_waitlist_agent"
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_intent",
+        "contract_intent"
+      ],
+      "direct_question": null,
+      "customer_need": "Entrar na lista para contratar",
+      "pain_context": "Lead quer avançar para contratação",
+      "source_context": "WhatsApp",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "waitlist_intent",
+          "kind": "other",
+          "raw_text": "quero entrar na lista para contratar",
+          "value_text": "expressed_waitlist_and_contract_intent",
+          "currency": null,
+          "evidence": [
+            "quero entrar na lista para contratar"
+          ]
+        }
+      ],
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "demo_proposal": {
+      "status": "preserved",
+      "next_step": "Aguardar confirmação do fluxo de lista/contratação",
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "eligible",
+      "intent": "contract_waitlist",
+      "missing_details": [
+        "contact_path"
+      ],
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "waitlist.ask_missing_contact_path"
+      ],
+      "variables": [
+        {
+          "name": "missing_detail_label",
+          "kind": "enum",
+          "value": "contact_path",
+          "source": "runtime_state",
+          "evidence": [
+            "runtime_state.waitlist.missing_details"
+          ],
+          "max_length": null
+        }
+      ],
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "waitlist",
+      "last_intent": "contract_intent",
+      "diagnostic_status": "complete",
+      "waitlist_status": "eligible",
+      "handoff_status": "none",
+      "next_action_hint": "ask_missing_contact_path"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_waitlist_contract_intent",
+    "conversation_id": "spike_conv_waitlist_contract_intent",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": "taliya_waitlist_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_waitlist_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_waitlist_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_intent",
+        "contract_intent"
+      ],
+      "direct_question": null,
+      "customer_need": "Entrar na lista para contratar",
+      "pain_context": "Lead quer avançar para contratação",
+      "source_context": "WhatsApp",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "waitlist_intent",
+          "kind": "other",
+          "raw_text": "quero entrar na lista para contratar",
+          "value": "expressed_waitlist_and_contract_intent",
+          "evidence": [
+            "quero entrar na lista para contratar"
+          ]
+        }
+      ],
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "demo_proposal": {
+      "status": "preserved",
+      "next_step": "Aguardar confirmação do fluxo de lista/contratação",
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "eligible",
+      "intent": "contract_waitlist",
+      "missing_details": [
+        "contact_path"
+      ],
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "waitlist.ask_missing_contact_path"
+      ],
+      "variables": {
+        "missing_detail_label": {
+          "kind": "enum",
+          "value": "contact_path",
+          "source": "runtime_state",
+          "evidence": [
+            "runtime_state.waitlist.missing_details"
+          ],
+          "max_length": 0
+        }
+      },
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "waitlist",
+      "last_intent": "contract_intent",
+      "diagnostic_status": "complete",
+      "waitlist_status": "eligible",
+      "handoff_status": "none",
+      "next_action_hint": "ask_missing_contact_path"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "quero entrar na lista para contratar"
+      ]
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 7780,
+      "output_tokens": 464,
+      "cost_usd": 0.006195,
+      "handoffs": 1,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_waitlist_contract_intent",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Para a equipe continuar com seguranca, prefere seguir por esta conversa ou por e-mail?",
+      "template_id": "waitlist.ask_missing_contact_path",
+      "channel": "whatsapp",
+      "sequence": 1
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "waitlist",
+    "last_intent": "contract_intent",
+    "diagnostic_status": "complete",
+    "waitlist_status": "eligible",
+    "handoff_status": "none",
+    "next_action_hint": "ask_missing_contact_path"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 7780,
+    "output_tokens": 464,
+    "cost_usd": 0.006195,
+    "handoffs": 1,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

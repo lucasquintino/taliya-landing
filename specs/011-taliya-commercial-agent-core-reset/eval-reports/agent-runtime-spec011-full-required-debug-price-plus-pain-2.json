@@ -1,0 +1,52 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-full-required-debug-price-plus-pain-2",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-31T23:22:21Z",
+  "finishedAt": "2026-05-31T23:22:25Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "estimatedCostUsd": 0.0,
+    "inputTokens": 0,
+    "outputTokens": 0
+  },
+  "releaseGate": "fail",
+  "scenarios": [
+    {
+      "id": "final-price-plus-pain",
+      "title": "Price plus pain answers then offers diagnostic",
+      "channel": "whatsapp",
+      "checks": [
+        "route:product",
+        "mentions_all_prices",
+        "direct_question_answered_first",
+        "diagnostic_offered_or_started",
+        "mentions_user_context",
+        "has_product_source",
+        "template_ids_present",
+        "whatsapp_max_three_chunks",
+        "all_messages_short"
+      ],
+      "failures": [
+        "runtime returned non-200 status: [500]"
+      ],
+      "turns": [
+        {
+          "http_status": 500,
+          "payload": {
+            "error": {
+              "code": "spec011_core_failed",
+              "message": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+              "retryable": true
+            }
+          },
+          "lead": "tenho reposicao baguncada na agenda e queria saber preco"
+        }
+      ]
+    }
+  ]
+}

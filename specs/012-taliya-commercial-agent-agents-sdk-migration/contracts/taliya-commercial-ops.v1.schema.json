@@ -1,0 +1,1466 @@
+{
+  "$defs": {
+    "AgentMessage": {
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "channel_hint": {
+          "enum": [
+            "widget",
+            "whatsapp"
+          ],
+          "title": "Channel Hint",
+          "type": "string"
+        },
+        "kind": {
+          "default": "text",
+          "enum": [
+            "text",
+            "link",
+            "action"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "template_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Template Id"
+        },
+        "requires_product_source": {
+          "default": false,
+          "title": "Requires Product Source",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "text",
+        "channel_hint"
+      ],
+      "title": "AgentMessage",
+      "type": "object"
+    },
+    "AgentOutput": {
+      "properties": {
+        "decision": {
+          "$ref": "#/$defs/RuntimeDecision"
+        },
+        "messages": {
+          "items": {
+            "$ref": "#/$defs/AgentMessage"
+          },
+          "title": "Messages",
+          "type": "array"
+        },
+        "lead_facts": {
+          "items": {
+            "$ref": "#/$defs/LeadFact"
+          },
+          "title": "Lead Facts",
+          "type": "array"
+        },
+        "diagnostic": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DiagnosticOutput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "waitlist_action": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/WaitlistAction"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "handoff": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/HandoffOutput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "safety_flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Safety Flags",
+          "type": "array"
+        },
+        "tool_results": {
+          "items": {
+            "$ref": "#/$defs/ToolResult"
+          },
+          "title": "Tool Results",
+          "type": "array"
+        },
+        "usage": {
+          "$ref": "#/$defs/Usage"
+        },
+        "confidence": {
+          "default": "medium",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "context_snapshot": {
+          "additionalProperties": true,
+          "title": "Context Snapshot",
+          "type": "object"
+        },
+        "turn_situation": {
+          "additionalProperties": true,
+          "title": "Turn Situation",
+          "type": "object"
+        },
+        "action_decision": {
+          "additionalProperties": true,
+          "title": "Action Decision",
+          "type": "object"
+        },
+        "action_repair_attempt_count": {
+          "default": 0,
+          "title": "Action Repair Attempt Count",
+          "type": "integer"
+        },
+        "conductor_json": {
+          "additionalProperties": true,
+          "title": "Conductor Json",
+          "type": "object"
+        },
+        "validator_results": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Validator Results",
+          "type": "array"
+        },
+        "repair_attempts": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Repair Attempts",
+          "type": "array"
+        },
+        "runtime_state": {
+          "additionalProperties": true,
+          "title": "Runtime State",
+          "type": "object"
+        },
+        "sales_inbox_projection": {
+          "additionalProperties": true,
+          "title": "Sales Inbox Projection",
+          "type": "object"
+        },
+        "delivery_events": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Delivery Events",
+          "type": "array"
+        },
+        "trace_complete": {
+          "default": false,
+          "title": "Trace Complete",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "usage"
+      ],
+      "title": "AgentOutput",
+      "type": "object"
+    },
+    "AgentRunRequest": {
+      "properties": {
+        "contract_version": {
+          "const": "taliya-commercial-ops.v1",
+          "default": "taliya-commercial-ops.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "agent_key": {
+          "title": "Agent Key",
+          "type": "string"
+        },
+        "agent_family": {
+          "default": "taliya",
+          "title": "Agent Family",
+          "type": "string"
+        },
+        "owner_scope": {
+          "default": "taliya",
+          "enum": [
+            "taliya",
+            "studio"
+          ],
+          "title": "Owner Scope",
+          "type": "string"
+        },
+        "tenant_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tenant Id"
+        },
+        "channel": {
+          "enum": [
+            "widget",
+            "whatsapp"
+          ],
+          "title": "Channel",
+          "type": "string"
+        },
+        "conversation": {
+          "$ref": "#/$defs/ConversationRef"
+        },
+        "message": {
+          "$ref": "#/$defs/InboundMessage"
+        },
+        "sender": {
+          "$ref": "#/$defs/SenderRef"
+        },
+        "metadata": {
+          "additionalProperties": true,
+          "title": "Metadata",
+          "type": "object"
+        }
+      },
+      "required": [
+        "agent_key",
+        "channel",
+        "conversation",
+        "message"
+      ],
+      "title": "AgentRunRequest",
+      "type": "object"
+    },
+    "AgentRunResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "taliya-commercial-ops.v1",
+          "default": "taliya-commercial-ops.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "run_id": {
+          "title": "Run Id",
+          "type": "string"
+        },
+        "conversation_id": {
+          "title": "Conversation Id",
+          "type": "string"
+        },
+        "lead_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lead Id"
+        },
+        "agent_key": {
+          "title": "Agent Key",
+          "type": "string"
+        },
+        "agent_family": {
+          "default": "taliya",
+          "title": "Agent Family",
+          "type": "string"
+        },
+        "owner_scope": {
+          "default": "taliya",
+          "enum": [
+            "taliya",
+            "studio"
+          ],
+          "title": "Owner Scope",
+          "type": "string"
+        },
+        "tenant_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tenant Id"
+        },
+        "current_agent": {
+          "title": "Current Agent",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "succeeded",
+            "failed",
+            "blocked",
+            "human_paused",
+            "cost_capped"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "output": {
+          "$ref": "#/$defs/AgentOutput"
+        },
+        "trace_id": {
+          "title": "Trace Id",
+          "type": "string"
+        },
+        "input_snapshot": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RuntimeInputSnapshot"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "delivery_control": {
+          "$ref": "#/$defs/DeliveryControl"
+        }
+      },
+      "required": [
+        "run_id",
+        "conversation_id",
+        "agent_key",
+        "current_agent",
+        "status",
+        "output",
+        "trace_id"
+      ],
+      "title": "AgentRunResponse",
+      "type": "object"
+    },
+    "ConversationRef": {
+      "properties": {
+        "conversation_id": {
+          "title": "Conversation Id",
+          "type": "string"
+        },
+        "lead_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lead Id"
+        },
+        "channel_conversation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channel Conversation Id"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "entry_intent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Entry Intent"
+        }
+      },
+      "required": [
+        "conversation_id"
+      ],
+      "title": "ConversationRef",
+      "type": "object"
+    },
+    "DeliveryControl": {
+      "properties": {
+        "shadow_mode": {
+          "default": false,
+          "title": "Shadow Mode",
+          "type": "boolean"
+        },
+        "delivery_suppressed": {
+          "default": false,
+          "title": "Delivery Suppressed",
+          "type": "boolean"
+        },
+        "suppression_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Suppression Reason"
+        },
+        "rendered_message_count": {
+          "default": 0,
+          "title": "Rendered Message Count",
+          "type": "integer"
+        },
+        "trace_contains_rendered_messages": {
+          "default": false,
+          "title": "Trace Contains Rendered Messages",
+          "type": "boolean"
+        }
+      },
+      "title": "DeliveryControl",
+      "type": "object"
+    },
+    "DiagnosticOutput": {
+      "properties": {
+        "status": {
+          "default": "not_started",
+          "enum": [
+            "not_started",
+            "offered",
+            "in_progress",
+            "completed",
+            "insufficient_evidence"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "ledger": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Ledger",
+          "type": "array"
+        },
+        "facts_used": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Facts Used",
+          "type": "array"
+        },
+        "main_bottleneck": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Main Bottleneck"
+        },
+        "pain_context_human": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pain Context Human"
+        },
+        "likely_cause": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Likely Cause"
+        },
+        "crm_base_recommendation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Crm Base Recommendation"
+        },
+        "first_recommended_step": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "First Recommended Step"
+        },
+        "indicated_routines_or_agents": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Indicated Routines Or Agents",
+          "type": "array"
+        },
+        "indicated_agents": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Indicated Agents",
+          "type": "array"
+        },
+        "plan_or_range_to_compare": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Plan Or Range To Compare"
+        },
+        "final_plan_line": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Final Plan Line"
+        },
+        "demo_status_at_delivery": {
+          "default": "not_offered",
+          "enum": [
+            "not_offered",
+            "offered",
+            "viewed_or_asked",
+            "reacted_positive"
+          ],
+          "title": "Demo Status At Delivery",
+          "type": "string"
+        },
+        "final_demo_line": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Final Demo Line"
+        },
+        "evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "confidence": {
+          "default": "low",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "next_question": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Next Question"
+        },
+        "validation_question": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Validation Question"
+        },
+        "final_demo_next_step_question": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Final Demo Next Step Question"
+        }
+      },
+      "title": "DiagnosticOutput",
+      "type": "object"
+    },
+    "HandoffOutput": {
+      "properties": {
+        "status": {
+          "default": "none",
+          "enum": [
+            "none",
+            "requested",
+            "active",
+            "resumed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        }
+      },
+      "title": "HandoffOutput",
+      "type": "object"
+    },
+    "InboundMessage": {
+      "properties": {
+        "idempotency_key": {
+          "title": "Idempotency Key",
+          "type": "string"
+        },
+        "channel_message_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channel Message Id"
+        },
+        "type": {
+          "default": "text",
+          "enum": [
+            "text",
+            "unsupported_media",
+            "postback"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        }
+      },
+      "required": [
+        "idempotency_key"
+      ],
+      "title": "InboundMessage",
+      "type": "object"
+    },
+    "LeadFact": {
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "confidence": {
+          "default": "medium",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "title": "LeadFact",
+      "type": "object"
+    },
+    "PolicyChecks": {
+      "properties": {
+        "direct_question_answered_first": {
+          "default": true,
+          "title": "Direct Question Answered First",
+          "type": "boolean"
+        },
+        "diagnostic_timing_ok": {
+          "default": true,
+          "title": "Diagnostic Timing Ok",
+          "type": "boolean"
+        },
+        "waitlist_timing_ok": {
+          "default": true,
+          "title": "Waitlist Timing Ok",
+          "type": "boolean"
+        },
+        "official_facts_only": {
+          "default": true,
+          "title": "Official Facts Only",
+          "type": "boolean"
+        },
+        "no_early_contact_capture": {
+          "default": true,
+          "title": "No Early Contact Capture",
+          "type": "boolean"
+        },
+        "no_whatsapp_phone_request": {
+          "default": true,
+          "title": "No Whatsapp Phone Request",
+          "type": "boolean"
+        },
+        "no_fake_certainty": {
+          "default": true,
+          "title": "No Fake Certainty",
+          "type": "boolean"
+        },
+        "no_human_overlap": {
+          "default": true,
+          "title": "No Human Overlap",
+          "type": "boolean"
+        },
+        "channel_brevity_ok": {
+          "default": true,
+          "title": "Channel Brevity Ok",
+          "type": "boolean"
+        }
+      },
+      "title": "PolicyChecks",
+      "type": "object"
+    },
+    "RuntimeDecision": {
+      "properties": {
+        "previous_state": {
+          "default": "new_lead",
+          "title": "Previous State",
+          "type": "string"
+        },
+        "current_state": {
+          "default": "new_lead",
+          "title": "Current State",
+          "type": "string"
+        },
+        "next_state": {
+          "default": "new_lead",
+          "title": "Next State",
+          "type": "string"
+        },
+        "route": {
+          "default": "entry",
+          "enum": [
+            "entry",
+            "product",
+            "diagnostic",
+            "waitlist",
+            "handoff",
+            "safe_fallback"
+          ],
+          "title": "Route",
+          "type": "string"
+        },
+        "opening_type": {
+          "default": "none",
+          "enum": [
+            "none",
+            "cold_greeting_only",
+            "widget_opening",
+            "site_forced_message",
+            "social_source_opening",
+            "diagnostic_cta_opening",
+            "direct_question_opening",
+            "returning_lead"
+          ],
+          "title": "Opening Type",
+          "type": "string"
+        },
+        "detected_intents": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Detected Intents",
+          "type": "array"
+        },
+        "direct_question_present": {
+          "default": false,
+          "title": "Direct Question Present",
+          "type": "boolean"
+        },
+        "direct_question_answered_first": {
+          "default": true,
+          "title": "Direct Question Answered First",
+          "type": "boolean"
+        },
+        "diagnostic_action": {
+          "default": "none",
+          "enum": [
+            "none",
+            "offer",
+            "start",
+            "ask_next",
+            "complete",
+            "insufficient_evidence"
+          ],
+          "title": "Diagnostic Action",
+          "type": "string"
+        },
+        "diagnostic_allowed_now": {
+          "default": false,
+          "title": "Diagnostic Allowed Now",
+          "type": "boolean"
+        },
+        "waitlist_allowed_now": {
+          "default": false,
+          "title": "Waitlist Allowed Now",
+          "type": "boolean"
+        },
+        "demo_status": {
+          "default": "not_offered",
+          "enum": [
+            "not_offered",
+            "offered",
+            "viewed_or_asked",
+            "reacted_positive"
+          ],
+          "title": "Demo Status",
+          "type": "string"
+        },
+        "demo_next_step": {
+          "default": "none",
+          "enum": [
+            "none",
+            "offer_demo",
+            "ask_demo_reaction",
+            "follow_positive_demo_interest"
+          ],
+          "title": "Demo Next Step",
+          "type": "string"
+        },
+        "profile_name_usage": {
+          "default": "not_needed",
+          "enum": [
+            "used_reliable_name",
+            "ignored_unreliable_name",
+            "not_available",
+            "not_needed"
+          ],
+          "title": "Profile Name Usage",
+          "type": "string"
+        },
+        "facts_used": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Facts Used",
+          "type": "array"
+        },
+        "facts_missing": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Facts Missing",
+          "type": "array"
+        },
+        "template_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Template Ids",
+          "type": "array"
+        },
+        "template_variables": {
+          "additionalProperties": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Template Variables",
+          "type": "object"
+        },
+        "render_plan": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Render Plan",
+          "type": "array"
+        },
+        "diagnostic_ledger_status": {
+          "default": "not_started",
+          "enum": [
+            "not_started",
+            "incomplete",
+            "in_progress",
+            "complete",
+            "blocked"
+          ],
+          "title": "Diagnostic Ledger Status",
+          "type": "string"
+        },
+        "next_question_kind": {
+          "default": "none",
+          "enum": [
+            "none",
+            "pain",
+            "current_process",
+            "priority",
+            "urgency",
+            "plan_fit",
+            "waitlist_details",
+            "handoff",
+            "clarification",
+            "validation"
+          ],
+          "title": "Next Question Kind",
+          "type": "string"
+        },
+        "policy_checks": {
+          "$ref": "#/$defs/PolicyChecks"
+        }
+      },
+      "title": "RuntimeDecision",
+      "type": "object"
+    },
+    "RuntimeInputSnapshot": {
+      "properties": {
+        "contract_version": {
+          "const": "taliya-commercial-ops.v1",
+          "default": "taliya-commercial-ops.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "channel": {
+          "enum": [
+            "widget",
+            "whatsapp"
+          ],
+          "title": "Channel",
+          "type": "string"
+        },
+        "conversation_id": {
+          "title": "Conversation Id",
+          "type": "string"
+        },
+        "lead_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lead Id"
+        },
+        "channel_conversation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channel Conversation Id"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "entry_intent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Entry Intent"
+        },
+        "message_id": {
+          "title": "Message Id",
+          "type": "string"
+        },
+        "channel_message_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channel Message Id"
+        },
+        "message_type": {
+          "default": "text",
+          "enum": [
+            "text",
+            "unsupported_media",
+            "postback"
+          ],
+          "title": "Message Type",
+          "type": "string"
+        },
+        "message_timestamp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message Timestamp"
+        },
+        "page_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page Path"
+        },
+        "source_section": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Section"
+        },
+        "campaign_stage": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Campaign Stage"
+        }
+      },
+      "required": [
+        "channel",
+        "conversation_id",
+        "message_id"
+      ],
+      "title": "RuntimeInputSnapshot",
+      "type": "object"
+    },
+    "SenderRef": {
+      "properties": {
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "whatsapp_phone": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Whatsapp Phone"
+        },
+        "email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Email"
+        }
+      },
+      "title": "SenderRef",
+      "type": "object"
+    },
+    "SourceRef": {
+      "properties": {
+        "type": {
+          "enum": [
+            "product_knowledge",
+            "memory",
+            "operator"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        },
+        "keys": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Keys",
+          "type": "array"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    },
+    "ToolResult": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "blocked",
+            "error"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "idempotency_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Idempotency Key"
+        },
+        "summary": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Summary"
+        }
+      },
+      "required": [
+        "name",
+        "status"
+      ],
+      "title": "ToolResult",
+      "type": "object"
+    },
+    "Usage": {
+      "properties": {
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Model"
+        },
+        "model_operations": {
+          "default": 0,
+          "title": "Model Operations",
+          "type": "integer"
+        },
+        "input_tokens": {
+          "default": 0,
+          "title": "Input Tokens",
+          "type": "integer"
+        },
+        "cached_input_tokens": {
+          "default": 0,
+          "title": "Cached Input Tokens",
+          "type": "integer"
+        },
+        "cache_write_input_tokens": {
+          "default": 0,
+          "title": "Cache Write Input Tokens",
+          "type": "integer"
+        },
+        "output_tokens": {
+          "default": 0,
+          "title": "Output Tokens",
+          "type": "integer"
+        },
+        "reasoning_tokens": {
+          "default": 0,
+          "title": "Reasoning Tokens",
+          "type": "integer"
+        },
+        "repairs": {
+          "default": 0,
+          "title": "Repairs",
+          "type": "integer"
+        },
+        "latency_ms": {
+          "default": 0,
+          "title": "Latency Ms",
+          "type": "number"
+        },
+        "cost_usd": {
+          "default": 0,
+          "title": "Cost Usd",
+          "type": "number"
+        }
+      },
+      "required": [
+        "model"
+      ],
+      "title": "Usage",
+      "type": "object"
+    },
+    "WaitlistAction": {
+      "properties": {
+        "status": {
+          "default": "none",
+          "enum": [
+            "none",
+            "offered",
+            "pending_details",
+            "joined",
+            "declined"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "missing_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Fields",
+          "type": "array"
+        }
+      },
+      "title": "WaitlistAction",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "contract_version": {
+      "const": "taliya-commercial-ops.v1",
+      "default": "taliya-commercial-ops.v1",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "request": {
+      "$ref": "#/$defs/AgentRunRequest"
+    },
+    "response": {
+      "$ref": "#/$defs/AgentRunResponse"
+    }
+  },
+  "required": [
+    "request",
+    "response"
+  ],
+  "title": "CommercialOpsContract",
+  "type": "object"
+}

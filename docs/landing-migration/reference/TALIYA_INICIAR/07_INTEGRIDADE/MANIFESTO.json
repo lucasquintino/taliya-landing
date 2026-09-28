@@ -1,0 +1,209 @@
+{
+  "pacote": "TALIYA_INICIAR",
+  "data_preparacao": "2026-09-24",
+  "tipo": "continuidade_documental",
+  "codigo_fonte_incluido": false,
+  "specs_detalhadas_criadas": false,
+  "implementacao_realizada_nesta_montagem": false,
+  "publicado": false,
+  "prompt_mestre": {
+    "origem": "PROMPT_Taliya_Copiloto_Landing_SDD_v2.md",
+    "destino_md": "02_PROMPT_MESTRE_SDD.md",
+    "destino_txt": "02_PROMPT_MESTRE_SDD.txt",
+    "sha256": "92a69cf1e5871f283f4004233c4b34b20cb175774ee9970e08da36061e8af446",
+    "preservado_sem_alteracoes": true
+  },
+  "pacotes_originais": [
+    {
+      "arquivo": "Taliya_Landing_Pacote_Implementacao_v1_2026-09-18.zip",
+      "sha256_original": "4948b3aa50c2e8e83ecd396277447837235cde65a1d9d4f7d3630610e3adec61",
+      "bytes": 468104,
+      "arquivos_extraidos": 11,
+      "crc_zip_original": "aprovado",
+      "copia_zip_original": "identica_byte_a_byte",
+      "conteudo_extraido": "identico_byte_a_byte_ao_zip"
+    },
+    {
+      "arquivo": "Taliya_SEO_Google_ChatGPT_Adendo_Implementacao_v1_1_2026-09-19.zip",
+      "sha256_original": "5a9bb3fb9b16fc53e8acab63c3b464c4044d76c4d1e8a0f900efda6b567f7ab9",
+      "bytes": 319288,
+      "arquivos_extraidos": 13,
+      "crc_zip_original": "aprovado",
+      "copia_zip_original": "identica_byte_a_byte",
+      "conteudo_extraido": "identico_byte_a_byte_ao_zip"
+    }
+  ],
+  "total_arquivos_extraidos_dos_originais": 24,
+  "total_arquivos_inventariados": 33,
+  "excecoes_do_inventario": [
+    "07_INTEGRIDADE/MANIFESTO.json",
+    "07_INTEGRIDADE/SHA256SUMS.txt"
+  ],
+  "arquivos": [
+    {
+      "caminho": "00_COMECE_AQUI.txt",
+      "bytes": 4820,
+      "sha256": "b9e835c640f9af5636408e8b27abd3b46d84dbaab7645dcbba109940275b8ce3"
+    },
+    {
+      "caminho": "01_PROMPT_PARA_NOVA_CONVERSA.txt",
+      "bytes": 1774,
+      "sha256": "ceb16b09704c25aac83db5e8e74b5488a8e860531a9bd68e83efcec83defa480"
+    },
+    {
+      "caminho": "02_PROMPT_MESTRE_SDD.md",
+      "bytes": 44440,
+      "sha256": "92a69cf1e5871f283f4004233c4b34b20cb175774ee9970e08da36061e8af446"
+    },
+    {
+      "caminho": "02_PROMPT_MESTRE_SDD.txt",
+      "bytes": 44440,
+      "sha256": "92a69cf1e5871f283f4004233c4b34b20cb175774ee9970e08da36061e8af446"
+    },
+    {
+      "caminho": "03_CONTEXTO_E_ESTADO.md",
+      "bytes": 5024,
+      "sha256": "f9b84539bcb166306ba979a8960a9b713a8d8151f9afeaab1bf6b3add9bfa532"
+    },
+    {
+      "caminho": "04_MAPA_DE_SPECS.md",
+      "bytes": 3855,
+      "sha256": "15f8015a77845c6cf77de4d13d48692dae14f6af78a4e126d20158d990ac3e07"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/PROMPT_IMPLEMENTACAO.md",
+      "bytes": 2952,
+      "sha256": "333cae34fcd738686a451393362af593b04b3d33dff837a21cd9e7a4af05fd29"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/README.md",
+      "bytes": 2657,
+      "sha256": "d29ce9083f67fa7b8da1501433f44daf2aa9978d7723983c9f9cdc53114344e5"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/Taliya_Landing_Especificacao_Definitiva_v1_2026-09-18.docx",
+      "bytes": 89454,
+      "sha256": "516b521a232905cd0090ebe0114dcc96b5c3caecb0f221b60bd8e67c412606f1"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/Taliya_Landing_Especificacao_Definitiva_v1_2026-09-18.pdf",
+      "bytes": 884090,
+      "sha256": "3e0668854db555eb8a1dee013379b6779a09bf9b7f4104222c8f5fc9fde2175f"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/Taliya_Landing_Especificacao_v1.md",
+      "bytes": 111667,
+      "sha256": "403c6f8b3e4cfa4f6fc0053619669c295e1cd993949f6cc1d54d1962d7eaab99"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/VALIDACAO_CONTEUDO.json",
+      "bytes": 496,
+      "sha256": "91027f89a546d745c7d0cdcd703eb4150dbc48f31ed884d48f58c42d6b99579f"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/landing.content.pt-BR.json",
+      "bytes": 146228,
+      "sha256": "5fdf54b24d8c450dbdf6ff848d70fe2c380a98bbe9d2165f11cabf3bfc4d5aff"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/qa-checklist.json",
+      "bytes": 9179,
+      "sha256": "03063455440e159016e024574f9774900316222db7aa857b75a910db8874e293"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/schema.description.md",
+      "bytes": 3610,
+      "sha256": "4d6492da85fc631d8c4bf234f4400f7f5091bf00e88f68304a6cb50b0e0f5a1b"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/sources.json",
+      "bytes": 1202,
+      "sha256": "fcd29cf4a50aa8fbbb1b52c2092c28f68b408582133a4b4617ebed70c91f89e5"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/validate_content.py",
+      "bytes": 2260,
+      "sha256": "21a93689dd78f1fed44d0abf8cc0ebb83392081711ee0837812ac745f6ae83f6"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/README.md",
+      "bytes": 2172,
+      "sha256": "2685a524a10f651fb4c3a6be08142f1188965de6d0708065b700f4efb48f2c35"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/Taliya_Auditoria_SEO_Google_ChatGPT_v1_1_2026-09-19.docx",
+      "bytes": 75139,
+      "sha256": "5feb2c5e902866ad235d8d7db366bf802e22ea8abf24b79308ce8d6e877cb91c"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/Taliya_Auditoria_SEO_Google_ChatGPT_v1_1_2026-09-19.md",
+      "bytes": 71952,
+      "sha256": "78f764208049e53c44ccbcfc08406c26fdc1c84c4f49495e4f1e3f666e9ed711"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/Taliya_Auditoria_SEO_Google_ChatGPT_v1_1_2026-09-19.pdf",
+      "bytes": 524584,
+      "sha256": "24016440336f265f4c873e43d728f21431f8f3852dab9333e448a35b30dcb96b"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/evidence_summary.json",
+      "bytes": 2607,
+      "sha256": "e18ef360138184c05633adba7d3ea3ec14304f0e2be690c15ad117da276fba7c"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/fontes.md",
+      "bytes": 6313,
+      "sha256": "b8d3732b9e3b34f90ebcd918245b19402b493660e1a1f70d62fbfe799514e1d7"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/manifest.sha256.json",
+      "bytes": 1227,
+      "sha256": "1038dff4a0565ced6fbdac4323e482bb82b71ad43ab6be211e264e39481a0488"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/robots.public.example.txt",
+      "bytes": 302,
+      "sha256": "13af02e30e8951e22309054eec08182e0237130f16cea9d677ac88e473d5a2fa"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/robots_policy_notes.md",
+      "bytes": 981,
+      "sha256": "f4bbce23da40a8e35aef08e89fe5a4958dd8e75f1c7917266a699ec20cd49604"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/route_plan.json",
+      "bytes": 3297,
+      "sha256": "9e2874276d17725277ce5d21f4d1ba7d7a80cbc458927324ac4d52fe9cf81a1f"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/seo_acceptance.md",
+      "bytes": 2662,
+      "sha256": "3e694a942a2ebae690dcc9130efcd641391e76f20cb6a525665fd98416cf39e1"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/seo_config.example.json",
+      "bytes": 1677,
+      "sha256": "dcaccd7bc381dde9809ecd95a1e6ae9c5be8a0d4f58e1ef4390d521ab082f7fd"
+    },
+    {
+      "caminho": "05_PACOTES_EXTRAIDOS/seo/structured_data.prelaunch.json",
+      "bytes": 1069,
+      "sha256": "546dc42819b9b69ed4daa907c8ac0a8d133fbed0afc9cc2cf3c5148b487fc828"
+    },
+    {
+      "caminho": "06_ZIPS_ORIGINAIS/Taliya_Landing_Pacote_Implementacao_v1_2026-09-18.zip",
+      "bytes": 468104,
+      "sha256": "4948b3aa50c2e8e83ecd396277447837235cde65a1d9d4f7d3630610e3adec61"
+    },
+    {
+      "caminho": "06_ZIPS_ORIGINAIS/Taliya_SEO_Google_ChatGPT_Adendo_Implementacao_v1_1_2026-09-19.zip",
+      "bytes": 319288,
+      "sha256": "5a9bb3fb9b16fc53e8acab63c3b464c4044d76c4d1e8a0f900efda6b567f7ab9"
+    },
+    {
+      "caminho": "07_INTEGRIDADE/ESCOPO_DA_VERIFICACAO.txt",
+      "bytes": 1049,
+      "sha256": "07592cf87bdaff850e083941793c7e11ce93f14562f7ad52564032e9d2d01f7c"
+    }
+  ]
+}

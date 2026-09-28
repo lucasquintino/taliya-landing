@@ -1,0 +1,1076 @@
+{
+  "number": 15,
+  "scenario_id": "delivery_concurrency",
+  "channel": "whatsapp",
+  "required_proof": "Render remains local; defer proposal recorded, no public delivery.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "me explica como a Taliya funciona?"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro! Vou te explicar em algumas mensagens curtas..."
+    },
+    {
+      "role": "user",
+      "content": "e mais uma coisa, voces atendem studios pequenos?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_conversation_summary",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "propose_template_plan",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"product\"}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":null}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "product",
+          "templates": [
+            {
+              "template_id": "product.agents_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.comparison_current_tool",
+              "required_variables": [
+                "current_tool_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.crm_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.demo_direct",
+              "required_variables": [
+                "official_demo_link"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.how_it_works_direct",
+              "required_variables": [
+                "contextual_next_step"
+              ],
+              "optional_variables": [
+                "recommended_area"
+              ]
+            },
+            {
+              "template_id": "product.integration_scope_direct",
+              "required_variables": [
+                "integration_topic"
+              ],
+              "optional_variables": [
+                "human_confirmation_topic"
+              ]
+            },
+            {
+              "template_id": "product.out_of_profile_redirect",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.overview_short",
+              "required_variables": [],
+              "optional_variables": [
+                "product_fact_summary"
+              ]
+            },
+            {
+              "template_id": "product.plan_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_name"
+              ]
+            },
+            {
+              "template_id": "product.plan_fit_with_diagnostic",
+              "required_variables": [
+                "plan_fit_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.price_complete_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_fit_context"
+              ]
+            },
+            {
+              "template_id": "product.price_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_fit_context"
+              ]
+            },
+            {
+              "template_id": "product.price_objection_value",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.security_data_direct",
+              "required_variables": [],
+              "optional_variables": [
+                "human_confirmation_topic"
+              ]
+            },
+            {
+              "template_id": "product.whatsapp_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": [
+                "official_demo_link"
+              ]
+            }
+          ],
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_delivery_concurrency",
+          "summary": "A resposta anterior ainda esta sendo entregue em chunks no WhatsApp (2 chunks restantes). Uma nova mensagem do lead chegou durante a entrega.",
+          "lead_fact_count": 0,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_delivery_concurrency.summary"
+        ],
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "plans",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": [
+                {
+                  "id": "base",
+                  "name": "Base",
+                  "monthly_price_brl": 197,
+                  "price_label": "R$ 197/mes",
+                  "best_for": "Studios that want to organize the routine before active AI.",
+                  "included_agents": [],
+                  "whatsapp_availability": "No automatic WhatsApp AI replies.",
+                  "usage_boundary": "1 studio, 1 user, no AI message quota."
+                },
+                {
+                  "id": "one_agent",
+                  "name": "Essencial",
+                  "monthly_price_brl": 497,
+                  "price_label": "R$ 497/mes",
+                  "best_for": "Studios that want to solve one clear pain first.",
+                  "included_agents": [
+                    "1 main agent chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for that agent.",
+                  "usage_boundary": "1 studio, up to 2 users, 1,500 AI messages/month with hard cap."
+                },
+                {
+                  "id": "three_agents",
+                  "name": "Avance",
+                  "monthly_price_brl": 897,
+                  "price_label": "R$ 897/mes",
+                  "best_for": "Studios that want help in some priority routines.",
+                  "included_agents": [
+                    "3 main agents chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for included agents.",
+                  "usage_boundary": "1 studio, up to 5 users, 5,000 AI messages/month with hard cap."
+                },
+                {
+                  "id": "seven_agents",
+                  "name": "Completo",
+                  "monthly_price_brl": 1497,
+                  "price_label": "R$ 1.497/mes",
+                  "best_for": "Studios that want the complete Taliya.",
+                  "included_agents": [
+                    "Atendimento",
+                    "Agenda",
+                    "Vendas",
+                    "Financeiro",
+                    "Retencao",
+                    "Gestao",
+                    "Historico/Evolucao"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for the complete team.",
+                  "usage_boundary": "1 studio, up to 10 users, 15,000 AI messages/month with hard cap."
+                }
+              ],
+              "excerpt": "Base (base) R$ 197/mes best_for=Studios that want to organize the routine before active AI. included=no active AI agents whatsapp=No automatic WhatsApp AI replies. usage=1 studio, 1 user, no AI message quota. | Essencial (one_agent) R$ 497/mes best_for=Studios that want to solve one clear pain first. included=1 main agent chosen during setup whatsapp=Requires the studio WhatsApp Business connected for that agent. usage=1 studio, up to 2 users, 1,500 AI messages/month with hard cap. | Avance (three_agents) R$ 897/mes best_for=Studios that want help in some priority routines. included=3 main agents chosen during setup whatsapp=Requires the studio WhatsApp Business connected for included agents. usage=1 studio, up to 5 users, 5,000 AI messages/month with hard cap. | Completo (seven_agents) R$ 1.497/mes best_for=Studios that want the complete Taliya. included=Atendimento, Agenda, Vendas, Financeiro, Retencao, Gestao, Historico/Evolucao whatsapp=Requires the studio WhatsApp Business connected for the complete team. usage=1 studio, up to 10 users, 15,000 AI messages/month with hard cap.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.plans"
+              ]
+            },
+            {
+              "key": "prices",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": {
+                "base": "R$ 197/mes",
+                "one_agent": "R$ 497/mes",
+                "three_agents": "R$ 897/mes",
+                "seven_agents": "R$ 1.497/mes"
+              },
+              "excerpt": "{\"base\":\"R$ 197/mes\",\"one_agent\":\"R$ 497/mes\",\"seven_agents\":\"R$ 1.497/mes\",\"three_agents\":\"R$ 897/mes\"}",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.prices"
+              ]
+            },
+            {
+              "key": "plan_comparison",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": [
+                "Base: Studios that want to organize the routine before active AI.",
+                "Essencial: Studios that want to solve one clear pain first.",
+                "Avance: Studios that want help in some priority routines.",
+                "Completo: Studios that want the complete Taliya."
+              ],
+              "excerpt": "[\"Base: Studios that want to organize the routine before active AI.\",\"Essencial: Studios that want to solve one clear pain first.\",\"Avance: Studios that want help in some priority routines.\",\"Completo: Studios that want the complete Taliya.\"]",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.plan_comparison"
+              ]
+            },
+            {
+              "key": "links",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": {
+                "landing": "https://www.taliya.com.br/pilates",
+                "plans": "https://www.taliya.com.br/pilates/planos",
+                "demonstration": "https://www.taliya.com.br/pilates/planos/demonstracao",
+                "privacy": "https://www.taliya.com.br/privacidade"
+              },
+              "excerpt": "{\"demonstration\":\"https://www.taliya.com.br/pilates/planos/demonstracao\",\"landing\":\"https://www.taliya.com.br/pilates\",\"plans\":\"https://www.taliya.com.br/pilates/planos\",\"privacy\":\"https://www.taliya.com.br/privacidade\"}",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.links"
+              ]
+            },
+            {
+              "key": "demo_status",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "available",
+              "excerpt": "available",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.demo_status"
+              ]
+            },
+            {
+              "key": "waitlist_status",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "limited_studios_waitlist",
+              "excerpt": "limited_studios_waitlist",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.waitlist_status"
+              ]
+            },
+            {
+              "key": "checkout_status",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "unavailable",
+              "excerpt": "unavailable",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.checkout_status"
+              ]
+            },
+            {
+              "key": "availability",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "Limited rollout for a small number of studios.",
+              "excerpt": "Limited rollout for a small number of studios.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.availability"
+              ]
+            },
+            {
+              "key": "cancellation_or_guarantee_policy",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "30 days of guarantee on the first subscription. Monthly cancellation without penalty after that period, according to the current policy.",
+              "excerpt": "30 days of guarantee on the first subscription. Monthly cancellation without penalty after that period, according to the current policy.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.cancellation_or_guarantee_policy"
+              ]
+            },
+            {
+              "key": "privacy_or_data_notes",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "Do not ask for payment data or sensitive student data in chat.",
+              "excerpt": "Do not ask for payment data or sensitive student data in chat.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.privacy_or_data_notes"
+              ]
+            },
+            {
+              "key": "how_it_works",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "Taliya helps a Pilates studio organize the daily routine in one place: conversations, students, agenda, reposicoes, cobrancas, interested leads, and follow-ups. The team can see what needs action. When the studio WhatsApp Business is connected and configured, agents can support conversations with students and interested leads while the team follows and takes over when needed.",
+              "excerpt": "Taliya helps a Pilates studio organize the daily routine in one place: conversations, students, agenda, reposicoes, cobrancas, interested leads, and follow-ups. The team can see what needs action. When the studio WhatsApp Business is connected and configured, agents can support conversations with students and interested leads while the team follows and takes over when needed.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.how_it_works"
+              ]
+            },
+            {
+              "key": "routine_areas",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": {
+                "atendimento": "Mensagens e duvidas comuns nao ficam perdidas.",
+                "vendas_interessados": "Interessados, aulas experimentais, proximos passos e follow-up ficam organizados.",
+                "agenda": "Aulas, horarios, faltas, encaixes e movimentos da agenda ficam mais claros.",
+                "reposicoes": "Pedidos e pendencias de reposicao ficam organizados.",
+                "cobrancas_financeiro": "Mensalidades, vencimentos, renovacoes e pendencias ficam mais visiveis.",
+                "acompanhamento_alunos": "Alunos que somem, faltam ou precisam de retorno ficam no radar da equipe.",
+                "gestao_prioridades": "A equipe enxerga o que precisa resolver primeiro."
+              },
+              "excerpt": "{\"acompanhamento_alunos\":\"Alunos que somem, faltam ou precisam de retorno ficam no radar da equipe.\",\"agenda\":\"Aulas, horarios, faltas, encaixes e movimentos da agenda ficam mais claros.\",\"atendimento\":\"Mensagens e duvidas comuns nao ficam perdidas.\",\"cobrancas_financeiro\":\"Mensalidades, vencimentos, renovacoes e pendencias ficam mais visiveis.\",\"gestao_prioridades\":\"A equipe enxerga o que precisa resolver primeiro.\",\"reposicoes\":\"Pedidos e pendencias de reposicao ficam organizados.\",\"vendas_interessados\":\"Interessados, aulas experimentais, proximos passos e follow-up ficam organizados.\"}",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.routine_areas"
+              ]
+            },
+            {
+              "key": "whatsapp_scope",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "This commercial conversation runs on Taliya's own widget and Taliya's own WhatsApp number. For product agents to act on student WhatsApp conversations, the studio needs WhatsApp Business connected/configured. Students do not need to download an app or create a password; they talk through WhatsApp. Do not promise automatic setup inside this commercial chat.",
+              "excerpt": "This commercial conversation runs on Taliya's own widget and Taliya's own WhatsApp number. For product agents to act on student WhatsApp conversations, the studio needs WhatsApp Business connected/configured. Students do not need to download an app or create a password; they talk through WhatsApp. Do not promise automatic setup inside this commercial chat.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.whatsapp_scope"
+              ]
+            },
+            {
+              "key": "integration_scope",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "Do not promise Instagram integration, integration with the lead's current system, mass messaging, checkout, payment links, or automatic migration. If a specific integration is not officially known, say the limit and offer human confirmation.",
+              "excerpt": "Do not promise Instagram integration, integration with the lead's current system, mass messaging, checkout, payment links, or automatic migration. If a specific integration is not officially known, say the limit and offer human confirmation.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.integration_scope"
+              ]
+            },
+            {
+              "key": "comparison_spreadsheet",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "Spreadsheet, notebook, and manual WhatsApp can work while the routine is small. Taliya is different because it helps organize what gets spread out: conversations, agenda, reposicoes, cobrancas, interested leads, and student follow-up. Do not shame the current process or claim replacement before understanding the case.",
+              "excerpt": "Spreadsheet, notebook, and manual WhatsApp can work while the routine is small. Taliya is different because it helps organize what gets spread out: conversations, agenda, reposicoes, cobrancas, interested leads, and student follow-up. Do not shame the current process or claim replacement before understanding the case.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.comparison_spreadsheet"
+              ]
+            },
+            {
+              "key": "comparison_management_system",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "If the current system solves part of the routine, acknowledge it. Compare Taliya by how it organizes the studio routine and how AI agents support actions. Do not attack Tecnofit, Next Fit, or competitors. Do not promise migration, integration, or feature parity without confirmation.",
+              "excerpt": "If the current system solves part of the routine, acknowledge it. Compare Taliya by how it organizes the studio routine and how AI agents support actions. Do not attack Tecnofit, Next Fit, or competitors. Do not promise migration, integration, or feature parity without confirmation.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.comparison_management_system"
+              ]
+            },
+            {
+              "key": "security_and_data",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "The chat should not request sensitive data. Do not ask for CPF, payment data, medical data, or sensitive student information. Privacy, LGPD, certifications, encryption, or access-to-conversation claims require official facts; if the fact is missing, offer human confirmation.",
+              "excerpt": "The chat should not request sensitive data. Do not ask for CPF, payment data, medical data, or sensitive student information. Privacy, LGPD, certifications, encryption, or access-to-conversation claims require official facts; if the fact is missing, offer human confirmation.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.security_and_data"
+              ]
+            },
+            {
+              "key": "availability_and_onboarding",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "Taliya is working with a small number of studios. There is no open checkout for immediate broad entry. Do not promise an exact date or guaranteed opening window. Waitlist is the current path when there is real intent to start or contract. Setup details should be confirmed by the team.",
+              "excerpt": "Taliya is working with a small number of studios. There is no open checkout for immediate broad entry. Do not promise an exact date or guaranteed opening window. Waitlist is the current path when there is real intent to start or contract. Setup details should be confirmed by the team.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.availability_and_onboarding"
+              ]
+            },
+            {
+              "key": "out_of_profile",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "Taliya is currently intended mainly for Pilates studios. If the person is a student, autonomous teacher, gym, clinic, non-Pilates business, or not-yet-open studio, qualify gently. Do not force a studio diagnostic or promise fit for another niche.",
+              "excerpt": "Taliya is currently intended mainly for Pilates studios. If the person is a student, autonomous teacher, gym, clinic, non-Pilates business, or not-yet-open studio, qualify gently. Do not force a studio diagnostic or promise fit for another niche.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.out_of_profile"
+              ]
+            },
+            {
+              "key": "unsupported_claims",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": [
+                "checkout",
+                "guaranteed ROI",
+                "specific integration without confirmation",
+                "exact broad availability date",
+                "payment link while checkout is unavailable"
+              ],
+              "excerpt": "[\"checkout\",\"guaranteed ROI\",\"specific integration without confirmation\",\"exact broad availability date\",\"payment link while checkout is unavailable\"]",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.unsupported_claims"
+              ]
+            }
+          ],
+          "requested_keys": []
+        },
+        "evidence": [
+          "product_knowledge.plans",
+          "product_knowledge.prices",
+          "product_knowledge.plan_comparison",
+          "product_knowledge.links",
+          "product_knowledge.demo_status",
+          "product_knowledge.waitlist_status",
+          "product_knowledge.checkout_status",
+          "product_knowledge.availability",
+          "product_knowledge.cancellation_or_guarantee_policy",
+          "product_knowledge.privacy_or_data_notes",
+          "product_knowledge.how_it_works",
+          "product_knowledge.routine_areas",
+          "product_knowledge.whatsapp_scope",
+          "product_knowledge.integration_scope",
+          "product_knowledge.comparison_spreadsheet",
+          "product_knowledge.comparison_management_system",
+          "product_knowledge.security_and_data",
+          "product_knowledge.availability_and_onboarding",
+          "product_knowledge.out_of_profile",
+          "product_knowledge.unsupported_claims"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "propose_template_plan",
+      "arguments": "{\"template_ids\":[\"product.overview_short\"],\"variables_json\":\"{\\\"product_fact_summary\\\":\\\"Sim — a Taliya atende studios de Pilates de vários tamanhos, inclusive pequenos. Ela ajuda a organizar conversas, agenda, interessados, reposições, cobranças e follow-up em um só lugar. Os planos começam em R$ 197/mês (Base), e o Essencial custa R$ 497/mês para um primeiro ponto de dor.\\\",\\\"contextual_next_step\\\":\\\"Se quiser, eu te mostro qual plano faz mais sentido pro seu studio pequeno.\\\"}\",\"evidence\":[\"product_knowledge.out_of_profile\",\"product_knowledge.how_it_works\",\"product_knowledge.prices\",\"product_knowledge.plan_comparison\"],\"uncertainty\":\"low\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "propose_template_plan",
+        "side_effect_class": "proposal_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "proposal_type": "template_plan",
+          "proposal": {
+            "template_ids": [
+              "product.overview_short"
+            ],
+            "variables": {
+              "product_fact_summary": "Sim — a Taliya atende studios de Pilates de vários tamanhos, inclusive pequenos. Ela ajuda a organizar conversas, agenda, interessados, reposições, cobranças e follow-up em um só lugar. Os planos começam em R$ 197/mês (Base), e o Essencial custa R$ 497/mês para um primeiro ponto de dor.",
+              "contextual_next_step": "Se quiser, eu te mostro qual plano faz mais sentido pro seu studio pequeno."
+            }
+          },
+          "validation_required": true,
+          "commit_after_validation_only": true,
+          "missing_evidence": false,
+          "evidence": [
+            "product_knowledge.out_of_profile",
+            "product_knowledge.how_it_works",
+            "product_knowledge.prices",
+            "product_knowledge.plan_comparison"
+          ],
+          "uncertainty": "low"
+        },
+        "evidence": [
+          "product_knowledge.out_of_profile",
+          "product_knowledge.how_it_works",
+          "product_knowledge.prices",
+          "product_knowledge.plan_comparison"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "product_question",
+        "fit_check"
+      ],
+      "direct_question": "vocês atendem studios pequenos?",
+      "customer_need": "saber se a Taliya serve para studio pequeno",
+      "pain_context": null,
+      "source_context": "follow-up em conversa sobre como a Taliya funciona",
+      "mixed_intent": true,
+      "extracted_facts": [],
+      "evidence": [
+        "user_message:e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Answer whether Taliya atende studios pequenos.",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message:e mais uma coisa, voces atendem studios pequenos?",
+          "product_knowledge.out_of_profile",
+          "product_knowledge.how_it_works",
+          "product_knowledge.prices"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_assessed",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "product.overview_short"
+      ],
+      "variables": [
+        {
+          "name": "product_fact_summary",
+          "kind": "long_text",
+          "value": "Sim — a Taliya atende studios de Pilates de vários tamanhos, inclusive pequenos. Ela ajuda a organizar conversas, agenda, interessados, reposições, cobranças e follow-up em um só lugar. Os planos começam em R$ 197/mês (Base), e o Essencial custa R$ 497/mês para um primeiro ponto de dor.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.out_of_profile",
+            "product_knowledge.how_it_works",
+            "product_knowledge.prices",
+            "product_knowledge.plan_comparison"
+          ],
+          "max_length": 280
+        },
+        {
+          "name": "contextual_next_step",
+          "kind": "short_text",
+          "value": "Se quiser, eu te mostro qual plano faz mais sentido pro seu studio pequeno.",
+          "source": "model_decision",
+          "evidence": [
+            "user_message:e mais uma coisa, voces atendem studios pequenos?"
+          ],
+          "max_length": 120
+        }
+      ],
+      "evidence": [
+        "product_knowledge.out_of_profile",
+        "product_knowledge.how_it_works",
+        "product_knowledge.prices",
+        "product_knowledge.plan_comparison"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": true,
+        "deferred_inbound_count": 1
+      }
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "product_question",
+      "last_intent": "fit_check",
+      "diagnostic_status": "not_started",
+      "waitlist_status": "not_assessed",
+      "handoff_status": "none",
+      "next_action_hint": "answer fit question then offer plan guidance"
+    },
+    "delivery": {
+      "chunk_policy": "staged_diagnostic"
+    },
+    "confidence": "high",
+    "risks": [
+      "nova mensagem chegou durante entrega anterior; evitar sobrescrever o fluxo"
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_delivery_concurrency",
+    "conversation_id": "spike_conv_delivery_concurrency",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_conversation_summary",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "propose_template_plan",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "product_question",
+        "fit_check"
+      ],
+      "direct_question": "vocês atendem studios pequenos?",
+      "customer_need": "saber se a Taliya serve para studio pequeno",
+      "pain_context": null,
+      "source_context": "follow-up em conversa sobre como a Taliya funciona",
+      "mixed_intent": true,
+      "extracted_facts": [],
+      "evidence": [
+        "user_message:e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Answer whether Taliya atende studios pequenos.",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message:e mais uma coisa, voces atendem studios pequenos?",
+          "product_knowledge.out_of_profile",
+          "product_knowledge.how_it_works",
+          "product_knowledge.prices"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_assessed",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "product.overview_short"
+      ],
+      "variables": {
+        "product_fact_summary": {
+          "kind": "long_text",
+          "value": "Sim — a Taliya atende studios de Pilates de vários tamanhos, inclusive pequenos. Ela ajuda a organizar conversas, agenda, interessados, reposições, cobranças e follow-up em um só lugar. Os planos começam em R$ 197/mês (Base), e o Essencial custa R$ 497/mês para um primeiro ponto de dor.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.out_of_profile",
+            "product_knowledge.how_it_works",
+            "product_knowledge.prices",
+            "product_knowledge.plan_comparison"
+          ],
+          "max_length": 280
+        },
+        "contextual_next_step": {
+          "kind": "short_text",
+          "value": "Se quiser, eu te mostro qual plano faz mais sentido pro seu studio pequeno.",
+          "source": "model_decision",
+          "evidence": [
+            "user_message:e mais uma coisa, voces atendem studios pequenos?"
+          ],
+          "max_length": 120
+        }
+      },
+      "evidence": [
+        "product_knowledge.out_of_profile",
+        "product_knowledge.how_it_works",
+        "product_knowledge.prices",
+        "product_knowledge.plan_comparison"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": true,
+        "deferred_inbound_count": 1
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "product_question",
+      "last_intent": "fit_check",
+      "diagnostic_status": "not_started",
+      "waitlist_status": "not_assessed",
+      "handoff_status": "none",
+      "next_action_hint": "answer fit question then offer plan guidance"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "staged_diagnostic",
+      "render_plan_only": true,
+      "evidence": [
+        "product_knowledge.out_of_profile",
+        "product_knowledge.how_it_works",
+        "product_knowledge.prices",
+        "product_knowledge.plan_comparison"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "nova mensagem chegou durante entrega anterior; evitar sobrescrever o fluxo"
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 19637,
+      "output_tokens": 873,
+      "cost_usd": 0.011399,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_delivery_concurrency",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Sim — a Taliya atende studios de Pilates de vários tamanhos, inclusive pequenos. Ela ajuda a organizar conversas, agenda, interessados, reposições, cobranças e follow-up em um só lugar. Os planos começam em R$ 197/mês (Base), e o Essencial custa R$ 497/mês para um primeiro ponto de dor.",
+      "template_id": "product.overview_short",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "A Taliya ajuda o studio de Pilates a organizar agenda, reposicoes, cobrancas, vendas, atendimento e acompanhamento em um so lugar.",
+      "template_id": "product.overview_short",
+      "channel": "whatsapp",
+      "sequence": 2
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": true,
+      "deferred_inbound_count": 1
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "product_question",
+    "last_intent": "fit_check",
+    "diagnostic_status": "not_started",
+    "waitlist_status": "not_assessed",
+    "handoff_status": "none",
+    "next_action_hint": "answer fit question then offer plan guidance"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 19637,
+    "output_tokens": 873,
+    "cost_usd": 0.011399,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

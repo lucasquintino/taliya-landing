@@ -1,0 +1,3341 @@
+{
+  "meta": {
+    "document": "Taliya — Especificação definitiva da landing",
+    "version": "1.0",
+    "date": "2026-09-18",
+    "locale": "pt-BR",
+    "activeMode": "prelaunch",
+    "status": "Especificação de conteúdo e interação; não é site implementado nem teste do produto",
+    "precedence": "Consolida a auditoria final de 18/09/2026. Em regras de negócio, o Documento Mestre prevalece sobre copy de marketing. Não altera a arquitetura do produto.",
+    "demoReferenceDate": "2026-09-18",
+    "demoTimezone": "America/Sao_Paulo"
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "name": "Taliya_Auditoria_Final_Landing_vs_Meu_Assessor_2026-09-18.pdf",
+      "location": "20 páginas; especialmente pp. 6–14 e 17–19",
+      "use": "Ordem, sete frentes, reaproveitamento, remoção do ROI, novos blocos e limites comerciais."
+    },
+    {
+      "id": "S2",
+      "name": "Product_Bible_Copiloto_Servicos_v1_7.md",
+      "location": "§§ 1–9, 12, 13 e 22; edição de 14/09/2026",
+      "use": "Serviço único; documentos e versões; agenda, reservas e recebimentos independentes; uso parcial; canais."
+    },
+    {
+      "id": "S3",
+      "name": "Documento_Mestre_Implementacao_Copiloto_v1_0(1).pdf",
+      "location": "p.25 COP-CF08; pp.45–46 OP-CFG-01 / OP-READ-01; pp.55–57 operações de agenda e pagamentos",
+      "use": "Oferta especificada; identidade/configuração; preferências por conversa; alterações atômicas; nenhuma movimentação bancária."
+    },
+    {
+      "id": "S4",
+      "name": "Decisões desta conversa",
+      "location": "Solicitação de manter componentes e aprofundar casos; produto ainda em desenvolvimento",
+      "use": "WhatsApp para rotina, app complementar; conteúdo de pré-lançamento; sem reauditoria ou publicação nesta entrega."
+    }
+  ],
+  "principles": [
+    "Vender o que a pessoa resolve, não uma equipe de agentes nem a arquitetura interna.",
+    "Preservar identidade, containers, espaçamentos, tabs, carrosséis, mockups, cards, accordions e navegação já existentes. Os nomes dos componentes abaixo são contratos conceituais, não caminhos de código observados.",
+    "As sete frentes são categorias comerciais: Clientes, Serviços, Agenda, Orçamentos, Recebimentos, Lembretes e Arquivos e documentos. Histórico e contexto são transversais; orçamento continua no mesmo Serviço.",
+    "O profissional fala com o número da Taliya. Não conectar o WhatsApp comercial dele nem sugerir acesso às outras conversas.",
+    "Após criar e vincular a conta, a rotina coberta pode acontecer pela conversa. Não prometer ausência de cadastro/app para identidade, permissões, privacidade ou assinatura.",
+    "A página deve explicar registrar, consultar, corrigir e continuar, não apenas capturar dados.",
+    "Não exigir orçamento, início, conclusão e pagamento em todo uso. Começar por uma necessidade é uma forma válida de adoção.",
+    "Todas as demos desta especificação são fictícias e roteirizadas. Não chamar vídeo simulado de prova de execução.",
+    "Remover a calculadora de ROI e os sliders numéricos; reutilizar seu espaço e cards para fluxos. Não manter uma calculadora escondida nem trocar somente seus rótulos.",
+    "Não acrescentar emissão fiscal, banco, Pix automático, links de pagamento, autoagendamento público, equipe ou tarefas para imitar o concorrente."
+  ],
+  "modes": {
+    "prelaunch": {
+      "badge": "Em desenvolvimento",
+      "primaryCta": "Quero testar primeiro",
+      "secondaryCta": "Ver como vai funcionar",
+      "primaryTarget": "#comecar",
+      "demoLabel": "Demonstração ilustrativa da experiência planejada.",
+      "notice": "A Taliya ainda não está disponível para uso. Cadastre-se para receber um aviso sobre os primeiros testes.",
+      "priceVisible": false,
+      "socialProofVisible": false
+    },
+    "launch": {
+      "badge": "Para quem trabalha por conta",
+      "primaryCta": "Começar 14 dias grátis",
+      "secondaryCta": "Ver na prática",
+      "primaryTarget": "onboardingUrl",
+      "demoLabel": "Exemplo ilustrativo com dados fictícios.",
+      "notice": "14 dias de teste, sem cartão. Confira a oferta antes de começar.",
+      "priceVisible": true,
+      "socialProofVisible": false,
+      "requirements": [
+        "onboardingUrl real",
+        "produto e vínculo WhatsApp testados",
+        "trial sem cartão implementado",
+        "oferta validada no checkout",
+        "políticas e suporte disponíveis"
+      ]
+    }
+  },
+  "runtime": {
+    "onboardingUrl": null,
+    "leadEndpoint": null,
+    "supportWhatsAppUrl": null,
+    "policyUrl": "/privacidade",
+    "termsUrl": "/termos",
+    "supportEmail": "contato@taliya.com.br",
+    "canonical": "https://www.taliya.com.br/",
+    "gates": [
+      "Não renderizar CTA de lançamento sem URL real e gates de produto/oferta.",
+      "Não exibir sucesso de formulário sem confirmação do servidor.",
+      "Não ativar contato WhatsApp humano sem confirmar o destino e a autorização de uso.",
+      "Texto jurídico final e retenção dos leads precisam de validação do responsável; esta especificação não cria a política."
+    ]
+  },
+  "sections": [
+    {
+      "id": "S01",
+      "anchor": "top",
+      "title": "Header e hero",
+      "reuse": "Manter shell; substituir conteúdo",
+      "purpose": "Promessa, para quem é e os dois canais"
+    },
+    {
+      "id": "S02",
+      "anchor": "controle",
+      "title": "Confiança e controle",
+      "reuse": "Adicionar faixa compacta",
+      "purpose": "Responder aos primeiros receios sem selos genéricos"
+    },
+    {
+      "id": "S03",
+      "anchor": "na-pratica",
+      "title": "Na prática",
+      "reuse": "Reutilizar seletor de 5 opções e conversa",
+      "purpose": "Primeira prova de utilidade"
+    },
+    {
+      "id": "S04",
+      "anchor": "sem-com",
+      "title": "Sem / Com Taliya",
+      "reuse": "Reutilizar toggle e 7 posições",
+      "purpose": "Explicar o trabalho que deixa de ficar espalhado"
+    },
+    {
+      "id": "S05",
+      "anchor": "como-funciona",
+      "title": "Como funciona",
+      "reuse": "Reutilizar 6 tabs e estruturas internas",
+      "purpose": "Mecanismo, contexto, pergunta mínima e canais"
+    },
+    {
+      "id": "S06",
+      "anchor": "fale-do-seu-jeito",
+      "title": "Mural de mensagens",
+      "reuse": "Adicionar usando balões existentes",
+      "purpose": "Naturalidade; 84 mensagens, 24 na seleção inicial"
+    },
+    {
+      "id": "S07",
+      "anchor": "o-que-resolve",
+      "title": "Sete frentes",
+      "reuse": "Reutilizar Time Taliya e subtabs",
+      "purpose": "Cobertura aprofundada e navegável"
+    },
+    {
+      "id": "S08",
+      "anchor": "fluxos",
+      "title": "Fluxos reais",
+      "reuse": "Substituir lógica da calculadora; reusar área e cards",
+      "purpose": "Continuidade de um mesmo trabalho, em 5 cenários"
+    },
+    {
+      "id": "S09",
+      "anchor": "como-comecar",
+      "title": "Como começar",
+      "reuse": "Reutilizar 4 etapas",
+      "purpose": "Adoção progressiva, sem implantação consultiva"
+    },
+    {
+      "id": "S10",
+      "anchor": "comecar",
+      "title": "Começar / oferta",
+      "reuse": "Formulário no pré-lançamento; oferta no lançamento",
+      "purpose": "Uma ação principal, sem ambiguidade de estágio"
+    },
+    {
+      "id": "S11",
+      "anchor": "quem-usa",
+      "title": "Prova real",
+      "reuse": "Reservar sem renderizar",
+      "purpose": "Só publicar com evidência e autorização"
+    },
+    {
+      "id": "S12",
+      "anchor": "duvidas",
+      "title": "FAQ",
+      "reuse": "Reusar accordion; ampliar para 14 perguntas",
+      "purpose": "Objeções e limites em linguagem comercial"
+    },
+    {
+      "id": "S13",
+      "anchor": "sua-rotina",
+      "title": "Seu trabalho funciona de outro jeito?",
+      "reuse": "Reutilizar textarea e captura",
+      "purpose": "Pesquisar encaixe sem prometer customização"
+    },
+    {
+      "id": "S14",
+      "anchor": "final",
+      "title": "CTA final e footer",
+      "reuse": "Reutilizar; limpar links e textos",
+      "purpose": "Fechar a página sem uma segunda jornada comercial"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Para quem trabalha por conta e presta serviços",
+    "title": "Seu negócio organizado. É só falar.",
+    "body": {
+      "prelaunch": "Estamos criando a Taliya para você organizar horários, orçamentos e recebimentos conversando pelo WhatsApp. O app reúne os mesmos registros para ver e editar quando precisar.",
+      "launch": "Organize horários, orçamentos e recebimentos conversando com a Taliya pelo WhatsApp. O app reúne os mesmos registros para ver e editar quando precisar."
+    },
+    "support": "Comece pela rotina que mais pesa hoje. Não precisa usar tudo.",
+    "channelNote": "Você conversa com o número da Taliya usando seu WhatsApp comum.",
+    "visual": {
+      "assetId": "VIS-HERO",
+      "heading": "Uma conversa. O mesmo serviço organizado.",
+      "context": "Exemplo fictício: orçamento de instalação de R$900 já registrado para Marina.",
+      "messages": [
+        {
+          "speaker": "Você",
+          "text": "A Marina aprovou o orçamento de R$900 e pagou R$300 de entrada."
+        },
+        {
+          "speaker": "Taliya",
+          "text": "Registrei a aprovação e os R$300 recebidos. Restam R$600 nesse serviço."
+        }
+      ],
+      "result": {
+        "Cliente": "Marina",
+        "Serviço": "Instalação",
+        "Situação": "Confirmado",
+        "Combinado": "R$900",
+        "Recebido": "R$300",
+        "Restante": "R$600"
+      },
+      "note": "Estado ilustrativo, não uma operação real. Não mostrar data agendada sem horário/duração."
+    },
+    "behavior": "Não duplicar o hero com uma segunda demo grande. Reutilizar mockup e card de resultado, preservar a ordem dos CTAs. Primeiro frame precisa explicar mensagem e resposta sem autoplay."
+  },
+  "trust": [
+    {
+      "title": "Seu WhatsApp continua seu",
+      "text": "A conversa é com a Taliya. Isso não dá acesso aos seus outros chats."
+    },
+    {
+      "title": "Você pode corrigir",
+      "text": "Confira o resultado e ajuste o que precisar pela conversa ou pelo app."
+    },
+    {
+      "title": "Use só o que precisar",
+      "text": "Comece por agenda, recebimentos, lembretes ou pela rotina que fizer sentido."
+    },
+    {
+      "title": "O app acompanha",
+      "text": "O que você organiza na conversa também pode ser visto e editado no app."
+    }
+  ],
+  "selector": [
+    {
+      "id": "NP01",
+      "label": "Fechei um serviço",
+      "summary": "Cliente, combinado e horário sem repetir cadastro.",
+      "context": "Cenário fictício: hoje é 18/09/2026. Luana ainda não está cadastrada.",
+      "messages": [
+        {
+          "speaker": "Você",
+          "text": "Fechei uma limpeza de sofá para a Luana amanhã às 16h, por duas horas, por R$250."
+        },
+        {
+          "speaker": "Taliya",
+          "text": "Registrei a Luana e a limpeza por R$250. Ficou marcada para 19/09, das 16h às 18h."
+        }
+      ],
+      "result": {
+        "Cliente": "Luana",
+        "Serviço": "Limpeza de sofá",
+        "Quando": "19/09 · 16h–18h",
+        "Combinado": "R$250",
+        "Situação": "Confirmado"
+      },
+      "guardrail": "Agenda sem conflito no cenário. Nome e instrução inequívocos; não inventar telefone/endereço nem perguntar cadastro opcional.",
+      "detailTarget": "AG01",
+      "assetId": "VIS-NP01"
+    },
+    {
+      "id": "NP02",
+      "label": "Mudou o horário",
+      "summary": "O mesmo atendimento, com a data atualizada.",
+      "context": "Visita do Carlos já agendada em 24/09, 14h–15h; duração de 1h conhecida.",
+      "messages": [
+        {
+          "speaker": "Você",
+          "text": "Passa a visita do Carlos de quinta para sexta às 10h."
+        },
+        {
+          "speaker": "Taliya",
+          "text": "Remarquei a mesma visita para 25/09, das 10h às 11h."
+        }
+      ],
+      "result": {
+        "Cliente": "Carlos",
+        "Antes": "24/09 · 14h–15h",
+        "Agora": "25/09 · 10h–11h",
+        "Situação": "Agendado"
+      },
+      "guardrail": "Novo horário livre no cenário; manter serviço/ocorrência e duração. Não afirmar envio de aviso ao cliente.",
+      "detailTarget": "AG04",
+      "assetId": "VIS-NP02"
+    },
+    {
+      "id": "NP03",
+      "label": "Recebi uma parte",
+      "summary": "O que entrou e o que falta ficam claros.",
+      "context": "Limpeza da Ana: R$450 combinados e nenhum pagamento anterior.",
+      "messages": [
+        {
+          "speaker": "Você",
+          "text": "A Ana pagou R$300 pela limpeza. Ficaram faltando R$150."
+        },
+        {
+          "speaker": "Taliya",
+          "text": "Registrei R$300 recebidos. Restam R$150 da limpeza da Ana."
+        },
+        {
+          "speaker": "Você",
+          "text": "Quanto falta receber desse serviço?"
+        },
+        {
+          "speaker": "Taliya",
+          "text": "Faltam R$150, dos R$450 combinados."
+        }
+      ],
+      "result": {
+        "Cliente": "Ana",
+        "Combinado": "R$450",
+        "Recebido": "R$300",
+        "Restante": "R$150",
+        "Situação": "Parcial"
+      },
+      "guardrail": "Registro informado pelo dono. Sem integração bancária, processamento de Pix ou cobrança enviada.",
+      "detailTarget": "RC02",
+      "assetId": "VIS-NP03"
+    },
+    {
+      "id": "NP04",
+      "label": "Quero um orçamento",
+      "summary": "Uma proposta ligada ao trabalho, não um PDF perdido.",
+      "context": "Marina pediu uma instalação. Itens e preço são informados na mensagem.",
+      "messages": [
+        {
+          "speaker": "Você",
+          "text": "Faz um orçamento para a Marina: R$650 de instalação e R$200 de material."
+        },
+        {
+          "speaker": "Taliya",
+          "text": "Preparei o orçamento de R$850 para você revisar. Ele ficou ligado ao serviço da Marina."
+        }
+      ],
+      "result": {
+        "Cliente": "Marina",
+        "Instalação": "R$650",
+        "Material cobrado": "R$200",
+        "Total proposto": "R$850",
+        "Documento": "Orçamento · versão 1",
+        "Situação": "Para revisão"
+      },
+      "guardrail": "Material é item cobrado ao cliente, não custo/estoque. Não marcar enviado, aprovado ou recebido por gerar proposta.",
+      "detailTarget": "OR01",
+      "assetId": "VIS-NP04"
+    },
+    {
+      "id": "NP05",
+      "label": "Vendi um pacote",
+      "summary": "A contratação fica pronta antes de marcar todas as sessões.",
+      "context": "Primeira contratação de João; duração das aulas ainda desconhecida.",
+      "messages": [
+        {
+          "speaker": "Você",
+          "text": "O João fechou oito aulas por R$600. Marca as duas primeiras em 22 e 24 de setembro às 7h."
+        },
+        {
+          "speaker": "Taliya",
+          "text": "Registrei o pacote de oito aulas por R$600. Quanto tempo dura cada aula?"
+        },
+        {
+          "speaker": "Você",
+          "text": "Uma hora."
+        },
+        {
+          "speaker": "Taliya",
+          "text": "Marquei 22/09 e 24/09, das 7h às 8h. São duas aulas agendadas e seis ainda disponíveis para agendar."
+        }
+      ],
+      "result": {
+        "Cliente": "João",
+        "Pacote": "8 aulas · R$600",
+        "Realizadas": "0",
+        "Agendadas": "2",
+        "Disponíveis para agendar": "6"
+      },
+      "guardrail": "Não criar infinitas aulas pela regra semanal nem consumir aula agendada. Pergunta necessária faz parte da demo.",
+      "detailTarget": "SV03",
+      "assetId": "VIS-NP05"
+    }
+  ],
+  "comparison": [
+    {
+      "id": "CL",
+      "label": "Clientes",
+      "title": "Seu cliente não precisa começar do zero a cada conversa.",
+      "beforeTitle": "O contexto fica espalhado",
+      "before": "Telefone num contato, combinado numa conversa e histórico na memória.",
+      "afterTitle": "Encontre o que já sabe",
+      "after": "Consulte os serviços e os dados registrados para aquele cliente.",
+      "message": "Me mostra os serviços da Marina.",
+      "detailTarget": "CL02"
+    },
+    {
+      "id": "SV",
+      "label": "Serviços",
+      "title": "O combinado acompanha o trabalho.",
+      "beforeTitle": "Cada parte num lugar",
+      "before": "Escopo, valor e mudanças acabam em anotações separadas.",
+      "afterTitle": "Um trabalho, um contexto",
+      "after": "A contratação mantém o combinado e as mudanças que você registra.",
+      "message": "O Carlos fechou a instalação por R$750.",
+      "detailTarget": "SV02"
+    },
+    {
+      "id": "AG",
+      "label": "Agenda",
+      "title": "Mudou o horário? Atualize sem recomeçar.",
+      "beforeTitle": "Mudança para lembrar depois",
+      "before": "É preciso lembrar qual horário mudou e a que trabalho ele se refere.",
+      "afterTitle": "O mesmo atendimento atualizado",
+      "after": "Agende, remarque ou cancele o horário no contexto do serviço.",
+      "message": "Passa o Carlos para sexta às 10h.",
+      "detailTarget": "AG04"
+    },
+    {
+      "id": "OR",
+      "label": "Orçamentos",
+      "title": "Saiba qual proposta vale.",
+      "beforeTitle": "Versões soltas",
+      "before": "Uma proposta corrigida pode se misturar com PDFs e valores anteriores.",
+      "afterTitle": "Proposta com histórico",
+      "after": "Revise versões e registre qual delas foi aprovada pelo cliente.",
+      "message": "Me mostra a versão aprovada do orçamento.",
+      "detailTarget": "OR05"
+    },
+    {
+      "id": "RC",
+      "label": "Recebimentos",
+      "title": "Recebeu uma parte? Consulte o restante.",
+      "beforeTitle": "Saldo na cabeça",
+      "before": "Você lembra que entrou dinheiro, mas precisa conferir de qual serviço.",
+      "afterTitle": "Recebido e restante juntos",
+      "after": "Os pagamentos informados ficam ligados ao que foi combinado.",
+      "message": "Quanto falta a Ana pagar pela limpeza?",
+      "detailTarget": "RC04"
+    },
+    {
+      "id": "LE",
+      "label": "Lembretes",
+      "title": "Lembre do assunto, não só do alarme.",
+      "beforeTitle": "Lembrança sem contexto",
+      "before": "Um aviso solto não explica o cliente, o serviço ou o valor envolvido.",
+      "afterTitle": "Aviso com contexto",
+      "after": "Peça um lembrete sobre o que realmente precisa retomar.",
+      "message": "Me lembra segunda de cobrar os R$150 da Ana.",
+      "detailTarget": "LE01"
+    },
+    {
+      "id": "AR",
+      "label": "Arquivos e documentos",
+      "title": "Ache o material daquele trabalho.",
+      "beforeTitle": "Arquivo perdido no histórico",
+      "before": "Fotos, PDFs e contratos ficam entre mensagens e pastas diferentes.",
+      "afterTitle": "Material ligado ao serviço",
+      "after": "Guarde e recupere os arquivos pelo contexto do trabalho.",
+      "message": "Cadê o contrato da Empresa Norte?",
+      "detailTarget": "AR02"
+    }
+  ],
+  "how": [
+    {
+      "id": "CF01",
+      "label": "Fale normalmente",
+      "kicker": "Texto, áudio e materiais do trabalho",
+      "title": "Conte do jeito que for mais fácil.",
+      "body": "Pode ser uma mensagem curta, um áudio ou um arquivo acompanhado do que você precisa fazer. A Taliya usa o pedido e o contexto para continuar.",
+      "pattern": "Seletor de formatos + mockup compartilhado; sem criar caixa de chat livre na landing.",
+      "items": [
+        {
+          "label": "Texto",
+          "message": "A Ana pagou R$300 pela limpeza.",
+          "result": "Pagamento informado ligado ao serviço da Ana."
+        },
+        {
+          "label": "Áudio",
+          "message": "Passa a visita do Carlos para sexta às 10h.",
+          "result": "Mesma visita remarcada; duração já conhecida."
+        },
+        {
+          "label": "Foto",
+          "message": "Guarda essas fotos no serviço da Júlia.",
+          "result": "Fotos anexadas ao trabalho indicado."
+        },
+        {
+          "label": "PDF",
+          "message": "Guarda este contrato na instalação da Empresa Norte.",
+          "result": "Documento associado ao serviço."
+        },
+        {
+          "label": "Contato",
+          "message": "Cadastra a Marina com esse contato.",
+          "result": "Cliente criado ou localizado com os campos compartilhados."
+        }
+      ],
+      "footnote": "Uma foto ou um contato sozinho não autoriza pagamento, contratação ou envio a terceiros.",
+      "cta": "Ver exemplos de mensagens",
+      "target": "#fale-do-seu-jeito",
+      "assetId": "VIS-CF01"
+    },
+    {
+      "id": "CF02",
+      "label": "Entende o contexto",
+      "kicker": "O que já foi registrado continua valendo",
+      "title": "Não precisa contar a mesma história de novo.",
+      "body": "A Taliya procura o cliente e o serviço a que você se refere. Assim, um recebimento, uma mudança de horário ou um documento continua no mesmo trabalho.",
+      "pattern": "Reutilizar processo de 4 passos; trocar o texto, não simular agentes internos.",
+      "items": [
+        {
+          "label": "1. Entende o pedido",
+          "message": "“A Ana pagou mais R$100.”",
+          "result": "Identifica que você está informando outro pagamento."
+        },
+        {
+          "label": "2. Consulta o contexto",
+          "message": "Limpeza da Ana: R$450 combinados e R$300 recebidos.",
+          "result": "Localiza o serviço e o saldo registrado de R$150."
+        },
+        {
+          "label": "3. Atualiza o registro",
+          "message": "Você informou mais R$100.",
+          "result": "Total recebido passa a R$400."
+        },
+        {
+          "label": "4. Mostra o resultado",
+          "message": "“Registrei mais R$100. Agora restam R$50.”",
+          "result": "O saldo atualizado fica disponível para a próxima consulta."
+        }
+      ],
+      "footnote": "O cenário tem uma única Ana e um serviço inequívoco. Havendo mais de um candidato, a conversa esclarece antes da alteração.",
+      "cta": "Ver um fluxo completo",
+      "target": "#fluxos",
+      "assetId": "VIS-CF02"
+    },
+    {
+      "id": "CF03",
+      "label": "Pergunta só o necessário",
+      "kicker": "Começar não precisa virar um cadastro",
+      "title": "Só falta uma informação? Responda só ela.",
+      "body": "Quando um dado realmente faz falta para a próxima ação, a Taliya pergunta sem pedir que você repita todo o pedido.",
+      "pattern": "Dois exemplos selecionáveis reaproveitando tabs e chat; default Duração.",
+      "items": [
+        {
+          "label": "Falta a duração",
+          "message": "Você: “Marca a limpeza da Luana amanhã às 16h.”\nTaliya: “Quanto tempo dura essa limpeza?”\nVocê: “Duas horas.”",
+          "result": "Taliya: “Marquei para 19/09, das 16h às 18h. O valor ficou sem definir.”"
+        },
+        {
+          "label": "Existem duas Anas",
+          "message": "Você: “A Ana pagou R$200.”\nTaliya: “Ana Lima, telefone final 8421, ou Ana Souza, final 1190?”\nVocê: “A Lima.”",
+          "result": "Taliya continua no único serviço em aberto da Ana Lima e registra os R$200."
+        }
+      ],
+      "footnote": "O preço pode continuar ausente no agendamento. Telefone e endereço não são exigidos sem necessidade. Perguntar cliente não dispensa resolver o serviço quando também houver ambiguidade.",
+      "cta": "Conhecer o cadastro progressivo",
+      "target": "#como-comecar",
+      "assetId": "VIS-CF03"
+    },
+    {
+      "id": "CF04",
+      "label": "Tudo fica conectado",
+      "kicker": "Um trabalho, não várias anotações soltas",
+      "title": "O combinado acompanha o serviço.",
+      "body": "Orçamento, datas, pagamentos e arquivos ficam relacionados. Você pode voltar depois e encontrar a informação no contexto certo.",
+      "pattern": "Reutilizar a comparação em três cards; não desqualificar planilha ou chat genericamente.",
+      "items": [
+        {
+          "label": "O que você combinou",
+          "message": "Marina aprovou a instalação de R$900.",
+          "result": "A aprovação identifica a versão do orçamento que vale."
+        },
+        {
+          "label": "O que você registrou",
+          "message": "Marina pagou R$300 de entrada.",
+          "result": "O pagamento fica ligado à instalação, não a um lançamento solto."
+        },
+        {
+          "label": "O que pode consultar",
+          "message": "“Quanto falta receber da instalação?”",
+          "result": "“Restam R$600 dos R$900 combinados.”"
+        }
+      ],
+      "footnote": "Os dados dependem do que foi informado ou obtido por integrações autorizadas. A Taliya não acompanha automaticamente conversas externas.",
+      "cta": "Ver as sete frentes",
+      "target": "#o-que-resolve",
+      "assetId": "VIS-CF04"
+    },
+    {
+      "id": "CF05",
+      "label": "WhatsApp + app",
+      "kicker": "Uma conta, os mesmos registros",
+      "title": "Sua rotina na conversa. A visão completa no app.",
+      "body": "Depois de criar a conta e vincular seu número, você pode registrar, consultar e ajustar a rotina pelo WhatsApp. Use o app quando preferir visualizar ou editar diretamente.",
+      "pattern": "Split conversa/app com duas seleções; nunca duas bases independentes.",
+      "items": [
+        {
+          "label": "Pelo WhatsApp",
+          "message": "“A Ana pagou R$300 pela limpeza.”",
+          "result": "Conversa: R$300 recebidos e R$150 restantes. App: os mesmos valores no serviço da Ana."
+        },
+        {
+          "label": "Pelo app",
+          "message": "Você corrige o pagamento de R$300 para R$350 na ficha do serviço.",
+          "result": "Na consulta seguinte pelo WhatsApp, a Taliya informa R$100 restantes, mantendo o total de R$450."
+        }
+      ],
+      "footnote": "Conta, permissões, privacidade e assinatura podem exigir app ou página segura. Preferências simples podem ser alteradas por ordem clara; permissão do aparelho não nasce de uma mensagem.",
+      "cta": "Entender os dois canais",
+      "target": "faq-whatsapp",
+      "assetId": "VIS-CF05"
+    },
+    {
+      "id": "CF06",
+      "label": "Do seu jeito",
+      "kicker": "A contratação não precisa ditar sua agenda",
+      "title": "Um jeito de organizar. Vários jeitos de trabalhar.",
+      "body": "Serviço avulso, pacote de sessões ou mensalidade. Uma data, várias visitas, alguns dias ou uma rotina recorrente. Comece por uma parte, sem adotar um processo obrigatório.",
+      "pattern": "Dois grupos independentes: 3 tabs comerciais e 4 chips temporais. Não gerar combinações aleatórias; mostrar exemplos definidos abaixo.",
+      "items": [
+        {
+          "label": "Avulso",
+          "message": "“Fechei a instalação do Carlos por R$750.”",
+          "result": "Um serviço contratado, com datas e pagamentos quando forem informados."
+        },
+        {
+          "label": "Pacote",
+          "message": "“João fechou oito aulas por R$600. Vou marcar depois.”",
+          "result": "Oito aulas contratadas; nenhuma sessão marcada por obrigação."
+        },
+        {
+          "label": "Plano",
+          "message": "“Jardinagem do Carlos: R$350 por mês a partir de 1º de outubro.”",
+          "result": "Valor por ciclo mensal, sem multiplicar a cobrança pelo número de visitas."
+        }
+      ],
+      "temporalItems": [
+        {
+          "label": "Uma vez",
+          "example": "Uma instalação em uma data combinada."
+        },
+        {
+          "label": "Várias datas",
+          "example": "O mesmo serviço com duas visitas, nos dias 22 e 24/09."
+        },
+        {
+          "label": "Vários dias",
+          "example": "Pintura de 21 a 23/09; período informativo se não houver horários."
+        },
+        {
+          "label": "Recorrente",
+          "example": "Visitas às sextas, 8h–9h, com frequência e alcance confirmados."
+        }
+      ],
+      "footnote": "Sem tarefas, turmas, equipe ou controle de estoque. No pacote, agendar reserva; registrar realização consome.",
+      "cta": "Ver situações completas",
+      "target": "#fluxos",
+      "assetId": "VIS-CF06"
+    }
+  ],
+  "messageWall": {
+    "title": "Fale como você já fala no dia a dia.",
+    "subtitle": "Conte o que aconteceu ou o que precisa fazer. Quando uma informação importante estiver faltando, a Taliya pergunta só o necessário.",
+    "closing": "Você fala. A Taliya organiza o contexto para continuar depois.",
+    "appNote": "Prefere usar o app? Você também pode registrar, consultar e corrigir diretamente por lá.",
+    "cta": {
+      "label": "Veja tudo que você pode resolver",
+      "href": "#o-que-resolve"
+    },
+    "messageCount": 84,
+    "initialIds": [
+      "MSG-AG03",
+      "MSG-AG01",
+      "MSG-AG07",
+      "MSG-AG09",
+      "MSG-SV01",
+      "MSG-OR01",
+      "MSG-OR08",
+      "MSG-RC03",
+      "MSG-RC09",
+      "MSG-LE01",
+      "MSG-SV04",
+      "MSG-OR11",
+      "MSG-RC11",
+      "MSG-AR01",
+      "MSG-AG06",
+      "MSG-SV07",
+      "MSG-CL04",
+      "MSG-LE08",
+      "MSG-RC06",
+      "MSG-AR10",
+      "MSG-SV06",
+      "MSG-CL09",
+      "MSG-SV09",
+      "MSG-AR09"
+    ],
+    "messages": [
+      {
+        "id": "MSG-CL01",
+        "category": "CL",
+        "targetSubtype": "CL01",
+        "text": "Cadastra a Marina com esse contato.",
+        "contextNote": "Cartão compartilhado e intenção explícita."
+      },
+      {
+        "id": "MSG-CL02",
+        "category": "CL",
+        "targetSubtype": "CL02",
+        "text": "Qual é o telefone da Empresa Norte?",
+        "contextNote": "Telefone previamente registrado."
+      },
+      {
+        "id": "MSG-CL03",
+        "category": "CL",
+        "targetSubtype": "CL04",
+        "text": "O que eu já fiz para o Carlos?",
+        "contextNote": "Histórico existente; diferenciar agendado de realizado."
+      },
+      {
+        "id": "MSG-CL04",
+        "category": "CL",
+        "targetSubtype": "CL04",
+        "text": "Quando foi o último serviço concluído da Júlia?",
+        "contextNote": "Conclusão registrada, não inferida."
+      },
+      {
+        "id": "MSG-CL05",
+        "category": "CL",
+        "targetSubtype": "CL02",
+        "text": "Me mostra os serviços ativos da Marina.",
+        "contextNote": "Cliente e registros existentes."
+      },
+      {
+        "id": "MSG-CL06",
+        "category": "CL",
+        "targetSubtype": "CL02",
+        "text": "O que ficou combinado com a Ana?",
+        "contextNote": "Serviço deve ser inequívoco."
+      },
+      {
+        "id": "MSG-CL07",
+        "category": "CL",
+        "targetSubtype": "CL02",
+        "text": "A Empresa Norte tem algum valor em aberto?",
+        "contextNote": "Consulta dos recebíveis registrados."
+      },
+      {
+        "id": "MSG-CL08",
+        "category": "CL",
+        "targetSubtype": "CL03",
+        "text": "Atualiza o e-mail da Marina para marina@example.com.",
+        "contextNote": "E-mail fictício; dado explicitamente informado."
+      },
+      {
+        "id": "MSG-CL09",
+        "category": "CL",
+        "targetSubtype": "CL05",
+        "text": "Aquela instalação é da Camila, não da Carla.",
+        "contextNote": "Exige resolver serviço e cliente antes de alterar."
+      },
+      {
+        "id": "MSG-CL10",
+        "category": "CL",
+        "targetSubtype": "CL04",
+        "text": "Me mostra o histórico desse cliente.",
+        "contextNote": "Cliente contextualizado."
+      },
+      {
+        "id": "MSG-CL11",
+        "category": "CL",
+        "targetSubtype": "CL01",
+        "text": "É a Marina do telefone final 8421.",
+        "contextNote": "Resposta a uma pergunta de desambiguação."
+      },
+      {
+        "id": "MSG-CL12",
+        "category": "CL",
+        "targetSubtype": "CL03",
+        "text": "O endereço dessa visita é Rua das Flores, 120.",
+        "contextNote": "Endereço fictício vinculado ao serviço, não alteração global silenciosa."
+      },
+      {
+        "id": "MSG-SV01",
+        "category": "SV",
+        "targetSubtype": "SV02",
+        "text": "Fechei uma limpeza de sofá para a Luana por R$250.",
+        "contextNote": "Intenção de contratação explícita."
+      },
+      {
+        "id": "MSG-SV02",
+        "category": "SV",
+        "targetSubtype": "SV02",
+        "text": "Registra a instalação do Carlos por R$750.",
+        "contextNote": "Confirmar que é venda se o contexto for ambíguo."
+      },
+      {
+        "id": "MSG-SV03",
+        "category": "SV",
+        "targetSubtype": "SV01",
+        "text": "Ana pediu um orçamento de limpeza.",
+        "contextNote": "Pedido novo, ainda não contratado."
+      },
+      {
+        "id": "MSG-SV04",
+        "category": "SV",
+        "targetSubtype": "SV03",
+        "text": "João fechou oito aulas por R$600.",
+        "contextNote": "Pacote com quantidade total."
+      },
+      {
+        "id": "MSG-SV05",
+        "category": "SV",
+        "targetSubtype": "SV03",
+        "text": "Vou marcar as sessões do pacote depois.",
+        "contextNote": "Não criar datas por obrigação."
+      },
+      {
+        "id": "MSG-SV06",
+        "category": "SV",
+        "targetSubtype": "SV04",
+        "text": "Carlos entrou no plano mensal de R$350 a partir de outubro.",
+        "contextNote": "Contexto do serviço e início devem estar claros."
+      },
+      {
+        "id": "MSG-SV07",
+        "category": "SV",
+        "targetSubtype": "SV05",
+        "text": "Essa pintura vai de segunda a quarta.",
+        "contextNote": "Período sem horas não bloqueia dias inteiros."
+      },
+      {
+        "id": "MSG-SV08",
+        "category": "SV",
+        "targetSubtype": "SV05",
+        "text": "Esse trabalho tem duas visitas, nos dias 22 e 24.",
+        "contextNote": "Um serviço; datas sem horas podem ser informativas."
+      },
+      {
+        "id": "MSG-SV09",
+        "category": "SV",
+        "targetSubtype": "SV06",
+        "text": "Terminei o serviço inteiro da Marina.",
+        "contextNote": "Conclusão do serviço não implica pagamento."
+      },
+      {
+        "id": "MSG-SV10",
+        "category": "SV",
+        "targetSubtype": "SV06",
+        "text": "Cancela a contratação da instalação do Carlos.",
+        "contextNote": "Revisar efeitos e manter pagamentos; alvo explícito."
+      },
+      {
+        "id": "MSG-SV11",
+        "category": "SV",
+        "targetSubtype": "SV04",
+        "text": "A mensalidade da jardinagem é fixa, não por visita.",
+        "contextNote": "Regra comercial aprovada pelo dono."
+      },
+      {
+        "id": "MSG-SV12",
+        "category": "SV",
+        "targetSubtype": "SV02",
+        "text": "Esse valor é só para esta instalação.",
+        "contextNote": "Exceção do caso não altera preço padrão."
+      },
+      {
+        "id": "MSG-AG01",
+        "category": "AG",
+        "targetSubtype": "AG01",
+        "text": "Marca a Júlia amanhã às 14h por uma hora.",
+        "contextNote": "Cliente/serviço identificados; data contextual."
+      },
+      {
+        "id": "MSG-AG02",
+        "category": "AG",
+        "targetSubtype": "AG01",
+        "text": "Agenda a manutenção sexta às 10h por duas horas.",
+        "contextNote": "Serviço contextualizado e conflito revalidado."
+      },
+      {
+        "id": "MSG-AG03",
+        "category": "AG",
+        "targetSubtype": "AG02",
+        "text": "O que eu tenho hoje?",
+        "contextNote": "Consulta de registros, não criação de tarefas."
+      },
+      {
+        "id": "MSG-AG04",
+        "category": "AG",
+        "targetSubtype": "AG02",
+        "text": "Como está minha agenda amanhã?",
+        "contextNote": "Resposta limitada à agenda conhecida."
+      },
+      {
+        "id": "MSG-AG05",
+        "category": "AG",
+        "targetSubtype": "AG02",
+        "text": "Quem é meu primeiro cliente amanhã?",
+        "contextNote": "Compromissos registrados."
+      },
+      {
+        "id": "MSG-AG06",
+        "category": "AG",
+        "targetSubtype": "AG02",
+        "text": "Quais horários já tenho ocupados na sexta?",
+        "contextNote": "Pode responder ocupações sem expediente configurado."
+      },
+      {
+        "id": "MSG-AG07",
+        "category": "AG",
+        "targetSubtype": "AG04",
+        "text": "Passa a Júlia de quinta para sexta às 10h.",
+        "contextNote": "Preservar duração conhecida."
+      },
+      {
+        "id": "MSG-AG08",
+        "category": "AG",
+        "targetSubtype": "AG04",
+        "text": "Muda a visita da Empresa Norte para as 14h.",
+        "contextNote": "Ocorrência e data contextualizadas."
+      },
+      {
+        "id": "MSG-AG09",
+        "category": "AG",
+        "targetSubtype": "AG05",
+        "text": "Cancela só o atendimento da Ana de amanhã.",
+        "contextNote": "Não cancelar serviço inteiro."
+      },
+      {
+        "id": "MSG-AG10",
+        "category": "AG",
+        "targetSubtype": "AG06",
+        "text": "Marca quatro aulas, às terças, das 7h às 8h, a partir do dia 22.",
+        "contextNote": "Alcance finito; saldo de pacote e conflitos validados."
+      },
+      {
+        "id": "MSG-AG11",
+        "category": "AG",
+        "targetSubtype": "AG03",
+        "text": "Tenho uma janela livre de uma hora na sexta?",
+        "contextNote": "Expediente e ocupações conhecidos; consulta não agenda."
+      },
+      {
+        "id": "MSG-AG12",
+        "category": "AG",
+        "targetSubtype": "AG04",
+        "text": "Remarca só esta sessão, não as próximas.",
+        "contextNote": "Alcance explícito da alteração de série."
+      },
+      {
+        "id": "MSG-OR01",
+        "category": "OR",
+        "targetSubtype": "OR01",
+        "text": "Faz um orçamento de instalação de R$850 para a Marina.",
+        "contextNote": "Escopo suficiente ou pergunta curta se faltar."
+      },
+      {
+        "id": "MSG-OR02",
+        "category": "OR",
+        "targetSubtype": "OR01",
+        "text": "Orça duas luminárias por R$300 cada e instalação por R$250.",
+        "contextNote": "Total850; são itens cobrados ao cliente."
+      },
+      {
+        "id": "MSG-OR03",
+        "category": "OR",
+        "targetSubtype": "OR02",
+        "text": "Adiciona R$180 de material ao orçamento.",
+        "contextNote": "Item comercial, não registro de custo."
+      },
+      {
+        "id": "MSG-OR04",
+        "category": "OR",
+        "targetSubtype": "OR02",
+        "text": "Inclui a instalação de R$250 nessa proposta.",
+        "contextNote": "Nova versão preserva o que foi aprovado antes."
+      },
+      {
+        "id": "MSG-OR05",
+        "category": "OR",
+        "targetSubtype": "OR03",
+        "text": "Troca a mão de obra da proposta para R$550.",
+        "contextNote": "Revisão de proposta não é aprovação de novo combinado."
+      },
+      {
+        "id": "MSG-OR06",
+        "category": "OR",
+        "targetSubtype": "OR02",
+        "text": "Remove esse item do orçamento.",
+        "contextNote": "Item contextualizado; histórico conforme estado."
+      },
+      {
+        "id": "MSG-OR07",
+        "category": "OR",
+        "targetSubtype": "OR03",
+        "text": "Faz uma nova versão com R$100 de desconto.",
+        "contextNote": "Desconto reduz proposta, não vira pagamento."
+      },
+      {
+        "id": "MSG-OR08",
+        "category": "OR",
+        "targetSubtype": "OR04",
+        "text": "A Marina aprovou a versão 2 do orçamento.",
+        "contextNote": "Mesma identidade de serviço."
+      },
+      {
+        "id": "MSG-OR09",
+        "category": "OR",
+        "targetSubtype": "OR04",
+        "text": "O cliente recusou esta proposta.",
+        "contextNote": "Registrar recusa da versão; não encerrar toda negociação sem instrução."
+      },
+      {
+        "id": "MSG-OR10",
+        "category": "OR",
+        "targetSubtype": "OR05",
+        "text": "Qual foi o último orçamento que preparei para o Carlos?",
+        "contextNote": "Mais recente não equivale a aprovado."
+      },
+      {
+        "id": "MSG-OR11",
+        "category": "OR",
+        "targetSubtype": "OR05",
+        "text": "Cadê a versão aprovada da Empresa Norte?",
+        "contextNote": "Consultar estado da versão."
+      },
+      {
+        "id": "MSG-OR12",
+        "category": "OR",
+        "targetSubtype": "OR05",
+        "text": "Gera o PDF da versão atual para eu compartilhar.",
+        "contextNote": "Arquivo entregue ao dono, não envio automático ao cliente."
+      },
+      {
+        "id": "MSG-RC01",
+        "category": "RC",
+        "targetSubtype": "RC01",
+        "text": "A Ana pagou os R$450 da limpeza.",
+        "contextNote": "Total e alvo conhecidos."
+      },
+      {
+        "id": "MSG-RC02",
+        "category": "RC",
+        "targetSubtype": "RC01",
+        "text": "Recebi R$250 da Luana pelo sofá.",
+        "contextNote": "Pagamento informado pelo dono."
+      },
+      {
+        "id": "MSG-RC03",
+        "category": "RC",
+        "targetSubtype": "RC02",
+        "text": "A Marina pagou R$300 e ainda faltam R$150.",
+        "contextNote": "Contexto com combinado450."
+      },
+      {
+        "id": "MSG-RC04",
+        "category": "RC",
+        "targetSubtype": "RC02",
+        "text": "Entraram R$500 daquele serviço.",
+        "contextNote": "Serviço e recebível precisam estar resolvidos."
+      },
+      {
+        "id": "MSG-RC05",
+        "category": "RC",
+        "targetSubtype": "RC02",
+        "text": "Ele pagou metade hoje.",
+        "contextNote": "Só calcular metade se total e alvo forem conhecidos."
+      },
+      {
+        "id": "MSG-RC06",
+        "category": "RC",
+        "targetSubtype": "RC03",
+        "text": "Recebi R$200 de sinal da instalação do Carlos.",
+        "contextNote": "Entrada não quita automaticamente."
+      },
+      {
+        "id": "MSG-RC07",
+        "category": "RC",
+        "targetSubtype": "RC04",
+        "text": "Quanto falta a Ana pagar pela limpeza?",
+        "contextNote": "Saldo registrado."
+      },
+      {
+        "id": "MSG-RC08",
+        "category": "RC",
+        "targetSubtype": "RC04",
+        "text": "Qual é o saldo do serviço da Marina?",
+        "contextNote": "Cliente e serviço inequívocos."
+      },
+      {
+        "id": "MSG-RC09",
+        "category": "RC",
+        "targetSubtype": "RC04",
+        "text": "Quem ainda tem valor em aberto?",
+        "contextNote": "Lista paginada/resumida dos valores registrados."
+      },
+      {
+        "id": "MSG-RC10",
+        "category": "RC",
+        "targetSubtype": "RC04",
+        "text": "Quanto registrei como recebido neste mês?",
+        "contextNote": "Não chamar de lucro nem receita bancária total."
+      },
+      {
+        "id": "MSG-RC11",
+        "category": "RC",
+        "targetSubtype": "RC05",
+        "text": "Corrige aquele pagamento: foram R$350, não R$300.",
+        "contextNote": "Correção mantém trilha e não soma como novo pagamento."
+      },
+      {
+        "id": "MSG-RC12",
+        "category": "RC",
+        "targetSubtype": "RC06",
+        "text": "O Carlos pagou a mensalidade de outubro.",
+        "contextNote": "Valor/ciclo e alvo conhecidos, ou pergunta mínima."
+      },
+      {
+        "id": "MSG-LE01",
+        "category": "LE",
+        "targetSubtype": "LE01",
+        "text": "Me lembra segunda às 9h de cobrar os R$150 da Ana.",
+        "contextNote": "Aviso ao dono; não contato automático."
+      },
+      {
+        "id": "MSG-LE02",
+        "category": "LE",
+        "targetSubtype": "LE01",
+        "text": "Amanhã às 10h me lembra do restante da Marina.",
+        "contextNote": "Contexto do saldo conhecido."
+      },
+      {
+        "id": "MSG-LE03",
+        "category": "LE",
+        "targetSubtype": "LE02",
+        "text": "Me lembra terça às 10h de falar com a Júlia.",
+        "contextNote": "Lembrete pode existir só com cliente."
+      },
+      {
+        "id": "MSG-LE04",
+        "category": "LE",
+        "targetSubtype": "LE02",
+        "text": "Daqui a 30 dias, às 9h, me lembra de procurar o Carlos.",
+        "contextNote": "Momento calculado pelo relógio do negócio."
+      },
+      {
+        "id": "MSG-LE05",
+        "category": "LE",
+        "targetSubtype": "LE03",
+        "text": "Me lembra amanhã às 8h de levar o equipamento.",
+        "contextNote": "Lembrete não controla estoque."
+      },
+      {
+        "id": "MSG-LE06",
+        "category": "LE",
+        "targetSubtype": "LE05",
+        "text": "Uma hora antes, me lembra dessa visita.",
+        "contextNote": "Relativo à ocorrência."
+      },
+      {
+        "id": "MSG-LE07",
+        "category": "LE",
+        "targetSubtype": "LE04",
+        "text": "Me lembra segunda às 9h de revisar o orçamento.",
+        "contextNote": "Documento contextualizado ou lembrete livre."
+      },
+      {
+        "id": "MSG-LE08",
+        "category": "LE",
+        "targetSubtype": "LE04",
+        "text": "Toda segunda às 9h me lembra de revisar as propostas.",
+        "contextNote": "Rotina recorrente."
+      },
+      {
+        "id": "MSG-LE09",
+        "category": "LE",
+        "targetSubtype": "LE06",
+        "text": "Sexta às 9h me avisa se esses R$300 ainda estiverem em aberto.",
+        "contextNote": "Condição baseada no registro da Taliya."
+      },
+      {
+        "id": "MSG-LE10",
+        "category": "LE",
+        "targetSubtype": "LE02",
+        "text": "Quais lembretes eu tenho para amanhã?",
+        "contextNote": "Consulta, sem alteração."
+      },
+      {
+        "id": "MSG-LE11",
+        "category": "LE",
+        "targetSubtype": "LE01",
+        "text": "Muda esse lembrete para sexta às 10h.",
+        "contextNote": "Lembrete contextualizado."
+      },
+      {
+        "id": "MSG-LE12",
+        "category": "LE",
+        "targetSubtype": "LE04",
+        "text": "Pausa o lembrete semanal de revisar propostas.",
+        "contextNote": "Pausa a regra, não os documentos."
+      },
+      {
+        "id": "MSG-AR01",
+        "category": "AR",
+        "targetSubtype": "AR01",
+        "text": "Guarda esse PDF no serviço da Marina.",
+        "contextNote": "Arquivo realmente recebido antes da confirmação."
+      },
+      {
+        "id": "MSG-AR02",
+        "category": "AR",
+        "targetSubtype": "AR01",
+        "text": "Salva essa foto na instalação do Carlos.",
+        "contextNote": "Vínculo específico."
+      },
+      {
+        "id": "MSG-AR03",
+        "category": "AR",
+        "targetSubtype": "AR01",
+        "text": "Esse é o contrato da instalação da Empresa Norte.",
+        "contextNote": "Arquivo e intenção contextualizados."
+      },
+      {
+        "id": "MSG-AR04",
+        "category": "AR",
+        "targetSubtype": "AR01",
+        "text": "Guarda esse comprovante na limpeza da Ana.",
+        "contextNote": "Anexar não confirma liquidação."
+      },
+      {
+        "id": "MSG-AR05",
+        "category": "AR",
+        "targetSubtype": "AR01",
+        "text": "Anexa essas fotos ao trabalho da Júlia.",
+        "contextNote": "Não criar novos serviços por arquivo."
+      },
+      {
+        "id": "MSG-AR06",
+        "category": "AR",
+        "targetSubtype": "AR02",
+        "text": "Cadê o orçamento aprovado da Marina?",
+        "contextNote": "Consulta a versão, sem alterar aprovação."
+      },
+      {
+        "id": "MSG-AR07",
+        "category": "AR",
+        "targetSubtype": "AR02",
+        "text": "Me mostra as fotos daquele serviço.",
+        "contextNote": "Serviço resolvido."
+      },
+      {
+        "id": "MSG-AR08",
+        "category": "AR",
+        "targetSubtype": "AR02",
+        "text": "Procura o contrato da Empresa Norte.",
+        "contextNote": "Identificar entre versões se necessário."
+      },
+      {
+        "id": "MSG-AR09",
+        "category": "AR",
+        "targetSubtype": "AR02",
+        "text": "Me mostra os documentos dessa instalação.",
+        "contextNote": "Lista dos documentos do serviço."
+      },
+      {
+        "id": "MSG-AR10",
+        "category": "AR",
+        "targetSubtype": "AR03",
+        "text": "Esse PDF é uma nova versão da proposta.",
+        "contextNote": "Upload não muda combinado aprovado."
+      },
+      {
+        "id": "MSG-AR11",
+        "category": "AR",
+        "targetSubtype": "AR05",
+        "text": "Esse arquivo é da Marina, não da Ana.",
+        "contextNote": "Corrigir só o vínculo autorizado."
+      },
+      {
+        "id": "MSG-AR12",
+        "category": "AR",
+        "targetSubtype": "AR04",
+        "text": "Prepara um recibo daquele pagamento de R$300.",
+        "contextNote": "Modelo suportado e pagamento registrado; não é nota fiscal."
+      }
+    ],
+    "ui": {
+      "desktop": "Três faixas de oito balões na seleção inicial; não exibir os 84 ao mesmo tempo.",
+      "mobile": "Primeiras12 mensagens na lista acessível; mostrar mais12 com botão.",
+      "showMore": "Ver mais mensagens",
+      "showLess": "Mostrar menos",
+      "pause": "Pausar mensagens",
+      "resume": "Retomar mensagens",
+      "defaultMotion": "manual",
+      "onClick": "Seleciona a frente/subtipo correspondente em S07 e rola até o painel. Não envia mensagem nem abre um chat real.",
+      "featured": {
+        "text": "A Marina aprovou o orçamento de R$900, pagou R$300 de entrada e quer fazer dia 24.",
+        "note": "A data sem horário pode ficar informativa. Para agendar, a Taliya precisa do início e da duração.",
+        "target": "FL01"
+      },
+      "motionRule": "Animação opcional; desligada por padrão. Com movimento, pausar em foco/hover, oferecer pausa explícita e respeitar preferência de movimento reduzido."
+    }
+  },
+  "fronts": [
+    {
+      "id": "CL",
+      "label": "Clientes",
+      "title": "Lembre do cliente e do que já combinou.",
+      "description": "Os dados e os trabalhos ficam relacionados, sem exigir uma ficha completa para começar.",
+      "subtypes": [
+        {
+          "id": "CL01",
+          "label": "Criar ou identificar",
+          "when": "Chegou um cliente novo ou você compartilhou um contato.",
+          "message": "Cadastra a Marina com esse contato.",
+          "organizes": "Localiza um cadastro compatível ou cria o cliente com os dados compartilhados.",
+          "reply": "Marina cadastrada com o nome e o telefone do contato.",
+          "next": "Registrar um serviço ou complementar um dado quando precisar.",
+          "result": "Cliente: Marina · Nome e telefone informados.",
+          "demoContext": "Cartão de contato fictício de Marina; nenhum homônimo.",
+          "guardrail": "Contato não cria contratação, agenda ou recebimento sozinho."
+        },
+        {
+          "id": "CL02",
+          "label": "Consultar",
+          "when": "Você quer recuperar rapidamente os trabalhos de uma pessoa ou empresa.",
+          "message": "Me mostra os serviços ativos da Marina.",
+          "organizes": "Reúne os serviços registrados para aquele cliente, sem misturar outros nomes.",
+          "reply": "Marina tem uma instalação confirmada de R$900, com R$600 restantes.",
+          "next": "Abrir o serviço, consultar uma data ou conferir um documento.",
+          "result": "Cliente e serviço consultados. Nenhum dado alterado.",
+          "demoContext": "Instalação MAR-S01 confirmada, entrada de R$300.",
+          "guardrail": "Consulta não grava nova operação; resumir com base na mesma projeção do app."
+        },
+        {
+          "id": "CL03",
+          "label": "Atualizar",
+          "when": "O cliente informou um dado novo.",
+          "message": "O endereço da Marina para essa instalação é Rua das Flores, 120.",
+          "organizes": "Associa o endereço informado ao trabalho certo.",
+          "reply": "Registrei Rua das Flores, 120, para a instalação da Marina.",
+          "next": "Consultar o local antes de sair ou corrigir o número depois.",
+          "result": "Endereço de atendimento registrado na instalação da Marina.",
+          "demoContext": "Rua fictícia; instalação selecionada.",
+          "guardrail": "Não sobrescrever todos os endereços da cliente por um endereço de serviço."
+        },
+        {
+          "id": "CL04",
+          "label": "Histórico",
+          "when": "Um cliente voltou e você quer lembrar do último trabalho.",
+          "message": "Qual foi o último serviço que fiz para a Ana?",
+          "organizes": "Busca o histórico disponível e distingue serviço concluído de apenas agendado.",
+          "reply": "O último serviço registrado como concluído foi a limpeza de sofá de 10/09, por R$450.",
+          "next": "Abrir o registro e consultar o que foi combinado.",
+          "result": "Histórico consultado. Registro original preservado.",
+          "demoContext": "Fixture Ana inclui serviço concluído em 10/09.",
+          "guardrail": "Não chamar horário passado de realizado sem registro explícito."
+        },
+        {
+          "id": "CL05",
+          "label": "Corrigir relação",
+          "when": "Você associou um trabalho à pessoa errada.",
+          "message": "A instalação de sexta é da Camila, não da Carla.",
+          "organizes": "Localiza o serviço e apresenta o cliente correto antes de corrigir um vínculo sensível.",
+          "reply": "Encontrei a instalação de sexta ligada à Carla. Quer trocar para Camila Souza, final 2255?",
+          "next": "Confirmar o vínculo e continuar no mesmo serviço.",
+          "result": "Após confirmação: mesmo serviço, cliente corrigido e histórico preservado.",
+          "demoContext": "Uma instalação na sexta; Camila existente; confirmação prevista.",
+          "guardrail": "Não mesclar clientes nem mover outros serviços por semelhança de nome."
+        }
+      ],
+      "sourceSections": "S2 §§3–4; S3 OP-CL-01",
+      "assetId": "VIS-FR-CL"
+    },
+    {
+      "id": "SV",
+      "label": "Serviços",
+      "title": "Mantenha o combinado junto do trabalho.",
+      "description": "Do pedido inicial à contratação direta, cada serviço conserva seu contexto.",
+      "subtypes": [
+        {
+          "id": "SV01",
+          "label": "Pedido novo",
+          "when": "Um cliente pediu informações e ainda não fechou.",
+          "message": "Ana pediu um orçamento para limpar o sofá.",
+          "organizes": "Registra a demanda sem fingir que já houve contratação.",
+          "reply": "Registrei o pedido de orçamento da Ana para limpeza de sofá.",
+          "next": "Preparar a proposta, informar o valor ou encerrar a negociação.",
+          "result": "Cliente: Ana · Serviço: pedido de limpeza · Situação: Novo · Sem cobrança.",
+          "demoContext": "Pedido explícito; nenhum orçamento gerado ainda.",
+          "guardrail": "Sem lead separado, cobrança ou agenda automática."
+        },
+        {
+          "id": "SV02",
+          "label": "Fechou direto",
+          "when": "O cliente já aceitou e você só quer registrar o combinado.",
+          "message": "Fechei a instalação do Carlos por R$750.",
+          "organizes": "Registra a contratação sem exigir orçamento ou etapas que não aconteceram.",
+          "reply": "Instalação do Carlos registrada por R$750, como confirmada.",
+          "next": "Marcar o horário ou informar uma entrada.",
+          "result": "Instalação do Carlos · Situação: Confirmado · Combinado: R$750.",
+          "demoContext": "Contratação direta inequívoca; pagamento não informado.",
+          "guardrail": "Não fabricar proposta aprovada ou marcar recebido."
+        },
+        {
+          "id": "SV03",
+          "label": "Pacote",
+          "when": "Você vendeu uma quantidade fechada de aulas ou sessões.",
+          "message": "João fechou oito aulas por R$600. Vou marcar os horários depois.",
+          "organizes": "Guarda a quantidade e o valor contratado sem obrigar a preencher a agenda.",
+          "reply": "Pacote do João registrado: oito aulas por R$600, ainda sem horários marcados.",
+          "next": "Agendar aos poucos e consultar realizadas, reservadas e disponíveis.",
+          "result": "Pacote: 8 aulas · Valor: R$600 · Realizadas: 0 · Agendadas: 0 · Disponíveis: 8.",
+          "demoContext": "Nenhuma sessão anterior no pacote.",
+          "guardrail": "Aula agendada reserva; não consome até confirmar realização."
+        },
+        {
+          "id": "SV04",
+          "label": "Plano",
+          "when": "O serviço é contratado por um valor a cada período.",
+          "message": "Jardinagem do Carlos por R$350 ao mês, a partir de 1º de outubro.",
+          "organizes": "Registra o valor por ciclo e o início da contratação.",
+          "reply": "Plano mensal do Carlos registrado por R$350, com início em 01/10.",
+          "next": "Informar quando as visitas acontecem ou consultar o ciclo correspondente.",
+          "result": "Jardinagem do Carlos · Plano mensal: R$350 por ciclo · Início: 01/10.",
+          "demoContext": "Não há limite de visitas informado; quantidade fica desconhecida, não ilimitada.",
+          "guardrail": "Cinco visitas não geram cinco mensalidades. Não materializar dezenas de cobranças."
+        },
+        {
+          "id": "SV05",
+          "label": "Vários dias",
+          "when": "Um trabalho continua por mais de um dia.",
+          "message": "A pintura da Carla ficou R$2.400 e vai de segunda a quarta.",
+          "organizes": "Registra o período de execução no mesmo serviço.",
+          "reply": "Pintura da Carla registrada de 21 a 23/09, por R$2.400. O período está sem horários definidos.",
+          "next": "Adicionar intervalos de trabalho ou ajustar a data de término.",
+          "result": "Pintura da Carla · Serviço avulso · Período: 21 a 23/09 · Valor: R$2.400.",
+          "demoContext": "Relógio do exemplo 18/09/2026; sem horas.",
+          "guardrail": "Período sem hora é informativo; não bloquear três dias inteiros nem criar tarefas."
+        },
+        {
+          "id": "SV06",
+          "label": "Concluir ou cancelar",
+          "when": "Você decide registrar que o trabalho terminou ou não seguirá.",
+          "message": "Terminei a instalação do Carlos.",
+          "organizes": "Atualiza o serviço, sem alterar o que foi pago ou o saldo.",
+          "reply": "Instalação marcada como concluída. O saldo registrado continua em R$250.",
+          "next": "Consultar o saldo; para cancelamento, pedir explicitamente “Cancela esse serviço”.",
+          "result": "Instalação concluída · Saldo: R$250 · Pagamentos e histórico preservados.",
+          "demoContext": "Contrato de R$750; recebido de R$500; saldo de R$250.",
+          "guardrail": "Cancelar serviço não é cancelar só horário. Entrada não some e estorno nunca é automático."
+        }
+      ],
+      "sourceSections": "S2 §§4–5 e7",
+      "assetId": "VIS-FR-SV"
+    },
+    {
+      "id": "AG",
+      "label": "Agenda",
+      "title": "Marque, remarque e consulte sem perder o contexto.",
+      "description": "Horários ficam ligados ao serviço. Mudanças não precisam virar outro cadastro.",
+      "subtypes": [
+        {
+          "id": "AG01",
+          "label": "Agendar",
+          "when": "Você combinou um atendimento com data e duração.",
+          "message": "Marca a avaliação da Júlia amanhã às 14h por uma hora.",
+          "organizes": "Registra cliente, serviço e ocorrência com intervalo conhecido.",
+          "reply": "Avaliação da Júlia marcada para 19/09, das 14h às 15h.",
+          "next": "Consultar a agenda ou informar o valor mais tarde.",
+          "result": "Avaliação da Júlia · 19/09, 14h–15h · Valor não definido.",
+          "demoContext": "Sem conflito; hoje 18/09; Julia inequívoca.",
+          "guardrail": "Não pedir preço para agendar nem afirmar confirmação enviada à cliente."
+        },
+        {
+          "id": "AG02",
+          "label": "Consultar",
+          "when": "Você quer saber os compromissos registrados.",
+          "message": "Como está minha agenda amanhã?",
+          "organizes": "Organiza os atendimentos do período com cliente e serviço.",
+          "reply": "Amanhã: avaliação da Júlia, 14h–15h; limpeza da Luana, 16h–18h.",
+          "next": "Pedir detalhes de um atendimento ou consultar outro dia.",
+          "result": "Agenda de 19/09 consultada. Nenhum compromisso alterado.",
+          "demoContext": "Dois agendamentos fictícios na base.",
+          "guardrail": "Não tratar ausência de registros como disponibilidade universal."
+        },
+        {
+          "id": "AG03",
+          "label": "Disponibilidade",
+          "when": "Você precisa encontrar um intervalo conhecido como livre.",
+          "message": "Tenho um horário livre de uma hora na sexta?",
+          "organizes": "Cruza horário de atendimento e ocupações conhecidas; informa os limites da consulta.",
+          "reply": "Na sexta, 25/09, há uma janela de 9h às 10h, considerando seu horário de atendimento e os compromissos registrados.",
+          "next": "Pedir para agendar nesse intervalo; a disponibilidade será conferida de novo.",
+          "result": "Disponibilidade consultada para 25/09. Nada agendado.",
+          "demoContext": "Expediente das 8h às 18h configurado; ocupações conhecidas das 8h às 9h e das 10h às 18h.",
+          "guardrail": "Sem expediente, mostrar ocupações e pedir período. Consulta não autoriza agendar."
+        },
+        {
+          "id": "AG04",
+          "label": "Remarcar",
+          "when": "O horário mudou, mas o trabalho é o mesmo.",
+          "message": "Passa a visita do Carlos de quinta para sexta às 10h.",
+          "organizes": "Move a mesma ocorrência e conserva a duração conhecida.",
+          "reply": "Visita remarcada para 25/09, das 10h às 11h.",
+          "next": "Consultar a nova agenda; lembrete relativo acompanha quando existir.",
+          "result": "Mesma visita · Antes: 24/09, 14h–15h · Agora: 25/09, 10h–11h.",
+          "demoContext": "Duração de 1h conhecida, destino livre.",
+          "guardrail": "Não duplicar serviço, pagamento ou sessão."
+        },
+        {
+          "id": "AG05",
+          "label": "Cancelar horário",
+          "when": "O atendimento não vai acontecer naquela data.",
+          "message": "Cancela só o atendimento da Ana de amanhã.",
+          "organizes": "Cancela a ocorrência indicada e preserva o restante do serviço.",
+          "reply": "Cancelei o atendimento de 19/09. O serviço e os pagamentos registrados foram mantidos.",
+          "next": "Combinar outra data depois, sem perder o histórico.",
+          "result": "Atendimento de 19/09 cancelado · Serviço e pagamentos preservados.",
+          "demoContext": "Uma ocorrência inequívoca em19/09.",
+          "guardrail": "Não cancelar plano/pacote, perdoar saldo ou devolver entrada por inferência."
+        },
+        {
+          "id": "AG06",
+          "label": "Recorrência",
+          "when": "Você combinou datas que se repetem por um período.",
+          "message": "Marca a manutenção do Carlos nas próximas quatro sextas, das 8h às 9h, começando em 25 de setembro.",
+          "organizes": "Registra as ocorrências no serviço existente, com alcance finito.",
+          "reply": "Marquei 25/09, 02/10, 09/10 e 16/10, das 8h às 9h.",
+          "next": "Pedir mudança só de uma data ou das próximas, esclarecendo o alcance.",
+          "result": "Quatro visitas de 1h · Mesmo serviço · Datas: 25/09, 02/10, 09/10 e 16/10.",
+          "demoContext": "Manutenção ativa, sem conflitos, capacidade única.",
+          "guardrail": "Recorrência de agenda não cria plano comercial nem cobrança por visita."
+        }
+      ],
+      "sourceSections": "S2 §9; S3 OP-AGENDA-01/03/05/06",
+      "assetId": "VIS-FR-AG"
+    },
+    {
+      "id": "OR",
+      "label": "Orçamentos",
+      "title": "Prepare a proposta sem perder o combinado.",
+      "description": "Crie, ajuste e encontre versões no contexto do serviço. A aprovação precisa ser informada.",
+      "subtypes": [
+        {
+          "id": "OR01",
+          "label": "Criar",
+          "when": "Você precisa apresentar escopo e preço ao cliente.",
+          "message": "Faz um orçamento para a Marina: R$650 de instalação e R$200 de material.",
+          "organizes": "Organiza os itens cobrados e prepara uma proposta para revisão.",
+          "reply": "Preparei o orçamento de R$850 da Marina para você revisar.",
+          "next": "Revisar, gerar o PDF e compartilhar pelo canal que escolher.",
+          "result": "Orçamento v1: R$850 · Serviço em negociação · Documento para revisão.",
+          "demoContext": "Itens e valores completos informados.",
+          "guardrail": "Não inventar preço de material; não emitir nota fiscal; preparar não significa enviar."
+        },
+        {
+          "id": "OR02",
+          "label": "Itens",
+          "when": "O escopo da proposta mudou antes da aprovação.",
+          "message": "Adiciona R$200 de material ao orçamento da instalação de R$650.",
+          "organizes": "Inclui o item na proposta e atualiza o total apresentado.",
+          "reply": "Incluí R$200 de material. O orçamento agora soma R$850.",
+          "next": "Revisar o escopo e confirmar qual versão compartilhar.",
+          "result": "Instalação: R$650 · Material cobrado: R$200 · Total proposto: R$850.",
+          "demoContext": "Proposta em revisão, não aprovada; alteração versionada.",
+          "guardrail": "Trata material como item comercial, não controle de custo, estoque ou compra."
+        },
+        {
+          "id": "OR03",
+          "label": "Revisar",
+          "when": "Você precisa enviar uma alternativa ao que já foi combinado.",
+          "message": "Faz uma nova versão do orçamento da Marina com R$100 de desconto.",
+          "organizes": "Cria uma revisão sem substituir um combinado já aprovado por conta própria.",
+          "reply": "Preparei a versão 2 por R$800. O combinado aprovado de R$900 continua valendo até você registrar a nova aprovação.",
+          "next": "Revisar a versão e informar se o cliente aceitou.",
+          "result": "Versão 1 aprovada: R$900 · Versão 2 em proposta: R$800.",
+          "demoContext": "Cenário de revisão após aprovação; não houve novo aceite.",
+          "guardrail": "Não recalcular recebíveis com proposta ainda não aprovada."
+        },
+        {
+          "id": "OR04",
+          "label": "Aprovação",
+          "when": "O cliente aceitou uma proposta e você quer registrar esse fato.",
+          "message": "A Marina aprovou a versão 2 do orçamento, de R$800.",
+          "organizes": "Atualiza o combinado do mesmo serviço para a versão explicitamente aprovada.",
+          "reply": "Aprovação registrada. A versão 2 de R$800 é o combinado vigente da instalação.",
+          "next": "Agendar o trabalho ou registrar uma entrada.",
+          "result": "Mesmo serviço confirmado · Combinado vigente: R$800 · Versão 1 no histórico.",
+          "demoContext": "Sem pagamentos anteriores neste cenário; versão 2 identificada.",
+          "guardrail": "Não criar outro serviço por “conversão” de orçamento. Com pagamentos anteriores, revisar os efeitos antes."
+        },
+        {
+          "id": "OR05",
+          "label": "Encontrar",
+          "when": "Você precisa recuperar a proposta certa.",
+          "message": "Cadê a versão aprovada do orçamento da Marina?",
+          "organizes": "Busca a versão marcada como aprovada para aquele trabalho.",
+          "reply": "Aqui está a versão aprovada: orçamento da instalação, R$900.",
+          "next": "Consultar os itens ou pedir outra versão quando necessário.",
+          "result": "Versão aprovada localizada. Nenhuma alteração no combinado.",
+          "demoContext": "Cenário alternativo: versão 1 aprovada por R$900; versão 2 rascunho.",
+          "guardrail": "Não devolver a mais nova como aprovada sem conferir seu estado."
+        }
+      ],
+      "sourceSections": "S2 §§5–6; S3 contratos documentais",
+      "assetId": "VIS-FR-OR"
+    },
+    {
+      "id": "RC",
+      "label": "Recebimentos",
+      "title": "Saiba quanto entrou e quanto ainda falta.",
+      "description": "Você informa os pagamentos. A Taliya organiza os valores no serviço certo.",
+      "subtypes": [
+        {
+          "id": "RC01",
+          "label": "Recebeu tudo",
+          "when": "O cliente quitou o valor conhecido de um serviço.",
+          "message": "A Luana pagou os R$250 da limpeza.",
+          "organizes": "Registra o pagamento no serviço e atualiza o restante.",
+          "reply": "Registrei R$250 recebidos da Luana. Não ficou saldo dessa limpeza.",
+          "next": "Consultar o histórico ou revisar a informação no app.",
+          "result": "Combinado: R$250 · Recebido: R$250 · Restante: R$0.",
+          "demoContext": "Sem pagamentos prévios; total conhecido.",
+          "guardrail": "Sem total conhecido, não afirmar quitação. Não confirmar banco/Pix."
+        },
+        {
+          "id": "RC02",
+          "label": "Parcial",
+          "when": "O pagamento foi menor que o total combinado.",
+          "message": "A Ana pagou R$300 pela limpeza. Ficaram faltando R$150.",
+          "organizes": "Mantém pagamento e saldo associados à contratação.",
+          "reply": "Registrei R$300 recebidos. Restam R$150 da limpeza da Ana.",
+          "next": "Consultar o saldo ou criar um lembrete de cobrança.",
+          "result": "Combinado: R$450 · Recebido: R$300 · Restante: R$150 · Parcial.",
+          "demoContext": "Uma limpeza da Ana; nenhum pagamento anterior.",
+          "guardrail": "Somente registrar o fato informado, sem enviar mensagem à cliente."
+        },
+        {
+          "id": "RC03",
+          "label": "Sinal",
+          "when": "Você recebeu uma entrada antes de executar o serviço.",
+          "message": "A Marina pagou R$300 de sinal da instalação de R$900.",
+          "organizes": "Registra a entrada sem tratar o trabalho como concluído.",
+          "reply": "Entrada de R$300 registrada. Ficam R$600 para receber da instalação.",
+          "next": "Combinar a agenda e consultar o restante depois.",
+          "result": "Combinado: R$900 · Recebido: R$300 · Restante: R$600.",
+          "demoContext": "Contrato confirmado; sem pagamento prévio.",
+          "guardrail": "Entrada não prova execução e não altera automaticamente o estado do serviço."
+        },
+        {
+          "id": "RC04",
+          "label": "Saldo",
+          "when": "Você precisa saber o que está em aberto.",
+          "message": "Quanto falta receber da instalação da Marina?",
+          "organizes": "Consulta o combinado e os pagamentos registrados.",
+          "reply": "Restam R$600 dos R$900 combinados. Há R$300 registrados como recebidos.",
+          "next": "Consultar outros serviços ou preparar o próximo contato.",
+          "result": "Combinado: R$900 · Recebido: R$300 · Restante: R$600 · Consulta sem alteração.",
+          "demoContext": "Contrato de R$900; recebido de R$300; fonte explícita.",
+          "guardrail": "Resumos gerais dizem “valores registrados”, não receita total ou lucro."
+        },
+        {
+          "id": "RC05",
+          "label": "Corrigir",
+          "when": "Você informou um valor errado.",
+          "message": "Corrige o pagamento da limpeza da Ana: foram R$350, não R$300.",
+          "organizes": "Corrige o registro identificado, preservando a trilha da alteração.",
+          "reply": "Corrigi para R$350 recebidos. Restam R$100 dos R$450 combinados.",
+          "next": "Consultar o resultado no app ou continuar pela conversa.",
+          "result": "Recebido corrigido: R$350 · Restante: R$100 · Correção no histórico.",
+          "demoContext": "Um pagamento original de R$300 identificado.",
+          "guardrail": "Correção não é novo pagamento nem estorno bancário. Não apagar o histórico."
+        },
+        {
+          "id": "RC06",
+          "label": "Ciclos",
+          "when": "Você acompanha uma mensalidade ou outro período de um plano.",
+          "message": "O Carlos pagou os R$350 da jardinagem de outubro.",
+          "organizes": "Registra o pagamento no ciclo indicado do plano.",
+          "reply": "Registrei R$350 recebidos no ciclo de outubro da jardinagem do Carlos.",
+          "next": "Consultar o próximo ciclo quando existir ou revisar o histórico.",
+          "result": "Plano de jardinagem · Ciclo de outubro · Recebido: R$350.",
+          "demoContext": "Plano com início em 01/10; obrigação do ciclo já materializada.",
+          "guardrail": "Não criar várias cobranças por visita nem dizer que um mês futuro foi pago sem informação."
+        }
+      ],
+      "sourceSections": "S2 §7; S3 OP-FIN-01/02/03",
+      "assetId": "VIS-FR-RC"
+    },
+    {
+      "id": "LE",
+      "label": "Lembretes",
+      "title": "Guarde a próxima ação com o contexto certo.",
+      "description": "Peça um aviso sobre cliente, serviço ou documento, sem depender só da memória.",
+      "subtypes": [
+        {
+          "id": "LE01",
+          "label": "Cobrar",
+          "when": "Ficou um valor para receber e você quer retomar depois.",
+          "message": "Me lembra segunda às 9h de cobrar os R$150 da Ana.",
+          "organizes": "Cria um lembrete para você sobre o saldo daquele serviço.",
+          "reply": "Lembrete criado para 21/09, às 9h: cobrar R$150 da Ana pela limpeza.",
+          "next": "Consultar, remarcar ou cancelar o lembrete.",
+          "result": "Lembrete: cobrar R$150 da Ana · 21/09, 9h · Vinculado à limpeza.",
+          "demoContext": "Hoje18/09; saldo de R$150 conhecido.",
+          "guardrail": "Aviso ao dono, não mensagem automática à cliente; entrega depende do canal habilitado."
+        },
+        {
+          "id": "LE02",
+          "label": "Cliente",
+          "when": "Você quer lembrar de entrar em contato com alguém.",
+          "message": "Me lembra terça às 10h de falar com a Júlia.",
+          "organizes": "Guarda o assunto e o momento informado.",
+          "reply": "Lembrete criado para 22/09, às 10h: falar com a Júlia.",
+          "next": "Complementar o assunto ou alterar o horário.",
+          "result": "Lembrete: falar com a Júlia · 22/09, 10h · Sem serviço obrigatório.",
+          "demoContext": "Júlia inequívoca; momento explícito.",
+          "guardrail": "Não iniciar conversa externa nem criar follow-up como módulo."
+        },
+        {
+          "id": "LE03",
+          "label": "Serviço",
+          "when": "Há algo para preparar antes de um trabalho.",
+          "message": "Me lembra amanhã às 8h de levar o equipamento para a limpeza da Luana.",
+          "organizes": "Mantém o aviso ligado ao serviço para recuperar o contexto.",
+          "reply": "Lembrete criado para 19/09, às 8h: levar o equipamento para a limpeza da Luana.",
+          "next": "Consultar o serviço e o lembrete juntos.",
+          "result": "Lembrete: levar o equipamento · 19/09, 8h · Limpeza da Luana.",
+          "demoContext": "Limpeza da Luana existente.",
+          "guardrail": "Lembrete não é compromisso que ocupa a agenda nem controle de estoque."
+        },
+        {
+          "id": "LE04",
+          "label": "Documento e rotina",
+          "when": "Você revisa propostas com uma frequência definida.",
+          "message": "Toda segunda às 9h, me lembra de revisar os orçamentos em aberto.",
+          "organizes": "Cria a rotina de lembrete sem alterar documentos ou aprovações.",
+          "reply": "Lembrete recorrente criado para segundas às 9h: revisar os orçamentos em aberto.",
+          "next": "Pausar a rotina ou mudar a frequência quando precisar.",
+          "result": "Lembrete recorrente · Segundas, 9h · Próximo aviso: 21/09.",
+          "demoContext": "Não depende de um cliente específico.",
+          "guardrail": "Recorrência do lembrete não cria tarefa, cobrança ou envio de proposta."
+        },
+        {
+          "id": "LE05",
+          "label": "Antes do atendimento",
+          "when": "Você quer um aviso que acompanhe a data do serviço.",
+          "message": "Me lembra uma hora antes da visita do Carlos.",
+          "organizes": "Relaciona o aviso ao horário da ocorrência.",
+          "reply": "Lembrete definido para uma hora antes da visita: 24/09, às 13h.",
+          "next": "Se a visita for remarcada, o horário relativo acompanha.",
+          "result": "Visita: 24/09, 14h · Lembrete relativo: 24/09, 13h.",
+          "demoContext": "Uma visita identificada; início às 14h.",
+          "guardrail": "Com cancelamento, não manter alerta relativo de comparecimento sem sentido. Não prometer entrega sem canal elegível."
+        },
+        {
+          "id": "LE06",
+          "label": "Se ainda estiver aberto",
+          "when": "Você só quer ser avisado se o saldo continuar pendente.",
+          "message": "Na segunda às 9h, me avisa se os R$150 da Ana ainda estiverem em aberto.",
+          "organizes": "Verifica o estado registrado no momento do lembrete.",
+          "reply": "Registrei o aviso para 21/09, às 9h. Ele depende de o saldo continuar em aberto na Taliya.",
+          "next": "Informar o pagamento quando acontecer para manter a condição correta.",
+          "result": "Aviso condicional · 21/09, 9h · Verificar se R$150 continuam em aberto.",
+          "demoContext": "Um recebível identificado; condição observável na base.",
+          "guardrail": "Não afirmar que sabe se houve Pix fora do sistema. Se pago e informado, evitar alerta desnecessário."
+        }
+      ],
+      "sourceSections": "S2 §8; S3 regras de canal",
+      "assetId": "VIS-FR-LE"
+    },
+    {
+      "id": "AR",
+      "label": "Arquivos e documentos",
+      "title": "Encontre o material pelo trabalho a que ele pertence.",
+      "description": "Fotos, PDFs e versões ficam no contexto do serviço, para consultar depois.",
+      "subtypes": [
+        {
+          "id": "AR01",
+          "label": "Guardar",
+          "when": "Você recebeu um material e quer manter o vínculo com o trabalho.",
+          "message": "Guarda esse PDF na instalação da Marina.",
+          "organizes": "Associa o arquivo enviado ao serviço indicado.",
+          "reply": "PDF anexado à instalação da Marina.",
+          "next": "Pedir o arquivo novamente ou consultar os demais materiais do serviço.",
+          "result": "Arquivo anexado à instalação da Marina · contrato-marina.pdf.",
+          "demoContext": "Upload concluído antes de confirmar; serviço inequívoco.",
+          "guardrail": "Não afirmar que anexou se upload falhou; não ler todas as pastas do celular."
+        },
+        {
+          "id": "AR02",
+          "label": "Encontrar",
+          "when": "Você não lembra o nome exato de um arquivo.",
+          "message": "Me mostra o contrato da instalação da Empresa Norte.",
+          "organizes": "Busca o documento dentro do contexto informado.",
+          "reply": "Encontrei o contrato da instalação da Empresa Norte.",
+          "next": "Abrir ou compartilhar o arquivo pelo canal que escolher.",
+          "result": "Contrato localizado no serviço. Nenhuma modificação.",
+          "demoContext": "Um contrato disponível no serviço.",
+          "guardrail": "Se houver várias versões, identificar a vigente; sem resultados é diferente de erro de consulta."
+        },
+        {
+          "id": "AR03",
+          "label": "Versões",
+          "when": "Chegou uma revisão de um documento.",
+          "message": "Esse PDF é a versão nova do orçamento da Marina.",
+          "organizes": "Guarda a revisão e preserva as versões anteriores.",
+          "reply": "Nova versão anexada ao serviço da Marina. A aprovação anterior não foi alterada.",
+          "next": "Revisar e informar qual versão foi aprovada.",
+          "result": "Nova versão vinculada · Versão anterior e aprovação preservadas.",
+          "demoContext": "PDF enviado; orçamento existente.",
+          "guardrail": "Upload não equivale a aprovação. Não substituir combinado financeiro silenciosamente."
+        },
+        {
+          "id": "AR04",
+          "label": "Orçamento, contrato ou recibo",
+          "when": "Você quer preparar um documento com os dados já conhecidos.",
+          "message": "Prepara um recibo dos R$300 que registrei da instalação da Marina.",
+          "organizes": "Monta o documento com base no pagamento informado e no modelo disponível.",
+          "reply": "Preparei o recibo de R$300 para você revisar.",
+          "next": "Conferir os dados e compartilhar a versão final.",
+          "result": "Recibo de R$300 para revisão · Pagamento original mantido.",
+          "demoContext": "Pagamento de R$300 existente; modelo de recibo habilitado.",
+          "guardrail": "Documento não é nota fiscal, comprovante bancário nem garantia de validade jurídica. Dados indispensáveis podem ser pedidos."
+        },
+        {
+          "id": "AR05",
+          "label": "Corrigir relação",
+          "when": "Um arquivo ficou associado ao trabalho errado.",
+          "message": "Esse arquivo é da instalação da Marina, não da limpeza da Ana.",
+          "organizes": "Confirma o alvo correto e ajusta o vínculo do arquivo identificado.",
+          "reply": "Corrigi o vínculo do arquivo para a instalação da Marina.",
+          "next": "Encontrá-lo depois no serviço certo.",
+          "result": "Arquivo vinculado à instalação da Marina · Histórico preservado.",
+          "demoContext": "Arquivo único selecionado e destino identificado.",
+          "guardrail": "Não transferir automaticamente pagamentos ou demais documentos; preservar regras de acesso."
+        }
+      ],
+      "sourceSections": "S2 §§5–6; S3 contratos documentais",
+      "assetId": "VIS-FR-AR"
+    }
+  ],
+  "flows": [
+    {
+      "id": "FL01",
+      "label": "Orçamento e agenda",
+      "title": "Da proposta ao horário, sem refazer o cadastro.",
+      "context": "Uma instalação para Marina; cenário independente, sem pagamento inicial.",
+      "assetId": "VIS-FL01",
+      "steps": [
+        {
+          "label": "1. Preparou",
+          "message": "Faz um orçamento de instalação para a Marina: R$650 de mão de obra e R$250 de material.",
+          "reply": "Preparei o orçamento de R$900 para revisão.",
+          "result": "Marina · Instalação · Orçamento v1 · R$900 · Em negociação.",
+          "note": "Material é cobrança, não gasto. Nenhum recebimento por emissão."
+        },
+        {
+          "label": "2. Aprovou",
+          "message": "A Marina aprovou esse orçamento.",
+          "reply": "Aprovação registrada. A instalação está confirmada por R$900.",
+          "result": "Mesmo serviço · v1 aprovada · Combinado R$900.",
+          "note": ""
+        },
+        {
+          "label": "3. Agendou",
+          "message": "Marca para 24 de setembro às 9h, por três horas.",
+          "reply": "Marquei a instalação para 24/09, das 9h às 12h.",
+          "result": "Mesmo serviço · 24/09 9h–12h · Agenda livre no exemplo.",
+          "note": ""
+        },
+        {
+          "label": "4. Entrou o sinal",
+          "message": "Ela pagou R$300 de entrada.",
+          "reply": "Entrada registrada. Restam R$600 da instalação.",
+          "result": "Combinado R$900 · Recebido R$300 · Restante R$600.",
+          "note": ""
+        }
+      ],
+      "takeaway": "O serviço mantém cliente, proposta, horário e saldo no mesmo contexto.",
+      "guardrail": "Gerar orçamento não cria novo serviço no aceite; pagamento só existe após informação do dono."
+    },
+    {
+      "id": "FL02",
+      "label": "Marcou, mudou, cancelou",
+      "title": "O horário muda. O histórico não se perde.",
+      "context": "Visita de manutenção do Carlos; uma hora de duração; sem outras ocorrências nesta série.",
+      "assetId": "VIS-FL02",
+      "steps": [
+        {
+          "label": "1. Marcou",
+          "message": "Marca a visita do Carlos para 24 de setembro, das 14h às 15h.",
+          "reply": "Visita marcada para 24/09, das 14h às 15h.",
+          "result": "Visita do Carlos · 24/09 14h–15h.",
+          "note": ""
+        },
+        {
+          "label": "2. Remarcou",
+          "message": "Passa essa visita para sexta às 10h.",
+          "reply": "Remarquei para 25/09, das 10h às 11h.",
+          "result": "Mesma ocorrência · 25/09 10h–11h.",
+          "note": ""
+        },
+        {
+          "label": "3. Cancelou só o horário",
+          "message": "Cancela só essa visita. Depois combinamos outra data.",
+          "reply": "Visita cancelada. Mantive o serviço e o histórico.",
+          "result": "Ocorrência Cancelada · Serviço mantido · Sem horário ativo.",
+          "note": ""
+        },
+        {
+          "label": "4. Consultou",
+          "message": "Como ficou o serviço do Carlos?",
+          "reply": "O serviço foi mantido, com a última visita cancelada e sem nova data marcada.",
+          "result": "Histórico preservado · Nenhum novo atendimento criado.",
+          "note": ""
+        }
+      ],
+      "takeaway": "Remarcar não duplica. Cancelar horário não apaga o serviço nem um pagamento.",
+      "guardrail": "Não mostrar comunicação automática com Carlos; não inferir cancelamento de contrato."
+    },
+    {
+      "id": "FL03",
+      "label": "Recebeu, consultou, lembrou",
+      "title": "Registrar hoje facilita a cobrança de depois.",
+      "context": "Limpeza de Ana: total R$450; sem pagamentos antes do primeiro passo.",
+      "assetId": "VIS-FL03",
+      "steps": [
+        {
+          "label": "1. Recebeu uma parte",
+          "message": "A Ana pagou R$300 da limpeza.",
+          "reply": "Registrei R$300 recebidos. Restam R$150.",
+          "result": "Combinado R$450 · Recebido R$300 · Restante R$150.",
+          "note": ""
+        },
+        {
+          "label": "2. Voltou para consultar",
+          "message": "Quanto falta receber da limpeza da Ana?",
+          "reply": "Ainda há R$150 em aberto nesse serviço.",
+          "result": "Consulta do mesmo saldo; nenhuma nova cobrança.",
+          "note": ""
+        },
+        {
+          "label": "3. Pediu um aviso",
+          "message": "Me lembra segunda às 9h de cobrar esse restante.",
+          "reply": "Lembrete criado para 21/09, às 9h: cobrar R$150 da Ana.",
+          "result": "Lembrete para o dono · R$150 · Limpeza da Ana.",
+          "note": ""
+        },
+        {
+          "label": "4. Preparou o contato",
+          "message": "Escreve uma mensagem curta para eu cobrar a Ana.",
+          "reply": "Sugestão: “Oi, Ana! Tudo bem? Ficaram R$150 da limpeza do sofá. Pode me confirmar quando consegue fazer o pagamento?”",
+          "result": "Texto preparado para o profissional revisar e enviar.",
+          "note": ""
+        }
+      ],
+      "takeaway": "A Taliya organiza o saldo, lembra você e pode ajudar a preparar o texto. O envio à cliente é seu.",
+      "guardrail": "Não gerar Pix/link de cobrança; não marcar mensagem enviada; rascunho não é cobrança automática."
+    },
+    {
+      "id": "FL04",
+      "label": "Pacote e sessões",
+      "title": "O pacote não precisa virar uma contagem paralela.",
+      "context": "João contratou oito aulas por R$600. Datas sem conflito e duração de uma hora informada.",
+      "assetId": "VIS-FL04",
+      "steps": [
+        {
+          "label": "1. Vendeu",
+          "message": "João fechou oito aulas por R$600.",
+          "reply": "Pacote registrado com oito aulas e valor de R$600.",
+          "result": "Contratadas: 8 · Realizadas: 0 · Reservadas: 0 · Disponíveis: 8.",
+          "note": ""
+        },
+        {
+          "label": "2. Marcou duas",
+          "message": "Marca as duas primeiras nos dias 22 e 24 de setembro, das 7h às 8h.",
+          "reply": "Duas aulas marcadas. Restam seis unidades disponíveis para agendar.",
+          "result": "Contratadas: 8 · Realizadas: 0 · Reservadas: 2 · Disponíveis: 6.",
+          "note": ""
+        },
+        {
+          "label": "3. Informou realização",
+          "message": "A aula do dia 22 aconteceu.",
+          "reply": "Registrei essa aula como realizada.",
+          "result": "Contratadas: 8 · Realizadas: 1 · Reservadas: 1 · Disponíveis: 6.",
+          "note": "Este passo ocorre em um momento posterior do exemplo, depois da aula; não no relógio inicial 18/09."
+        },
+        {
+          "label": "4. Consultou",
+          "message": "Quantas aulas ainda faltam?",
+          "reply": "Faltam sete aulas para realizar: uma está agendada e seis estão disponíveis para agendar.",
+          "result": "Realizadas: 1 · Agendadas: 1 · Disponíveis: 6.",
+          "note": ""
+        }
+      ],
+      "takeaway": "Agendada não é realizada. O saldo distingue o que aconteceu e o que já está reservado.",
+      "guardrail": "Não concluir por passagem de tempo; passadas sem confirmação mantêm reserva. Não confundir sete a realizar com seis disponíveis."
+    },
+    {
+      "id": "FL05",
+      "label": "Arquivo e contexto",
+      "title": "Ache o documento sem lembrar o nome do arquivo.",
+      "context": "Instalação da Empresa Norte; contrato e uma revisão enviados pelo próprio profissional.",
+      "assetId": "VIS-FL05",
+      "steps": [
+        {
+          "label": "1. Guardou",
+          "message": "Guarda esse PDF na instalação da Empresa Norte.",
+          "reply": "PDF anexado ao serviço da Empresa Norte.",
+          "result": "Serviço · Arquivo contrato-v1.pdf · Vínculo confirmado.",
+          "note": ""
+        },
+        {
+          "label": "2. Identificou",
+          "message": "Esse documento é o contrato daquela instalação.",
+          "reply": "Identifiquei o arquivo como contrato da instalação.",
+          "result": "Tipo contrato · Mesmo arquivo e serviço.",
+          "note": ""
+        },
+        {
+          "label": "3. Encontrou depois",
+          "message": "Cadê o contrato da instalação da Empresa Norte?",
+          "reply": "Encontrei o contrato ligado a esse serviço.",
+          "result": "Documento recuperado para consulta.",
+          "note": ""
+        },
+        {
+          "label": "4. Acrescentou a revisão",
+          "message": "Guarda este PDF como uma nova versão, mantendo a anterior.",
+          "reply": "Nova versão guardada. A anterior continua no histórico.",
+          "result": "Versão2 · Versão1 preservada · Sem aprovação implícita.",
+          "note": ""
+        }
+      ],
+      "takeaway": "O material fica ligado ao trabalho e pode ser recuperado pela conversa ou pelo app.",
+      "guardrail": "Aprovação comercial não vem de upload. Mockup não deve permitir download de documento inexistente."
+    }
+  ],
+  "onboarding": [
+    {
+      "step": 1,
+      "title": "Crie sua conta",
+      "body": "Informe o básico sobre você e seu negócio. A conta mantém seus registros no lugar certo.",
+      "internal": "Identidade/configuração inicial no fluxo do app; não alegar zero cadastro."
+    },
+    {
+      "step": 2,
+      "title": "Conte o que você faz",
+      "body": "Adicione os serviços habituais ou escolha completar conforme usar. Não precisa definir todos os preços e horários agora.",
+      "internal": "Padrão reutilizável só é salvo com confirmação; evitar “aprende tudo sozinho”."
+    },
+    {
+      "step": 3,
+      "title": "Registre algo da rotina",
+      "body": "Depois de vincular seu número, fale com a Taliya pelo WhatsApp. Ou use o app para registrar um serviço, um horário ou um lembrete.",
+      "internal": "Primeiro recebimento exige seu contexto mínimo, não lançamento financeiro sem serviço."
+    },
+    {
+      "step": 4,
+      "title": "Volte quando precisar",
+      "body": "Consulte, corrija e acrescente informações. O que você não usa não vira uma etapa obrigatória.",
+      "internal": "Uso parcial não habilita respostas completas sobre dados ausentes."
+    }
+  ],
+  "offer": {
+    "prelaunch": {
+      "title": "Quer testar a Taliya primeiro?",
+      "body": "Estamos preparando uma forma mais simples de organizar a rotina de quem presta serviços. Deixe seu contato para receber um aviso sobre os primeiros testes.",
+      "notice": "Cadastro de interesse. O produto ainda não está disponível e não há cobrança nesta etapa.",
+      "formId": "waitlist",
+      "cta": "Quero testar primeiro",
+      "priceVisible": false
+    },
+    "launch": {
+      "title": "Um plano. Sua rotina conectada.",
+      "body": "WhatsApp e app no mesmo plano, sem escolher um agente para cada necessidade.",
+      "name": "Taliya",
+      "toggleLabel": "Escolha a forma de assinatura",
+      "monthly": {
+        "label": "Mensal",
+        "price": "R$59,90",
+        "period": "por mês",
+        "renewal": "Assinatura mensal."
+      },
+      "annual": {
+        "label": "Anual",
+        "price": "R$599",
+        "period": "por ano",
+        "renewal": "Assinatura anual. O total do período é R$599."
+      },
+      "benefits": [
+        "Clientes e serviços no mesmo contexto.",
+        "Agenda, remarcações e cancelamentos.",
+        "Orçamentos, arquivos e histórico.",
+        "Recebimentos e lembretes.",
+        "Operação pelo WhatsApp e edição no app."
+      ],
+      "trial": "14 dias para testar, sem cartão.",
+      "cta": "Começar 14 dias grátis",
+      "smallPrint": "Confira os termos, as condições de uso e a forma de assinatura antes de contratar.",
+      "cancelHelp": "Gerencie a renovação no canal em que fez a assinatura. O caminho fica indicado na sua conta.",
+      "requirements": [
+        "Preço e período iguais no site, app e checkout.",
+        "Trial de14 dias sem cartão real.",
+        "Política e limites de uso definidos.",
+        "Destino de onboarding configurado e testado."
+      ],
+      "founder": {
+        "visible": false,
+        "reason": "Oferta de fundador existe na especificação de produto, mas depende de elegibilidade/limite. Não publicar contador, urgência ou preço promocional universal.",
+        "eligibleCopy": "Oferta de fundador: R$39,90 por mês por 12 meses. Válida apenas para as primeiras 100 contas elegíveis; confira a elegibilidade antes de contratar."
+      }
+    },
+    "source": "S3 p.25; valores são a oferta especificada, não uma cotação nova nem preços verificados em produção."
+  },
+  "faq": [
+    {
+      "id": "faq-produto",
+      "question": "O que é a Taliya?",
+      "answer": {
+        "prelaunch": "A Taliya está sendo criada para organizar a rotina de quem trabalha por conta e presta serviços. A proposta reúne clientes, serviços, agenda, orçamentos, recebimentos, lembretes e arquivos no mesmo contexto. As demonstrações desta página mostram a experiência planejada.",
+        "launch": "A Taliya organiza a rotina de quem trabalha por conta e presta serviços. Você registra, consulta e ajusta informações pelo WhatsApp ou pelo app, mantendo clientes, serviços, horários, documentos e recebimentos relacionados."
+      }
+    },
+    {
+      "id": "faq-whatsapp",
+      "question": "Posso usar só pelo WhatsApp no dia a dia?",
+      "answer": {
+        "prelaunch": "Esse é um dos objetivos: depois de criar a conta e vincular seu número, registrar, consultar e ajustar a rotina pela conversa. O app complementa a experiência e pode ser necessário para conta, permissões, privacidade ou assinatura. Não estamos prometendo que nunca será preciso abri-lo.",
+        "launch": "Depois de criar a conta e vincular seu número, você pode resolver a rotina coberta pela Taliya pelo WhatsApp: registrar serviços, consultar horários, remarcar, informar pagamentos e pedir lembretes. O app oferece visão geral e edição manual; conta, permissões, privacidade e assinatura podem exigir app ou página segura."
+      }
+    },
+    {
+      "id": "faq-business",
+      "question": "Preciso ter WhatsApp Business?",
+      "answer": {
+        "prelaunch": "Não para a experiência principal que estamos construindo. Você conversa com o número da Taliya usando seu WhatsApp comum. Isso é diferente de conectar o número comercial que atende seus clientes.",
+        "launch": "Não para conversar com a Taliya. Você usa seu WhatsApp comum para falar com o número da Taliya. Não é necessário conectar as conversas do seu negócio com os clientes para usar a proposta principal."
+      }
+    },
+    {
+      "id": "faq-conversas",
+      "question": "A Taliya lê minhas outras conversas?",
+      "answer": {
+        "prelaunch": "Não. A proposta usa o que você informa na conversa com a Taliya e os dados de integrações que você autorizar. Ela não ganha acesso automático aos seus outros chats.",
+        "launch": "Não. Falar com a Taliya não dá acesso automático às suas outras conversas. Você precisa informar ou encaminhar o que for relevante, ou autorizar uma integração disponível."
+      }
+    },
+    {
+      "id": "faq-cadastro",
+      "question": "Preciso cadastrar tudo ou usar todas as funções?",
+      "answer": {
+        "prelaunch": "Não. Estamos preparando um início com dados mínimos e cadastro progressivo. A ideia é começar por agenda, recebimentos de serviços ou lembretes, sem percorrer todas as etapas. Cada consulta depende do que estiver registrado.",
+        "launch": "Não. Comece pela parte de que precisa. A Taliya pergunta o dado que faltar para aquela ação; informações opcionais podem ser completadas depois. Você não precisa acompanhar início, conclusão e pagamento de todo serviço só porque o agendou."
+      }
+    },
+    {
+      "id": "faq-encaixe",
+      "question": "Serve para meu jeito de prestar serviços?",
+      "answer": {
+        "prelaunch": "A primeira versão foi planejada para profissionais solo e pequenos negócios com uma agenda operacional, trabalhando com serviços avulsos, pacotes, mensalidades, várias datas ou recorrência. Equipes com agendas independentes, turmas, estoque e gestão de projetos especializada não estão incluídos nessa proposta.",
+        "launch": "A Taliya atende diferentes modelos de serviço: avulso, pacote de sessões, plano por período, várias datas e recorrência. O foco desta versão é uma operação de agenda única. Ela não substitui recursos especializados de turmas, estoque, prontuário ou gestão de equipes com agendas independentes."
+      }
+    },
+    {
+      "id": "faq-orcamentos",
+      "question": "Dá para preparar e revisar orçamentos?",
+      "answer": {
+        "prelaunch": "Sim, isso está previsto: preparar uma proposta com escopo e preço, revisar versões e registrar a aprovação no mesmo serviço. Gerar o documento não significa que ele foi enviado, aprovado ou pago.",
+        "launch": "Você pode pedir um orçamento com as informações do serviço, revisar itens e valores, gerar uma versão e registrar quando o cliente aprovar. A proposta e o combinado ficam no mesmo serviço. O envio ao cliente é uma ação separada."
+      }
+    },
+    {
+      "id": "faq-cobranca",
+      "question": "Como funcionam recebimentos e cobrança?",
+      "answer": {
+        "prelaunch": "Você informa quanto recebeu e a que serviço o pagamento pertence. A Taliya foi planejada para mostrar recebido e restante, lembrar você de cobrar e ajudar a preparar o texto. Não estamos prometendo detecção automática de Pix, movimentação bancária ou cobrança enviada ao cliente.",
+        "launch": "Você informa os pagamentos, e a Taliya mantém o saldo do serviço. Também pode criar um lembrete e preparar um texto para você enviar. Ela não movimenta seu dinheiro nem sabe automaticamente de um Pix que não foi informado ou recebido por integração autorizada disponível."
+      }
+    },
+    {
+      "id": "faq-mudancas",
+      "question": "E se eu remarcar ou cancelar?",
+      "answer": {
+        "prelaunch": "A experiência planejada atualiza o mesmo atendimento, sem recriar o trabalho. Cancelar só um horário é diferente de cancelar a contratação. Pagamentos e histórico não devem desaparecer com o cancelamento.",
+        "launch": "Ao remarcar, a Taliya atualiza a mesma ocorrência e verifica os conflitos conhecidos. Ao cancelar, considera o alcance do seu pedido. Cancelar um horário não cancela automaticamente o serviço nem devolve valores recebidos."
+      }
+    },
+    {
+      "id": "faq-pacotes",
+      "question": "Posso vender pacotes ou cobrar mensalidade?",
+      "answer": {
+        "prelaunch": "Esses modelos estão previstos. Pacote é uma quantidade total de sessões; plano é uma contratação por período. As sessões agendadas e realizadas são tratadas separadamente, e a cobrança não é multiplicada pelo número de visitas por acidente.",
+        "launch": "Sim. Registre um pacote com quantidade total ou um plano por período. Os horários podem ser marcados depois. Uma sessão só conta como realizada quando esse fato é registrado; consulta de saldo distingue realizadas, reservas e unidades disponíveis."
+      }
+    },
+    {
+      "id": "faq-correcao",
+      "question": "E se a Taliya entender algo errado?",
+      "answer": {
+        "prelaunch": "A proposta inclui confirmar o resultado da ação e permitir correção pelo WhatsApp ou pelo app. Se houver duas interpretações importantes, a conversa deve esclarecer antes de alterar o registro.",
+        "launch": "Confira a resposta e informe a correção pela conversa ou edite no app. A próxima consulta usa a informação atualizada. Operações ambíguas ou sensíveis podem precisar de esclarecimento ou confirmação."
+      }
+    },
+    {
+      "id": "faq-arquivos",
+      "question": "Onde ficam fotos, PDFs e documentos?",
+      "answer": {
+        "prelaunch": "A ideia é guardar os materiais junto ao negócio ou serviço correspondente, para recuperar pelo contexto. Um arquivo anexado não deve virar aprovação comercial ou confirmação bancária por conta própria.",
+        "launch": "Os materiais ficam vinculados ao contexto indicado, como o serviço da Marina. Você pode encontrá-los depois pela conversa ou pelo app. Versões e aprovações são distintas; anexar um PDF não significa aprovar seus termos."
+      }
+    },
+    {
+      "id": "faq-clientes",
+      "question": "A Taliya fala com meus clientes ou deixa eles agendarem?",
+      "answer": {
+        "prelaunch": "Não na proposta-base desta primeira versão. Aqui, quem conversa com a Taliya é o profissional. Atendimento automático ao cliente, envio ativo e link público de autoagendamento não devem ser confundidos com o copiloto descrito nesta página.",
+        "launch": "A proposta-base é você conversando com a Taliya para organizar o trabalho. Ela pode preparar textos e documentos para você compartilhar, mas não oferece nesta versão atendimento automático aos clientes nem link público de autoagendamento."
+      }
+    },
+    {
+      "id": "faq-preco",
+      "question": "Quanto custa e como começo?",
+      "answer": {
+        "prelaunch": "Ainda não estamos abrindo assinaturas. Você pode entrar na lista de interesse, sem cobrança, para receber um aviso sobre os primeiros testes. Preço e condições serão apresentados antes de qualquer contratação.",
+        "launch": "A Taliya custa R$59,90 por mês ou R$599 por ano, com 14 dias de teste sem cartão. Confira as condições na tela de assinatura. Para gerenciar a renovação ou cancelar, use o canal de compra indicado na sua conta."
+      }
+    }
+  ],
+  "forms": {
+    "waitlist": {
+      "id": "waitlist",
+      "title": "Receba um aviso sobre os primeiros testes",
+      "fields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Seu nome",
+          "placeholder": "Como você prefere ser chamado?",
+          "required": true,
+          "autocomplete": "given-name",
+          "maxLength": 80,
+          "error": "Informe seu nome."
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Seu e-mail",
+          "placeholder": "voce@exemplo.com",
+          "required": true,
+          "autocomplete": "email",
+          "maxLength": 254,
+          "error": "Confira o e-mail informado."
+        },
+        {
+          "id": "contactPermission",
+          "type": "checkbox",
+          "label": "Quero receber avisos por e-mail sobre os testes e o lançamento da Taliya.",
+          "required": true,
+          "error": "Confirme que deseja receber o aviso para continuar."
+        }
+      ],
+      "privacyText": "Usaremos este contato para os avisos que você pediu. Consulte como seus dados serão tratados.",
+      "privacyLinkLabel": "Política de privacidade",
+      "submit": "Quero testar primeiro",
+      "submitting": "Enviando cadastro…",
+      "successTitle": "Cadastro recebido.",
+      "success": "Seu interesse foi registrado. Não há cobrança nem acesso imediato ao produto nesta etapa.",
+      "errorTitle": "Não conseguimos concluir agora.",
+      "error": "Seus dados continuam aqui. Tente novamente.",
+      "retry": "Tentar novamente",
+      "unknown": "Estamos conferindo se o cadastro foi recebido. Não envie de novo ainda.",
+      "back": "Voltar para os exemplos",
+      "backHref": "#na-pratica"
+    },
+    "fit": {
+      "id": "fit",
+      "title": "Seu trabalho funciona de outro jeito?",
+      "body": "Conte uma rotina que você precisa organizar. Isso ajuda a entender onde a Taliya se encaixa, onde atende só uma parte e o que deve ficar para depois.",
+      "fields": [
+        {
+          "id": "routine",
+          "type": "textarea",
+          "label": "Qual rotina você precisa organizar?",
+          "placeholder": "Ex.: recebo uma entrada, faço o serviço em três dias e cobro o saldo na entrega. Ou vendo oito sessões sem horário fixo.",
+          "required": true,
+          "maxLength": 1000,
+          "error": "Conte brevemente a rotina que você quer organizar."
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Seu e-mail",
+          "placeholder": "voce@exemplo.com",
+          "required": true,
+          "autocomplete": "email",
+          "maxLength": 254,
+          "error": "Confira o e-mail informado."
+        }
+      ],
+      "helper": "Não inclua dados de clientes, documentos pessoais ou informações sensíveis.",
+      "privacyText": "Seu contato será usado para tratar este relato. Este formulário não inscreve você automaticamente em campanhas.",
+      "submit": "Enviar minha rotina",
+      "submitting": "Enviando rotina…",
+      "successTitle": "Rotina recebida.",
+      "success": "Obrigado por contar como você trabalha. O envio não garante uma funcionalidade sob medida nem uma data de lançamento.",
+      "errorTitle": "Não conseguimos enviar agora.",
+      "error": "Seu texto foi mantido. Tente novamente.",
+      "retry": "Tentar novamente"
+    },
+    "behavior": [
+      "Validação antes do envio; erro junto ao campo; foco no primeiro erro.",
+      "Enviar apenas ao endpoint configurado. Identificar formKind e requestId único por tentativa lógica.",
+      "Sucesso somente com confirmação do servidor. Em timeout de resultado desconhecido, verificar antes de reenviar; não simular sucesso com timer.",
+      "Deduplicar solicitações por chave; não revelar se um terceiro já está cadastrado.",
+      "Reusar e-mail preenchido nesta sessão, com revisão visível. Não ler contatos do aparelho.",
+      "Não salvar texto sensível em analytics. Rate limit e proteção de abuso são responsabilidades da integração.",
+      "Nome/email/rotina não são enviados à camada de eventos de marketing.",
+      "Sem endpoint ativo, publicação da captura fica bloqueada: não trocar por um formulário decorativo."
+    ]
+  },
+  "footer": {
+    "finalTitle": "Seu negócio não precisa ficar só na sua cabeça.",
+    "finalBody": {
+      "prelaunch": "Acompanhe a Taliya desde o começo. Cadastre-se para saber quando os primeiros testes estiverem disponíveis.",
+      "launch": "Comece por uma rotina. Registre, consulte e continue pelo WhatsApp ou pelo app."
+    },
+    "tagline": "Taliya organiza o contexto de quem trabalha por conta: clientes, serviços, agenda, orçamentos, recebimentos, lembretes e arquivos.",
+    "navigation": [
+      {
+        "label": "Como funciona",
+        "href": "#como-funciona"
+      },
+      {
+        "label": "O que resolve",
+        "href": "#o-que-resolve"
+      },
+      {
+        "label": "Exemplos",
+        "href": "#fluxos"
+      },
+      {
+        "label": "Dúvidas",
+        "href": "#duvidas"
+      }
+    ],
+    "legal": [
+      {
+        "label": "Privacidade",
+        "href": "/privacidade"
+      },
+      {
+        "label": "Termos de uso",
+        "href": "/termos"
+      },
+      {
+        "label": "Dados usados",
+        "href": "/privacidade#dados"
+      },
+      {
+        "label": "IA e WhatsApp",
+        "href": "/privacidade#ia-whatsapp"
+      },
+      {
+        "label": "Pagamento",
+        "href": "/privacidade#pagamento"
+      },
+      {
+        "label": "Seus direitos",
+        "href": "/privacidade#direitos"
+      }
+    ],
+    "supportLabel": "Equipe Taliya",
+    "supportCta": "Falar com a equipe",
+    "supportEmail": "contato@taliya.com.br",
+    "copyright": "© 2026 Taliya. Todos os direitos reservados.",
+    "floating": {
+      "primaryCtaRef": "modes[activeMode].primaryCta",
+      "targetRef": "modes[activeMode].primaryTarget",
+      "avatar": "Marca Taliya, não persona de consultor",
+      "fakeBadge": false,
+      "hideOnForm": true,
+      "rule": "No mobile, evitar sobreposição com campos, teclado e controles das demos. Suporte humano aparece como alternativa, não como chatbot em funcionamento."
+    }
+  },
+  "assets": [
+    {
+      "id": "VIS-HERO",
+      "section": "S01",
+      "role": "Conversa de aprovação/entrada e card da instalação da Marina",
+      "alt": "Mensagem de aprovação e entrada de R$300; resumo de serviço de R$900 com saldo de R$600.",
+      "source": "Mockup compartilhado da landing + estado ilustrativo do app",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-NP01",
+      "section": "S03",
+      "role": "Fechei um serviço",
+      "alt": "Cliente, combinado e horário sem repetir cadastro.",
+      "source": "Conversa roteirizada do caso NP01",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-NP02",
+      "section": "S03",
+      "role": "Mudou o horário",
+      "alt": "O mesmo atendimento, com a data atualizada.",
+      "source": "Conversa roteirizada do caso NP02",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-NP03",
+      "section": "S03",
+      "role": "Recebi uma parte",
+      "alt": "O que entrou e o que falta ficam claros.",
+      "source": "Conversa roteirizada do caso NP03",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-NP04",
+      "section": "S03",
+      "role": "Quero um orçamento",
+      "alt": "Uma proposta ligada ao trabalho, não um PDF perdido.",
+      "source": "Conversa roteirizada do caso NP04",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-NP05",
+      "section": "S03",
+      "role": "Vendi um pacote",
+      "alt": "A contratação fica pronta antes de marcar todas as sessões.",
+      "source": "Conversa roteirizada do caso NP05",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-CF01",
+      "section": "S05",
+      "role": "Conte do jeito que for mais fácil.",
+      "alt": "Conte do jeito que for mais fácil.",
+      "source": "Reutilizar composição correspondente ao padrão descrito na tab",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-CF02",
+      "section": "S05",
+      "role": "Não precisa contar a mesma história de novo.",
+      "alt": "Não precisa contar a mesma história de novo.",
+      "source": "Reutilizar composição correspondente ao padrão descrito na tab",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-CF03",
+      "section": "S05",
+      "role": "Só falta uma informação? Responda só ela.",
+      "alt": "Só falta uma informação? Responda só ela.",
+      "source": "Reutilizar composição correspondente ao padrão descrito na tab",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-CF04",
+      "section": "S05",
+      "role": "O combinado acompanha o serviço.",
+      "alt": "O combinado acompanha o serviço.",
+      "source": "Reutilizar composição correspondente ao padrão descrito na tab",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-CF05",
+      "section": "S05",
+      "role": "Sua rotina na conversa. A visão completa no app.",
+      "alt": "Sua rotina na conversa. A visão completa no app.",
+      "source": "Reutilizar composição correspondente ao padrão descrito na tab",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-CF06",
+      "section": "S05",
+      "role": "Um jeito de organizar. Vários jeitos de trabalhar.",
+      "alt": "Um jeito de organizar. Vários jeitos de trabalhar.",
+      "source": "Reutilizar composição correspondente ao padrão descrito na tab",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FR-CL",
+      "section": "S07",
+      "role": "Clientes — estados derivados dos subtipos",
+      "alt": "Lembre do cliente e do que já combinou.",
+      "source": "Mesmo mockup e card; dados definidos por subtype_id",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FR-SV",
+      "section": "S07",
+      "role": "Serviços — estados derivados dos subtipos",
+      "alt": "Mantenha o combinado junto do trabalho.",
+      "source": "Mesmo mockup e card; dados definidos por subtype_id",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FR-AG",
+      "section": "S07",
+      "role": "Agenda — estados derivados dos subtipos",
+      "alt": "Marque, remarque e consulte sem perder o contexto.",
+      "source": "Mesmo mockup e card; dados definidos por subtype_id",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FR-OR",
+      "section": "S07",
+      "role": "Orçamentos — estados derivados dos subtipos",
+      "alt": "Prepare a proposta sem perder o combinado.",
+      "source": "Mesmo mockup e card; dados definidos por subtype_id",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FR-RC",
+      "section": "S07",
+      "role": "Recebimentos — estados derivados dos subtipos",
+      "alt": "Saiba quanto entrou e quanto ainda falta.",
+      "source": "Mesmo mockup e card; dados definidos por subtype_id",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FR-LE",
+      "section": "S07",
+      "role": "Lembretes — estados derivados dos subtipos",
+      "alt": "Guarde a próxima ação com o contexto certo.",
+      "source": "Mesmo mockup e card; dados definidos por subtype_id",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FR-AR",
+      "section": "S07",
+      "role": "Arquivos e documentos — estados derivados dos subtipos",
+      "alt": "Encontre o material pelo trabalho a que ele pertence.",
+      "source": "Mesmo mockup e card; dados definidos por subtype_id",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FL01",
+      "section": "S08",
+      "role": "Da proposta ao horário, sem refazer o cadastro.",
+      "alt": "O serviço mantém cliente, proposta, horário e saldo no mesmo contexto.",
+      "source": "Estados acumulados por scenario_id e step_index",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FL02",
+      "section": "S08",
+      "role": "O horário muda. O histórico não se perde.",
+      "alt": "Remarcar não duplica. Cancelar horário não apaga o serviço nem um pagamento.",
+      "source": "Estados acumulados por scenario_id e step_index",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FL03",
+      "section": "S08",
+      "role": "Registrar hoje facilita a cobrança de depois.",
+      "alt": "A Taliya organiza o saldo, lembra você e pode ajudar a preparar o texto. O envio à cliente é seu.",
+      "source": "Estados acumulados por scenario_id e step_index",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FL04",
+      "section": "S08",
+      "role": "O pacote não precisa virar uma contagem paralela.",
+      "alt": "Agendada não é realizada. O saldo distingue o que aconteceu e o que já está reservado.",
+      "source": "Estados acumulados por scenario_id e step_index",
+      "required": true,
+      "ready": false
+    },
+    {
+      "id": "VIS-FL05",
+      "section": "S08",
+      "role": "Ache o documento sem lembrar o nome do arquivo.",
+      "alt": "O material fica ligado ao trabalho e pode ser recuperado pela conversa ou pelo app.",
+      "source": "Estados acumulados por scenario_id e step_index",
+      "required": true,
+      "ready": false
+    }
+  ],
+  "qa": [
+    {
+      "id": "QA01",
+      "area": "Conteúdo",
+      "check": "Os 14 slots S01–S14 existem na configuração; S11 fica oculto sem prova.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA02",
+      "area": "Conteúdo",
+      "check": "Há 5 casos no seletor, 7 posições Sem/Com, 6 tabs Como funciona, 7 frentes e 39 subtipos.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA03",
+      "area": "Conteúdo",
+      "check": "A biblioteca possui 84 mensagens e 24 IDs iniciais válidos; nenhuma aponta para subtipo ausente.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA04",
+      "area": "Conteúdo",
+      "check": "Header, hero, oferta, FAQ, CTA final e flutuante usam o mesmo modo.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA05",
+      "area": "Conteúdo",
+      "check": "Não há “studio de Pilates”, seleção de agentes nem planos Base/Essencial/Avance/Completo na nova jornada.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA06",
+      "area": "Conteúdo",
+      "check": "Mural usa copy própria; não copia a frase longa da marca concorrente.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA07",
+      "area": "Produto",
+      "check": "A conversa representa dono→número da Taliya; nunca cliente→agente do studio.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA08",
+      "area": "Produto",
+      "check": "Não afirma leitura automática de outros chats, Pix, Open Finance, emissão fiscal, autoagendamento ou equipe.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA09",
+      "area": "Produto",
+      "check": "Agenda sem duração pede só a duração; preço opcional não impede registrar horário.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA10",
+      "area": "Produto",
+      "check": "NP05 mostra uma pergunta necessária, sem inventar duração padrão.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA11",
+      "area": "Produto",
+      "check": "Em FL01, aprovação muda o mesmo serviço; geração de PDF não significa enviado/aprovado.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA12",
+      "area": "Produto",
+      "check": "FL02 cancela a ocorrência e mantém serviço/histórico; pagamentos não desaparecem.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA13",
+      "area": "Produto",
+      "check": "FL03 prepara texto de cobrança para o dono; nunca o marca enviado ao cliente.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA14",
+      "area": "Produto",
+      "check": "FL04 mostra 8 contratadas, 1 realizada, 1 reservada, 6 disponíveis e 7 a realizar no último passo.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA15",
+      "area": "Produto",
+      "check": "Anexar comprovante em AR01 não confirma recebimento nem movimenta banco.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA16",
+      "area": "Produto",
+      "check": "Resumo financeiro é sobre valores registrados; não chama de lucro sem despesas.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA17",
+      "area": "Produto",
+      "check": "Correção RC05 troca R$300 por R$350, com total de R$450 e saldo de R$100; não soma R$350 como novo pagamento.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA18",
+      "area": "Produto",
+      "check": "Sem horário de atendimento, disponibilidade não afirma dia inteiro livre.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA19",
+      "area": "Estágio",
+      "check": "Pré-lançamento tem aviso visível e demos identificadas; nenhum CTA de checkout/uso imediato.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA20",
+      "area": "Estágio",
+      "check": "Preço/trial não aparecem antes de produto, oferta e destino estarem validados.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA21",
+      "area": "Estágio",
+      "check": "Prova social não renderiza dados fictícios, skeletons ou estrelas.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA22",
+      "area": "Formulários",
+      "check": "Erro por campo preserva o preenchimento; envio não simula sucesso.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA23",
+      "area": "Formulários",
+      "check": "Timeout de resultado desconhecido não duplica lead; sucesso depende do servidor.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA24",
+      "area": "Formulários",
+      "check": "Cadastro de rotina não inscreve em marketing automaticamente.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA25",
+      "area": "Formulários",
+      "check": "Política/termos revisados e links reais antes da captura.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA26",
+      "area": "Interação",
+      "check": "Trocar frente reinicia subtipo de forma previsível e atualiza todos os textos/resultados.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA27",
+      "area": "Interação",
+      "check": "Trocar cenário não carrega saldo/cliente de outro exemplo.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA28",
+      "area": "Interação",
+      "check": "Link profundo inválido usa estado inicial, sem erro de página.",
+      "priority": "P1",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA29",
+      "area": "Interação",
+      "check": "Todas as opções funcionam sem autoplay; pause/restart são acessíveis quando houver animação.",
+      "priority": "P1",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA30",
+      "area": "Interação",
+      "check": "Clique em balão apenas abre exemplo; não envia WhatsApp nem registra dado de negócio.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA31",
+      "area": "Mobile",
+      "check": "Revisar 320, 390, 768, 1280 e 1440 px: sem overflow horizontal da página e sem texto cortado.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA32",
+      "area": "Mobile",
+      "check": "Botão flutuante não cobre teclado, formulário ou controles e se oculta no formulário.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA33",
+      "area": "Mobile",
+      "check": "Texto do chat e resultado é legível sem zoom; sem frases dependentes só de cor.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA34",
+      "area": "Acessibilidade",
+      "check": "Foco visível, nome dos controles, teclado, tab selecionada e painel associado funcionam juntos.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA35",
+      "area": "Acessibilidade",
+      "check": "Movimento reduzido desativa rolagem automática; imagem tem texto alternativo.",
+      "priority": "P1",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA36",
+      "area": "Rotas",
+      "check": "Raiz não redireciona à landing antiga; /pilates e /pilates/planos têm destino definido.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA37",
+      "area": "Rotas",
+      "check": "Aliases antigos de âncora abrem os blocos novos corretos.",
+      "priority": "P1",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA38",
+      "area": "SEO",
+      "check": "Title, description, canonical, OG e sitemap não descrevem o produto de Pilates.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA39",
+      "area": "Analytics",
+      "check": "Eventos só levam IDs; nenhum e-mail, telefone, relato ou transcrição é enviado.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA40",
+      "area": "Analytics",
+      "check": "Ver uma demo não dispara first_operation, compra, lead ou teste iniciado.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA41",
+      "area": "Entrega",
+      "check": "Comparação visual com base existente confirma reaproveitamento de tokens e componentes.",
+      "priority": "P1",
+      "status": "não executado nesta entrega"
+    },
+    {
+      "id": "QA42",
+      "area": "Entrega",
+      "check": "A revisão final percorre 39 subtipos, 5 fluxos e todas as perguntas; registrar limitações reais.",
+      "priority": "P0",
+      "status": "não executado nesta entrega"
+    }
+  ],
+  "navigation": {
+    "ariaLabel": "Navegação principal",
+    "logoAlt": "Taliya — início",
+    "items": [
+      {
+        "label": "Como funciona",
+        "href": "#como-funciona"
+      },
+      {
+        "label": "O que resolve",
+        "href": "#o-que-resolve"
+      },
+      {
+        "label": "Exemplos",
+        "href": "#fluxos"
+      },
+      {
+        "label": "Como começar",
+        "href": "#como-comecar"
+      },
+      {
+        "label": "Dúvidas",
+        "href": "#duvidas"
+      }
+    ],
+    "launchExtraItem": {
+      "label": "Preço",
+      "href": "#comecar"
+    },
+    "mobile": {
+      "open": "Abrir menu",
+      "close": "Fechar menu"
+    },
+    "primaryCtaRef": "modes[activeMode].primaryCta",
+    "behavior": "Preservar header atual. Mobile usa o menu existente. Ativar uma única navegação principal; não criar menus sobrepostos."
+  },
+  "trustNote": "No pré-lançamento, o título da faixa é “Como estamos construindo a Taliya” e a página mantém o aviso de experiência planejada. Não usar cadeados ou selos que afirmem certificação.",
+  "selectorHeading": {
+    "title": "Aconteceu no trabalho? Fala pra Taliya.",
+    "subtitle": "Escolha uma situação e veja o que fica organizado.",
+    "instruction": "Toque em um exemplo para ver a conversa.",
+    "detailCta": "Explorar esse caso",
+    "defaultId": "NP01",
+    "exampleNote": "Exemplos fictícios. A resposta usa o contexto disponível e pode pedir o que faltar."
+  },
+  "comparisonHeading": {
+    "title": "Seu trabalho já é corrido. Organizar não pode virar outro trabalho.",
+    "subtitle": "Veja o que muda quando o contexto deixa de ficar espalhado.",
+    "beforeLabel": "Sem Taliya",
+    "afterLabel": "Com Taliya",
+    "defaultSide": "after",
+    "defaultCategory": "CL",
+    "counter": "Frente {current} de {total}",
+    "previous": "Frente anterior",
+    "next": "Próxima frente",
+    "cta": "Ver esse exemplo"
+  },
+  "howHeading": {
+    "title": "Você fala. A Taliya mantém o contexto.",
+    "subtitle": "Sem decorar comandos, sem começar pelo cadastro inteiro e sem registrar a mesma coisa em dois lugares.",
+    "defaultId": "CF01",
+    "instruction": "Escolha um tópico para entender como vai funcionar.",
+    "instructionLaunch": "Escolha um tópico para entender como funciona."
+  },
+  "frontsHeading": {
+    "title": "O que você pode resolver com a Taliya",
+    "subtitle": "Não precisa usar tudo. Comece pela parte que já toma tempo ou fica na sua cabeça.",
+    "categoryLabel": "Frente {current} de 7",
+    "whenLabel": "Quando você usa",
+    "messageLabel": "O que você pode falar",
+    "organizesLabel": "O que a Taliya organiza",
+    "nextLabel": "O que você pode fazer depois",
+    "resultLabel": "O que fica registrado",
+    "defaultCategory": "AG",
+    "defaultSubtype": "AG01",
+    "subtypeInstruction": "Escolha uma situação desta frente.",
+    "previous": "Frente anterior",
+    "next": "Próxima frente",
+    "disclaimer": "Exemplos com dados fictícios; podem exigir contexto ou uma pergunta para esclarecer."
+  },
+  "frontInteraction": {
+    "initial": "Agenda / Agendar é a abertura editorial; hash de campanha pode escolher outro par válido.",
+    "changeCategory": "Trocar apenas a frente ativa. Selecionar seu primeiro subtipo; não deixar o subtipo da frente anterior ativo.",
+    "changeSubtype": "Atualizar caso, mensagem, resposta, card de resultado e próximo passo juntos. Nenhuma mudança de dado real.",
+    "visibleFields": [
+      "Quando você usa",
+      "O que você pode falar",
+      "O que a Taliya organiza",
+      "O que você pode fazer depois",
+      "O que fica registrado"
+    ],
+    "notPublicFields": [
+      "demoContext",
+      "guardrail",
+      "sourceSections",
+      "assetId"
+    ],
+    "reset": "Cada subtipo tem seu próprio cenário fictício. Trocar de exemplo reinicia a demonstração, sem carregar saldo de outro cenário.",
+    "depth": "No máximo dois níveis: frente e subtipo. Não adicionar menus aninhados de terceiro nível.",
+    "deepLink": "#o-que-resolve?frente=AG&caso=AG04; validar IDs localmente. Fragmento é tratado no cliente e não autoriza consulta de dados.",
+    "mobile": "Mostrar a lista horizontal de frentes e as subtabs em região rolável própria, sem overflow da página. Conteúdo visível fica abaixo; resultado não se esconde atrás de “ver detalhes”.",
+    "accessibility": "Tabs com nome, foco visível, estado selecionado e painel associado. Foco não salta para o topo quando muda o caso; navegação por teclado alcança todas as opções."
+  },
+  "flowsHeading": {
+    "title": "Um serviço muda. A Taliya mantém o fio.",
+    "subtitle": "Veja como a conversa continua entre orçamento, agenda, recebimento, lembrete e arquivo. Não é um caminho obrigatório: você pode usar só uma parte.",
+    "defaultId": "FL01",
+    "previous": "Passo anterior",
+    "next": "Próximo passo",
+    "restart": "Recomeçar exemplo",
+    "resultTitle": "O que mudou neste serviço",
+    "cta": "Ver mais situações",
+    "target": "#o-que-resolve"
+  },
+  "flowsBehavior": {
+    "reuse": "Usar container, card de contexto e cards de resultado da área de ROI; trocar sliders por seletor de cinco cenários e seletor de passos.",
+    "initial": "FL01, passo1; primeira mensagem e resultado visíveis sem interação.",
+    "stepRule": "Clicar num passo carrega o estado acumulado desse passo, sem exigir que o visitante clique nos anteriores. Não misturar snapshots entre cenários.",
+    "motion": "Sem autoplay de conversa; botão Próximo passo ou seleção explícita.",
+    "summaryCard": "Cliente, serviço, combinado, agenda e documentos continuam no mesmo contexto.",
+    "zeroROI": "Não manter fórmula, moeda recuperada, tempo economizado ou campos antigos de alunos/mensalidade."
+  },
+  "onboardingHeading": {
+    "title": "Comece pequeno. Continue do seu jeito.",
+    "subtitle": {
+      "prelaunch": "Este é o caminho planejado para os primeiros testes. Você não precisa preparar o negócio inteiro para começar.",
+      "launch": "Comece com o básico e registre algo que já faz parte da sua rotina."
+    },
+    "ctaRef": "modes[activeMode].primaryCta"
+  },
+  "proof": {
+    "visible": false,
+    "titleFuture": "Como a Taliya entra na rotina de quem trabalha por conta",
+    "fieldsNeeded": [
+      "identificação autorizada",
+      "rotina real utilizada",
+      "relato autorizado",
+      "data e contexto",
+      "evidência de qualquer número publicado"
+    ],
+    "rule": "Não renderizar a seção enquanto não houver caso real aprovado. Não exibir skeleton, estrelas, perfis ou depoimentos de exemplo no site público. Não transforma creators pagos em clientes satisfeitos."
+  },
+  "faqHeading": {
+    "title": "Dúvidas antes de começar?",
+    "subtitle": "Entenda os canais, o que fica registrado e os limites da proposta.",
+    "defaultOpen": null,
+    "helpCta": "Falar com a equipe",
+    "helpAction": "supportEmail"
+  },
+  "titlesByStage": {
+    "demoPrefix": "Como vai funcionar",
+    "releasePrefix": "Veja na prática",
+    "prelaunchSectionNotice": "Os exemplos abaixo são ilustrações do produto em desenvolvimento, não operações já executadas."
+  },
+  "implementation": {
+    "contentFiles": {
+      "canonical": "landing.content.pt-BR.json",
+      "humanReadable": "Taliya_Landing_Especificacao_v1.md",
+      "schema": "schema.description.md"
+    },
+    "stageSwitch": "Resolver modos em um único lugar. Não permitir hero de waitlist com checkout ativo no footer nem trial no preço sem trial no onboarding.",
+    "publicData": "Somente strings voltadas ao visitante são renderizadas. Guardrails, fontes, contextos técnicos e nulls de runtime não aparecem no HTML público.",
+    "sourceOfTruth": "Editar o JSON e regenerar documentos quando mudar copy. PDF é leitura humana, não origem para extração de textos.",
+    "noNewAppModules": "Não criar módulos de Orçamentos, Arquivos ou Histórico no app por existirem frentes da landing.",
+    "ctaRegistry": [
+      {
+        "id": "PRIMARY",
+        "label": "modes[activeMode].primaryCta",
+        "target": "#comecar em prelaunch; runtime.onboardingUrl em launch"
+      },
+      {
+        "id": "DEMO",
+        "label": "modes[activeMode].secondaryCta",
+        "target": "#na-pratica"
+      },
+      {
+        "id": "FRONTS",
+        "label": "Veja tudo que você pode resolver",
+        "target": "#o-que-resolve"
+      },
+      {
+        "id": "FLOWS",
+        "label": "Ver um fluxo completo",
+        "target": "#fluxos"
+      },
+      {
+        "id": "SUPPORT",
+        "label": "Falar com a equipe",
+        "target": "supportEmail ou supportWhatsAppUrl autorizado"
+      }
+    ],
+    "routes": [
+      {
+        "from": "/",
+        "to": "Nova home horizontal",
+        "action": "Remover redirecionamento antigo para /pilates."
+      },
+      {
+        "from": "/pilates",
+        "to": "/",
+        "action": "Redirecionamento permanente quando o produto antigo não estiver mais em oferta; conservar o fragmento e aplicar aliases no cliente."
+      },
+      {
+        "from": "/pilates/planos",
+        "to": "/#comecar",
+        "action": "Retirar a oferta antiga da jornada; redirecionar somente quando o pivot estiver publicado."
+      }
+    ],
+    "anchorAliases": {
+      "intencoes": "na-pratica",
+      "diagnostico-operacional": "sem-com",
+      "agentes": "o-que-resolve",
+      "dinheiro-na-mesa": "fluxos",
+      "faq": "duvidas",
+      "cta-final": "final",
+      "vendas": "comecar"
+    },
+    "seo": {
+      "canonical": "https://www.taliya.com.br/",
+      "title": "Taliya | Seu negócio organizado. É só falar.",
+      "description": {
+        "prelaunch": "Conheça a Taliya: organização de serviços pelo WhatsApp e app. Veja exemplos de agenda, orçamentos e recebimentos e acompanhe os primeiros testes.",
+        "launch": "Organize serviços, agenda, orçamentos e recebimentos pelo WhatsApp. Consulte e corrija sua rotina na conversa ou veja os mesmos registros no app."
+      },
+      "og": {
+        "title": "Taliya — Seu negócio organizado. É só falar.",
+        "description": "A rotina de quem presta serviços, conectada pelo WhatsApp e pelo app.",
+        "imageSpec": "Composição original com marca + promessa + conversa ilustrativa; sem números de usuários ou tela bancária.",
+        "imageSizeDesign": "1200 × 630",
+        "alt": "Taliya: mensagem do profissional e resumo do mesmo serviço."
+      },
+      "rules": [
+        "Um H1 no hero; títulos de seção H2 e subtítulos H3.",
+        "Metadados do pré-lançamento não afirmam disponibilidade.",
+        "Sem avaliações/estrelas inventadas em dados estruturados.",
+        "Políticas, sitemap e imagem social seguem o domínio canônico.",
+        "Não criar novas páginas verticais vazias para SEO."
+      ]
+    },
+    "responsive": [
+      "Verificar em 320, 390, 768, 1280 e 1440 px; são larguras de QA, não breakpoints impostos ao projeto.",
+      "Não alterar tokens visuais sem necessidade demonstrada.",
+      "Dois níveis de tabs no máximo; regiões horizontais não expandem a largura do body.",
+      "Chat legível sem zoom; resultado no fluxo da página e não escondido num modal obrigatório.",
+      "Preservar posição do usuário na troca de tab; anchor respeita altura do header.",
+      "Faixa de confiança: quatro itens no desktop; duas ou uma coluna no mobile, conforme os tokens existentes.",
+      "Mural estático no primeiro carregamento; reduzir movimento por preferência.",
+      "Não adicionar vídeo pesado ou carregamento de app real para demonstrar interação.",
+      "Carrosséis com botão anterior/próximo e seleção direta; swipe opcional, não único controle.",
+      "Todos os botões têm foco visível e label acessível; textos informativos não dependem só de cor."
+    ],
+    "stateCopy": {
+      "previousExample": "Exemplo anterior",
+      "nextExample": "Próximo exemplo",
+      "restart": "Recomeçar exemplo",
+      "showResult": "Resultado do exemplo",
+      "playDemo": "Reproduzir demonstração",
+      "pauseDemo": "Pausar demonstração",
+      "unavailable": "Não foi possível carregar este exemplo.",
+      "retry": "Tentar novamente",
+      "imageFallback": "O exemplo em texto continua disponível abaixo.",
+      "invalidDeepLink": "Abrir primeiro exemplo",
+      "noRealAction": "Demonstração: nenhuma ação real será executada."
+    },
+    "analytics": {
+      "rule": "Eventos sem transcrição, nome, e-mail, telefone, anexos ou relato de rotina. Click não equivale a lead; lead só após servidor.",
+      "events": [
+        {
+          "name": "landing_cta_click",
+          "props": [
+            "section_id",
+            "cta_id",
+            "mode"
+          ]
+        },
+        {
+          "name": "selector_case_change",
+          "props": [
+            "case_id",
+            "mode"
+          ]
+        },
+        {
+          "name": "comparison_change",
+          "props": [
+            "front_id",
+            "side"
+          ]
+        },
+        {
+          "name": "how_tab_change",
+          "props": [
+            "tab_id"
+          ]
+        },
+        {
+          "name": "message_example_open",
+          "props": [
+            "message_id",
+            "front_id",
+            "subtype_id"
+          ]
+        },
+        {
+          "name": "front_example_change",
+          "props": [
+            "front_id",
+            "subtype_id"
+          ]
+        },
+        {
+          "name": "flow_step_change",
+          "props": [
+            "scenario_id",
+            "step_index"
+          ]
+        },
+        {
+          "name": "faq_open",
+          "props": [
+            "faq_id"
+          ]
+        },
+        {
+          "name": "lead_submit_success",
+          "props": [
+            "form_kind",
+            "mode"
+          ]
+        },
+        {
+          "name": "lead_submit_error",
+          "props": [
+            "form_kind",
+            "error_class"
+          ]
+        },
+        {
+          "name": "billing_period_change",
+          "props": [
+            "period",
+            "mode"
+          ]
+        }
+      ],
+      "attribution": "Reutilizar a medição existente e política de consentimento aplicável; parâmetros de campanha são metadados separados. Não criar eventos first_operation ou pagamento por assistir uma demo."
+    },
+    "publicationBlocks": [
+      {
+        "id": "G01",
+        "condition": "leadEndpoint ausente ou sem teste",
+        "impact": "Bloqueia envio do formulário e publicação da jornada de captura."
+      },
+      {
+        "id": "G02",
+        "condition": "políticas/termos não revisados para o pivot",
+        "impact": "Bloqueia publicação da captura; esta especificação não reescreve contratos legais."
+      },
+      {
+        "id": "G03",
+        "condition": "produto não funcional ou onboardingUrl ausente",
+        "impact": "Mantém prelaunch; bloqueia trial/checkout e CTA de uso imediato."
+      },
+      {
+        "id": "G04",
+        "condition": "oferta e limites de uso não confirmados",
+        "impact": "Oculta preço, fundador e alegações de uso ilimitado."
+      },
+      {
+        "id": "G05",
+        "condition": "não há prova de cliente real",
+        "impact": "S11 continua sem renderizar; não bloqueia o restante."
+      },
+      {
+        "id": "G06",
+        "condition": "assets reais indisponíveis",
+        "impact": "Permite mock fiel rotulado; não permite chamar de gravação real. Dados JSON não são capturas da interface aprovada."
+      }
+    ]
+  },
+  "assetRules": [
+    "Não entregar novas telas como se fossem a galeria aprovada. Reusar a linguagem visual existente; compor mock fiel com a legenda de estágio.",
+    "Nenhum cliente real, contato ou documento identificável. Todos os valores da demo são fictícios.",
+    "Avatares dos antigos agentes não representam agentes da nova Taliya; remover ou substituir pelo símbolo de categoria/brand.",
+    "Sem screenshot disponível, manter resultado textual acessível e rotulado. Não deixar imagem quebrada.",
+    "Telas com saldo, agenda e orçamento seguem o mesmo estado do roteiro, inclusive ao voltar passos.",
+    "No lançamento, as demos só podem representar capacidades verificadas na versão liberada; gravar novamente quando a interface mudar.",
+    "As datas são de um cenário fixo referenciado em 18/09/2026. Não usar Date.now() só nos títulos e deixar os resultados antigos. Ao atualizar datas, regenerar a sequência inteira de cada cenário."
+  ],
+  "handoff": {
+    "order": [
+      "Mapear o repositório e associar os slots/conceitos a componentes reais; não adivinhar caminhos de arquivos.",
+      "Aplicar primeiro o modo prelaunch: texto, âncoras, tags e CTAs sem compra.",
+      "Atualizar componentes existentes: hero, seletor, Sem/Com, 6 tabs, 7 frentes, 4 passos e FAQ.",
+      "Adicionar faixa de confiança e mural; substituir calculadora por cenários de continuidade.",
+      "Conectar os formulários a backend real, com validação, deduplicação e privacidade.",
+      "Revisar todos os cenários e vínculos entre valores, datas e respostas.",
+      "Executar QA responsivo e acessível e revisar as rotas/legado antes de publicar.",
+      "Manter modo launch desligado até comprovar gates de produto, preço e onboarding."
+    ],
+    "done": "Conteúdo e comportamento estão especificados. O aceite da implementação exige testar o site; esta entrega não publica a landing, não cria screenshots finais do app e não implementa endpoint.",
+    "decisions": [
+      "Sete frentes comerciais finais incluem Orçamentos e Arquivos e documentos; Histórico é transversal.",
+      "Trinta e nove subtipos preservam o limite de 5–6 por frente, sem criar 3 níveis de navegação.",
+      "Mural fica entre Como funciona e Sete frentes, como aprovado.",
+      "Fluxos reais substituem ROI e sliders, não coexistem com uma calculadora de promessa.",
+      "Pré-lançamento é o modo ativo; copy de lançamento está pronta, mas bloqueada.",
+      "As fricções legítimas de conta, confirmação e duração aparecem na experiência, não são escondidas por marketing."
+    ]
+  },
+  "validation": {
+    "status": "passou validação estrutural do conteúdo",
+    "checks": [
+      "14slots",
+      "5casos de entrada",
+      "7comparativos",
+      "6tabs",
+      "7frentes/39subtipos",
+      "84mensagens/24iniciais",
+      "5fluxos/20passos",
+      "14FAQs",
+      "24grupos de assets",
+      "referências internas resolvidas"
+    ],
+    "websiteTests": "não executados; não há site novo nesta entrega"
+  }
+}

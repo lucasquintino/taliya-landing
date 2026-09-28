@@ -1,0 +1,38 @@
+{
+  "runId": "agent-v2-blocking-failures-1779416642705",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:24:02.705Z",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "blocking policy mentions direct question",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "blocking policy mentions WhatsApp phone",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "blocking policy mentions checkout",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "blocking policy mentions human handoff",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "blocking policy mentions prompt",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

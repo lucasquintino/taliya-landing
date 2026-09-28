@@ -1,0 +1,411 @@
+{
+  "schema": "011.production_watch.v1",
+  "task": "T011-099",
+  "purpose": "First-hours emergency monitoring package for the user-approved 100 percent cutover path.",
+  "rollout": {
+    "mode": "one_hundred_percent",
+    "canaryEnabled": false,
+    "trafficScope": "all Taliya-owned commercial leads from widget and Taliya-owned WhatsApp after approval",
+    "requiresPhase10ApprovalBeforeActivation": true,
+    "finalProductionActivationApproved": false,
+    "activationDecisionOwner": "lucas_product_owner_with_codex_support",
+    "featureFlag": {
+      "env": "TALIYA_SPEC011_COMMERCIAL_CORE_ENABLED",
+      "enabledValue": "true",
+      "rollbackValue": "false",
+      "rollbackExpectedDisposition": "operational fallback or retryable spec011_core_disabled; never old TS v2 or Python runner commercial answering",
+      "proofTask": "T011-098",
+      "proofReport": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-rollback.json"
+    }
+  },
+  "watchWindow": {
+    "durationMinutes": 240,
+    "firstCheckWithinMinutes": 5,
+    "defaultCheckCadenceMinutes": 15,
+    "channels": [
+      "widget",
+      "taliya_whatsapp"
+    ],
+    "trafficScope": "100_percent_taliya_owned_commercial_leads",
+    "evidenceFolder": "specs/011-taliya-commercial-agent-core-reset/eval-reports",
+    "manualReviewFolder": "specs/011-taliya-commercial-agent-core-reset/manual-review-samples"
+  },
+  "watchFields": [
+    "channel",
+    "conversation_id",
+    "lead_id",
+    "request_id",
+    "idempotency_key",
+    "trace_id",
+    "turn_id",
+    "conductor_schema_version",
+    "selected_template_ids",
+    "validator_status",
+    "repair_status",
+    "rendered_message_count",
+    "delivery_control",
+    "delivery_events",
+    "model_usage",
+    "cost_usd",
+    "runtime_state_diff",
+    "sales_inbox_projection",
+    "handoff_status",
+    "fallback_reason",
+    "error_code"
+  ],
+  "monitors": [
+    {
+      "id": "trace_quality",
+      "title": "Trace quality",
+      "source": "Spec 011 trace record, /v1/taliya-commercial/turn response trace_id, and trace export reports",
+      "requiredFields": [
+        "trace_id",
+        "turn_id",
+        "input",
+        "decision",
+        "validator_result",
+        "repair_result",
+        "render_plan",
+        "rendered_messages",
+        "model_usage",
+        "runtime_state_diff",
+        "delivery_events",
+        "sales_inbox_projection",
+        "trace_complete"
+      ],
+      "healthyCriteria": [
+        "100 percent of normal commercial turns have a non-empty trace_id.",
+        "100 percent of sampled traces have trace_complete=true and include input, decision, validation, render, usage, runtime diff, delivery events, and Sales Inbox projection.",
+        "No trace uses legacy runner evidence as the active production path."
+      ],
+      "abortCriteria": [
+        "Any normal commercial turn has no trace_id.",
+        "Any sampled trace lacks decision, validator_result, model_usage, runtime_state_diff, delivery_events, or sales_inbox_projection.",
+        "Any active production trace references old TS v2 or runtime/runner.py commercial answering."
+      ],
+      "operatorAction": "Disable TALIYA_SPEC011_COMMERCIAL_CORE_ENABLED=false, preserve failing trace ids, export the report, and stop activation review.",
+      "evidenceOwner": "codex_operator",
+      "checkCadenceMinutes": 15
+    },
+    {
+      "id": "handoff_behavior",
+      "title": "Human handoff pause and resume",
+      "source": "runtime response output.handoff, delivery_control, runtime_state_diff, and Sales Inbox projection",
+      "requiredFields": [
+        "handoff_status",
+        "handoff_reason",
+        "delivery_control",
+        "runtime_state_diff",
+        "sales_inbox_projection",
+        "messages"
+      ],
+      "healthyCriteria": [
+        "Human-active state returns no AI commercial reply.",
+        "Handoff requested records structured reason and operator next action.",
+        "Resume occurs only after explicit state/event evidence."
+      ],
+      "abortCriteria": [
+        "Any human-active conversation receives an AI commercial reply.",
+        "Any handoff request lacks reason, pause evidence, or Sales Inbox operator action.",
+        "Any resume occurs without explicit state/event evidence."
+      ],
+      "operatorAction": "Rollback the flag, assign the conversation to human handling, and attach the trace/projection to the incident note.",
+      "evidenceOwner": "lucas_product_owner_with_codex_support",
+      "checkCadenceMinutes": 15
+    },
+    {
+      "id": "sales_inbox_completeness",
+      "title": "Sales Inbox projection completeness",
+      "source": "trace.sales_inbox_projection and Sales Inbox persisted projection/export",
+      "requiredFields": [
+        "sales_inbox_projection",
+        "lead_id",
+        "conversation_id",
+        "stage",
+        "summary",
+        "operator_next_action",
+        "diagnostic_status",
+        "waitlist_status",
+        "handoff_status",
+        "identity_contact_labels"
+      ],
+      "healthyCriteria": [
+        "Every sampled normal turn has a Sales Inbox projection tied to the same conversation_id.",
+        "Completed diagnostic, waitlist, demo/product follow-up, and handoff cases include their required case-family fields.",
+        "Identity/contact fields keep customer, channel, operator, inferred, or unverified labels."
+      ],
+      "abortCriteria": [
+        "Any sampled normal turn has missing or mismatched Sales Inbox projection.",
+        "Any completed diagnostic projection lacks final recommendation, plan/range, or final demo line.",
+        "Any inferred/contact value is promoted as reliable without source labels."
+      ],
+      "operatorAction": "Rollback the flag if projection is missing/wrong for production traffic, then preserve the trace and projection JSON for repair.",
+      "evidenceOwner": "codex_operator",
+      "checkCadenceMinutes": 15
+    },
+    {
+      "id": "model_usage",
+      "title": "Model usage present for normal commercial turns",
+      "source": "runtime response output.usage and trace.model_usage",
+      "requiredFields": [
+        "model_usage",
+        "model",
+        "input_tokens",
+        "output_tokens",
+        "cost_usd",
+        "route",
+        "detected_intents"
+      ],
+      "healthyCriteria": [
+        "100 percent of normal commercial turns have model, input_tokens, output_tokens, and cost_usd.",
+        "Widget and Taliya-owned WhatsApp both record model usage.",
+        "Low cost is not achieved by bypassing the LLM conductor."
+      ],
+      "abortCriteria": [
+        "Any normal commercial turn has zero or missing model usage.",
+        "Any commercial turn answers price, demo, diagnostic, waitlist, product, source, pain, or mixed intent without model usage.",
+        "Cost drops to near zero because the conductor was bypassed."
+      ],
+      "operatorAction": "Rollback the flag and inspect adapter/conductor routing before re-enabling.",
+      "evidenceOwner": "codex_operator",
+      "checkCadenceMinutes": 15
+    },
+    {
+      "id": "cost",
+      "title": "Cost and token envelope",
+      "source": "runtime response output.usage, trace.model_usage, and cost report gate",
+      "requiredFields": [
+        "cost_usd",
+        "input_tokens",
+        "output_tokens",
+        "model",
+        "turn_count",
+        "average_cost_usd",
+        "max_cost_usd"
+      ],
+      "healthyCriteria": [
+        "Aggregate cost remains inside the approved first-hours budget.",
+        "Per-turn cost spikes are reviewed against trace quality and model usage.",
+        "Cost reduction never removes conductor usage from commercial turns."
+      ],
+      "abortCriteria": [
+        "Aggregate cost exceeds the approved first-hours budget.",
+        "Any runaway retry/repair loop is visible in usage or error logs.",
+        "Any cost-saving behavior correlates with missing model usage or bad transcript quality."
+      ],
+      "operatorAction": "Rollback the flag, preserve usage export, and block activation until cost report is reviewed.",
+      "evidenceOwner": "lucas_product_owner_with_codex_support",
+      "checkCadenceMinutes": 30
+    },
+    {
+      "id": "fallback_error_rate",
+      "title": "Fallback and error rate",
+      "source": "runtime status, API error codes, operational fallback reasons, and trace validation failures",
+      "requiredFields": [
+        "status",
+        "fallback_reason",
+        "error_code",
+        "spec011_validation_failed",
+        "spec011_core_disabled",
+        "retryable",
+        "conversation_id",
+        "channel"
+      ],
+      "healthyCriteria": [
+        "Fallback/error rate remains below 5 percent after excluding intentional rollback tests.",
+        "No fallback contains deterministic commercial answer copy.",
+        "Every fallback/error includes channel, conversation id, request id, and reason."
+      ],
+      "abortCriteria": [
+        "Fallback/error rate reaches 5 percent or more across the first-hours sample.",
+        "Any fallback answers price, demo, diagnostic, waitlist, product, source, pain, or mixed intent deterministically.",
+        "Any fallback/error lacks reason or request/conversation scope."
+      ],
+      "operatorAction": "Rollback the flag, export fallback/error cases, and keep public old brain quarantined.",
+      "evidenceOwner": "codex_operator",
+      "checkCadenceMinutes": 15
+    },
+    {
+      "id": "duplicate_interleaved_delivery",
+      "title": "Duplicate and interleaved delivery",
+      "source": "idempotency keys, delivery_events, outbox reservations, deferred inbound records, and provider message ids",
+      "requiredFields": [
+        "idempotency_key",
+        "channel_message_id",
+        "delivery_events",
+        "outbox_status",
+        "deferred_inbound_count",
+        "message_count",
+        "conversation_id",
+        "channel"
+      ],
+      "healthyCriteria": [
+        "Duplicate inbound idempotency returns the existing turn/result.",
+        "Inbound received during active delivery is deferred and processed as the next clean turn.",
+        "No duplicated or interleaved outbound chunks appear in sampled widget or WhatsApp conversations."
+      ],
+      "abortCriteria": [
+        "Any duplicated public response for the same inbound idempotency key.",
+        "Any lead message during chunks is treated as a new commercial intent before active delivery completes.",
+        "Any WhatsApp delivery violates the approved text/chunk rules."
+      ],
+      "operatorAction": "Rollback the flag, preserve idempotency/outbox evidence, and pause affected conversations if needed.",
+      "evidenceOwner": "codex_operator",
+      "checkCadenceMinutes": 15
+    },
+    {
+      "id": "p0_behavior",
+      "title": "Observed P0 behavior",
+      "source": "P0 real-model/eval reports, sampled production traces, rendered messages, and Sales Inbox projection",
+      "requiredFields": [
+        "trace_id",
+        "rendered_messages",
+        "validator_status",
+        "numeric_grounding",
+        "diagnostic_ledger",
+        "sales_inbox_projection",
+        "p0_abort_id"
+      ],
+      "healthyCriteria": [
+        "No internal text leak appears in rendered messages.",
+        "No wrong product fact, price/student-count mixup, skipped urgency, repeated answered diagnostic question, duplicate delivery, or false PASS appears in the watch sample.",
+        "Any P0 observation triggers immediate abort review."
+      ],
+      "abortCriteria": [
+        "Any P0 abort criterion fires once.",
+        "Any eval/report says PASS while the transcript violates a P0 rule.",
+        "Any rendered message contains internal/source/debug wording."
+      ],
+      "operatorAction": "Rollback immediately, preserve the transcript/trace/report, and do not re-enable until the P0 has a red-first regression and fix.",
+      "evidenceOwner": "lucas_product_owner_with_codex_support",
+      "checkCadenceMinutes": 15
+    },
+    {
+      "id": "rollback_readiness",
+      "title": "Rollback readiness",
+      "source": "T011-098 rollback report, feature flag config, public fallback quarantine, and runner quarantine",
+      "requiredFields": [
+        "TALIYA_SPEC011_COMMERCIAL_CORE_ENABLED",
+        "rollback_report_release_gate",
+        "runner_quarantine_release_gate",
+        "public_fallback_quarantine_release_gate",
+        "protected_source_diff"
+      ],
+      "healthyCriteria": [
+        "Rollback report stays green immediately before activation.",
+        "Public old TS v2 and Python runner commercial paths remain quarantined.",
+        "Rollback returns operational fallback/error, not commercial copy."
+      ],
+      "abortCriteria": [
+        "Rollback report fails.",
+        "Public path can reach old TS v2 or runtime/runner.py commercial answering.",
+        "Rollback cannot be executed within 5 minutes of abort decision."
+      ],
+      "operatorAction": "Do not activate, or rollback immediately if already activated; rerun rollback/quarantine reports before any retry.",
+      "evidenceOwner": "codex_operator",
+      "checkCadenceMinutes": 15
+    }
+  ],
+  "p0AbortCriteria": [
+    {
+      "id": "internal_text_leak",
+      "abortIf": "Rendered output includes internal/source/debug wording such as profile reliability labels, site-source internals, trace ids, policy text, or implementation notes."
+    },
+    {
+      "id": "wrong_product_fact",
+      "abortIf": "Rendered output invents or misstates price, plan, checkout, launch date, discount, VIP, integration, certification, demo availability, or product capability."
+    },
+    {
+      "id": "wrong_numeric_grounding",
+      "abortIf": "A price is interpreted as active students, a student count is interpreted as price, a phone/date is treated as plan data, or an unknown number is advanced without evidence."
+    },
+    {
+      "id": "diagnostic_required_question_skipped",
+      "abortIf": "The agent marks diagnostic complete or delivers final diagnostic while mandatory questions, especially urgency, are missing."
+    },
+    {
+      "id": "duplicate_or_interleaved_delivery",
+      "abortIf": "The same inbound produces duplicate public replies or a new inbound during chunks is processed before the active delivery completes."
+    },
+    {
+      "id": "human_pause_violation",
+      "abortIf": "The AI sends any commercial reply while human handoff is active or resumes without explicit event/state evidence."
+    },
+    {
+      "id": "sales_inbox_missing_or_wrong",
+      "abortIf": "Sales Inbox projection is missing, mismatched to conversation, incomplete for the case family, or promotes inferred identity/contact facts as reliable."
+    },
+    {
+      "id": "false_pass_eval_or_trace_gap",
+      "abortIf": "An eval/report marks PASS while transcript, trace, model usage, validator result, delivery event, or Sales Inbox projection evidence is missing or contradictory."
+    }
+  ],
+  "requiredEvidence": [
+    {
+      "id": "shadow_mode",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-shadow-mode.json",
+      "allowedReleaseGates": [
+        "pass"
+      ],
+      "why": "Proves delivery suppression, trace/projection evidence, model usage, and no live-state mutation in shadow mode."
+    },
+    {
+      "id": "shadow_compare",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-shadow-compare.json",
+      "allowedReleaseGates": [
+        "pass_with_manual_review_samples"
+      ],
+      "why": "Compares decision JSON, rendering, usage, trace, and projection against manual review samples."
+    },
+    {
+      "id": "rollback",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-rollback.json",
+      "allowedReleaseGates": [
+        "pass"
+      ],
+      "why": "Proves disabling the core returns operational fallback/error and does not reactivate legacy commercial brains."
+    },
+    {
+      "id": "runner_quarantine",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-runner-quarantine.json",
+      "allowedReleaseGates": [
+        "pass"
+      ],
+      "why": "Proves runtime API/core public path does not call runtime/runner.py for commercial answering."
+    },
+    {
+      "id": "public_fallback_quarantine",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-public-fallback-quarantine.json",
+      "allowedReleaseGates": [
+        "pass"
+      ],
+      "why": "Proves public widget/WhatsApp entrypoints cannot reach old TS v2 commercial modules."
+    },
+    {
+      "id": "pilates_no_drift",
+      "reportJson": "specs/011-taliya-commercial-agent-core-reset/eval-reports/agent-runtime-spec011-pilates-no-drift.json",
+      "allowedReleaseGates": [
+        "pass_with_manual_visual_review"
+      ],
+      "why": "Proves widget cutover work did not introduce protected /pilates visual/layout drift."
+    }
+  ],
+  "operatorActions": [
+    {
+      "id": "pre_activation",
+      "action": "Before activation, rerun static, rollback, quarantine, shadow, watch-readiness, TypeScript, and focused runtime suites."
+    },
+    {
+      "id": "first_5_minutes",
+      "action": "Within 5 minutes, sample widget and Taliya-owned WhatsApp turns for trace_id, model usage, delivery events, and Sales Inbox projection."
+    },
+    {
+      "id": "abort",
+      "action": "Set TALIYA_SPEC011_COMMERCIAL_CORE_ENABLED=false, preserve reports/traces/transcripts, and stop production activation review."
+    },
+    {
+      "id": "post_watch",
+      "action": "After 240 minutes, attach reports, sampled traces, Sales Inbox exports, cost summary, fallback/error summary, and product-owner approval decision."
+    }
+  ]
+}

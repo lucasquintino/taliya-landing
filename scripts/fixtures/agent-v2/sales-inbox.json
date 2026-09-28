@@ -1,0 +1,5 @@
+[
+  { "id": "INB-001", "priority": "cold", "required": ["source", "channel", "state", "nextAction"] },
+  { "id": "INB-002", "priority": "hot", "required": ["diagnostic", "waitlist", "cost", "trace"] }
+]
+

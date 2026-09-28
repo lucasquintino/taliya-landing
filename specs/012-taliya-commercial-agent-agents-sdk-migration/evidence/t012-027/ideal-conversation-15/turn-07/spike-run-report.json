@@ -1,0 +1,745 @@
+{
+  "proof_type": "isolated_spike_paid",
+  "model": "gpt-5.4-mini",
+  "tracing_disabled": true,
+  "public_cutover": false,
+  "paid_call_status": "run",
+  "started_at": "2026-06-10T18:15:24.286599+00:00",
+  "budget": {
+    "max_total_model_operations": 45,
+    "max_total_cost_usd": 0.351015,
+    "max_model_operations_per_scenario": 4
+  },
+  "total_model_operations": 2,
+  "total_cost_usd": 0.006476,
+  "aborted": false,
+  "abort_reason": null,
+  "scenarios": [
+    {
+      "number": 7,
+      "scenario_id": "ideal_turn_07",
+      "channel": "whatsapp",
+      "required_proof": "pain_detail captured; ledger keeps evolving.",
+      "input_transcript": [
+        {
+          "role": "system",
+          "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico em andamento. Respondido: active_students_or_size=120; main_pain=perder interessado porque demoramos pra responder no WhatsApp. Proxima pergunta pendente: pain_detail. Demo: {\"status\": \"\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"\", \"intent\": \"\"}. Perguntas diretas ja respondidas em turnos anteriores (nao criam novas obrigacoes): quanto custa isso?; como funciona esse diagnostico gratuito?; quanto custa isso?.\nstate: {\"diagnostic\": {\"status\": \"in_progress\", \"next_question_key\": \"pain_detail\", \"ledger\": {\"active_students_or_size\": {\"status\": \"answered\", \"answer_value\": \"120\"}, \"main_pain\": {\"status\": \"answered\", \"answer_value\": \"perder interessado porque demoramos pra responder no WhatsApp\"}}}, \"demo\": {\"status\": \"\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+        },
+        {
+          "role": "user",
+          "content": "oi, vi o perfil de voces no Instagram"
+        },
+        {
+          "role": "assistant",
+          "content": "Oi, tudo bem?"
+        },
+        {
+          "role": "assistant",
+          "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+        },
+        {
+          "role": "user",
+          "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        },
+        {
+          "role": "user",
+          "content": "quanto custa isso?"
+        },
+        {
+          "role": "assistant",
+          "content": "Studio perdendo aluno novo porque o WhatsApp atrasa."
+        },
+        {
+          "role": "assistant",
+          "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+        },
+        {
+          "role": "assistant",
+          "content": "O que voce acha?"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi — voce quer saber o valor antes de seguir."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        },
+        {
+          "role": "user",
+          "content": "faz sentido... como funciona esse diagnostico gratuito?"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: voce quer saber como funciona antes de seguir."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        },
+        {
+          "role": "user",
+          "content": "120"
+        },
+        {
+          "role": "assistant",
+          "content": "120 alunos ativos e WhatsApp atrasado; faz sentido comparar o plano que resolva atendimento primeiro."
+        },
+        {
+          "role": "assistant",
+          "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+        },
+        {
+          "role": "assistant",
+          "content": "O que voce acha?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfeito, 120 alunos ajuda muito."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfeito, 120 alunos ajuda muito."
+        },
+        {
+          "role": "assistant",
+          "content": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+        },
+        {
+          "role": "user",
+          "content": "minha maior dor e perder interessado porque demoramos pra responder"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o WhatsApp lento esta fazendo voce perder interessados novos."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o WhatsApp lento esta fazendo voce perder interessados novos."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?"
+        },
+        {
+          "role": "user",
+          "content": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+        }
+      ],
+      "starting_agent": "taliya_diagnostic_agent",
+      "agent_path": [
+        {
+          "event": "start",
+          "agent": "taliya_diagnostic_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "tool",
+          "agent": "taliya_diagnostic_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": "get_product_knowledge",
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "tool",
+          "agent": "taliya_diagnostic_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "final",
+          "agent": "taliya_diagnostic_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        }
+      ],
+      "tool_calls": [
+        {
+          "event": "tool_call",
+          "name": "get_product_knowledge",
+          "arguments": "{\"keys\":[\"plans\",\"prices\"]}"
+        },
+        {
+          "event": "tool_output",
+          "output": {
+            "tool_name": "get_product_knowledge",
+            "side_effect_class": "read_only",
+            "commits_state": false,
+            "renders_customer_response": false,
+            "chooses_commercial_route": false,
+            "payload": {
+              "refs": [
+                {
+                  "key": "plans",
+                  "source": "official_product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "value": [
+                    {
+                      "id": "base",
+                      "name": "Base",
+                      "monthly_price_brl": 197,
+                      "price_label": "R$ 197/mes",
+                      "best_for": "Studios that want to organize the routine before active AI.",
+                      "included_agents": [],
+                      "whatsapp_availability": "No automatic WhatsApp AI replies.",
+                      "usage_boundary": "1 studio, 1 user, no AI message quota."
+                    },
+                    {
+                      "id": "one_agent",
+                      "name": "Essencial",
+                      "monthly_price_brl": 497,
+                      "price_label": "R$ 497/mes",
+                      "best_for": "Studios that want to solve one clear pain first.",
+                      "included_agents": [
+                        "1 main agent chosen during setup"
+                      ],
+                      "whatsapp_availability": "Requires the studio WhatsApp Business connected for that agent.",
+                      "usage_boundary": "1 studio, up to 2 users, 1,500 AI messages/month with hard cap."
+                    },
+                    {
+                      "id": "three_agents",
+                      "name": "Avance",
+                      "monthly_price_brl": 897,
+                      "price_label": "R$ 897/mes",
+                      "best_for": "Studios that want help in some priority routines.",
+                      "included_agents": [
+                        "3 main agents chosen during setup"
+                      ],
+                      "whatsapp_availability": "Requires the studio WhatsApp Business connected for included agents.",
+                      "usage_boundary": "1 studio, up to 5 users, 5,000 AI messages/month with hard cap."
+                    },
+                    {
+                      "id": "seven_agents",
+                      "name": "Completo",
+                      "monthly_price_brl": 1497,
+                      "price_label": "R$ 1.497/mes",
+                      "best_for": "Studios that want the complete Taliya.",
+                      "included_agents": [
+                        "Atendimento",
+                        "Agenda",
+                        "Vendas",
+                        "Financeiro",
+                        "Retencao",
+                        "Gestao",
+                        "Historico/Evolucao"
+                      ],
+                      "whatsapp_availability": "Requires the studio WhatsApp Business connected for the complete team.",
+                      "usage_boundary": "1 studio, up to 10 users, 15,000 AI messages/month with hard cap."
+                    }
+                  ],
+                  "excerpt": "Base (base) R$ 197/mes best_for=Studios that want to organize the routine before active AI. included=no active AI agents whatsapp=No automatic WhatsApp AI replies. usage=1 studio, 1 user, no AI message quota. | Essencial (one_agent) R$ 497/mes best_for=Studios that want to solve one clear pain first. included=1 main agent chosen during setup whatsapp=Requires the studio WhatsApp Business connected for that agent. usage=1 studio, up to 2 users, 1,500 AI messages/month with hard cap. | Avance (three_agents) R$ 897/mes best_for=Studios that want help in some priority routines. included=3 main agents chosen during setup whatsapp=Requires the studio WhatsApp Business connected for included agents. usage=1 studio, up to 5 users, 5,000 AI messages/month with hard cap. | Completo (seven_agents) R$ 1.497/mes best_for=Studios that want the complete Taliya. included=Atendimento, Agenda, Vendas, Financeiro, Retencao, Gestao, Historico/Evolucao whatsapp=Requires the studio WhatsApp Business connected for the complete team. usage=1 studio, up to 10 users, 15,000 AI messages/month with hard cap.",
+                  "missing": false,
+                  "renderable": false,
+                  "evidence": [
+                    "product_knowledge.plans"
+                  ]
+                },
+                {
+                  "key": "prices",
+                  "source": "official_product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "value": {
+                    "base": "R$ 197/mes",
+                    "one_agent": "R$ 497/mes",
+                    "three_agents": "R$ 897/mes",
+                    "seven_agents": "R$ 1.497/mes"
+                  },
+                  "excerpt": "{\"base\":\"R$ 197/mes\",\"one_agent\":\"R$ 497/mes\",\"seven_agents\":\"R$ 1.497/mes\",\"three_agents\":\"R$ 897/mes\"}",
+                  "missing": false,
+                  "renderable": false,
+                  "evidence": [
+                    "product_knowledge.prices"
+                  ]
+                }
+              ],
+              "requested_keys": [
+                "plans",
+                "prices"
+              ]
+            },
+            "evidence": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ],
+            "uncertainty": "low"
+          }
+        }
+      ],
+      "sdk_final_output": {
+        "schema_version": "012.sdk_turn_output.v1",
+        "commercial_understanding": {
+          "intents": [
+            "diagnostic",
+            "price_question",
+            "pain-first"
+          ],
+          "direct_question": "quanto custa isso?",
+          "customer_need": "reduzir perda de leads novos por demora no WhatsApp",
+          "pain_context": "A equipe só consegue responder à noite, e o lead já fecha com outro studio.",
+          "source_context": "Instagram/WhatsApp comercial",
+          "mixed_intent": true,
+          "extracted_facts": [
+            {
+              "key": "student_count",
+              "kind": "student_count",
+              "raw_text": "120",
+              "value_text": "120",
+              "currency": null,
+              "evidence": [
+                "user_message:120"
+              ]
+            },
+            {
+              "key": "pain",
+              "kind": "pain",
+              "raw_text": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio",
+              "value_text": "perda de interessados por demora no WhatsApp",
+              "currency": null,
+              "evidence": [
+                "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message:120",
+            "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+          ]
+        },
+        "answer_obligations": [
+          {
+            "obligation": "Quanto custa isso?",
+            "answering_template_id": "diagnostic.deliver_plan_recommendation",
+            "evidence": [
+              "user_message:quanto custa isso?",
+              "product_knowledge.prices"
+            ]
+          }
+        ],
+        "product_claims": [
+          {
+            "claim": "O plano Essencial custa R$ 497/mes e e indicado para studios que querem resolver uma dor clara primeiro.",
+            "fact_refs": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ],
+            "evidence": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ]
+          },
+          {
+            "claim": "O Base custa R$ 197/mes e nao inclui respostas automáticas de WhatsApp.",
+            "fact_refs": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ],
+            "evidence": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ]
+          }
+        ],
+        "diagnostic_proposal": {
+          "ledger_updates": [
+            {
+              "question_key": "pain_detail",
+              "status": "answered",
+              "answer_value": "A equipe so responde de noite e o lead fecha com outro studio.",
+              "evidence": [
+                "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ]
+            },
+            {
+              "question_key": "current_process",
+              "status": "pending",
+              "answer_value": null,
+              "evidence": []
+            },
+            {
+              "question_key": "priority",
+              "status": "pending",
+              "answer_value": null,
+              "evidence": []
+            },
+            {
+              "question_key": "urgency",
+              "status": "pending",
+              "answer_value": null,
+              "evidence": []
+            }
+          ],
+          "next_question_key": "current_process",
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+          ]
+        },
+        "demo_proposal": {
+          "status": "",
+          "next_step": "",
+          "evidence": []
+        },
+        "waitlist_proposal": {
+          "eligibility": "",
+          "intent": "",
+          "missing_details": [],
+          "evidence": []
+        },
+        "handoff_proposal": {
+          "status": "",
+          "reason": null,
+          "pause_required": false,
+          "evidence": []
+        },
+        "template_plan": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_current_process"
+          ],
+          "variables": [
+            {
+              "name": "answer_feedback",
+              "kind": "short_text",
+              "value": "Entendi: voces hoje so conseguem responder de noite, e isso esta fazendo o lead fechar com outro studio.",
+              "source": "user_message",
+              "evidence": [
+                "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ],
+              "max_length": 180
+            }
+          ],
+          "evidence": [
+            "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+          ]
+        },
+        "state_patch": {
+          "handoff": null,
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "safety": {
+          "guardrail_flags": [],
+          "uncertainty": "low"
+        },
+        "sales_inbox_projection": {
+          "commercial_stage": "diagnostic_in_progress",
+          "last_intent": "price_question",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": null,
+          "handoff_status": null,
+          "next_action_hint": "Ask current_process after acknowledging the WhatsApp response delay pain."
+        },
+        "delivery": {
+          "chunk_policy": "default"
+        },
+        "confidence": "high",
+        "risks": [
+          "Price was asked; answer is deferred because diagnostic flow is still incomplete."
+        ]
+      },
+      "turn_proposal": {
+        "schema_version": "012.turn_proposal.v1",
+        "turn_id": "spike_turn_ideal_turn_07",
+        "conversation_id": "spike_conv_ideal_turn_07",
+        "channel": "whatsapp",
+        "starting_agent": "taliya_diagnostic_agent",
+        "agent_path": [
+          {
+            "event": "start",
+            "agent": "taliya_diagnostic_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "tool",
+            "agent": "taliya_diagnostic_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": "get_product_knowledge",
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "tool",
+            "agent": "taliya_diagnostic_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "final",
+            "agent": "taliya_diagnostic_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          }
+        ],
+        "commercial_understanding": {
+          "intents": [
+            "diagnostic",
+            "price_question",
+            "pain-first"
+          ],
+          "direct_question": null,
+          "customer_need": "reduzir perda de leads novos por demora no WhatsApp",
+          "pain_context": "A equipe só consegue responder à noite, e o lead já fecha com outro studio.",
+          "source_context": "Instagram/WhatsApp comercial",
+          "mixed_intent": true,
+          "extracted_facts": [
+            {
+              "key": "student_count",
+              "kind": "student_count",
+              "raw_text": "120",
+              "value": 120,
+              "evidence": [
+                "user_message:120"
+              ]
+            },
+            {
+              "key": "pain",
+              "kind": "pain",
+              "raw_text": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio",
+              "value": "perda de interessados por demora no WhatsApp",
+              "evidence": [
+                "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message:120",
+            "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+          ]
+        },
+        "answer_obligations": [],
+        "product_claims": [
+          {
+            "claim": "O plano Essencial custa R$ 497/mes e e indicado para studios que querem resolver uma dor clara primeiro.",
+            "fact_refs": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ],
+            "evidence": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ]
+          },
+          {
+            "claim": "O Base custa R$ 197/mes e nao inclui respostas automáticas de WhatsApp.",
+            "fact_refs": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ],
+            "evidence": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ]
+          }
+        ],
+        "diagnostic_proposal": {
+          "ledger_updates": [
+            {
+              "question_key": "pain_detail",
+              "status": "answered",
+              "answer_value": "A equipe so responde de noite e o lead fecha com outro studio.",
+              "evidence": [
+                "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ]
+            },
+            {
+              "question_key": "current_process",
+              "status": "pending",
+              "answer_value": null,
+              "evidence": []
+            },
+            {
+              "question_key": "priority",
+              "status": "pending",
+              "answer_value": null,
+              "evidence": []
+            },
+            {
+              "question_key": "urgency",
+              "status": "pending",
+              "answer_value": null,
+              "evidence": []
+            }
+          ],
+          "next_question_key": "current_process",
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+          ]
+        },
+        "demo_proposal": {
+          "status": "",
+          "next_step": "",
+          "evidence": []
+        },
+        "waitlist_proposal": {
+          "eligibility": "",
+          "intent": "",
+          "missing_details": [],
+          "evidence": []
+        },
+        "handoff_proposal": {
+          "status": "",
+          "reason": null,
+          "pause_required": false,
+          "evidence": []
+        },
+        "template_proposal": {
+          "template_ids": [
+            "diagnostic.partial_progress",
+            "diagnostic.ask_current_process"
+          ],
+          "variables": {
+            "answer_feedback": {
+              "kind": "short_text",
+              "value": "Entendi: voces hoje so conseguem responder de noite, e isso esta fazendo o lead fechar com outro studio.",
+              "source": "user_message",
+              "evidence": [
+                "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ],
+              "max_length": 180
+            }
+          },
+          "evidence": [
+            "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+          ]
+        },
+        "safety": {
+          "guardrails": [],
+          "uncertainty": "low"
+        },
+        "state_patch_proposal": {
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "sales_inbox_projection_proposal": {
+          "commercial_stage": "diagnostic_in_progress",
+          "last_intent": "price_question",
+          "diagnostic_status": "in_progress",
+          "next_action_hint": "Ask current_process after acknowledging the WhatsApp response delay pain."
+        },
+        "delivery_proposal": {
+          "chunk_policy": "default",
+          "render_plan_only": true,
+          "evidence": [
+            "user_message:a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+          ]
+        },
+        "confidence": "high",
+        "risks": [
+          "Price was asked; answer is deferred because diagnostic flow is still incomplete.",
+          "stale_direct_question_scrubbed"
+        ],
+        "usage": {
+          "model": "gpt-5.4-mini",
+          "model_operations": 2,
+          "input_tokens": 12110,
+          "output_tokens": 880,
+          "cost_usd": 0.006476,
+          "handoffs": 0,
+          "repairs": 0
+        }
+      },
+      "validator_result": {
+        "decision_id": "sdk_spike_turn_ideal_turn_07",
+        "status": "passed",
+        "errors": [],
+        "warnings": [],
+        "repair_attempt_count": 0,
+        "final_disposition": "accepted"
+      },
+      "rendered_preview": [
+        {
+          "text": "Entendi: voces hoje so conseguem responder de noite, e isso esta fazendo o lead fechar com outro studio.",
+          "template_id": "diagnostic.partial_progress",
+          "channel": "whatsapp",
+          "sequence": 1
+        },
+        {
+          "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+          "template_id": "diagnostic.partial_progress",
+          "channel": "whatsapp",
+          "sequence": 2
+        },
+        {
+          "text": "Entendi: voces hoje so conseguem responder de noite, e isso esta fazendo o lead fechar com outro studio.",
+          "template_id": "diagnostic.ask_current_process",
+          "channel": "whatsapp",
+          "sequence": 3
+        },
+        {
+          "text": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?",
+          "template_id": "diagnostic.ask_current_process",
+          "channel": "whatsapp",
+          "sequence": 4
+        }
+      ],
+      "proposed_state_diff": {
+        "delivery": {
+          "defer_inbound_during_chunks": false,
+          "deferred_inbound_count": 0
+        }
+      },
+      "proposed_sales_inbox_projection": {
+        "commercial_stage": "diagnostic_in_progress",
+        "last_intent": "price_question",
+        "diagnostic_status": "in_progress",
+        "next_action_hint": "Ask current_process after acknowledging the WhatsApp response delay pain."
+      },
+      "usage": {
+        "model": "gpt-5.4-mini",
+        "model_operations": 2,
+        "input_tokens": 12110,
+        "output_tokens": 880,
+        "cost_usd": 0.006476,
+        "handoffs": 0,
+        "repairs": 0
+      },
+      "status": "passed_structural",
+      "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+      "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+    }
+  ]
+}

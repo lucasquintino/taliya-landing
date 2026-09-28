@@ -1,0 +1,729 @@
+{
+  "proof_type": "isolated_spike_paid",
+  "model": "gpt-5.4-mini",
+  "tracing_disabled": true,
+  "public_cutover": false,
+  "paid_call_status": "run",
+  "started_at": "2026-06-10T18:12:58.548013+00:00",
+  "budget": {
+    "max_total_model_operations": 37,
+    "max_total_cost_usd": 0.40212400000000004,
+    "max_model_operations_per_scenario": 4
+  },
+  "total_model_operations": 3,
+  "total_cost_usd": 0.012189,
+  "aborted": false,
+  "abort_reason": null,
+  "scenarios": [
+    {
+      "number": 11,
+      "scenario_id": "ideal_turn_11",
+      "channel": "whatsapp",
+      "required_proof": "Demo request: official demo path only; demo interest proposed.",
+      "input_transcript": [
+        {
+          "role": "system",
+          "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico completo e entregue. Demo: {\"status\": \"\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"\", \"intent\": \"\"}. Perguntas diretas ja respondidas em turnos anteriores (nao criam novas obrigacoes): quanto custa isso?; Explaining how the free diagnostic works, while not forgetting the already-open diagnostic flow.; quanto custa isso?; Quanto custa isso?; O lead perguntou quanto custa isso?.\nstate: {\"diagnostic\": {\"status\": \"complete\", \"next_question_key\": null, \"ledger\": {\"active_students_or_size\": {\"status\": \"answered\", \"answer_value\": \"120\"}, \"main_pain\": {\"status\": \"answered\", \"answer_value\": \"perder interessado porque demoramos pra responder\"}, \"pain_detail\": {\"status\": \"answered\", \"answer_value\": \"so conseguimos responder de noite, ai o lead ja fechou com outro studio\"}, \"current_process\": {\"status\": \"answered\", \"answer_value\": \"planilha e caderno, nada organizado\"}, \"priority\": {\"status\": \"answered\", \"answer_value\": \"nao perder mais nenhum lead novo\"}, \"urgency\": {\"status\": \"answered\", \"answer_value\": \"quero resolver isso agora, esse mes ainda\"}}}, \"demo\": {\"status\": \"\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+        },
+        {
+          "role": "user",
+          "content": "oi, vi o perfil de voces no Instagram"
+        },
+        {
+          "role": "assistant",
+          "content": "Oi, tudo bem?"
+        },
+        {
+          "role": "assistant",
+          "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+        },
+        {
+          "role": "user",
+          "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o atraso no WhatsApp já está fazendo voce perder aluno novo."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        },
+        {
+          "role": "user",
+          "content": "quanto custa isso?"
+        },
+        {
+          "role": "assistant",
+          "content": "studio perdendo aluno novo por atraso no WhatsApp"
+        },
+        {
+          "role": "assistant",
+          "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+        },
+        {
+          "role": "assistant",
+          "content": "O que voce acha?"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o atraso no WhatsApp já está fazendo voce perder aluno novo."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        },
+        {
+          "role": "user",
+          "content": "faz sentido... como funciona esse diagnostico gratuito?"
+        },
+        {
+          "role": "assistant",
+          "content": "Claro — é um passo a passo rápido para entender seu cenário e indicar o melhor caminho."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Claro — é um passo a passo rápido para entender seu cenário e indicar o melhor caminho."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        },
+        {
+          "role": "user",
+          "content": "120"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfeito — 120 alunos ativos já da uma boa noção do tamanho."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfeito — 120 alunos ativos já da uma boa noção do tamanho."
+        },
+        {
+          "role": "assistant",
+          "content": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+        },
+        {
+          "role": "user",
+          "content": "minha maior dor e perder interessado porque demoramos pra responder"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o atraso no WhatsApp está fazendo vocês perderem interessados."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o atraso no WhatsApp está fazendo vocês perderem interessados."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?"
+        },
+        {
+          "role": "user",
+          "content": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: vocês só conseguem responder à noite e o lead já fecha com outro studio."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: vocês só conseguem responder à noite e o lead já fecha com outro studio."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+        },
+        {
+          "role": "user",
+          "content": "hoje e planilha e caderno mesmo, nada organizado"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: hoje voce responde so no fim do dia e isso faz o lead fechar com outro studio."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: hoje voce responde so no fim do dia e isso faz o lead fechar com outro studio."
+        },
+        {
+          "role": "assistant",
+          "content": "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+        },
+        {
+          "role": "user",
+          "content": "minha prioridade e nao perder mais nenhum lead novo"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: sua prioridade é nao perder mais nenhum lead novo."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: sua prioridade é nao perder mais nenhum lead novo."
+        },
+        {
+          "role": "assistant",
+          "content": "Voces estao buscando resolver isso agora ou so pesquisando por enquanto?"
+        },
+        {
+          "role": "user",
+          "content": "quero resolver isso agora, esse mes ainda"
+        },
+        {
+          "role": "assistant",
+          "content": "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Essencial — R$ 497/mes."
+        },
+        {
+          "role": "user",
+          "content": "consigo ver funcionando antes?"
+        }
+      ],
+      "starting_agent": "taliya_triage_agent",
+      "agent_path": [
+        {
+          "event": "start",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": "taliya_product_agent",
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": null,
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_product_agent",
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "final",
+          "agent": "taliya_product_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        }
+      ],
+      "tool_calls": [
+        {
+          "event": "handoff",
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_product_agent"
+        }
+      ],
+      "sdk_final_output": {
+        "schema_version": "012.sdk_turn_output.v1",
+        "commercial_understanding": {
+          "intents": [
+            "demo_request"
+          ],
+          "direct_question": "consigo ver funcionando antes?",
+          "customer_need": "ver a Taliya funcionando antes de fechar",
+          "pain_context": "o studio perde leads porque responde tarde no WhatsApp",
+          "source_context": "Instagram",
+          "mixed_intent": false,
+          "extracted_facts": [
+            {
+              "key": "active_students_or_size",
+              "kind": "student_count",
+              "raw_text": "120",
+              "value_text": "120",
+              "currency": null,
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "main_pain",
+              "kind": "pain",
+              "raw_text": "perder interessado porque demoramos pra responder",
+              "value_text": "perder interessados por demora no WhatsApp",
+              "currency": null,
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "pain_detail",
+              "kind": "pain",
+              "raw_text": "so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+              "value_text": "resposta só à noite e o lead fecha com outro studio",
+              "currency": null,
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "current_process",
+              "kind": "other",
+              "raw_text": "planilha e caderno, nada organizado",
+              "value_text": "planilha e caderno, nada organizado",
+              "currency": null,
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "priority",
+              "kind": "pain",
+              "raw_text": "nao perder mais nenhum lead novo",
+              "value_text": "não perder mais nenhum lead novo",
+              "currency": null,
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "urgency",
+              "kind": "date_time",
+              "raw_text": "quero resolver isso agora, esse mes ainda",
+              "value_text": "resolver agora, este mês ainda",
+              "currency": null,
+              "evidence": [
+                "user_message"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "answer_obligations": [
+          {
+            "obligation": "O lead quer saber se pode ver funcionando antes de fechar.",
+            "answering_template_id": "product.demo_direct",
+            "evidence": [
+              "user_message"
+            ]
+          }
+        ],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": null,
+          "final_diagnostic_ready": true,
+          "evidence": [
+            "runtime_state"
+          ]
+        },
+        "demo_proposal": {
+          "status": "available",
+          "next_step": "responder com demo usando o link oficial, se houver",
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "waitlist_proposal": {
+          "eligibility": "",
+          "intent": "",
+          "missing_details": [],
+          "evidence": []
+        },
+        "handoff_proposal": {
+          "status": "",
+          "reason": null,
+          "pause_required": false,
+          "evidence": []
+        },
+        "template_plan": {
+          "template_ids": [
+            "product.demo_direct",
+            "product.price_direct"
+          ],
+          "variables": [
+            {
+              "name": "official_demo_link",
+              "kind": "url",
+              "value": "",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "runtime_state"
+              ],
+              "max_length": null
+            },
+            {
+              "name": "plan_price_summary",
+              "kind": "long_text",
+              "value": "Plano Essencial: R$ 497/mês.",
+              "source": "model_decision",
+              "evidence": [
+                "user_message"
+              ],
+              "max_length": 360
+            },
+            {
+              "name": "plan_fit_context",
+              "kind": "short_text",
+              "value": "studio com 120 alunos, perdendo leads por demora no WhatsApp",
+              "source": "user_message",
+              "evidence": [
+                "user_message"
+              ],
+              "max_length": 180
+            }
+          ],
+          "evidence": [
+            "user_message",
+            "runtime_state"
+          ]
+        },
+        "state_patch": {
+          "handoff": null,
+          "delivery": null
+        },
+        "safety": {
+          "guardrail_flags": [
+            "direct_question_requires_answer_first",
+            "no_official_demo_link_available_in_current_context"
+          ],
+          "uncertainty": "medium"
+        },
+        "sales_inbox_projection": {
+          "commercial_stage": "product_demo_requested",
+          "last_intent": "demo_request",
+          "diagnostic_status": "complete",
+          "waitlist_status": null,
+          "handoff_status": null,
+          "next_action_hint": "provide demo link and answer price if asked"
+        },
+        "delivery": {
+          "chunk_policy": "default"
+        },
+        "confidence": "medium",
+        "risks": [
+          "missing official demo link for template variable",
+          "price mentioned without official fact source in this context"
+        ]
+      },
+      "turn_proposal": {
+        "schema_version": "012.turn_proposal.v1",
+        "turn_id": "spike_turn_ideal_turn_11",
+        "conversation_id": "spike_conv_ideal_turn_11",
+        "channel": "whatsapp",
+        "starting_agent": "taliya_triage_agent",
+        "agent_path": [
+          {
+            "event": "start",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": "taliya_product_agent",
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": null,
+            "from_agent": "taliya_triage_agent",
+            "to_agent": "taliya_product_agent",
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "final",
+            "agent": "taliya_product_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          }
+        ],
+        "commercial_understanding": {
+          "intents": [
+            "demo_request"
+          ],
+          "direct_question": "consigo ver funcionando antes?",
+          "customer_need": "ver a Taliya funcionando antes de fechar",
+          "pain_context": "o studio perde leads porque responde tarde no WhatsApp",
+          "source_context": "Instagram",
+          "mixed_intent": false,
+          "extracted_facts": [
+            {
+              "key": "active_students_or_size",
+              "kind": "student_count",
+              "raw_text": "120",
+              "value": 120,
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "main_pain",
+              "kind": "pain",
+              "raw_text": "perder interessado porque demoramos pra responder",
+              "value": "perder interessados por demora no WhatsApp",
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "pain_detail",
+              "kind": "pain",
+              "raw_text": "so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+              "value": "resposta só à noite e o lead fecha com outro studio",
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "current_process",
+              "kind": "other",
+              "raw_text": "planilha e caderno, nada organizado",
+              "value": "planilha e caderno, nada organizado",
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "priority",
+              "kind": "pain",
+              "raw_text": "nao perder mais nenhum lead novo",
+              "value": "não perder mais nenhum lead novo",
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "urgency",
+              "kind": "date_time",
+              "raw_text": "quero resolver isso agora, esse mes ainda",
+              "value": "resolver agora, este mês ainda",
+              "evidence": [
+                "user_message"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "answer_obligations": [
+          {
+            "obligation": "O lead quer saber se pode ver funcionando antes de fechar.",
+            "answered_before_steering": true,
+            "evidence": [
+              "user_message"
+            ]
+          }
+        ],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": null,
+          "final_diagnostic_ready": true,
+          "evidence": [
+            "runtime_state"
+          ]
+        },
+        "demo_proposal": {
+          "status": "available",
+          "next_step": "responder com demo usando o link oficial, se houver",
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "waitlist_proposal": {
+          "eligibility": "",
+          "intent": "",
+          "missing_details": [],
+          "evidence": []
+        },
+        "handoff_proposal": {
+          "status": "",
+          "reason": null,
+          "pause_required": false,
+          "evidence": []
+        },
+        "template_proposal": {
+          "template_ids": [
+            "product.demo_direct",
+            "product.price_direct"
+          ],
+          "variables": {
+            "official_demo_link": {
+              "kind": "url",
+              "value": "",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "runtime_state"
+              ]
+            },
+            "plan_price_summary": {
+              "kind": "long_text",
+              "value": "Plano Essencial: R$ 497/mês.",
+              "source": "model_decision",
+              "evidence": [
+                "user_message"
+              ],
+              "max_length": 360
+            },
+            "plan_fit_context": {
+              "kind": "short_text",
+              "value": "studio com 120 alunos, perdendo leads por demora no WhatsApp",
+              "source": "user_message",
+              "evidence": [
+                "user_message"
+              ],
+              "max_length": 180
+            }
+          },
+          "evidence": [
+            "user_message",
+            "runtime_state"
+          ]
+        },
+        "safety": {
+          "guardrails": [
+            {
+              "name": "direct_question_requires_answer_first",
+              "outcome": "flagged"
+            },
+            {
+              "name": "no_official_demo_link_available_in_current_context",
+              "outcome": "flagged"
+            }
+          ],
+          "uncertainty": "medium"
+        },
+        "state_patch_proposal": {},
+        "sales_inbox_projection_proposal": {
+          "commercial_stage": "product_demo_requested",
+          "last_intent": "demo_request",
+          "diagnostic_status": "complete",
+          "next_action_hint": "provide demo link and answer price if asked"
+        },
+        "delivery_proposal": {
+          "chunk_policy": "default",
+          "render_plan_only": true,
+          "evidence": [
+            "user_message",
+            "runtime_state"
+          ]
+        },
+        "confidence": "medium",
+        "risks": [
+          "missing official demo link for template variable",
+          "price mentioned without official fact source in this context"
+        ],
+        "usage": {
+          "model": "gpt-5.4-mini",
+          "model_operations": 2,
+          "input_tokens": 10266,
+          "output_tokens": 795,
+          "cost_usd": 0.006525,
+          "handoffs": 1,
+          "repairs": 0
+        }
+      },
+      "validator_result": {
+        "decision_id": "sdk_spike_turn_ideal_turn_11",
+        "status": "failed",
+        "errors": [
+          {
+            "code": "sdk_diagnostic_final_without_delivery",
+            "severity": "P0",
+            "message": "final_diagnostic_ready requires diagnostic.deliver* templates.",
+            "path": "template_proposal.template_ids"
+          }
+        ],
+        "warnings": [],
+        "repair_attempt_count": 0,
+        "final_disposition": "blocked"
+      },
+      "rendered_preview": [],
+      "proposed_state_diff": {},
+      "proposed_sales_inbox_projection": {
+        "commercial_stage": "product_demo_requested",
+        "last_intent": "demo_request",
+        "diagnostic_status": "complete",
+        "next_action_hint": "provide demo link and answer price if asked"
+      },
+      "usage": {
+        "model": "gpt-5.4-mini",
+        "model_operations": 3,
+        "input_tokens": 16885,
+        "output_tokens": 1565,
+        "cost_usd": 0.012189,
+        "handoffs": 1,
+        "repairs": 1
+      },
+      "status": "failed",
+      "pass_fail_reason": "validator_blocked: sdk_diagnostic_final_without_delivery",
+      "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+    }
+  ]
+}

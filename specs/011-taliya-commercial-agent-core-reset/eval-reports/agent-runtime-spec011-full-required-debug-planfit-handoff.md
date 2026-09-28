@@ -1,0 +1,53 @@
+# agent-runtime-spec011-full-required-debug-planfit-handoff
+
+Started at: 2026-05-31T17:07:41Z
+Finished at: 2026-05-31T17:07:53Z
+Provider: openai
+Model: gpt-5.4-mini
+Release gate: pass
+Passed: 2/2
+Estimated cost: US$0.029626
+
+## PASS final-plan-fit-thin
+
+Title: Plan fit with thin context does not guess
+Channel: widget
+
+Lead 1: qual plano voce recomenda pra mim?
+Taliya 1.1: Oi, tudo bem?
+Taliya 1.2: Base: R$ 197/mes; Essencial: R$ 497/mes; Avance: R$ 897/mes; Completo: R$ 1.497/mes.
+Taliya 1.3: Se fizer sentido para voce, estamos oferecendo um diagnostico gratuito para o seu studio. Assim voce entende se algum dos nossos planos te atenderia.
+Taliya 1.4: Com poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.
+Taliya 1.5: O que voce acha?
+Taliya 1.6: Para recomendar o plano certo, preciso entender sua rotina e a dor principal do studio.
+Taliya 1.7: Se fizer sentido, faco um diagnostico gratuito para entender se algum dos nossos planos te atenderia. O que voce acha?
+Taliya 1.8: Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?
+Runtime: http=200 status=succeeded agent=taliya_commercial_spec011_product_agent trace=trace_turn_widget_0faa0f7fdaf2f01f_24b92c302ec4951e
+Diagnostic: {"status": "offered", "ledger": [{"question_key": "active_students_or_size", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "may_ask_again": true}, {"question_key": "main_pain", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "may_ask_again": true}, {"question_key": "pain_detail", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "may_ask_again": true}, {"question_key": "current_process", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "may_ask_again": true}, {"question_key": "priority", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "may_ask_again": true}, {"question_key": "urgency", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "may_ask_again": true}], "facts_used": ["conversation.source", "metadata.page_path"], "main_bottleneck": null, "pain_context_human": null, "likely_cause": null, "crm_base_recommendation": null, "first_recommended_step": null, "indicated_routines_or_agents": [], "indicated_agents": [], "plan_or_range_to_compare": null, "final_plan_line": null, "demo_status_at_delivery": "not_offered", "final_demo_line": null, "evidence": ["conversation.source", "metadata.page_path"], "unknowns": [], "confidence": "high", "next_question": "main_pain", "validation_question": null, "final_demo_next_step_question": null}
+Decision: {"previous_state": "initial", "current_state": "answered_price_and_fit_hook", "next_state": "diagnostic_offered", "route": "product", "opening_type": "direct_question_opening", "detected_intents": ["plan_recommendation", "price_fit"], "direct_question_present": true, "direct_question_answered_first": true, "diagnostic_action": "offer", "diagnostic_allowed_now": true, "waitlist_allowed_now": false, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "not_available", "facts_used": ["conversation.source", "metadata.page_path"], "facts_missing": ["Keep plan recommendation grounded in official plan names and prices only.", "Do not promote demo for a simple plan-fit question.", "Use staged diagnostic because the lead asked for recommendation without giving studio context."], "template_ids": ["product.price_direct", "diagnostic.price_hook", "diagnostic.price_hook_with_context", "diagnostic.ask_main_pain"], "template_variables": {"product.price_direct": {"plan_price_summary": {"kind": "long_text", "value": "Base: R$ 197/mes; Essencial: R$ 497/mes; Avance: R$ 897/mes; Completo: R$ 1.497/mes.", "source": "official_product_knowledge", "evidence": ["product_knowledge.prices"], "max_length": 360}, "plan_fit_context": {"kind": "short_text", "value": "Você perguntou qual plano eu recomendo, mas ainda falta entender sua rotina e a dor principal para indicar o melhor encaixe.", "source": "diagnostic_ledger", "evidence": ["inbound.text"], "max_length": 180}}, "diagnostic.price_hook": {}, "diagnostic.price_hook_with_context": {"plan_fit_context": {"kind": "short_text", "value": "Para recomendar o plano certo, preciso entender sua rotina e a dor principal do studio.", "source": "diagnostic_ledger", "evidence": ["inbound.text"], "max_length": 180}}, "diagnostic.ask_main_pain": {}}, "render_plan": [{"template_id": "product.price_direct", "channel": "widget", "variables": {"plan_price_summary": {"kind": "long_text", "value": "Base: R$ 197/mes; Essencial: R$ 497/mes; Avance: R$ 897/mes; Completo: R$ 1.497/mes.", "source": "official_product_knowledge", "evidence": ["product_knowledge.prices"], "max_length": 360}, "plan_fit_context": {"kind": "short_text", "value": "Você perguntou qual plano eu recomendo, mas ainda falta entender sua rotina e a dor principal para indicar o melhor encaixe.", "source": "diagnostic_ledger", "evidence": ["inbound.text"], "max_length": 180}}}, {"template_id": "diagnostic.price_hook", "channel": "widget", "variables": {}}, {"template_id": "diagnostic.price_hook_with_context", "channel": "widget", "variables": {"plan_fit_context": {"kind": "short_text", "value": "Para recomendar o plano certo, preciso entender sua rotina e a dor principal do studio.", "source": "diagnostic_ledger", "evidence": ["inbound.text"], "max_length": 180}}}, {"template_id": "diagnostic.ask_main_pain", "channel": "widget", "variables": {}}], "diagnostic_ledger_status": "not_started", "next_question_kind": "pain", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Waitlist: {"status": "none", "reason": null, "missing_fields": []}
+Handoff: {"status": "none", "reason": null}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["plans", "prices", "plan_comparison", "links", "demo_status", "waitlist_status", "checkout_status", "availability", "cancellation_or_guarantee_policy", "privacy_or_data_notes", "how_it_works", "routine_areas", "whatsapp_scope", "integration_scope", "comparison_spreadsheet", "comparison_management_system", "security_and_data", "availability_and_onboarding", "out_of_profile", "unsupported_claims"]}]
+Usage: {"model": "gpt-5.4-mini", "input_tokens": 15598, "output_tokens": 932, "cost_usd": 0.015893}
+
+## PASS final-human-request-silent-after
+
+Title: Human request pauses automation and second turn stays silent
+Channel: whatsapp
+
+Lead 1: quero falar com uma pessoa
+Taliya 1.1: Claro. Vou deixar uma pessoa assumir daqui.
+Taliya 1.2: Tambem deixo o contexto salvo para voce nao precisar repetir tudo.
+Runtime: http=200 status=human_paused agent=taliya_commercial_spec011_handoff_agent trace=trace_turn_whatsapp_c4f02dbc3ad3f899_e877c2d8c697fabe
+Decision: {"previous_state": "none", "current_state": "handoff_requested", "next_state": "handoff_active", "route": "handoff", "opening_type": "none", "detected_intents": ["human_handoff_request"], "direct_question_present": false, "direct_question_answered_first": false, "diagnostic_action": "none", "diagnostic_allowed_now": false, "waitlist_allowed_now": false, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "not_available", "facts_used": ["sender.whatsapp_phone"], "facts_missing": [], "template_ids": ["handoff.acknowledge"], "template_variables": {"handoff.acknowledge": {"handoff_reason": {"kind": "short_text", "value": "pediu para falar com uma pessoa", "source": "user_message", "evidence": ["quero falar com uma pessoa"], "max_length": 120}}}, "render_plan": [{"template_id": "handoff.acknowledge", "channel": "whatsapp", "variables": {"handoff_reason": {"kind": "short_text", "value": "pediu para falar com uma pessoa", "source": "user_message", "evidence": ["quero falar com uma pessoa"], "max_length": 120}}}], "diagnostic_ledger_status": "not_started", "next_question_kind": "none", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Waitlist: {"status": "none", "reason": null, "missing_fields": []}
+Handoff: {"status": "requested", "reason": "Lead asked to speak with a person."}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["plans", "prices", "plan_comparison", "links", "demo_status", "waitlist_status", "checkout_status", "availability", "cancellation_or_guarantee_policy", "privacy_or_data_notes", "how_it_works", "routine_areas", "whatsapp_scope", "integration_scope", "comparison_spreadsheet", "comparison_management_system", "security_and_data", "availability_and_onboarding", "out_of_profile", "unsupported_claims"]}]
+Usage: {"model": "gpt-5.4-mini", "input_tokens": 15664, "output_tokens": 441, "cost_usd": 0.013733}
+
+Lead 2: ainda estou aqui
+Taliya: [sem resposta automatica]
+Runtime: http=200 status=human_paused agent=taliya_commercial_spec011_handoff_agent trace=trace_fc3434ad44664371bca34080bb9d85f5
+Decision: {"previous_state": "handoff_active", "current_state": "paused_by_human", "next_state": "paused_by_human", "route": "handoff", "opening_type": "none", "detected_intents": [], "direct_question_present": false, "direct_question_answered_first": true, "diagnostic_action": "none", "diagnostic_allowed_now": false, "waitlist_allowed_now": false, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "not_available", "facts_used": [], "facts_missing": [], "template_ids": [], "template_variables": {}, "render_plan": [], "diagnostic_ledger_status": "not_started", "next_question_kind": "none", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Handoff: {"status": "active", "reason": "Lead asked to speak with a person."}
+Usage: {"model": null, "input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0}

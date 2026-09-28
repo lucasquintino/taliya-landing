@@ -1,0 +1,43 @@
+{
+  "runId": "agent-v2-waitlist-1779416640041",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:24:00.041Z",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "waitlist fixtures exist",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "waitlist implementation contains estamos trabalhando com um número pequeno de studios",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "waitlist implementation contains answerPostWaitlist",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "waitlist implementation contains waitlist_joined",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "waitlist implementation contains sem reiniciar",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "waitlist implementation contains no_checkout_while_waitlist_closed",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

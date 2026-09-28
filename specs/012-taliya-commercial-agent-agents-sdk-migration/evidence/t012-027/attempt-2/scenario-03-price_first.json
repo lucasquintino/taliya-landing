@@ -1,0 +1,658 @@
+{
+  "number": 3,
+  "scenario_id": "price_first",
+  "channel": "whatsapp",
+  "required_proof": "Direct price question is answered before any diagnostic steering.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "quanto custa?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_conversation_summary",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"product\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_price_first",
+          "summary": null,
+          "lead_fact_count": 0,
+          "source": "not_connected_in_spike"
+        },
+        "evidence": [],
+        "uncertainty": "high"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "product",
+          "templates": [
+            {
+              "template_id": "product.agents_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.comparison_current_tool",
+              "required_variables": [
+                "current_tool_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.crm_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.demo_direct",
+              "required_variables": [
+                "official_demo_link"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.how_it_works_direct",
+              "required_variables": [
+                "contextual_next_step"
+              ],
+              "optional_variables": [
+                "recommended_area"
+              ]
+            },
+            {
+              "template_id": "product.integration_scope_direct",
+              "required_variables": [
+                "integration_topic"
+              ],
+              "optional_variables": [
+                "human_confirmation_topic"
+              ]
+            },
+            {
+              "template_id": "product.out_of_profile_redirect",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.overview_short",
+              "required_variables": [],
+              "optional_variables": [
+                "product_fact_summary"
+              ]
+            },
+            {
+              "template_id": "product.plan_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_name"
+              ]
+            },
+            {
+              "template_id": "product.plan_fit_with_diagnostic",
+              "required_variables": [
+                "plan_fit_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.price_complete_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_fit_context"
+              ]
+            },
+            {
+              "template_id": "product.price_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_fit_context"
+              ]
+            },
+            {
+              "template_id": "product.price_objection_value",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.security_data_direct",
+              "required_variables": [],
+              "optional_variables": [
+                "human_confirmation_topic"
+              ]
+            },
+            {
+              "template_id": "product.whatsapp_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": [
+                "official_demo_link"
+              ]
+            }
+          ],
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"price_summary\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "price_summary",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.price_summary"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "price_summary"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.price_summary"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "price_question"
+      ],
+      "direct_question": "quanto custa?",
+      "customer_need": "saber o preço",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "conversation_summary: none",
+        "user_message: quanto custa?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Respond to the price question",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message: quanto custa?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "no diagnostic needed for direct price question"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user asked price only"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "not_applicable",
+      "missing_details": [],
+      "evidence": [
+        "cold price question"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "price route can be handled by product agent"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "product.price_direct"
+      ],
+      "variables": [
+        {
+          "name": "plan_price_summary",
+          "kind": "long_text",
+          "value": "Preço indisponível no conhecimento oficial carregado nesta sessão.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.price_summary"
+          ],
+          "max_length": 120
+        },
+        {
+          "name": "plan_fit_context",
+          "kind": "long_text",
+          "value": "Se você quiser, eu posso te orientar no próximo passo mais adequado para o seu estúdio.",
+          "source": "model_decision",
+          "evidence": [
+            "user_message: quanto custa?"
+          ],
+          "max_length": 120
+        }
+      ],
+      "evidence": [
+        "template_registry",
+        "product_knowledge.price_summary"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [
+        "price_unavailable_in_official_knowledge"
+      ],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "price_inquiry",
+      "last_intent": "price_question",
+      "diagnostic_status": "not_applicable",
+      "waitlist_status": "not_applicable",
+      "handoff_status": "not_needed",
+      "next_action_hint": "Use product pricing route; official price summary is missing"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": [
+      "Official pricing data is missing, so avoid inventing a price."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_price_first",
+    "conversation_id": "spike_conv_price_first",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_conversation_summary",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "price_question"
+      ],
+      "direct_question": "quanto custa?",
+      "customer_need": "saber o preço",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "conversation_summary: none",
+        "user_message: quanto custa?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Respond to the price question",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message: quanto custa?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "no diagnostic needed for direct price question"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user asked price only"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "not_applicable",
+      "missing_details": [],
+      "evidence": [
+        "cold price question"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "price route can be handled by product agent"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "product.price_direct"
+      ],
+      "variables": {
+        "plan_price_summary": {
+          "kind": "long_text",
+          "value": "Preço indisponível no conhecimento oficial carregado nesta sessão.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.price_summary"
+          ],
+          "max_length": 120
+        },
+        "plan_fit_context": {
+          "kind": "long_text",
+          "value": "Se você quiser, eu posso te orientar no próximo passo mais adequado para o seu estúdio.",
+          "source": "model_decision",
+          "evidence": [
+            "user_message: quanto custa?"
+          ],
+          "max_length": 120
+        }
+      },
+      "evidence": [
+        "template_registry",
+        "product_knowledge.price_summary"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "price_unavailable_in_official_knowledge",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "price_inquiry",
+      "last_intent": "price_question",
+      "diagnostic_status": "not_applicable",
+      "waitlist_status": "not_applicable",
+      "handoff_status": "not_needed",
+      "next_action_hint": "Use product pricing route; official price summary is missing"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "template_registry",
+        "product_knowledge.price_summary"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "Official pricing data is missing, so avoid inventing a price."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 11229,
+      "output_tokens": 586,
+      "cost_usd": 0.006566,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_price_first",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_render_preview_failed",
+        "severity": "P0",
+        "message": "kind_mismatch:plan_fit_context:long_text!=short_text;source_not_allowed:plan_fit_context:model_decision",
+        "path": "template_proposal"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "price_inquiry",
+    "last_intent": "price_question",
+    "diagnostic_status": "not_applicable",
+    "waitlist_status": "not_applicable",
+    "handoff_status": "not_needed",
+    "next_action_hint": "Use product pricing route; official price summary is missing"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 11229,
+    "output_tokens": 586,
+    "cost_usd": 0.006566,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_render_preview_failed",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

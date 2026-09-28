@@ -1,0 +1,428 @@
+{
+  "number": 15,
+  "scenario_id": "delivery_concurrency",
+  "channel": "whatsapp",
+  "required_proof": "Render remains local; defer proposal recorded, no public delivery.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "me explica como a Taliya funciona?"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro! Vou te explicar em algumas mensagens curtas..."
+    },
+    {
+      "role": "user",
+      "content": "e mais uma coisa, voces atendem studios pequenos?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"studio_size_support\",\"general_product_overview\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "studio_size_support",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.studio_size_support"
+              ]
+            },
+            {
+              "key": "general_product_overview",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.general_product_overview"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "studio_size_support",
+            "general_product_overview"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.studio_size_support",
+          "product_knowledge.general_product_overview"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "product_question",
+        "fit_question"
+      ],
+      "direct_question": "vocês atendem studios pequenos?",
+      "customer_need": "entender se a Taliya atende estúdios pequenos",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Vocês atendem studios pequenos?",
+        "answered_before_steering": false,
+        "evidence": [
+          "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "unknown",
+      "missing_details": [],
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "route_to_product",
+      "reason": "Pergunta sobre adequação da solução para studios pequenos; precisa de resposta com base em conhecimento oficial.",
+      "pause_required": false,
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "fallback.product_knowledge_missing"
+      ],
+      "variables": [
+        {
+          "name": "human_confirmation_topic",
+          "kind": "short_text",
+          "value": "se a Taliya atende studios pequenos",
+          "source": "user_message",
+          "evidence": [
+            "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+          ],
+          "max_length": 100
+        }
+      ],
+      "evidence": [
+        "product_knowledge.studio_size_support",
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [
+        "missing_official_fact_for_direct_answer"
+      ],
+      "uncertainty": "high"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "product_question",
+      "last_intent": "fit_question",
+      "diagnostic_status": "not_started",
+      "waitlist_status": "not_applicable",
+      "handoff_status": "route_to_product",
+      "next_action_hint": "Responder com confirmação humana baseada em conhecimento oficial antes de prometer fit"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "medium",
+    "risks": [
+      "Não há fato oficial recuperável sobre suporte a studios pequenos."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_delivery_concurrency",
+    "conversation_id": "spike_conv_delivery_concurrency",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "product_question",
+        "fit_question"
+      ],
+      "direct_question": "vocês atendem studios pequenos?",
+      "customer_need": "entender se a Taliya atende estúdios pequenos",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Vocês atendem studios pequenos?",
+        "answered_before_steering": false,
+        "evidence": [
+          "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "unknown",
+      "missing_details": [],
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "route_to_product",
+      "reason": "Pergunta sobre adequação da solução para studios pequenos; precisa de resposta com base em conhecimento oficial.",
+      "pause_required": false,
+      "evidence": [
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "fallback.product_knowledge_missing"
+      ],
+      "variables": {
+        "human_confirmation_topic": {
+          "kind": "short_text",
+          "value": "se a Taliya atende studios pequenos",
+          "source": "user_message",
+          "evidence": [
+            "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+          ],
+          "max_length": 100
+        }
+      },
+      "evidence": [
+        "product_knowledge.studio_size_support",
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "missing_official_fact_for_direct_answer",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "high"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "product_question",
+      "last_intent": "fit_question",
+      "diagnostic_status": "not_started",
+      "waitlist_status": "not_applicable",
+      "handoff_status": "route_to_product",
+      "next_action_hint": "Responder com confirmação humana baseada em conhecimento oficial antes de prometer fit"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "product_knowledge.studio_size_support",
+        "e:user_message: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "Não há fato oficial recuperável sobre suporte a studios pequenos."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 7520,
+      "output_tokens": 596,
+      "cost_usd": 0.003829,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_delivery_concurrency",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_direct_question_not_answered_first",
+        "severity": "P0",
+        "message": "Answer obligations not marked answered first: Vocês atendem studios pequenos?",
+        "path": "answer_obligations"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "product_question",
+    "last_intent": "fit_question",
+    "diagnostic_status": "not_started",
+    "waitlist_status": "not_applicable",
+    "handoff_status": "route_to_product",
+    "next_action_hint": "Responder com confirmação humana baseada em conhecimento oficial antes de prometer fit"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 7520,
+    "output_tokens": 596,
+    "cost_usd": 0.003829,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_direct_question_not_answered_first",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

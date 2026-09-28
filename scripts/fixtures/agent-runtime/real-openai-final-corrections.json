@@ -1,0 +1,149 @@
+[
+  {
+    "id": "correction-whatsapp-site-cta-opening",
+    "title": "WhatsApp site CTA offers diagnostic without starting it",
+    "channel": "whatsapp",
+    "sender_name": "Lucas Quintino",
+    "messages": ["Oi, vim pelo site da Taliya e quero entender se faz sentido para o meu studio de Pilates."],
+    "checks": [
+      "first_response_greeting",
+      "site_cta_owner_copy",
+      "diagnostic_offered_or_started",
+      "template_ids_present",
+      "whatsapp_max_three_chunks",
+      "all_messages_short",
+      "no_waitlist"
+    ]
+  },
+  {
+    "id": "correction-direct-diagnostic-start",
+    "title": "Direct diagnostic request starts with orientation before first question",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["quero fazer diagnostico gratuito"],
+    "checks": [
+      "first_response_greeting",
+      "diagnostic_question_has_feedback",
+      "official_diagnostic_first_question",
+      "diagnostic_incomplete_requires_question",
+      "template_ids_present",
+      "all_messages_short",
+      "no_waitlist"
+    ]
+  },
+  {
+    "id": "correction-diagnostic-in-progress-feedback",
+    "title": "Diagnostic in progress acknowledges prior answer before next question",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero fazer diagnostico gratuito",
+      "tenho 90 alunos, hoje controlo em planilha"
+    ],
+    "checks": [
+      "diagnostic_question_has_feedback",
+      "official_diagnostic_first_question",
+      "no_repeat_answered_size_question",
+      "no_repeated_diagnostic_offer",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "correction-completed-diagnostic-demo-not-offered",
+    "title": "Completed diagnostic uses staged delivery and demo-not-offered bridge",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 120 alunos ativos, perco interessados no WhatsApp, hoje controlo tudo em planilha, a dor principal e atendimento e follow-up, a prioridade agora e vendas, e urgente resolver nesse mes. Quero comparar plano para a Taliya completa."
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "completed_diagnostic_staged",
+      "old_diagnostic_copy_blocked",
+      "final_plan_dynamic_line",
+      "final_demo_not_offered_line",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "correction-completed-diagnostic-demo-already-offered",
+    "title": "Completed diagnostic asks demo reaction when demo was already offered",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero ver uma demonstracao",
+      "agora quero diagnostico gratuito. Tenho 90 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa."
+    ],
+    "checks": [
+      "mentions_demo_link",
+      "diagnostic_completed",
+      "completed_diagnostic_staged",
+      "old_diagnostic_copy_blocked",
+      "final_plan_dynamic_line",
+      "final_demo_already_offered_line",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "correction-whatsapp-reliable-name",
+    "title": "Reliable WhatsApp profile name is used without asking name",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["oi"],
+    "checks": [
+      "profile_name_used",
+      "mentions_sender_first_name",
+      "no_name_capture",
+      "whatsapp_max_three_chunks",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "correction-whatsapp-unreliable-name",
+    "title": "Unreliable WhatsApp profile name is ignored",
+    "channel": "whatsapp",
+    "sender_name": "Studio Pilates",
+    "messages": ["oi, gostaria de conhecer mais"],
+    "checks": [
+      "profile_name_ignored",
+      "no_name_capture",
+      "template_ids_present",
+      "whatsapp_max_three_chunks"
+    ]
+  },
+  {
+    "id": "correction-demo-curiosity-no-waitlist",
+    "title": "Demo curiosity alone does not trigger waitlist",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero ver uma demonstracao",
+      "legal a demo, estou so pesquisando ainda"
+    ],
+    "checks": [
+      "mentions_demo_link",
+      "no_waitlist",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "correction-whatsapp-completed-diagnostic-staged",
+    "title": "WhatsApp can deliver staged completed diagnostic with demo bridge",
+    "channel": "whatsapp",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano para atendimento e vendas."
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "completed_diagnostic_staged",
+      "old_diagnostic_copy_blocked",
+      "final_plan_dynamic_line",
+      "final_demo_not_offered_line",
+      "template_ids_present"
+    ]
+  }
+]

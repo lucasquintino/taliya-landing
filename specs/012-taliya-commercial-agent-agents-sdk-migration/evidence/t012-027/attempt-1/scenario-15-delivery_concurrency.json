@@ -1,0 +1,496 @@
+{
+  "number": 15,
+  "scenario_id": "delivery_concurrency",
+  "channel": "whatsapp",
+  "required_proof": "Render remains local; defer proposal recorded, no public delivery.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "me explica como a Taliya funciona?"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro! Vou te explicar em algumas mensagens curtas..."
+    },
+    {
+      "role": "user",
+      "content": "e mais uma coisa, voces atendem studios pequenos?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_conversation_summary",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_demo_waitlist_handoff_state",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_delivery_concurrency",
+          "summary": "A resposta anterior ainda esta sendo entregue em chunks no WhatsApp (2 chunks restantes). Uma nova mensagem do lead chegou durante a entrega.",
+          "lead_fact_count": 0,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_delivery_concurrency.summary"
+        ],
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "get_demo_waitlist_handoff_state",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_delivery_concurrency",
+          "demo": {},
+          "waitlist": {},
+          "human_status": null,
+          "human_reason": null,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_delivery_concurrency.operational_state"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "objection",
+        "product_question"
+      ],
+      "direct_question": "vocês atendem studios pequenos?",
+      "customer_need": "entender se a Taliya serve para studios pequenos",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "studio_size",
+          "kind": "other",
+          "raw_text": "studios pequenos",
+          "value_text": "studio pequeno",
+          "currency": null,
+          "evidence": [
+            "user: e mais uma coisa, voces atendem studios pequenos?"
+          ]
+        }
+      ],
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder se atendem studios pequenos",
+        "answered_before_steering": false,
+        "evidence": [
+          "user: e mais uma coisa, voces atendem studios pequenos?"
+        ]
+      },
+      {
+        "obligation": "Não classificar por atalho determinístico",
+        "answered_before_steering": true,
+        "evidence": [
+          "developer instruction: Do not classify price, plan, demo, diagnostic, waitlist, pain-first, social/source opening, objection, or mixed-intent messages with deterministic shortcuts."
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "studio size compatibility check",
+      "missing_details": [
+        "porte do studio",
+        "quantidade de alunos/clientes"
+      ],
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "transfer_to_taliya_product_agent",
+      "reason": "Pergunta de produto/adequação de uso para studios pequenos; precisa de facts oficiais antes de responder.",
+      "pause_required": false,
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [],
+      "variables": [],
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "state_patch": {
+      "handoff": {
+        "status": "none",
+        "pause_ai": false
+      },
+      "delivery": {
+        "defer_inbound_during_chunks": true,
+        "deferred_inbound_count": 1
+      }
+    },
+    "safety": {
+      "guardrail_flags": [
+        "inbound_during_delivery"
+      ],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "product_compatibility_check",
+      "last_intent": "objection",
+      "diagnostic_status": "not_started",
+      "waitlist_status": "unknown",
+      "handoff_status": "proposed_transfer_to_product_agent",
+      "next_action_hint": "consult official product knowledge for studio-size fit; preserve queued inbound until current delivery finishes"
+    },
+    "delivery": {
+      "chunk_policy": "staged_diagnostic"
+    },
+    "confidence": "medium",
+    "risks": [
+      "A resposta anterior ainda estava sendo entregue em chunks.",
+      "Sem facts oficiais ainda sobre fit para studios pequenos."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_delivery_concurrency",
+    "conversation_id": "spike_conv_delivery_concurrency",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_conversation_summary",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "objection",
+        "product_question"
+      ],
+      "direct_question": "vocês atendem studios pequenos?",
+      "customer_need": "entender se a Taliya serve para studios pequenos",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "studio_size",
+          "kind": "other",
+          "raw_text": "studios pequenos",
+          "value": "studio pequeno",
+          "evidence": [
+            "user: e mais uma coisa, voces atendem studios pequenos?"
+          ]
+        }
+      ],
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder se atendem studios pequenos",
+        "answered_before_steering": false,
+        "evidence": [
+          "user: e mais uma coisa, voces atendem studios pequenos?"
+        ]
+      },
+      {
+        "obligation": "Não classificar por atalho determinístico",
+        "answered_before_steering": true,
+        "evidence": [
+          "developer instruction: Do not classify price, plan, demo, diagnostic, waitlist, pain-first, social/source opening, objection, or mixed-intent messages with deterministic shortcuts."
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "studio size compatibility check",
+      "missing_details": [
+        "porte do studio",
+        "quantidade de alunos/clientes"
+      ],
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "transfer_to_taliya_product_agent",
+      "reason": "Pergunta de produto/adequação de uso para studios pequenos; precisa de facts oficiais antes de responder.",
+      "pause_required": false,
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [],
+      "variables": {},
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "inbound_during_delivery",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {
+      "handoff": {
+        "status": "none",
+        "pause_ai": false
+      },
+      "delivery": {
+        "defer_inbound_during_chunks": true,
+        "deferred_inbound_count": 1
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "product_compatibility_check",
+      "last_intent": "objection",
+      "diagnostic_status": "not_started",
+      "waitlist_status": "unknown",
+      "handoff_status": "proposed_transfer_to_product_agent",
+      "next_action_hint": "consult official product knowledge for studio-size fit; preserve queued inbound until current delivery finishes"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "staged_diagnostic",
+      "render_plan_only": true,
+      "evidence": [
+        "user: e mais uma coisa, voces atendem studios pequenos?"
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "A resposta anterior ainda estava sendo entregue em chunks.",
+      "Sem facts oficiais ainda sobre fit para studios pequenos."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 9599,
+      "output_tokens": 661,
+      "cost_usd": 0.004644,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_delivery_concurrency",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_direct_question_not_answered_first",
+        "severity": "P0",
+        "message": "Answer obligations not marked answered first: Responder se atendem studios pequenos",
+        "path": "answer_obligations"
+      },
+      {
+        "code": "sdk_missing_template_plan",
+        "severity": "P0",
+        "message": "Spike render path requires approved template ids.",
+        "path": "template_proposal.template_ids"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {
+    "handoff": {
+      "status": "none",
+      "pause_ai": false
+    },
+    "delivery": {
+      "defer_inbound_during_chunks": true,
+      "deferred_inbound_count": 1
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "product_compatibility_check",
+    "last_intent": "objection",
+    "diagnostic_status": "not_started",
+    "waitlist_status": "unknown",
+    "handoff_status": "proposed_transfer_to_product_agent",
+    "next_action_hint": "consult official product knowledge for studio-size fit; preserve queued inbound until current delivery finishes"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 9599,
+    "output_tokens": 661,
+    "cost_usd": 0.004644,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_direct_question_not_answered_first, sdk_missing_template_plan",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

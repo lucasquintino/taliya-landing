@@ -1,0 +1,227 @@
+{
+  "turns_total": 12,
+  "turns_passed": 12,
+  "stopped_at_turn": null,
+  "total_model_operations": 22,
+  "total_cost_usd": 0.055145,
+  "final_state": {
+    "demo": {
+      "status": "not_applicable",
+      "next_step": ""
+    },
+    "waitlist": {
+      "eligibility": "qualified",
+      "intent": "contract_now"
+    },
+    "current_sdk_agent": "taliya_triage_agent",
+    "summary": "Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico completo e entregue. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"qualified\", \"intent\": \"contract_now\"}.",
+    "diagnostic": {
+      "ledger": {
+        "lead_count": {
+          "status": "answered",
+          "answer_value": "120"
+        },
+        "response_delay_impact": {
+          "status": "answered",
+          "answer_value": "perde interessados porque a resposta sai tarde demais"
+        }
+      },
+      "status": "complete",
+      "next_question_key": null
+    }
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "text": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "A Taliya e a IA do seu studio de Pilates para organizar a rotina que faz o studio girar: agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+    },
+    {
+      "role": "user",
+      "text": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "text": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "text": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "text": "120"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "A Taliya e a IA do seu studio de Pilates para organizar a rotina que faz o studio girar: agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "text": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "text": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "text": "minha maior dor e perder interessado porque demoramos pra responder"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "text": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "text": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "text": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+    },
+    {
+      "role": "assistant",
+      "text": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "text": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "text": "hoje e planilha e caderno mesmo, nada organizado"
+    },
+    {
+      "role": "assistant",
+      "text": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "text": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "text": "minha prioridade e nao perder mais nenhum lead novo"
+    },
+    {
+      "role": "assistant",
+      "text": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "text": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "text": "quero resolver isso agora, esse mes ainda"
+    },
+    {
+      "role": "assistant",
+      "text": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "text": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "text": "consigo ver funcionando antes?"
+    },
+    {
+      "role": "assistant",
+      "text": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "text": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "text": "gostei. quero entrar na lista pra contratar"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "A Taliya e a IA do seu studio de Pilates para organizar a rotina que faz o studio girar: agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    }
+  ]
+}

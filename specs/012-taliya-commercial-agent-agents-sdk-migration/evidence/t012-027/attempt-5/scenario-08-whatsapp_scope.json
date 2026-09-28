@@ -1,0 +1,364 @@
+{
+  "number": 8,
+  "scenario_id": "whatsapp_scope",
+  "channel": "whatsapp",
+  "required_proof": "Official WhatsApp scope only; no client/studio WhatsApp overreach.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "a Taliya conecta no WhatsApp do meu studio?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"whatsapp_connection\",\"whatsapp_scope\",\"client_studio_whatsapp_promise\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "whatsapp_scope",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "This commercial conversation runs on Taliya's own widget and Taliya's own WhatsApp number. For product agents to act on student WhatsApp conversations, the studio needs WhatsApp Business connected/configured. Students do not need to download an app or create a password; they talk through WhatsApp. Do not promise automatic setup inside this commercial chat.",
+              "excerpt": "This commercial conversation runs on Taliya's own widget and Taliya's own WhatsApp number. For product agents to act on student WhatsApp conversations, the studio needs WhatsApp Business connected/configured. Students do not need to download an app or create a password; they talk through WhatsApp. Do not promise automatic setup inside this commercial chat.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.whatsapp_scope"
+              ]
+            },
+            {
+              "key": "whatsapp_connection",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.whatsapp_connection"
+              ]
+            },
+            {
+              "key": "client_studio_whatsapp_promise",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.client_studio_whatsapp_promise"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "whatsapp_connection",
+            "whatsapp_scope",
+            "client_studio_whatsapp_promise"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.whatsapp_scope",
+          "product_knowledge.whatsapp_connection",
+          "product_knowledge.client_studio_whatsapp_promise"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "whatsapp_scope_question"
+      ],
+      "direct_question": "a Taliya conecta no WhatsApp do meu studio?",
+      "customer_need": "saber se a Taliya integra/funciona com o WhatsApp do studio",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "user_message: a Taliya conecta no WhatsApp do meu studio?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Pergunta direta sobre conexão com WhatsApp do studio",
+        "answering_template_id": "fallback.unmapped_adaptive",
+        "evidence": [
+          "user_message: a Taliya conecta no WhatsApp do meu studio?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "fallback.unmapped_adaptive"
+      ],
+      "variables": [
+        {
+          "name": "clarification_question",
+          "kind": "short_text",
+          "value": "A Taliya conecta no WhatsApp do meu studio?",
+          "source": "model_decision",
+          "evidence": [
+            "user_message: a Taliya conecta no WhatsApp do meu studio?"
+          ],
+          "max_length": 140
+        }
+      ],
+      "evidence": [
+        "user_message: a Taliya conecta no WhatsApp do meu studio?"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "opening",
+      "last_intent": "whatsapp_scope_question",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "clarify_whatsapp_scope"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": [
+      "Need to avoid promising automatic setup inside the chat."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_whatsapp_scope",
+    "conversation_id": "spike_conv_whatsapp_scope",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "whatsapp_scope_question"
+      ],
+      "direct_question": "a Taliya conecta no WhatsApp do meu studio?",
+      "customer_need": "saber se a Taliya integra/funciona com o WhatsApp do studio",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "user_message: a Taliya conecta no WhatsApp do meu studio?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Pergunta direta sobre conexão com WhatsApp do studio",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message: a Taliya conecta no WhatsApp do meu studio?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": []
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "fallback.unmapped_adaptive"
+      ],
+      "variables": {
+        "clarification_question": {
+          "kind": "short_text",
+          "value": "A Taliya conecta no WhatsApp do meu studio?",
+          "source": "model_decision",
+          "evidence": [
+            "user_message: a Taliya conecta no WhatsApp do meu studio?"
+          ],
+          "max_length": 140
+        }
+      },
+      "evidence": [
+        "user_message: a Taliya conecta no WhatsApp do meu studio?"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "opening",
+      "last_intent": "whatsapp_scope_question",
+      "next_action_hint": "clarify_whatsapp_scope"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "user_message: a Taliya conecta no WhatsApp do meu studio?"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "Need to avoid promising automatic setup inside the chat."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 12959,
+      "output_tokens": 975,
+      "cost_usd": 0.009268,
+      "handoffs": 0,
+      "repairs": 1
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_whatsapp_scope",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "A Taliya conecta no WhatsApp do meu studio?",
+      "template_id": "fallback.unmapped_adaptive",
+      "channel": "whatsapp",
+      "sequence": 1
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "opening",
+    "last_intent": "whatsapp_scope_question",
+    "next_action_hint": "clarify_whatsapp_scope"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 12959,
+    "output_tokens": 975,
+    "cost_usd": 0.009268,
+    "handoffs": 0,
+    "repairs": 1
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

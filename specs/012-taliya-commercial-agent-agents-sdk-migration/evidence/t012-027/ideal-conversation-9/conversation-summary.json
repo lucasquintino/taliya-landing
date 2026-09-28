@@ -1,0 +1,156 @@
+{
+  "turns_total": 12,
+  "turns_passed": 7,
+  "stopped_at_turn": 8,
+  "total_model_operations": 17,
+  "total_cost_usd": 0.080464,
+  "final_state": {
+    "demo": {
+      "status": "",
+      "next_step": ""
+    },
+    "waitlist": {
+      "eligibility": "",
+      "intent": ""
+    },
+    "summary": "Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico em andamento. Respondido: active_students_or_size=120; main_pain=perder interessado porque demoramos pra responder; pain_detail=a gente so consegue responder de noite, ai o lead ja fechou com outro studio. Proxima pergunta pendente: current_process. Demo: {\"status\": \"\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"\", \"intent\": \"\"}. Perguntas diretas ja respondidas em turnos anteriores (nao criam novas obrigacoes): Responder ao preço perguntado pelo lead, antes de qualquer continuidade do diagnóstico.; Quanto custa isso?; Como funciona esse diagnostico gratuito?.",
+    "diagnostic": {
+      "status": "in_progress",
+      "next_question_key": "current_process",
+      "ledger": {
+        "active_students_or_size": {
+          "status": "answered",
+          "answer_value": "120"
+        },
+        "main_pain": {
+          "status": "answered",
+          "answer_value": "perder interessado porque demoramos pra responder"
+        },
+        "pain_detail": {
+          "status": "answered",
+          "answer_value": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+        }
+      }
+    },
+    "current_sdk_agent": "taliya_diagnostic_agent",
+    "answered_obligations": [
+      "Responder ao preço perguntado pelo lead, antes de qualquer continuidade do diagnóstico.",
+      "Quanto custa isso?",
+      "Como funciona esse diagnostico gratuito?"
+    ]
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "text": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi, o problema e perder aluno novo por demora no WhatsApp."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "text": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido para voce, estamos oferecendo um diagnostico gratuito para o seu studio. Assim voce entende se algum dos nossos planos te atenderia."
+    },
+    {
+      "role": "assistant",
+      "text": "Com poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "text": "Para um studio com WhatsApp atrasado e perda de novos alunos.\n\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?\n\nEntendi: o gargalo hoje e o WhatsApp atrasado e isso ja esta fazendo voce perder aluno novo."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "text": "120"
+    },
+    {
+      "role": "assistant",
+      "text": "Perfeito, 120 alunos ativos me ajuda a entender o tamanho da rotina.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Perfeito, 120 alunos ativos me ajuda a entender o tamanho da rotina."
+    },
+    {
+      "role": "assistant",
+      "text": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+    },
+    {
+      "role": "user",
+      "text": "minha maior dor e perder interessado porque demoramos pra responder"
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: a demora no WhatsApp está fazendo vocês perderem interessados."
+    },
+    {
+      "role": "assistant",
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: a demora no WhatsApp está fazendo vocês perderem interessados."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?"
+    },
+    {
+      "role": "user",
+      "text": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+    },
+    {
+      "role": "assistant",
+      "text": "Perfeito, isso já mostra um gargalo claro na captação.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Perfeito, isso já mostra um gargalo claro na captação."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+    }
+  ]
+}

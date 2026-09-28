@@ -1,0 +1,32 @@
+# agent-runtime-real-openai-natural-final-diagnostic
+
+Started at: 2026-05-25T13:43:45Z
+Finished at: 2026-05-25T13:44:01Z
+Provider: openai
+Model: gpt-5.4-mini
+Release gate: fail
+Passed: 0/1
+Estimated cost: US$0.00932
+
+## FAIL correction-completed-diagnostic-demo-not-offered
+
+Title: Completed diagnostic uses staged delivery and demo-not-offered bridge
+Channel: widget
+Failures:
+- expected completed diagnostic, got in_progress
+- completed diagnostic did not use staged template order: ['diagnostic.ask_active_students']
+- completed diagnostic did not render the approved staged delivery
+- missing approved final plan diagnostic line: 
+- missing CRM base recommendation in diagnostic output
+- missing per-agent recommendations in diagnostic output
+- missing demo-not-offered final diagnostic line
+
+Lead 1: quero diagnostico gratuito. Tenho 120 alunos ativos, perco interessados no WhatsApp, hoje controlo tudo em planilha, a dor principal e atendimento e follow-up, a prioridade agora e vendas, e urgente resolver nesse mes. Quero comparar plano para a Taliya completa.
+Taliya 1.1: Oi, Lucas, tudo bem? Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje.
+Taliya 1.2: Hoje seu studio tem mais ou menos quantos alunos ativos?
+Runtime: http=200 status=succeeded agent=taliya_commercial_diagnostic_agent trace=trace_377c11f1eea04d6c87b026b549a9f0b2
+Diagnostic: {"status": "in_progress", "ledger": [], "facts_used": [], "main_bottleneck": null, "pain_context_human": null, "likely_cause": null, "crm_base_recommendation": null, "first_recommended_step": null, "indicated_routines_or_agents": [], "indicated_agents": [], "plan_or_range_to_compare": null, "final_plan_line": null, "demo_status_at_delivery": "not_offered", "final_demo_line": null, "evidence": [], "unknowns": ["active_students_or_size"], "confidence": "low", "next_question": "Hoje seu studio tem mais ou menos quantos alunos ativos?", "validation_question": null, "final_demo_next_step_question": null}
+Decision: {"previous_state": "new_lead", "current_state": "diagnostic_in_progress", "next_state": "diagnostic_in_progress", "route": "diagnostic", "opening_type": "diagnostic_cta_opening", "detected_intents": ["product", "diagnostic", "pricing", "plan_fit"], "direct_question_present": true, "direct_question_answered_first": true, "diagnostic_action": "ask_next", "diagnostic_allowed_now": true, "waitlist_allowed_now": false, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "used_reliable_name", "facts_used": ["Lead pediu diagnóstico gratuito", "Lead tem 120 alunos ativos", "Lead perde interessados no WhatsApp", "Hoje controla tudo em planilha", "Dor principal: atendimento e follow-up", "Prioridade agora: vendas", "Urgência: resolver neste mês", "Quer comparar o plano Completo"], "facts_missing": ["Detalhes sobre volume de mensagens/atendimento", "Se há WhatsApp Business conectado", "Quantas pessoas vão usar a ferramenta"], "template_ids": ["diagnostic.ask_active_students"], "template_variables": {"diagnostic.offer_soft": {"pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."}, "diagnostic.price_hook_with_context": {"pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."}, "diagnostic.deliver_context": {"pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."}, "diagnostic.deliver_crm_base": {"crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."}, "diagnostic.deliver_operational_step": {"operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."}, "diagnostic.deliver_agent_recommendation": {"agent_name": "Atendimento", "agent_fit_phrase": "faria sentido primeiro", "agent_pain_resolved": "interessados que ficam sem resposta", "agent_recommendation_reason": "essa foi a dor comercial mais clara", "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"}, "diagnostic.deliver_plan_recommendation": {"recommended_plan_or_range": "Essencial ou Avance"}, "diagnostic.deliver": {"main_bottleneck": "a rotina prioritária", "first_step": "organizar a primeira rotina crítica", "plan_range": "a faixa mais aderente"}, "diagnostic.ask_active_students": {"answer_feedback": "Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje."}}, "render_plan": [{"template_id": "diagnostic.ask_active_students", "channel": "widget"}], "diagnostic_ledger_status": "incomplete", "next_question_kind": "pain", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Handoff: {"status": "none", "reason": null}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["initial_policy_read", "profile_name_assessment", "user_message", "product_knowledge"]}]
+Usage: {"model": "gpt-5.4-mini", "input_tokens": 4752, "output_tokens": 1279, "cost_usd": 0.00932}

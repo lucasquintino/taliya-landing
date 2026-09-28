@@ -1,0 +1,109 @@
+[
+  {
+    "id": "step3b-objection-after-price",
+    "title": "Price objection after price should explain value and offer a next step",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["quanto custa?", "achei caro"],
+    "checks": [
+      "mentions_all_prices",
+      "price_objection_value_argument",
+      "price_objection_next_step",
+      "no_roi_promise",
+      "no_checkout_link",
+      "has_product_source",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3b-objection-why-costs",
+    "title": "Why it costs this should explain value without ROI promise",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["por que custa isso?"],
+    "checks": [
+      "price_objection_value_argument",
+      "price_objection_next_step",
+      "no_roi_promise",
+      "no_checkout_link",
+      "has_product_source",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3b-objection-compensa",
+    "title": "Not sure it compensates should answer value and steer safely",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["nao sei se compensa pra mim"],
+    "checks": [
+      "first_response_greeting",
+      "price_objection_value_argument",
+      "price_objection_next_step",
+      "no_roi_promise",
+      "no_checkout_link",
+      "whatsapp_max_three_chunks",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "step3b-objection-discount",
+    "title": "Discount request should not invent commercial condition",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["tem desconto? achei salgado"],
+    "checks": [
+      "price_objection_value_argument",
+      "price_objection_next_step",
+      "no_roi_promise",
+      "no_checkout_link",
+      "has_product_source",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3b-objection-roi",
+    "title": "ROI challenge should not promise results",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["isso se paga? garante resultado?"],
+    "checks": [
+      "price_objection_value_argument",
+      "price_objection_next_step",
+      "no_roi_promise",
+      "no_checkout_link",
+      "has_product_source",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3b-objection-after-diagnostic",
+    "title": "Price objection after diagnostic should use saved context and not restart diagnostic",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+      "achei caro"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "price_objection_value_argument",
+      "price_objection_contextual",
+      "price_objection_next_step",
+      "no_roi_promise",
+      "no_checkout_link",
+      "has_product_source",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  }
+]

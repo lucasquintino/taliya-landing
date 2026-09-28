@@ -1,0 +1,296 @@
+[
+  {
+    "id": "QA01",
+    "area": "Conteúdo",
+    "check": "Os 14 slots S01–S14 existem na configuração; S11 fica oculto sem prova.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA02",
+    "area": "Conteúdo",
+    "check": "Há 5 casos no seletor, 7 posições Sem/Com, 6 tabs Como funciona, 7 frentes e 39 subtipos.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA03",
+    "area": "Conteúdo",
+    "check": "A biblioteca possui 84 mensagens e 24 IDs iniciais válidos; nenhuma aponta para subtipo ausente.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA04",
+    "area": "Conteúdo",
+    "check": "Header, hero, oferta, FAQ, CTA final e flutuante usam o mesmo modo.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA05",
+    "area": "Conteúdo",
+    "check": "Não há “studio de Pilates”, seleção de agentes nem planos Base/Essencial/Avance/Completo na nova jornada.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA06",
+    "area": "Conteúdo",
+    "check": "Mural usa copy própria; não copia a frase longa da marca concorrente.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA07",
+    "area": "Produto",
+    "check": "A conversa representa dono→número da Taliya; nunca cliente→agente do studio.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA08",
+    "area": "Produto",
+    "check": "Não afirma leitura automática de outros chats, Pix, Open Finance, emissão fiscal, autoagendamento ou equipe.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA09",
+    "area": "Produto",
+    "check": "Agenda sem duração pede só a duração; preço opcional não impede registrar horário.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA10",
+    "area": "Produto",
+    "check": "NP05 mostra uma pergunta necessária, sem inventar duração padrão.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA11",
+    "area": "Produto",
+    "check": "Em FL01, aprovação muda o mesmo serviço; geração de PDF não significa enviado/aprovado.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA12",
+    "area": "Produto",
+    "check": "FL02 cancela a ocorrência e mantém serviço/histórico; pagamentos não desaparecem.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA13",
+    "area": "Produto",
+    "check": "FL03 prepara texto de cobrança para o dono; nunca o marca enviado ao cliente.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA14",
+    "area": "Produto",
+    "check": "FL04 mostra 8 contratadas, 1 realizada, 1 reservada, 6 disponíveis e 7 a realizar no último passo.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA15",
+    "area": "Produto",
+    "check": "Anexar comprovante em AR01 não confirma recebimento nem movimenta banco.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA16",
+    "area": "Produto",
+    "check": "Resumo financeiro é sobre valores registrados; não chama de lucro sem despesas.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA17",
+    "area": "Produto",
+    "check": "Correção RC05 troca R$300 por R$350, com total de R$450 e saldo de R$100; não soma R$350 como novo pagamento.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA18",
+    "area": "Produto",
+    "check": "Sem horário de atendimento, disponibilidade não afirma dia inteiro livre.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA19",
+    "area": "Estágio",
+    "check": "Pré-lançamento tem aviso visível e demos identificadas; nenhum CTA de checkout/uso imediato.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA20",
+    "area": "Estágio",
+    "check": "Preço/trial não aparecem antes de produto, oferta e destino estarem validados.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA21",
+    "area": "Estágio",
+    "check": "Prova social não renderiza dados fictícios, skeletons ou estrelas.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA22",
+    "area": "Formulários",
+    "check": "Erro por campo preserva o preenchimento; envio não simula sucesso.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA23",
+    "area": "Formulários",
+    "check": "Timeout de resultado desconhecido não duplica lead; sucesso depende do servidor.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA24",
+    "area": "Formulários",
+    "check": "Cadastro de rotina não inscreve em marketing automaticamente.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA25",
+    "area": "Formulários",
+    "check": "Política/termos revisados e links reais antes da captura.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA26",
+    "area": "Interação",
+    "check": "Trocar frente reinicia subtipo de forma previsível e atualiza todos os textos/resultados.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA27",
+    "area": "Interação",
+    "check": "Trocar cenário não carrega saldo/cliente de outro exemplo.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA28",
+    "area": "Interação",
+    "check": "Link profundo inválido usa estado inicial, sem erro de página.",
+    "priority": "P1",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA29",
+    "area": "Interação",
+    "check": "Todas as opções funcionam sem autoplay; pause/restart são acessíveis quando houver animação.",
+    "priority": "P1",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA30",
+    "area": "Interação",
+    "check": "Clique em balão apenas abre exemplo; não envia WhatsApp nem registra dado de negócio.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA31",
+    "area": "Mobile",
+    "check": "Revisar 320, 390, 768, 1280 e 1440 px: sem overflow horizontal da página e sem texto cortado.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA32",
+    "area": "Mobile",
+    "check": "Botão flutuante não cobre teclado, formulário ou controles e se oculta no formulário.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA33",
+    "area": "Mobile",
+    "check": "Texto do chat e resultado é legível sem zoom; sem frases dependentes só de cor.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA34",
+    "area": "Acessibilidade",
+    "check": "Foco visível, nome dos controles, teclado, tab selecionada e painel associado funcionam juntos.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA35",
+    "area": "Acessibilidade",
+    "check": "Movimento reduzido desativa rolagem automática; imagem tem texto alternativo.",
+    "priority": "P1",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA36",
+    "area": "Rotas",
+    "check": "Raiz não redireciona à landing antiga; /pilates e /pilates/planos têm destino definido.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA37",
+    "area": "Rotas",
+    "check": "Aliases antigos de âncora abrem os blocos novos corretos.",
+    "priority": "P1",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA38",
+    "area": "SEO",
+    "check": "Title, description, canonical, OG e sitemap não descrevem o produto de Pilates.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA39",
+    "area": "Analytics",
+    "check": "Eventos só levam IDs; nenhum e-mail, telefone, relato ou transcrição é enviado.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA40",
+    "area": "Analytics",
+    "check": "Ver uma demo não dispara first_operation, compra, lead ou teste iniciado.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA41",
+    "area": "Entrega",
+    "check": "Comparação visual com base existente confirma reaproveitamento de tokens e componentes.",
+    "priority": "P1",
+    "status": "não executado nesta entrega"
+  },
+  {
+    "id": "QA42",
+    "area": "Entrega",
+    "check": "A revisão final percorre 39 subtipos, 5 fluxos e todas as perguntas; registrar limitações reais.",
+    "priority": "P0",
+    "status": "não executado nesta entrega"
+  }
+]

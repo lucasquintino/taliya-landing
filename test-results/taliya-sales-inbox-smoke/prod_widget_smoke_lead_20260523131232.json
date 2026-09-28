@@ -1,0 +1,254 @@
+{
+  "status": "pass",
+  "leadId": "prod_widget_smoke_lead_20260523131232",
+  "transcript": [
+    {
+      "lead": "quero fazer diagnostico gratuito",
+      "taliya": [
+        "Oi, tudo bem? Claro, dá para fazer por aqui.",
+        "O diagnóstico gratuito é rápido: eu faço algumas perguntas sobre a rotina do studio e depois te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+        "Pode ser?"
+      ],
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_fb0de22c27f745be91be0c6fc6cb4eb3",
+        "agentRuntimeTraceId": "trace_8d23842a51c34b66b6ac5fbc2d4ae821",
+        "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+        "agentRuntimePreviousState": "new_lead",
+        "agentRuntimeCurrentState": "diagnostic_offered",
+        "agentRuntimeNextState": "diagnostic_in_progress",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "diagnostic",
+        "agentRuntimeTemplateIds": "opening.diagnostic_cta",
+        "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.00702",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "offered",
+        "diagnosticNextStep": "Qual é hoje a principal dor do seu studio?"
+      },
+      "runtime": {
+        "state": "diagnostic_offered",
+        "next": "diagnostic_in_progress",
+        "route": "diagnostic",
+        "templates": "opening.diagnostic_cta",
+        "cost": "0.00702"
+      }
+    },
+    {
+      "lead": "Lucas",
+      "taliya": [
+        "Qual é a principal dor ou rotina que você quer melhorar primeiro?"
+      ],
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_959e6937383949d8b31abae6c0f175a6",
+        "agentRuntimeTraceId": "trace_735163e9de4945f2afcf63116c27739f",
+        "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+        "agentRuntimePreviousState": "diagnostic_in_progress",
+        "agentRuntimeCurrentState": "diagnostic_in_progress",
+        "agentRuntimeNextState": "diagnostic_in_progress",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "greeting, name_text",
+        "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+        "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.009307",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "in_progress",
+        "diagnosticNextStep": "Qual é hoje a principal dor do seu studio?"
+      },
+      "runtime": {
+        "state": "diagnostic_in_progress",
+        "next": "diagnostic_in_progress",
+        "route": "diagnostic",
+        "templates": "diagnostic.ask_main_pain",
+        "cost": "0.009307"
+      }
+    },
+    {
+      "lead": "Tenho 80 alunos, uso planilha e minha maior dor e agenda e reposicoes. Esta urgente agora.",
+      "taliya": [
+        "Se fosse para escolher uma prioridade agora, o que teria mais impacto no studio?"
+      ],
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_1cfba8ff003d43da82bc1eba34692e7b",
+        "agentRuntimeTraceId": "trace_b51550f714264340b02f77262ef82f22",
+        "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+        "agentRuntimePreviousState": "diagnostic_in_progress",
+        "agentRuntimeCurrentState": "diagnostic_in_progress",
+        "agentRuntimeNextState": "diagnostic_in_progress",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "diagnostic, pain, urgency",
+        "agentRuntimeTemplateIds": "diagnostic.ask_priority",
+        "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.010809",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "in_progress",
+        "diagnosticNextStep": "Se fosse para escolher uma prioridade agora, o que teria mais impacto no studio?"
+      },
+      "runtime": {
+        "state": "diagnostic_in_progress",
+        "next": "diagnostic_in_progress",
+        "route": "diagnostic",
+        "templates": "diagnostic.ask_priority",
+        "cost": "0.010809"
+      }
+    },
+    {
+      "lead": "Quero organizar reposicoes primeiro e entender qual plano faz sentido.",
+      "taliya": [
+        "Pelo contexto, o principal gargalo parece ser a rotina prioritária do studio ainda sem processo claro. O primeiro passo seria organizar primeiro a rotina informada e centralizar o acompanhamento em um CRM com contexto da conversa.",
+        "Para plano, eu compararia a faixa mais aderente depois de validar a rotina prioritária."
+      ],
+      "conversionPath": "crm_agent_diagnostic",
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_c15998a66e4a4b3fb2a435a8e85f3514",
+        "agentRuntimeTraceId": "trace_aef0437acf0545fc901ec79d43e59094",
+        "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+        "agentRuntimePreviousState": "diagnostic_in_progress",
+        "agentRuntimeCurrentState": "diagnostic_delivered",
+        "agentRuntimeNextState": "diagnostic_delivered",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "diagnostic, pain, urgency, plan_fit",
+        "agentRuntimeTemplateIds": "diagnostic.deliver",
+        "agentRuntimeDiagnosticLedgerStatus": "complete",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.011492",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "completed",
+        "diagnosticSummary": "a rotina prioritária do studio ainda sem processo claro",
+        "recommendedPlan": "a faixa mais aderente depois de validar a rotina prioritária",
+        "diagnosticCompletedAt": "2026-05-23T13:12:58.779Z",
+        "commercialStage": "diagnostic_completed"
+      },
+      "runtime": {
+        "state": "diagnostic_delivered",
+        "next": "diagnostic_delivered",
+        "route": "diagnostic",
+        "templates": "diagnostic.deliver",
+        "cost": "0.011492"
+      }
+    },
+    {
+      "lead": "Quero entrar na lista de espera. Meu studio e Flow Pilates, em Sao Paulo. Meu WhatsApp e 11999999999.",
+      "taliya": [
+        "Pelo contexto, o principal gargalo parece ser a rotina prioritária do studio ainda sem processo claro. O primeiro passo seria organizar primeiro a rotina informada e centralizar o acompanhamento em um CRM com contexto da conversa.",
+        "Para plano, eu compararia a faixa mais aderente depois de validar a rotina prioritária."
+      ],
+      "conversionPath": "crm_agent_diagnostic",
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_c1170acec24f4884bb9636705cdd70e3",
+        "agentRuntimeTraceId": "trace_22a9b2eb73be45fba7b2e8bb5bd89cea",
+        "agentRuntimeCurrentAgent": "taliya_commercial_entry_agent",
+        "agentRuntimePreviousState": "diagnostic_delivered",
+        "agentRuntimeCurrentState": "diagnostic_delivered",
+        "agentRuntimeNextState": "diagnostic_delivered",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "sensitive_data",
+        "agentRuntimeTemplateIds": "diagnostic.deliver",
+        "agentRuntimeDiagnosticLedgerStatus": "complete",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.009201",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "completed",
+        "diagnosticSummary": "a rotina prioritária do studio ainda sem processo claro",
+        "recommendedPlan": "a faixa mais aderente depois de validar a rotina prioritária",
+        "diagnosticCompletedAt": "2026-05-23T13:13:03.747Z",
+        "commercialStage": "diagnostic_completed"
+      },
+      "runtime": {
+        "state": "diagnostic_delivered",
+        "next": "diagnostic_delivered",
+        "route": "diagnostic",
+        "templates": "diagnostic.deliver",
+        "cost": "0.009201"
+      }
+    },
+    {
+      "lead": "quero falar com humano",
+      "taliya": [
+        "Claro. Vou deixar uma pessoa assumir daqui.",
+        "Também deixo o contexto salvo para você não precisar repetir tudo."
+      ],
+      "conversionPath": "human_whatsapp_assist",
+      "patch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_d6bda3d9ab6c47869ee7f6f378610a7f",
+        "agentRuntimeTraceId": "trace_1eb1db17a0dc4cf3b897bbb147501ca4",
+        "agentRuntimeCurrentAgent": "taliya_commercial_handoff_agent",
+        "agentRuntimePreviousState": "diagnostic_delivered",
+        "agentRuntimeCurrentState": "human_handoff",
+        "agentRuntimeNextState": "paused_by_human",
+        "agentRuntimeRoute": "handoff",
+        "agentRuntimeDetectedIntents": "handoff",
+        "agentRuntimeTemplateIds": "handoff.acknowledge",
+        "agentRuntimeDiagnosticLedgerStatus": "complete",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.008509",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "completed",
+        "diagnosticSummary": "a rotina prioritária do studio ainda sem processo claro",
+        "recommendedPlan": "a faixa mais aderente depois de validar a rotina prioritária",
+        "diagnosticCompletedAt": "2026-05-23T13:13:07.849Z",
+        "commercialStage": "human_handoff",
+        "humanActive": "requested",
+        "aiPaused": "true",
+        "closureState": "human_active",
+        "nextAction": "Humano deve assumir a conversa; automacao pausada."
+      },
+      "runtime": {
+        "state": "human_handoff",
+        "next": "paused_by_human",
+        "route": "handoff",
+        "templates": "handoff.acknowledge",
+        "cost": "0.008509"
+      }
+    }
+  ],
+  "leadSummary": {
+    "status": "handoff_requested",
+    "priority": "manual",
+    "channel": "web",
+    "conversionPath": "human_whatsapp_assist",
+    "waitlistStatus": "not_offered",
+    "diagnosticStatus": "completed",
+    "demoStatus": "not_offered",
+    "contact": {},
+    "agentRuntime": {
+      "route": "handoff",
+      "runId": "run_d6bda3d9ab6c47869ee7f6f378610a7f",
+      "traceId": "trace_1eb1db17a0dc4cf3b897bbb147501ca4",
+      "nextState": "paused_by_human",
+      "templateIds": "handoff.acknowledge",
+      "currentAgent": "taliya_commercial_handoff_agent",
+      "currentState": "human_handoff",
+      "previousState": "diagnostic_delivered",
+      "guardrailFlags": "",
+      "detectedIntents": "handoff",
+      "estimatedCostUsd": 0.008509,
+      "productSourceVersion": "taliya-commercial-2026-05-22",
+      "diagnosticLedgerStatus": "complete"
+    },
+    "nextAction": "Humano deve assumir a conversa; automacao pausada."
+  },
+  "detailMessageCount": 22,
+  "handoff": {
+    "ok": true,
+    "runtimeSync": {
+      "ok": true,
+      "status": "human_paused",
+      "traceId": "trace_582bd3a1092d4abb93511edbd1db0332"
+    }
+  },
+  "afterHandoff": {
+    "status": "human_active",
+    "aiPaused": true,
+    "humanActive": true,
+    "lastOperatorActionAt": "2026-05-23T13:13:12.025Z"
+  }
+}

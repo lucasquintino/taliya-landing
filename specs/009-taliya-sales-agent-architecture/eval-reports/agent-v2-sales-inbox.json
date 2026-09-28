@@ -1,0 +1,43 @@
+{
+  "runId": "agent-v2-sales-inbox-1779416641670",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:24:01.670Z",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "sales inbox fixtures exist",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox contains agentV2",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox contains estimatedCostUsd",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox contains Agente v2",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox contains traceId",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox contains agentV2",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

@@ -1,0 +1,101 @@
+{
+  "runId": "agent-runtime-spec011-report-contract-1780273001901",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "createdAt": "2026-06-01T00:16:41.901Z",
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "report belongs to Spec 011",
+      "details": {
+        "expected": "011-taliya-commercial-agent-core-reset",
+        "actual": "011-taliya-commercial-agent-core-reset"
+      }
+    },
+    {
+      "ok": true,
+      "message": "report has explicit release gate",
+      "details": {
+        "releaseGate": "pass"
+      }
+    },
+    {
+      "ok": true,
+      "message": "report includes scenarios",
+      "details": {
+        "scenarioCount": 1
+      }
+    },
+    {
+      "ok": true,
+      "message": "scenario product-delta-integration-scope has identity",
+      "details": {
+        "id": "product-delta-integration-scope",
+        "title": "Integration scope should not overpromise Instagram or current-system setup"
+      }
+    },
+    {
+      "ok": true,
+      "message": "scenario product-delta-integration-scope lists checks",
+      "details": {
+        "checks": [
+          "integration_scope_safe",
+          "product_followup_source_keys",
+          "no_crm_lay_copy",
+          "owner_language_no_technical",
+          "llm_usage_required",
+          "template_ids_present",
+          "whatsapp_max_three_chunks"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "scenario product-delta-integration-scope records failures array",
+      "details": {
+        "failures": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "scenario product-delta-integration-scope turn 1 has mandatory Spec 011 artifacts",
+      "details": {
+        "missing": [],
+        "artifacts": {
+          "trace_id": true,
+          "context_snapshot": true,
+          "conductor_json": true,
+          "decision_json": true,
+          "rendered_messages": true,
+          "validator_results": true,
+          "repair_attempts": true,
+          "model_usage": true,
+          "runtime_state": true,
+          "sales_inbox_projection": true,
+          "delivery_events": true,
+          "trace_complete": true
+        }
+      }
+    }
+  ],
+  "releaseGate": "pass",
+  "checkedReport": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-integration-fixed-1.json",
+  "requiredTurnArtifacts": [
+    "trace_id",
+    "context_snapshot",
+    "conductor_json",
+    "decision_json",
+    "rendered_messages",
+    "validator_results",
+    "repair_attempts",
+    "model_usage",
+    "runtime_state",
+    "sales_inbox_projection",
+    "delivery_events",
+    "trace_complete"
+  ]
+}

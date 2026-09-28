@@ -1,0 +1,305 @@
+{
+  "schema": "012.real_model_golden_transcripts.v1",
+  "task": "T012-043",
+  "fixture_path": "scripts\\fixtures\\agent-runtime\\spec-011-golden-transcripts.json",
+  "started_at": "2026-06-15T14:52:11.726935+00:00",
+  "finished_at": "2026-06-15T14:52:11.726935+00:00",
+  "model": "gpt-5.4-mini",
+  "paid_approval": "User approved paid T012-043 test in chat on 2026-06-15: 'aprovado o teste pago'.",
+  "paid_call_status": "blocked_before_openai_call",
+  "budget": {
+    "max_total_cost_usd": 1.0,
+    "cap_policy": "conservative local hard cap for this approved run"
+  },
+  "summary": {
+    "scenario_count": 9,
+    "executed_scenarios": 0,
+    "passed_scenarios": 0,
+    "failed_scenarios": 0,
+    "total_model_operations": 0,
+    "total_cost_usd": 0.0
+  },
+  "aborted": true,
+  "abort_reason": "OPENAI_API_KEY is not available in the environment or runtime .env.",
+  "scenarios": [
+    {
+      "scenario_id": "final-price-first",
+      "title": "Golden RC-011-052 direct price",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "quanto custa?"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "route:product",
+        "opening_type:direct_question_opening",
+        "mentions_all_prices",
+        "direct_question_answered_first",
+        "diagnostic_price_hook",
+        "first_response_greeting",
+        "has_product_source",
+        "no_waitlist",
+        "template_ids_present",
+        "sales_inbox_projection_consistent",
+        "all_messages_short"
+      ],
+      "check_results": [],
+      "issues": [
+        "OPENAI_API_KEY is not available in the environment or runtime .env."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "final-price-plus-pain",
+      "title": "Golden RC-011-053 price plus pain",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "tenho reposicao baguncada na agenda e queria saber preco"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "route:product",
+        "mentions_all_prices",
+        "direct_question_answered_first",
+        "diagnostic_offered_or_started",
+        "mentions_user_context",
+        "has_product_source",
+        "template_ids_present",
+        "sales_inbox_projection_consistent",
+        "whatsapp_max_three_chunks",
+        "all_messages_short"
+      ],
+      "check_results": [],
+      "issues": [
+        "OPENAI_API_KEY is not available in the environment or runtime .env."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "final-pain-first",
+      "title": "Golden RC-011-053A pain-first opening",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "route:diagnostic",
+        "diagnostic_offered_or_started",
+        "mentions_user_context",
+        "first_response_greeting",
+        "no_waitlist",
+        "template_ids_present",
+        "sales_inbox_projection_consistent",
+        "all_messages_short"
+      ],
+      "check_results": [],
+      "issues": [
+        "OPENAI_API_KEY is not available in the environment or runtime .env."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "final-instagram-interest",
+      "title": "Golden RC-011-054 Instagram/source opening",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "vim pelo Instagram e gostaria de saber mais"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "route:entry",
+        "opening_type:social_source_opening",
+        "no_waitlist",
+        "not_generic_intro",
+        "no_internal_agent_text",
+        "template_ids_present",
+        "sales_inbox_projection_consistent",
+        "whatsapp_max_three_chunks",
+        "all_messages_short"
+      ],
+      "check_results": [],
+      "issues": [
+        "OPENAI_API_KEY is not available in the environment or runtime .env."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "final-whatsapp-question",
+      "title": "Golden RC-011-055 WhatsApp product behavior",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "como funciona no WhatsApp?"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "route:product",
+        "direct_question_answered_first",
+        "whatsapp_student_no_app",
+        "mentions_demo_link",
+        "first_response_greeting",
+        "has_product_source",
+        "no_phone_request",
+        "template_ids_present",
+        "sales_inbox_projection_consistent",
+        "whatsapp_max_three_chunks",
+        "all_messages_short"
+      ],
+      "check_results": [],
+      "issues": [
+        "OPENAI_API_KEY is not available in the environment or runtime .env."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "step3g-long-conversation",
+      "title": "Golden RC-011-056/060 diagnostic question-by-question and long conversation",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "quanto custa?",
+        "tenho 95 alunos e perco interessados no whatsapp",
+        "pode fazer diagnostico",
+        "95 alunos ativos",
+        "whatsapp e follow-up dao mais trabalho",
+        "nao consigo ver quem precisa de retorno no dia",
+        "hoje fica em planilha e whatsapp",
+        "prioridade e vendas primeiro",
+        "quero resolver agora",
+        "me manda demo",
+        "achei caro",
+        "quero comecar, me coloca na lista",
+        "como funciona mesmo?",
+        "quero falar com alguem"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "mentions_all_prices",
+        "diagnostic_question_has_feedback",
+        "no_repeat_answered_size_question",
+        "diagnostic_completed",
+        "diagnostic_ledger_complete",
+        "mentions_demo_link",
+        "price_objection_value_argument",
+        "no_roi_promise",
+        "waitlist_offered_or_handoff",
+        "handoff_requested",
+        "template_ids_present",
+        "sales_inbox_projection_consistent",
+        "all_messages_short"
+      ],
+      "check_results": [],
+      "issues": [
+        "OPENAI_API_KEY is not available in the environment or runtime .env."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "final-waitlist-joined",
+      "title": "Golden RC-011-057 waitlist after fit/intent",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "quero contratar, como faco para entrar?",
+        "pode colocar o Studio Viva em Vitoria ES"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "route:waitlist",
+        "waitlist_joined",
+        "no_checkout_link",
+        "no_phone_request",
+        "template_ids_present",
+        "sales_inbox_projection_consistent",
+        "whatsapp_max_three_chunks",
+        "all_messages_short"
+      ],
+      "check_results": [],
+      "issues": [
+        "OPENAI_API_KEY is not available in the environment or runtime .env."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "final-human-request-silent-after",
+      "title": "Golden RC-011-058 human handoff pause",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "quero falar com uma pessoa",
+        "ainda estou aqui"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "route:handoff",
+        "handoff_requested",
+        "second_turn_silent",
+        "template_ids_present"
+      ],
+      "check_results": [],
+      "issues": [
+        "OPENAI_API_KEY is not available in the environment or runtime .env."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    },
+    {
+      "scenario_id": "final-demo-request",
+      "title": "Golden RC-011-059 product demo",
+      "status": "blocked_before_openai_call",
+      "messages": [
+        "quero ver uma demonstracao"
+      ],
+      "transcript": [],
+      "turns": [],
+      "final_state": {},
+      "checks": [
+        "route:product",
+        "direct_question_answered_first",
+        "mentions_demo_link",
+        "demo_context_prompt",
+        "first_response_greeting",
+        "has_product_source",
+        "no_waitlist",
+        "template_ids_present",
+        "sales_inbox_projection_consistent",
+        "all_messages_short"
+      ],
+      "check_results": [],
+      "issues": [
+        "OPENAI_API_KEY is not available in the environment or runtime .env."
+      ],
+      "total_model_operations": 0,
+      "total_cost_usd": 0.0,
+      "cost_cap_exceeded": false
+    }
+  ]
+}

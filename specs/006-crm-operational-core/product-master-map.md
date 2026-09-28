@@ -1,0 +1,205 @@
+# Product Master Map - Taliya CRM Web/App
+
+> Status: exploratory source of truth. This table consolidates the current candidate universe for CRM web, mobile app, WhatsApp and integrated AI agents.
+
+## Counts
+
+| Group | Count |
+| --- | ---: |
+| Cataloged manager use cases | 132 |
+| Audit gap candidates | 25 |
+| Total candidate manager use cases | 157 |
+| Candidate AI-agent flows | 96 |
+| Optional AI-agent flows under validation | 2 |
+
+## Status Legend
+
+| Status | Meaning |
+| --- | --- |
+| candidate | Mapped, not yet final product decision. |
+| needs-detail | Needs fuller behavior/UI/data spec. |
+| merge-review | May merge into another case. |
+| web-first | Web is primary; mobile may be partial. |
+| mobile-action | Mobile should support daily action/approval. |
+| config-web | Configuration should stay web-first. |
+
+## Mode Legend
+
+| Mode | Meaning |
+| --- | --- |
+| M | Manual path required. |
+| C | Copilot path useful or required. |
+| A | Autonomous path eligible if safe/configured. |
+
+## Master Table
+
+| ID | Area | Name | Main Object | Primary Surface | UI Pattern | Modes | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| MUC-001 | Setup | Claim paid workspace | Tenant | web | page/form | M | candidate |
+| MUC-002 | Setup | Complete studio profile | StudioProfile | web | page/form | M/C | candidate |
+| MUC-003 | Setup | Finish setup checklist | SetupChecklist | web | checklist/assistant | M/C/A | candidate |
+| MUC-004 | Setup | Import initial data | ImportJob | web | page/form | M/C/A | candidate |
+| MUC-005 | Setup | Resolve import duplicates | Contact/Student | web | review table | M/C | candidate |
+| MUC-006 | Setup | Invite team members | Membership | web | page/form | M | candidate |
+| MUC-007 | Setup | Configure roles and permissions | Membership/Permission | web | config page | M/C | candidate |
+| MUC-008 | Setup | Configure WhatsApp and channels | ChannelConnection | web | config page | M/C/A | candidate |
+| MUC-009 | Setup | Configure templates and answers | Template/FAQ | web | config page | M/C | candidate |
+| MUC-010 | Setup | Configure agenda rules | AgendaPolicy | web | config page | M/C | candidate |
+| MUC-011 | Setup | Configure finance rules and plans | StudioPlan | web | config page | M/C | candidate |
+| MUC-012 | Setup | Configure privacy and opt-out | PrivacyPolicy | web | config page | M/C | candidate |
+| MUC-013 | Setup | Configure operational policies | PolicyVersion | web | policy page | M/C | candidate |
+| MUC-014 | Daily | Open daily priorities | TodayDashboard | web/mobile | dashboard/assistant | M/C/A | candidate |
+| MUC-015 | Daily | Review money on the table | OpportunityMetric | web | dashboard | M/C/A | candidate |
+| MUC-016 | Daily | Review human queue | OperationCase | web/mobile | queue | M/C/A | candidate |
+| MUC-017 | Daily | Review tasks by owner/SLA | Task | web/mobile | list | M/C/A | candidate |
+| MUC-018 | Daily | Delegate task or case | Task/Case | web/mobile | action | M/C | candidate |
+| MUC-019 | Daily | Close resolved cases | OperationCase | web/mobile | action/drawer | M/C | candidate |
+| MUC-020 | Daily | Review notifications and alerts | Notification | web/mobile | notification center | M/C/A | candidate |
+| MUC-021 | Daily | Review bottlenecks | Bottleneck | web | report/assistant | M/C/A | candidate |
+| MUC-022 | Daily | Review weekly summary | WeeklyReport | web/mobile | report | M/C/A | candidate |
+| MUC-023 | Daily | Check data/setup blockers | DataQualityIssue | web | data-quality list | M/C/A | candidate |
+| MUC-024 | Inbox | New WhatsApp conversation | Conversation | web/mobile/whatsapp | inbox + auto | M/C/A | candidate |
+| MUC-025 | Inbox | Existing student request | Conversation/Student | web/mobile/whatsapp | inbox action | M/C/A | candidate |
+| MUC-026 | Inbox | FAQ or missing answer | Conversation/FAQ | web/mobile/whatsapp | inbox action | M/C/A | candidate |
+| MUC-027 | Inbox | Human takeover and response | Conversation/Case | web/mobile/whatsapp | action/drawer | M/C | candidate |
+| MUC-028 | Inbox | Register opt-out/preference | Contact | web/mobile/whatsapp | form/auto | M/C/A | candidate |
+| MUC-029 | Inbox | Group/shared-phone/family | Conversation/Responsible | web/mobile/whatsapp | inbox action | M/C/A | candidate |
+| MUC-030 | Inbox | Update contact data safely | Contact | web/mobile | form/action | M/C | candidate |
+| MUC-031 | Inbox | Validate responsible permission | ResponsibleParty | web/mobile | form/action | M/C | candidate |
+| MUC-032 | Inbox | Classify media/proof/document/audio | Message/Document | web/mobile/whatsapp | inbox action | M/C/A | candidate |
+| MUC-033 | Inbox | Resolve contact/student duplicate | Contact/Student | web | review table | M/C | candidate |
+| MUC-034 | Inbox | Handle privacy/data request | PrivacyRequest | web | case | M/C | candidate |
+| MUC-035 | Inbox | Reopen stale conversation/SLA | Conversation/Task | web/mobile | alert/action | M/C/A | candidate |
+| MUC-036 | Sales | Capture multichannel lead | InterestedPerson | web | capture page | M/C/A | candidate |
+| MUC-037 | Sales | Register walk-in/manual lead | InterestedPerson | web/mobile | form | M/C | candidate |
+| MUC-038 | Sales | Review lead sources | SourceMetric | web | report | M/C/A | candidate |
+| MUC-039 | Sales | Qualify interested person | InterestedPerson | web/mobile | detail action | M/C/A | candidate |
+| MUC-040 | Sales | Price/plan question | Conversation/Plan | web/mobile/whatsapp | inbox action | M/C/A | candidate |
+| MUC-041 | Sales | Schedule trial class | Trial/ClassSession | web/mobile/whatsapp | scheduler | M/C/A | candidate |
+| MUC-042 | Sales | Send trial reminder | Trial | web/mobile/whatsapp | auto/action | M/C/A | candidate |
+| MUC-043 | Sales | Trial no-show/reschedule | Trial | web/mobile/whatsapp | action | M/C/A | candidate |
+| MUC-044 | Sales | Follow up after trial | InterestedPerson | web/mobile/whatsapp | action | M/C/A | candidate |
+| MUC-045 | Sales | Commercial follow-up cadence | InterestedPerson | web/whatsapp | auto/bulk | M/C/A | candidate |
+| MUC-046 | Sales | Objection handling | Conversation | web/mobile/whatsapp | approval/action | M/C/A | candidate |
+| MUC-047 | Sales | Create pre-enrollment | PreEnrollment | web | page/form | M/C | candidate |
+| MUC-048 | Sales | Checkout abandonment | Checkout | web/whatsapp | auto/action | M/C/A | candidate |
+| MUC-049 | Sales | Referral and benefit review | Referral | web | page/form | M/C | candidate |
+| MUC-050 | Sales | Demand with no available slot | InterestedPerson/Waitlist | web/mobile | action | M/C/A | candidate |
+| MUC-051 | Sales | Convert lead to student | InterestedPerson/Student | web | conversion action | M/C | candidate |
+| MUC-052 | Agenda | Create/adjust weekly grade | ClassGroup | web | page/form | M/C | candidate |
+| MUC-053 | Agenda | Create class group | ClassGroup | web | page/form | M/C | candidate |
+| MUC-054 | Agenda | Review calendar/day schedule | ClassSession | web/mobile | calendar | M/C/A | candidate |
+| MUC-055 | Agenda | Open class session | ClassSession | web/mobile | detail page | M | candidate |
+| MUC-056 | Agenda | Take attendance | AttendanceRecord | web/mobile | checklist | M/C/A | candidate |
+| MUC-057 | Agenda | Confirm presence | ClassSession/Message | web/mobile/whatsapp | auto/action | M/C/A | candidate |
+| MUC-058 | Agenda | Absence with notice | AttendanceRecord | web/mobile/whatsapp | action | M/C/A | candidate |
+| MUC-059 | Agenda | No-show | AttendanceRecord | web/mobile | auto/action | M/C/A | candidate |
+| MUC-060 | Agenda | Make-up request | MakeUpCredit | web/mobile/whatsapp | action/drawer | M/C/A | candidate |
+| MUC-061 | Agenda | Make-up credit ledger | MakeUpCredit | web/mobile | ledger | M/C/A | candidate |
+| MUC-062 | Agenda | Recover open slot | ClassSession/Waitlist | web/mobile/whatsapp | smart button | M/C/A | candidate |
+| MUC-063 | Agenda | Manage waitlist | WaitlistEntry | web/mobile | list/action | M/C/A | candidate |
+| MUC-064 | Agenda | Change fixed schedule | Student/ClassGroup | web/mobile | action/drawer | M/C | candidate |
+| MUC-065 | Agenda | Cancel/alter class by studio | ClassSession | web/mobile/whatsapp | approval/action | M/C | candidate |
+| MUC-066 | Agenda | Capacity/overbooking conflict | ClassGroup | web | alert/action | M/C/A | candidate |
+| MUC-067 | Agenda | First class checklist | Student/ClassSession | web/mobile | checklist | M/C/A | candidate |
+| MUC-068 | Agenda | Workshop/special class | Event | web | page/bulk | M/C/A | candidate |
+| MUC-069 | Finance | Create/update student plan | StudentPlan | web | page/form | M | candidate |
+| MUC-070 | Finance | Review finance overview | Payment | web/mobile | dashboard | M/C/A | candidate |
+| MUC-071 | Finance | Send due reminder | Payment/Message | web/mobile/whatsapp | auto/action | M/C/A | candidate |
+| MUC-072 | Finance | Overdue payment | Payment/Case | web/mobile/whatsapp | action | M/C/A | candidate |
+| MUC-073 | Finance | Send Pix/payment link | Payment/Charge | web/mobile/whatsapp | smart button | M/C/A | candidate |
+| MUC-074 | Finance | Confirm payment | Payment | web/webhook | form/auto | M/A | candidate |
+| MUC-075 | Finance | Reconcile unmatched payment | Payment | web | review table | M/C | candidate |
+| MUC-076 | Finance | Failed payment | Payment | web/whatsapp | auto/action | M/C/A | candidate |
+| MUC-077 | Finance | Receipt/invoice document | DocumentRecord | web/mobile/whatsapp | action | M/C/A | candidate |
+| MUC-078 | Finance | Contract/terms | Contract | web/whatsapp | action | M/C/A | candidate |
+| MUC-079 | Finance | Financial exception | OperationCase | web/mobile | case | M/C | candidate |
+| MUC-080 | Finance | Pause/freeze plan | StudentPlan | web/mobile | case/action | M/C | candidate |
+| MUC-081 | Finance | Block/release access | StudentPlan | web | case/approval | M/C | candidate |
+| MUC-082 | Finance | Credit/courtesy | Benefit | web | case/form | M | candidate |
+| MUC-083 | Finance | Effective plan change/ending | StudentPlan | web | case/action | M/C | candidate |
+| MUC-084 | Finance | Monthly financial close | FinanceReport | web | report | M/C/A | candidate |
+| MUC-085 | Retention | Review retention dashboard | RetentionRisk | web/mobile | dashboard | M/C/A | candidate |
+| MUC-086 | Retention | Frequency drop | Student | web/mobile/whatsapp | alert/action | M/C/A | candidate |
+| MUC-087 | Retention | Inactive student | Student | web/mobile/whatsapp | alert/action | M/C/A | candidate |
+| MUC-088 | Retention | Student return | Student | web/mobile/whatsapp | action | M/C/A | candidate |
+| MUC-089 | Retention | Cancellation risk | OperationCase | web/mobile | case | M/C | candidate |
+| MUC-090 | Retention | Post-cancellation | Student | web/mobile/whatsapp | case/action | M/C/A | candidate |
+| MUC-091 | Retention | Ex-student reactivation | Segment | web/whatsapp | bulk/approval | M/C | candidate |
+| MUC-092 | Retention | Satisfaction check | Feedback | web/mobile/whatsapp | auto/action | M/C/A | candidate |
+| MUC-093 | Retention | Open complaint case | ComplaintCase | web/mobile/whatsapp | case | M/C/A | candidate |
+| MUC-094 | Retention | Resolve complaint/recover trust | ComplaintCase | web/mobile/whatsapp | case/action | M/C | candidate |
+| MUC-095 | Retention | Return after pause | Student | web/mobile/whatsapp | auto/action | M/C/A | candidate |
+| MUC-096 | Retention | Risk segmentation | Segment | web | report/action | M/C/A | candidate |
+| MUC-097 | Retention | Sensitive health/personal event | OperationCase | web/mobile | case | M/C | candidate |
+| MUC-098 | History | Teacher opens class context | StudentHistory | web/mobile | assistant/detail | M/C/A | candidate |
+| MUC-099 | History | Add post-class observation | StudentHistoryEvent | web/mobile | form/action | M/C | candidate |
+| MUC-100 | History | Register restriction/care | StudentHistoryEvent | web/mobile | form/case | M/C | candidate |
+| MUC-101 | History | Review objective/evolution | StudentHistory | web/mobile | timeline | M/C/A | candidate |
+| MUC-102 | History | Store document/anamnesis | DocumentRecord | web/mobile | form/action | M/C/A | candidate |
+| MUC-103 | History | Correct history event | StudentHistoryEvent | web | form/case | M/C | candidate |
+| MUC-104 | History | Handoff between teachers | Task/StudentHistory | web/mobile | action | M/C/A | candidate |
+| MUC-105 | History | Remind teacher note | Task | web/mobile | auto/task | M/C/A | candidate |
+| MUC-106 | History | Share safe context with student | StudentHistory | web/mobile/whatsapp | approval/action | M/C | candidate |
+| MUC-107 | History | History visibility permissions | Permission | web | config page | M/C/A | candidate |
+| MUC-108 | History | Unified student timeline | StudentHistory | web/mobile | timeline/assistant | M/C/A | candidate |
+| MUC-109 | Agents | Configure included agents | AgentConfiguration | web | config page | M/C | candidate |
+| MUC-110 | Agents | Configure an agent | AgentConfiguration | web | config page | M/C | candidate |
+| MUC-111 | Agents | Configure a flow | FlowConfiguration | web | config page | M/C | candidate |
+| MUC-112 | Agents | Simulate flow | FlowConfiguration | web | simulation | M/C | candidate |
+| MUC-113 | Agents | Activate/pause flow | FlowConfiguration | web | action | M/C | candidate |
+| MUC-114 | Agents | Review flow execution | FlowRun | web | run panel | M/C/A | candidate |
+| MUC-115 | Agents | Approve/reject copilot action | Approval | web/mobile | approval drawer | M | candidate |
+| MUC-116 | Agents | Review agent performance | AgentReport | web | report | M/C/A | candidate |
+| MUC-117 | Agents | Investigate automation incident | IncidentCase | web | case/action | M/C/A | candidate |
+| MUC-118 | Agents | Change operational rule/policy | PolicyVersion | web | policy/action | M/C | candidate |
+| MUC-119 | Agents | Resolve flow blocked by data | DataQualityIssue | web | action | M/C/A | candidate |
+| MUC-120 | Agents | Review quota/usage | UsageLedger | web/mobile | dashboard | M/C/A | candidate |
+| MUC-121 | Agents | Configure economy rules | EconomyRule | web | config page | M/C/A | candidate |
+| MUC-122 | Agents | Buy/request quota pack | QuotaPack | web | billing action | M | candidate |
+| MUC-123 | Admin | Manage Taliya subscription | Subscription | web | billing page | M/A | candidate |
+| MUC-124 | Admin | View Taliya invoices | Invoice | web | billing page | M | candidate |
+| MUC-125 | Admin | Review integrations | Integration | web | integrations page | M/C/A | candidate |
+| MUC-126 | Admin | Investigate integration logs | IntegrationLog | web | logs/action | M/C/A | candidate |
+| MUC-127 | Admin | Review audit event | AuditEvent | web | audit detail | M/C | candidate |
+| MUC-128 | Admin | Reports hub/export review | Report | web | reports hub | M/C/A | candidate |
+| MUC-129 | Admin | Financial report | Report | web | report | M/C/A | candidate |
+| MUC-130 | Admin | Sales report | Report | web | report | M/C/A | candidate |
+| MUC-131 | Admin | Capacity/occupancy report | Report | web | report | M/C/A | candidate |
+| MUC-132 | Admin | Source ROI/quality | Report | web | report | M/C/A | candidate |
+| AUD-001 | AuditGap | Holidays/recess/closures | ClosureCalendar | web | config/policy | M/C | candidate |
+| AUD-002 | AuditGap | Rooms/equipment/resources | Resource | web | config page | M | candidate |
+| AUD-003 | AuditGap | Teacher availability rules | TeacherAvailability | web | config page | M | candidate |
+| AUD-004 | AuditGap | Tags/segments/fields | CustomField | web | config page | M/C | candidate |
+| AUD-005 | AuditGap | Role notification preferences | NotificationPreference | web | config page | M/A | candidate |
+| AUD-006 | AuditGap | Daily opening/closing checklist | ChecklistRun | web/mobile | checklist | M/C/A | candidate |
+| AUD-007 | AuditGap | Teacher availability issue | OperationCase | web | case/action | M/C | candidate |
+| AUD-008 | AuditGap | Room/equipment outage impact | Resource/Case | web | case/action | M/C/A | candidate |
+| AUD-009 | AuditGap | Holiday/recess class impact | PolicyVersion/ClassSession | web | simulation/action | M/C | candidate |
+| AUD-010 | AuditGap | Class/student broadcast | Broadcast | web/whatsapp | bulk/approval | M/C | candidate |
+| AUD-011 | AuditGap | Partial payment/payment promise | PaymentAgreement | web/mobile | form/case | M/C/A | candidate |
+| AUD-012 | AuditGap | Renegotiate overdue balance | PaymentAgreement | web | approval/case | M/C | candidate |
+| AUD-013 | AuditGap | Refund/chargeback/dispute | RefundDisputeCase | web | case | M/C | candidate |
+| AUD-014 | AuditGap | Financial/accounting export | ExportJob | web | export | M/A | candidate |
+| AUD-015 | AuditGap | Cashflow forecast | FinanceForecast | web | report | M/C/A | candidate |
+| AUD-016 | AuditGap | Milestone celebration | StudentMilestone | web/mobile/whatsapp | auto/action | M/C/A | candidate |
+| AUD-017 | AuditGap | First-week new student journey | Student | web/mobile | checklist/auto | M/C/A | candidate |
+| AUD-018 | AuditGap | Anamnesis/consent/emergency gate | IntakeGate | web/mobile | data-quality/action | M/C/A | candidate |
+| AUD-019 | AuditGap | Periodic student review | StudentReview | web/mobile | task/auto | M/C/A | candidate |
+| AUD-020 | AuditGap | Escalate sensitive complaint | ComplaintCase | web/mobile | case/action | M/C/A | candidate |
+| AUD-021 | AuditGap | Full CRM export/backup | ExportJob | web | export | M/A | candidate |
+| AUD-022 | AuditGap | LGPD export/delete/anonymize | PrivacyRequest | web | privacy case | M/C | candidate |
+| AUD-023 | AuditGap | Taliya support access approval | SupportAccessGrant | web | approval | M/C/A | candidate |
+| AUD-024 | AuditGap | Archive/reactivate record | RecordArchiveState | web/mobile | action | M | candidate |
+| AUD-025 | AuditGap | Segment and bulk eligibility | SegmentDefinition | web | segment/bulk | M/C/A | candidate |
+
+## Derived Views
+
+This table powers:
+
+- `journey-metro-map.md`
+- `object-action-map.md`
+- `execution-swimlanes.md`
+- `screen-inventory-tree.md`
+- `coverage-heatmap.md`
+- `decision-kanban.md`

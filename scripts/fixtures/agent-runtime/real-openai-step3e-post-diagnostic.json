@@ -1,0 +1,77 @@
+[
+  {
+    "id": "step3e-post-diagnostic-price-objection",
+    "title": "After diagnostic price objection should use memory and not restart diagnostic",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+      "achei caro"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "price_objection_value_argument",
+      "price_objection_contextual",
+      "price_objection_next_step",
+      "no_roi_promise",
+      "no_checkout_link",
+      "has_product_source",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3e-post-diagnostic-think",
+    "title": "After diagnostic vou pensar should not force waitlist",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+      "vou pensar"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "no_waitlist",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3e-post-diagnostic-start",
+    "title": "After diagnostic start intent should enter waitlist path",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+      "e se eu quiser começar?"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "waitlist_offered_or_handoff",
+      "waitlist_offer_mentions_limited_windows",
+      "has_product_source",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3e-post-diagnostic-human",
+    "title": "After diagnostic human request should handoff",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+      "posso falar com alguém?"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "route:handoff",
+      "handoff_requested",
+      "template_ids_present"
+    ]
+  }
+]

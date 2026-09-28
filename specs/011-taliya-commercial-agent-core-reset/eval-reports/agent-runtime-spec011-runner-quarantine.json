@@ -1,0 +1,149 @@
+{
+  "runId": "agent-runtime-spec011-runner-quarantine-1780583241496",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-093",
+  "createdAt": "2026-06-04T14:27:21.496Z",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "releaseGate": "pass",
+  "checkedFiles": {
+    "runtimeApi": "services/taliya-agent-runtime/app/main.py",
+    "runtimeClient": "lib/landing/ai-attendant/runtime-client.ts",
+    "coreFiles": [
+      "services/taliya-agent-runtime/app/core/taliya_commercial/conductor.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/conductor_policy.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/context_builder.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/context_profile.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/context_snapshot.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/cost_report.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/decision_compiler.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/failed_path_guards.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/fallback.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/governance.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/outbox.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/product_fact_static_audit.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/product_knowledge.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/renderer.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/repair.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_adapter.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_state.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/sales_inbox_projection.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/schemas.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/schema_versioning.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/template_registry.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/trace_export.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/trace_store.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/turn_gate.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/turn_situation.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/validators.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/__init__.py"
+    ]
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "runtime API shell does not import or call runtime/runner.py",
+      "details": {
+        "mainRunnerImportHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "Spec 011 core package does not import or call runtime/runner.py",
+      "details": {
+        "coreRunnerImportHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "legacy /v1/agent-runs rejects Taliya commercial turns instead of calling the old runner",
+      "details": {
+        "legacyEndpointQuarantineHits": [
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 231,
+            "text": "\"legacy_commercial_runner_quarantined\","
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 232,
+            "text": "\"Taliya commercial turns must use /v1/taliya-commercial/turn.\","
+          }
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "legacy /v1/agent-runs keeps only zero-token runtime_control handoff operations",
+      "details": {
+        "operationalControlHits": [
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 43,
+            "text": "def _runtime_control(payload: AgentRunRequest) -> dict[str, Any] | None:"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 44,
+            "text": "control = payload.metadata.get(\"runtime_control\")"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 65,
+            "text": "async def _apply_taliya_runtime_control("
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 101,
+            "text": "safety_flags=[f\"runtime_control:{action}\"],"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 151,
+            "text": "\"source\": \"runtime_control\","
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 228,
+            "text": "control = _runtime_control(payload)"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 235,
+            "text": "result = await _apply_taliya_runtime_control(payload, control)"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 48,
+            "text": "if action not in {\"pause_human\", \"resume_human\"}:"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 74,
+            "text": "paused = action == \"pause_human\""
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 48,
+            "text": "if action not in {\"pause_human\", \"resume_human\"}:"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/main.py",
+            "line": 102,
+            "text": "usage=Usage(model=None, input_tokens=0, output_tokens=0, cost_usd=0),"
+          }
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "public commercial runtime client does not post turns to /v1/agent-runs",
+      "details": {
+        "runtimeClientLegacyTurnHits": []
+      }
+    }
+  ]
+}

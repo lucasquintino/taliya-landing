@@ -1,0 +1,5 @@
+coverage_scope,source,status,notes
+157 casos candidatos,"page-case-coverage.pt-BR.csv","coberto v0.1","Arquivo filtravel existente aponta pagina dona, profundidade, mobile e forma de automacao."
+Casos gerenciais,"product-master-map-v2.pt-BR.md","coberto v0.1","Rodadas 1-7 detalham as telas donas por area funcional."
+Casos sensiveis,"round-6-finance-retention-sensitive-spec.pt-BR.md; round-7-agents-quotas-governance-spec.pt-BR.md","coberto v0.1","Acoes sensiveis exigem permissao, impacto e auditoria."
+Operacao sem agentes,"zero-agent-operating-model.pt-BR.md; Rodadas 1-7","coberto v0.1","Todo caminho critico tem alternativa manual."

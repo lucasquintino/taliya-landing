@@ -1,0 +1,134 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-t011-105-safety-audit",
+  "releaseGate": "pass",
+  "paidOpenAiSpend": 0,
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "paid batch requires exact CLI approval token and budget before paid work",
+      "details": {
+        "approvalIndex": 10353,
+        "firstCommandIndex": 10658,
+        "firstPaidCommandIndex": 11957,
+        "approvalBeforeCommands": true
+      }
+    },
+    {
+      "ok": true,
+      "message": "paid batch cannot use environment-only approval and validates before any command starts",
+      "details": {
+        "approvalIndex": 10353,
+        "firstCommandIndex": 10658,
+        "firstPaidCommandIndex": 11957,
+        "processEnvHits": 0
+      }
+    },
+    {
+      "ok": true,
+      "message": "paid batch refuses continue-on-failure and has explicit stop gates after each paid block",
+      "details": {
+        "paidCommandIds": [
+          "paid_pain_first",
+          "paid_long_conversation",
+          "paid_do_not_do_missing"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "paid batch has exactly three paid commands with per-scenario caps",
+      "details": {
+        "paidCommandCount": 3,
+        "requiredScenarioIds": [
+          "final-pain-first",
+          "step3g-long-conversation",
+          "do-not-do-early-phone-capture",
+          "do-not-do-date-vip-discount",
+          "do-not-do-client-studio-whatsapp-capture",
+          "do-not-do-wrong-student-language"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "paid batch rejects stale scenario and aggregation reports during the batch",
+      "details": {
+        "freshnessCheckCount": 6
+      }
+    },
+    {
+      "ok": true,
+      "message": "paid batch rejects source/gate drift before continuing across paid phases",
+      "details": {
+        "sourceStabilityCheckCount": 7
+      }
+    },
+    {
+      "ok": true,
+      "message": "paid batch can only pass with all commands green, three paid commands, and cost within budget",
+      "details": {
+        "passGateExcerptPresent": true
+      }
+    },
+    {
+      "ok": true,
+      "message": "closure requires fresh evidence, matching batch/scenario cost, and approved budget/model-call envelope",
+      "details": {
+        "closureFreshnessChecks": 3,
+        "closureCostChecks": 5
+      }
+    },
+    {
+      "ok": true,
+      "message": "closure preserves protected /pilates, floating-agent, and Sales Inbox UI source diff gate",
+      "details": {
+        "protectedPathCount": 6
+      }
+    },
+    {
+      "ok": true,
+      "message": "golden/do-not-do aggregation reports carry generatedAt timestamps for freshness checks",
+      "details": {
+        "generatedAtHits": 1
+      }
+    },
+    {
+      "ok": true,
+      "message": "readiness requires known critical validator recovery before paid reruns",
+      "details": {
+        "coveredValidatorCodeHits": [
+          "pain_first_must_offer_diagnostic",
+          "diagnostic_urgency_answer_not_captured",
+          "diagnostic_next_question_invalid",
+          "diagnostic_next_question_not_missing",
+          "diagnostic_final_demo_stage_missing",
+          "diagnostic_final_staged_order_invalid",
+          "price_question_missing_price_answer",
+          "price_question_missing_diagnostic_hook",
+          "price_question_missing_diagnostic_offer",
+          "demo_direct_question_flags_missing",
+          "sales_inbox_diagnostic_status_mismatch"
+        ],
+        "readinessGatePresent": true
+      }
+    },
+    {
+      "ok": true,
+      "message": "readiness proves no-cost approval refusals and the US$0.36 / 19-call paid ceiling",
+      "details": {
+        "refusalChecks": [
+          "paid_batch_refuses_without_approval",
+          "paid_batch_refuses_wrong_budget",
+          "paid_batch_refuses_env_only_approval",
+          "paid_batch_refuses_continue_on_failure"
+        ]
+      }
+    }
+  ]
+}

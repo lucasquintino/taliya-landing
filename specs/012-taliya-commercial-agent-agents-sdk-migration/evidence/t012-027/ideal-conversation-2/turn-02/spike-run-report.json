@@ -1,0 +1,465 @@
+{
+  "proof_type": "isolated_spike_paid",
+  "model": "gpt-5.4-mini",
+  "tracing_disabled": true,
+  "public_cutover": false,
+  "paid_call_status": "run",
+  "started_at": "2026-06-10T11:09:26.906956+00:00",
+  "budget": {
+    "max_total_model_operations": 58,
+    "max_total_cost_usd": 1.495184,
+    "max_model_operations_per_scenario": 3
+  },
+  "total_model_operations": 2,
+  "total_cost_usd": 0.006067,
+  "aborted": false,
+  "abort_reason": null,
+  "scenarios": [
+    {
+      "number": 2,
+      "scenario_id": "ideal_turn_02",
+      "channel": "whatsapp",
+      "required_proof": "Pain-first: understand and reuse the concrete pain naturally.",
+      "input_transcript": [
+        {
+          "role": "system",
+          "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"not_applicable\", \"intent\": \"not_applicable\"}.\nstate: {\"demo\": {\"status\": \"not_applicable\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"not_applicable\", \"intent\": \"not_applicable\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+        },
+        {
+          "role": "user",
+          "content": "oi, vi o perfil de voces no Instagram"
+        },
+        {
+          "role": "assistant",
+          "content": "Oi, tudo bem?"
+        },
+        {
+          "role": "assistant",
+          "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+        },
+        {
+          "role": "user",
+          "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+        }
+      ],
+      "starting_agent": "taliya_triage_agent",
+      "agent_path": [
+        {
+          "event": "start",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": "taliya_entry_agent",
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": null,
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_entry_agent",
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "final",
+          "agent": "taliya_entry_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        }
+      ],
+      "tool_calls": [
+        {
+          "event": "handoff",
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_entry_agent"
+        }
+      ],
+      "sdk_final_output": {
+        "schema_version": "012.sdk_turn_output.v1",
+        "commercial_understanding": {
+          "intents": [
+            "pain",
+            "source"
+          ],
+          "direct_question": null,
+          "customer_need": "reduzir atraso no WhatsApp para não perder alunos novos",
+          "pain_context": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado",
+          "source_context": "vi o perfil de voces no Instagram",
+          "mixed_intent": false,
+          "extracted_facts": [
+            {
+              "key": "source_instagram",
+              "kind": "source",
+              "raw_text": "vi o perfil de voces no Instagram",
+              "value_text": "Instagram",
+              "currency": null,
+              "evidence": [
+                "source social explicitado pelo lead"
+              ]
+            },
+            {
+              "key": "pain_whatsapp_delay",
+              "kind": "pain",
+              "raw_text": "to perdendo aluno novo porque o WhatsApp vive atrasado",
+              "value_text": "WhatsApp atrasado",
+              "currency": null,
+              "evidence": [
+                "dor operacional explicitada pelo lead"
+              ]
+            }
+          ],
+          "evidence": [
+            "oi, vi o perfil de voces no Instagram",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "answer_obligations": [],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": "pain_context",
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "demo_proposal": {
+          "status": "not_applicable",
+          "next_step": "",
+          "evidence": []
+        },
+        "waitlist_proposal": {
+          "eligibility": "not_applicable",
+          "intent": "not_applicable",
+          "missing_details": [],
+          "evidence": []
+        },
+        "handoff_proposal": {
+          "status": "not_applicable",
+          "reason": null,
+          "pause_required": false,
+          "evidence": []
+        },
+        "template_plan": {
+          "template_ids": [
+            "opening.instagram_source",
+            "diagnostic.offer_soft"
+          ],
+          "variables": [
+            {
+              "name": "pain_context_human",
+              "kind": "long_text",
+              "value": "Perda de alunos novos porque o WhatsApp do studio fica atrasado",
+              "source": "user_message",
+              "evidence": [
+                "to perdendo aluno novo porque o WhatsApp vive atrasado"
+              ],
+              "max_length": 420
+            }
+          ],
+          "evidence": [
+            "oi, vi o perfil de voces no Instagram",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "state_patch": {
+          "handoff": null,
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "safety": {
+          "guardrail_flags": [],
+          "uncertainty": "low"
+        },
+        "sales_inbox_projection": {
+          "commercial_stage": "opening",
+          "last_intent": "pain",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": "not_applicable",
+          "handoff_status": "none",
+          "next_action_hint": "offer soft diagnostic after Instagram source opening"
+        },
+        "delivery": {
+          "chunk_policy": "default"
+        },
+        "confidence": "high",
+        "risks": []
+      },
+      "turn_proposal": {
+        "schema_version": "012.turn_proposal.v1",
+        "turn_id": "spike_turn_ideal_turn_02",
+        "conversation_id": "spike_conv_ideal_turn_02",
+        "channel": "whatsapp",
+        "starting_agent": "taliya_triage_agent",
+        "agent_path": [
+          {
+            "event": "start",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": "taliya_entry_agent",
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": null,
+            "from_agent": "taliya_triage_agent",
+            "to_agent": "taliya_entry_agent",
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "final",
+            "agent": "taliya_entry_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          }
+        ],
+        "commercial_understanding": {
+          "intents": [
+            "pain",
+            "source"
+          ],
+          "direct_question": null,
+          "customer_need": "reduzir atraso no WhatsApp para não perder alunos novos",
+          "pain_context": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado",
+          "source_context": "vi o perfil de voces no Instagram",
+          "mixed_intent": false,
+          "extracted_facts": [
+            {
+              "key": "source_instagram",
+              "kind": "source",
+              "raw_text": "vi o perfil de voces no Instagram",
+              "value": "Instagram",
+              "evidence": [
+                "source social explicitado pelo lead"
+              ]
+            },
+            {
+              "key": "pain_whatsapp_delay",
+              "kind": "pain",
+              "raw_text": "to perdendo aluno novo porque o WhatsApp vive atrasado",
+              "value": "WhatsApp atrasado",
+              "evidence": [
+                "dor operacional explicitada pelo lead"
+              ]
+            }
+          ],
+          "evidence": [
+            "oi, vi o perfil de voces no Instagram",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "answer_obligations": [],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": "pain_context",
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "demo_proposal": {
+          "status": "not_applicable",
+          "next_step": "",
+          "evidence": []
+        },
+        "waitlist_proposal": {
+          "eligibility": "not_applicable",
+          "intent": "not_applicable",
+          "missing_details": [],
+          "evidence": []
+        },
+        "handoff_proposal": {
+          "status": "not_applicable",
+          "reason": null,
+          "pause_required": false,
+          "evidence": []
+        },
+        "template_proposal": {
+          "template_ids": [
+            "opening.instagram_source",
+            "diagnostic.offer_soft"
+          ],
+          "variables": {
+            "pain_context_human": {
+              "kind": "long_text",
+              "value": "Perda de alunos novos porque o WhatsApp do studio fica atrasado",
+              "source": "user_message",
+              "evidence": [
+                "to perdendo aluno novo porque o WhatsApp vive atrasado"
+              ],
+              "max_length": 420
+            }
+          },
+          "evidence": [
+            "oi, vi o perfil de voces no Instagram",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "safety": {
+          "guardrails": [],
+          "uncertainty": "low"
+        },
+        "state_patch_proposal": {
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "sales_inbox_projection_proposal": {
+          "commercial_stage": "opening",
+          "last_intent": "pain",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": "not_applicable",
+          "handoff_status": "none",
+          "next_action_hint": "offer soft diagnostic after Instagram source opening"
+        },
+        "delivery_proposal": {
+          "chunk_policy": "default",
+          "render_plan_only": true,
+          "evidence": [
+            "oi, vi o perfil de voces no Instagram",
+            "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+          ]
+        },
+        "confidence": "high",
+        "risks": [],
+        "usage": {
+          "model": "gpt-5.4-mini",
+          "model_operations": 2,
+          "input_tokens": 8266,
+          "output_tokens": 585,
+          "cost_usd": 0.006067,
+          "handoffs": 1,
+          "repairs": 0
+        }
+      },
+      "validator_result": {
+        "decision_id": "sdk_spike_turn_ideal_turn_02",
+        "status": "passed",
+        "errors": [],
+        "warnings": [],
+        "repair_attempt_count": 0,
+        "final_disposition": "accepted"
+      },
+      "rendered_preview": [
+        {
+          "text": "Oi, tudo bem?",
+          "template_id": "opening.instagram_source",
+          "channel": "whatsapp",
+          "sequence": 1
+        },
+        {
+          "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar.",
+          "template_id": "opening.instagram_source",
+          "channel": "whatsapp",
+          "sequence": 2
+        },
+        {
+          "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?",
+          "template_id": "opening.instagram_source",
+          "channel": "whatsapp",
+          "sequence": 3
+        },
+        {
+          "text": "Perda de alunos novos porque o WhatsApp do studio fica atrasado",
+          "template_id": "diagnostic.offer_soft",
+          "channel": "whatsapp",
+          "sequence": 4
+        },
+        {
+          "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+          "template_id": "diagnostic.offer_soft",
+          "channel": "whatsapp",
+          "sequence": 5
+        },
+        {
+          "text": "O que voce acha?",
+          "template_id": "diagnostic.offer_soft",
+          "channel": "whatsapp",
+          "sequence": 6
+        }
+      ],
+      "proposed_state_diff": {
+        "delivery": {
+          "defer_inbound_during_chunks": false,
+          "deferred_inbound_count": 0
+        }
+      },
+      "proposed_sales_inbox_projection": {
+        "commercial_stage": "opening",
+        "last_intent": "pain",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "not_applicable",
+        "handoff_status": "none",
+        "next_action_hint": "offer soft diagnostic after Instagram source opening"
+      },
+      "usage": {
+        "model": "gpt-5.4-mini",
+        "model_operations": 2,
+        "input_tokens": 8266,
+        "output_tokens": 585,
+        "cost_usd": 0.006067,
+        "handoffs": 1,
+        "repairs": 0
+      },
+      "status": "passed_structural",
+      "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+      "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+    }
+  ]
+}

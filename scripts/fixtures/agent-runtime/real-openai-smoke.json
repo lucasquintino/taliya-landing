@@ -1,0 +1,96 @@
+[
+  {
+    "id": "real-price-direct",
+    "title": "Pergunta direta de preco deve responder sem esconder",
+    "channel": "widget",
+    "messages": ["Quanto custa a Taliya e quais planos existem?"],
+    "checks": ["mentions_all_prices", "has_product_source", "no_checkout_link", "not_generic_intro"]
+  },
+  {
+    "id": "real-confused-price-and-pain",
+    "title": "Mensagem dupla deve responder preco e acolher dor",
+    "channel": "whatsapp",
+    "messages": ["Tenho agenda e reposicoes meio perdidas, mas tambem queria saber preco."],
+    "checks": ["mentions_price", "mentions_user_context", "has_product_source", "not_generic_intro"]
+  },
+  {
+    "id": "real-plan-fit-with-context",
+    "title": "Plano ideal com contexto nao pode virar abertura generica",
+    "channel": "widget",
+    "messages": ["Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal."],
+    "checks": ["mentions_user_context", "has_product_source", "not_generic_intro", "asks_at_most_one_question"]
+  },
+  {
+    "id": "real-sales-whatsapp-followup",
+    "title": "Dor de interessados no WhatsApp deve gerar diagnostico util",
+    "channel": "widget",
+    "messages": ["Meu studio tem 120 alunos, interessados chegam no WhatsApp e somem porque ninguem retorna no mesmo dia."],
+    "checks": ["mentions_user_context", "not_generic_intro", "asks_at_most_one_question"]
+  },
+  {
+    "id": "real-thin-diagnostic",
+    "title": "Diagnostico com pouco dado nao pode fingir conclusao",
+    "channel": "widget",
+    "messages": ["Quero um diagnostico."],
+    "checks": ["diagnostic_not_completed", "asks_at_most_one_question", "not_fake_evidence"]
+  },
+  {
+    "id": "real-rich-diagnostic",
+    "title": "Diagnostico com contexto rico deve usar fatos do lead",
+    "channel": "widget",
+    "messages": ["Tenho 90 alunos, uso planilha e o maior problema e reposicao baguncada. Quero aliviar agenda primeiro."],
+    "checks": ["diagnostic_completed_or_useful", "mentions_user_context", "not_generic_intro"]
+  },
+  {
+    "id": "real-demo-link",
+    "title": "Demo deve usar link oficial",
+    "channel": "widget",
+    "messages": ["Tem demo ou pagina para eu ver como funciona?"],
+    "checks": ["mentions_demo_link", "has_product_source", "no_checkout_link"]
+  },
+  {
+    "id": "real-checkout-closed",
+    "title": "Checkout pedido explicitamente nao pode inventar link",
+    "channel": "widget",
+    "messages": ["Me manda o checkout para assinar agora."],
+    "checks": ["no_checkout_link", "waitlist_offered_or_handoff", "has_product_source"]
+  },
+  {
+    "id": "real-waitlist-join-complete",
+    "title": "Aceite com dados deve entrar na lista",
+    "channel": "widget",
+    "messages": ["Quero assinar agora", "Pode colocar o Studio Viva em Vitoria. ana@example.com"],
+    "checks": ["waitlist_joined", "no_checkout_link", "has_product_source"]
+  },
+  {
+    "id": "real-waitlist-missing-details",
+    "title": "Aceite sem dados deve pedir campos faltantes",
+    "channel": "widget",
+    "messages": ["Quero assinar agora", "Pode colocar"],
+    "checks": ["waitlist_pending_details", "asks_for_studio_details", "no_checkout_link"]
+  },
+  {
+    "id": "real-human-handoff",
+    "title": "Pedido de humano deve pausar automacao",
+    "channel": "whatsapp",
+    "messages": ["Quero falar com uma pessoa da Taliya.", "Alguem pode ver minha mensagem?"],
+    "checks": ["handoff_requested", "second_turn_silent"]
+  },
+  {
+    "id": "real-one-word-agenda",
+    "title": "Uma palavra deve virar pergunta focada, nao abertura generica",
+    "channel": "widget",
+    "messages": ["Agenda"],
+    "checks": ["mentions_user_context", "not_generic_intro", "asks_at_most_one_question"]
+  },
+  {
+    "id": "real-whatsapp-site-cta-accepts-diagnostic",
+    "title": "Aceite do diagnostico depois do CTA do site deve iniciar pergunta oficial",
+    "channel": "whatsapp",
+    "messages": [
+      "Oi, vim pelo site da Taliya e quero entender se faz sentido para o meu studio de Pilates.",
+      "claro quero sim"
+    ],
+    "checks": ["official_diagnostic_first_question", "no_internal_agent_text", "asks_at_most_one_question"]
+  }
+]

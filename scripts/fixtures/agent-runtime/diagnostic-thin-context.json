@@ -1,0 +1,12 @@
+[
+  {
+    "id": "thin-generic",
+    "message": "Quero um diagnostico.",
+    "expectedStatus": "insufficient_evidence"
+  },
+  {
+    "id": "thin-one-word",
+    "message": "Agenda",
+    "expectedStatus": "insufficient_evidence"
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "runId": "agent-runtime-spec011-shadow-mode-1780232960322",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-096",
+  "createdAt": "2026-05-31T13:09:20.322Z",
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "releaseGate": "pass",
+  "checkedFiles": [
+    "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_adapter.py",
+    "services/taliya-agent-runtime/app/runtime/schemas.py",
+    "services/taliya-agent-runtime/tests/test_spec011_shadow_mode.py",
+    "services/taliya-agent-runtime/app/main.py"
+  ],
+  "results": [
+    {
+      "ok": true,
+      "message": "runtime response has an explicit delivery_control envelope",
+      "details": {
+        "runtimeSchemasPath": "services/taliya-agent-runtime/app/runtime/schemas.py"
+      }
+    },
+    {
+      "ok": true,
+      "message": "shadow mode is explicit metadata control, not inferred from commercial text",
+      "details": {
+        "runtimeAdapterPath": "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_adapter.py"
+      }
+    },
+    {
+      "ok": true,
+      "message": "shadow mode suppresses public delivery while preserving rendered trace material",
+      "details": {
+        "runtimeAdapterPath": "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_adapter.py"
+      }
+    },
+    {
+      "ok": true,
+      "message": "shadow mode records model usage, trace, runtime diff, and Sales Inbox projection as evidence",
+      "details": {
+        "runtimeAdapterPath": "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_adapter.py"
+      }
+    },
+    {
+      "ok": true,
+      "message": "shadow persistence does not mutate live runtime state",
+      "details": {
+        "runtimeAdapterPath": "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_adapter.py"
+      }
+    },
+    {
+      "ok": true,
+      "message": "shadow mode does not call the old Python runner",
+      "details": {
+        "runnerHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "shadow mode has widget, WhatsApp, API envelope, and normal-mode separation tests",
+      "details": {
+        "shadowTestPath": "services/taliya-agent-runtime/tests/test_spec011_shadow_mode.py"
+      }
+    }
+  ]
+}

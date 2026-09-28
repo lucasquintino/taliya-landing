@@ -1,0 +1,144 @@
+[
+  {
+    "id": "luna-price-objection-context",
+    "fixture_schema_version": "012.luna_targeted.v1",
+    "title": "Short budget objection after the official price answer",
+    "channel": "widget",
+    "source": "pilates_landing",
+    "messages": [
+      "quanto custa?",
+      "hmm, talvez fique pesado"
+    ],
+    "checks": [
+      "answer_price_first",
+      "interpret_followup_from_immediate_context",
+      "price_objection_not_operational_pain"
+    ],
+    "expected": {
+      "decision": {
+        "template_ids": [
+          "product.price_direct",
+          "product.price_objection_value"
+        ]
+      },
+      "rendered_text_must_include": [
+        "R$ 197",
+        "valor para olhar com calma"
+      ],
+      "rendered_text_must_not_include": [
+        "rotina pesada",
+        "agenda pesada",
+        "reposição pesada",
+        "checkout",
+        "desconto"
+      ]
+    }
+  },
+  {
+    "id": "luna-waitlist-hesitation",
+    "fixture_schema_version": "012.luna_targeted.v1",
+    "title": "Lead pauses a waitlist decision to understand more",
+    "channel": "whatsapp",
+    "source": "taliya_whatsapp",
+    "messages": [
+      "quero começar, me coloca na lista",
+      "talvez, antes eu queria entender melhor"
+    ],
+    "checks": [
+      "offer_waitlist_from_post_diagnostic_intent",
+      "pause_without_collecting_details",
+      "do_not_mark_joined"
+    ],
+    "expected": {
+      "decision": {
+        "template_ids": [
+          "waitlist.offer_after_contract_intent",
+          "waitlist.pause_decision"
+        ]
+      },
+      "rendered_text_must_include": [
+        "O que você quer entender melhor antes de decidir?"
+      ],
+      "rendered_text_must_not_include": [
+        "qual é o nome do studio",
+        "deixei seu studio na lista",
+        "checkout",
+        "desconto"
+      ]
+    },
+    "initial_state": {
+      "canonical_state": "diagnostic_delivered",
+      "diagnostic": {
+        "status": "delivered",
+        "summary": "Studio já recebeu o diagnóstico e está avaliando o próximo passo.",
+        "ledger": {
+          "active_students_or_size": {
+            "status": "answered",
+            "answer_value": "95 alunos ativos"
+          },
+          "main_pain": {
+            "status": "answered",
+            "answer_value": "interessados sem retorno"
+          },
+          "pain_detail": {
+            "status": "answered",
+            "answer_value": "demora para responder no WhatsApp"
+          },
+          "current_process": {
+            "status": "answered",
+            "answer_value": "planilha e WhatsApp"
+          },
+          "priority": {
+            "status": "answered",
+            "answer_value": "vendas"
+          },
+          "urgency": {
+            "status": "answered",
+            "answer_value": "resolver neste mês"
+          }
+        },
+        "final_fields": {
+          "final_plan_or_range": "Essencial (R$ 497/mês)",
+          "final_demo_line": "Quer que eu te mande a demonstração?"
+        },
+        "first_recommended_step": "organizar atendimento e retorno de interessados",
+        "recommended_plan_or_range": "Essencial"
+      }
+    }
+  },
+  {
+    "id": "luna-diagnostic-acceptance-no-regreeting",
+    "fixture_schema_version": "012.luna_targeted.v1",
+    "title": "Diagnostic acceptance continues without restarting the greeting",
+    "channel": "widget",
+    "source": "pilates_landing",
+    "messages": [
+      "sim"
+    ],
+    "checks": [
+      "accept_existing_diagnostic_offer",
+      "start_diagnostic_directly",
+      "no_duplicate_greeting"
+    ],
+    "expected": {
+      "decision": {
+        "template_ids": [
+          "diagnostic.start",
+          "diagnostic.ask_active_students"
+        ]
+      },
+      "rendered_text_must_include": [
+        "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+      ],
+      "rendered_text_must_not_include": [
+        "Oi, tudo bem?",
+        "Em que posso ajudar?",
+        "O que você acha?"
+      ]
+    },
+    "initial_state": {
+      "canonical_state": "diagnostic_offered",
+      "summary": "A Taliya ofereceu um diagnóstico gratuito e aguarda a resposta do lead."
+    }
+  }
+]

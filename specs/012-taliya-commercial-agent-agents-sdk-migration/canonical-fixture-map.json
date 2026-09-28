@@ -1,0 +1,163 @@
+{
+  "schema_version": "012.canonical_fixture_map.v1",
+  "source_of_truth": {
+    "regression_cases": "specs/011-taliya-commercial-agent-core-reset/regression-cases.md",
+    "p0_fixture": "scripts/fixtures/agent-runtime/spec-011-real-openai-p0.json",
+    "golden_fixture": "scripts/fixtures/agent-runtime/spec-011-golden-transcripts.json",
+    "do_not_do_runtime_fixture": "scripts/fixtures/agent-runtime/spec-011-do-not-do-runtime.json",
+    "do_not_do_static_fixture": "specs/011-taliya-commercial-agent-core-reset/do-not-do-static-fixtures.json"
+  },
+  "golden": [
+    {
+      "id": "final-price-first",
+      "action_first_owners": ["product_agent", "decision_compiler", "action_validators", "renderer", "sales_inbox_projection"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "final-price-plus-pain",
+      "action_first_owners": ["product_agent", "decision_compiler", "action_validators", "renderer", "sales_inbox_projection"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "final-pain-first",
+      "action_first_owners": ["entry_agent", "decision_compiler", "action_validators", "renderer", "sales_inbox_projection"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "final-instagram-interest",
+      "action_first_owners": ["entry_agent", "turn_situation", "decision_compiler", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "final-whatsapp-question",
+      "action_first_owners": ["product_agent", "product_knowledge", "decision_compiler", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "step3g-long-conversation",
+      "action_first_owners": ["turn_situation", "diagnostic_agent", "product_agent", "waitlist_agent", "handoff_agent", "decision_compiler", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "final-waitlist-joined",
+      "action_first_owners": ["waitlist_agent", "decision_compiler", "action_validators", "renderer", "sales_inbox_projection"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "final-human-request-silent-after",
+      "action_first_owners": ["handoff_agent", "turn_situation", "action_turn_runner", "decision_compiler", "action_validators"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "final-demo-request",
+      "action_first_owners": ["product_agent", "product_knowledge", "decision_compiler", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    }
+  ],
+  "do_not_do_runtime": [
+    {
+      "id": "do-not-do-early-phone-capture",
+      "action_first_owners": ["product_agent", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "final-checkout-buy-intent",
+      "action_first_owners": ["waitlist_agent", "product_knowledge", "decision_compiler", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "do-not-do-date-vip-discount",
+      "action_first_owners": ["product_agent", "product_knowledge", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "product-delta-integration-scope",
+      "action_first_owners": ["product_agent", "product_knowledge", "decision_compiler", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "product-delta-security-data",
+      "action_first_owners": ["product_agent", "product_knowledge", "decision_compiler", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "do-not-do-client-studio-whatsapp-capture",
+      "action_first_owners": ["product_agent", "product_knowledge", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "do-not-do-wrong-student-language",
+      "action_first_owners": ["product_agent", "product_knowledge", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "spec011-rc003-price-497-not-student-count",
+      "action_first_owners": ["product_agent", "conductor_decision", "decision_compiler", "action_validators"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    }
+  ],
+  "p0_regression": [
+    {
+      "id": "spec011-rc001-rc002-internal-metadata-leak",
+      "action_first_owners": ["turn_situation", "profile_name_context", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "spec011-rc003-price-497-not-student-count",
+      "action_first_owners": ["conductor_decision", "decision_compiler", "action_validators"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "spec011-rc004-urgency-before-final",
+      "action_first_owners": ["turn_situation", "diagnostic_agent", "decision_compiler", "action_validators"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "spec011-rc005-rc006-rc008-simple-number-answer",
+      "action_first_owners": ["diagnostic_agent", "conductor_decision", "decision_compiler", "action_validators"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "spec011-rc007-valid-short-answer-does-not-stall",
+      "action_first_owners": ["diagnostic_agent", "decision_compiler", "action_validators"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "spec011-rc009-final-diagnostic-not-truncated",
+      "action_first_owners": ["decision_compiler", "renderer", "action_validators"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "spec011-rc012-final-diagnostic-plain-studio-language",
+      "action_first_owners": ["diagnostic_agent", "decision_compiler", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "spec011-rc013-sales-inbox-projection-consistency",
+      "action_first_owners": ["decision_compiler", "sales_inbox_projection"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    },
+    {
+      "id": "spec011-rc014-false-pass-protection",
+      "action_first_owners": ["eval_harness", "action_validators", "renderer"],
+      "proof_modes": ["mocked", "real_model_required_later"]
+    }
+  ],
+  "do_not_do_static": [
+    {
+      "id": "do-not-do-hardcoded-product-facts",
+      "action_first_owners": ["static_audit", "product_knowledge"],
+      "proof_modes": ["static"]
+    },
+    {
+      "id": "do-not-do-generic-freeform-template-variable",
+      "action_first_owners": ["static_audit", "conductor_decision", "renderer"],
+      "proof_modes": ["static"]
+    },
+    {
+      "id": "do-not-do-tactical-runner-patch",
+      "action_first_owners": ["static_audit", "action_turn_runner"],
+      "proof_modes": ["static"]
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "number": 8,
+  "scenario_id": "whatsapp_scope",
+  "channel": "whatsapp",
+  "required_proof": "Official WhatsApp scope only; no client/studio WhatsApp overreach.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "a Taliya conecta no WhatsApp do meu studio?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": "taliya_product_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_product_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"whatsapp_connection\",\"studio_whatsapp_integration\",\"official_whatsapp_scope\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "whatsapp_connection",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.whatsapp_connection"
+              ]
+            },
+            {
+              "key": "studio_whatsapp_integration",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.studio_whatsapp_integration"
+              ]
+            },
+            {
+              "key": "official_whatsapp_scope",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.official_whatsapp_scope"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "whatsapp_connection",
+            "studio_whatsapp_integration",
+            "official_whatsapp_scope"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.whatsapp_connection",
+          "product_knowledge.studio_whatsapp_integration",
+          "product_knowledge.official_whatsapp_scope"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_product_agent"
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "product",
+        "integration"
+      ],
+      "direct_question": "a Taliya conecta no WhatsApp do meu studio?",
+      "customer_need": "entender se há conexão/integracao com WhatsApp do studio",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "a Taliya conecta no WhatsApp do meu studio?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Answer whether Taliya connects to the studio WhatsApp.",
+        "answered_before_steering": true,
+        "evidence": [
+          "a Taliya conecta no WhatsApp do meu studio?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "a Taliya conecta no WhatsApp do meu studio?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "none",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [],
+      "variables": [],
+      "evidence": []
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [
+        "missing_official_fact_for_whatsapp_scope"
+      ],
+      "uncertainty": "high"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "product_question",
+      "last_intent": "product",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "needs_official_whatsapp_scope_fact"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "low",
+    "risks": [
+      "Official WhatsApp scope fact not available in retrieved knowledge."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_whatsapp_scope",
+    "conversation_id": "spike_conv_whatsapp_scope",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": "taliya_product_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_product_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "product",
+        "integration"
+      ],
+      "direct_question": "a Taliya conecta no WhatsApp do meu studio?",
+      "customer_need": "entender se há conexão/integracao com WhatsApp do studio",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "a Taliya conecta no WhatsApp do meu studio?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Answer whether Taliya connects to the studio WhatsApp.",
+        "answered_before_steering": true,
+        "evidence": [
+          "a Taliya conecta no WhatsApp do meu studio?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "a Taliya conecta no WhatsApp do meu studio?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "none",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [],
+      "variables": {},
+      "evidence": []
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "missing_official_fact_for_whatsapp_scope",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "high"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "product_question",
+      "last_intent": "product",
+      "next_action_hint": "needs_official_whatsapp_scope_fact"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": []
+    },
+    "confidence": "low",
+    "risks": [
+      "Official WhatsApp scope fact not available in retrieved knowledge."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 9802,
+      "output_tokens": 427,
+      "cost_usd": 0.006508,
+      "handoffs": 1,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_whatsapp_scope",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_missing_template_plan",
+        "severity": "P0",
+        "message": "Spike render path requires approved template ids.",
+        "path": "template_proposal.template_ids"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "product_question",
+    "last_intent": "product",
+    "next_action_hint": "needs_official_whatsapp_scope_fact"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 9802,
+    "output_tokens": 427,
+    "cost_usd": 0.006508,
+    "handoffs": 1,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_missing_template_plan",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

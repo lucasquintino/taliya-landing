@@ -1,0 +1,38 @@
+{
+  "runId": "agent-v2-idempotency-1779416635767",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:23:55.767Z",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "idempotency contains reserveAgentV2IdempotencyKey",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "idempotency contains ON CONFLICT",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "idempotency contains duplicate",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "idempotency contains duplicate_inbound",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "idempotency contains completeAgentV2IdempotencyKey",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

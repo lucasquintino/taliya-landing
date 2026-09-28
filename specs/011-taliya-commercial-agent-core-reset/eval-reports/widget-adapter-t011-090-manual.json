@@ -1,0 +1,48 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-090",
+  "createdAt": "2026-05-30T18:50:04.840Z",
+  "passed": true,
+  "checks": {
+    "nextRouteStatus": 200,
+    "runtimePath": "/v1/taliya-commercial/turn",
+    "runtimeChannel": "widget",
+    "runtimeSource": "pilates_landing",
+    "runtimeConversationId": "manual_browser_session_123",
+    "spec011Contract": "taliya_commercial_core_reset_v1",
+    "noClientPendingContext": true,
+    "assistantMessage": "Resposta controlada do runtime Spec 011.",
+    "traceId": "trace_manual_widget_spec011"
+  },
+  "capturedBody": {
+    "agent_key": "taliya_commercial",
+    "channel": "widget",
+    "conversation": {
+      "conversation_id": "manual_browser_session_123",
+      "lead_id": "manual_lead_widget_123",
+      "channel_conversation_id": "manual_browser_session_123",
+      "source": "pilates_landing",
+      "entry_intent": "widget"
+    },
+    "message": {
+      "idempotency_key": "widget:manual_widget_session_123:0:5e0c184da408b391",
+      "type": "text",
+      "text": "quanto custa?",
+      "timestamp": "2026-05-30T18:50:03.565Z"
+    },
+    "sender": {},
+    "metadata": {
+      "spec011_core_contract": "taliya_commercial_core_reset_v1",
+      "page_path": "/pilates",
+      "source_section": "floating_agent",
+      "provider": "widget",
+      "campaign_stage": "commercial",
+      "public_offer_mode": "direct_saas_subscription",
+      "selected_pain_ids": [],
+      "recommended_agent_ids": [],
+      "qualification": {},
+      "page_signals": {},
+      "recent_client_messages": []
+    }
+  }
+}

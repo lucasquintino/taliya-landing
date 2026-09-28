@@ -1,0 +1,58 @@
+{
+  "runId": "agent-runtime-handoff-1780089887668",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-05-29T21:24:47.668Z",
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "human pause fixture is present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime suppresses replies while human is active",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime accepts operator pause/resume control",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "handoff route syncs runtime state",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox actions sync pause/resume runtime state",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp Business App echo still pauses Sales Inbox",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "human handoff runtime tests pass",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  },
+  "fixtures": [
+    "lead-requests-human",
+    "manual-business-app-echo",
+    "duplicate-provider-message"
+  ]
+}

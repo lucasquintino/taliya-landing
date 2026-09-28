@@ -1,0 +1,332 @@
+{
+  "number": 10,
+  "scenario_id": "waitlist_curiosity",
+  "channel": "whatsapp",
+  "required_proof": "Curiosity does not become waitlist offer.",
+  "input_transcript": [
+    {
+      "role": "user",
+      "content": "como funciona essa lista de espera?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_waitlist_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_waitlist_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_waitlist_agent"
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_question"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "entender o funcionamento da lista de espera",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "como funciona essa lista de espera?",
+        "answered_before_steering": true,
+        "evidence": [
+          "como funciona essa lista de espera?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "waitlist_explanation_request",
+      "missing_details": [],
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "fallback.product_knowledge_missing"
+      ],
+      "variables": [
+        {
+          "name": "human_confirmation_topic",
+          "kind": "short_text",
+          "value": "como funciona a lista de espera",
+          "source": "user_message",
+          "evidence": [
+            "como funciona essa lista de espera?"
+          ],
+          "max_length": 100
+        }
+      ],
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "waitlist_curiosity",
+      "last_intent": "waitlist_question",
+      "diagnostic_status": null,
+      "waitlist_status": "inquiry",
+      "handoff_status": null,
+      "next_action_hint": "explain_waitlist_with_official_details"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "medium",
+    "risks": [
+      "No official product facts were read, so only a fallback template was selected."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_waitlist_curiosity",
+    "conversation_id": "spike_conv_waitlist_curiosity",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_waitlist_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_waitlist_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_question"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "entender o funcionamento da lista de espera",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "como funciona essa lista de espera?",
+        "answered_before_steering": true,
+        "evidence": [
+          "como funciona essa lista de espera?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "waitlist_explanation_request",
+      "missing_details": [],
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "fallback.product_knowledge_missing"
+      ],
+      "variables": {
+        "human_confirmation_topic": {
+          "kind": "short_text",
+          "value": "como funciona a lista de espera",
+          "source": "user_message",
+          "evidence": [
+            "como funciona essa lista de espera?"
+          ],
+          "max_length": 100
+        }
+      },
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "waitlist_curiosity",
+      "last_intent": "waitlist_question",
+      "waitlist_status": "inquiry",
+      "next_action_hint": "explain_waitlist_with_official_details"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "como funciona essa lista de espera?"
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "No official product facts were read, so only a fallback template was selected."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 11906,
+      "output_tokens": 899,
+      "cost_usd": 0.010901,
+      "handoffs": 1,
+      "repairs": 1
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_waitlist_curiosity",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Nao tenho essa informacao oficial fechada aqui, entao prefiro nao te prometer algo no chute.",
+      "template_id": "fallback.product_knowledge_missing",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Posso deixar esse ponto para a equipe da Taliya confirmar com precisao.",
+      "template_id": "fallback.product_knowledge_missing",
+      "channel": "whatsapp",
+      "sequence": 2
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "waitlist_curiosity",
+    "last_intent": "waitlist_question",
+    "waitlist_status": "inquiry",
+    "next_action_hint": "explain_waitlist_with_official_details"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 11906,
+    "output_tokens": 899,
+    "cost_usd": 0.010901,
+    "handoffs": 1,
+    "repairs": 1
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

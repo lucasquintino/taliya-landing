@@ -1,0 +1,1619 @@
+{
+  "runId": "agent-v2-runtime-1779416937948",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:28:57.948Z",
+  "summary": {
+    "total": 84,
+    "passed": 84,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "runtime-widget-price-before-diagnostic turn 1 contains \"Oi! Tudo bem?\"",
+      "details": {
+        "input": "oi",
+        "assistantTexts": [
+          "Oi! Tudo bem?",
+          "Em que posso te ajudar?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-before-diagnostic turn 1 contains \"Em que posso te ajudar?\"",
+      "details": {
+        "input": "oi",
+        "assistantTexts": [
+          "Oi! Tudo bem?",
+          "Em que posso te ajudar?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-before-diagnostic turn 2 contains \"Prazer, Lucas\"",
+      "details": {
+        "input": "Lucas",
+        "assistantTexts": [
+          "Prazer, Lucas.",
+          "Em que posso te ajudar?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-before-diagnostic turn 2 contains \"Em que posso te ajudar?\"",
+      "details": {
+        "input": "Lucas",
+        "assistantTexts": [
+          "Prazer, Lucas.",
+          "Em que posso te ajudar?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-before-diagnostic turn 3 contains \"Hoje a Taliya tem quatro faixas\"",
+      "details": {
+        "input": "Quero ver planos",
+        "assistantTexts": [
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-before-diagnostic turn 3 contains \"comparativo\"",
+      "details": {
+        "input": "Quero ver planos",
+        "assistantTexts": [
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-before-diagnostic turn 4 contains \"Hoje seu studio tem mais ou menos quantos alunos ativos?\"",
+      "details": {
+        "input": "pode recomendar sim",
+        "assistantTexts": [
+          "Perfeito. Vou começar pelo tamanho do studio.",
+          "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 1 contains \"Oi! Tudo bem?\"",
+      "details": {
+        "input": "oi",
+        "assistantTexts": [
+          "Oi! Tudo bem?",
+          "Em que posso te ajudar?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 1 contains \"Em que posso te ajudar?\"",
+      "details": {
+        "input": "oi",
+        "assistantTexts": [
+          "Oi! Tudo bem?",
+          "Em que posso te ajudar?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 2 contains \"Hoje seu studio tem mais ou menos quantos alunos ativos?\"",
+      "details": {
+        "input": "Quero fazer diagnostico gratuito",
+        "assistantTexts": [
+          "Perfeito. Vou começar pelo tamanho do studio.",
+          "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 3 contains \"Qual parte mais pesa hoje\"",
+      "details": {
+        "input": "96",
+        "assistantTexts": [
+          "Boa, isso já me dá uma noção do tamanho da operação.",
+          "Qual parte mais pesa hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 4 contains \"Hoje isso fica em algum sistema\"",
+      "details": {
+        "input": "Vendas e interessados",
+        "assistantTexts": [
+          "Certo. Quando interessados ficam soltos, muita oportunidade esfria antes de virar aluno.",
+          "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 5 contains \"Quando alguém chama querendo conhecer\"",
+      "details": {
+        "input": "Hoje uso WhatsApp e planilha",
+        "assistantTexts": [
+          "Certo, então hoje isso ainda fica nesse controle.",
+          "Quando alguém chama querendo conhecer o studio, vocês conseguem acompanhar até virar aluno?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 6 contains \"qual tarefa você mais gostaria\"",
+      "details": {
+        "input": "Perco interessados por demora no retorno",
+        "assistantTexts": [
+          "Ok, isso mostra onde a rotina ainda fica vulnerável.",
+          "Pensando na rotina do studio, qual tarefa você mais gostaria de deixar mais leve primeiro?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 7 contains \"buscando resolver isso agora\"",
+      "details": {
+        "input": "Quero aliviar WhatsApp e agenda primeiro",
+        "assistantTexts": [
+          "Boa. Atendimento e agenda costumam destravar bastante coisa quando passam a trabalhar juntos.",
+          "Vocês estão buscando resolver isso agora ou só pesquisando por enquanto?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 8 contains \"problema não está em uma rotina só\"",
+      "details": {
+        "input": "Quero resolver agora, se fizer sentido",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 8 contains \"agente de Atendimento\"",
+      "details": {
+        "input": "Quero resolver agora, se fizer sentido",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 8 contains \"agente de Vendas\"",
+      "details": {
+        "input": "Quero resolver agora, se fizer sentido",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 8 contains \"isso conversa com o que você precisa resolver agora\"",
+      "details": {
+        "input": "Quero resolver agora, se fizer sentido",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 8 does not contain \"compararia\"",
+      "details": {
+        "input": "Quero resolver agora, se fizer sentido",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 8 does not contain \"Plano para comparar\"",
+      "details": {
+        "input": "Quero resolver agora, se fizer sentido",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 9 contains \"número pequeno de studios\"",
+      "details": {
+        "input": "faz sentido",
+        "assistantTexts": [
+          "Boa. Faz sentido começar por aí mesmo.",
+          "Pelo que você contou, faz sentido deixar seu studio no radar.",
+          "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+          "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+          "Quer que eu deixe registrado?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 9 contains \"lista de espera\"",
+      "details": {
+        "input": "faz sentido",
+        "assistantTexts": [
+          "Boa. Faz sentido começar por aí mesmo.",
+          "Pelo que você contou, faz sentido deixar seu studio no radar.",
+          "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+          "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+          "Quer que eu deixe registrado?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 10 contains \"Qual é o nome do studio\"",
+      "details": {
+        "input": "pode ser",
+        "assistantTexts": [
+          "Perfeito. Para registrar certinho, só falta um detalhe.",
+          "Qual é o nome do studio e de qual cidade ele é?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 11 contains \"Qual WhatsApp ou email\"",
+      "details": {
+        "input": "Studio do Lucas, Vitoria",
+        "assistantTexts": [
+          "Perfeito. Para registrar certinho, só falta um detalhe.",
+          "Qual WhatsApp ou email você prefere deixar para chamarmos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 12 contains \"Perfeito, deixei seu studio na lista\"",
+      "details": {
+        "input": "27996991427",
+        "assistantTexts": [
+          "Perfeito, deixei seu studio na lista.",
+          "Quando abrir uma próxima janela, chamamos por esse contato.",
+          "Ficou alguma dúvida, pode ficar à vontade pra perguntar."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 12 contains \"Quando abrir uma próxima janela\"",
+      "details": {
+        "input": "27996991427",
+        "assistantTexts": [
+          "Perfeito, deixei seu studio na lista.",
+          "Quando abrir uma próxima janela, chamamos por esse contato.",
+          "Ficou alguma dúvida, pode ficar à vontade pra perguntar."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 13 contains \"Hoje a Taliya tem quatro faixas\"",
+      "details": {
+        "input": "quanto custa depois?",
+        "assistantTexts": [
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-ideal-diagnostic-waitlist turn 13 contains \"comparativo\"",
+      "details": {
+        "input": "quanto custa depois?",
+        "assistantTexts": [
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 1 contains \"Oi, Lucas. Tudo bem?\"",
+      "details": {
+        "input": "Oi, quero ver como Taliya ficaria no meu studio de Pilates e entender o caminho para começar.",
+        "assistantTexts": [
+          "Oi, Lucas. Tudo bem?",
+          "Consigo te ajudar com isso.",
+          "A melhor forma de entender como a Taliya ficaria no seu studio é fazer um diagnóstico rápido da rotina.",
+          "Eu te faço algumas perguntas simples e, no final, te devolvo um caminho claro.",
+          "Pode ser?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 1 contains \"diagnóstico rápido da rotina\"",
+      "details": {
+        "input": "Oi, quero ver como Taliya ficaria no meu studio de Pilates e entender o caminho para começar.",
+        "assistantTexts": [
+          "Oi, Lucas. Tudo bem?",
+          "Consigo te ajudar com isso.",
+          "A melhor forma de entender como a Taliya ficaria no seu studio é fazer um diagnóstico rápido da rotina.",
+          "Eu te faço algumas perguntas simples e, no final, te devolvo um caminho claro.",
+          "Pode ser?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 2 contains \"Hoje seu studio tem mais ou menos quantos alunos ativos?\"",
+      "details": {
+        "input": "Pode ser",
+        "assistantTexts": [
+          "Perfeito. Vou começar pelo tamanho do studio.",
+          "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 3 contains \"Qual parte mais pesa hoje\"",
+      "details": {
+        "input": "100",
+        "assistantTexts": [
+          "Boa, isso já me dá uma noção do tamanho da operação.",
+          "Qual parte mais pesa hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 4 contains \"Hoje isso fica em algum sistema\"",
+      "details": {
+        "input": "Reposição é o mais complicado",
+        "assistantTexts": [
+          "Faz sentido. Reposição e agenda costumam pesar quando tudo depende de conversa e memória da equipe.",
+          "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 5 contains \"reposições ficam claras\"",
+      "details": {
+        "input": "Caderno",
+        "assistantTexts": [
+          "Certo, então hoje isso ainda fica nesse controle.",
+          "As reposições ficam claras para a equipe ou dependem de conversa e memória?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 6 contains \"buscando resolver isso agora\"",
+      "details": {
+        "input": "Consigo as vezes depende do dia",
+        "assistantTexts": [
+          "Ok, isso mostra onde a rotina ainda fica vulnerável.",
+          "Vocês estão buscando resolver isso agora ou só pesquisando por enquanto?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 7 contains \"problema não é só reposição\"",
+      "details": {
+        "input": "Quero aliviar reposição primeiro",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não é só reposição.",
+          "O risco é a rotina depender de caderno, memória e mensagens soltas.",
+          "Isso faz o studio perder horário, atrasar retorno e deixar aluno esperando.",
+          "A Taliya ajudaria organizando agenda, faltas, reposições, histórico e próximos passos em um lugar só.",
+          "O primeiro agente que faz sentido aqui é o de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Então, Lucas... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 7 contains \"o de Agenda\"",
+      "details": {
+        "input": "Quero aliviar reposição primeiro",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não é só reposição.",
+          "O risco é a rotina depender de caderno, memória e mensagens soltas.",
+          "Isso faz o studio perder horário, atrasar retorno e deixar aluno esperando.",
+          "A Taliya ajudaria organizando agenda, faltas, reposições, histórico e próximos passos em um lugar só.",
+          "O primeiro agente que faz sentido aqui é o de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Então, Lucas... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 7 contains \"isso conversa com o que você precisa resolver agora\"",
+      "details": {
+        "input": "Quero aliviar reposição primeiro",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não é só reposição.",
+          "O risco é a rotina depender de caderno, memória e mensagens soltas.",
+          "Isso faz o studio perder horário, atrasar retorno e deixar aluno esperando.",
+          "A Taliya ajudaria organizando agenda, faltas, reposições, histórico e próximos passos em um lugar só.",
+          "O primeiro agente que faz sentido aqui é o de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Então, Lucas... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 8 contains \"número pequeno de studios\"",
+      "details": {
+        "input": "Faz sentido",
+        "assistantTexts": [
+          "Boa, Lucas. Faz sentido começar por aí mesmo.",
+          "Pelo que você contou, faz sentido deixar seu studio no radar.",
+          "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+          "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+          "Quer que eu deixe registrado?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 8 contains \"lista de espera\"",
+      "details": {
+        "input": "Faz sentido",
+        "assistantTexts": [
+          "Boa, Lucas. Faz sentido começar por aí mesmo.",
+          "Pelo que você contou, faz sentido deixar seu studio no radar.",
+          "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+          "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+          "Quer que eu deixe registrado?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 8 does not contain \"compararia\"",
+      "details": {
+        "input": "Faz sentido",
+        "assistantTexts": [
+          "Boa, Lucas. Faz sentido começar por aí mesmo.",
+          "Pelo que você contou, faz sentido deixar seu studio no radar.",
+          "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+          "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+          "Quer que eu deixe registrado?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 8 does not contain \"Plano para comparar\"",
+      "details": {
+        "input": "Faz sentido",
+        "assistantTexts": [
+          "Boa, Lucas. Faz sentido começar por aí mesmo.",
+          "Pelo que você contou, faz sentido deixar seu studio no radar.",
+          "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+          "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+          "Quer que eu deixe registrado?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 8 does not contain \"Essencial\"",
+      "details": {
+        "input": "Faz sentido",
+        "assistantTexts": [
+          "Boa, Lucas. Faz sentido começar por aí mesmo.",
+          "Pelo que você contou, faz sentido deixar seu studio no radar.",
+          "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+          "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+          "Quer que eu deixe registrado?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 9 contains \"Qual é o nome do studio\"",
+      "details": {
+        "input": "Pode colocar",
+        "assistantTexts": [
+          "Perfeito. Para registrar certinho, só falta um detalhe.",
+          "Qual é o nome do studio e de qual cidade ele é?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 10 contains \"Perfeito, deixei seu studio na lista\"",
+      "details": {
+        "input": "Studio do Lucas, Vila Velha",
+        "assistantTexts": [
+          "Perfeito, deixei seu studio na lista.",
+          "Quando abrir uma próxima janela, chamamos por esse contato.",
+          "Ficou alguma dúvida, pode ficar à vontade pra perguntar."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 10 contains \"Quando abrir uma próxima janela\"",
+      "details": {
+        "input": "Studio do Lucas, Vila Velha",
+        "assistantTexts": [
+          "Perfeito, deixei seu studio na lista.",
+          "Quando abrir uma próxima janela, chamamos por esse contato.",
+          "Ficou alguma dúvida, pode ficar à vontade pra perguntar."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 11 contains \"Ainda não tenho uma data fechada\"",
+      "details": {
+        "input": "Quanto tempo leva até eu receber o chamado?",
+        "assistantTexts": [
+          "Ainda não tenho uma data fechada para chamar todos os studios.",
+          "A ideia é abrir novas janelas aos poucos, para conseguir acompanhar bem cada implantação.",
+          "Quando chegar a vez do seu studio, chamamos por aqui."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-user-reported-flow turn 11 contains \"Quando chegar a vez\"",
+      "details": {
+        "input": "Quanto tempo leva até eu receber o chamado?",
+        "assistantTexts": [
+          "Ainda não tenho uma data fechada para chamar todos os studios.",
+          "A ideia é abrir novas janelas aos poucos, para conseguir acompanhar bem cada implantação.",
+          "Quando chegar a vez do seu studio, chamamos por aqui."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-first-direct-with-name turn 1 contains \"Oi, Lucas. Tudo bem?\"",
+      "details": {
+        "input": "Quanto custa a Taliya?",
+        "assistantTexts": [
+          "Oi, Lucas. Tudo bem?",
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-whatsapp-first-direct-with-name turn 1 contains \"Hoje a Taliya tem quatro faixas\"",
+      "details": {
+        "input": "Quanto custa a Taliya?",
+        "assistantTexts": [
+          "Oi, Lucas. Tudo bem?",
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-human-handoff turn 1 contains \"Vou deixar uma pessoa assumir\"",
+      "details": {
+        "input": "quero falar com uma pessoa",
+        "assistantTexts": [
+          "Claro. Vou deixar uma pessoa assumir daqui.",
+          "Também deixo o contexto salvo para você não precisar repetir tudo."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-human-handoff turn 1 contains \"contexto salvo\"",
+      "details": {
+        "input": "quero falar com uma pessoa",
+        "assistantTexts": [
+          "Claro. Vou deixar uma pessoa assumir daqui.",
+          "Também deixo o contexto salvo para você não precisar repetir tudo."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-demo-explain turn 1 contains \"demonstração oficial\"",
+      "details": {
+        "input": "Quero ver uma demo da Taliya",
+        "assistantTexts": [
+          "Oi! Tudo bem?",
+          "A demonstração oficial fica aqui: https://www.taliya.com.br/pilates/planos/demonstracao.",
+          "Se preferir, também posso te explicar o fluxo por aqui antes de você abrir a página."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-demo-explain turn 1 contains \"/pilates/planos/demonstracao\"",
+      "details": {
+        "input": "Quero ver uma demo da Taliya",
+        "assistantTexts": [
+          "Oi! Tudo bem?",
+          "A demonstração oficial fica aqui: https://www.taliya.com.br/pilates/planos/demonstracao.",
+          "Se preferir, também posso te explicar o fluxo por aqui antes de você abrir a página."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-demo-explain turn 2 contains \"Na prática\"",
+      "details": {
+        "input": "Prefiro você me explicar o fluxo por aqui",
+        "assistantTexts": [
+          "Na prática, a Taliya começa organizando a base do studio: alunos, agenda, conversas e pendências em um só lugar.",
+          "Depois disso, os agentes entram em rotinas específicas, como atendimento, reposições, vendas ou financeiro, sempre com a equipe no controle.",
+          "Se quiser, faço um diagnóstico rápido para te mostrar qual parte faria mais sentido ver primeiro."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-demo-explain turn 2 contains \"agentes entram em rotinas específicas\"",
+      "details": {
+        "input": "Prefiro você me explicar o fluxo por aqui",
+        "assistantTexts": [
+          "Na prática, a Taliya começa organizando a base do studio: alunos, agenda, conversas e pendências em um só lugar.",
+          "Depois disso, os agentes entram em rotinas específicas, como atendimento, reposições, vendas ou financeiro, sempre com a equipe no controle.",
+          "Se quiser, faço um diagnóstico rápido para te mostrar qual parte faria mais sentido ver primeiro."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-demo-mixed turn 1 contains \"Hoje a Taliya tem quatro faixas\"",
+      "details": {
+        "input": "Vocês tem demo? E quanto custa mais ou menos?",
+        "assistantTexts": [
+          "Oi! Tudo bem?",
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos",
+          "A demonstração oficial fica aqui: https://www.taliya.com.br/pilates/planos/demonstracao."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-demo-mixed turn 1 contains \"demonstração oficial\"",
+      "details": {
+        "input": "Vocês tem demo? E quanto custa mais ou menos?",
+        "assistantTexts": [
+          "Oi! Tudo bem?",
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos",
+          "A demonstração oficial fica aqui: https://www.taliya.com.br/pilates/planos/demonstracao."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-objection-small-studio turn 1 contains \"Faz sentido olhar o valor com cuidado\"",
+      "details": {
+        "input": "Achei caro, meu studio e pequeno",
+        "assistantTexts": [
+          "Faz sentido olhar o valor com cuidado.",
+          "Para um studio menor, não precisa começar pelo sistema completo. O ponto é entender se existe uma dor clara que já justifica organizar melhor a rotina.",
+          "Se quiser, faço um diagnóstico rápido para ver se faz sentido agora ou se é melhor esperar."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-price-objection-small-studio turn 1 contains \"diagn\"",
+      "details": {
+        "input": "Achei caro, meu studio e pequeno",
+        "assistantTexts": [
+          "Faz sentido olhar o valor com cuidado.",
+          "Para um studio menor, não precisa começar pelo sistema completo. O ponto é entender se existe uma dor clara que já justifica organizar melhor a rotina.",
+          "Se quiser, faço um diagnóstico rápido para ver se faz sentido agora ou se é melhor esperar."
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-existing-system-objection turn 1 contains \"ferramenta solta\"",
+      "details": {
+        "input": "Ja uso Tecnofit, por que eu usaria Taliya?",
+        "assistantTexts": [
+          "Se você já usa um sistema, a Taliya não precisa entrar como mais uma ferramenta solta.",
+          "A pergunta principal é onde ainda sobra trabalho manual: WhatsApp, reposições, interessados, financeiro ou prioridades do dia.",
+          "Qual parte ainda pesa mesmo com o sistema atual?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-existing-system-objection turn 1 contains \"Qual parte ainda pesa\"",
+      "details": {
+        "input": "Ja uso Tecnofit, por que eu usaria Taliya?",
+        "assistantTexts": [
+          "Se você já usa um sistema, a Taliya não precisa entrar como mais uma ferramenta solta.",
+          "A pergunta principal é onde ainda sobra trabalho manual: WhatsApp, reposições, interessados, financeiro ou prioridades do dia.",
+          "Qual parte ainda pesa mesmo com o sistema atual?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 1 contains \"diagnóstico rápido da rotina\"",
+      "details": {
+        "input": "Perco interessados por demora no retorno e minha agenda fica baguncada",
+        "assistantTexts": [
+          "Oi! Tudo bem?",
+          "Consigo te ajudar com isso.",
+          "A melhor forma de entender como a Taliya ficaria no seu studio é fazer um diagnóstico rápido da rotina.",
+          "Eu te faço algumas perguntas simples e, no final, te devolvo um caminho claro.",
+          "Pode ser?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 2 contains \"Hoje seu studio tem mais ou menos quantos alunos ativos?\"",
+      "details": {
+        "input": "Pode fazer",
+        "assistantTexts": [
+          "Perfeito. Vou começar pelo tamanho do studio.",
+          "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 3 contains \"Hoje isso fica em algum sistema\"",
+      "details": {
+        "input": "96",
+        "assistantTexts": [
+          "Boa, isso já me dá uma noção do tamanho da operação.",
+          "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 4 contains \"Quando alguém chama querendo conhecer\"",
+      "details": {
+        "input": "WhatsApp e planilha",
+        "assistantTexts": [
+          "Certo, então hoje isso ainda fica nesse controle.",
+          "Quando alguém chama querendo conhecer o studio, vocês conseguem acompanhar até virar aluno?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 5 contains \"qual tarefa você mais gostaria\"",
+      "details": {
+        "input": "Nao vejo facil o que precisa resolver no dia",
+        "assistantTexts": [
+          "Ok, isso mostra onde a rotina ainda fica vulnerável.",
+          "Pensando na rotina do studio, qual tarefa você mais gostaria de deixar mais leve primeiro?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 6 contains \"buscando resolver isso agora\"",
+      "details": {
+        "input": "Quero aliviar WhatsApp e agenda primeiro",
+        "assistantTexts": [
+          "Boa. Atendimento e agenda costumam destravar bastante coisa quando passam a trabalhar juntos.",
+          "Vocês estão buscando resolver isso agora ou só pesquisando por enquanto?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 7 contains \"problema não está em uma rotina só\"",
+      "details": {
+        "input": "Quero resolver agora",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 7 contains \"agente de Vendas\"",
+      "details": {
+        "input": "Quero resolver agora",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 7 contains \"agente de Atendimento\"",
+      "details": {
+        "input": "Quero resolver agora",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-mixed-sales-agenda-diagnostic turn 7 contains \"agente de Agenda\"",
+      "details": {
+        "input": "Quero resolver agora",
+        "assistantTexts": [
+          "Perfeito, já consigo te devolver uma leitura inicial.",
+          "Pelo que você contou, o problema não está em uma rotina só.",
+          "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+          "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+          "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+          "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+          "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+          "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+          "Então... isso conversa com o que você precisa resolver agora?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-diagnostic-cta-entry turn 1 contains \"Hoje seu studio tem mais ou menos quantos alunos ativos?\"",
+      "details": {
+        "input": "Quero fazer diagnostico gratuito",
+        "assistantTexts": [
+          "Perfeito. Vou começar pelo tamanho do studio.",
+          "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-waitlist-pending-question turn 1 contains \"número pequeno de studios\"",
+      "details": {
+        "input": "Quero assinar agora",
+        "assistantTexts": [
+          "Boa. Faz sentido começar por aí mesmo.",
+          "Pelo que você contou, faz sentido deixar seu studio no radar.",
+          "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+          "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+          "Quer que eu deixe registrado?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-waitlist-pending-question turn 1 contains \"lista de espera\"",
+      "details": {
+        "input": "Quero assinar agora",
+        "assistantTexts": [
+          "Boa. Faz sentido começar por aí mesmo.",
+          "Pelo que você contou, faz sentido deixar seu studio no radar.",
+          "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+          "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+          "Quer que eu deixe registrado?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-waitlist-pending-question turn 2 contains \"Qual é o nome do studio\"",
+      "details": {
+        "input": "Pode colocar",
+        "assistantTexts": [
+          "Perfeito. Para registrar certinho, só falta um detalhe.",
+          "Qual é o nome do studio e de qual cidade ele é?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-waitlist-pending-question turn 3 contains \"Qual WhatsApp ou email\"",
+      "details": {
+        "input": "Studio Plano, Vila Velha",
+        "assistantTexts": [
+          "Perfeito. Para registrar certinho, só falta um detalhe.",
+          "Qual WhatsApp ou email você prefere deixar para chamarmos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-waitlist-pending-question turn 4 contains \"Ainda não tenho uma data fechada\"",
+      "details": {
+        "input": "Quanto tempo leva para chamar?",
+        "assistantTexts": [
+          "Ainda não tenho uma data fechada para chamar todos os studios.",
+          "A ideia é abrir novas janelas aos poucos, para conseguir acompanhar bem cada implantação.",
+          "Para deixar registrado certinho, ainda falta um detalhe.",
+          "Qual WhatsApp ou email você prefere deixar para chamarmos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime-widget-waitlist-pending-question turn 4 contains \"Qual WhatsApp ou email\"",
+      "details": {
+        "input": "Quanto tempo leva para chamar?",
+        "assistantTexts": [
+          "Ainda não tenho uma data fechada para chamar todos os studios.",
+          "A ideia é abrir novas janelas aos poucos, para conseguir acompanhar bem cada implantação.",
+          "Para deixar registrado certinho, ainda falta um detalhe.",
+          "Qual WhatsApp ou email você prefere deixar para chamarmos?"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp webhook probe returns HTTP 200",
+      "details": {
+        "status": 200,
+        "body": {
+          "status": "processed",
+          "results": [
+            {
+              "providerMessageId": "wamid.mpgawes1",
+              "status": "sent",
+              "providerReplyId": "mock_whatsapp_460c75b1-76ca-47b5-9001-430bab8e7a0d",
+              "providerReplyIds": [
+                "mock_whatsapp_460c75b1-76ca-47b5-9001-430bab8e7a0d",
+                "mock_whatsapp_46d1b283-22a5-43e7-a7be-e7d22c22b272",
+                "mock_whatsapp_068ad049-9d54-40d9-99be-c507c9163955",
+                "mock_whatsapp_219c7436-38a0-4922-b494-afb8c2d06ddf",
+                "mock_whatsapp_caf0495f-620e-4c46-a76d-aae82033e047",
+                "mock_whatsapp_6e14ba7a-787f-48a9-b8d5-59546b22acab"
+              ],
+              "replyPreview": "Oi, Lucas. Tudo bem?\n\nHoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.\n\nA diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.\n\nOs valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.\n\nSe quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.\n\nSe preferir ver direto, o comparativo fica aqui: https://www.t",
+              "replyPreviews": [
+                "Oi, Lucas. Tudo bem?",
+                "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+                "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+                "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+                "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+                "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+              ],
+              "phoneNumberId": "12345"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp webhook probe processed",
+      "details": {
+        "body": {
+          "status": "processed",
+          "results": [
+            {
+              "providerMessageId": "wamid.mpgawes1",
+              "status": "sent",
+              "providerReplyId": "mock_whatsapp_460c75b1-76ca-47b5-9001-430bab8e7a0d",
+              "providerReplyIds": [
+                "mock_whatsapp_460c75b1-76ca-47b5-9001-430bab8e7a0d",
+                "mock_whatsapp_46d1b283-22a5-43e7-a7be-e7d22c22b272",
+                "mock_whatsapp_068ad049-9d54-40d9-99be-c507c9163955",
+                "mock_whatsapp_219c7436-38a0-4922-b494-afb8c2d06ddf",
+                "mock_whatsapp_caf0495f-620e-4c46-a76d-aae82033e047",
+                "mock_whatsapp_6e14ba7a-787f-48a9-b8d5-59546b22acab"
+              ],
+              "replyPreview": "Oi, Lucas. Tudo bem?\n\nHoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.\n\nA diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.\n\nOs valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.\n\nSe quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.\n\nSe preferir ver direto, o comparativo fica aqui: https://www.t",
+              "replyPreviews": [
+                "Oi, Lucas. Tudo bem?",
+                "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+                "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+                "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+                "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+                "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+              ],
+              "phoneNumberId": "12345"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp webhook probe sends separated messages",
+      "details": {
+        "previews": [
+          "Oi, Lucas. Tudo bem?",
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp webhook probe answers plans",
+      "details": {
+        "previews": [
+          "Oi, Lucas. Tudo bem?",
+          "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+          "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+          "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+          "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+          "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+        ]
+      }
+    }
+  ],
+  "releaseGate": "pass",
+  "target": "http://localhost:3999",
+  "transcripts": [
+    {
+      "id": "runtime-widget-price-before-diagnostic",
+      "transcript": [
+        {
+          "user": "oi",
+          "assistant": [
+            "Oi! Tudo bem?",
+            "Em que posso te ajudar?"
+          ]
+        },
+        {
+          "user": "Lucas",
+          "assistant": [
+            "Prazer, Lucas.",
+            "Em que posso te ajudar?"
+          ]
+        },
+        {
+          "user": "Quero ver planos",
+          "assistant": [
+            "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+            "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+            "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+            "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+            "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+          ]
+        },
+        {
+          "user": "pode recomendar sim",
+          "assistant": [
+            "Perfeito. Vou começar pelo tamanho do studio.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-widget-ideal-diagnostic-waitlist",
+      "transcript": [
+        {
+          "user": "oi",
+          "assistant": [
+            "Oi! Tudo bem?",
+            "Em que posso te ajudar?"
+          ]
+        },
+        {
+          "user": "Quero fazer diagnostico gratuito",
+          "assistant": [
+            "Perfeito. Vou começar pelo tamanho do studio.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ]
+        },
+        {
+          "user": "96",
+          "assistant": [
+            "Boa, isso já me dá uma noção do tamanho da operação.",
+            "Qual parte mais pesa hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?"
+          ]
+        },
+        {
+          "user": "Vendas e interessados",
+          "assistant": [
+            "Certo. Quando interessados ficam soltos, muita oportunidade esfria antes de virar aluno.",
+            "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+          ]
+        },
+        {
+          "user": "Hoje uso WhatsApp e planilha",
+          "assistant": [
+            "Certo, então hoje isso ainda fica nesse controle.",
+            "Quando alguém chama querendo conhecer o studio, vocês conseguem acompanhar até virar aluno?"
+          ]
+        },
+        {
+          "user": "Perco interessados por demora no retorno",
+          "assistant": [
+            "Ok, isso mostra onde a rotina ainda fica vulnerável.",
+            "Pensando na rotina do studio, qual tarefa você mais gostaria de deixar mais leve primeiro?"
+          ]
+        },
+        {
+          "user": "Quero aliviar WhatsApp e agenda primeiro",
+          "assistant": [
+            "Boa. Atendimento e agenda costumam destravar bastante coisa quando passam a trabalhar juntos.",
+            "Vocês estão buscando resolver isso agora ou só pesquisando por enquanto?"
+          ]
+        },
+        {
+          "user": "Quero resolver agora, se fizer sentido",
+          "assistant": [
+            "Perfeito, já consigo te devolver uma leitura inicial.",
+            "Pelo que você contou, o problema não está em uma rotina só.",
+            "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+            "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+            "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+            "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+            "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+            "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+            "Então... isso conversa com o que você precisa resolver agora?"
+          ]
+        },
+        {
+          "user": "faz sentido",
+          "assistant": [
+            "Boa. Faz sentido começar por aí mesmo.",
+            "Pelo que você contou, faz sentido deixar seu studio no radar.",
+            "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+            "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+            "Quer que eu deixe registrado?"
+          ]
+        },
+        {
+          "user": "pode ser",
+          "assistant": [
+            "Perfeito. Para registrar certinho, só falta um detalhe.",
+            "Qual é o nome do studio e de qual cidade ele é?"
+          ]
+        },
+        {
+          "user": "Studio do Lucas, Vitoria",
+          "assistant": [
+            "Perfeito. Para registrar certinho, só falta um detalhe.",
+            "Qual WhatsApp ou email você prefere deixar para chamarmos?"
+          ]
+        },
+        {
+          "user": "27996991427",
+          "assistant": [
+            "Perfeito, deixei seu studio na lista.",
+            "Quando abrir uma próxima janela, chamamos por esse contato.",
+            "Ficou alguma dúvida, pode ficar à vontade pra perguntar."
+          ]
+        },
+        {
+          "user": "quanto custa depois?",
+          "assistant": [
+            "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+            "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+            "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+            "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-whatsapp-user-reported-flow",
+      "transcript": [
+        {
+          "user": "Oi, quero ver como Taliya ficaria no meu studio de Pilates e entender o caminho para começar.",
+          "assistant": [
+            "Oi, Lucas. Tudo bem?",
+            "Consigo te ajudar com isso.",
+            "A melhor forma de entender como a Taliya ficaria no seu studio é fazer um diagnóstico rápido da rotina.",
+            "Eu te faço algumas perguntas simples e, no final, te devolvo um caminho claro.",
+            "Pode ser?"
+          ]
+        },
+        {
+          "user": "Pode ser",
+          "assistant": [
+            "Perfeito. Vou começar pelo tamanho do studio.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ]
+        },
+        {
+          "user": "100",
+          "assistant": [
+            "Boa, isso já me dá uma noção do tamanho da operação.",
+            "Qual parte mais pesa hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?"
+          ]
+        },
+        {
+          "user": "Reposição é o mais complicado",
+          "assistant": [
+            "Faz sentido. Reposição e agenda costumam pesar quando tudo depende de conversa e memória da equipe.",
+            "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+          ]
+        },
+        {
+          "user": "Caderno",
+          "assistant": [
+            "Certo, então hoje isso ainda fica nesse controle.",
+            "As reposições ficam claras para a equipe ou dependem de conversa e memória?"
+          ]
+        },
+        {
+          "user": "Consigo as vezes depende do dia",
+          "assistant": [
+            "Ok, isso mostra onde a rotina ainda fica vulnerável.",
+            "Vocês estão buscando resolver isso agora ou só pesquisando por enquanto?"
+          ]
+        },
+        {
+          "user": "Quero aliviar reposição primeiro",
+          "assistant": [
+            "Perfeito, já consigo te devolver uma leitura inicial.",
+            "Pelo que você contou, o problema não é só reposição.",
+            "O risco é a rotina depender de caderno, memória e mensagens soltas.",
+            "Isso faz o studio perder horário, atrasar retorno e deixar aluno esperando.",
+            "A Taliya ajudaria organizando agenda, faltas, reposições, histórico e próximos passos em um lugar só.",
+            "O primeiro agente que faz sentido aqui é o de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+            "Então, Lucas... isso conversa com o que você precisa resolver agora?"
+          ]
+        },
+        {
+          "user": "Faz sentido",
+          "assistant": [
+            "Boa, Lucas. Faz sentido começar por aí mesmo.",
+            "Pelo que você contou, faz sentido deixar seu studio no radar.",
+            "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+            "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+            "Quer que eu deixe registrado?"
+          ]
+        },
+        {
+          "user": "Pode colocar",
+          "assistant": [
+            "Perfeito. Para registrar certinho, só falta um detalhe.",
+            "Qual é o nome do studio e de qual cidade ele é?"
+          ]
+        },
+        {
+          "user": "Studio do Lucas, Vila Velha",
+          "assistant": [
+            "Perfeito, deixei seu studio na lista.",
+            "Quando abrir uma próxima janela, chamamos por esse contato.",
+            "Ficou alguma dúvida, pode ficar à vontade pra perguntar."
+          ]
+        },
+        {
+          "user": "Quanto tempo leva até eu receber o chamado?",
+          "assistant": [
+            "Ainda não tenho uma data fechada para chamar todos os studios.",
+            "A ideia é abrir novas janelas aos poucos, para conseguir acompanhar bem cada implantação.",
+            "Quando chegar a vez do seu studio, chamamos por aqui."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-whatsapp-first-direct-with-name",
+      "transcript": [
+        {
+          "user": "Quanto custa a Taliya?",
+          "assistant": [
+            "Oi, Lucas. Tudo bem?",
+            "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+            "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+            "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+            "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+            "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-widget-human-handoff",
+      "transcript": [
+        {
+          "user": "quero falar com uma pessoa",
+          "assistant": [
+            "Claro. Vou deixar uma pessoa assumir daqui.",
+            "Também deixo o contexto salvo para você não precisar repetir tudo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-widget-demo-explain",
+      "transcript": [
+        {
+          "user": "Quero ver uma demo da Taliya",
+          "assistant": [
+            "Oi! Tudo bem?",
+            "A demonstração oficial fica aqui: https://www.taliya.com.br/pilates/planos/demonstracao.",
+            "Se preferir, também posso te explicar o fluxo por aqui antes de você abrir a página."
+          ]
+        },
+        {
+          "user": "Prefiro você me explicar o fluxo por aqui",
+          "assistant": [
+            "Na prática, a Taliya começa organizando a base do studio: alunos, agenda, conversas e pendências em um só lugar.",
+            "Depois disso, os agentes entram em rotinas específicas, como atendimento, reposições, vendas ou financeiro, sempre com a equipe no controle.",
+            "Se quiser, faço um diagnóstico rápido para te mostrar qual parte faria mais sentido ver primeiro."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-widget-price-demo-mixed",
+      "transcript": [
+        {
+          "user": "Vocês tem demo? E quanto custa mais ou menos?",
+          "assistant": [
+            "Oi! Tudo bem?",
+            "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+            "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+            "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+            "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos",
+            "A demonstração oficial fica aqui: https://www.taliya.com.br/pilates/planos/demonstracao."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-widget-price-objection-small-studio",
+      "transcript": [
+        {
+          "user": "Achei caro, meu studio e pequeno",
+          "assistant": [
+            "Faz sentido olhar o valor com cuidado.",
+            "Para um studio menor, não precisa começar pelo sistema completo. O ponto é entender se existe uma dor clara que já justifica organizar melhor a rotina.",
+            "Se quiser, faço um diagnóstico rápido para ver se faz sentido agora ou se é melhor esperar."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-widget-existing-system-objection",
+      "transcript": [
+        {
+          "user": "Ja uso Tecnofit, por que eu usaria Taliya?",
+          "assistant": [
+            "Se você já usa um sistema, a Taliya não precisa entrar como mais uma ferramenta solta.",
+            "A pergunta principal é onde ainda sobra trabalho manual: WhatsApp, reposições, interessados, financeiro ou prioridades do dia.",
+            "Qual parte ainda pesa mesmo com o sistema atual?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-widget-mixed-sales-agenda-diagnostic",
+      "transcript": [
+        {
+          "user": "Perco interessados por demora no retorno e minha agenda fica baguncada",
+          "assistant": [
+            "Oi! Tudo bem?",
+            "Consigo te ajudar com isso.",
+            "A melhor forma de entender como a Taliya ficaria no seu studio é fazer um diagnóstico rápido da rotina.",
+            "Eu te faço algumas perguntas simples e, no final, te devolvo um caminho claro.",
+            "Pode ser?"
+          ]
+        },
+        {
+          "user": "Pode fazer",
+          "assistant": [
+            "Perfeito. Vou começar pelo tamanho do studio.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ]
+        },
+        {
+          "user": "96",
+          "assistant": [
+            "Boa, isso já me dá uma noção do tamanho da operação.",
+            "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+          ]
+        },
+        {
+          "user": "WhatsApp e planilha",
+          "assistant": [
+            "Certo, então hoje isso ainda fica nesse controle.",
+            "Quando alguém chama querendo conhecer o studio, vocês conseguem acompanhar até virar aluno?"
+          ]
+        },
+        {
+          "user": "Nao vejo facil o que precisa resolver no dia",
+          "assistant": [
+            "Ok, isso mostra onde a rotina ainda fica vulnerável.",
+            "Pensando na rotina do studio, qual tarefa você mais gostaria de deixar mais leve primeiro?"
+          ]
+        },
+        {
+          "user": "Quero aliviar WhatsApp e agenda primeiro",
+          "assistant": [
+            "Boa. Atendimento e agenda costumam destravar bastante coisa quando passam a trabalhar juntos.",
+            "Vocês estão buscando resolver isso agora ou só pesquisando por enquanto?"
+          ]
+        },
+        {
+          "user": "Quero resolver agora",
+          "assistant": [
+            "Perfeito, já consigo te devolver uma leitura inicial.",
+            "Pelo que você contou, o problema não está em uma rotina só.",
+            "O risco é atendimento, agenda e interessados dependerem de mensagens soltas, planilha e memória da equipe.",
+            "Isso faz interessado esfriar, reposição atrasar e pendência importante sumir no meio da rotina.",
+            "A Taliya ajudaria conectando atendimento, agenda, interessados, histórico e próximos passos em uma base única.",
+            "Também faz sentido olhar o agente de Atendimento. Ele ajuda quando o WhatsApp concentra dúvidas, pedidos repetidos e retornos que a equipe precisa lembrar de fazer. Na prática, organiza o contexto da conversa e ajuda a não deixar pedido importante passar batido.",
+            "Também olharia o agente de Agenda. Ele organiza faltas, reposições e horários disponíveis para a equipe não depender de caderno, memória ou conversa antiga. Na prática, fica mais claro quem precisa repor, quando pode repor e o que ainda está pendente.",
+            "Também olharia o agente de Vendas. Ele entra quando interessados esfriam por demora no retorno ou falta de acompanhamento. A ideia é cada interessado ter um próximo passo claro, em vez de ficar perdido entre mensagens, planilha e memória da equipe.",
+            "Então... isso conversa com o que você precisa resolver agora?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-widget-diagnostic-cta-entry",
+      "transcript": [
+        {
+          "user": "Quero fazer diagnostico gratuito",
+          "assistant": [
+            "Perfeito. Vou começar pelo tamanho do studio.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-widget-waitlist-pending-question",
+      "transcript": [
+        {
+          "user": "Quero assinar agora",
+          "assistant": [
+            "Boa. Faz sentido começar por aí mesmo.",
+            "Pelo que você contou, faz sentido deixar seu studio no radar.",
+            "Hoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.",
+            "Caso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
+            "Quer que eu deixe registrado?"
+          ]
+        },
+        {
+          "user": "Pode colocar",
+          "assistant": [
+            "Perfeito. Para registrar certinho, só falta um detalhe.",
+            "Qual é o nome do studio e de qual cidade ele é?"
+          ]
+        },
+        {
+          "user": "Studio Plano, Vila Velha",
+          "assistant": [
+            "Perfeito. Para registrar certinho, só falta um detalhe.",
+            "Qual WhatsApp ou email você prefere deixar para chamarmos?"
+          ]
+        },
+        {
+          "user": "Quanto tempo leva para chamar?",
+          "assistant": [
+            "Ainda não tenho uma data fechada para chamar todos os studios.",
+            "A ideia é abrir novas janelas aos poucos, para conseguir acompanhar bem cada implantação.",
+            "Para deixar registrado certinho, ainda falta um detalhe.",
+            "Qual WhatsApp ou email você prefere deixar para chamarmos?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime-whatsapp-webhook-probe",
+      "transcript": [
+        {
+          "user": "Oi, quero entender os planos",
+          "assistant": [
+            "Oi, Lucas. Tudo bem?",
+            "Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.",
+            "A diferença principal é o quanto você quer automatizar agora: só organizar a base, começar com 1 agente, conectar 3 rotinas ou usar o sistema completo.",
+            "Os valores são: Base: R$ 197/mês; Essencial: R$ 497/mês; Avance: R$ 897/mês; Completo: R$ 1.497/mês.",
+            "Se quiser uma recomendação, eu faço pelo diagnóstico gratuito para entender a rotina antes.",
+            "Se preferir ver direto, o comparativo fica aqui: https://www.taliya.com.br/pilates/planos"
+          ]
+        }
+      ]
+    }
+  ]
+}

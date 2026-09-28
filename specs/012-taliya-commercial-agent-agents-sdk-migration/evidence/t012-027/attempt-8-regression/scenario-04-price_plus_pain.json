@@ -1,0 +1,411 @@
+{
+  "number": 4,
+  "scenario_id": "price_plus_pain",
+  "channel": "whatsapp",
+  "required_proof": "Price answered first; pain context preserved for natural next step.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "qual o preco? meu WhatsApp esta caotico no follow-up"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_product_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_product_agent"
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "price",
+        "whatsapp"
+      ],
+      "direct_question": "qual o preco?",
+      "customer_need": "entender preço e como o produto ajuda a organizar follow-up no WhatsApp",
+      "pain_context": "meu WhatsApp esta caotico no follow-up",
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "pain_followup_whatsapp",
+          "kind": "pain",
+          "raw_text": "meu WhatsApp esta caotico no follow-up",
+          "value_text": "follow-up no WhatsApp está caótico",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "qual o preco?",
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder o preço solicitado e, em seguida, contextualizar com a dor de WhatsApp caótico no follow-up.",
+        "answering_template_id": "product.price_direct",
+        "evidence": [
+          "qual o preco?",
+          "meu WhatsApp esta caotico no follow-up"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "product.price_direct",
+        "diagnostic.offer_soft"
+      ],
+      "variables": [
+        {
+          "name": "plan_price_summary",
+          "kind": "long_text",
+          "value": "Preciso consultar os dados oficiais de preço antes de confirmar.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "user_message"
+          ],
+          "max_length": 360
+        },
+        {
+          "name": "pain_context_human",
+          "kind": "long_text",
+          "value": "Você comentou que o WhatsApp está caótico no follow-up.",
+          "source": "user_message",
+          "evidence": [
+            "user_message"
+          ],
+          "max_length": 420
+        }
+      ],
+      "evidence": [
+        "qual o preco?",
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [
+        "price_requires_official_facts"
+      ],
+      "uncertainty": "high"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "new_inbound",
+      "last_intent": "price",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "answer_price_then_offer_soft_diagnostic"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "low",
+    "risks": [
+      "Não confirmei preço sem fatos oficiais."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_price_plus_pain",
+    "conversation_id": "spike_conv_price_plus_pain",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_product_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "price",
+        "whatsapp"
+      ],
+      "direct_question": "qual o preco?",
+      "customer_need": "entender preço e como o produto ajuda a organizar follow-up no WhatsApp",
+      "pain_context": "meu WhatsApp esta caotico no follow-up",
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "pain_followup_whatsapp",
+          "kind": "pain",
+          "raw_text": "meu WhatsApp esta caotico no follow-up",
+          "value": "follow-up no WhatsApp está caótico",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "qual o preco?",
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Responder o preço solicitado e, em seguida, contextualizar com a dor de WhatsApp caótico no follow-up.",
+        "answered_before_steering": true,
+        "evidence": [
+          "qual o preco?",
+          "meu WhatsApp esta caotico no follow-up"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "demo_proposal": {
+      "status": "",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "product.price_direct",
+        "diagnostic.offer_soft"
+      ],
+      "variables": {
+        "plan_price_summary": {
+          "kind": "long_text",
+          "value": "Preciso consultar os dados oficiais de preço antes de confirmar.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "user_message"
+          ],
+          "max_length": 360
+        },
+        "pain_context_human": {
+          "kind": "long_text",
+          "value": "Você comentou que o WhatsApp está caótico no follow-up.",
+          "source": "user_message",
+          "evidence": [
+            "user_message"
+          ],
+          "max_length": 420
+        }
+      },
+      "evidence": [
+        "qual o preco?",
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "price_requires_official_facts",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "high"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "new_inbound",
+      "last_intent": "price",
+      "next_action_hint": "answer_price_then_offer_soft_diagnostic"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "qual o preco?",
+        "meu WhatsApp esta caotico no follow-up"
+      ]
+    },
+    "confidence": "low",
+    "risks": [
+      "Não confirmei preço sem fatos oficiais."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 12807,
+      "output_tokens": 1171,
+      "cost_usd": 0.008395,
+      "handoffs": 1,
+      "repairs": 1
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_price_plus_pain",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Oi, tudo bem?",
+      "template_id": "product.price_direct",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Preciso consultar os dados oficiais de preço antes de confirmar.",
+      "template_id": "product.price_direct",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Você comentou que o WhatsApp está caótico no follow-up.",
+      "template_id": "diagnostic.offer_soft",
+      "channel": "whatsapp",
+      "sequence": 3
+    },
+    {
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+      "template_id": "diagnostic.offer_soft",
+      "channel": "whatsapp",
+      "sequence": 4
+    },
+    {
+      "text": "O que voce acha?",
+      "template_id": "diagnostic.offer_soft",
+      "channel": "whatsapp",
+      "sequence": 5
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "new_inbound",
+    "last_intent": "price",
+    "next_action_hint": "answer_price_then_offer_soft_diagnostic"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 12807,
+    "output_tokens": 1171,
+    "cost_usd": 0.008395,
+    "handoffs": 1,
+    "repairs": 1
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

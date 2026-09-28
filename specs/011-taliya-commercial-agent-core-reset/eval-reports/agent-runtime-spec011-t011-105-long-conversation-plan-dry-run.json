@@ -1,0 +1,12 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-t011-105-long-conversation-plan",
+  "dryRun": true,
+  "selectedScenarioCount": 1,
+  "estimatedModelCalls": 14,
+  "maxModelCalls": 14,
+  "maxCostUsd": 0.25,
+  "scenarioIds": [
+    "step3g-long-conversation"
+  ]
+}

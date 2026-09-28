@@ -1,0 +1,19 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-p0-dry-run",
+  "dryRun": true,
+  "selectedScenarioCount": 8,
+  "estimatedModelCalls": 10,
+  "maxModelCalls": 0,
+  "maxCostUsd": 0.0,
+  "scenarioIds": [
+    "spec011-rc001-rc002-internal-metadata-leak",
+    "spec011-rc003-price-497-not-student-count",
+    "spec011-rc004-urgency-before-final",
+    "spec011-rc005-rc006-rc008-simple-number-answer",
+    "spec011-rc007-valid-short-answer-does-not-stall",
+    "spec011-rc009-final-diagnostic-not-truncated",
+    "spec011-rc012-final-diagnostic-plain-studio-language",
+    "spec011-rc014-false-pass-protection"
+  ]
+}

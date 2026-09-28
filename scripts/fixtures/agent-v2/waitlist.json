@@ -1,0 +1,6 @@
+[
+  { "id": "WAI-001", "message": "faz sentido", "expect": ["numero pequeno de studios"] },
+  { "id": "WAI-004", "message": "pode ser", "expect": ["nome do studio", "cidade"] },
+  { "id": "WAI-012", "message": "entrei na lista, mas quanto fica o completo?", "expect": ["R$ 1.497", "continua registrado"] }
+]
+

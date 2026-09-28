@@ -1,0 +1,12 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-post-waitlist-latest",
+  "dryRun": true,
+  "selectedScenarioCount": 1,
+  "estimatedModelCalls": 3,
+  "maxModelCalls": 3,
+  "maxCostUsd": 0.05,
+  "scenarioIds": [
+    "final-post-waitlist-product-question"
+  ]
+}

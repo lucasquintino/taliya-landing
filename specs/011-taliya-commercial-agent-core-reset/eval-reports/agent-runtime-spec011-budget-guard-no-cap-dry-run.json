@@ -1,0 +1,12 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-budget-guard-no-cap",
+  "dryRun": true,
+  "selectedScenarioCount": 1,
+  "estimatedModelCalls": 1,
+  "maxModelCalls": 0,
+  "maxCostUsd": 0.0,
+  "scenarioIds": [
+    "final-price-first"
+  ]
+}

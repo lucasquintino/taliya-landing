@@ -1,0 +1,206 @@
+{
+  "schema": "012.sales_inbox_projection_evidence_summary.v1",
+  "source_report": "specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-043-real-model-golden-transcripts\\20260616T121413Z\\report.json",
+  "source_started_at": "2026-06-16T12:14:13.388512+00:00",
+  "source_finished_at": "2026-06-16T12:15:29.883430+00:00",
+  "model": "gpt-5.4-mini",
+  "paid_call_status": "attempted_real_openai",
+  "source_total_cost_usd": 0.087158,
+  "source_total_model_operations": 33,
+  "ui_changed": false,
+  "persistence_commit_changed": false,
+  "required_projection_fields": [
+    "conversation_id",
+    "lead_id",
+    "commercial_stage",
+    "diagnostic_status",
+    "fields"
+  ],
+  "required_nested_fields": [
+    "template_ids",
+    "validator_status",
+    "source_labels"
+  ],
+  "scenario_count": 9,
+  "all_projection_complete": true,
+  "total_turn_count": 22,
+  "total_projection_count": 21,
+  "missing_required_fields": {},
+  "missing_projection_turn_indexes": {},
+  "stage_counts": {
+    "diagnostic_offered": 5,
+    "general_interest": 1,
+    "diagnostic_waiting_answer": 6,
+    "diagnostic_delivered": 1,
+    "demo_reaction_pending": 2,
+    "post_diagnostic_questions": 1,
+    "waitlist_offered": 1,
+    "waitlist_pending_data": 1,
+    "human_handoff": 2,
+    "waitlist_joined": 1
+  },
+  "waitlist_status_counts": {
+    "none": 17,
+    "offered": 3,
+    "joined": 1
+  },
+  "operator_next_action_counts": {
+    "none": 13,
+    "review_completed_diagnostic": 5,
+    "human_follow_up": 2,
+    "monitor_waitlist": 1
+  },
+  "scenario_summaries": [
+    {
+      "scenario_id": "final-price-first",
+      "projection_complete": true,
+      "turn_count": 1,
+      "projection_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004206,
+      "stages": [
+        "diagnostic_offered"
+      ],
+      "actions": [
+        "answer_direct_product_question"
+      ]
+    },
+    {
+      "scenario_id": "final-price-plus-pain",
+      "projection_complete": true,
+      "turn_count": 1,
+      "projection_count": 1,
+      "total_model_operations": 3,
+      "total_cost_usd": 0.007814,
+      "stages": [
+        "diagnostic_offered"
+      ],
+      "actions": [
+        "answer_direct_product_question"
+      ]
+    },
+    {
+      "scenario_id": "final-pain-first",
+      "projection_complete": true,
+      "turn_count": 1,
+      "projection_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004431,
+      "stages": [
+        "diagnostic_offered"
+      ],
+      "actions": [
+        "offer_diagnostic_from_pain"
+      ]
+    },
+    {
+      "scenario_id": "final-instagram-interest",
+      "projection_complete": true,
+      "turn_count": 1,
+      "projection_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004432,
+      "stages": [
+        "general_interest"
+      ],
+      "actions": [
+        "answer_source_opening"
+      ]
+    },
+    {
+      "scenario_id": "final-whatsapp-question",
+      "projection_complete": true,
+      "turn_count": 1,
+      "projection_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004188,
+      "stages": [
+        "diagnostic_offered"
+      ],
+      "actions": [
+        "answer_whatsapp_scope"
+      ]
+    },
+    {
+      "scenario_id": "step3g-long-conversation",
+      "projection_complete": true,
+      "turn_count": 13,
+      "projection_count": 13,
+      "total_model_operations": 16,
+      "total_cost_usd": 0.048401,
+      "stages": [
+        "diagnostic_offered",
+        "diagnostic_waiting_answer",
+        "diagnostic_waiting_answer",
+        "diagnostic_waiting_answer",
+        "diagnostic_waiting_answer",
+        "diagnostic_waiting_answer",
+        "diagnostic_waiting_answer",
+        "diagnostic_delivered",
+        "demo_reaction_pending",
+        "post_diagnostic_questions",
+        "waitlist_offered",
+        "waitlist_pending_data",
+        "human_handoff"
+      ],
+      "actions": [
+        "answer_direct_product_question",
+        "start_requested_diagnostic",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "complete_diagnostic",
+        "send_demo",
+        "answer_price_objection_with_context",
+        "offer_or_join_waitlist_if_eligible",
+        "answer_question_then_continue_waitlist",
+        "handoff_requested"
+      ]
+    },
+    {
+      "scenario_id": "final-waitlist-joined",
+      "projection_complete": true,
+      "turn_count": 1,
+      "projection_count": 1,
+      "total_model_operations": 1,
+      "total_cost_usd": 0.002439,
+      "stages": [
+        "waitlist_joined"
+      ],
+      "actions": [
+        "join_waitlist"
+      ]
+    },
+    {
+      "scenario_id": "final-human-request-silent-after",
+      "projection_complete": true,
+      "turn_count": 2,
+      "projection_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.003932,
+      "stages": [
+        "human_handoff"
+      ],
+      "actions": [
+        "handoff_requested",
+        null
+      ]
+    },
+    {
+      "scenario_id": "final-demo-request",
+      "projection_complete": true,
+      "turn_count": 1,
+      "projection_count": 1,
+      "total_model_operations": 3,
+      "total_cost_usd": 0.007316,
+      "stages": [
+        "demo_reaction_pending"
+      ],
+      "actions": [
+        "send_demo"
+      ]
+    }
+  ]
+}

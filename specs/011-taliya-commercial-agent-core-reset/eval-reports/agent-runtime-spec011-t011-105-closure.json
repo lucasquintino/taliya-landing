@@ -1,0 +1,829 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-105",
+  "name": "agent-runtime-spec011-t011-105-closure",
+  "releaseGate": "fail_missing_or_failed_paid_evidence",
+  "paidOpenAiSpend": 0,
+  "paidBatchClosureRequiresExistingPaidEvidence": true,
+  "currentSourceFingerprint": {
+    "algorithm": "sha256",
+    "digest": "e458fcec6bb36bed281b3b7437582554e9b02d89d958d3bb4f216f95b4ef6987",
+    "fileCount": 50,
+    "targets": [
+      "services/taliya-agent-runtime/app/core/taliya_commercial",
+      "services/taliya-agent-runtime/app/main.py",
+      "services/taliya-agent-runtime/app/settings.py",
+      "services/taliya-agent-runtime/app/runtime/schemas.py",
+      "services/taliya-agent-runtime/app/shared/memory",
+      "scripts/eval-agent-runtime-spec011.py",
+      "scripts/spec011-t011-105-source-fingerprint.mjs",
+      "scripts/eval-agent-runtime-spec011-fixture-inventory.mjs",
+      "scripts/eval-agent-runtime-spec011-golden-do-not-do.mjs",
+      "scripts/eval-agent-runtime-spec011-known-validator-recovery.mjs",
+      "scripts/eval-agent-runtime-spec011-mocked-conductor.mjs",
+      "scripts/eval-agent-runtime-spec011-public-fallback-quarantine.mjs",
+      "scripts/eval-agent-runtime-spec011-rollback.mjs",
+      "scripts/eval-agent-runtime-spec011-runner-quarantine.mjs",
+      "scripts/eval-agent-runtime-spec011-static-audit.mjs",
+      "scripts/eval-agent-runtime-spec011-t011-105-paid-batch.mjs",
+      "scripts/eval-agent-runtime-spec011-t011-105-readiness.mjs",
+      "scripts/eval-agent-runtime-spec011-t011-105-safety-audit.mjs",
+      "scripts/eval-agent-runtime-spec011-unit-contract.mjs",
+      "scripts/eval-agent-runtime-spec011-widget-adapter.mjs",
+      "scripts/eval-agent-runtime-spec011-t011-105-closure.mjs",
+      "scripts/fixtures/agent-runtime/spec-011-golden-transcripts.json",
+      "scripts/fixtures/agent-runtime/spec-011-do-not-do-runtime.json"
+    ]
+  },
+  "requiredPaidBatchCommand": "node scripts\\eval-agent-runtime-spec011-t011-105-paid-batch.mjs --approval-token T011-105-US0.36 --approved-budget-usd 0.36",
+  "summary": {
+    "total": 11,
+    "passed": 2,
+    "failed": 9
+  },
+  "results": [
+    {
+      "ok": false,
+      "message": "readiness and paid batch evidence match the current source fingerprint",
+      "details": {
+        "currentSourceFingerprint": {
+          "algorithm": "sha256",
+          "digest": "e458fcec6bb36bed281b3b7437582554e9b02d89d958d3bb4f216f95b4ef6987",
+          "fileCount": 50,
+          "targets": [
+            "services/taliya-agent-runtime/app/core/taliya_commercial",
+            "services/taliya-agent-runtime/app/main.py",
+            "services/taliya-agent-runtime/app/settings.py",
+            "services/taliya-agent-runtime/app/runtime/schemas.py",
+            "services/taliya-agent-runtime/app/shared/memory",
+            "scripts/eval-agent-runtime-spec011.py",
+            "scripts/spec011-t011-105-source-fingerprint.mjs",
+            "scripts/eval-agent-runtime-spec011-fixture-inventory.mjs",
+            "scripts/eval-agent-runtime-spec011-golden-do-not-do.mjs",
+            "scripts/eval-agent-runtime-spec011-known-validator-recovery.mjs",
+            "scripts/eval-agent-runtime-spec011-mocked-conductor.mjs",
+            "scripts/eval-agent-runtime-spec011-public-fallback-quarantine.mjs",
+            "scripts/eval-agent-runtime-spec011-rollback.mjs",
+            "scripts/eval-agent-runtime-spec011-runner-quarantine.mjs",
+            "scripts/eval-agent-runtime-spec011-static-audit.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-paid-batch.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-readiness.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-safety-audit.mjs",
+            "scripts/eval-agent-runtime-spec011-unit-contract.mjs",
+            "scripts/eval-agent-runtime-spec011-widget-adapter.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-closure.mjs",
+            "scripts/fixtures/agent-runtime/spec-011-golden-transcripts.json",
+            "scripts/fixtures/agent-runtime/spec-011-do-not-do-runtime.json"
+          ]
+        },
+        "readinessSourceFingerprint": {
+          "algorithm": "sha256",
+          "digest": "e458fcec6bb36bed281b3b7437582554e9b02d89d958d3bb4f216f95b4ef6987",
+          "fileCount": 50,
+          "targets": [
+            "services/taliya-agent-runtime/app/core/taliya_commercial",
+            "services/taliya-agent-runtime/app/main.py",
+            "services/taliya-agent-runtime/app/settings.py",
+            "services/taliya-agent-runtime/app/runtime/schemas.py",
+            "services/taliya-agent-runtime/app/shared/memory",
+            "scripts/eval-agent-runtime-spec011.py",
+            "scripts/spec011-t011-105-source-fingerprint.mjs",
+            "scripts/eval-agent-runtime-spec011-fixture-inventory.mjs",
+            "scripts/eval-agent-runtime-spec011-golden-do-not-do.mjs",
+            "scripts/eval-agent-runtime-spec011-known-validator-recovery.mjs",
+            "scripts/eval-agent-runtime-spec011-mocked-conductor.mjs",
+            "scripts/eval-agent-runtime-spec011-public-fallback-quarantine.mjs",
+            "scripts/eval-agent-runtime-spec011-rollback.mjs",
+            "scripts/eval-agent-runtime-spec011-runner-quarantine.mjs",
+            "scripts/eval-agent-runtime-spec011-static-audit.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-paid-batch.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-readiness.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-safety-audit.mjs",
+            "scripts/eval-agent-runtime-spec011-unit-contract.mjs",
+            "scripts/eval-agent-runtime-spec011-widget-adapter.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-closure.mjs",
+            "scripts/fixtures/agent-runtime/spec-011-golden-transcripts.json",
+            "scripts/fixtures/agent-runtime/spec-011-do-not-do-runtime.json"
+          ]
+        },
+        "paidBatchSourceFingerprint": {
+          "algorithm": "sha256",
+          "digest": "b6bc712960ac06a93f80eff575a732cfb7e3d86f22cc0e7a6cbfce54fe159c9b",
+          "fileCount": 50,
+          "targets": [
+            "services/taliya-agent-runtime/app/core/taliya_commercial",
+            "services/taliya-agent-runtime/app/main.py",
+            "services/taliya-agent-runtime/app/settings.py",
+            "services/taliya-agent-runtime/app/runtime/schemas.py",
+            "services/taliya-agent-runtime/app/shared/memory",
+            "scripts/eval-agent-runtime-spec011.py",
+            "scripts/spec011-t011-105-source-fingerprint.mjs",
+            "scripts/eval-agent-runtime-spec011-fixture-inventory.mjs",
+            "scripts/eval-agent-runtime-spec011-golden-do-not-do.mjs",
+            "scripts/eval-agent-runtime-spec011-known-validator-recovery.mjs",
+            "scripts/eval-agent-runtime-spec011-mocked-conductor.mjs",
+            "scripts/eval-agent-runtime-spec011-public-fallback-quarantine.mjs",
+            "scripts/eval-agent-runtime-spec011-rollback.mjs",
+            "scripts/eval-agent-runtime-spec011-runner-quarantine.mjs",
+            "scripts/eval-agent-runtime-spec011-static-audit.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-paid-batch.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-readiness.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-safety-audit.mjs",
+            "scripts/eval-agent-runtime-spec011-unit-contract.mjs",
+            "scripts/eval-agent-runtime-spec011-widget-adapter.mjs",
+            "scripts/eval-agent-runtime-spec011-t011-105-closure.mjs",
+            "scripts/fixtures/agent-runtime/spec-011-golden-transcripts.json",
+            "scripts/fixtures/agent-runtime/spec-011-do-not-do-runtime.json"
+          ]
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "pre-paid readiness report is still the approved no-cost starting point",
+      "details": {
+        "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-t011-105-readiness.json",
+        "exists": true,
+        "releaseGate": "ready_for_paid_batch",
+        "expectedPaidBatch": {
+          "maxCostUsd": 0.36,
+          "maxModelCalls": 19,
+          "commands": [
+            "python scripts\\eval-agent-runtime-spec011.py --fixture scripts\\fixtures\\agent-runtime\\spec-011-golden-transcripts.json --scenario-id final-pain-first --max-scenarios 1 --max-model-calls 1 --max-cost-usd 0.03 --report-name agent-runtime-spec011-golden-pain-first-1",
+            "python scripts\\eval-agent-runtime-spec011.py --fixture scripts\\fixtures\\agent-runtime\\spec-011-golden-transcripts.json --scenario-id step3g-long-conversation --max-scenarios 1 --max-model-calls 14 --max-cost-usd 0.25 --report-name agent-runtime-spec011-golden-long-conversation-17",
+            "python scripts\\eval-agent-runtime-spec011.py --fixture scripts\\fixtures\\agent-runtime\\spec-011-do-not-do-runtime.json --scenario-id do-not-do-early-phone-capture --scenario-id do-not-do-date-vip-discount --scenario-id do-not-do-client-studio-whatsapp-capture --scenario-id do-not-do-wrong-student-language --max-scenarios 4 --max-model-calls 4 --max-cost-usd 0.08 --report-name agent-runtime-spec011-do-not-do-missing-1"
+          ]
+        }
+      }
+    },
+    {
+      "ok": false,
+      "message": "paid batch report passed with the exact approved token, budget, command count, and cost ceiling",
+      "details": {
+        "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-t011-105-paid-batch.json",
+        "exists": true,
+        "releaseGate": "fail_stopped_after_pain_first",
+        "approvalToken": "T011-105-US0.36",
+        "approvedBudgetUsd": 0.36,
+        "summary": {
+          "paidCommandsStarted": 1,
+          "estimatedCostUsd": 0.005045
+        }
+      }
+    },
+    {
+      "ok": false,
+      "message": "paid and aggregation evidence is fresh relative to the approved paid batch start",
+      "details": {
+        "paidBatchStartedAt": "2026-06-04T14:20:09.259Z",
+        "evidenceReports": [
+          {
+            "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-pain-first-1.json",
+            "exists": true,
+            "timestamp": "2026-06-04T14:20:59Z",
+            "fresh": true
+          },
+          {
+            "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-long-conversation-17.json",
+            "exists": true,
+            "timestamp": "2026-06-04T12:05:59Z",
+            "fresh": false
+          },
+          {
+            "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-do-not-do-missing-1.json",
+            "exists": false,
+            "timestamp": null,
+            "fresh": false
+          },
+          {
+            "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-t011-105-golden-after-paid-batch.json",
+            "exists": true,
+            "timestamp": "2026-06-01T13:36:04.353Z",
+            "fresh": false
+          },
+          {
+            "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-t011-105-do-not-do-after-paid-batch.json",
+            "exists": false,
+            "timestamp": null,
+            "fresh": false
+          }
+        ]
+      }
+    },
+    {
+      "ok": false,
+      "message": "paid batch cost equals the sum of fresh paid scenario reports and stays within budget",
+      "details": {
+        "paidBatchReport": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-t011-105-paid-batch.json",
+        "paidBatchCost": 0.005045,
+        "scenarioCostTotal": 0.104095,
+        "expectedBudgetUsd": 0.36,
+        "scenarioCosts": {
+          "painFirst": 0.005045,
+          "longConversation": 0.09905,
+          "doNotDoMissing": 0
+        }
+      }
+    },
+    {
+      "ok": false,
+      "message": "paid pain-first report passed only the missing golden pain-first scenario under the US$0.03 cap",
+      "details": {
+        "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-pain-first-1.json",
+        "exists": true,
+        "releaseGate": "fail",
+        "summary": {
+          "total": 1,
+          "passed": 0,
+          "failed": 1,
+          "estimatedCostUsd": 0.005045,
+          "inputTokens": 4765,
+          "outputTokens": 327
+        },
+        "scenarioIds": [
+          "final-pain-first"
+        ]
+      }
+    },
+    {
+      "ok": false,
+      "message": "paid long-conversation report passed only the missing golden scenario under the US$0.25 cap",
+      "details": {
+        "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-long-conversation-17.json",
+        "exists": true,
+        "releaseGate": "fail",
+        "summary": {
+          "total": 1,
+          "passed": 0,
+          "failed": 1,
+          "estimatedCostUsd": 0.09905,
+          "inputTokens": 86838,
+          "outputTokens": 7538
+        },
+        "scenarioIds": [
+          "step3g-long-conversation"
+        ]
+      }
+    },
+    {
+      "ok": false,
+      "message": "paid do-not-do report passed only the four missing forbidden-behavior scenarios under the US$0.08 cap",
+      "details": {
+        "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-do-not-do-missing-1.json",
+        "exists": false,
+        "releaseGate": null,
+        "summary": null,
+        "scenarioIds": []
+      }
+    },
+    {
+      "ok": false,
+      "message": "golden aggregation passed 9/9 and selected the new paid pain-first and long-conversation evidence",
+      "details": {
+        "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-t011-105-golden-after-paid-batch.json",
+        "exists": true,
+        "releaseGate": "fail",
+        "summary": {
+          "total": 9,
+          "passed": 8,
+          "failed": 1,
+          "runtimeCases": 9,
+          "staticCases": 0,
+          "estimatedCostUsd": 0.329289
+        },
+        "painFirstEvidence": {
+          "id": "final-pain-first",
+          "title": "Golden RC-011-053A pain-first opening",
+          "case_ids": [
+            "RC-011-053A"
+          ],
+          "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+          "status": "FAIL",
+          "failures": [
+            "no candidate evidence satisfied fixture expectations across 2 passing runtime report(s)",
+            "forbidden rendered text present: lead loses",
+            "forbidden rendered text present: interested leads",
+            "forbidden rendered text present: team takes too long"
+          ],
+          "cost_usd": 0.015337,
+          "diffs": {
+            "transcript_diff": [],
+            "conductor_json_diff": [],
+            "rendered_message_diff": [
+              "forbidden rendered text present: lead loses",
+              "forbidden rendered text present: interested leads",
+              "forbidden rendered text present: team takes too long"
+            ],
+            "validator_diff": [],
+            "usage_diff": [],
+            "sales_inbox_projection_diff": []
+          },
+          "observed": {
+            "rendered_messages": [
+              {
+                "template_id": "opening.cold_greeting",
+                "text": "Oi, tudo bem?"
+              },
+              {
+                "template_id": "opening.cold_greeting",
+                "text": "Em que posso ajudar?"
+              },
+              {
+                "template_id": "diagnostic.offer_soft",
+                "text": "Você está perdendo interessados no WhatsApp porque a equipe demora para responder."
+              },
+              {
+                "template_id": "diagnostic.offer_soft",
+                "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+              },
+              {
+                "template_id": "diagnostic.offer_soft",
+                "text": "O que voce acha?"
+              },
+              {
+                "template_id": "diagnostic.ask_active_students",
+                "text": "Entendi: lead loses many interested leads on WhatsApp because the team takes too long to reply."
+              },
+              {
+                "template_id": "diagnostic.ask_active_students",
+                "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+              }
+            ],
+            "final_decision": {
+              "previous_state": "entry",
+              "current_state": "diagnostic_offered",
+              "next_state": "diagnostic_in_progress",
+              "route": "diagnostic",
+              "opening_type": "cold_greeting_only",
+              "detected_intents": [
+                "source_from_pilates_landing",
+                "pain_statement",
+                "diagnostic_relevant"
+              ],
+              "direct_question_present": false,
+              "direct_question_answered_first": true,
+              "diagnostic_action": "offer",
+              "diagnostic_allowed_now": true,
+              "waitlist_allowed_now": false,
+              "demo_status": "not_offered",
+              "demo_next_step": "none",
+              "profile_name_usage": "not_available",
+              "facts_used": [
+                "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+              ],
+              "facts_missing": [
+                "Use staged diagnostic flow: acknowledge the pain, then ask only for active_students_or_size next.",
+                "Keep CRM wording avoided by default.",
+                "Do not introduce demo or waitlist in this turn."
+              ],
+              "template_ids": [
+                "opening.cold_greeting",
+                "diagnostic.offer_soft",
+                "diagnostic.ask_active_students"
+              ],
+              "template_variables": {
+                "opening.cold_greeting": {},
+                "diagnostic.offer_soft": {
+                  "pain_context_human": {
+                    "kind": "long_text",
+                    "value": "Você está perdendo interessados no WhatsApp porque a equipe demora para responder.",
+                    "source": "user_message",
+                    "evidence": [
+                      "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+                    ],
+                    "max_length": 420
+                  }
+                },
+                "diagnostic.ask_active_students": {
+                  "answer_feedback": {
+                    "kind": "short_text",
+                    "value": "Entendi: lead loses many interested leads on WhatsApp because the team takes too long to reply.",
+                    "source": "diagnostic_ledger",
+                    "evidence": [
+                      "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+                    ],
+                    "max_length": 180
+                  }
+                }
+              },
+              "render_plan": [
+                {
+                  "template_id": "opening.cold_greeting",
+                  "channel": "widget",
+                  "variables": {}
+                },
+                {
+                  "template_id": "diagnostic.offer_soft",
+                  "channel": "widget",
+                  "variables": {
+                    "pain_context_human": {
+                      "kind": "long_text",
+                      "value": "Você está perdendo interessados no WhatsApp porque a equipe demora para responder.",
+                      "source": "user_message",
+                      "evidence": [
+                        "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+                      ],
+                      "max_length": 420
+                    }
+                  }
+                },
+                {
+                  "template_id": "diagnostic.ask_active_students",
+                  "channel": "widget",
+                  "variables": {
+                    "answer_feedback": {
+                      "kind": "short_text",
+                      "value": "Entendi: lead loses many interested leads on WhatsApp because the team takes too long to reply.",
+                      "source": "diagnostic_ledger",
+                      "evidence": [
+                        "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+                      ],
+                      "max_length": 180
+                    }
+                  }
+                }
+              ],
+              "diagnostic_ledger_status": "not_started",
+              "next_question_kind": "plan_fit",
+              "policy_checks": {
+                "direct_question_answered_first": true,
+                "diagnostic_timing_ok": true,
+                "waitlist_timing_ok": true,
+                "official_facts_only": true,
+                "no_early_contact_capture": true,
+                "no_whatsapp_phone_request": true,
+                "no_fake_certainty": true,
+                "no_human_overlap": true,
+                "channel_brevity_ok": true
+              }
+            },
+            "final_waitlist": {
+              "status": "none",
+              "reason": null,
+              "missing_fields": []
+            },
+            "final_handoff": {
+              "status": "none",
+              "reason": null
+            }
+          },
+          "candidate_failures": [
+            {
+              "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+              "failures": [
+                "forbidden rendered text present: lead loses",
+                "forbidden rendered text present: interested leads",
+                "forbidden rendered text present: team takes too long"
+              ]
+            },
+            {
+              "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-pain-first-1.json",
+              "failures": [
+                "template id missing from final decision: diagnostic.ask_active_students",
+                "missing required rendered text: alunos ativos"
+              ]
+            }
+          ]
+        },
+        "longConversationEvidence": {
+          "id": "step3g-long-conversation",
+          "title": "Golden RC-011-056/060 diagnostic question-by-question and long conversation",
+          "case_ids": [
+            "RC-011-056",
+            "RC-011-060"
+          ],
+          "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-long-conversation-17.json",
+          "status": "PASS",
+          "failures": [],
+          "cost_usd": 0.197934,
+          "diffs": {
+            "transcript_diff": [],
+            "conductor_json_diff": [],
+            "rendered_message_diff": [],
+            "validator_diff": [],
+            "usage_diff": [],
+            "sales_inbox_projection_diff": []
+          },
+          "observed": {
+            "rendered_messages": [
+              {
+                "template_id": "product.price_direct",
+                "text": "Oi, tudo bem?"
+              },
+              {
+                "template_id": "product.price_direct",
+                "text": "Base: R$ 197/mes; Essencial: R$ 497/mes; Avance: R$ 897/mes; Completo: R$ 1.497/mes."
+              },
+              {
+                "template_id": "diagnostic.price_hook",
+                "text": "Se fizer sentido para voce, estamos oferecendo um diagnostico gratuito para o seu studio. Assim voce entende se algum dos nossos planos te atenderia."
+              },
+              {
+                "template_id": "diagnostic.price_hook",
+                "text": "Com poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+              },
+              {
+                "template_id": "diagnostic.price_hook",
+                "text": "O que voce acha?"
+              },
+              {
+                "template_id": "diagnostic.ask_urgency",
+                "text": "Entendi: 95 alunos."
+              },
+              {
+                "template_id": "diagnostic.ask_urgency",
+                "text": "Voces estao buscando resolver isso agora ou so pesquisando por enquanto?"
+              },
+              {
+                "template_id": "diagnostic.ask_current_process",
+                "text": "Entendi: 95 alunos."
+              },
+              {
+                "template_id": "diagnostic.ask_current_process",
+                "text": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+              },
+              {
+                "template_id": "diagnostic.ask_current_process",
+                "text": "Perfeito, já entendi o tamanho e a dor principal."
+              },
+              {
+                "template_id": "diagnostic.ask_current_process",
+                "text": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+              },
+              {
+                "template_id": "diagnostic.ask_priority",
+                "text": "Entendi que o ponto principal está no WhatsApp e no follow-up."
+              },
+              {
+                "template_id": "diagnostic.ask_priority",
+                "text": "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+              },
+              {
+                "template_id": "diagnostic.ask_priority",
+                "text": "Entendi: o ponto está em enxergar quem precisa de retorno no dia."
+              },
+              {
+                "template_id": "diagnostic.ask_priority",
+                "text": "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+              },
+              {
+                "template_id": "diagnostic.ask_urgency",
+                "text": "Entendi, o gargalo está em enxergar quem precisa de retorno no dia."
+              },
+              {
+                "template_id": "diagnostic.ask_urgency",
+                "text": "Voces estao buscando resolver isso agora ou so pesquisando por enquanto?"
+              },
+              {
+                "template_id": "diagnostic.ask_urgency",
+                "text": "Entendi: 95 alunos."
+              },
+              {
+                "template_id": "diagnostic.ask_urgency",
+                "text": "Voces estao buscando resolver isso agora ou so pesquisando por enquanto?"
+              },
+              {
+                "template_id": "diagnostic.deliver_hold",
+                "text": "Perfeito. Ja da para te devolver uma leitura pratica. Vou organizar em partes."
+              },
+              {
+                "template_id": "diagnostic.deliver_context",
+                "text": "Pelo que voce contou, o principal peso esta na rotina comercial e nos follow-ups que dependem de controle manual."
+              },
+              {
+                "template_id": "diagnostic.deliver_crm_base",
+                "text": "Antes dos agentes, eu organizaria contatos, conversas, situacao de cada interessado e proximos passos em uma base unica."
+              },
+              {
+                "template_id": "diagnostic.deliver_operational_step",
+                "text": "O primeiro passo e separar novos interessados, retornos pendentes e conversas paradas para a equipe saber onde agir."
+              },
+              {
+                "template_id": "diagnostic.deliver_agent_recommendation",
+                "text": "Agente Vendas: ajuda com Interessados que se perdem no WhatsApp e follow-up que toma tempo da equipe.. Na pratica: Organiza os interessados, registra os próximos passos e ajuda a equipe a não deixar conversa esfriar.."
+              },
+              {
+                "template_id": "diagnostic.deliver_plan_recommendation",
+                "text": "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Essencial."
+              },
+              {
+                "template_id": "diagnostic.deliver_demo_not_offered",
+                "text": "Como eu ainda nao tinha te enviado a demonstracao. Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+              },
+              {
+                "template_id": "product.demo_direct",
+                "text": "Oi, tudo bem?"
+              },
+              {
+                "template_id": "product.demo_direct",
+                "text": "Ver demonstracao: https://www.taliya.com.br/pilates/planos/demonstracao"
+              },
+              {
+                "template_id": "product.demo_direct",
+                "text": "Para eu te indicar o que vale olhar primeiro, faz sentido pensar na parte de agenda, atendimento ou vendas do seu studio."
+              },
+              {
+                "template_id": "product.price_objection_value",
+                "text": "Entendo. E um valor para olhar com calma mesmo."
+              },
+              {
+                "template_id": "product.price_objection_value",
+                "text": "O ponto e que a Taliya nao e so mais uma ferramenta: ela ajuda nas rotinas que fazem o studio girar, como WhatsApp, retorno de interessados, agenda, reposicoes, cobrancas e acompanhamento."
+              },
+              {
+                "template_id": "product.price_objection_value",
+                "text": "Para decidir sem pressa, podemos usar o diagnostico gratuito para comparar prioridade e plano, ou deixar seu interesse na lista de espera se voce ja quiser seguir."
+              },
+              {
+                "template_id": "diagnostic.price_hook_with_context",
+                "text": "Você tem 95 alunos, perde interessados no WhatsApp e quer resolver vendas agora."
+              },
+              {
+                "template_id": "diagnostic.price_hook_with_context",
+                "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+              },
+              {
+                "template_id": "diagnostic.price_hook_with_context",
+                "text": "O que voce acha?"
+              },
+              {
+                "template_id": "diagnostic.deliver_hold",
+                "text": "Perfeito. Ja da para te devolver uma leitura pratica. Vou organizar em partes."
+              },
+              {
+                "template_id": "diagnostic.deliver_context",
+                "text": "Pelo que voce contou, o principal peso esta na rotina comercial e nos follow-ups que dependem de controle manual."
+              },
+              {
+                "template_id": "diagnostic.deliver_crm_base",
+                "text": "Antes dos agentes, eu organizaria contatos, conversas, situacao de cada interessado e proximos passos em uma base unica."
+              },
+              {
+                "template_id": "diagnostic.deliver_operational_step",
+                "text": "O primeiro passo e separar novos interessados, retornos pendentes e conversas paradas para a equipe saber onde agir."
+              },
+              {
+                "template_id": "diagnostic.deliver_agent_recommendation",
+                "text": "Agente Vendas: ajuda com a rotina citada no diagnostico. Na pratica: ajuda a organizar proximos passos e evitar conversas paradas."
+              },
+              {
+                "template_id": "diagnostic.deliver_plan_recommendation",
+                "text": "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Essencial."
+              },
+              {
+                "template_id": "diagnostic.deliver_demo_already_offered",
+                "text": "Como voce ja tinha visto a demonstracao. Chegou a olhar as demonstracoes? O que voce achou?"
+              },
+              {
+                "template_id": "product.how_it_works_direct",
+                "text": "Funciona assim: a Taliya ajuda o studio a organizar o que acontece no dia a dia."
+              },
+              {
+                "template_id": "product.how_it_works_direct",
+                "text": "Ela junta conversas, alunos, agenda, reposicoes, cobrancas, interessados e acompanhamentos para a equipe enxergar melhor o que precisa de acao."
+              },
+              {
+                "template_id": "product.how_it_works_direct",
+                "text": "Quando o WhatsApp Business do studio esta conectado, os agentes podem apoiar conversas com alunos e interessados, sempre com a equipe podendo acompanhar e assumir quando precisar. Se fizer sentido, posso fazer um diagnostico gratuito para entender se a Taliya encaixa na rotina do seu studio. O que voce acha?"
+              },
+              {
+                "template_id": "handoff.acknowledge",
+                "text": "Claro. Vou deixar uma pessoa assumir daqui."
+              },
+              {
+                "template_id": "handoff.acknowledge",
+                "text": "Tambem deixo o contexto salvo para voce nao precisar repetir tudo."
+              }
+            ],
+            "final_decision": {
+              "previous_state": "diagnostic_completed_demo_viewed_or_asked",
+              "current_state": "human_requested",
+              "next_state": "handoff_active",
+              "route": "handoff",
+              "opening_type": "none",
+              "detected_intents": [
+                "human_request",
+                "commercial_product_demo",
+                "diagnostic_completed"
+              ],
+              "direct_question_present": false,
+              "direct_question_answered_first": false,
+              "diagnostic_action": "none",
+              "diagnostic_allowed_now": false,
+              "waitlist_allowed_now": true,
+              "demo_status": "not_offered",
+              "demo_next_step": "none",
+              "profile_name_usage": "not_needed",
+              "facts_used": [
+                "sender.name",
+                "tenho 95 alunos e perco interessados no whatsapp",
+                "tenho 95 alunos e perco interessados no whatsapp",
+                "whatsapp e follow-up dao mais trabalho",
+                "prioridade e vendas primeiro",
+                "quero resolver agora"
+              ],
+              "facts_missing": [
+                "Maintain human handoff because the lead explicitly requested someone.",
+                "Keep diagnostic completion preserved in state.",
+                "Do not add extra product claims or new questions."
+              ],
+              "template_ids": [
+                "handoff.acknowledge"
+              ],
+              "template_variables": {
+                "handoff.acknowledge": {
+                  "handoff_reason": {
+                    "kind": "short_text",
+                    "value": "o lead pediu falar com alguem",
+                    "source": "user_message",
+                    "evidence": [
+                      "quero falar com alguem"
+                    ],
+                    "max_length": 120
+                  }
+                }
+              },
+              "render_plan": [
+                {
+                  "template_id": "handoff.acknowledge",
+                  "channel": "widget",
+                  "variables": {
+                    "handoff_reason": {
+                      "kind": "short_text",
+                      "value": "o lead pediu falar com alguem",
+                      "source": "user_message",
+                      "evidence": [
+                        "quero falar com alguem"
+                      ],
+                      "max_length": 120
+                    }
+                  }
+                }
+              ],
+              "diagnostic_ledger_status": "not_started",
+              "next_question_kind": "none",
+              "policy_checks": {
+                "direct_question_answered_first": true,
+                "diagnostic_timing_ok": true,
+                "waitlist_timing_ok": true,
+                "official_facts_only": true,
+                "no_early_contact_capture": true,
+                "no_whatsapp_phone_request": true,
+                "no_fake_certainty": true,
+                "no_human_overlap": true,
+                "channel_brevity_ok": true
+              }
+            },
+            "final_waitlist": {
+              "status": "offered",
+              "reason": null,
+              "missing_fields": []
+            },
+            "final_handoff": {
+              "status": "requested",
+              "reason": "o lead pediu falar com alguem"
+            }
+          },
+          "evaluated_evidence_count": 1,
+          "rejected_evidence": []
+        }
+      }
+    },
+    {
+      "ok": false,
+      "message": "do-not-do aggregation passed 8/8 and selected the new paid evidence for all four missing forbidden behaviors",
+      "details": {
+        "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-t011-105-do-not-do-after-paid-batch.json",
+        "exists": false,
+        "releaseGate": null,
+        "summary": null,
+        "expectedDoNotDoPaidScenarios": [
+          "do-not-do-client-studio-whatsapp-capture",
+          "do-not-do-date-vip-discount",
+          "do-not-do-early-phone-capture",
+          "do-not-do-wrong-student-language"
+        ],
+        "selectedEvidence": [
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "closure produced no protected /pilates, landing visual, floating-agent, or Sales Inbox UI source diff",
+      "details": {
+        "protectedDiff": {
+          "id": "protected_source_diff",
+          "ok": true,
+          "exitCode": 0,
+          "command": "git -c safe.directory=C:/Users/lucas/agentes-landing-system diff --name-only -- app/pilates components/landing data/landing lib/landing/floating-agent.ts components/internal/SalesInboxClient.tsx",
+          "output": "",
+          "files": []
+        }
+      }
+    }
+  ]
+}

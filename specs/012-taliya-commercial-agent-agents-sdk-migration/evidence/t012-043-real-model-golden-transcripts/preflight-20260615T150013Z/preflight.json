@@ -1,0 +1,68 @@
+{
+  "schema": "012.real_model_golden_transcripts_preflight.v1",
+  "task": "T012-043",
+  "created_at": "2026-06-15T15:00:13.698373+00:00",
+  "model": "gpt-5.4-mini",
+  "fixture_path": "scripts\\fixtures\\agent-runtime\\spec-011-golden-transcripts.json",
+  "scenario_count": 9,
+  "scenario_ids": [
+    "final-price-first",
+    "final-price-plus-pain",
+    "final-pain-first",
+    "final-instagram-interest",
+    "final-whatsapp-question",
+    "step3g-long-conversation",
+    "final-waitlist-joined",
+    "final-human-request-silent-after",
+    "final-demo-request"
+  ],
+  "messages_by_scenario": {
+    "final-price-first": [
+      "quanto custa?"
+    ],
+    "final-price-plus-pain": [
+      "tenho reposicao baguncada na agenda e queria saber preco"
+    ],
+    "final-pain-first": [
+      "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+    ],
+    "final-instagram-interest": [
+      "vim pelo Instagram e gostaria de saber mais"
+    ],
+    "final-whatsapp-question": [
+      "como funciona no WhatsApp?"
+    ],
+    "step3g-long-conversation": [
+      "quanto custa?",
+      "tenho 95 alunos e perco interessados no whatsapp",
+      "pode fazer diagnostico",
+      "95 alunos ativos",
+      "whatsapp e follow-up dao mais trabalho",
+      "nao consigo ver quem precisa de retorno no dia",
+      "hoje fica em planilha e whatsapp",
+      "prioridade e vendas primeiro",
+      "quero resolver agora",
+      "me manda demo",
+      "achei caro",
+      "quero comecar, me coloca na lista",
+      "como funciona mesmo?",
+      "quero falar com alguem"
+    ],
+    "final-waitlist-joined": [
+      "quero contratar, como faco para entrar?",
+      "pode colocar o Studio Viva em Vitoria ES"
+    ],
+    "final-human-request-silent-after": [
+      "quero falar com uma pessoa",
+      "ainda estou aqui"
+    ],
+    "final-demo-request": [
+      "quero ver uma demonstracao"
+    ]
+  },
+  "openai_api_key_available": true,
+  "env_file_checked": "C:\\Users\\lucas\\agentes-landing-system\\.env.local",
+  "model_has_recorded_pricing": true,
+  "max_total_cost_usd": 1.0,
+  "paid_call_status": "not_attempted_preflight_only"
+}

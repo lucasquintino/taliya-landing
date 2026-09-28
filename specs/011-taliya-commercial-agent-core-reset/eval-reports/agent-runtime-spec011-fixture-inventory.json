@@ -1,0 +1,177 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-fixture-inventory",
+  "releaseGate": "pass",
+  "paidOpenAiSpend": 0,
+  "summary": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "goldenCount": 9,
+    "doNotDoCount": 8
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "fixtures have unique scenario ids",
+      "details": {
+        "goldenDuplicates": [],
+        "doNotDoDuplicates": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "golden fixtures use the expected versioned schema",
+      "details": {
+        "schemaVersions": [
+          "011.golden_transcript.v1"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "do-not-do fixtures use the expected versioned schema",
+      "details": {
+        "schemaVersions": [
+          "011.do_not_do_runtime.v1"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "regression-case IDs are unique",
+      "details": {
+        "duplicateRegressionCaseIds": [],
+        "count": 79
+      }
+    },
+    {
+      "ok": true,
+      "message": "fixture case references exist in regression-cases.md",
+      "details": {
+        "referencedCaseIds": [
+          "RC-011-048",
+          "RC-011-052",
+          "RC-011-053",
+          "RC-011-053A",
+          "RC-011-054",
+          "RC-011-055",
+          "RC-011-056",
+          "RC-011-057",
+          "RC-011-058",
+          "RC-011-059",
+          "RC-011-060",
+          "RC-011-061",
+          "RC-011-062",
+          "RC-011-063",
+          "RC-011-064",
+          "RC-011-065",
+          "RC-011-066",
+          "RC-011-067"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "golden fixture covers all required T011-019 flow categories",
+      "details": {
+        "requiredGolden": [
+          [
+            "price",
+            "final-price-first"
+          ],
+          [
+            "price_plus_pain",
+            "final-price-plus-pain"
+          ],
+          [
+            "pain_first",
+            "final-pain-first"
+          ],
+          [
+            "instagram_source",
+            "final-instagram-interest"
+          ],
+          [
+            "whatsapp_product",
+            "final-whatsapp-question"
+          ],
+          [
+            "diagnostic_and_long_conversation",
+            "step3g-long-conversation"
+          ],
+          [
+            "waitlist",
+            "final-waitlist-joined"
+          ],
+          [
+            "human_handoff",
+            "final-human-request-silent-after"
+          ],
+          [
+            "product_demo",
+            "final-demo-request"
+          ]
+        ],
+        "missing": [],
+        "count": 9
+      }
+    },
+    {
+      "ok": true,
+      "message": "do-not-do fixture covers all required T011-019A forbidden-behavior categories",
+      "details": {
+        "requiredDoNotDo": [
+          [
+            "early_phone_capture",
+            "do-not-do-early-phone-capture"
+          ],
+          [
+            "invented_checkout",
+            "final-checkout-buy-intent"
+          ],
+          [
+            "invented_date_vip_discount",
+            "do-not-do-date-vip-discount"
+          ],
+          [
+            "invented_integrations",
+            "product-delta-integration-scope"
+          ],
+          [
+            "invented_certifications_security",
+            "product-delta-security-data"
+          ],
+          [
+            "client_studio_whatsapp_capture",
+            "do-not-do-client-studio-whatsapp-capture"
+          ],
+          [
+            "wrong_student_language",
+            "do-not-do-wrong-student-language"
+          ],
+          [
+            "price_497_not_student_count",
+            "spec011-rc003-price-497-not-student-count"
+          ]
+        ],
+        "missing": [],
+        "count": 8
+      }
+    },
+    {
+      "ok": true,
+      "message": "pain-first golden explicitly blocks translated English feedback leaks",
+      "details": {
+        "painFirstMustNot": [
+          "lead loses",
+          "interested leads",
+          "team takes too long",
+          "clientes",
+          "consumidores"
+        ]
+      }
+    }
+  ]
+}

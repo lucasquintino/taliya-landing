@@ -1,0 +1,24 @@
+{
+  "turns": [
+    {
+      "user_text": "oi, vi o perfil de voces no Instagram",
+      "status": "failed",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "action": "answer_source_opening",
+      "templates": [
+        "opening.instagram_source"
+      ],
+      "rendered": [],
+      "issues": [
+        "conductor_composition_variable_not_composable"
+      ],
+      "ops": 3,
+      "repairs": 1,
+      "cost_usd": 0.0064875
+    }
+  ],
+  "final_state": {},
+  "transcript": [],
+  "total_cost_usd": 0.0064875
+}

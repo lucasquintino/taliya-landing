@@ -1,0 +1,995 @@
+{
+  "number": 4,
+  "scenario_id": "price_plus_pain",
+  "channel": "whatsapp",
+  "required_proof": "Price answered first; pain context preserved for natural next step.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "qual o preco? meu WhatsApp esta caotico no follow-up"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_spec006_product_contracts",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"product\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "product",
+          "templates": [
+            {
+              "template_id": "product.agents_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.comparison_current_tool",
+              "required_variables": [
+                "current_tool_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.crm_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.demo_direct",
+              "required_variables": [
+                "official_demo_link"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.how_it_works_direct",
+              "required_variables": [
+                "contextual_next_step"
+              ],
+              "optional_variables": [
+                "recommended_area"
+              ]
+            },
+            {
+              "template_id": "product.integration_scope_direct",
+              "required_variables": [
+                "integration_topic"
+              ],
+              "optional_variables": [
+                "human_confirmation_topic"
+              ]
+            },
+            {
+              "template_id": "product.out_of_profile_redirect",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.overview_short",
+              "required_variables": [],
+              "optional_variables": [
+                "product_fact_summary"
+              ]
+            },
+            {
+              "template_id": "product.plan_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_name"
+              ]
+            },
+            {
+              "template_id": "product.plan_fit_with_diagnostic",
+              "required_variables": [
+                "plan_fit_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.price_complete_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_fit_context"
+              ]
+            },
+            {
+              "template_id": "product.price_direct",
+              "required_variables": [
+                "plan_price_summary"
+              ],
+              "optional_variables": [
+                "plan_fit_context"
+              ]
+            },
+            {
+              "template_id": "product.price_objection_value",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "product.security_data_direct",
+              "required_variables": [],
+              "optional_variables": [
+                "human_confirmation_topic"
+              ]
+            },
+            {
+              "template_id": "product.whatsapp_direct",
+              "required_variables": [
+                "product_fact_summary"
+              ],
+              "optional_variables": [
+                "official_demo_link"
+              ]
+            }
+          ],
+          "variable_specs": {
+            "contextual_next_step": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "model_decision",
+                "runtime_state"
+              ],
+              "validation_rule": "Approved next-step enum from product-followup contract; renderer owns copy. Allowed values: diagnostic_offer_with_pain, diagnostic_offer_generic, continue_diagnostic, no_cta."
+            },
+            "current_tool_context": {
+              "kind": "short_text",
+              "max_length": 120,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Current tool or competitor name only when the lead mentioned it."
+            },
+            "human_confirmation_topic": {
+              "kind": "short_text",
+              "max_length": 100,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Topic to hand to a human because official facts are missing or limited."
+            },
+            "integration_topic": {
+              "kind": "short_text",
+              "max_length": 100,
+              "allowed_sources": [
+                "user_message"
+              ],
+              "validation_rule": "Integration or setup topic explicitly asked by the lead."
+            },
+            "official_demo_link": {
+              "kind": "url",
+              "max_length": null,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official demo URL from product knowledge; never invented or shortened ad hoc."
+            },
+            "plan_fit_context": {
+              "kind": "short_text",
+              "max_length": 180,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "user_message"
+              ],
+              "validation_rule": "Lead-provided context used only to explain why fit needs diagnostic evidence."
+            },
+            "plan_name": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official plan name only."
+            },
+            "plan_price_summary": {
+              "kind": "long_text",
+              "max_length": 360,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official price/plan summary assembled from product facts only."
+            },
+            "product_fact_summary": {
+              "kind": "long_text",
+              "max_length": 320,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Short customer-facing product fact summary grounded in official sources."
+            },
+            "recommended_area": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "runtime_state"
+              ],
+              "validation_rule": "Area recommended by a completed diagnostic; not a new diagnosis."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"whatsapp\",\"price\",\"plans\",\"follow_up\"]}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_spec006_product_contracts",
+      "arguments": "{\"keys\":[\"price\",\"plan\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "plans",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": [
+                {
+                  "id": "base",
+                  "name": "Base",
+                  "monthly_price_brl": 197,
+                  "price_label": "R$ 197/mes",
+                  "best_for": "Studios that want to organize the routine before active AI.",
+                  "included_agents": [],
+                  "whatsapp_availability": "No automatic WhatsApp AI replies.",
+                  "usage_boundary": "1 studio, 1 user, no AI message quota."
+                },
+                {
+                  "id": "one_agent",
+                  "name": "Essencial",
+                  "monthly_price_brl": 497,
+                  "price_label": "R$ 497/mes",
+                  "best_for": "Studios that want to solve one clear pain first.",
+                  "included_agents": [
+                    "1 main agent chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for that agent.",
+                  "usage_boundary": "1 studio, up to 2 users, 1,500 AI messages/month with hard cap."
+                },
+                {
+                  "id": "three_agents",
+                  "name": "Avance",
+                  "monthly_price_brl": 897,
+                  "price_label": "R$ 897/mes",
+                  "best_for": "Studios that want help in some priority routines.",
+                  "included_agents": [
+                    "3 main agents chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for included agents.",
+                  "usage_boundary": "1 studio, up to 5 users, 5,000 AI messages/month with hard cap."
+                },
+                {
+                  "id": "seven_agents",
+                  "name": "Completo",
+                  "monthly_price_brl": 1497,
+                  "price_label": "R$ 1.497/mes",
+                  "best_for": "Studios that want the complete Taliya.",
+                  "included_agents": [
+                    "Atendimento",
+                    "Agenda",
+                    "Vendas",
+                    "Financeiro",
+                    "Retencao",
+                    "Gestao",
+                    "Historico/Evolucao"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for the complete team.",
+                  "usage_boundary": "1 studio, up to 10 users, 15,000 AI messages/month with hard cap."
+                }
+              ],
+              "excerpt": "Base (base) R$ 197/mes best_for=Studios that want to organize the routine before active AI. included=no active AI agents whatsapp=No automatic WhatsApp AI replies. usage=1 studio, 1 user, no AI message quota. | Essencial (one_agent) R$ 497/mes best_for=Studios that want to solve one clear pain first. included=1 main agent chosen during setup whatsapp=Requires the studio WhatsApp Business connected for that agent. usage=1 studio, up to 2 users, 1,500 AI messages/month with hard cap. | Avance (three_agents) R$ 897/mes best_for=Studios that want help in some priority routines. included=3 main agents chosen during setup whatsapp=Requires the studio WhatsApp Business connected for included agents. usage=1 studio, up to 5 users, 5,000 AI messages/month with hard cap. | Completo (seven_agents) R$ 1.497/mes best_for=Studios that want the complete Taliya. included=Atendimento, Agenda, Vendas, Financeiro, Retencao, Gestao, Historico/Evolucao whatsapp=Requires the studio WhatsApp Business connected for the complete team. usage=1 studio, up to 10 users, 15,000 AI messages/month with hard cap.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.plans"
+              ]
+            },
+            {
+              "key": "whatsapp",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.whatsapp"
+              ]
+            },
+            {
+              "key": "price",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.price"
+              ]
+            },
+            {
+              "key": "follow_up",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.follow_up"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "whatsapp",
+            "price",
+            "plans",
+            "follow_up"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.plans",
+          "product_knowledge.whatsapp",
+          "product_knowledge.price",
+          "product_knowledge.follow_up"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_spec006_product_contracts",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "spec006.price",
+              "source": "spec_006_product_contract",
+              "version": "spec006-bd19cd6ba6dd",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "specs/006-crm-operational-core#price"
+              ]
+            },
+            {
+              "key": "spec006.plan",
+              "source": "spec_006_product_contract",
+              "version": "spec006-bd19cd6ba6dd",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "specs/006-crm-operational-core#plan"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "price",
+            "plan"
+          ]
+        },
+        "evidence": [
+          "specs/006-crm-operational-core#price",
+          "specs/006-crm-operational-core#plan"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "price_question",
+        "whatsapp_pain"
+      ],
+      "direct_question": "qual o preco?",
+      "customer_need": "entender preço e saber se a solução ajuda a organizar o follow-up do WhatsApp",
+      "pain_context": "WhatsApp caótico no follow-up",
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "whatsapp_pain",
+          "kind": "pain",
+          "raw_text": "meu WhatsApp esta caotico no follow-up",
+          "value_text": "follow-up caótico no WhatsApp",
+          "currency": null,
+          "evidence": [
+            "user_message: 'meu WhatsApp esta caotico no follow-up'"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message: 'qual o preco? meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "qual o preco?",
+        "answering_template_id": "product.price_direct",
+        "evidence": [
+          "user_message: 'qual o preco?'"
+        ]
+      }
+    ],
+    "product_claims": [
+      {
+        "claim": "A Taliya tem planos oficiais a partir de R$ 197/mês e inclui opções de R$ 497/mês, R$ 897/mês e R$ 1.497/mês.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      },
+      {
+        "claim": "O plano Essencial custa R$ 497/mês e é para resolver uma dor clara primeiro.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      },
+      {
+        "claim": "Os planos com agente de WhatsApp exigem o WhatsApp Business do estúdio conectado.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      }
+    ],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "pain_follow_up_whatsapp",
+          "status": "answered",
+          "answer_value": "caotico",
+          "evidence": [
+            "user_message: 'meu WhatsApp esta caotico no follow-up'"
+          ]
+        }
+      ],
+      "next_question_key": "continue_diagnostic",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message: 'meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_requested",
+      "next_step": "none",
+      "evidence": [
+        "user_message: 'qual o preco? meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "not_applicable",
+      "missing_details": [],
+      "evidence": [
+        "user_message: 'qual o preco? meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message: 'qual o preco? meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "product.price_direct",
+        "product.plan_fit_with_diagnostic"
+      ],
+      "variables": [
+        {
+          "name": "plan_price_summary",
+          "kind": "long_text",
+          "value": "Planos oficiais: Base R$ 197/mês; Essencial R$ 497/mês; Avance R$ 897/mês; Completo R$ 1.497/mês.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.plans"
+          ],
+          "max_length": 360
+        },
+        {
+          "name": "plan_fit_context",
+          "kind": "short_text",
+          "value": "WhatsApp caotico no follow-up",
+          "source": "user_message",
+          "evidence": [
+            "user_message: 'meu WhatsApp esta caotico no follow-up'"
+          ],
+          "max_length": 180
+        }
+      ],
+      "evidence": [
+        "product_knowledge.plans",
+        "user_message: 'meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "price+pain",
+      "last_intent": "price_question",
+      "diagnostic_status": "in_progress",
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "answer price, then steer to diagnostic about WhatsApp follow-up pain"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": [
+      "Lead may be comparing price with WhatsApp workflow fit; keep answer concise and then diagnose."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_price_plus_pain",
+    "conversation_id": "spike_conv_price_plus_pain",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_spec006_product_contracts",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "price_question",
+        "whatsapp_pain"
+      ],
+      "direct_question": "qual o preco?",
+      "customer_need": "entender preço e saber se a solução ajuda a organizar o follow-up do WhatsApp",
+      "pain_context": "WhatsApp caótico no follow-up",
+      "source_context": null,
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "whatsapp_pain",
+          "kind": "pain",
+          "raw_text": "meu WhatsApp esta caotico no follow-up",
+          "value": "follow-up caótico no WhatsApp",
+          "evidence": [
+            "user_message: 'meu WhatsApp esta caotico no follow-up'"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message: 'qual o preco? meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "qual o preco?",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message: 'qual o preco?'"
+        ]
+      }
+    ],
+    "product_claims": [
+      {
+        "claim": "A Taliya tem planos oficiais a partir de R$ 197/mês e inclui opções de R$ 497/mês, R$ 897/mês e R$ 1.497/mês.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      },
+      {
+        "claim": "O plano Essencial custa R$ 497/mês e é para resolver uma dor clara primeiro.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      },
+      {
+        "claim": "Os planos com agente de WhatsApp exigem o WhatsApp Business do estúdio conectado.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      }
+    ],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "pain_follow_up_whatsapp",
+          "status": "answered",
+          "answer_value": "caotico",
+          "evidence": [
+            "user_message: 'meu WhatsApp esta caotico no follow-up'"
+          ]
+        }
+      ],
+      "next_question_key": "continue_diagnostic",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message: 'meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_requested",
+      "next_step": "none",
+      "evidence": [
+        "user_message: 'qual o preco? meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "not_applicable",
+      "missing_details": [],
+      "evidence": [
+        "user_message: 'qual o preco? meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message: 'qual o preco? meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "product.price_direct",
+        "product.plan_fit_with_diagnostic"
+      ],
+      "variables": {
+        "plan_price_summary": {
+          "kind": "long_text",
+          "value": "Planos oficiais: Base R$ 197/mês; Essencial R$ 497/mês; Avance R$ 897/mês; Completo R$ 1.497/mês.",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.plans"
+          ],
+          "max_length": 360
+        },
+        "plan_fit_context": {
+          "kind": "short_text",
+          "value": "WhatsApp caotico no follow-up",
+          "source": "user_message",
+          "evidence": [
+            "user_message: 'meu WhatsApp esta caotico no follow-up'"
+          ],
+          "max_length": 180
+        }
+      },
+      "evidence": [
+        "product_knowledge.plans",
+        "user_message: 'meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "price+pain",
+      "last_intent": "price_question",
+      "diagnostic_status": "in_progress",
+      "next_action_hint": "answer price, then steer to diagnostic about WhatsApp follow-up pain"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "product_knowledge.plans",
+        "user_message: 'meu WhatsApp esta caotico no follow-up'"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "Lead may be comparing price with WhatsApp workflow fit; keep answer concise and then diagnose."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 14989,
+      "output_tokens": 983,
+      "cost_usd": 0.007716,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_price_plus_pain",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Oi, tudo bem?",
+      "template_id": "product.price_direct",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Planos oficiais: Base R$ 197/mês; Essencial R$ 497/mês; Avance R$ 897/mês; Completo R$ 1.497/mês.",
+      "template_id": "product.price_direct",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Oi, tudo bem?",
+      "template_id": "product.plan_fit_with_diagnostic",
+      "channel": "whatsapp",
+      "sequence": 3
+    },
+    {
+      "text": "WhatsApp caotico no follow-up",
+      "template_id": "product.plan_fit_with_diagnostic",
+      "channel": "whatsapp",
+      "sequence": 4
+    },
+    {
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+      "template_id": "product.plan_fit_with_diagnostic",
+      "channel": "whatsapp",
+      "sequence": 5
+    },
+    {
+      "text": "O que voce acha?",
+      "template_id": "product.plan_fit_with_diagnostic",
+      "channel": "whatsapp",
+      "sequence": 6
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "price+pain",
+    "last_intent": "price_question",
+    "diagnostic_status": "in_progress",
+    "next_action_hint": "answer price, then steer to diagnostic about WhatsApp follow-up pain"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 14989,
+    "output_tokens": 983,
+    "cost_usd": 0.007716,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

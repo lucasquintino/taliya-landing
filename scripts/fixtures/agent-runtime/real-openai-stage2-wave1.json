@@ -1,0 +1,114 @@
+[
+  {
+    "id": "stage2-wave1-cold-greeting",
+    "title": "Cold greeting should not force diagnostic too early",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["oi"],
+    "checks": [
+      "first_response_greeting",
+      "no_diagnostic",
+      "no_waitlist",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "stage2-wave1-widget-diagnostic-acceptance",
+    "title": "Widget diagnostic offer acceptance should start the official diagnostic",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["quero sim"],
+    "metadata": {
+      "client_pending_context": "widget_diagnostic_offer_pending",
+      "client_has_prior_assistant_messages": true,
+      "recent_client_messages": [
+        {
+          "role": "assistant",
+          "content": "Oi. Estou aqui pra te acompanhar e responder dúvidas sobre a Taliya."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido pra você, podemos fazer um diagnóstico gratuito do seu studio. O que você acha?"
+        },
+        {
+          "role": "user",
+          "content": "quero sim"
+        }
+      ]
+    },
+    "checks": [
+      "diagnostic_question_has_feedback",
+      "official_diagnostic_first_question",
+      "diagnostic_incomplete_requires_question",
+      "template_ids_present",
+      "all_messages_short",
+      "no_waitlist"
+    ]
+  },
+  {
+    "id": "stage2-wave1-instagram-interest",
+    "title": "Social source opening should explain Taliya naturally and steer to diagnostic",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["vim pelo instagram e queria saber mais"],
+    "checks": [
+      "first_response_greeting",
+      "landing_positioning_opening",
+      "not_generic_intro",
+      "diagnostic_offered_or_started",
+      "asks_at_most_one_question",
+      "no_waitlist",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "stage2-wave1-price-first",
+    "title": "Price-first should answer official prices and offer diagnostic",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["quanto custa?"],
+    "checks": [
+      "first_response_greeting",
+      "mentions_all_prices",
+      "diagnostic_price_hook",
+      "has_product_source",
+      "no_checkout_link",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "stage2-wave1-mixed-price-pain-whatsapp",
+    "title": "Mixed price and pain should answer price and recognize the pain",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["quanto custa? perco muito lead no whatsapp"],
+    "checks": [
+      "first_response_greeting",
+      "mentions_price",
+      "mentions_user_context",
+      "direct_question_answered_first",
+      "has_product_source",
+      "whatsapp_max_three_chunks",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "stage2-wave1-diagnostic-first",
+    "title": "Direct diagnostic request should orient naturally before the first question",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["quero fazer diagnostico gratuito"],
+    "checks": [
+      "first_response_greeting",
+      "diagnostic_question_has_feedback",
+      "official_diagnostic_first_question",
+      "diagnostic_incomplete_requires_question",
+      "whatsapp_max_three_chunks",
+      "template_ids_present",
+      "no_waitlist"
+    ]
+  }
+]

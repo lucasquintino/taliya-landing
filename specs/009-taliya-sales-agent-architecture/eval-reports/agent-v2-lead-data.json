@@ -1,0 +1,33 @@
+{
+  "runId": "agent-v2-lead-data-1779416639480",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:23:59.480Z",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "lead data fixtures cover WhatsApp and widget",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "lead data policy contains missingWaitlistFields",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "lead data policy contains request.session.channel !== \"whatsapp\"",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "lead data policy contains WhatsApp ou email",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

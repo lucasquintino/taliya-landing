@@ -1,0 +1,617 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-do-not-do-current-audit-after-selection-fix-final",
+  "fixture": "scripts\\fixtures\\agent-runtime\\spec-011-do-not-do-runtime.json",
+  "reports": [
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-remaining-budgeted-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-budgeted-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-integration-fixed-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-remaining-budgeted-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-diagnostic-refusal-fixed-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-real-model.json"
+  ],
+  "staticFixture": "scripts\\fixtures\\agent-runtime\\spec-011-do-not-do-runtime.json",
+  "staticReport": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-static-audit.json",
+  "summary": {
+    "total": 8,
+    "passed": 4,
+    "failed": 4,
+    "runtimeCases": 8,
+    "staticCases": 0,
+    "estimatedCostUsd": 0.056464
+  },
+  "releaseGate": "fail",
+  "results": [
+    {
+      "id": "do-not-do-early-phone-capture",
+      "title": "Do-not-do RC-011-061 no early phone/contact capture",
+      "case_ids": [
+        "RC-011-061"
+      ],
+      "evidence_report": null,
+      "status": "FAIL",
+      "failures": [
+        "missing scenario evidence report"
+      ],
+      "cost_usd": 0,
+      "diffs": {
+        "transcript_diff": [
+          "missing passing scenario evidence"
+        ]
+      }
+    },
+    {
+      "id": "final-checkout-buy-intent",
+      "title": "Do-not-do RC-011-062 no invented checkout/payment",
+      "case_ids": [
+        "RC-011-062"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.014581,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "waitlist.offer_after_contract_intent",
+            "text": "Voce pediu para contratar agora; vou tratar isso como interesse direto na Taliya."
+          },
+          {
+            "template_id": "waitlist.offer_after_contract_intent",
+            "text": "Hoje a entrada acontece por uma lista para um numero pequeno de studios. Posso deixar o interesse registrado sem prometer checkout, data ou condicao especial."
+          }
+        ],
+        "final_decision": {
+          "previous_state": "none",
+          "current_state": "waitlist_offered",
+          "next_state": "waitlist_offered",
+          "route": "waitlist",
+          "opening_type": "none",
+          "detected_intents": [
+            "buy_intent",
+            "checkout_request",
+            "contract_now"
+          ],
+          "direct_question_present": true,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "none",
+          "diagnostic_allowed_now": false,
+          "waitlist_allowed_now": true,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_available",
+          "facts_used": [
+            "conversation.source",
+            "metadata.page_path",
+            "conversation.channel_conversation_id"
+          ],
+          "facts_missing": [
+            "Do not promise checkout or payment links when checkout_status is unavailable.",
+            "Use waitlist.offer_after_contract_intent for explicit contract-now intent under limited rollout.",
+            "Keep CRM terminology avoided unless the lead uses it or a template requires it."
+          ],
+          "template_ids": [
+            "waitlist.offer_after_contract_intent"
+          ],
+          "template_variables": {
+            "waitlist.offer_after_contract_intent": {
+              "waitlist_context_summary": {
+                "kind": "long_text",
+                "value": "Voce pediu para contratar agora; vou tratar isso como interesse direto na Taliya.",
+                "source": "runtime_state",
+                "evidence": [
+                  "decision.waitlist.contract_intent"
+                ],
+                "max_length": 220
+              }
+            }
+          },
+          "render_plan": [
+            {
+              "template_id": "waitlist.offer_after_contract_intent",
+              "channel": "widget",
+              "variables": {
+                "waitlist_context_summary": {
+                  "kind": "long_text",
+                  "value": "Voce pediu para contratar agora; vou tratar isso como interesse direto na Taliya.",
+                  "source": "runtime_state",
+                  "evidence": [
+                    "decision.waitlist.contract_intent"
+                  ],
+                  "max_length": 220
+                }
+              }
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "none",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "offered",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    },
+    {
+      "id": "do-not-do-date-vip-discount",
+      "title": "Do-not-do RC-011-063 no invented date/VIP/discount",
+      "case_ids": [
+        "RC-011-063"
+      ],
+      "evidence_report": null,
+      "status": "FAIL",
+      "failures": [
+        "missing scenario evidence report"
+      ],
+      "cost_usd": 0,
+      "diffs": {
+        "transcript_diff": [
+          "missing passing scenario evidence"
+        ]
+      }
+    },
+    {
+      "id": "product-delta-integration-scope",
+      "title": "Do-not-do RC-011-064 no invented integrations",
+      "case_ids": [
+        "RC-011-064"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-integration-fixed-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.014003,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "product.integration_scope_direct",
+            "text": "Sobre Instagram e meu sistema atual, eu prefiro confirmar com a equipe antes de prometer uma integracao."
+          },
+          {
+            "template_id": "product.integration_scope_direct",
+            "text": "Se esse ponto for importante na sua operacao, deixo isso marcado para validarem com precisao."
+          }
+        ],
+        "final_decision": {
+          "previous_state": "none",
+          "current_state": "product.integration_scope_direct",
+          "next_state": "product.integration_scope_direct",
+          "route": "product",
+          "opening_type": "direct_question_opening",
+          "detected_intents": [
+            "integration_question",
+            "current_system_question"
+          ],
+          "direct_question_present": true,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "none",
+          "diagnostic_allowed_now": false,
+          "waitlist_allowed_now": false,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_needed",
+          "facts_used": [],
+          "facts_missing": [],
+          "template_ids": [
+            "product.integration_scope_direct"
+          ],
+          "template_variables": {
+            "product.integration_scope_direct": {
+              "integration_topic": {
+                "kind": "short_text",
+                "value": "Instagram e meu sistema atual",
+                "source": "user_message",
+                "evidence": [
+                  "integra com Instagram e com meu sistema atual?"
+                ],
+                "max_length": 100
+              },
+              "human_confirmation_topic": {
+                "kind": "short_text",
+                "value": "integração com Instagram e sistema atual",
+                "source": "user_message",
+                "evidence": [
+                  "integra com Instagram e com meu sistema atual?"
+                ],
+                "max_length": 100
+              }
+            }
+          },
+          "render_plan": [
+            {
+              "template_id": "product.integration_scope_direct",
+              "channel": "whatsapp",
+              "variables": {
+                "integration_topic": {
+                  "kind": "short_text",
+                  "value": "Instagram e meu sistema atual",
+                  "source": "user_message",
+                  "evidence": [
+                    "integra com Instagram e com meu sistema atual?"
+                  ],
+                  "max_length": 100
+                },
+                "human_confirmation_topic": {
+                  "kind": "short_text",
+                  "value": "integração com Instagram e sistema atual",
+                  "source": "user_message",
+                  "evidence": [
+                    "integra com Instagram e com meu sistema atual?"
+                  ],
+                  "max_length": 100
+                }
+              }
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "none",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "none",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    },
+    {
+      "id": "product-delta-security-data",
+      "title": "Do-not-do RC-011-064 no invented certifications/security guarantees",
+      "case_ids": [
+        "RC-011-064"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-remaining-budgeted-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.013673,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "product.security_data_direct",
+            "text": "Sobre dados e seguranca, eu sigo apenas o que estiver confirmado nas informacoes oficiais."
+          },
+          {
+            "template_id": "product.security_data_direct",
+            "text": "O caminho seguro aqui e nao mandar CPF, pagamento ou dados sensiveis dos alunos pelo chat. Se esse ponto for decisivo, a equipe confirma com voce."
+          }
+        ],
+        "final_decision": {
+          "previous_state": "start",
+          "current_state": "security_data_question",
+          "next_state": "security_data_answered",
+          "route": "product",
+          "opening_type": "direct_question_opening",
+          "detected_intents": [
+            "security_and_data",
+            "lgpd_question"
+          ],
+          "direct_question_present": true,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "none",
+          "diagnostic_allowed_now": false,
+          "waitlist_allowed_now": false,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_needed",
+          "facts_used": [],
+          "facts_missing": [],
+          "template_ids": [
+            "product.security_data_direct"
+          ],
+          "template_variables": {
+            "product.security_data_direct": {
+              "human_confirmation_topic": {
+                "kind": "short_text",
+                "value": "LGPD, segurança e tratamento de dados dos alunos",
+                "source": "user_message",
+                "evidence": [
+                  "é seguro? tem LGPD? posso mandar dados dos alunos?"
+                ],
+                "max_length": 100
+              }
+            }
+          },
+          "render_plan": [
+            {
+              "template_id": "product.security_data_direct",
+              "channel": "widget",
+              "variables": {
+                "human_confirmation_topic": {
+                  "kind": "short_text",
+                  "value": "LGPD, segurança e tratamento de dados dos alunos",
+                  "source": "user_message",
+                  "evidence": [
+                    "é seguro? tem LGPD? posso mandar dados dos alunos?"
+                  ],
+                  "max_length": 100
+                }
+              }
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "none",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "none",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    },
+    {
+      "id": "do-not-do-client-studio-whatsapp-capture",
+      "title": "Do-not-do RC-011-065 no client/studio WhatsApp connection capture",
+      "case_ids": [
+        "RC-011-065"
+      ],
+      "evidence_report": null,
+      "status": "FAIL",
+      "failures": [
+        "missing scenario evidence report"
+      ],
+      "cost_usd": 0,
+      "diffs": {
+        "transcript_diff": [
+          "missing passing scenario evidence"
+        ]
+      }
+    },
+    {
+      "id": "do-not-do-wrong-student-language",
+      "title": "Do-not-do RC-011-066 keep studio/alunos language",
+      "case_ids": [
+        "RC-011-066"
+      ],
+      "evidence_report": null,
+      "status": "FAIL",
+      "failures": [
+        "missing scenario evidence report"
+      ],
+      "cost_usd": 0,
+      "diffs": {
+        "transcript_diff": [
+          "missing passing scenario evidence"
+        ]
+      }
+    },
+    {
+      "id": "spec011-rc003-price-497-not-student-count",
+      "title": "Do-not-do RC-011-048/067 numeric grounding: 497 is not active students",
+      "case_ids": [
+        "RC-011-048",
+        "RC-011-067"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-p0-real-model.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.014207,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "diagnostic.offer_soft",
+            "text": "A reposicao esta baguncada, então o foco inicial é organizar a rotina para consumo, falta e reposicao sem travar o atendimento do studio."
+          },
+          {
+            "template_id": "diagnostic.offer_soft",
+            "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+          },
+          {
+            "template_id": "diagnostic.offer_soft",
+            "text": "O que voce acha?"
+          },
+          {
+            "template_id": "diagnostic.price_hook",
+            "text": "Se fizer sentido para voce, estamos oferecendo um diagnostico gratuito para o seu studio. Assim voce entende se algum dos nossos planos te atenderia. O que voce acha?"
+          },
+          {
+            "template_id": "diagnostic.ask_active_students",
+            "text": "Entendi: reposicao baguncada no studio."
+          },
+          {
+            "template_id": "diagnostic.ask_active_students",
+            "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          }
+        ],
+        "final_decision": {
+          "previous_state": "entry",
+          "current_state": "product_price_and_context",
+          "next_state": "diagnostic_offer",
+          "route": "product",
+          "opening_type": "none",
+          "detected_intents": [
+            "price_reference",
+            "pain_context",
+            "commercial_interest"
+          ],
+          "direct_question_present": false,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "offer",
+          "diagnostic_allowed_now": true,
+          "waitlist_allowed_now": false,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_needed",
+          "facts_used": [
+            "Vi o plano de 497 e tenho reposicao baguncada no studio",
+            "Vi o plano de 497 e tenho reposicao baguncada no studio"
+          ],
+          "facts_missing": [],
+          "template_ids": [
+            "diagnostic.offer_soft",
+            "diagnostic.price_hook",
+            "diagnostic.ask_active_students"
+          ],
+          "template_variables": {
+            "diagnostic.offer_soft": {
+              "pain_context_human": {
+                "kind": "long_text",
+                "value": "A reposicao esta baguncada, então o foco inicial é organizar a rotina para consumo, falta e reposicao sem travar o atendimento do studio.",
+                "source": "diagnostic_ledger",
+                "evidence": [
+                  "Vi o plano de 497 e tenho reposicao baguncada no studio"
+                ],
+                "max_length": 420
+              }
+            },
+            "diagnostic.price_hook": {},
+            "diagnostic.ask_active_students": {
+              "answer_feedback": {
+                "kind": "short_text",
+                "value": "Entendi: reposicao baguncada no studio.",
+                "source": "diagnostic_ledger",
+                "evidence": [
+                  "Vi o plano de 497 e tenho reposicao baguncada no studio"
+                ],
+                "max_length": 180
+              }
+            }
+          },
+          "render_plan": [
+            {
+              "template_id": "diagnostic.offer_soft",
+              "channel": "widget",
+              "variables": {
+                "pain_context_human": {
+                  "kind": "long_text",
+                  "value": "A reposicao esta baguncada, então o foco inicial é organizar a rotina para consumo, falta e reposicao sem travar o atendimento do studio.",
+                  "source": "diagnostic_ledger",
+                  "evidence": [
+                    "Vi o plano de 497 e tenho reposicao baguncada no studio"
+                  ],
+                  "max_length": 420
+                }
+              }
+            },
+            {
+              "template_id": "diagnostic.price_hook",
+              "channel": "widget",
+              "variables": {}
+            },
+            {
+              "template_id": "diagnostic.ask_active_students",
+              "channel": "widget",
+              "variables": {
+                "answer_feedback": {
+                  "kind": "short_text",
+                  "value": "Entendi: reposicao baguncada no studio.",
+                  "source": "diagnostic_ledger",
+                  "evidence": [
+                    "Vi o plano de 497 e tenho reposicao baguncada no studio"
+                  ],
+                  "max_length": 180
+                }
+              }
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "plan_fit",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "none",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    }
+  ]
+}

@@ -1,0 +1,2425 @@
+{
+  "title": "T012-056 production hotfix smoke",
+  "started_at": "2026-06-18T11:49:51.725Z",
+  "runtime_url": "https://taliya-agent-runtime-production.up.railway.app",
+  "production_deployment_expected_commit": "568313d4c117f2f7fd826d3a5bdd0d6f885afceb",
+  "cost_cap_usd": 0.15,
+  "scenarios": [
+    {
+      "id": "direct-diagnostic-100",
+      "goal": "Direct diagnostic CTA then numeric answer must not fallback/500 on second turn.",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "Quero fazer diagn?stico gratuito",
+          "http_status": 200,
+          "duration_ms": 12260,
+          "runtime_status": "succeeded",
+          "trace_id": "trace_536585c357d24f0fa676fcaec446a00b",
+          "run_id": "run_c53cbf5b43bc4cca8865c07767819596",
+          "selected_action": "start_requested_diagnostic",
+          "route": "entry",
+          "diagnostic_status": "not_started",
+          "next_question_kind": "none",
+          "usage": {
+            "model": "gpt-5.4-mini",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cost_usd": 0.0039285
+          },
+          "assistant_messages": [
+            "Oi, tudo bem?\n\nEm que posso ajudar?",
+            "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ],
+          "safety_flags": [],
+          "tool_results": [],
+          "response_json": {
+            "run_id": "run_c53cbf5b43bc4cca8865c07767819596",
+            "conversation_id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+            "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_triage_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_requested",
+                "next_state": "diagnostic_waiting_answer",
+                "route": "entry",
+                "opening_type": "none",
+                "detected_intents": [],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.cold_greeting",
+                  "diagnostic.start",
+                  "diagnostic.ask_active_students"
+                ],
+                "template_variables": {},
+                "render_plan": [],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem?\n\nEm que posso ajudar?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0039285
+              },
+              "confidence": "high",
+              "context_snapshot": {
+                "state_snapshot": {
+                  "conversation_id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                  "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                  "source": "pilates_landing",
+                  "channel": "widget"
+                },
+                "compact_memory": null,
+                "official_fact_keys_available": [],
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "turn_situation": {
+                "mode": "entry",
+                "pending_question_key": null,
+                "allowed_actions": [
+                  "answer_general_interest",
+                  "answer_source_opening",
+                  "offer_diagnostic_from_pain",
+                  "answer_direct_product_question",
+                  "start_requested_diagnostic",
+                  "handoff_requested",
+                  "clarify_ambiguous_opening"
+                ],
+                "eligible_template_groups": [
+                  "opening.",
+                  "diagnostic.",
+                  "product.",
+                  "handoff.",
+                  "fallback."
+                ],
+                "forbidden_actions_now": [],
+                "required_obligations": [],
+                "llm_turn_allowed": true,
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "action_decision": {
+                "schema_version": "012.conductor_action_decision.v1",
+                "decision_id": "dec_1",
+                "turn_id": "turn_1",
+                "selected_action": "start_requested_diagnostic",
+                "interpreted_intents": [
+                  "diagnostic_request"
+                ],
+                "direct_question": null,
+                "direct_answer_obligations": [],
+                "captured_slots": [],
+                "product_fact_keys_used": [],
+                "numeric_interpretations": [],
+                "diagnostic_intent": "start",
+                "demo_intent": "none",
+                "waitlist_intent": "none",
+                "handoff_intent": "none",
+                "composition_variables": [],
+                "reply_goal": "Iniciar o diagnóstico gratuito solicitado.",
+                "confidence": "high",
+                "evidence": [
+                  "\"Quero fazer diagn?stico gratuito\""
+                ],
+                "needs_clarification": false,
+                "repair_hints": []
+              },
+              "action_repair_attempt_count": 0,
+              "conductor_json": {},
+              "validator_results": [
+                {
+                  "decision_id": "action_start_requested_diagnostic",
+                  "status": "passed",
+                  "errors": [],
+                  "warnings": [],
+                  "repair_attempt_count": 0,
+                  "final_disposition": "accepted"
+                }
+              ],
+              "repair_attempts": [
+                {
+                  "repair_attempt_count": 0,
+                  "validator_feedback": [],
+                  "repair_sdk_run_items": []
+                }
+              ],
+              "runtime_state": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                "source": "pilates_landing",
+                "channel": "widget",
+                "canonical_state": "diagnostic_waiting_answer",
+                "diagnostic": {
+                  "status": "in_progress"
+                }
+              },
+              "sales_inbox_projection": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                "commercial_stage": "diagnostic_waiting_answer",
+                "summary": "Estado comercial: diagnostic_waiting_answer",
+                "diagnostic_status": "in_progress",
+                "waitlist_status": "none",
+                "handoff_status": "none",
+                "identity": [],
+                "fields": {
+                  "template_ids": [
+                    "opening.cold_greeting",
+                    "diagnostic.start",
+                    "diagnostic.ask_active_students"
+                  ],
+                  "validator_status": "passed",
+                  "validator_final_disposition": "accepted",
+                  "source_labels": {
+                    "channel": "whatsapp",
+                    "source": "pilates_landing",
+                    "state_source": "accepted_decision"
+                  },
+                  "operator_next_action": "none"
+                }
+              },
+              "delivery_events": [
+                {
+                  "type": "local_preview",
+                  "message_count": 3,
+                  "shadow_mode": false,
+                  "suppression_reason": null,
+                  "trace_delivery": {
+                    "public_delivery": false,
+                    "outbox_reserved": false,
+                    "rendered_count": 3,
+                    "chunk_policy": "whatsapp_max_3"
+                  }
+                }
+              ],
+              "trace_complete": true
+            },
+            "trace_id": "trace_536585c357d24f0fa676fcaec446a00b",
+            "delivery_control": {
+              "shadow_mode": false,
+              "delivery_suppressed": false,
+              "suppression_reason": null,
+              "rendered_message_count": 3,
+              "trace_contains_rendered_messages": true
+            }
+          }
+        },
+        {
+          "turn_index": 2,
+          "user_text": "100",
+          "http_status": 200,
+          "duration_ms": 5620,
+          "runtime_status": "succeeded",
+          "trace_id": "trace_7bfdcbd7821347d890f1ec592d82b630",
+          "run_id": "run_b06b77fbd94a426e9ea7d77e73878f50",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "route": "entry",
+          "diagnostic_status": "not_started",
+          "next_question_kind": "none",
+          "usage": {
+            "model": "gpt-5.4-mini",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cost_usd": 0.00254325
+          },
+          "assistant_messages": [
+            "Entendi. Já dá para ter uma noção do tamanho do studio.",
+            "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?"
+          ],
+          "safety_flags": [],
+          "tool_results": [],
+          "response_json": {
+            "run_id": "run_b06b77fbd94a426e9ea7d77e73878f50",
+            "conversation_id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+            "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_waiting_answer",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_waiting_answer",
+                "route": "entry",
+                "opening_type": "none",
+                "detected_intents": [],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "diagnostic.ask_main_pain"
+                ],
+                "template_variables": {},
+                "render_plan": [],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Entendi. Já dá para ter uma noção do tamanho do studio.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.00254325
+              },
+              "confidence": "high",
+              "context_snapshot": {
+                "state_snapshot": {
+                  "conversation_id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                  "agent_key": "taliya_commercial",
+                  "current_agent_name": "taliya_triage_agent",
+                  "input_items": [
+                    {
+                      "id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100-1-3f83350e-74fe-4930-ba88-2d1f12b59e49",
+                      "role": "user",
+                      "content": "Quero fazer diagn?stico gratuito"
+                    }
+                  ],
+                  "summary": null,
+                  "lead_facts": [],
+                  "diagnostic": {
+                    "status": "in_progress",
+                    "ledger": {
+                      "active_students_or_size": {
+                        "status": "answered",
+                        "answer_value": "100 alunos"
+                      }
+                    }
+                  },
+                  "demo": null,
+                  "waitlist": null,
+                  "human_status": "none",
+                  "human_reason": null,
+                  "last_decision": {
+                    "route": "entry",
+                    "facts_used": [],
+                    "next_state": "diagnostic_waiting_answer",
+                    "demo_status": "not_offered",
+                    "render_plan": [],
+                    "opening_type": "none",
+                    "template_ids": [
+                      "opening.cold_greeting",
+                      "diagnostic.start",
+                      "diagnostic.ask_active_students"
+                    ],
+                    "current_state": "diagnostic_requested",
+                    "facts_missing": [],
+                    "policy_checks": {
+                      "no_human_overlap": true,
+                      "no_fake_certainty": true,
+                      "channel_brevity_ok": true,
+                      "waitlist_timing_ok": true,
+                      "official_facts_only": true,
+                      "diagnostic_timing_ok": true,
+                      "no_early_contact_capture": true,
+                      "no_whatsapp_phone_request": true,
+                      "direct_question_answered_first": true
+                    },
+                    "demo_next_step": "none",
+                    "previous_state": "new_lead",
+                    "detected_intents": [],
+                    "diagnostic_action": "none",
+                    "next_question_kind": "none",
+                    "profile_name_usage": "not_needed",
+                    "template_variables": {},
+                    "waitlist_allowed_now": false,
+                    "diagnostic_allowed_now": false,
+                    "direct_question_present": false,
+                    "diagnostic_ledger_status": "not_started",
+                    "direct_question_answered_first": true
+                  },
+                  "last_route": "entry",
+                  "last_opening_type": "none",
+                  "asked_questions": [],
+                  "answered_direct_questions": [],
+                  "profile_name_status": null,
+                  "product_source_version": null,
+                  "cost_usd": 0.003929,
+                  "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                  "source": "pilates_landing",
+                  "channel": "widget",
+                  "canonical_state": "diagnostic_waiting_answer"
+                },
+                "compact_memory": null,
+                "official_fact_keys_available": [],
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "turn_situation": {
+                "mode": "diagnostic",
+                "pending_question_key": "active_students_or_size",
+                "allowed_actions": [
+                  "capture_pending_diagnostic_answer",
+                  "answer_direct_question_then_continue_diagnostic",
+                  "ask_next_diagnostic_question",
+                  "clarify_ambiguous_diagnostic_answer",
+                  "respect_diagnostic_refusal",
+                  "handoff_requested"
+                ],
+                "eligible_template_groups": [
+                  "diagnostic.",
+                  "product.",
+                  "waitlist.",
+                  "handoff.",
+                  "fallback."
+                ],
+                "forbidden_actions_now": [
+                  "complete_diagnostic"
+                ],
+                "required_obligations": [
+                  "resume the pending diagnostic question (active_students_or_size) after answering any direct question"
+                ],
+                "llm_turn_allowed": true,
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "action_decision": {
+                "schema_version": "012.conductor_action_decision.v1",
+                "decision_id": "dec_1",
+                "turn_id": "turn_1",
+                "selected_action": "capture_pending_diagnostic_answer",
+                "interpreted_intents": [
+                  "provides_size"
+                ],
+                "direct_question": null,
+                "direct_answer_obligations": [],
+                "captured_slots": [
+                  {
+                    "key": "active_students_or_size",
+                    "value_text": "100 alunos",
+                    "status": "answered",
+                    "evidence": [
+                      "\"100\""
+                    ]
+                  }
+                ],
+                "product_fact_keys_used": [],
+                "numeric_interpretations": [
+                  {
+                    "kind": "student_count",
+                    "raw_text": "100",
+                    "value_text": "100 alunos",
+                    "evidence": [
+                      "\"100\""
+                    ]
+                  }
+                ],
+                "diagnostic_intent": "capture_answer",
+                "demo_intent": "none",
+                "waitlist_intent": "none",
+                "handoff_intent": "none",
+                "composition_variables": [],
+                "reply_goal": "Capturar o tamanho da escola como dado do diagnóstico.",
+                "confidence": "high",
+                "evidence": [
+                  "\"100\""
+                ],
+                "needs_clarification": false,
+                "repair_hints": []
+              },
+              "action_repair_attempt_count": 0,
+              "conductor_json": {},
+              "validator_results": [
+                {
+                  "decision_id": "action_capture_pending_diagnostic_answer",
+                  "status": "passed",
+                  "errors": [],
+                  "warnings": [],
+                  "repair_attempt_count": 0,
+                  "final_disposition": "accepted"
+                }
+              ],
+              "repair_attempts": [
+                {
+                  "repair_attempt_count": 0,
+                  "validator_feedback": [],
+                  "repair_sdk_run_items": []
+                }
+              ],
+              "runtime_state": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                "agent_key": "taliya_commercial",
+                "current_agent_name": "taliya_triage_agent",
+                "input_items": [
+                  {
+                    "id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100-1-3f83350e-74fe-4930-ba88-2d1f12b59e49",
+                    "role": "user",
+                    "content": "Quero fazer diagn?stico gratuito"
+                  }
+                ],
+                "summary": null,
+                "lead_facts": [],
+                "diagnostic": {
+                  "status": "in_progress",
+                  "ledger": {
+                    "active_students_or_size": {
+                      "status": "answered",
+                      "answer_value": "100 alunos"
+                    }
+                  }
+                },
+                "demo": null,
+                "waitlist": null,
+                "human_status": "none",
+                "human_reason": null,
+                "last_decision": {
+                  "route": "entry",
+                  "facts_used": [],
+                  "next_state": "diagnostic_waiting_answer",
+                  "demo_status": "not_offered",
+                  "render_plan": [],
+                  "opening_type": "none",
+                  "template_ids": [
+                    "opening.cold_greeting",
+                    "diagnostic.start",
+                    "diagnostic.ask_active_students"
+                  ],
+                  "current_state": "diagnostic_requested",
+                  "facts_missing": [],
+                  "policy_checks": {
+                    "no_human_overlap": true,
+                    "no_fake_certainty": true,
+                    "channel_brevity_ok": true,
+                    "waitlist_timing_ok": true,
+                    "official_facts_only": true,
+                    "diagnostic_timing_ok": true,
+                    "no_early_contact_capture": true,
+                    "no_whatsapp_phone_request": true,
+                    "direct_question_answered_first": true
+                  },
+                  "demo_next_step": "none",
+                  "previous_state": "new_lead",
+                  "detected_intents": [],
+                  "diagnostic_action": "none",
+                  "next_question_kind": "none",
+                  "profile_name_usage": "not_needed",
+                  "template_variables": {},
+                  "waitlist_allowed_now": false,
+                  "diagnostic_allowed_now": false,
+                  "direct_question_present": false,
+                  "diagnostic_ledger_status": "not_started",
+                  "direct_question_answered_first": true
+                },
+                "last_route": "entry",
+                "last_opening_type": "none",
+                "asked_questions": [],
+                "answered_direct_questions": [],
+                "profile_name_status": null,
+                "product_source_version": null,
+                "cost_usd": 0.003929,
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                "source": "pilates_landing",
+                "channel": "widget",
+                "canonical_state": "diagnostic_waiting_answer"
+              },
+              "sales_inbox_projection": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+                "commercial_stage": "diagnostic_waiting_answer",
+                "summary": "Estado comercial: diagnostic_waiting_answer",
+                "diagnostic_status": "in_progress",
+                "waitlist_status": "none",
+                "handoff_status": "none",
+                "identity": [],
+                "fields": {
+                  "template_ids": [
+                    "diagnostic.ask_main_pain"
+                  ],
+                  "validator_status": "passed",
+                  "validator_final_disposition": "accepted",
+                  "source_labels": {
+                    "channel": "whatsapp",
+                    "source": "pilates_landing",
+                    "state_source": "accepted_decision"
+                  },
+                  "operator_next_action": "none"
+                }
+              },
+              "delivery_events": [
+                {
+                  "type": "local_preview",
+                  "message_count": 2,
+                  "shadow_mode": false,
+                  "suppression_reason": null,
+                  "trace_delivery": {
+                    "public_delivery": false,
+                    "outbox_reserved": false,
+                    "rendered_count": 2,
+                    "chunk_policy": "whatsapp_max_3"
+                  }
+                }
+              ],
+              "trace_complete": true
+            },
+            "trace_id": "trace_7bfdcbd7821347d890f1ec592d82b630",
+            "delivery_control": {
+              "shadow_mode": false,
+              "delivery_suppressed": false,
+              "suppression_reason": null,
+              "rendered_message_count": 2,
+              "trace_contains_rendered_messages": true
+            }
+          }
+        }
+      ],
+      "conversation_id": "spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+      "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-direct-diagnostic-100",
+      "checks": {
+        "no_500_on_second_turn": true,
+        "no_instability_fallback_on_second_turn": true,
+        "asks_next_diagnostic_question_after_100": true
+      },
+      "quality_review": "Boa: o segundo turno saiu de 500/fallback e avancou naturalmente do numero de alunos para a proxima pergunta de rotina."
+    },
+    {
+      "id": "opening-acceptance-no-name",
+      "goal": "Widget opening acceptance must start diagnostic without asking lead name.",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "",
+          "http_status": 200,
+          "duration_ms": 9384,
+          "runtime_status": "succeeded",
+          "trace_id": "trace_c8496cfedf9742e584a276cffcfcb7b0",
+          "run_id": "run_546bb8a3dec6470abf945b481e42b6bb",
+          "selected_action": "clarify_ambiguous_opening",
+          "route": "entry",
+          "diagnostic_status": "not_started",
+          "next_question_kind": "none",
+          "usage": {
+            "model": "gpt-5.4-mini",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cost_usd": 0.00719325
+          },
+          "assistant_messages": [
+            "Oi! Pode me mandar sua mensagem ou dúvida para eu entender como posso te ajudar?"
+          ],
+          "safety_flags": [],
+          "tool_results": [],
+          "response_json": {
+            "run_id": "run_546bb8a3dec6470abf945b481e42b6bb",
+            "conversation_id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+            "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_triage_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "unknown_or_low_confidence",
+                "next_state": "general_interest",
+                "route": "entry",
+                "opening_type": "none",
+                "detected_intents": [],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "fallback.unmapped_adaptive"
+                ],
+                "template_variables": {},
+                "render_plan": [],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi! Pode me mandar sua mensagem ou dúvida para eu entender como posso te ajudar?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.00719325
+              },
+              "confidence": "high",
+              "context_snapshot": {
+                "state_snapshot": {
+                  "conversation_id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                  "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                  "source": "pilates_landing",
+                  "channel": "widget"
+                },
+                "compact_memory": null,
+                "official_fact_keys_available": [],
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "turn_situation": {
+                "mode": "entry",
+                "pending_question_key": null,
+                "allowed_actions": [
+                  "answer_general_interest",
+                  "answer_source_opening",
+                  "offer_diagnostic_from_pain",
+                  "answer_direct_product_question",
+                  "start_requested_diagnostic",
+                  "handoff_requested",
+                  "clarify_ambiguous_opening"
+                ],
+                "eligible_template_groups": [
+                  "opening.",
+                  "diagnostic.",
+                  "product.",
+                  "handoff.",
+                  "fallback."
+                ],
+                "forbidden_actions_now": [],
+                "required_obligations": [],
+                "llm_turn_allowed": true,
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "action_decision": {
+                "schema_version": "012.conductor_action_decision.v1",
+                "decision_id": "decision_1",
+                "turn_id": "turn_1",
+                "selected_action": "clarify_ambiguous_opening",
+                "interpreted_intents": [],
+                "direct_question": null,
+                "direct_answer_obligations": [],
+                "captured_slots": [],
+                "product_fact_keys_used": [],
+                "numeric_interpretations": [],
+                "diagnostic_intent": "insufficient_evidence",
+                "demo_intent": "none",
+                "waitlist_intent": "none",
+                "handoff_intent": "none",
+                "composition_variables": [
+                  {
+                    "name": "clarification_question",
+                    "value": "Oi! Pode me mandar sua mensagem ou dúvida para eu entender como posso te ajudar?",
+                    "evidence": [
+                      "Validator error: compile_missing_composition:clarification_question",
+                      "Validator error: compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+                    ]
+                  }
+                ],
+                "reply_goal": "Fornecer uma pergunta de esclarecimento porque a entrada anterior estava vazia/indeterminada e o compilador exige clarification_question.",
+                "confidence": "high",
+                "evidence": [
+                  "Mensagem do usuário vazia na rodada anterior.",
+                  "Erros do validador pedem clarification_question."
+                ],
+                "needs_clarification": true,
+                "repair_hints": [
+                  "Responder com uma pergunta curta e natural em português.",
+                  "Não inventar contexto adicional."
+                ]
+              },
+              "action_repair_attempt_count": 0,
+              "conductor_json": {},
+              "validator_results": [
+                {
+                  "decision_id": "action_clarify_ambiguous_opening",
+                  "status": "passed",
+                  "errors": [],
+                  "warnings": [],
+                  "repair_attempt_count": 0,
+                  "final_disposition": "accepted"
+                }
+              ],
+              "repair_attempts": [
+                {
+                  "repair_attempt_count": 1,
+                  "validator_feedback": [
+                    {
+                      "code": "compile_missing_composition:clarification_question",
+                      "message": "compiler blocked the turn: compile_missing_composition:clarification_question"
+                    },
+                    {
+                      "code": "compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question",
+                      "message": "compiler blocked the turn: compile_missing_template_variable:fallback.unmapped_adaptive:clarification_question"
+                    }
+                  ],
+                  "repair_sdk_run_items": [
+                    {
+                      "item_type": "MessageOutputItem",
+                      "raw_item_type": "ResponseOutputMessage",
+                      "agent_name": "taliya_entry_agent",
+                      "tool_name": null,
+                      "handoff_target": null
+                    }
+                  ]
+                }
+              ],
+              "runtime_state": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                "source": "pilates_landing",
+                "channel": "widget",
+                "canonical_state": "general_interest"
+              },
+              "sales_inbox_projection": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                "commercial_stage": "general_interest",
+                "summary": "Estado comercial: general_interest",
+                "diagnostic_status": "not_started",
+                "waitlist_status": "none",
+                "handoff_status": "none",
+                "identity": [],
+                "fields": {
+                  "template_ids": [
+                    "fallback.unmapped_adaptive"
+                  ],
+                  "validator_status": "passed",
+                  "validator_final_disposition": "accepted",
+                  "source_labels": {
+                    "channel": "whatsapp",
+                    "source": "pilates_landing",
+                    "state_source": "accepted_decision"
+                  },
+                  "operator_next_action": "none"
+                }
+              },
+              "delivery_events": [
+                {
+                  "type": "local_preview",
+                  "message_count": 1,
+                  "shadow_mode": false,
+                  "suppression_reason": null,
+                  "trace_delivery": {
+                    "public_delivery": false,
+                    "outbox_reserved": false,
+                    "rendered_count": 1,
+                    "chunk_policy": "whatsapp_max_3"
+                  }
+                }
+              ],
+              "trace_complete": true
+            },
+            "trace_id": "trace_c8496cfedf9742e584a276cffcfcb7b0",
+            "delivery_control": {
+              "shadow_mode": false,
+              "delivery_suppressed": false,
+              "suppression_reason": null,
+              "rendered_message_count": 1,
+              "trace_contains_rendered_messages": true
+            }
+          }
+        },
+        {
+          "turn_index": 2,
+          "user_text": "quero sim",
+          "http_status": 200,
+          "duration_ms": 5976,
+          "runtime_status": "succeeded",
+          "trace_id": "trace_422eef4e88f84727b82600c85e2a03d8",
+          "run_id": "run_e12b214a6a0046bb884477ac6a213add",
+          "selected_action": "start_requested_diagnostic",
+          "route": "entry",
+          "diagnostic_status": "not_started",
+          "next_question_kind": "none",
+          "usage": {
+            "model": "gpt-5.4-mini",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cost_usd": 0.0038475
+          },
+          "assistant_messages": [
+            "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ],
+          "safety_flags": [],
+          "tool_results": [],
+          "response_json": {
+            "run_id": "run_e12b214a6a0046bb884477ac6a213add",
+            "conversation_id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+            "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_triage_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "general_interest",
+                "current_state": "diagnostic_requested",
+                "next_state": "diagnostic_waiting_answer",
+                "route": "entry",
+                "opening_type": "none",
+                "detected_intents": [],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "diagnostic.start",
+                  "diagnostic.ask_active_students"
+                ],
+                "template_variables": {},
+                "render_plan": [],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0038475
+              },
+              "confidence": "high",
+              "context_snapshot": {
+                "state_snapshot": {
+                  "conversation_id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                  "agent_key": "taliya_commercial",
+                  "current_agent_name": "taliya_triage_agent",
+                  "input_items": [
+                    {
+                      "id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name-1-9291bcb3-d705-45b2-a727-940a17b63c9f",
+                      "role": "user",
+                      "content": ""
+                    }
+                  ],
+                  "summary": null,
+                  "lead_facts": [],
+                  "diagnostic": null,
+                  "demo": null,
+                  "waitlist": null,
+                  "human_status": "none",
+                  "human_reason": null,
+                  "last_decision": {
+                    "route": "entry",
+                    "facts_used": [],
+                    "next_state": "general_interest",
+                    "demo_status": "not_offered",
+                    "render_plan": [],
+                    "opening_type": "none",
+                    "template_ids": [
+                      "fallback.unmapped_adaptive"
+                    ],
+                    "current_state": "unknown_or_low_confidence",
+                    "facts_missing": [],
+                    "policy_checks": {
+                      "no_human_overlap": true,
+                      "no_fake_certainty": true,
+                      "channel_brevity_ok": true,
+                      "waitlist_timing_ok": true,
+                      "official_facts_only": true,
+                      "diagnostic_timing_ok": true,
+                      "no_early_contact_capture": true,
+                      "no_whatsapp_phone_request": true,
+                      "direct_question_answered_first": true
+                    },
+                    "demo_next_step": "none",
+                    "previous_state": "new_lead",
+                    "detected_intents": [],
+                    "diagnostic_action": "none",
+                    "next_question_kind": "none",
+                    "profile_name_usage": "not_needed",
+                    "template_variables": {},
+                    "waitlist_allowed_now": false,
+                    "diagnostic_allowed_now": false,
+                    "direct_question_present": false,
+                    "diagnostic_ledger_status": "not_started",
+                    "direct_question_answered_first": true
+                  },
+                  "last_route": "entry",
+                  "last_opening_type": "none",
+                  "asked_questions": [],
+                  "answered_direct_questions": [],
+                  "profile_name_status": null,
+                  "product_source_version": null,
+                  "cost_usd": 0.007193,
+                  "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                  "source": "pilates_landing",
+                  "channel": "widget",
+                  "canonical_state": "general_interest"
+                },
+                "compact_memory": null,
+                "official_fact_keys_available": [],
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "turn_situation": {
+                "mode": "entry",
+                "pending_question_key": null,
+                "allowed_actions": [
+                  "answer_general_interest",
+                  "answer_source_opening",
+                  "offer_diagnostic_from_pain",
+                  "answer_direct_product_question",
+                  "start_requested_diagnostic",
+                  "handoff_requested",
+                  "clarify_ambiguous_opening"
+                ],
+                "eligible_template_groups": [
+                  "opening.",
+                  "diagnostic.",
+                  "product.",
+                  "handoff.",
+                  "fallback."
+                ],
+                "forbidden_actions_now": [],
+                "required_obligations": [],
+                "llm_turn_allowed": true,
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "action_decision": {
+                "schema_version": "012.conductor_action_decision.v1",
+                "decision_id": "dec_0001",
+                "turn_id": "turn_0001",
+                "selected_action": "start_requested_diagnostic",
+                "interpreted_intents": [
+                  "accepts_diagnostic"
+                ],
+                "direct_question": null,
+                "direct_answer_obligations": [],
+                "captured_slots": [],
+                "product_fact_keys_used": [],
+                "numeric_interpretations": [],
+                "diagnostic_intent": "start",
+                "demo_intent": "none",
+                "waitlist_intent": "none",
+                "handoff_intent": "none",
+                "composition_variables": [],
+                "reply_goal": "Iniciar o diagnóstico solicitado pelo lead, sem pedir nome.",
+                "confidence": "high",
+                "evidence": [
+                  "\"quero sim\""
+                ],
+                "needs_clarification": false,
+                "repair_hints": []
+              },
+              "action_repair_attempt_count": 0,
+              "conductor_json": {},
+              "validator_results": [
+                {
+                  "decision_id": "action_start_requested_diagnostic",
+                  "status": "passed",
+                  "errors": [],
+                  "warnings": [],
+                  "repair_attempt_count": 0,
+                  "final_disposition": "accepted"
+                }
+              ],
+              "repair_attempts": [
+                {
+                  "repair_attempt_count": 0,
+                  "validator_feedback": [],
+                  "repair_sdk_run_items": []
+                }
+              ],
+              "runtime_state": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                "agent_key": "taliya_commercial",
+                "current_agent_name": "taliya_triage_agent",
+                "input_items": [
+                  {
+                    "id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name-1-9291bcb3-d705-45b2-a727-940a17b63c9f",
+                    "role": "user",
+                    "content": ""
+                  }
+                ],
+                "summary": null,
+                "lead_facts": [],
+                "diagnostic": {
+                  "status": "in_progress"
+                },
+                "demo": null,
+                "waitlist": null,
+                "human_status": "none",
+                "human_reason": null,
+                "last_decision": {
+                  "route": "entry",
+                  "facts_used": [],
+                  "next_state": "general_interest",
+                  "demo_status": "not_offered",
+                  "render_plan": [],
+                  "opening_type": "none",
+                  "template_ids": [
+                    "fallback.unmapped_adaptive"
+                  ],
+                  "current_state": "unknown_or_low_confidence",
+                  "facts_missing": [],
+                  "policy_checks": {
+                    "no_human_overlap": true,
+                    "no_fake_certainty": true,
+                    "channel_brevity_ok": true,
+                    "waitlist_timing_ok": true,
+                    "official_facts_only": true,
+                    "diagnostic_timing_ok": true,
+                    "no_early_contact_capture": true,
+                    "no_whatsapp_phone_request": true,
+                    "direct_question_answered_first": true
+                  },
+                  "demo_next_step": "none",
+                  "previous_state": "new_lead",
+                  "detected_intents": [],
+                  "diagnostic_action": "none",
+                  "next_question_kind": "none",
+                  "profile_name_usage": "not_needed",
+                  "template_variables": {},
+                  "waitlist_allowed_now": false,
+                  "diagnostic_allowed_now": false,
+                  "direct_question_present": false,
+                  "diagnostic_ledger_status": "not_started",
+                  "direct_question_answered_first": true
+                },
+                "last_route": "entry",
+                "last_opening_type": "none",
+                "asked_questions": [],
+                "answered_direct_questions": [],
+                "profile_name_status": null,
+                "product_source_version": null,
+                "cost_usd": 0.007193,
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                "source": "pilates_landing",
+                "channel": "widget",
+                "canonical_state": "diagnostic_waiting_answer"
+              },
+              "sales_inbox_projection": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+                "commercial_stage": "diagnostic_waiting_answer",
+                "summary": "Estado comercial: general_interest",
+                "diagnostic_status": "in_progress",
+                "waitlist_status": "none",
+                "handoff_status": "none",
+                "identity": [],
+                "fields": {
+                  "template_ids": [
+                    "diagnostic.start",
+                    "diagnostic.ask_active_students"
+                  ],
+                  "validator_status": "passed",
+                  "validator_final_disposition": "accepted",
+                  "source_labels": {
+                    "channel": "whatsapp",
+                    "source": "pilates_landing",
+                    "state_source": "accepted_decision"
+                  },
+                  "operator_next_action": "none"
+                }
+              },
+              "delivery_events": [
+                {
+                  "type": "local_preview",
+                  "message_count": 2,
+                  "shadow_mode": false,
+                  "suppression_reason": null,
+                  "trace_delivery": {
+                    "public_delivery": false,
+                    "outbox_reserved": false,
+                    "rendered_count": 2,
+                    "chunk_policy": "whatsapp_max_3"
+                  }
+                }
+              ],
+              "trace_complete": true
+            },
+            "trace_id": "trace_422eef4e88f84727b82600c85e2a03d8",
+            "delivery_control": {
+              "shadow_mode": false,
+              "delivery_suppressed": false,
+              "suppression_reason": null,
+              "rendered_message_count": 2,
+              "trace_contains_rendered_messages": true
+            }
+          }
+        }
+      ],
+      "conversation_id": "spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+      "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-opening-acceptance-no-name",
+      "checks": {
+        "no_name_question_after_acceptance": true,
+        "starts_diagnostic_after_acceptance": true
+      },
+      "quality_review": "Boa: aceitou o diagnostico e foi direto para a primeira pergunta util, sem capturar nome cedo."
+    },
+    {
+      "id": "ambiguous-diagnostic-answer",
+      "goal": "Ambiguous diagnostic answer must be clarified instead of accepted as answered.",
+      "turns": [
+        {
+          "turn_index": 1,
+          "user_text": "Quero fazer diagn?stico gratuito",
+          "http_status": 200,
+          "duration_ms": 7128,
+          "runtime_status": "succeeded",
+          "trace_id": "trace_072a9cd4e0cc4655b5ad9b4f074a7f65",
+          "run_id": "run_d5696b076b8e498297f030258b122dd8",
+          "selected_action": "start_requested_diagnostic",
+          "route": "entry",
+          "diagnostic_status": "not_started",
+          "next_question_kind": "none",
+          "usage": {
+            "model": "gpt-5.4-mini",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cost_usd": 0.0039375
+          },
+          "assistant_messages": [
+            "Oi, tudo bem?\n\nEm que posso ajudar?",
+            "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+            "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+          ],
+          "safety_flags": [],
+          "tool_results": [],
+          "response_json": {
+            "run_id": "run_d5696b076b8e498297f030258b122dd8",
+            "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+            "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_triage_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_requested",
+                "next_state": "diagnostic_waiting_answer",
+                "route": "entry",
+                "opening_type": "none",
+                "detected_intents": [],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.cold_greeting",
+                  "diagnostic.start",
+                  "diagnostic.ask_active_students"
+                ],
+                "template_variables": {},
+                "render_plan": [],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem?\n\nEm que posso ajudar?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Claro, faço sim. Para te devolver algo útil, vou entender rapidinho como está a rotina do studio hoje.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0039375
+              },
+              "confidence": "high",
+              "context_snapshot": {
+                "state_snapshot": {
+                  "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                  "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                  "source": "pilates_landing",
+                  "channel": "widget"
+                },
+                "compact_memory": null,
+                "official_fact_keys_available": [],
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "turn_situation": {
+                "mode": "entry",
+                "pending_question_key": null,
+                "allowed_actions": [
+                  "answer_general_interest",
+                  "answer_source_opening",
+                  "offer_diagnostic_from_pain",
+                  "answer_direct_product_question",
+                  "start_requested_diagnostic",
+                  "handoff_requested",
+                  "clarify_ambiguous_opening"
+                ],
+                "eligible_template_groups": [
+                  "opening.",
+                  "diagnostic.",
+                  "product.",
+                  "handoff.",
+                  "fallback."
+                ],
+                "forbidden_actions_now": [],
+                "required_obligations": [],
+                "llm_turn_allowed": true,
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "action_decision": {
+                "schema_version": "012.conductor_action_decision.v1",
+                "decision_id": "dec_0",
+                "turn_id": "turn_0",
+                "selected_action": "start_requested_diagnostic",
+                "interpreted_intents": [
+                  "diagnostic_request"
+                ],
+                "direct_question": null,
+                "direct_answer_obligations": [],
+                "captured_slots": [],
+                "product_fact_keys_used": [],
+                "numeric_interpretations": [],
+                "diagnostic_intent": "start",
+                "demo_intent": "none",
+                "waitlist_intent": "none",
+                "handoff_intent": "none",
+                "composition_variables": [],
+                "reply_goal": "Iniciar o diagnóstico gratuito solicitado pelo lead.",
+                "confidence": "high",
+                "evidence": [
+                  "\"Quero fazer diagn?stico gratuito\""
+                ],
+                "needs_clarification": false,
+                "repair_hints": []
+              },
+              "action_repair_attempt_count": 0,
+              "conductor_json": {},
+              "validator_results": [
+                {
+                  "decision_id": "action_start_requested_diagnostic",
+                  "status": "passed",
+                  "errors": [],
+                  "warnings": [],
+                  "repair_attempt_count": 0,
+                  "final_disposition": "accepted"
+                }
+              ],
+              "repair_attempts": [
+                {
+                  "repair_attempt_count": 0,
+                  "validator_feedback": [],
+                  "repair_sdk_run_items": []
+                }
+              ],
+              "runtime_state": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "source": "pilates_landing",
+                "channel": "widget",
+                "canonical_state": "diagnostic_waiting_answer",
+                "diagnostic": {
+                  "status": "in_progress"
+                }
+              },
+              "sales_inbox_projection": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "commercial_stage": "diagnostic_waiting_answer",
+                "summary": "Estado comercial: diagnostic_waiting_answer",
+                "diagnostic_status": "in_progress",
+                "waitlist_status": "none",
+                "handoff_status": "none",
+                "identity": [],
+                "fields": {
+                  "template_ids": [
+                    "opening.cold_greeting",
+                    "diagnostic.start",
+                    "diagnostic.ask_active_students"
+                  ],
+                  "validator_status": "passed",
+                  "validator_final_disposition": "accepted",
+                  "source_labels": {
+                    "channel": "whatsapp",
+                    "source": "pilates_landing",
+                    "state_source": "accepted_decision"
+                  },
+                  "operator_next_action": "none"
+                }
+              },
+              "delivery_events": [
+                {
+                  "type": "local_preview",
+                  "message_count": 3,
+                  "shadow_mode": false,
+                  "suppression_reason": null,
+                  "trace_delivery": {
+                    "public_delivery": false,
+                    "outbox_reserved": false,
+                    "rendered_count": 3,
+                    "chunk_policy": "whatsapp_max_3"
+                  }
+                }
+              ],
+              "trace_complete": true
+            },
+            "trace_id": "trace_072a9cd4e0cc4655b5ad9b4f074a7f65",
+            "delivery_control": {
+              "shadow_mode": false,
+              "delivery_suppressed": false,
+              "suppression_reason": null,
+              "rendered_message_count": 3,
+              "trace_contains_rendered_messages": true
+            }
+          }
+        },
+        {
+          "turn_index": 2,
+          "user_text": "100",
+          "http_status": 200,
+          "duration_ms": 5154,
+          "runtime_status": "succeeded",
+          "trace_id": "trace_76205f048a034925a119331b4a9c8aab",
+          "run_id": "run_e64591f0f43e4ff580c6c73283f138d6",
+          "selected_action": "capture_pending_diagnostic_answer",
+          "route": "entry",
+          "diagnostic_status": "not_started",
+          "next_question_kind": "none",
+          "usage": {
+            "model": "gpt-5.4-mini",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cost_usd": 0.00254775
+          },
+          "assistant_messages": [
+            "Entendi. Já dá para ter uma noção do tamanho do studio.",
+            "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?"
+          ],
+          "safety_flags": [],
+          "tool_results": [],
+          "response_json": {
+            "run_id": "run_e64591f0f43e4ff580c6c73283f138d6",
+            "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+            "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_waiting_answer",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_waiting_answer",
+                "route": "entry",
+                "opening_type": "none",
+                "detected_intents": [],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "diagnostic.ask_main_pain"
+                ],
+                "template_variables": {},
+                "render_plan": [],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Entendi. Já dá para ter uma noção do tamanho do studio.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Quais partes mais dão trabalho hoje: WhatsApp, agenda/reposições, vendas, financeiro ou acompanhamento dos alunos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.00254775
+              },
+              "confidence": "high",
+              "context_snapshot": {
+                "state_snapshot": {
+                  "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                  "agent_key": "taliya_commercial",
+                  "current_agent_name": "taliya_triage_agent",
+                  "input_items": [
+                    {
+                      "id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer-1-b41543a8-ce6d-4cb6-ba7a-0d4f5a06037b",
+                      "role": "user",
+                      "content": "Quero fazer diagn?stico gratuito"
+                    }
+                  ],
+                  "summary": null,
+                  "lead_facts": [],
+                  "diagnostic": {
+                    "status": "in_progress",
+                    "ledger": {
+                      "active_students_or_size": {
+                        "status": "answered",
+                        "answer_value": "100"
+                      }
+                    }
+                  },
+                  "demo": null,
+                  "waitlist": null,
+                  "human_status": "none",
+                  "human_reason": null,
+                  "last_decision": {
+                    "route": "entry",
+                    "facts_used": [],
+                    "next_state": "diagnostic_waiting_answer",
+                    "demo_status": "not_offered",
+                    "render_plan": [],
+                    "opening_type": "none",
+                    "template_ids": [
+                      "opening.cold_greeting",
+                      "diagnostic.start",
+                      "diagnostic.ask_active_students"
+                    ],
+                    "current_state": "diagnostic_requested",
+                    "facts_missing": [],
+                    "policy_checks": {
+                      "no_human_overlap": true,
+                      "no_fake_certainty": true,
+                      "channel_brevity_ok": true,
+                      "waitlist_timing_ok": true,
+                      "official_facts_only": true,
+                      "diagnostic_timing_ok": true,
+                      "no_early_contact_capture": true,
+                      "no_whatsapp_phone_request": true,
+                      "direct_question_answered_first": true
+                    },
+                    "demo_next_step": "none",
+                    "previous_state": "new_lead",
+                    "detected_intents": [],
+                    "diagnostic_action": "none",
+                    "next_question_kind": "none",
+                    "profile_name_usage": "not_needed",
+                    "template_variables": {},
+                    "waitlist_allowed_now": false,
+                    "diagnostic_allowed_now": false,
+                    "direct_question_present": false,
+                    "diagnostic_ledger_status": "not_started",
+                    "direct_question_answered_first": true
+                  },
+                  "last_route": "entry",
+                  "last_opening_type": "none",
+                  "asked_questions": [],
+                  "answered_direct_questions": [],
+                  "profile_name_status": null,
+                  "product_source_version": null,
+                  "cost_usd": 0.003938,
+                  "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                  "source": "pilates_landing",
+                  "channel": "widget",
+                  "canonical_state": "diagnostic_waiting_answer"
+                },
+                "compact_memory": null,
+                "official_fact_keys_available": [],
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "turn_situation": {
+                "mode": "diagnostic",
+                "pending_question_key": "active_students_or_size",
+                "allowed_actions": [
+                  "capture_pending_diagnostic_answer",
+                  "answer_direct_question_then_continue_diagnostic",
+                  "ask_next_diagnostic_question",
+                  "clarify_ambiguous_diagnostic_answer",
+                  "respect_diagnostic_refusal",
+                  "handoff_requested"
+                ],
+                "eligible_template_groups": [
+                  "diagnostic.",
+                  "product.",
+                  "waitlist.",
+                  "handoff.",
+                  "fallback."
+                ],
+                "forbidden_actions_now": [
+                  "complete_diagnostic"
+                ],
+                "required_obligations": [
+                  "resume the pending diagnostic question (active_students_or_size) after answering any direct question"
+                ],
+                "llm_turn_allowed": true,
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "action_decision": {
+                "schema_version": "012.conductor_action_decision.v1",
+                "decision_id": "dec_001",
+                "turn_id": "turn_001",
+                "selected_action": "capture_pending_diagnostic_answer",
+                "interpreted_intents": [
+                  "diagnostic_answer"
+                ],
+                "direct_question": null,
+                "direct_answer_obligations": [],
+                "captured_slots": [
+                  {
+                    "key": "active_students_or_size",
+                    "value_text": "100",
+                    "status": "answered",
+                    "evidence": [
+                      "100"
+                    ]
+                  }
+                ],
+                "product_fact_keys_used": [],
+                "numeric_interpretations": [
+                  {
+                    "kind": "student_count",
+                    "raw_text": "100",
+                    "value_text": "100 alunos",
+                    "evidence": [
+                      "100"
+                    ]
+                  }
+                ],
+                "diagnostic_intent": "capture_answer",
+                "demo_intent": "none",
+                "waitlist_intent": "none",
+                "handoff_intent": "none",
+                "composition_variables": [],
+                "reply_goal": "Registrar que a escola tem cerca de 100 alunos e seguir com a próxima pergunta do diagnóstico.",
+                "confidence": "high",
+                "evidence": [
+                  "100"
+                ],
+                "needs_clarification": false,
+                "repair_hints": []
+              },
+              "action_repair_attempt_count": 0,
+              "conductor_json": {},
+              "validator_results": [
+                {
+                  "decision_id": "action_capture_pending_diagnostic_answer",
+                  "status": "passed",
+                  "errors": [],
+                  "warnings": [],
+                  "repair_attempt_count": 0,
+                  "final_disposition": "accepted"
+                }
+              ],
+              "repair_attempts": [
+                {
+                  "repair_attempt_count": 0,
+                  "validator_feedback": [],
+                  "repair_sdk_run_items": []
+                }
+              ],
+              "runtime_state": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "agent_key": "taliya_commercial",
+                "current_agent_name": "taliya_triage_agent",
+                "input_items": [
+                  {
+                    "id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer-1-b41543a8-ce6d-4cb6-ba7a-0d4f5a06037b",
+                    "role": "user",
+                    "content": "Quero fazer diagn?stico gratuito"
+                  }
+                ],
+                "summary": null,
+                "lead_facts": [],
+                "diagnostic": {
+                  "status": "in_progress",
+                  "ledger": {
+                    "active_students_or_size": {
+                      "status": "answered",
+                      "answer_value": "100"
+                    }
+                  }
+                },
+                "demo": null,
+                "waitlist": null,
+                "human_status": "none",
+                "human_reason": null,
+                "last_decision": {
+                  "route": "entry",
+                  "facts_used": [],
+                  "next_state": "diagnostic_waiting_answer",
+                  "demo_status": "not_offered",
+                  "render_plan": [],
+                  "opening_type": "none",
+                  "template_ids": [
+                    "opening.cold_greeting",
+                    "diagnostic.start",
+                    "diagnostic.ask_active_students"
+                  ],
+                  "current_state": "diagnostic_requested",
+                  "facts_missing": [],
+                  "policy_checks": {
+                    "no_human_overlap": true,
+                    "no_fake_certainty": true,
+                    "channel_brevity_ok": true,
+                    "waitlist_timing_ok": true,
+                    "official_facts_only": true,
+                    "diagnostic_timing_ok": true,
+                    "no_early_contact_capture": true,
+                    "no_whatsapp_phone_request": true,
+                    "direct_question_answered_first": true
+                  },
+                  "demo_next_step": "none",
+                  "previous_state": "new_lead",
+                  "detected_intents": [],
+                  "diagnostic_action": "none",
+                  "next_question_kind": "none",
+                  "profile_name_usage": "not_needed",
+                  "template_variables": {},
+                  "waitlist_allowed_now": false,
+                  "diagnostic_allowed_now": false,
+                  "direct_question_present": false,
+                  "diagnostic_ledger_status": "not_started",
+                  "direct_question_answered_first": true
+                },
+                "last_route": "entry",
+                "last_opening_type": "none",
+                "asked_questions": [],
+                "answered_direct_questions": [],
+                "profile_name_status": null,
+                "product_source_version": null,
+                "cost_usd": 0.003938,
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "source": "pilates_landing",
+                "channel": "widget",
+                "canonical_state": "diagnostic_waiting_answer"
+              },
+              "sales_inbox_projection": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "commercial_stage": "diagnostic_waiting_answer",
+                "summary": "Estado comercial: diagnostic_waiting_answer",
+                "diagnostic_status": "in_progress",
+                "waitlist_status": "none",
+                "handoff_status": "none",
+                "identity": [],
+                "fields": {
+                  "template_ids": [
+                    "diagnostic.ask_main_pain"
+                  ],
+                  "validator_status": "passed",
+                  "validator_final_disposition": "accepted",
+                  "source_labels": {
+                    "channel": "whatsapp",
+                    "source": "pilates_landing",
+                    "state_source": "accepted_decision"
+                  },
+                  "operator_next_action": "none"
+                }
+              },
+              "delivery_events": [
+                {
+                  "type": "local_preview",
+                  "message_count": 2,
+                  "shadow_mode": false,
+                  "suppression_reason": null,
+                  "trace_delivery": {
+                    "public_delivery": false,
+                    "outbox_reserved": false,
+                    "rendered_count": 2,
+                    "chunk_policy": "whatsapp_max_3"
+                  }
+                }
+              ],
+              "trace_complete": true
+            },
+            "trace_id": "trace_76205f048a034925a119331b4a9c8aab",
+            "delivery_control": {
+              "shadow_mode": false,
+              "delivery_suppressed": false,
+              "suppression_reason": null,
+              "rendered_message_count": 2,
+              "trace_contains_rendered_messages": true
+            }
+          }
+        },
+        {
+          "turn_index": 3,
+          "user_text": "depende do dia",
+          "http_status": 200,
+          "duration_ms": 5797,
+          "runtime_status": "succeeded",
+          "trace_id": "trace_a95ad489759d4e739298495f09f03b75",
+          "run_id": "run_84f9f04d9d35458c85666b8a8509db4c",
+          "selected_action": "clarify_ambiguous_diagnostic_answer",
+          "route": "entry",
+          "diagnostic_status": "not_started",
+          "next_question_kind": "none",
+          "usage": {
+            "model": "gpt-5.4-mini",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cost_usd": 0.0028935
+          },
+          "assistant_messages": [
+            "Você quer dizer que a maior dificuldade muda bastante? Me fala a principal em média, mesmo que seja aproximada."
+          ],
+          "safety_flags": [],
+          "tool_results": [],
+          "response_json": {
+            "run_id": "run_84f9f04d9d35458c85666b8a8509db4c",
+            "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+            "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_waiting_answer",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_waiting_answer",
+                "route": "entry",
+                "opening_type": "none",
+                "detected_intents": [],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "fallback.unmapped_adaptive"
+                ],
+                "template_variables": {},
+                "render_plan": [],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Você quer dizer que a maior dificuldade muda bastante? Me fala a principal em média, mesmo que seja aproximada.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": null,
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0028935
+              },
+              "confidence": "high",
+              "context_snapshot": {
+                "state_snapshot": {
+                  "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                  "agent_key": "taliya_commercial",
+                  "current_agent_name": "taliya_diagnostic_agent",
+                  "input_items": [
+                    {
+                      "id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer-1-b41543a8-ce6d-4cb6-ba7a-0d4f5a06037b",
+                      "role": "user",
+                      "content": "Quero fazer diagn?stico gratuito"
+                    },
+                    {
+                      "id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer-2-2d34c40c-d421-403f-b2b8-0f2cafdfcfd6",
+                      "role": "user",
+                      "content": "100"
+                    }
+                  ],
+                  "summary": null,
+                  "lead_facts": [],
+                  "diagnostic": {
+                    "ledger": {
+                      "active_students_or_size": {
+                        "status": "answered",
+                        "answer_value": "100"
+                      }
+                    },
+                    "status": "in_progress"
+                  },
+                  "demo": null,
+                  "waitlist": null,
+                  "human_status": "none",
+                  "human_reason": null,
+                  "last_decision": {
+                    "route": "entry",
+                    "facts_used": [],
+                    "next_state": "diagnostic_waiting_answer",
+                    "demo_status": "not_offered",
+                    "render_plan": [],
+                    "opening_type": "none",
+                    "template_ids": [
+                      "diagnostic.ask_main_pain"
+                    ],
+                    "current_state": "diagnostic_in_progress",
+                    "facts_missing": [],
+                    "policy_checks": {
+                      "no_human_overlap": true,
+                      "no_fake_certainty": true,
+                      "channel_brevity_ok": true,
+                      "waitlist_timing_ok": true,
+                      "official_facts_only": true,
+                      "diagnostic_timing_ok": true,
+                      "no_early_contact_capture": true,
+                      "no_whatsapp_phone_request": true,
+                      "direct_question_answered_first": true
+                    },
+                    "demo_next_step": "none",
+                    "previous_state": "diagnostic_waiting_answer",
+                    "detected_intents": [],
+                    "diagnostic_action": "none",
+                    "next_question_kind": "none",
+                    "profile_name_usage": "not_needed",
+                    "template_variables": {},
+                    "waitlist_allowed_now": false,
+                    "diagnostic_allowed_now": false,
+                    "direct_question_present": false,
+                    "diagnostic_ledger_status": "not_started",
+                    "direct_question_answered_first": true
+                  },
+                  "last_route": "entry",
+                  "last_opening_type": "none",
+                  "asked_questions": [],
+                  "answered_direct_questions": [],
+                  "profile_name_status": null,
+                  "product_source_version": null,
+                  "cost_usd": 0.006486,
+                  "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                  "source": "pilates_landing",
+                  "channel": "widget",
+                  "canonical_state": "diagnostic_waiting_answer"
+                },
+                "compact_memory": null,
+                "official_fact_keys_available": [],
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "turn_situation": {
+                "mode": "diagnostic",
+                "pending_question_key": "main_pain",
+                "allowed_actions": [
+                  "capture_pending_diagnostic_answer",
+                  "answer_direct_question_then_continue_diagnostic",
+                  "ask_next_diagnostic_question",
+                  "clarify_ambiguous_diagnostic_answer",
+                  "respect_diagnostic_refusal",
+                  "handoff_requested"
+                ],
+                "eligible_template_groups": [
+                  "diagnostic.",
+                  "product.",
+                  "waitlist.",
+                  "handoff.",
+                  "fallback."
+                ],
+                "forbidden_actions_now": [
+                  "complete_diagnostic"
+                ],
+                "required_obligations": [
+                  "resume the pending diagnostic question (main_pain) after answering any direct question"
+                ],
+                "llm_turn_allowed": true,
+                "post_diagnostic_context": null,
+                "profile_name_context": {
+                  "usage": "not_available"
+                }
+              },
+              "action_decision": {
+                "schema_version": "012.conductor_action_decision.v1",
+                "decision_id": "dec_00000000000000000000000000000000",
+                "turn_id": "turn_00000000000000000000000000000000",
+                "selected_action": "clarify_ambiguous_diagnostic_answer",
+                "interpreted_intents": [
+                  "answers pending diagnostic question अस्प?",
+                  "ambiguous"
+                ],
+                "direct_question": null,
+                "direct_answer_obligations": [],
+                "captured_slots": [
+                  {
+                    "key": "main_pain",
+                    "value_text": "Depende do dia",
+                    "status": "ambiguous",
+                    "evidence": [
+                      "depende do dia"
+                    ]
+                  }
+                ],
+                "product_fact_keys_used": [],
+                "numeric_interpretations": [],
+                "diagnostic_intent": "insufficient_evidence",
+                "demo_intent": "none",
+                "waitlist_intent": "none",
+                "handoff_intent": "none",
+                "composition_variables": [
+                  {
+                    "name": "clarification_question",
+                    "value": "Você quer dizer que a maior dificuldade muda bastante? Me fala a principal em média, mesmo que seja aproximada.",
+                    "evidence": [
+                      "depende do dia"
+                    ]
+                  }
+                ],
+                "reply_goal": "Pedir uma resposta mais direta ou aproximada sobre a principal dor para seguir o diagnóstico.",
+                "confidence": "high",
+                "evidence": [
+                  "depende do dia"
+                ],
+                "needs_clarification": true,
+                "repair_hints": [
+                  "Pergunte pela dificuldade principal em média.",
+                  "Evite listar opções longas."
+                ]
+              },
+              "action_repair_attempt_count": 0,
+              "conductor_json": {},
+              "validator_results": [
+                {
+                  "decision_id": "action_clarify_ambiguous_diagnostic_answer",
+                  "status": "passed",
+                  "errors": [],
+                  "warnings": [],
+                  "repair_attempt_count": 0,
+                  "final_disposition": "accepted"
+                }
+              ],
+              "repair_attempts": [
+                {
+                  "repair_attempt_count": 0,
+                  "validator_feedback": [],
+                  "repair_sdk_run_items": []
+                }
+              ],
+              "runtime_state": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "agent_key": "taliya_commercial",
+                "current_agent_name": "taliya_diagnostic_agent",
+                "input_items": [
+                  {
+                    "id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer-1-b41543a8-ce6d-4cb6-ba7a-0d4f5a06037b",
+                    "role": "user",
+                    "content": "Quero fazer diagn?stico gratuito"
+                  },
+                  {
+                    "id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer-2-2d34c40c-d421-403f-b2b8-0f2cafdfcfd6",
+                    "role": "user",
+                    "content": "100"
+                  }
+                ],
+                "summary": null,
+                "lead_facts": [],
+                "diagnostic": {
+                  "ledger": {
+                    "active_students_or_size": {
+                      "status": "answered",
+                      "answer_value": "100"
+                    }
+                  },
+                  "status": "in_progress"
+                },
+                "demo": null,
+                "waitlist": null,
+                "human_status": "none",
+                "human_reason": null,
+                "last_decision": {
+                  "route": "entry",
+                  "facts_used": [],
+                  "next_state": "diagnostic_waiting_answer",
+                  "demo_status": "not_offered",
+                  "render_plan": [],
+                  "opening_type": "none",
+                  "template_ids": [
+                    "diagnostic.ask_main_pain"
+                  ],
+                  "current_state": "diagnostic_in_progress",
+                  "facts_missing": [],
+                  "policy_checks": {
+                    "no_human_overlap": true,
+                    "no_fake_certainty": true,
+                    "channel_brevity_ok": true,
+                    "waitlist_timing_ok": true,
+                    "official_facts_only": true,
+                    "diagnostic_timing_ok": true,
+                    "no_early_contact_capture": true,
+                    "no_whatsapp_phone_request": true,
+                    "direct_question_answered_first": true
+                  },
+                  "demo_next_step": "none",
+                  "previous_state": "diagnostic_waiting_answer",
+                  "detected_intents": [],
+                  "diagnostic_action": "none",
+                  "next_question_kind": "none",
+                  "profile_name_usage": "not_needed",
+                  "template_variables": {},
+                  "waitlist_allowed_now": false,
+                  "diagnostic_allowed_now": false,
+                  "direct_question_present": false,
+                  "diagnostic_ledger_status": "not_started",
+                  "direct_question_answered_first": true
+                },
+                "last_route": "entry",
+                "last_opening_type": "none",
+                "asked_questions": [],
+                "answered_direct_questions": [],
+                "profile_name_status": null,
+                "product_source_version": null,
+                "cost_usd": 0.006486,
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "source": "pilates_landing",
+                "channel": "widget",
+                "canonical_state": "diagnostic_waiting_answer"
+              },
+              "sales_inbox_projection": {
+                "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+                "commercial_stage": "diagnostic_waiting_answer",
+                "summary": "Estado comercial: diagnostic_waiting_answer",
+                "diagnostic_status": "in_progress",
+                "waitlist_status": "none",
+                "handoff_status": "none",
+                "identity": [],
+                "fields": {
+                  "template_ids": [
+                    "fallback.unmapped_adaptive"
+                  ],
+                  "validator_status": "passed",
+                  "validator_final_disposition": "accepted",
+                  "source_labels": {
+                    "channel": "whatsapp",
+                    "source": "pilates_landing",
+                    "state_source": "accepted_decision"
+                  },
+                  "operator_next_action": "none"
+                }
+              },
+              "delivery_events": [
+                {
+                  "type": "local_preview",
+                  "message_count": 1,
+                  "shadow_mode": false,
+                  "suppression_reason": null,
+                  "trace_delivery": {
+                    "public_delivery": false,
+                    "outbox_reserved": false,
+                    "rendered_count": 1,
+                    "chunk_policy": "whatsapp_max_3"
+                  }
+                }
+              ],
+              "trace_complete": true
+            },
+            "trace_id": "trace_a95ad489759d4e739298495f09f03b75",
+            "delivery_control": {
+              "shadow_mode": false,
+              "delivery_suppressed": false,
+              "suppression_reason": null,
+              "rendered_message_count": 1,
+              "trace_contains_rendered_messages": true
+            }
+          }
+        }
+      ],
+      "conversation_id": "spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+      "lead_id": "lead-spec012-prod-smoke-20260618T114951Z-ambiguous-diagnostic-answer",
+      "checks": {
+        "no_500_on_ambiguous_turn": true,
+        "clarifies_ambiguous_answer": true,
+        "does_not_advance_as_answered": true
+      },
+      "quality_review": "PASS: a resposta ambigua nao foi aceita como suficiente; o agente escolheu clarify_ambiguous_diagnostic_answer e pediu uma resposta principal/aproximada no mesmo slot.",
+      "check_notes": {
+        "clarifies_ambiguous_answer": "Manual conversational review corrected the local matcher: assistant said \"Voc? quer dizer que a maior dificuldade muda bastante? Me fala a principal em m?dia...\", which is a valid clarification of an ambiguous diagnostic answer."
+      }
+    }
+  ],
+  "healthz": {
+    "status": 200,
+    "body": "{\"ok\":true,\"service\":\"taliya-agent-runtime\",\"environment\":\"production\"}"
+  },
+  "finished_at": "2026-06-18T11:50:43.633Z",
+  "total_reported_cost_usd": 0.026891250000000002,
+  "final_verdict": {
+    "production_smoke_status": "pass",
+    "paid_call_status": "completed_with_prior_user_approval_in_thread",
+    "total_reported_cost_usd": 0.026891250000000002,
+    "notes": [
+      "All production turn requests returned HTTP 200/runtime succeeded.",
+      "No user-facing instability fallback appeared.",
+      "Diagnostic acceptance no longer asks for name before diagnostic.",
+      "Ambiguous diagnostic answer is clarified instead of being accepted as answered."
+    ]
+  }
+}

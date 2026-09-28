@@ -1,0 +1,553 @@
+{
+  "number": 9,
+  "scenario_id": "demo_request",
+  "channel": "whatsapp",
+  "required_proof": "Official demo path only; demo interest proposed.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "consigo ver funcionando?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": "taliya_product_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_product_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_product_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_product_agent"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"demo_link\",\"demo\",\"how_it_works\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "how_it_works",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": "Taliya helps a Pilates studio organize the daily routine in one place: conversations, students, agenda, reposicoes, cobrancas, interested leads, and follow-ups. The team can see what needs action. When the studio WhatsApp Business is connected and configured, agents can support conversations with students and interested leads while the team follows and takes over when needed.",
+              "excerpt": "Taliya helps a Pilates studio organize the daily routine in one place: conversations, students, agenda, reposicoes, cobrancas, interested leads, and follow-ups. The team can see what needs action. When the studio WhatsApp Business is connected and configured, agents can support conversations with students and interested leads while the team follows and takes over when needed.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.how_it_works"
+              ]
+            },
+            {
+              "key": "demo_link",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.demo_link"
+              ]
+            },
+            {
+              "key": "demo",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.demo"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "demo_link",
+            "demo",
+            "how_it_works"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.how_it_works",
+          "product_knowledge.demo_link",
+          "product_knowledge.demo"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"product.demo_direct\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "product.demo_direct",
+          "templates": [
+            {
+              "template_id": "product.demo_direct",
+              "required_variables": [
+                "official_demo_link"
+              ],
+              "optional_variables": []
+            }
+          ],
+          "variable_specs": {
+            "official_demo_link": {
+              "kind": "url",
+              "max_length": null,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official demo URL from product knowledge; never invented or shortened ad hoc."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "demo_request"
+      ],
+      "direct_question": "consigo ver funcionando?",
+      "customer_need": "Ver a ferramenta funcionando em uma demonstração",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "consigo ver funcionando?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "The lead asks if they can see it working / request a demo.",
+        "answering_template_id": "product.demo_direct",
+        "evidence": [
+          "consigo ver funcionando?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "consigo ver funcionando?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "offerable",
+      "next_step": "Offer the demo route and share the official demo link if available.",
+      "evidence": [
+        "consigo ver funcionando?",
+        "product_knowledge.how_it_works"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_assessed",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "consigo ver funcionando?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "consigo ver funcionando?"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "product.demo_direct"
+      ],
+      "variables": [
+        {
+          "name": "official_demo_link",
+          "kind": "url",
+          "value": "",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.demo_link"
+          ],
+          "max_length": null
+        }
+      ],
+      "evidence": [
+        "product_knowledge.demo_link"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [
+        "missing_official_demo_link"
+      ],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "demo_requested",
+      "last_intent": "demo_request",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "Provide demo route or confirm official demo link availability"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "medium",
+    "risks": [
+      "Official demo link was missing in product knowledge, so the template variable cannot be fully populated."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_demo_request",
+    "conversation_id": "spike_conv_demo_request",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": "taliya_product_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_product_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_product_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "demo_request"
+      ],
+      "direct_question": "consigo ver funcionando?",
+      "customer_need": "Ver a ferramenta funcionando em uma demonstração",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "consigo ver funcionando?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "The lead asks if they can see it working / request a demo.",
+        "answered_before_steering": true,
+        "evidence": [
+          "consigo ver funcionando?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "consigo ver funcionando?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "offerable",
+      "next_step": "Offer the demo route and share the official demo link if available.",
+      "evidence": [
+        "consigo ver funcionando?",
+        "product_knowledge.how_it_works"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_assessed",
+      "intent": "none",
+      "missing_details": [],
+      "evidence": [
+        "consigo ver funcionando?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "consigo ver funcionando?"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "product.demo_direct"
+      ],
+      "variables": {
+        "official_demo_link": {
+          "kind": "url",
+          "value": "",
+          "source": "official_product_knowledge",
+          "evidence": [
+            "product_knowledge.demo_link"
+          ]
+        }
+      },
+      "evidence": [
+        "product_knowledge.demo_link"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "missing_official_demo_link",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "demo_requested",
+      "last_intent": "demo_request",
+      "next_action_hint": "Provide demo route or confirm official demo link availability"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": [
+        "product_knowledge.demo_link"
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "Official demo link was missing in product knowledge, so the template variable cannot be fully populated."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 4,
+      "input_tokens": 17590,
+      "output_tokens": 516,
+      "cost_usd": 0.005924,
+      "handoffs": 1,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_demo_request",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_render_preview_failed",
+        "severity": "P0",
+        "message": "missing template variables: official_demo_link",
+        "path": "template_proposal"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "demo_requested",
+    "last_intent": "demo_request",
+    "next_action_hint": "Provide demo route or confirm official demo link availability"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 4,
+    "input_tokens": 17590,
+    "output_tokens": 516,
+    "cost_usd": 0.005924,
+    "handoffs": 1,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_render_preview_failed",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

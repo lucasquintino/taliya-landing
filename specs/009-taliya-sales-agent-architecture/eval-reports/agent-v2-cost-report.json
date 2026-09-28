@@ -1,0 +1,48 @@
+{
+  "runId": "agent-v2-cost-report-1779416643233",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:24:03.233Z",
+  "summary": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "eval budget has explicit max estimated cost",
+      "details": {
+        "dryRun": true,
+        "maxScenarios": 25,
+        "maxRealModelCalls": 0,
+        "maxEstimatedCostUsd": 0.25,
+        "realModelCallCount": 0,
+        "estimatedCostUsd": 0,
+        "skippedScenarios": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "eval budget tracks max real model calls",
+      "details": {
+        "dryRun": true,
+        "maxScenarios": 25,
+        "maxRealModelCalls": 0,
+        "maxEstimatedCostUsd": 0.25,
+        "realModelCallCount": 0,
+        "estimatedCostUsd": 0,
+        "skippedScenarios": []
+      }
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "dryRun": true,
+    "maxScenarios": 25,
+    "maxRealModelCalls": 0,
+    "maxEstimatedCostUsd": 0.25,
+    "realModelCallCount": 0,
+    "estimatedCostUsd": 0,
+    "skippedScenarios": []
+  }
+}

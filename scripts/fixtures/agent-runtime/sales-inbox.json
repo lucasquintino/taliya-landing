@@ -1,0 +1,36 @@
+﻿[
+  {
+    "id": "runtime-product-answer",
+    "leadId": "lead_runtime_product",
+    "agentRuntime": {
+      "currentAgent": "taliya_commercial_product_agent",
+      "traceId": "trace_runtime_product",
+      "runId": "run_runtime_product",
+      "demoStatus": "offered",
+      "finalPlanLine": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance.",
+      "finalDemoLine": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+      "crmBaseRecommendation": "Antes dos agentes, eu organizaria tudo em um so lugar.",
+      "agentRecommendations": "Agente Atendimento: interessados que ficam sem resposta: ele ajuda a responder e guardar o historico",
+      "productSourceKeys": "how_it_works, routine_areas, whatsapp_scope",
+      "latestProductFollowupIntent": "product_how_it_works",
+      "postDiagnosticContextUsed": false,
+      "unsupportedFactRequested": "integracao ou sistema atual",
+      "humanConfirmationOffered": true,
+      "diagnosticRefusalRespected": true,
+      "productSourceVersion": "taliya-commercial-2026-05-22",
+      "estimatedCostUsd": 0.003
+    },
+    "expectVisibleFields": ["currentAgent", "traceId", "productSourceVersion", "estimatedCostUsd"]
+  },
+  {
+    "id": "runtime-cost-cap",
+    "leadId": "lead_runtime_cost_cap",
+    "agentRuntime": {
+      "currentAgent": "taliya_commercial_handoff_agent",
+      "traceId": "trace_runtime_cost",
+      "estimatedCostUsd": 0.15
+    },
+    "expectedNextAction": "Custo do runtime atingiu o limite duro"
+  }
+]
+

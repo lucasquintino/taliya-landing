@@ -1,0 +1,97 @@
+[
+  {
+    "id": "product-delta-how-it-works",
+    "title": "Como funciona must be product explanation, not an opening",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["como funciona?"],
+    "checks": [
+      "product_how_it_works_answer",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "product-delta-comparison-planilha",
+    "title": "Spreadsheet comparison should explain practical difference without attacking",
+    "channel": "widget",
+    "sender_name": "Marina Costa",
+    "messages": ["hoje uso planilha e whatsapp, qual a diferença?"],
+    "checks": [
+      "comparison_current_tool",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "product-delta-integration-scope",
+    "title": "Integration scope should not overpromise Instagram or current-system setup",
+    "channel": "whatsapp",
+    "sender_name": "Ana Paula",
+    "messages": ["integra com Instagram e com meu sistema atual?"],
+    "checks": [
+      "integration_scope_safe",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "whatsapp_max_three_chunks"
+    ]
+  },
+  {
+    "id": "product-delta-security-data",
+    "title": "Security/data answer should be conservative and official-fact based",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["é seguro? tem LGPD? posso mandar dados dos alunos?"],
+    "checks": [
+      "security_data_safe",
+      "product_followup_source_keys",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "product-delta-out-of-profile",
+    "title": "Student/out-of-profile lead should be qualified gently",
+    "channel": "widget",
+    "sender_name": "Pedro Lima",
+    "messages": ["sou aluno, a Taliya serve pra mim?"],
+    "checks": [
+      "out_of_profile_gentle",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "product-delta-diagnostic-refusal",
+    "title": "Diagnostic refusal should be respected",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["não quero diagnóstico agora, só me fala o preço"],
+    "checks": [
+      "mentions_all_prices",
+      "diagnostic_refusal_respected",
+      "has_product_source",
+      "no_crm_lay_copy",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  }
+]

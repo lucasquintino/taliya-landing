@@ -1,0 +1,33 @@
+{
+  "runId": "agent-v2-guardrails-1779416636273",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:23:56.273Z",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "guardrail contains no_whatsapp_phone_request",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "guardrail contains no_checkout_while_waitlist_closed",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "guardrail contains no_prompt_leak",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "guardrail contains validateToolPlan",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

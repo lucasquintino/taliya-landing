@@ -1,0 +1,13 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-legacy-behavior-latest",
+  "dryRun": true,
+  "selectedScenarioCount": 2,
+  "estimatedModelCalls": 2,
+  "maxModelCalls": 3,
+  "maxCostUsd": 0.02,
+  "scenarioIds": [
+    "SRC-001",
+    "SRC-002"
+  ]
+}

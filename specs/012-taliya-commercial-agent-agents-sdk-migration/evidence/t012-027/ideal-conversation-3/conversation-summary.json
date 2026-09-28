@@ -1,0 +1,139 @@
+{
+  "turns_total": 12,
+  "turns_passed": 7,
+  "stopped_at_turn": 8,
+  "total_model_operations": 17,
+  "total_cost_usd": 0.069752,
+  "final_state": {
+    "demo": {
+      "status": "not_applicable",
+      "next_step": ""
+    },
+    "summary": "Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico em andamento. Respondido: student_count=120; main_pain=perde interessado porque demoramos pra responder no WhatsApp; current_process=so conseguem responder de noite; leads desistem e fecham com outro studio. Proxima pergunta pendente: current_process. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"\", \"intent\": \"\"}.",
+    "waitlist": {
+      "eligibility": "",
+      "intent": ""
+    },
+    "current_sdk_agent": "taliya_product_agent",
+    "diagnostic": {
+      "ledger": {
+        "student_count": {
+          "status": "answered",
+          "answer_value": "120"
+        },
+        "main_pain": {
+          "status": "answered",
+          "answer_value": "perde interessado porque demoramos pra responder no WhatsApp"
+        },
+        "current_process": {
+          "status": "answered",
+          "answer_value": "so conseguem responder de noite; leads desistem e fecham com outro studio"
+        }
+      },
+      "status": "in_progress",
+      "next_question_key": "current_process"
+    }
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "text": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Voce esta perdendo aluno novo porque o WhatsApp do studio vive atrasado."
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Nao tenho o preco oficial nesta conversa."
+    },
+    {
+      "role": "assistant",
+      "text": "Voce comentou que seu studio de pilates esta perdendo aluno novo porque o WhatsApp vive atrasado."
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "text": "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "assistant",
+      "text": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+    },
+    {
+      "role": "user",
+      "text": "120"
+    },
+    {
+      "role": "assistant",
+      "text": "O studio perde alunos novos porque o WhatsApp vive atrasado."
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "minha maior dor e perder interessado porque demoramos pra responder"
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+    },
+    {
+      "role": "user",
+      "text": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+    }
+  ]
+}

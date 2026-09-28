@@ -1,0 +1,38 @@
+[
+  {
+    "id": "step3g-long-conversation",
+    "title": "Long conversation should preserve state through price, diagnostic, demo, objection, waitlist, product, and handoff",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quanto custa?",
+      "tenho 95 alunos e perco interessados no whatsapp",
+      "pode fazer diagnostico",
+      "95 alunos ativos",
+      "whatsapp e follow-up dao mais trabalho",
+      "nao consigo ver quem precisa de retorno no dia",
+      "hoje fica em planilha e whatsapp",
+      "prioridade e vendas primeiro",
+      "quero resolver agora",
+      "me manda demo",
+      "achei caro",
+      "quero começar, me coloca na lista",
+      "como funciona mesmo?",
+      "quero falar com alguém"
+    ],
+    "checks": [
+      "mentions_all_prices",
+      "diagnostic_question_has_feedback",
+      "no_repeat_answered_size_question",
+      "diagnostic_completed",
+      "diagnostic_ledger_complete",
+      "mentions_demo_link",
+      "price_objection_value_argument",
+      "no_roi_promise",
+      "waitlist_offered_or_handoff",
+      "handoff_requested",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  }
+]

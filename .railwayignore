@@ -1,0 +1,31 @@
+.git
+.vercel
+.next
+node_modules
+out
+coverage
+
+# Local QA/browser profiles and generated artifacts are huge and not needed by the worker.
+tmp
+.tmp-local-dev
+test-results
+demo-kits
+reference
+reports
+specs
+
+# Runtime service is deployed separately from its own root.
+services/taliya-agent-runtime
+
+# Root-level local screenshots, logs, and scratch files.
+/*.png
+/*.jpg
+/*.jpeg
+/*.log
+/.codex-*
+/.toolzz-ai*
+/tmp-*
+/.tmp-*
+
+# TypeScript/local build outputs.
+*.tsbuildinfo

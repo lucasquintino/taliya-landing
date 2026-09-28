@@ -1,0 +1,26 @@
+{
+  "schema_version": "011.manual_adapter_report.v1",
+  "task": "T011-091",
+  "passed": true,
+  "validation_type": "adapter_level_node_repl_runtime_client_payload",
+  "scope_note": "Loaded the real lib/landing/ai-attendant/runtime-client.ts through TypeScript transpilation in the Node REPL and inspected the WhatsApp runtime endpoint/body. This proves adapter payload wiring, not production delivery.",
+  "observed": {
+    "endpoint": "/v1/taliya-commercial/turn",
+    "channel": "whatsapp",
+    "source": "taliya_whatsapp",
+    "conversation_id": "wa_conv_5511999990000",
+    "channel_conversation_id": "wa_conv_5511999990000",
+    "channel_message_id": "wamid.HBgMNTUxMTk5OTk5MDAwMA",
+    "idempotency_key": "whatsapp:wamid.HBgMNTUxMTk5OTk5MDAwMA",
+    "whatsapp_phone": "+5511999990000",
+    "metadata_provider": "whatsapp",
+    "spec011_core_contract": "taliya_commercial_core_reset_v1",
+    "client_pending_context_present": false,
+    "commercial_route_present": false,
+    "template_id_present": false
+  },
+  "limitations": [
+    "This is adapter-level proof only.",
+    "Shadow-mode comparison, rollback proof, real-model evals, production trace export, and first-hours watch remain later Spec 011 tasks."
+  ]
+}

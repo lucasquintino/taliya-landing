@@ -1,0 +1,884 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-golden-transcripts-order-red-after-fix",
+  "fixture": "scripts\\fixtures\\agent-runtime\\spec-011-golden-transcripts.json",
+  "reports": [
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-remaining-budgeted-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-demo-direct-fixed-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-long-conversation-16.json"
+  ],
+  "staticFixture": null,
+  "staticReport": null,
+  "summary": {
+    "total": 8,
+    "passed": 7,
+    "failed": 1,
+    "runtimeCases": 8,
+    "staticCases": 0,
+    "estimatedCostUsd": 0.409172
+  },
+  "releaseGate": "fail",
+  "results": [
+    {
+      "id": "final-price-first",
+      "title": "Golden RC-011-052 direct price",
+      "case_ids": [
+        "RC-011-052"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.013925,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "product.price_direct",
+            "text": "Oi, tudo bem?"
+          },
+          {
+            "template_id": "product.price_direct",
+            "text": "Planos oficiais: Base R$ 197/mês; Essencial R$ 497/mês; Avance R$ 897/mês; Completo R$ 1.497/mês. Base organiza a rotina sem automação ativa; os planos pagos liberam 1, 3 ou 7 agentes conforme o plano."
+          },
+          {
+            "template_id": "diagnostic.price_hook",
+            "text": "Se fizer sentido para voce, estamos oferecendo um diagnostico gratuito para o seu studio. Assim voce entende se algum dos nossos planos te atenderia."
+          },
+          {
+            "template_id": "diagnostic.price_hook",
+            "text": "Com poucas perguntas, eu entendo a rotina do studio e te devolvo o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+          },
+          {
+            "template_id": "diagnostic.price_hook",
+            "text": "O que voce acha?"
+          }
+        ],
+        "final_decision": {
+          "previous_state": "none",
+          "current_state": "price_answered_offer_diagnostic",
+          "next_state": "awaiting_user_response",
+          "route": "product",
+          "opening_type": "direct_question_opening",
+          "detected_intents": [
+            "price_question"
+          ],
+          "direct_question_present": true,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "offer",
+          "diagnostic_allowed_now": true,
+          "waitlist_allowed_now": false,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_available",
+          "facts_used": [],
+          "facts_missing": [],
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook"
+          ],
+          "template_variables": {
+            "product.price_direct": {
+              "plan_price_summary": {
+                "kind": "long_text",
+                "value": "Planos oficiais: Base R$ 197/mês; Essencial R$ 497/mês; Avance R$ 897/mês; Completo R$ 1.497/mês. Base organiza a rotina sem automação ativa; os planos pagos liberam 1, 3 ou 7 agentes conforme o plano.",
+                "source": "official_product_knowledge",
+                "evidence": [
+                  "product_knowledge.plans",
+                  "product_knowledge.prices",
+                  "specs/006-crm-operational-core/spec.md#Product Positioning"
+                ],
+                "max_length": 360
+              }
+            },
+            "diagnostic.price_hook": {}
+          },
+          "render_plan": [
+            {
+              "template_id": "product.price_direct",
+              "channel": "widget",
+              "variables": {
+                "plan_price_summary": {
+                  "kind": "long_text",
+                  "value": "Planos oficiais: Base R$ 197/mês; Essencial R$ 497/mês; Avance R$ 897/mês; Completo R$ 1.497/mês. Base organiza a rotina sem automação ativa; os planos pagos liberam 1, 3 ou 7 agentes conforme o plano.",
+                  "source": "official_product_knowledge",
+                  "evidence": [
+                    "product_knowledge.plans",
+                    "product_knowledge.prices",
+                    "specs/006-crm-operational-core/spec.md#Product Positioning"
+                  ],
+                  "max_length": 360
+                }
+              }
+            },
+            {
+              "template_id": "diagnostic.price_hook",
+              "channel": "widget",
+              "variables": {}
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "none",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "none",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    },
+    {
+      "id": "final-price-plus-pain",
+      "title": "Golden RC-011-053 price plus pain",
+      "case_ids": [
+        "RC-011-053"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.015925,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "product.price_direct",
+            "text": "Oi, tudo bem?\n\nPlanos oficiais: Base R$ 197/mes; Essencial R$ 497/mes; Avance R$ 897/mes; Completo R$ 1.497/mes."
+          },
+          {
+            "template_id": "diagnostic.price_hook_with_context",
+            "text": "Voce comentou: tenho reposicao baguncada na agenda e queria saber preco\n\nPosso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+          },
+          {
+            "template_id": "diagnostic.price_hook_with_context",
+            "text": "O que voce acha?"
+          }
+        ],
+        "final_decision": {
+          "previous_state": "entry",
+          "current_state": "product_answer_price_and_offer_diagnostic",
+          "next_state": "diagnostic_offer_pending_response",
+          "route": "product",
+          "opening_type": "direct_question_opening",
+          "detected_intents": [
+            "price_request",
+            "pain_description"
+          ],
+          "direct_question_present": true,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "offer",
+          "diagnostic_allowed_now": true,
+          "waitlist_allowed_now": false,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_available",
+          "facts_used": [
+            "tenho reposicao baguncada na agenda e queria saber preco",
+            "tenho reposicao baguncada na agenda e queria saber preco"
+          ],
+          "facts_missing": [],
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook_with_context"
+          ],
+          "template_variables": {
+            "product.price_direct": {
+              "plan_price_summary": {
+                "kind": "long_text",
+                "value": "Planos oficiais: Base R$ 197/mes; Essencial R$ 497/mes; Avance R$ 897/mes; Completo R$ 1.497/mes.",
+                "source": "official_product_knowledge",
+                "evidence": [
+                  "product_knowledge.plans",
+                  "product_knowledge.prices"
+                ],
+                "max_length": 360
+              }
+            },
+            "diagnostic.price_hook_with_context": {
+              "plan_fit_context": {
+                "kind": "short_text",
+                "value": "Voce comentou: tenho reposicao baguncada na agenda e queria saber preco",
+                "source": "user_message",
+                "evidence": [
+                  "tenho reposicao baguncada na agenda e queria saber preco"
+                ],
+                "max_length": 180
+              }
+            }
+          },
+          "render_plan": [
+            {
+              "template_id": "product.price_direct",
+              "channel": "whatsapp",
+              "variables": {
+                "plan_price_summary": {
+                  "kind": "long_text",
+                  "value": "Planos oficiais: Base R$ 197/mes; Essencial R$ 497/mes; Avance R$ 897/mes; Completo R$ 1.497/mes.",
+                  "source": "official_product_knowledge",
+                  "evidence": [
+                    "product_knowledge.plans",
+                    "product_knowledge.prices"
+                  ],
+                  "max_length": 360
+                }
+              }
+            },
+            {
+              "template_id": "diagnostic.price_hook_with_context",
+              "channel": "whatsapp",
+              "variables": {
+                "plan_fit_context": {
+                  "kind": "short_text",
+                  "value": "Voce comentou: tenho reposicao baguncada na agenda e queria saber preco",
+                  "source": "user_message",
+                  "evidence": [
+                    "tenho reposicao baguncada na agenda e queria saber preco"
+                  ],
+                  "max_length": 180
+                }
+              }
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "current_process",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "none",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    },
+    {
+      "id": "final-instagram-interest",
+      "title": "Golden RC-011-054 Instagram/source opening",
+      "case_ids": [
+        "RC-011-054"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.013968,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "opening.instagram_source",
+            "text": "Oi, tudo bem?"
+          },
+          {
+            "template_id": "opening.instagram_source",
+            "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+          },
+          {
+            "template_id": "opening.instagram_source",
+            "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+          }
+        ],
+        "final_decision": {
+          "previous_state": "none",
+          "current_state": "opening.instagram_source",
+          "next_state": "opening.instagram_source",
+          "route": "entry",
+          "opening_type": "social_source_opening",
+          "detected_intents": [
+            "source_from_instagram",
+            "general_interest"
+          ],
+          "direct_question_present": false,
+          "direct_question_answered_first": false,
+          "diagnostic_action": "offer",
+          "diagnostic_allowed_now": true,
+          "waitlist_allowed_now": false,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_available",
+          "facts_used": [
+            "conversation.source",
+            "metadata.page_path",
+            "metadata.utm_source"
+          ],
+          "facts_missing": [],
+          "template_ids": [
+            "opening.instagram_source"
+          ],
+          "template_variables": {
+            "opening.instagram_source": {}
+          },
+          "render_plan": [
+            {
+              "template_id": "opening.instagram_source",
+              "channel": "whatsapp",
+              "variables": {}
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "none",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "none",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    },
+    {
+      "id": "final-whatsapp-question",
+      "title": "Golden RC-011-055 WhatsApp product behavior",
+      "case_ids": [
+        "RC-011-055"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.014859,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "product.whatsapp_direct",
+            "text": "Oi, tudo bem?"
+          },
+          {
+            "template_id": "product.whatsapp_direct",
+            "text": "O aluno nao precisa baixar aplicativo nem criar senha. Ele conversa no WhatsApp; a Taliya registra a acao, atualiza o painel e avisa o responsavel."
+          },
+          {
+            "template_id": "product.whatsapp_direct",
+            "text": "Ver demonstracao: https://www.taliya.com.br/pilates/planos/demonstracao"
+          }
+        ],
+        "final_decision": {
+          "previous_state": "none",
+          "current_state": "answered_direct_product_question",
+          "next_state": "offer_diagnostic_or_waitlist_if_requested",
+          "route": "product",
+          "opening_type": "direct_question_opening",
+          "detected_intents": [
+            "whatsapp_scope_question",
+            "product_capability_question"
+          ],
+          "direct_question_present": true,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "none",
+          "diagnostic_allowed_now": false,
+          "waitlist_allowed_now": false,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_available",
+          "facts_used": [
+            "conversation.channel_conversation_id",
+            "metadata.page_path",
+            "sender.whatsapp_phone"
+          ],
+          "facts_missing": [],
+          "template_ids": [
+            "product.whatsapp_direct"
+          ],
+          "template_variables": {
+            "product.whatsapp_direct": {
+              "official_demo_link": {
+                "kind": "url",
+                "value": "https://www.taliya.com.br/pilates/planos/demonstracao",
+                "source": "official_product_knowledge",
+                "evidence": [
+                  "product_knowledge.links.demonstration"
+                ],
+                "max_length": null
+              },
+              "product_fact_summary": {
+                "kind": "long_text",
+                "value": "O aluno nao precisa baixar aplicativo nem criar senha. Ele conversa no WhatsApp; a Taliya registra a acao, atualiza o painel e avisa o responsavel.",
+                "source": "official_product_knowledge",
+                "evidence": [
+                  "product_knowledge.whatsapp_scope"
+                ],
+                "max_length": 320
+              }
+            }
+          },
+          "render_plan": [
+            {
+              "template_id": "product.whatsapp_direct",
+              "channel": "whatsapp",
+              "variables": {
+                "official_demo_link": {
+                  "kind": "url",
+                  "value": "https://www.taliya.com.br/pilates/planos/demonstracao",
+                  "source": "official_product_knowledge",
+                  "evidence": [
+                    "product_knowledge.links.demonstration"
+                  ],
+                  "max_length": null
+                },
+                "product_fact_summary": {
+                  "kind": "long_text",
+                  "value": "O aluno nao precisa baixar aplicativo nem criar senha. Ele conversa no WhatsApp; a Taliya registra a acao, atualiza o painel e avisa o responsavel.",
+                  "source": "official_product_knowledge",
+                  "evidence": [
+                    "product_knowledge.whatsapp_scope"
+                  ],
+                  "max_length": 320
+                }
+              }
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "none",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "none",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    },
+    {
+      "id": "step3g-long-conversation",
+      "title": "Golden RC-011-056/060 diagnostic question-by-question and long conversation",
+      "case_ids": [
+        "RC-011-056",
+        "RC-011-060"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-long-conversation-16.json",
+      "status": "FAIL",
+      "failures": [
+        "no passing evidence report; failures: expected completed diagnostic, got None; price objection did not validate the value concern naturally"
+      ],
+      "cost_usd": 0.293154,
+      "diffs": {
+        "transcript_diff": [
+          "missing passing scenario evidence"
+        ]
+      }
+    },
+    {
+      "id": "final-waitlist-joined",
+      "title": "Golden RC-011-057 waitlist after fit/intent",
+      "case_ids": [
+        "RC-011-057"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.029096,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "waitlist.joined",
+            "text": "Perfeito, deixei seu interesse registrado para a equipe da Taliya."
+          },
+          {
+            "template_id": "waitlist.joined",
+            "text": "Perfeito, deixei seu interesse registrado para a equipe da Taliya."
+          },
+          {
+            "template_id": "waitlist.joined",
+            "text": "Studio: Studio Viva."
+          },
+          {
+            "template_id": "waitlist.joined",
+            "text": "Cidade/estado: Vitoria ES."
+          }
+        ],
+        "final_decision": {
+          "previous_state": "waitlist_joined",
+          "current_state": "waitlist_joined",
+          "next_state": "waitlist_joined",
+          "route": "waitlist",
+          "opening_type": "none",
+          "detected_intents": [
+            "waitlist_update",
+            "provide_studio_details"
+          ],
+          "direct_question_present": false,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "none",
+          "diagnostic_allowed_now": false,
+          "waitlist_allowed_now": true,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_available",
+          "facts_used": [
+            "pode colocar o Studio Viva em Vitoria ES",
+            "metadata.page_path"
+          ],
+          "facts_missing": [],
+          "template_ids": [
+            "waitlist.joined"
+          ],
+          "template_variables": {
+            "waitlist.joined": {
+              "studio_name": {
+                "kind": "short_text",
+                "value": "Studio Viva",
+                "source": "user_message",
+                "evidence": [
+                  "pode colocar o Studio Viva em Vitoria ES"
+                ],
+                "max_length": 80
+              },
+              "city_state": {
+                "kind": "short_text",
+                "value": "Vitoria ES",
+                "source": "user_message",
+                "evidence": [
+                  "pode colocar o Studio Viva em Vitoria ES"
+                ],
+                "max_length": 80
+              }
+            }
+          },
+          "render_plan": [
+            {
+              "template_id": "waitlist.joined",
+              "channel": "whatsapp",
+              "variables": {
+                "studio_name": {
+                  "kind": "short_text",
+                  "value": "Studio Viva",
+                  "source": "user_message",
+                  "evidence": [
+                    "pode colocar o Studio Viva em Vitoria ES"
+                  ],
+                  "max_length": 80
+                },
+                "city_state": {
+                  "kind": "short_text",
+                  "value": "Vitoria ES",
+                  "source": "user_message",
+                  "evidence": [
+                    "pode colocar o Studio Viva em Vitoria ES"
+                  ],
+                  "max_length": 80
+                }
+              }
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "none",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "joined",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    },
+    {
+      "id": "final-human-request-silent-after",
+      "title": "Golden RC-011-058 human handoff pause",
+      "case_ids": [
+        "RC-011-058"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-remaining-budgeted-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.014059,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "handoff.acknowledge",
+            "text": "Claro. Vou deixar uma pessoa assumir daqui."
+          },
+          {
+            "template_id": "handoff.acknowledge",
+            "text": "Tambem deixo o contexto salvo para voce nao precisar repetir tudo."
+          }
+        ],
+        "final_decision": {
+          "previous_state": "handoff_active",
+          "current_state": "paused_by_human",
+          "next_state": "paused_by_human",
+          "route": "handoff",
+          "opening_type": "none",
+          "detected_intents": [],
+          "direct_question_present": false,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "none",
+          "diagnostic_allowed_now": false,
+          "waitlist_allowed_now": false,
+          "demo_status": "not_offered",
+          "demo_next_step": "none",
+          "profile_name_usage": "not_available",
+          "facts_used": [],
+          "facts_missing": [],
+          "template_ids": [],
+          "template_variables": {},
+          "render_plan": [],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "none",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": null,
+        "final_handoff": {
+          "status": "active",
+          "reason": "O lead pediu falar com uma pessoa."
+        }
+      },
+      "evaluated_evidence_count": 1,
+      "rejected_evidence": []
+    },
+    {
+      "id": "final-demo-request",
+      "title": "Golden RC-011-059 product demo",
+      "case_ids": [
+        "RC-011-059"
+      ],
+      "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-golden-demo-direct-fixed-1.json",
+      "status": "PASS",
+      "failures": [],
+      "cost_usd": 0.014186,
+      "diffs": {
+        "transcript_diff": [],
+        "conductor_json_diff": [],
+        "rendered_message_diff": [],
+        "validator_diff": [],
+        "usage_diff": [],
+        "sales_inbox_projection_diff": []
+      },
+      "observed": {
+        "rendered_messages": [
+          {
+            "template_id": "product.demo_direct",
+            "text": "Oi, tudo bem?"
+          },
+          {
+            "template_id": "product.demo_direct",
+            "text": "Ver demonstracao: https://www.taliya.com.br/pilates/planos/demonstracao"
+          },
+          {
+            "template_id": "product.demo_direct",
+            "text": "Para eu te indicar o que vale olhar primeiro, faz sentido pensar na parte de agenda, atendimento ou vendas do seu studio."
+          }
+        ],
+        "final_decision": {
+          "previous_state": "start",
+          "current_state": "demo_requested",
+          "next_state": "demo_offered",
+          "route": "product",
+          "opening_type": "direct_question_opening",
+          "detected_intents": [
+            "commercial_product_demo"
+          ],
+          "direct_question_present": true,
+          "direct_question_answered_first": true,
+          "diagnostic_action": "none",
+          "diagnostic_allowed_now": false,
+          "waitlist_allowed_now": false,
+          "demo_status": "offered",
+          "demo_next_step": "offer_demo",
+          "profile_name_usage": "not_available",
+          "facts_used": [
+            "conversation.source",
+            "conversation.channel_conversation_id",
+            "metadata.page_path"
+          ],
+          "facts_missing": [],
+          "template_ids": [
+            "product.demo_direct"
+          ],
+          "template_variables": {
+            "product.demo_direct": {
+              "official_demo_link": {
+                "kind": "url",
+                "value": "https://www.taliya.com.br/pilates/planos/demonstracao",
+                "source": "official_product_knowledge",
+                "evidence": [
+                  "product_knowledge.links"
+                ],
+                "max_length": null
+              }
+            }
+          },
+          "render_plan": [
+            {
+              "template_id": "product.demo_direct",
+              "channel": "widget",
+              "variables": {
+                "official_demo_link": {
+                  "kind": "url",
+                  "value": "https://www.taliya.com.br/pilates/planos/demonstracao",
+                  "source": "official_product_knowledge",
+                  "evidence": [
+                    "product_knowledge.links"
+                  ],
+                  "max_length": null
+                }
+              }
+            }
+          ],
+          "diagnostic_ledger_status": "not_started",
+          "next_question_kind": "none",
+          "policy_checks": {
+            "direct_question_answered_first": true,
+            "diagnostic_timing_ok": true,
+            "waitlist_timing_ok": true,
+            "official_facts_only": true,
+            "no_early_contact_capture": true,
+            "no_whatsapp_phone_request": true,
+            "no_fake_certainty": true,
+            "no_human_overlap": true,
+            "channel_brevity_ok": true
+          }
+        },
+        "final_waitlist": {
+          "status": "none",
+          "reason": null,
+          "missing_fields": []
+        },
+        "final_handoff": {
+          "status": "none",
+          "reason": null
+        }
+      },
+      "evaluated_evidence_count": 2,
+      "rejected_evidence": [
+        {
+          "evidence_report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-final-matrix-budgeted-1.json",
+          "failures": [
+            "direct_question_answered_first expected true, got false"
+          ]
+        }
+      ]
+    }
+  ]
+}

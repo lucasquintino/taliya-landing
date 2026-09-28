@@ -1,0 +1,239 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-widget-empty-latest",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-22T23:40:22Z",
+  "finishedAt": "2026-05-22T23:40:27Z",
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "estimatedCostUsd": 0.006459,
+    "inputTokens": 6962,
+    "outputTokens": 275
+  },
+  "releaseGate": "pass",
+  "scenarios": [
+    {
+      "id": "final-widget-empty-opening",
+      "title": "Empty widget opening softly offers free diagnostic",
+      "channel": "widget",
+      "checks": [
+        "route:entry",
+        "opening_type:widget_opening",
+        "diagnostic_offered_or_started",
+        "no_waitlist",
+        "no_name_capture",
+        "widget_empty_opening_expected",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_b384fd2a664346aaafe942249e149098",
+            "conversation_id": "real_eval_final-widget-empty-opening",
+            "lead_id": "lead_final-widget-empty-opening",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_entry_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "general_interest",
+                "next_state": "general_interest",
+                "route": "entry",
+                "opening_type": "widget_opening",
+                "detected_intents": [
+                  "widget_opening"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "profile_name_usage": "not_available",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.widget_empty_diagnostic"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritaria",
+                    "first_step": "organizar a primeira rotina critica",
+                    "plan_range": "a faixa mais aderente"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.widget_empty_diagnostic",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.widget_empty_diagnostic",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Em que posso ajudar?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.widget_empty_diagnostic",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Se fizer sentido pra você, estamos oferecendo um diagnóstico gratuito pro seu studio. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.widget_empty_diagnostic",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "plan_fit_context",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "likely_cause": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "plan_or_range_to_compare": null,
+                "evidence": [],
+                "unknowns": [
+                  "main_pain",
+                  "operation_context"
+                ],
+                "confidence": "low",
+                "next_question": "O que você acha?",
+                "validation_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 6962,
+                "output_tokens": 275,
+                "cost_usd": 0.006459
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_0ed31ae386ed4dc591d5313caf89dccb"
+          },
+          "lead": "[text]"
+        }
+      ]
+    }
+  ]
+}

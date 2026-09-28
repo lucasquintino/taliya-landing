@@ -1,0 +1,549 @@
+{
+  "number": 11,
+  "scenario_id": "waitlist_contract_intent",
+  "channel": "whatsapp",
+  "required_proof": "Waitlist offer only after qualified intent.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Diagnostico completo entregue e demo oficial enviada. Lead conhece o plano recomendado e demonstrou interesse em seguir.\nstate: {\"diagnostic\": {\"status\": \"complete\", \"next_question_key\": null, \"ledger\": {\"active_students_or_size\": {\"status\": \"answered\", \"answer_value\": \"120\"}, \"main_pain\": {\"status\": \"answered\", \"answer_value\": \"perde leads no WhatsApp\"}, \"pain_detail\": {\"status\": \"answered\", \"answer_value\": \"equipe demora a responder interessados\"}, \"current_process\": {\"status\": \"answered\", \"answer_value\": \"controle manual em planilha e WhatsApp\"}, \"priority\": {\"status\": \"answered\", \"answer_value\": \"organizar follow-up de leads\"}, \"urgency\": {\"status\": \"answered\", \"answer_value\": \"quer resolver este mes\"}}}, \"demo\": {\"status\": \"link_sent\"}, \"waitlist\": {\"status\": \"not_offered\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "assistant",
+      "content": "Esse foi o seu diagnostico completo. Tambem te enviei a demo oficial para ver a Taliya funcionando."
+    },
+    {
+      "role": "user",
+      "content": "quero entrar na lista para contratar"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_demo_waitlist_handoff_state",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"waitlist\"}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_demo_waitlist_handoff_state",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "waitlist",
+          "templates": [
+            {
+              "template_id": "waitlist.ask_missing_city",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_contact_path",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_studio",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.joined",
+              "required_variables": [],
+              "optional_variables": [
+                "studio_name",
+                "city_state",
+                "contact_path"
+              ]
+            },
+            {
+              "template_id": "waitlist.offer_after_contract_intent",
+              "required_variables": [
+                "waitlist_context_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "waitlist.status_preserved",
+              "required_variables": [],
+              "optional_variables": [
+                "waitlist_context_summary"
+              ]
+            }
+          ],
+          "variable_specs": {
+            "city_state": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "City/state supplied or confirmed by the lead."
+            },
+            "contact_path": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Approved contact-path enum; never ask WhatsApp leads for their phone."
+            },
+            "missing_detail_label": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state"
+              ],
+              "validation_rule": "Approved enum for one missing waitlist detail."
+            },
+            "studio_name": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Studio name supplied or confirmed by the lead; separate from person name."
+            },
+            "waitlist_context_summary": {
+              "kind": "long_text",
+              "max_length": 220,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "runtime_state"
+              ],
+              "validation_rule": "Why waitlist is allowed now, grounded in clear intent and saved context."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_waitlist_contract_intent",
+          "demo": {
+            "status": "link_sent"
+          },
+          "waitlist": {
+            "status": "not_offered"
+          },
+          "human_status": null,
+          "human_reason": null,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_waitlist_contract_intent.operational_state"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "waitlist",
+        "contract_intent"
+      ],
+      "direct_question": null,
+      "customer_need": "entrar na lista para contratar",
+      "pain_context": "Lead quer avançar para contratação após diagnóstico e demo já enviados.",
+      "source_context": "Diagnostico completo entregue e demo oficial enviada.",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "want_join_waitlist",
+          "kind": "other",
+          "raw_text": "quero entrar na lista para contratar",
+          "value_text": "waitlist intent for contract",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message",
+        "runtime_state"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "runtime_state"
+      ]
+    },
+    "demo_proposal": {
+      "status": "link_sent",
+      "next_step": "waitlist_or_next_step",
+      "evidence": [
+        "runtime_state"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "eligible",
+      "intent": "contract_intent",
+      "missing_details": [],
+      "evidence": [
+        "user_message",
+        "runtime_state"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "waitlist.offer_after_contract_intent"
+      ],
+      "variables": [
+        {
+          "name": "waitlist_context_summary",
+          "kind": "long_text",
+          "value": "Lead já recebeu diagnóstico completo e demo oficial; agora pediu para entrar na lista com intenção clara de contratar.",
+          "source": "runtime_state",
+          "evidence": [
+            "runtime_state"
+          ],
+          "max_length": 220
+        }
+      ],
+      "evidence": [
+        "user_message",
+        "runtime_state"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "waitlist",
+      "last_intent": "contract_intent",
+      "diagnostic_status": "complete",
+      "waitlist_status": "eligible",
+      "handoff_status": "none",
+      "next_action_hint": "confirmar entrada na lista e próximos passos"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_waitlist_contract_intent",
+    "conversation_id": "spike_conv_waitlist_contract_intent",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "waitlist",
+        "contract_intent"
+      ],
+      "direct_question": null,
+      "customer_need": "entrar na lista para contratar",
+      "pain_context": "Lead quer avançar para contratação após diagnóstico e demo já enviados.",
+      "source_context": "Diagnostico completo entregue e demo oficial enviada.",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "want_join_waitlist",
+          "kind": "other",
+          "raw_text": "quero entrar na lista para contratar",
+          "value": "waitlist intent for contract",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message",
+        "runtime_state"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "runtime_state"
+      ]
+    },
+    "demo_proposal": {
+      "status": "link_sent",
+      "next_step": "waitlist_or_next_step",
+      "evidence": [
+        "runtime_state"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "eligible",
+      "intent": "contract_intent",
+      "missing_details": [],
+      "evidence": [
+        "user_message",
+        "runtime_state"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "waitlist.offer_after_contract_intent"
+      ],
+      "variables": {
+        "waitlist_context_summary": {
+          "kind": "long_text",
+          "value": "Lead já recebeu diagnóstico completo e demo oficial; agora pediu para entrar na lista com intenção clara de contratar.",
+          "source": "runtime_state",
+          "evidence": [
+            "runtime_state"
+          ],
+          "max_length": 220
+        }
+      },
+      "evidence": [
+        "user_message",
+        "runtime_state"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "waitlist",
+      "last_intent": "contract_intent",
+      "diagnostic_status": "complete",
+      "waitlist_status": "eligible",
+      "handoff_status": "none",
+      "next_action_hint": "confirmar entrada na lista e próximos passos"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "user_message",
+        "runtime_state"
+      ]
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 8801,
+      "output_tokens": 496,
+      "cost_usd": 0.003994,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_waitlist_contract_intent",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Lead já recebeu diagnóstico completo e demo oficial; agora pediu para entrar na lista com intenção clara de contratar.",
+      "template_id": "waitlist.offer_after_contract_intent",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Hoje a entrada acontece por uma lista para um numero pequeno de studios. Posso deixar o interesse registrado sem prometer checkout, data ou condicao especial.",
+      "template_id": "waitlist.offer_after_contract_intent",
+      "channel": "whatsapp",
+      "sequence": 2
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "waitlist",
+    "last_intent": "contract_intent",
+    "diagnostic_status": "complete",
+    "waitlist_status": "eligible",
+    "handoff_status": "none",
+    "next_action_hint": "confirmar entrada na lista e próximos passos"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 8801,
+    "output_tokens": 496,
+    "cost_usd": 0.003994,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

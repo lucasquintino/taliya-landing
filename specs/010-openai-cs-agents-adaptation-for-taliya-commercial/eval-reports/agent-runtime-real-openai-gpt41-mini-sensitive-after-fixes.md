@@ -1,0 +1,63 @@
+# agent-runtime-real-openai-gpt41-mini-sensitive-after-fixes
+
+Started at: 2026-05-24T13:34:30Z
+Finished at: 2026-05-24T13:34:59Z
+Provider: openai
+Model: gpt-4.1-mini
+Release gate: fail
+Passed: 3/4
+Estimated cost: US$0.006628
+
+## PASS real-confused-price-and-pain
+
+Title: Mensagem dupla deve responder preco e acolher dor
+Channel: whatsapp
+
+Lead 1: Tenho agenda e reposicoes meio perdidas, mas tambem queria saber preco.
+Taliya 1.1: Oi, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.
+Taliya 1.2: Entendi: agenda e reposições perdidas já mostram onde o diagnóstico deve começar. Se fizer sentido, faço um diagnóstico gratuito para entender se algum dos nossos planos te atenderia. O que você acha?
+Runtime: http=200 status=succeeded agent=taliya_commercial_product_agent trace=trace_19d1e0fd778f4dd6af9c3daa9d350a05
+Diagnostic: {"status": "offered", "ledger": [], "facts_used": ["agenda perdida", "reposicoes perdidas"], "main_bottleneck": null, "pain_context_human": null, "likely_cause": null, "crm_base_recommendation": null, "first_recommended_step": null, "indicated_routines_or_agents": [], "indicated_agents": [], "plan_or_range_to_compare": null, "final_plan_line": null, "demo_status_at_delivery": "not_offered", "final_demo_line": null, "evidence": [], "unknowns": ["detalhes sobre numero de alunos", "processo atual para agendamento", "prioridade na resolucao"], "confidence": "low", "next_question": null, "validation_question": null, "final_demo_next_step_question": null}
+Decision: {"previous_state": "new_lead", "current_state": "product_question", "next_state": "product_question", "route": "product", "opening_type": "direct_question_opening", "detected_intents": ["product", "pain"], "direct_question_present": true, "direct_question_answered_first": true, "diagnostic_action": "offer", "diagnostic_allowed_now": true, "waitlist_allowed_now": false, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "not_available", "facts_used": ["agenda perdida", "reposicoes perdidas"], "facts_missing": ["detalhes sobre numero de alunos", "processo atual para agendamento", "prioridade na resolucao"], "template_ids": ["product.price_direct", "diagnostic.price_hook_with_context"], "template_variables": {"pain_description": {"value": "agenda e reposicoes meio perdidas"}, "diagnostic.offer_soft": {"pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."}, "diagnostic.price_hook_with_context": {"pain_context": "Entendi: agenda e reposições perdidas já mostram onde o diagnóstico deve começar."}, "diagnostic.deliver_context": {"pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."}, "diagnostic.deliver_crm_base": {"crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."}, "diagnostic.deliver_operational_step": {"operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."}, "diagnostic.deliver_agent_recommendation": {"agent_name": "Agenda", "agent_pain_resolved": "agenda, faltas e reposições escapando", "agent_recommendation_reason": "essa rotina apareceu como prioridade", "agent_practical_action": "ele organiza avisos, próximos encaixes e pendências para a equipe agir"}, "diagnostic.deliver_plan_recommendation": {"recommended_plan_or_range": "Essencial ou Avance"}, "diagnostic.deliver": {"main_bottleneck": "a rotina prioritária", "first_step": "organizar a primeira rotina crítica", "plan_range": "a faixa mais aderente"}}, "render_plan": [{"template_id": "product.price_direct", "channel": "whatsapp"}, {"template_id": "diagnostic.price_hook_with_context", "channel": "whatsapp"}], "diagnostic_ledger_status": "incomplete", "next_question_kind": "none", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["product_knowledge"]}]
+Usage: {"model": "gpt-4.1-mini", "input_tokens": 4337, "output_tokens": 356, "cost_usd": 0.002304}
+
+## FAIL real-plan-fit-with-context
+
+Title: Plano ideal com contexto nao pode virar abertura generica
+Channel: widget
+Failures:
+- runtime returned non-200 status: [500]
+
+Lead 1: Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal.
+Taliya: [sem resposta automatica]
+Runtime: http=500 status=None agent=None trace=None
+
+## PASS real-rich-diagnostic
+
+Title: Diagnostico com contexto rico deve usar fatos do lead
+Channel: widget
+
+Lead 1: Tenho 90 alunos, uso planilha e o maior problema e reposicao baguncada. Quero aliviar agenda primeiro.
+Taliya 1.1: Oi, tudo bem? Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar.
+Taliya 1.2: Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.
+Taliya 1.3: O que você acha?
+Runtime: http=200 status=succeeded agent=taliya_commercial_diagnostic_agent trace=trace_048d9b7abae443ca835aa14aab145931
+Diagnostic: {"status": "offered", "ledger": [{"question_key": "active_students_or_size", "status": "inferred_from_prior_message", "answer_value": "Tenho 90 alunos, uso planilha e o maior problema e reposicao baguncada. Quero aliviar agenda primeiro.", "evidence": ["widget:real-rich-diagnostic:1"], "confidence": "medium", "last_asked_timestamp": null, "may_ask_again": false}, {"question_key": "main_pain", "status": "inferred_from_prior_message", "answer_value": "Tenho 90 alunos, uso planilha e o maior problema e reposicao baguncada. Quero aliviar agenda primeiro.", "evidence": ["widget:real-rich-diagnostic:1"], "confidence": "medium", "last_asked_timestamp": null, "may_ask_again": false}, {"question_key": "pain_detail", "status": "inferred_from_prior_message", "answer_value": "Tenho 90 alunos, uso planilha e o maior problema e reposicao baguncada. Quero aliviar agenda primeiro.", "evidence": ["widget:real-rich-diagnostic:1"], "confidence": "medium", "last_asked_timestamp": null, "may_ask_again": false}, {"question_key": "current_process", "status": "inferred_from_prior_message", "answer_value": "Tenho 90 alunos, uso planilha e o maior problema e reposicao baguncada. Quero aliviar agenda primeiro.", "evidence": ["widget:real-rich-diagnostic:1"], "confidence": "medium", "last_asked_timestamp": null, "may_ask_again": false}, {"question_key": "priority", "status": "inferred_from_prior_message", "answer_value": "Tenho 90 alunos, uso planilha e o maior problema e reposicao baguncada. Quero aliviar agenda primeiro.", "evidence": ["widget:real-rich-diagnostic:1"], "confidence": "medium", "last_asked_timestamp": null, "may_ask_again": false}, {"question_key": "urgency", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "last_asked_timestamp": null, "may_ask_again": true}], "facts_used": ["Tenho 90 alunos", "uso planilha", "o maior problema e reposicao baguncada", "Quero aliviar agenda primeiro"], "main_bottleneck": null, "pain_context_human": "Reposição bagunçada atrapalha a organização da agenda", "likely_cause": null, "crm_base_recommendation": null, "first_recommended_step": null, "indicated_routines_or_agents": [], "indicated_agents": [], "plan_or_range_to_compare": null, "final_plan_line": null, "demo_status_at_delivery": "not_offered", "final_demo_line": null, "evidence": ["Tenho 90 alunos", "uso planilha", "o maior problema e reposicao baguncada", "Quero aliviar agenda primeiro"], "unknowns": ["Como a reposição é gerenciada atualmente?", "Detalhes sobre rotina de agenda"], "confidence": "medium", "next_question": null, "validation_question": null, "final_demo_next_step_question": null}
+Decision: {"previous_state": "new_lead", "current_state": "diagnostic_offered", "next_state": "diagnostic_in_progress", "route": "diagnostic", "opening_type": "none", "detected_intents": ["diagnostic", "studio_pain"], "direct_question_present": false, "direct_question_answered_first": true, "diagnostic_action": "offer", "diagnostic_allowed_now": true, "waitlist_allowed_now": false, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "not_available", "facts_used": [], "facts_missing": [], "template_ids": ["diagnostic.offer_soft"], "template_variables": {"diagnostic.offer_soft": {"pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."}, "diagnostic.price_hook_with_context": {"pain_context": "Entendi: a reposição bagunçada já é um bom sinal de onde o diagnóstico deve começar."}, "diagnostic.deliver_context": {"pain_context_human": "Reposição bagunçada atrapalha a organização da agenda"}, "diagnostic.deliver_crm_base": {"crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."}, "diagnostic.deliver_operational_step": {"operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."}, "diagnostic.deliver_agent_recommendation": {"agent_name": "Agenda", "agent_pain_resolved": "agenda, faltas e reposições escapando", "agent_recommendation_reason": "essa rotina apareceu como prioridade", "agent_practical_action": "ele organiza avisos, próximos encaixes e pendências para a equipe agir"}, "diagnostic.deliver_plan_recommendation": {"recommended_plan_or_range": "Essencial ou Avance"}, "diagnostic.deliver": {"main_bottleneck": "a rotina prioritária", "first_step": "organizar a primeira rotina crítica", "plan_range": "a faixa mais aderente"}}, "render_plan": [{"template_id": "diagnostic.offer_soft", "channel": "widget"}], "diagnostic_ledger_status": "incomplete", "next_question_kind": "none", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["product_knowledge"]}]
+Usage: {"model": "gpt-4.1-mini", "input_tokens": 3834, "output_tokens": 549, "cost_usd": 0.002412}
+
+## PASS real-checkout-closed
+
+Title: Checkout pedido explicitamente nao pode inventar link
+Channel: widget
+
+Lead 1: Me manda o checkout para assinar agora.
+Taliya 1.1: Oi, tudo bem? Estamos trabalhando com um número pequeno de studios agora.
+Taliya 1.2: Se fizer sentido, posso colocar seu studio na lista de espera e chamar assim que abrir uma próxima janela.
+Runtime: http=200 status=succeeded agent=taliya_commercial_waitlist_agent trace=trace_16aa12180adb45a3931128beb3d12bbf
+Decision: {"previous_state": "new_lead", "current_state": "waitlist_offered", "next_state": "waitlist_offered", "route": "waitlist", "opening_type": "direct_question_opening", "detected_intents": ["waitlist"], "direct_question_present": true, "direct_question_answered_first": true, "diagnostic_action": "none", "diagnostic_allowed_now": false, "waitlist_allowed_now": true, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "not_available", "facts_used": [], "facts_missing": [], "template_ids": ["waitlist.offer_after_contract_intent"], "template_variables": {"diagnostic.offer_soft": {"pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."}, "diagnostic.price_hook_with_context": {"pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."}}, "render_plan": [{"template_id": "waitlist.offer_after_contract_intent", "channel": "widget"}], "diagnostic_ledger_status": "not_started", "next_question_kind": "none", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Waitlist: {"status": "offered", "reason": "qualified_interest", "missing_fields": []}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["product_knowledge"]}]
+Usage: {"model": "gpt-4.1-mini", "input_tokens": 3828, "output_tokens": 238, "cost_usd": 0.001912}

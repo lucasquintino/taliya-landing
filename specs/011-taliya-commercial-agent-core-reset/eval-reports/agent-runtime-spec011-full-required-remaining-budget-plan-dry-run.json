@@ -1,0 +1,16 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-full-required-remaining-budget-plan",
+  "dryRun": true,
+  "selectedScenarioCount": 5,
+  "estimatedModelCalls": 8,
+  "maxModelCalls": 9,
+  "maxCostUsd": 0.12,
+  "scenarioIds": [
+    "final-post-waitlist-product-question",
+    "final-human-request-silent-after",
+    "final-prompt-injection",
+    "final-sensitive-data",
+    "final-unsupported-media"
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  { "id": "DIR-001", "message": "Quanto custa?", "expect": ["R$ 197", "R$ 1.497"] },
+  { "id": "DIR-002", "message": "Quais são os planos?", "expect": ["planos", "comparativo"] },
+  { "id": "DIR-003", "message": "Qual plano faz sentido para mim?", "expect": ["nao quero chutar", "diagnostico"] },
+  { "id": "DIR-004", "message": "O que é a Taliya?", "expect": ["CRM", "studios de Pilates"] },
+  { "id": "DIR-005", "message": "Como funciona no WhatsApp?", "expect": ["equipe continuar no controle"] },
+  { "id": "DIR-006", "message": "E se a IA não souber responder?", "expect": ["nao deve inventar"] },
+  { "id": "DIR-007", "message": "Quero ver uma demo", "expect": ["demonstracao"] },
+  { "id": "DIR-008", "message": "Tem garantia? Posso cancelar?", "expect": ["garantia"] },
+  { "id": "DIR-009", "message": "Quero assinar agora", "expect": ["numero pequeno de studios"] },
+  { "id": "DIR-010", "message": "Quero comprar/testar, mas ainda não fiz diagnóstico", "expect": ["lista de espera"] }
+]
+

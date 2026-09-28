@@ -1,0 +1,577 @@
+{
+  "number": 7,
+  "scenario_id": "diagnostic_urgency_final",
+  "channel": "whatsapp",
+  "required_proof": "Mandatory diagnostic keys complete; final staged diagnostic renders.",
+  "input_transcript": [
+    {
+      "role": "assistant",
+      "content": "Ultima pergunta do diagnostico: isso e algo que voce quer resolver agora ou pode esperar alguns meses?"
+    },
+    {
+      "role": "user",
+      "content": "quero resolver agora"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_conversation_summary",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_diagnostic_ledger",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_demo_waitlist_handoff_state",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "propose_diagnostic_update",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_diagnostic_ledger",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_demo_waitlist_handoff_state",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_diagnostic_urgency_final",
+          "summary": "Diagnostico em andamento: alunos ativos, dor principal, detalhe da dor, processo atual e prioridade ja respondidos. Falta apenas a urgencia.",
+          "lead_fact_count": 0,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_diagnostic_urgency_final.summary"
+        ],
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_diagnostic_ledger",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_diagnostic_urgency_final",
+          "diagnostic": {
+            "status": "in_progress",
+            "next_question_key": "urgency",
+            "ledger": {
+              "active_students_or_size": {
+                "status": "answered",
+                "answer_value": "120"
+              },
+              "main_pain": {
+                "status": "answered",
+                "answer_value": "perde leads no WhatsApp"
+              },
+              "pain_detail": {
+                "status": "answered",
+                "answer_value": "equipe demora a responder interessados"
+              },
+              "current_process": {
+                "status": "answered",
+                "answer_value": "controle manual em planilha e WhatsApp"
+              },
+              "priority": {
+                "status": "answered",
+                "answer_value": "organizar follow-up de leads"
+              },
+              "urgency": {
+                "status": "pending"
+              }
+            }
+          },
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_diagnostic_urgency_final.diagnostic"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_diagnostic_urgency_final",
+          "demo": {},
+          "waitlist": {},
+          "human_status": null,
+          "human_reason": null,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_diagnostic_urgency_final.operational_state"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_call",
+      "name": "propose_diagnostic_update",
+      "arguments": "{\"update_json\":\"{\\\"status\\\":\\\"complete\\\",\\\"next_question_key\\\":null,\\\"ledger\\\":{\\\"active_students_or_size\\\":{\\\"status\\\":\\\"answered\\\",\\\"answer_value\\\":\\\"120\\\"},\\\"main_pain\\\":{\\\"status\\\":\\\"answered\\\",\\\"answer_value\\\":\\\"perde leads no WhatsApp\\\"},\\\"pain_detail\\\":{\\\"status\\\":\\\"answered\\\",\\\"answer_value\\\":\\\"equipe demora a responder interessados\\\"},\\\"current_process\\\":{\\\"status\\\":\\\"answered\\\",\\\"answer_value\\\":\\\"controle manual em planilha e WhatsApp\\\"},\\\"priority\\\":{\\\"status\\\":\\\"answered\\\",\\\"answer_value\\\":\\\"organizar follow-up de leads\\\"},\\\"urgency\\\":{\\\"status\\\":\\\"answered\\\",\\\"answer_value\\\":\\\"quer resolver agora\\\"}}}\",\"evidence\":[\"user: \\\"quero resolver agora\\\"\",\"conversation.spike_conv_diagnostic_urgency_final.diagnostic\"],\"uncertainty\":\"low\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "propose_diagnostic_update",
+        "side_effect_class": "proposal_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "proposal_type": "diagnostic_update",
+          "proposal": {
+            "status": "complete",
+            "next_question_key": null,
+            "ledger": {
+              "active_students_or_size": {
+                "status": "answered",
+                "answer_value": "120"
+              },
+              "main_pain": {
+                "status": "answered",
+                "answer_value": "perde leads no WhatsApp"
+              },
+              "pain_detail": {
+                "status": "answered",
+                "answer_value": "equipe demora a responder interessados"
+              },
+              "current_process": {
+                "status": "answered",
+                "answer_value": "controle manual em planilha e WhatsApp"
+              },
+              "priority": {
+                "status": "answered",
+                "answer_value": "organizar follow-up de leads"
+              },
+              "urgency": {
+                "status": "answered",
+                "answer_value": "quer resolver agora"
+              }
+            }
+          },
+          "validation_required": true,
+          "commit_after_validation_only": true,
+          "missing_evidence": false,
+          "evidence": [
+            "user: \"quero resolver agora\"",
+            "conversation.spike_conv_diagnostic_urgency_final.diagnostic"
+          ],
+          "uncertainty": "low"
+        },
+        "evidence": [
+          "user: \"quero resolver agora\"",
+          "conversation.spike_conv_diagnostic_urgency_final.diagnostic"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "confirmar urgência para fechar o diagnóstico",
+      "pain_context": "lead perde contato no WhatsApp por demora de resposta; follow-up manual em planilha e WhatsApp",
+      "source_context": "diagnóstico em andamento; faltava apenas a urgência",
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "user: \"quero resolver agora\"",
+        "conversation.spike_conv_diagnostic_urgency_final.summary",
+        "conversation.spike_conv_diagnostic_urgency_final.diagnostic"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "urgency",
+          "status": "answered",
+          "answer_value": "quer resolver agora",
+          "evidence": [
+            "user: \"quero resolver agora\""
+          ]
+        }
+      ],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "user: \"quero resolver agora\"",
+        "conversation.spike_conv_diagnostic_urgency_final.diagnostic"
+      ]
+    },
+    "demo_proposal": {
+      "status": "none",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_evaluated",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [],
+      "variables": [],
+      "evidence": []
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "diagnostic_in_progress",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "complete_ready",
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "route to next specialist or summarize diagnostic"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_diagnostic_urgency_final",
+    "conversation_id": "spike_conv_diagnostic_urgency_final",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_conversation_summary",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_diagnostic_ledger",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "propose_diagnostic_update",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "confirmar urgência para fechar o diagnóstico",
+      "pain_context": "lead perde contato no WhatsApp por demora de resposta; follow-up manual em planilha e WhatsApp",
+      "source_context": "diagnóstico em andamento; faltava apenas a urgência",
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "user: \"quero resolver agora\"",
+        "conversation.spike_conv_diagnostic_urgency_final.summary",
+        "conversation.spike_conv_diagnostic_urgency_final.diagnostic"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "urgency",
+          "status": "answered",
+          "answer_value": "quer resolver agora",
+          "evidence": [
+            "user: \"quero resolver agora\""
+          ]
+        }
+      ],
+      "next_question_key": null,
+      "final_diagnostic_ready": true,
+      "evidence": [
+        "user: \"quero resolver agora\"",
+        "conversation.spike_conv_diagnostic_urgency_final.diagnostic"
+      ]
+    },
+    "demo_proposal": {
+      "status": "none",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_evaluated",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [],
+      "variables": {},
+      "evidence": []
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "diagnostic_in_progress",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "complete_ready",
+      "next_action_hint": "route to next specialist or summarize diagnostic"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": []
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 10790,
+      "output_tokens": 639,
+      "cost_usd": 0.005093,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_diagnostic_urgency_final",
+    "status": "failed",
+    "errors": [
+      {
+        "code": "sdk_missing_template_plan",
+        "severity": "P0",
+        "message": "Spike render path requires approved template ids.",
+        "path": "template_proposal.template_ids"
+      }
+    ],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "blocked"
+  },
+  "rendered_preview": [],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "diagnostic_in_progress",
+    "last_intent": "diagnostic",
+    "diagnostic_status": "complete_ready",
+    "next_action_hint": "route to next specialist or summarize diagnostic"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 10790,
+    "output_tokens": 639,
+    "cost_usd": 0.005093,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "failed",
+  "pass_fail_reason": "validator_blocked: sdk_missing_template_plan",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

@@ -1,0 +1,2056 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-cost-optimized-behavior-fresh-3",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-23T22:23:48Z",
+  "finishedAt": "2026-05-23T22:24:14Z",
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "estimatedCostUsd": 0.027361,
+    "inputTokens": 19820,
+    "outputTokens": 2777
+  },
+  "releaseGate": "pass",
+  "scenarios": [
+    {
+      "id": "behavior-cold-oi-opt1779575028061",
+      "title": "Abertura fria oi nao oferece diagnostico",
+      "channel": "whatsapp",
+      "checks": [
+        "route:entry",
+        "opening_type:cold_greeting_only",
+        "no_diagnostic",
+        "no_waitlist",
+        "no_name_capture"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_f70e244b3b734b67bf685788ee7ec7c0",
+            "conversation_id": "real_eval_behavior-cold-oi-opt1779575028061",
+            "lead_id": "lead_behavior-cold-oi-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_entry_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "greeting_only",
+                "next_state": "greeting_only",
+                "route": "entry",
+                "opening_type": "cold_greeting_only",
+                "detected_intents": [
+                  "greeting"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.cold_greeting"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.cold_greeting",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Em que posso te ajudar?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": null,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_729ef657668e45499b5e931cbe2a7dce"
+          },
+          "lead": "oi"
+        }
+      ]
+    },
+    {
+      "id": "behavior-cold-bom-dia-opt1779575028061",
+      "title": "Abertura fria bom dia fica simples",
+      "channel": "whatsapp",
+      "checks": [
+        "route:entry",
+        "opening_type:cold_greeting_only",
+        "no_diagnostic",
+        "no_waitlist",
+        "no_name_capture"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_30c17d17da794bad9ca7f445c64de7fa",
+            "conversation_id": "real_eval_behavior-cold-bom-dia-opt1779575028061",
+            "lead_id": "lead_behavior-cold-bom-dia-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_entry_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "greeting_only",
+                "next_state": "greeting_only",
+                "route": "entry",
+                "opening_type": "cold_greeting_only",
+                "detected_intents": [
+                  "greeting"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.cold_greeting"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.cold_greeting",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Em que posso te ajudar?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": null,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_94c36dfea4a54aa4a03b4cf420ac046d"
+          },
+          "lead": "bom dia"
+        }
+      ]
+    },
+    {
+      "id": "behavior-reliable-profile-name-opt1779575028061",
+      "title": "Nome de perfil confiavel pode ser usado naturalmente",
+      "channel": "whatsapp",
+      "checks": [
+        "route:entry",
+        "opening_type:cold_greeting_only",
+        "profile_name_used",
+        "mentions_sender_first_name",
+        "no_diagnostic",
+        "no_waitlist"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_9e2f1e6da43e4668b8e49db59fad84d8",
+            "conversation_id": "real_eval_behavior-reliable-profile-name-opt1779575028061",
+            "lead_id": "lead_behavior-reliable-profile-name-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_entry_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "greeting_only",
+                "next_state": "greeting_only",
+                "route": "entry",
+                "opening_type": "cold_greeting_only",
+                "detected_intents": [
+                  "greeting"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.cold_greeting_named"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "opening.cold_greeting_named": {
+                    "first_name": "Mariana"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.cold_greeting_named",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Mariana, tudo bem?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting_named",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Em que posso te ajudar?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting_named",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": null,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_73ec0f71e3e44149876d3016b352b619"
+          },
+          "lead": "oi"
+        }
+      ]
+    },
+    {
+      "id": "behavior-unreliable-profile-name-opt1779575028061",
+      "title": "Nome de perfil comercial deve ser ignorado",
+      "channel": "whatsapp",
+      "checks": [
+        "route:entry",
+        "opening_type:cold_greeting_only",
+        "profile_name_ignored",
+        "no_name_capture",
+        "no_diagnostic"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_145e0b9b27b14cd1874c35ecabdb027c",
+            "conversation_id": "real_eval_behavior-unreliable-profile-name-opt1779575028061",
+            "lead_id": "lead_behavior-unreliable-profile-name-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_entry_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "greeting_only",
+                "next_state": "greeting_only",
+                "route": "entry",
+                "opening_type": "cold_greeting_only",
+                "detected_intents": [
+                  "greeting"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "ignored_unreliable_name",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.cold_greeting"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.cold_greeting",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Em que posso te ajudar?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": null,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_9d071d8c89b048ab8bc6bbd5be49aaa9"
+          },
+          "lead": "oi"
+        }
+      ]
+    },
+    {
+      "id": "behavior-instagram-opening-opt1779575028061",
+      "title": "Lead vindo do Instagram recebe contexto breve",
+      "channel": "whatsapp",
+      "checks": [
+        "route:entry",
+        "opening_type:social_source_opening",
+        "no_waitlist",
+        "not_generic_intro"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_3284e66bcac84c96a651e885914dc70b",
+            "conversation_id": "real_eval_behavior-instagram-opening-opt1779575028061",
+            "lead_id": "lead_behavior-instagram-opening-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_entry_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "source_instagram",
+                "next_state": "source_instagram",
+                "route": "entry",
+                "opening_type": "social_source_opening",
+                "detected_intents": [
+                  "greeting",
+                  "request_more_info"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "Lead veio do Instagram e pediu para saber mais"
+                ],
+                "facts_missing": [
+                  "dor principal do studio",
+                  "objetivo com o CRM",
+                  "como é a rotina atual"
+                ],
+                "template_ids": [
+                  "opening.instagram_source"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi esse ponto: Lead veio do Instagram e pediu para saber mais."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi esse ponto: Lead veio do Instagram e pediu para saber mais."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.instagram_source",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? A Taliya é um CRM para studios de Pilates, com IA para atendimento, agenda, vendas e rotina.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.instagram_source",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Você quer entender a ideia geral primeiro ou tem alguma parte do studio que está pesando mais hoje?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "opening.instagram_source",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "source",
+                  "value": "instagram",
+                  "confidence": "high",
+                  "evidence": [
+                    "\"vim pelo Instagram e queria saber mais\"",
+                    "metadata.utm_source=instagram"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "metadata.utm_source",
+                    "channel",
+                    "profile_name_assessment.status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 3868,
+                "output_tokens": 392,
+                "cost_usd": 0.004665
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_34520a7c5c0d4f17a95ed9d983c65698"
+          },
+          "lead": "vim pelo Instagram e queria saber mais"
+        }
+      ]
+    },
+    {
+      "id": "behavior-diagnostic-cta-opt1779575028061",
+      "title": "Pedido direto de diagnostico entra no diagnostico",
+      "channel": "widget",
+      "checks": [
+        "route:diagnostic",
+        "opening_type:diagnostic_cta_opening",
+        "diagnostic_offered_or_started",
+        "no_waitlist"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_4f595ea4af0b42b2a4cade2f3dc093c4",
+            "conversation_id": "real_eval_behavior-diagnostic-cta-opt1779575028061",
+            "lead_id": "lead_behavior-diagnostic-cta-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_in_progress",
+                "route": "diagnostic",
+                "opening_type": "diagnostic_cta_opening",
+                "detected_intents": [
+                  "diagnostic"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "ask_next",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "Leads pediu diagnóstico gratuito.",
+                  "Canal é widget.",
+                  "Não há nome confiável de perfil."
+                ],
+                "facts_missing": [
+                  "dor principal do studio",
+                  "rotina atual"
+                ],
+                "template_ids": [
+                  "diagnostic.ask_active_students"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi esse ponto: Leads pediu diagnóstico gratuito.."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi esse ponto: Leads pediu diagnóstico gratuito.."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_pain_resolved": "perda de interessados e follow-up",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele responde, registra contexto e avisa a equipe quando precisa de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "diagnostic.ask_active_students": {
+                    "answer_feedback": "Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.ask_active_students",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_active_students",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_active_students",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "intent",
+                  "value": "quer diagnóstico gratuito",
+                  "confidence": "high",
+                  "evidence": [
+                    "quero fazer diagnostico gratuito"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "in_progress",
+                "ledger": [],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [
+                  "active_students_or_size"
+                ],
+                "confidence": "low",
+                "next_question": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": {
+                "status": "none",
+                "reason": null
+              },
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "initial_policy_read",
+                    "user_message",
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "in_progress"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 3868,
+                "output_tokens": 542,
+                "cost_usd": 0.00534
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_b1fa9085bd0d449482f995477d919751"
+          },
+          "lead": "quero fazer diagnostico gratuito"
+        }
+      ]
+    },
+    {
+      "id": "behavior-pain-first-opt1779575028061",
+      "title": "Dor inicial oferece diagnostico naturalmente",
+      "channel": "widget",
+      "checks": [
+        "route:diagnostic",
+        "diagnostic_offered_or_started",
+        "mentions_user_context",
+        "no_waitlist"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_96976de1f241471bbfbd080c3a4a773f",
+            "conversation_id": "real_eval_behavior-pain-first-opt1779575028061",
+            "lead_id": "lead_behavior-pain-first-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_offered",
+                "next_state": "diagnostic_in_progress",
+                "route": "diagnostic",
+                "opening_type": "none",
+                "detected_intents": [
+                  "diagnostic",
+                  "pain"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "lead mencionou falta de alunos e reposição bagunçada na agenda"
+                ],
+                "facts_missing": [
+                  "qual rotina hoje para faltas e reposições"
+                ],
+                "template_ids": [
+                  "diagnostic.offer_soft"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: a reposição bagunçada na agenda já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: a reposição bagunçada na agenda já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "A agenda está desorganizada por faltas e reposições."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Base ou Essencial, dependendo do nível de automação desejado"
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "mapear como faltas e reposições acontecem hoje"
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "agenda",
+                    "agent_pain_resolved": "agenda, faltas e reposições escapando",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele organiza avisos, próximos encaixes e pendências para a equipe agir"
+                  },
+                  "diagnostic.deliver_agent_recommendation#2": {
+                    "agent_name": "atendimento",
+                    "agent_pain_resolved": "agenda, faltas e reposições escapando",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele organiza avisos, próximos encaixes e pendências para a equipe agir"
+                  },
+                  "diagnostic.deliver_agent_recommendation#3": {
+                    "agent_name": "rotina",
+                    "agent_pain_resolved": "agenda, faltas e reposições escapando",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele organiza avisos, próximos encaixes e pendências para a equipe agir"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Base R$ 197/mes a Essencial R$ 497/mes"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "gestão de faltas e reposições na agenda",
+                    "first_step": "mapear como faltas e reposições acontecem hoje",
+                    "plan_range": "Base R$ 197/mes a Essencial R$ 497/mes"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.offer_soft",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "current_process",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Entendi: a reposição bagunçada na agenda já é um bom sinal de onde o diagnóstico deve começar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "pain",
+                  "value": "muita falta e reposicao baguncada na agenda",
+                  "confidence": "high",
+                  "evidence": [
+                    "\"tenho muita falta e reposicao baguncada na agenda\""
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho muita falta e reposicao baguncada na agenda",
+                    "evidence": [
+                      "widget:behavior-pain-first-opt1779575028061:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho muita falta e reposicao baguncada na agenda",
+                    "evidence": [
+                      "widget:behavior-pain-first-opt1779575028061:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho muita falta e reposicao baguncada na agenda",
+                    "evidence": [
+                      "widget:behavior-pain-first-opt1779575028061:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [
+                  "lead mencionou falta de alunos e reposição bagunçada na agenda"
+                ],
+                "main_bottleneck": "gestão de faltas e reposições na agenda",
+                "pain_context_human": "A agenda está desorganizada por faltas e reposições.",
+                "likely_cause": "processo manual ou pouco padronizado para reagendamento",
+                "crm_base_recommendation": "Base ou Essencial, dependendo do nível de automação desejado",
+                "first_recommended_step": "mapear como faltas e reposições acontecem hoje",
+                "indicated_routines_or_agents": [
+                  "agenda",
+                  "atendimento",
+                  "rotina"
+                ],
+                "indicated_agents": [
+                  {
+                    "name": "agenda",
+                    "reason": "organizar reposições e encaixes"
+                  },
+                  {
+                    "name": "atendimento",
+                    "reason": "padronizar comunicação com alunos"
+                  },
+                  {
+                    "name": "rotina",
+                    "reason": "reduzir bagunça operacional"
+                  }
+                ],
+                "plan_or_range_to_compare": "Base R$ 197/mes a Essencial R$ 497/mes",
+                "final_plan_line": "Ainda é cedo para cravar; Base ou Essencial parecem os primeiros planos para comparar.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [
+                  "\"tenho muita falta e reposicao baguncada na agenda\""
+                ],
+                "unknowns": [
+                  "como as reposições são registradas hoje",
+                  "se há confirmação automática",
+                  "quantas pessoas operam a agenda"
+                ],
+                "confidence": "medium",
+                "next_question": null,
+                "validation_question": "Isso acontece mais por WhatsApp, planilha ou na própria agenda?",
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "initial_policy_read",
+                    "user_message",
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 3862,
+                "output_tokens": 715,
+                "cost_usd": 0.006114
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_ef4648a6dce44cc3bf58b6437192651e"
+          },
+          "lead": "tenho muita falta e reposicao baguncada na agenda"
+        }
+      ]
+    },
+    {
+      "id": "behavior-price-first-opt1779575028061",
+      "title": "Pergunta de preco responde preco antes de conduzir",
+      "channel": "widget",
+      "checks": [
+        "route:product",
+        "opening_type:direct_question_opening",
+        "mentions_all_prices",
+        "direct_question_answered_first",
+        "has_product_source",
+        "no_waitlist"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_e0523a40ffc9466eba5a593b7f4058a0",
+            "conversation_id": "real_eval_behavior-price-first-opt1779575028061",
+            "lead_id": "lead_behavior-price-first-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "direct_question_opening",
+                "detected_intents": [
+                  "product"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_direct",
+                  "diagnostic.price_hook"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_pain_resolved": "perda de interessados e follow-up",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele responde, registra contexto e avisa a equipe quando precisa de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_direct",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.price_hook",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.price_hook",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "plans",
+                    "prices",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": null,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_cc3e9044cc5b491e8e4a98c4225299be"
+          },
+          "lead": "quanto custa?"
+        }
+      ]
+    },
+    {
+      "id": "behavior-plan-fit-thin-opt1779575028061",
+      "title": "Plano ideal com pouco contexto nao chuta",
+      "channel": "widget",
+      "checks": [
+        "route:product",
+        "direct_question_answered_first",
+        "has_product_source",
+        "diagnostic_offered_or_started",
+        "no_waitlist"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_6790a7ca3b394c80875ffc945c35eac2",
+            "conversation_id": "real_eval_behavior-plan-fit-thin-opt1779575028061",
+            "lead_id": "lead_behavior-plan-fit-thin-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "direct_question_opening",
+                "detected_intents": [
+                  "product"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.plan_fit_with_diagnostic"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_pain_resolved": "perda de interessados e follow-up",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele responde, registra contexto e avisa a equipe quando precisa de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.plan_fit_with_diagnostic",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Para comparar plano sem chutar, vale entender a rotina do studio antes.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.plan_fit_with_diagnostic",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.plan_fit_with_diagnostic",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.plan_fit_with_diagnostic",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "plans",
+                    "prices",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": null,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_9483c126748f4fb3aa7436bfb38492aa"
+          },
+          "lead": "qual plano serve pra mim?"
+        }
+      ]
+    },
+    {
+      "id": "behavior-price-plus-pain-opt1779575028061",
+      "title": "Preco e dor na mesma mensagem responde preco e conduz diagnostico",
+      "channel": "whatsapp",
+      "checks": [
+        "route:product",
+        "mentions_all_prices",
+        "direct_question_answered_first",
+        "diagnostic_offered_or_started",
+        "mentions_user_context",
+        "has_product_source"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_1f925912a9474963a884f65037c38038",
+            "conversation_id": "real_eval_behavior-price-plus-pain-opt1779575028061",
+            "lead_id": "lead_behavior-price-plus-pain-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "direct_question_opening",
+                "detected_intents": [
+                  "product",
+                  "pain"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "Lead said: \"tenho agenda e reposicoes meio perdidas, mas tambem queria saber preco\"",
+                  "Official prices: Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, Completo R$ 1.497/mes",
+                  "Checkout status: unavailable"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_direct",
+                  "diagnostic.price_hook_with_context"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: a reposição bagunçada na agenda já é um bom sinal de onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: agenda e reposições perdidas já mostram onde o diagnóstico deve começar."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Agenda e reposições estão meio perdidas."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "diagnóstico gratuito para entender o que organizar primeiro e comparar o plano mais adequado depois"
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "Fazer o diagnóstico gratuito com uma pergunta focada sobre como a agenda e as reposições são controladas hoje."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Agenda",
+                    "agent_pain_resolved": "agenda, faltas e reposições escapando",
+                    "agent_recommendation_reason": "essa rotina apareceu como prioridade",
+                    "agent_practical_action": "ele organiza avisos, próximos encaixes e pendências para a equipe agir"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Base R$ 197/mes até Avance R$ 897/mes, dependendo do nível de rotina e automação necessário"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "Fazer o diagnóstico gratuito com uma pergunta focada sobre como a agenda e as reposições são controladas hoje",
+                    "plan_range": "Base R$ 197/mes até Avance R$ 897/mes, dependendo do nível de rotina e automação necessário"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_direct",
+                    "channel": "whatsapp"
+                  },
+                  {
+                    "template_id": "diagnostic.price_hook_with_context",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.price_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Entendi: agenda e reposições perdidas já mostram onde o diagnóstico deve começar. Se fizer sentido, faço um diagnóstico gratuito para entender se algum dos nossos planos te atenderia. O que você acha?",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "diagnostic.price_hook_with_context",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "pain",
+                  "value": "agenda e reposições meio perdidas",
+                  "confidence": "high",
+                  "evidence": [
+                    "\"tenho agenda e reposicoes meio perdidas, mas tambem queria saber preco\""
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho agenda e reposicoes meio perdidas, mas tambem queria saber preco",
+                    "evidence": [
+                      "whatsapp:behavior-price-plus-pain-opt1779575028061:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "tenho agenda e reposicoes meio perdidas, mas tambem queria saber preco",
+                    "evidence": [
+                      "whatsapp:behavior-price-plus-pain-opt1779575028061:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [
+                  "agenda e reposições meio perdidas"
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": "Agenda e reposições estão meio perdidas.",
+                "likely_cause": null,
+                "crm_base_recommendation": "diagnóstico gratuito para entender o que organizar primeiro e comparar o plano mais adequado depois",
+                "first_recommended_step": "Fazer o diagnóstico gratuito com uma pergunta focada sobre como a agenda e as reposições são controladas hoje.",
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": "Base R$ 197/mes até Avance R$ 897/mes, dependendo do nível de rotina e automação necessário",
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [
+                  "Usuário pediu preço e descreveu dificuldade com agenda/reposições"
+                ],
+                "unknowns": [
+                  "Como hoje a agenda é organizada",
+                  "Se há WhatsApp Business conectado",
+                  "Quantas pessoas usam o sistema",
+                  "Se a dor principal é atendimento, agenda, vendas ou financeiro"
+                ],
+                "confidence": "medium",
+                "next_question": "Como vocês controlam hoje a agenda e as reposições?",
+                "validation_question": "Faz sentido começar por essa rotina?",
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "initial_policy_read",
+                    "user_message",
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4362,
+                "output_tokens": 721,
+                "cost_usd": 0.006516
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_78cce6f226c94346906a98c7846f4718"
+          },
+          "lead": "tenho agenda e reposicoes meio perdidas, mas tambem queria saber preco"
+        }
+      ]
+    },
+    {
+      "id": "behavior-buy-intent-opt1779575028061",
+      "title": "Intencao de contratar vai para lista de espera sem checkout",
+      "channel": "widget",
+      "checks": [
+        "route:waitlist",
+        "waitlist_offered_or_handoff",
+        "no_checkout_link",
+        "has_product_source"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_8eacb47126b94017a52de2c2fc427bb5",
+            "conversation_id": "real_eval_behavior-buy-intent-opt1779575028061",
+            "lead_id": "lead_behavior-buy-intent-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_waitlist_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "waitlist_offered",
+                "next_state": "waitlist_offered",
+                "route": "waitlist",
+                "opening_type": "site_forced_message",
+                "detected_intents": [
+                  "buy_intent",
+                  "contract",
+                  "sign_up"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": true,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "checkout_status unavailable",
+                  "waitlist_status limited_studios_waitlist"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "waitlist.offer_after_contract_intent"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi esse ponto: checkout_status unavailable."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi esse ponto: checkout_status unavailable."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "waitlist.offer_after_contract_intent",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "waitlist_details",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Estamos trabalhando com um número pequeno de studios agora.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "waitlist.offer_after_contract_intent",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se fizer sentido, posso colocar seu studio na lista de espera e chamar assim que abrir uma próxima janela.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "waitlist.offer_after_contract_intent",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "buy_intent",
+                  "value": "lead quer contratar/assinar",
+                  "confidence": "high",
+                  "evidence": [
+                    "quero contratar, como faco para assinar?"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": {
+                "status": "offered",
+                "reason": "qualified_interest",
+                "missing_fields": []
+              },
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "product_knowledge.facts.checkout_status",
+                    "product_knowledge.facts.waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "mark_waitlist",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 3860,
+                "output_tokens": 407,
+                "cost_usd": 0.004726
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_c0a538c999434cc984178a73158fe093"
+          },
+          "lead": "quero contratar, como faco para assinar?"
+        }
+      ]
+    },
+    {
+      "id": "behavior-human-first-opt1779575028061",
+      "title": "Pedido humano pausa automacao",
+      "channel": "whatsapp",
+      "checks": [
+        "route:handoff",
+        "handoff_requested"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_bca5a13605bd49f99777ba4002d6bb0b",
+            "conversation_id": "real_eval_behavior-human-first-opt1779575028061",
+            "lead_id": "lead_behavior-human-first-opt1779575028061",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_handoff_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "human_handoff",
+                "next_state": "paused_by_human",
+                "route": "handoff",
+                "opening_type": "none",
+                "detected_intents": [
+                  "handoff"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "handoff.acknowledge"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "handoff.acknowledge",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "handoff",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem? Claro. Vou deixar uma pessoa assumir daqui.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "handoff.acknowledge",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Também deixo o contexto salvo para você não precisar repetir tudo.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "handoff.acknowledge",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": null,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_77d11e8ada9e4b22a796b012be53850b"
+          },
+          "lead": "quero falar com uma pessoa"
+        }
+      ]
+    }
+  ]
+}

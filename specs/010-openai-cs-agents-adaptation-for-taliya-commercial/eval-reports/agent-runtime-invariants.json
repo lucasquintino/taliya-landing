@@ -1,0 +1,183 @@
+{
+  "runId": "agent-runtime-invariants-1785894953700",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-08-05T01:55:53.700Z",
+  "summary": {
+    "total": 33,
+    "passed": 33,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "floating-agent delegates to runtime client",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "floating-agent does not import old v2 loop",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "floating-agent has no legacy fallback hook",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "widget route imports runtime client",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route imports runtime client",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime client signs HMAC requests",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime client has operational fallback",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime client does not import old v2 loop",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime client does not call legacy turn",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "old v2 loop is explicitly quarantined",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "official demo link is product-sourced",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "checkout unavailable is product-sourced",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "output validators block invented checkout",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "output validators require product source",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "non-mock runtime path invokes OpenAI Agents SDK Runner",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "non-mock runtime path requests structured LLM output",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "non-mock runtime path renders selected template IDs",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "canonical conversation states are implemented",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "approved template registry is implemented",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product how-it-works template is registered",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "current-tool comparison template is registered",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "integration scope template is registered",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "security/data template is registered",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "out-of-profile template is registered",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product knowledge includes how-it-works facts",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product knowledge includes integration scope facts",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product knowledge includes security/data facts",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runner supports LLM-selected product-followup intents",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runner passes compact post-diagnostic context to the LLM",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product-followup commercial routes stay on the LLM runner path",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "diagnostic ledger required questions are implemented",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "validators block completed diagnostics with incomplete ledger",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "validators block messages outside selected templates",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  }
+}

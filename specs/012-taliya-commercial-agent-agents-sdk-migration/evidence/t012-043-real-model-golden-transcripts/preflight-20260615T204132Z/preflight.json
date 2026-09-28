@@ -1,0 +1,21 @@
+{
+  "schema": "012.real_model_golden_transcripts_preflight.v1",
+  "task": "T012-043",
+  "created_at": "2026-06-15T20:41:32.277744+00:00",
+  "model": "gpt-5.4-mini",
+  "fixture_path": "scripts\\fixtures\\agent-runtime\\spec-011-golden-transcripts.json",
+  "scenario_count": 1,
+  "scenario_ids": [
+    "final-price-first"
+  ],
+  "messages_by_scenario": {
+    "final-price-first": [
+      "quanto custa?"
+    ]
+  },
+  "openai_api_key_available": true,
+  "env_file_checked": "C:\\Users\\lucas\\agentes-landing-system\\.env.local",
+  "model_has_recorded_pricing": true,
+  "max_total_cost_usd": 0.05,
+  "paid_call_status": "not_attempted_preflight_only"
+}

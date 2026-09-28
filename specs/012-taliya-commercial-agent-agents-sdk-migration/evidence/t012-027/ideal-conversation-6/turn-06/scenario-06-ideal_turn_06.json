@@ -1,0 +1,495 @@
+{
+  "number": 6,
+  "scenario_id": "ideal_turn_06",
+  "channel": "whatsapp",
+  "required_proof": "main_pain captured; continue without repeating answered questions.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico em andamento. Respondido: active_students_or_size=120. Proxima pergunta pendente: main_pain. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"not_applicable\", \"intent\": \"\"}.\nstate: {\"diagnostic\": {\"status\": \"in_progress\", \"next_question_key\": \"main_pain\", \"ledger\": {\"active_students_or_size\": {\"status\": \"answered\", \"answer_value\": \"120\"}}}, \"demo\": {\"status\": \"not_applicable\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"not_applicable\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "user",
+      "content": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "content": "Voce tem um studio de pilates e esta perdendo alunos novos porque o WhatsApp vive atrasado."
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Preciso consultar a base oficial de produto para confirmar o preco."
+    },
+    {
+      "role": "assistant",
+      "content": "Voce disse que tem um studio de pilates e que esta perdendo aluno novo porque o WhatsApp vive atrasado, entao vale entender o volume de atendimento e onde o atraso acontece."
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "content": "Voce quer entender como funciona antes de seguir."
+    },
+    {
+      "role": "assistant",
+      "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "content": "120"
+    },
+    {
+      "role": "assistant",
+      "content": "Com 120 alunos e WhatsApp atrasado, faz sentido comparar um plano que resolva atendimento."
+    },
+    {
+      "role": "assistant",
+      "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "content": "O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "content": "120 alunos — isso ja mostra um volume relevante."
+    },
+    {
+      "role": "assistant",
+      "content": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+    },
+    {
+      "role": "user",
+      "content": "minha maior dor e perder interessado porque demoramos pra responder"
+    }
+  ],
+  "starting_agent": "taliya_diagnostic_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "entender a dor principal para continuar o diagnostico",
+      "pain_context": "O studio perde interessados porque demora para responder no WhatsApp.",
+      "source_context": "Instagram / WhatsApp",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "active_students_or_size",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value_text": "120",
+          "currency": null,
+          "evidence": [
+            "Usuário informou 120 alunos"
+          ]
+        },
+        {
+          "key": "main_pain",
+          "kind": "pain",
+          "raw_text": "perder interessado porque demoramos pra responder",
+          "value_text": "perder interessado por demora na resposta",
+          "currency": null,
+          "evidence": [
+            "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+          ]
+        }
+      ],
+      "evidence": [
+        "Usuário disse que tem um studio de pilates",
+        "Usuário informou 120 alunos",
+        "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "main_pain",
+          "status": "answered",
+          "answer_value": "perder interessado por demora na resposta",
+          "evidence": [
+            "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+          ]
+        }
+      ],
+      "next_question_key": "pain_detail",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "Usuário informou 120 alunos",
+        "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "Contexto do turno é diagnóstico em andamento"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "",
+      "missing_details": [],
+      "evidence": [
+        "Contexto do turno é diagnóstico em andamento"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_applicable",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "Contexto do turno é diagnóstico em andamento"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_pain_detail"
+      ],
+      "variables": [
+        {
+          "name": "answer_feedback",
+          "kind": "short_text",
+          "value": "Entendi — o principal problema e perder interessados por demora na resposta.",
+          "source": "user_message",
+          "evidence": [
+            "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+          ],
+          "max_length": 180
+        }
+      ],
+      "evidence": [
+        "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "diagnostic_in_progress",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "in_progress",
+      "waitlist_status": "not_applicable",
+      "handoff_status": "none",
+      "next_action_hint": "ask_pain_detail"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": [
+      "Ainda falta detalhar a dor antes de recomendar solução"
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_ideal_turn_06",
+    "conversation_id": "spike_conv_ideal_turn_06",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_diagnostic_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "entender a dor principal para continuar o diagnostico",
+      "pain_context": "O studio perde interessados porque demora para responder no WhatsApp.",
+      "source_context": "Instagram / WhatsApp",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "active_students_or_size",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value": 120,
+          "evidence": [
+            "Usuário informou 120 alunos"
+          ]
+        },
+        {
+          "key": "main_pain",
+          "kind": "pain",
+          "raw_text": "perder interessado porque demoramos pra responder",
+          "value": "perder interessado por demora na resposta",
+          "evidence": [
+            "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+          ]
+        }
+      ],
+      "evidence": [
+        "Usuário disse que tem um studio de pilates",
+        "Usuário informou 120 alunos",
+        "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "main_pain",
+          "status": "answered",
+          "answer_value": "perder interessado por demora na resposta",
+          "evidence": [
+            "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+          ]
+        }
+      ],
+      "next_question_key": "pain_detail",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "Usuário informou 120 alunos",
+        "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "Contexto do turno é diagnóstico em andamento"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "",
+      "missing_details": [],
+      "evidence": [
+        "Contexto do turno é diagnóstico em andamento"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_applicable",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "Contexto do turno é diagnóstico em andamento"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_pain_detail"
+      ],
+      "variables": {
+        "answer_feedback": {
+          "kind": "short_text",
+          "value": "Entendi — o principal problema e perder interessados por demora na resposta.",
+          "source": "user_message",
+          "evidence": [
+            "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+          ],
+          "max_length": 180
+        }
+      },
+      "evidence": [
+        "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "diagnostic_in_progress",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "in_progress",
+      "waitlist_status": "not_applicable",
+      "handoff_status": "none",
+      "next_action_hint": "ask_pain_detail"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "Usuário disse que a maior dor é perder interessado porque demoram pra responder"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "Ainda falta detalhar a dor antes de recomendar solução"
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 1,
+      "input_tokens": 5298,
+      "output_tokens": 632,
+      "cost_usd": 0.006817,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_ideal_turn_06",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Entendi — o principal problema e perder interessados por demora na resposta.",
+      "template_id": "diagnostic.partial_progress",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+      "template_id": "diagnostic.partial_progress",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Entendi — o principal problema e perder interessados por demora na resposta.",
+      "template_id": "diagnostic.ask_pain_detail",
+      "channel": "whatsapp",
+      "sequence": 3
+    },
+    {
+      "text": "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?",
+      "template_id": "diagnostic.ask_pain_detail",
+      "channel": "whatsapp",
+      "sequence": 4
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "diagnostic_in_progress",
+    "last_intent": "diagnostic",
+    "diagnostic_status": "in_progress",
+    "waitlist_status": "not_applicable",
+    "handoff_status": "none",
+    "next_action_hint": "ask_pain_detail"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 1,
+    "input_tokens": 5298,
+    "output_tokens": 632,
+    "cost_usd": 0.006817,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

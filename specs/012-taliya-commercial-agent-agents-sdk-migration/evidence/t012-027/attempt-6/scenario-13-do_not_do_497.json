@@ -1,0 +1,536 @@
+{
+  "number": 13,
+  "scenario_id": "do_not_do_497",
+  "channel": "whatsapp",
+  "required_proof": "`497` remains plan price, not student count.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "quanto custa?"
+    },
+    {
+      "role": "assistant",
+      "content": "Os planos oficiais comecam no Base R$ 197/mes e chegam ao Essencial R$ 497/mes, conforme o escopo contratado."
+    },
+    {
+      "role": "user",
+      "content": "plano de 497"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"pricing\",\"plans\",\"essencial\"]}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "plans",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": [
+                {
+                  "id": "base",
+                  "name": "Base",
+                  "monthly_price_brl": 197,
+                  "price_label": "R$ 197/mes",
+                  "best_for": "Studios that want to organize the routine before active AI.",
+                  "included_agents": [],
+                  "whatsapp_availability": "No automatic WhatsApp AI replies.",
+                  "usage_boundary": "1 studio, 1 user, no AI message quota."
+                },
+                {
+                  "id": "one_agent",
+                  "name": "Essencial",
+                  "monthly_price_brl": 497,
+                  "price_label": "R$ 497/mes",
+                  "best_for": "Studios that want to solve one clear pain first.",
+                  "included_agents": [
+                    "1 main agent chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for that agent.",
+                  "usage_boundary": "1 studio, up to 2 users, 1,500 AI messages/month with hard cap."
+                },
+                {
+                  "id": "three_agents",
+                  "name": "Avance",
+                  "monthly_price_brl": 897,
+                  "price_label": "R$ 897/mes",
+                  "best_for": "Studios that want help in some priority routines.",
+                  "included_agents": [
+                    "3 main agents chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for included agents.",
+                  "usage_boundary": "1 studio, up to 5 users, 5,000 AI messages/month with hard cap."
+                },
+                {
+                  "id": "seven_agents",
+                  "name": "Completo",
+                  "monthly_price_brl": 1497,
+                  "price_label": "R$ 1.497/mes",
+                  "best_for": "Studios that want the complete Taliya.",
+                  "included_agents": [
+                    "Atendimento",
+                    "Agenda",
+                    "Vendas",
+                    "Financeiro",
+                    "Retencao",
+                    "Gestao",
+                    "Historico/Evolucao"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for the complete team.",
+                  "usage_boundary": "1 studio, up to 10 users, 15,000 AI messages/month with hard cap."
+                }
+              ],
+              "excerpt": "Base (base) R$ 197/mes best_for=Studios that want to organize the routine before active AI. included=no active AI agents whatsapp=No automatic WhatsApp AI replies. usage=1 studio, 1 user, no AI message quota. | Essencial (one_agent) R$ 497/mes best_for=Studios that want to solve one clear pain first. included=1 main agent chosen during setup whatsapp=Requires the studio WhatsApp Business connected for that agent. usage=1 studio, up to 2 users, 1,500 AI messages/month with hard cap. | Avance (three_agents) R$ 897/mes best_for=Studios that want help in some priority routines. included=3 main agents chosen during setup whatsapp=Requires the studio WhatsApp Business connected for included agents. usage=1 studio, up to 5 users, 5,000 AI messages/month with hard cap. | Completo (seven_agents) R$ 1.497/mes best_for=Studios that want the complete Taliya. included=Atendimento, Agenda, Vendas, Financeiro, Retencao, Gestao, Historico/Evolucao whatsapp=Requires the studio WhatsApp Business connected for the complete team. usage=1 studio, up to 10 users, 15,000 AI messages/month with hard cap.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.plans"
+              ]
+            },
+            {
+              "key": "pricing",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.pricing"
+              ]
+            },
+            {
+              "key": "essencial",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": null,
+              "excerpt": null,
+              "missing": true,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.essencial"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "pricing",
+            "plans",
+            "essencial"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.plans",
+          "product_knowledge.pricing",
+          "product_knowledge.essencial"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "price_query"
+      ],
+      "direct_question": "plano de 497",
+      "customer_need": "Quer confirmar qual é o plano de R$ 497/mês.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "plan_497",
+          "kind": "plan_price",
+          "raw_text": "plano de 497",
+          "value_text": "R$ 497/mes",
+          "currency": "BRL",
+          "evidence": [
+            "product_knowledge.plans"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "plano de 497",
+        "answering_template_id": "opening.general_interest",
+        "evidence": [
+          "user_message: plano de 497"
+        ]
+      }
+    ],
+    "product_claims": [
+      {
+        "claim": "O plano Essencial custa R$ 497/mes.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      },
+      {
+        "claim": "Ele inclui 1 agente principal escolhido na configuração, até 2 usuários e 1.500 mensagens AI/mês com hard cap.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      },
+      {
+        "claim": "A disponibilidade de WhatsApp exige o WhatsApp Business da studio conectado para esse agente.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      }
+    ],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_qualified",
+      "intent": "price_confirmation",
+      "missing_details": [],
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "opening.general_interest"
+      ],
+      "variables": [],
+      "evidence": [
+        "product_knowledge.plans",
+        "user_message: plano de 497"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "price_check",
+      "last_intent": "price_query",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "Confirm Essencial plan details and ask if they want setup help."
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_do_not_do_497",
+    "conversation_id": "spike_conv_do_not_do_497",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "price_query"
+      ],
+      "direct_question": "plano de 497",
+      "customer_need": "Quer confirmar qual é o plano de R$ 497/mês.",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "plan_497",
+          "kind": "plan_price",
+          "raw_text": "plano de 497",
+          "value": "R$ 497/mes",
+          "currency": "BRL",
+          "evidence": [
+            "product_knowledge.plans"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "plano de 497",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message: plano de 497"
+        ]
+      }
+    ],
+    "product_claims": [
+      {
+        "claim": "O plano Essencial custa R$ 497/mes.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      },
+      {
+        "claim": "Ele inclui 1 agente principal escolhido na configuração, até 2 usuários e 1.500 mensagens AI/mês com hard cap.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      },
+      {
+        "claim": "A disponibilidade de WhatsApp exige o WhatsApp Business da studio conectado para esse agente.",
+        "fact_refs": [
+          "product_knowledge.plans"
+        ],
+        "evidence": [
+          "product_knowledge.plans"
+        ]
+      }
+    ],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_qualified",
+      "intent": "price_confirmation",
+      "missing_details": [],
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_requested",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message: plano de 497"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "opening.general_interest"
+      ],
+      "variables": {},
+      "evidence": [
+        "product_knowledge.plans",
+        "user_message: plano de 497"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "price_check",
+      "last_intent": "price_query",
+      "next_action_hint": "Confirm Essencial plan details and ask if they want setup help."
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "product_knowledge.plans",
+        "user_message: plano de 497"
+      ]
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 8764,
+      "output_tokens": 581,
+      "cost_usd": 0.004349,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_do_not_do_497",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Oi, tudo bem?",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "A Taliya e a IA do seu studio de Pilates para organizar a rotina que faz o studio girar: agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento.",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?",
+      "template_id": "opening.general_interest",
+      "channel": "whatsapp",
+      "sequence": 3
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "price_check",
+    "last_intent": "price_query",
+    "next_action_hint": "Confirm Essencial plan details and ask if they want setup help."
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 8764,
+    "output_tokens": 581,
+    "cost_usd": 0.004349,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

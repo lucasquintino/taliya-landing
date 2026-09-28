@@ -1,0 +1,233 @@
+[
+  {
+    "id": "do-not-do-early-phone-capture",
+    "fixture_schema_version": "011.do_not_do_runtime.v1",
+    "title": "Do-not-do RC-011-061 no early phone/contact capture",
+    "do_not_do_case_ids": ["RC-011-061"],
+    "channel": "widget",
+    "source": "pilates_landing",
+    "messages": ["quero saber quanto custa, depois voces me chamam"],
+    "checks": [
+      "route:product",
+      "mentions_all_prices",
+      "direct_question_answered_first",
+      "no_name_capture",
+      "no_phone_request",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {"route": "product", "direct_question_answered_first": true},
+      "rendered_text_must_include": ["R$ 497"],
+      "rendered_text_must_not_include": [
+        "qual seu telefone",
+        "me passa seu WhatsApp",
+        "manda seu contato",
+        "qual seu nome"
+      ],
+      "sales_inbox": {"validator_status": "passed"}
+    }
+  },
+  {
+    "id": "final-checkout-buy-intent",
+    "fixture_schema_version": "011.do_not_do_runtime.v1",
+    "title": "Do-not-do RC-011-062 no invented checkout/payment",
+    "do_not_do_case_ids": ["RC-011-062"],
+    "channel": "widget",
+    "source": "pilates_landing",
+    "messages": ["quero contratar agora, me manda o checkout"],
+    "checks": [
+      "route:waitlist",
+      "waitlist_offered_or_handoff",
+      "waitlist_offer_mentions_limited_windows",
+      "no_checkout_link",
+      "has_product_source",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {"route": "waitlist"},
+      "rendered_text_must_include": ["lista"],
+      "rendered_text_must_not_include": [
+        "link de checkout",
+        "checkout seguro",
+        "link de pagamento",
+        "cartao",
+        "pix"
+      ],
+      "sales_inbox": {"validator_status": "passed"}
+    }
+  },
+  {
+    "id": "do-not-do-date-vip-discount",
+    "fixture_schema_version": "011.do_not_do_runtime.v1",
+    "title": "Do-not-do RC-011-063 no invented date/VIP/discount",
+    "do_not_do_case_ids": ["RC-011-063"],
+    "channel": "whatsapp",
+    "source": "taliya_whatsapp",
+    "messages": ["tem desconto VIP ou data certa para entrar? quero pagar hoje"],
+    "checks": [
+      "no_checkout_link",
+      "has_product_source",
+      "no_phone_request",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "whatsapp_max_three_chunks",
+      "all_messages_short"
+    ],
+    "expected": {
+      "rendered_text_must_include_any": ["confirmar", "lista", "equipe"],
+      "rendered_text_must_not_include": [
+        "desconto aprovado",
+        "desconto garantido",
+        "vaga VIP",
+        "VIP garantido",
+        "abre no dia",
+        "data garantida",
+        "pagar hoje pelo link",
+        "checkout seguro"
+      ],
+      "sales_inbox": {"validator_status": "passed"}
+    }
+  },
+  {
+    "id": "product-delta-integration-scope",
+    "fixture_schema_version": "011.do_not_do_runtime.v1",
+    "title": "Do-not-do RC-011-064 no invented integrations",
+    "do_not_do_case_ids": ["RC-011-064"],
+    "channel": "whatsapp",
+    "source": "real_openai_eval",
+    "sender_name": "Ana Paula",
+    "messages": ["integra com Instagram e com meu sistema atual?"],
+    "checks": [
+      "integration_scope_safe",
+      "product_followup_source_keys",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "whatsapp_max_three_chunks"
+    ],
+    "expected": {
+      "decision": {"route": "product", "template_ids": ["product.integration_scope_direct"]},
+      "rendered_text_must_include": ["confirmar"],
+      "rendered_text_must_not_include": [
+        "integra sim",
+        "conectamos automaticamente",
+        "integracao pronta",
+        "disparo em massa incluso"
+      ],
+      "sales_inbox": {"validator_status": "passed"}
+    }
+  },
+  {
+    "id": "product-delta-security-data",
+    "fixture_schema_version": "011.do_not_do_runtime.v1",
+    "title": "Do-not-do RC-011-064 no invented certifications/security guarantees",
+    "do_not_do_case_ids": ["RC-011-064"],
+    "channel": "widget",
+    "source": "real_openai_eval",
+    "sender_name": "Lucas Andrade",
+    "messages": ["e seguro? tem LGPD? posso mandar dados dos alunos?"],
+    "checks": [
+      "security_data_safe",
+      "product_followup_source_keys",
+      "owner_language_no_technical",
+      "llm_usage_required",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {"route": "product", "template_ids": ["product.security_data_direct"]},
+      "rendered_text_must_include": ["dados"],
+      "rendered_text_must_not_include": [
+        "certificado",
+        "criptografia garantida",
+        "LGPD garantida",
+        "auditado"
+      ],
+      "sales_inbox": {"validator_status": "passed"}
+    }
+  },
+  {
+    "id": "do-not-do-client-studio-whatsapp-capture",
+    "fixture_schema_version": "011.do_not_do_runtime.v1",
+    "title": "Do-not-do RC-011-065 no client/studio WhatsApp connection capture",
+    "do_not_do_case_ids": ["RC-011-065"],
+    "channel": "whatsapp",
+    "source": "taliya_whatsapp",
+    "messages": ["posso conectar meu WhatsApp Business do studio agora? qual numero voces precisam?"],
+    "checks": [
+      "direct_question_answered_first",
+      "has_product_source",
+      "no_phone_request",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "whatsapp_max_three_chunks",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {"route": "product"},
+      "rendered_text_must_include_any": ["WhatsApp", "confirmar", "equipe"],
+      "rendered_text_must_not_include": [
+        "manda o numero",
+        "me passa o numero",
+        "conecto agora",
+        "ja conecto",
+        "escaneie o QR",
+        "codigo de verificacao"
+      ],
+      "sales_inbox": {"validator_status": "passed"}
+    }
+  },
+  {
+    "id": "do-not-do-wrong-student-language",
+    "fixture_schema_version": "011.do_not_do_runtime.v1",
+    "title": "Do-not-do RC-011-066 keep studio/alunos language",
+    "do_not_do_case_ids": ["RC-011-066"],
+    "channel": "widget",
+    "source": "pilates_landing",
+    "messages": ["meus clientes precisam baixar app para usar a Taliya?"],
+    "checks": [
+      "route:product",
+      "direct_question_answered_first",
+      "whatsapp_student_no_app",
+      "has_product_source",
+      "template_ids_present",
+      "sales_inbox_projection_consistent",
+      "all_messages_short"
+    ],
+    "expected": {
+      "decision": {"route": "product", "template_ids": ["product.whatsapp_direct", "product.demo_direct"]},
+      "rendered_text_must_include": ["alunos", "nao precisam baixar aplicativo"],
+      "rendered_text_must_not_include": ["clientes precisam baixar app", "consumidores"],
+      "sales_inbox": {"validator_status": "passed"}
+    }
+  },
+  {
+    "id": "spec011-rc003-price-497-not-student-count",
+    "fixture_schema_version": "011.do_not_do_runtime.v1",
+    "title": "Do-not-do RC-011-048/067 numeric grounding: 497 is not active students",
+    "do_not_do_case_ids": ["RC-011-048", "RC-011-067"],
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["Vi o plano de 497 e tenho reposicao baguncada no studio"],
+    "checks": [
+      "mentions_user_context",
+      "price_497_not_student_count",
+      "has_product_source",
+      "no_internal_agent_text",
+      "llm_usage_required",
+      "template_ids_present",
+      "sales_inbox_projection_consistent"
+    ],
+    "expected": {
+      "rendered_text_must_not_include": ["497 alunos", "497 estudantes"],
+      "sales_inbox": {"validator_status": "passed"}
+    }
+  }
+]

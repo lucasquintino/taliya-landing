@@ -1,0 +1,15 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-do-not-do-missing-dry-run",
+  "dryRun": true,
+  "selectedScenarioCount": 4,
+  "estimatedModelCalls": 4,
+  "maxModelCalls": 4,
+  "maxCostUsd": 0.08,
+  "scenarioIds": [
+    "do-not-do-early-phone-capture",
+    "do-not-do-date-vip-discount",
+    "do-not-do-client-studio-whatsapp-capture",
+    "do-not-do-wrong-student-language"
+  ]
+}

@@ -1,0 +1,457 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-stage2-wave1",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-25T15:27:38Z",
+  "finishedAt": "2026-05-25T15:27:49Z",
+  "summary": {
+    "total": 3,
+    "passed": 2,
+    "failed": 1,
+    "estimatedCostUsd": 0.005037,
+    "inputTokens": 4393,
+    "outputTokens": 421
+  },
+  "releaseGate": "fail",
+  "scenarios": [
+    {
+      "id": "stage2-wave1-cold-greeting",
+      "title": "Cold greeting should not force diagnostic too early",
+      "channel": "widget",
+      "checks": [
+        "first_response_greeting",
+        "no_diagnostic",
+        "no_waitlist",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_1f0e419c38b34a36841d3ab7f00f6faa",
+            "conversation_id": "real_eval_stage2-wave1-cold-greeting",
+            "lead_id": "lead_stage2-wave1-cold-greeting",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_entry_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "greeting_only",
+                "next_state": "greeting_only",
+                "route": "entry",
+                "opening_type": "cold_greeting_only",
+                "detected_intents": [
+                  "greeting"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.cold_greeting_named"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "opening.cold_greeting_named": {
+                    "first_name": "Lucas"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.cold_greeting_named",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting_named",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Em que posso te ajudar?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting_named",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "checkout_status",
+                    "unsupported_claims",
+                    "waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": null,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": 0.0
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_145062124882477e9b41f56967119ee2"
+          },
+          "lead": "oi"
+        }
+      ]
+    },
+    {
+      "id": "stage2-wave1-widget-diagnostic-acceptance",
+      "title": "Widget diagnostic offer acceptance should start the official diagnostic",
+      "channel": "widget",
+      "checks": [
+        "diagnostic_question_has_feedback",
+        "official_diagnostic_first_question",
+        "diagnostic_incomplete_requires_question",
+        "template_ids_present",
+        "all_messages_short",
+        "no_waitlist"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_3dcf32b1575b41a195c93648e180a587",
+            "conversation_id": "real_eval_stage2-wave1-widget-diagnostic-acceptance",
+            "lead_id": "lead_stage2-wave1-widget-diagnostic-acceptance",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_in_progress",
+                "route": "diagnostic",
+                "opening_type": "none",
+                "detected_intents": [
+                  "accepted_widget_diagnostic_offer"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "ask_next",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_needed",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "diagnostic.ask_active_students"
+                ],
+                "template_variables": {
+                  "diagnostic.ask_active_students": {
+                    "answer_feedback": "Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje."
+                  }
+                },
+                "render_plan": [],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_active_students",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_active_students",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": {
+                "status": "in_progress",
+                "ledger": [],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [
+                  "active_students_or_size"
+                ],
+                "confidence": "medium",
+                "next_question": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "plans",
+                    "prices",
+                    "links"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "ok"
+                }
+              ],
+              "usage": {
+                "model": "gpt-4.1-mini",
+                "input_tokens": 268,
+                "output_tokens": 20,
+                "cost_usd": 0.000139
+              },
+              "confidence": "medium"
+            },
+            "trace_id": "trace_c22268de8a0840d99b3788fba4ad9ecf"
+          },
+          "lead": "quero sim"
+        }
+      ]
+    },
+    {
+      "id": "stage2-wave1-instagram-interest",
+      "title": "Social source opening should explain Taliya naturally and steer to diagnostic",
+      "channel": "widget",
+      "checks": [
+        "first_response_greeting",
+        "landing_positioning_opening",
+        "not_generic_intro",
+        "diagnostic_offered_or_started",
+        "asks_at_most_one_question",
+        "no_waitlist",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [
+        "expected diagnostic offer/start, got None"
+      ],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_06465c9a66ad42f38d4ca1e43dfb88af",
+            "conversation_id": "real_eval_stage2-wave1-instagram-interest",
+            "lead_id": "lead_stage2-wave1-instagram-interest",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_entry_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "source_instagram",
+                "next_state": "source_instagram",
+                "route": "entry",
+                "opening_type": "social_source_opening",
+                "detected_intents": [
+                  "greeting",
+                  "source_interest"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead veio pelo Instagram e quer saber mais.",
+                  "Nome confiável: Lucas."
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.instagram_source"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi esse ponto: Lead veio pelo Instagram e quer saber mais.."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi esse ponto: Lead veio pelo Instagram e quer saber mais.."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.instagram_source",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? A Taliya é a IA do seu studio de Pilates.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.instagram_source",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Você cuida dos alunos; ela ajuda a cuidar da rotina que faz o studio girar: agenda, reposições, cobranças, gestão, atendimento e acompanhamento em um só lugar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.instagram_source",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Você quer entender a ideia geral primeiro ou tem alguma parte do studio que está pesando mais hoje?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.instagram_source",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "source",
+                  "value": "Instagram",
+                  "confidence": "high",
+                  "evidence": [
+                    "\"vim pelo instagram e queria saber mais\""
+                  ]
+                },
+                {
+                  "key": "first_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.reliable.first_name=Lucas"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "profile_name_assessment",
+                    "metadata.page_path",
+                    "initial_policy_read",
+                    "product_knowledge"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "2"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4125,
+                "output_tokens": 401,
+                "cost_usd": 0.004898
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_9645c5fcbc104e888b4027bac12e8a56"
+          },
+          "lead": "vim pelo instagram e queria saber mais"
+        }
+      ]
+    }
+  ]
+}

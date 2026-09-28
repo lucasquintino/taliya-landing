@@ -1,0 +1,5 @@
+[
+  { "id": "LED-001", "channel": "whatsapp", "missing": ["studio", "cidade"], "mustNotAsk": "whatsapp" },
+  { "id": "LED-002", "channel": "widget", "missing": ["studio", "cidade", "contato"], "mayAsk": "WhatsApp ou email" }
+]
+

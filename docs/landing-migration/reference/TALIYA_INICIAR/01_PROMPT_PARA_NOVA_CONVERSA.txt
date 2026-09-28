@@ -1,0 +1,28 @@
+Vamos continuar a migração da landing Taliya Pilates para Taliya/Copiloto.
+
+Extraia o arquivo TALIYA_INICIAR.zip. Leia primeiro 00_COMECE_AQUI.txt,
+03_CONTEXTO_E_ESTADO.md e 02_PROMPT_MESTRE_SDD.md integralmente. Depois leia
+04_MAPA_DE_SPECS.md e os documentos canônicos dos dois pacotes em
+05_PACOTES_EXTRAIDOS. As pastas 06_ZIPS_ORIGINAIS preservam os mesmos
+pacotes; não são fontes adicionais nem versões diferentes.
+
+O objetivo é criar um projeto independente a partir do código-fonte existente,
+sem modificar o projeto original. Preserve a stack, o design, os componentes
+e os comportamentos, aplicando o conteúdo do pivot e somente as adaptações
+mínimas previstas. Não faça redesign nem reconstrua a landing do zero.
+
+Vamos usar SDD com Spec Kit: fundação, SEO transversal, uma spec por seção
+S01–S14 e integração final, conforme o prompt mestre. Os 17 recortes estão
+mapeados; as specs e os planos apoiados no código ainda precisam ser criados.
+Não confunda o mapa ou os checklists dos pacotes com implementação concluída.
+
+Verifique primeiro se o código está nos anexos, no repositório ou na pasta de
+trabalho disponíveis. Ele não está incluído neste ZIP documental. Se estiver
+disponível, inspecione-o e inicie o bootstrap seguro e a spec 001; não me peça
+para enviá-lo novamente. Se não estiver disponível, informe a dependência,
+prepare o que puder a partir dos documentos e não invente arquivos/componentes.
+
+Siga a autoridade das fontes definida no prompt, preserve o pré-lançamento
+e os limites da V1 e não publique nada. Apresente um plano curto e prossiga
+pelos recortes autorizados com requisitos, plano, tarefas e verificações reais.
+Mantenha um índice de progresso que permita continuar em outra conversa.

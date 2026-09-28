@@ -1,0 +1,261 @@
+{
+  "results": [
+    {
+      "scenario": "cold_greeting",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "answer_source_opening",
+      "templates": [
+        "opening.instagram_source"
+      ],
+      "rendered": [
+        "Oi, tudo bem?",
+        "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar.",
+        "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00371775
+    },
+    {
+      "scenario": "pain_first",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "offer_diagnostic_from_pain",
+      "templates": [
+        "diagnostic.offer_soft"
+      ],
+      "rendered": [
+        "leads esfriarem no WhatsApp por demora da equipe em responder",
+        "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+        "O que voce acha?"
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00410325
+    },
+    {
+      "scenario": "price_first",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "answer_direct_product_question",
+      "templates": [
+        "product.price_direct"
+      ],
+      "rendered": [
+        "Oi, tudo bem?",
+        "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00387825
+    },
+    {
+      "scenario": "price_plus_pain",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "answer_direct_product_question",
+      "templates": [
+        "product.price_direct"
+      ],
+      "rendered": [
+        "Oi, tudo bem?",
+        "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00434025
+    },
+    {
+      "scenario": "diagnostic_start",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "start_requested_diagnostic",
+      "templates": [
+        "diagnostic.start",
+        "diagnostic.ask_active_students"
+      ],
+      "rendered": [
+        "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje.",
+        "Ótimo — vamos começar o diagnóstico gratuito.",
+        "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.003783
+    },
+    {
+      "scenario": "diagnostic_numeric_120",
+      "status": "delivered",
+      "mode": "diagnostic",
+      "action": "capture_pending_diagnostic_answer",
+      "templates": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_main_pain"
+      ],
+      "rendered": [
+        "Perfeito, vocês têm 120 alunos ativos.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado.",
+        "Perfeito, vocês têm 120 alunos ativos.",
+        "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+      ],
+      "issues": [],
+      "ops": 1,
+      "repairs": 0,
+      "cost_usd": 0.00250425
+    },
+    {
+      "scenario": "diagnostic_urgency_final",
+      "status": "failed",
+      "mode": "diagnostic",
+      "action": "capture_pending_diagnostic_answer",
+      "templates": [
+        "diagnostic.partial_progress",
+        "diagnostic.ask_urgency"
+      ],
+      "rendered": [],
+      "issues": [
+        "compile_missing_captured_answer: compiler blocked the turn: compile_missing_captured_answer"
+      ],
+      "ops": 2,
+      "repairs": 1,
+      "cost_usd": 0.005193
+    },
+    {
+      "scenario": "whatsapp_scope",
+      "status": "failed",
+      "mode": "entry",
+      "action": "answer_whatsapp_scope",
+      "templates": [
+        "product.whatsapp_direct"
+      ],
+      "rendered": [],
+      "issues": [
+        "compile_missing_official_fact:official_demo_link: compiler blocked the turn: compile_missing_official_fact:official_demo_link"
+      ],
+      "ops": 3,
+      "repairs": 1,
+      "cost_usd": 0.0065565
+    },
+    {
+      "scenario": "demo_request",
+      "status": "failed",
+      "mode": "entry",
+      "action": "answer_direct_product_question",
+      "templates": [
+        "product.demo_direct"
+      ],
+      "rendered": [],
+      "issues": [
+        "compile_missing_official_fact:official_demo_link: compiler blocked the turn: compile_missing_official_fact:official_demo_link"
+      ],
+      "ops": 3,
+      "repairs": 1,
+      "cost_usd": 0.0066082499999999995
+    },
+    {
+      "scenario": "waitlist_curiosity",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "answer_general_interest",
+      "templates": [
+        "opening.cold_greeting"
+      ],
+      "rendered": [
+        "Oi, tudo bem?",
+        "Em que posso ajudar?"
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.0040155
+    },
+    {
+      "scenario": "waitlist_contract_intent",
+      "status": "delivered",
+      "mode": "post_diagnostic",
+      "action": "offer_or_join_waitlist_if_eligible",
+      "templates": [
+        "waitlist.offer_after_contract_intent"
+      ],
+      "rendered": [
+        "Lead quer entrar na lista para seguir com a contratação quando houver abertura.",
+        "Hoje a entrada acontece por uma lista para um numero pequeno de studios. Posso deixar o interesse registrado sem prometer checkout, data ou condicao especial."
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 1,
+      "cost_usd": 0.0051645
+    },
+    {
+      "scenario": "human_handoff",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "handoff_requested",
+      "templates": [
+        "handoff.acknowledge"
+      ],
+      "rendered": [
+        "Claro. Vou deixar uma pessoa assumir daqui.",
+        "Tambem deixo o contexto salvo para voce nao precisar repetir tudo."
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.003732
+    },
+    {
+      "scenario": "do_not_do_497",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "answer_direct_product_question",
+      "templates": [
+        "product.price_direct"
+      ],
+      "rendered": [
+        "Oi, tudo bem?",
+        "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00414225
+    },
+    {
+      "scenario": "do_not_do_checkout_discount_date_vip",
+      "status": "failed",
+      "mode": "entry",
+      "action": "answer_direct_product_question",
+      "templates": [
+        "product.price_direct",
+        "product.demo_direct",
+        "product.whatsapp_direct"
+      ],
+      "rendered": [],
+      "issues": [
+        "compile_missing_official_fact:official_demo_link: compiler blocked the turn: compile_missing_official_fact:official_demo_link",
+        "compile_missing_official_fact:official_demo_link: compiler blocked the turn: compile_missing_official_fact:official_demo_link"
+      ],
+      "ops": 3,
+      "repairs": 1,
+      "cost_usd": 0.0067792500000000006
+    },
+    {
+      "scenario": "delivery_concurrency",
+      "status": "deferred",
+      "mode": "delivery_deferred",
+      "action": null,
+      "templates": [],
+      "rendered": [],
+      "issues": [],
+      "ops": 0,
+      "repairs": 0,
+      "cost_usd": 0.0
+    }
+  ],
+  "total_cost_usd": 0.06451799999999999
+}

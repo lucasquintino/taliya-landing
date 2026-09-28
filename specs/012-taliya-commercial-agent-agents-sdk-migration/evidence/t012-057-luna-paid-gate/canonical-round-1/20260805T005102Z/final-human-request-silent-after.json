@@ -1,0 +1,425 @@
+{
+  "scenario_id": "final-human-request-silent-after",
+  "title": "Golden RC-011-058 human handoff pause",
+  "status": "passed",
+  "messages": [
+    "quero falar com uma pessoa",
+    "ainda estou aqui"
+  ],
+  "transcript": [
+    {
+      "role": "user",
+      "content": "quero falar com uma pessoa"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro. Vou deixar uma pessoa assumir daqui."
+    },
+    {
+      "role": "assistant",
+      "content": "Vou deixar o contexto da conversa salvo para você não precisar repetir tudo."
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "user_text": "quero falar com uma pessoa",
+      "mode": "entry",
+      "starting_agent": "taliya_triage_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "handoff_requested",
+      "template_ids": [
+        "handoff.acknowledge"
+      ],
+      "rendered_messages": [
+        "Claro. Vou deixar uma pessoa assumir daqui.",
+        "Vou deixar o contexto da conversa salvo para você não precisar repetir tudo."
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 2,
+      "cost_usd": 0.005292,
+      "next_state": "human_handoff",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-final-human-request-silent-after",
+        "lead_id": "t012-043-final-human-request-silent-after",
+        "commercial_stage": "human_handoff",
+        "summary": "Estado comercial: human_handoff",
+        "diagnostic_status": "not_started",
+        "waitlist_status": "none",
+        "handoff_status": "requested",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "handoff.acknowledge"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "taliya_whatsapp",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "human_follow_up",
+          "handoff_reason": "Você pediu para falar com uma pessoa.",
+          "human_active": true,
+          "ai_paused": true
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "quero falar com uma pessoa",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "conversation_id": "t012-043-final-human-request-silent-after",
+            "lead_id": "t012-043-final-human-request-silent-after",
+            "source": "taliya_whatsapp",
+            "channel": "whatsapp"
+          },
+          "compact_memory": null,
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "entry",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "answer_general_interest",
+            "answer_source_opening",
+            "offer_diagnostic_from_pain",
+            "answer_direct_product_question",
+            "start_requested_diagnostic",
+            "handoff_requested",
+            "clarify_ambiguous_opening"
+          ],
+          "eligible_template_groups": [
+            "opening.",
+            "diagnostic.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_triage_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "HandoffCallItem",
+            "raw_item_type": "ResponseFunctionToolCall",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": "transfer_to_taliya_handoff_agent",
+            "handoff_target": null
+          },
+          {
+            "item_type": "HandoffOutputItem",
+            "raw_item_type": "dict",
+            "agent_name": "taliya_triage_agent",
+            "tool_name": null,
+            "handoff_target": "taliya_handoff_agent"
+          },
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_handoff_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "entry-handoff-001",
+          "turn_id": "entry",
+          "selected_action": "handoff_requested",
+          "interpreted_intents": [
+            "solicitação de atendimento humano"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "requested",
+          "composition_variables": [
+            {
+              "name": "handoff_reason",
+              "value": "Você pediu para falar com uma pessoa.",
+              "evidence": [
+                "Mensagem atual: \"quero falar com uma pessoa\""
+              ]
+            }
+          ],
+          "reply_goal": "Reconhecer o pedido e encaminhar para atendimento humano, pausando a automação.",
+          "confidence": "high",
+          "evidence": [
+            "Mensagem atual: \"quero falar com uma pessoa\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "entry-handoff-001",
+            "turn_id": "entry",
+            "selected_action": "handoff_requested",
+            "interpreted_intents": [
+              "solicitação de atendimento humano"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "none",
+            "waitlist_intent": "none",
+            "handoff_intent": "requested",
+            "composition_variables": [
+              {
+                "name": "handoff_reason",
+                "value": "Você pediu para falar com uma pessoa.",
+                "evidence": [
+                  "Mensagem atual: \"quero falar com uma pessoa\""
+                ]
+              }
+            ],
+            "reply_goal": "Reconhecer o pedido e encaminhar para atendimento humano, pausando a automação.",
+            "confidence": "high",
+            "evidence": [
+              "Mensagem atual: \"quero falar com uma pessoa\""
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "entry-handoff-001",
+          "turn_id": "entry",
+          "selected_action": "handoff_requested",
+          "interpreted_intents": [
+            "solicitação de atendimento humano"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "none",
+          "handoff_intent": "requested",
+          "composition_variables": [
+            {
+              "name": "handoff_reason",
+              "value": "Você pediu para falar com uma pessoa.",
+              "evidence": [
+                "Mensagem atual: \"quero falar com uma pessoa\""
+              ]
+            }
+          ],
+          "reply_goal": "Reconhecer o pedido e encaminhar para atendimento humano, pausando a automação.",
+          "confidence": "high",
+          "evidence": [
+            "Mensagem atual: \"quero falar com uma pessoa\""
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "handoff_requested",
+          "previous_state": "new_lead",
+          "current_state": "human_requested",
+          "next_state": "human_handoff",
+          "template_ids": [
+            "handoff.acknowledge"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_handoff_requested",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "handoff.acknowledge"
+          ],
+          "variables": {
+            "handoff_reason": {
+              "kind": "short_text",
+              "value": "Você pediu para falar com uma pessoa.",
+              "source": "user_message",
+              "evidence": [
+                "Mensagem atual: \"quero falar com uma pessoa\""
+              ],
+              "max_length": 120
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Claro. Vou deixar uma pessoa assumir daqui.",
+          "Vou deixar o contexto da conversa salvo para você não precisar repetir tudo."
+        ],
+        "state_diff": {
+          "next_state": "human_handoff",
+          "state_patch": {
+            "handoff": {
+              "status": "requested",
+              "pause_ai": true
+            }
+          },
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-final-human-request-silent-after",
+          "lead_id": "t012-043-final-human-request-silent-after",
+          "commercial_stage": "human_handoff",
+          "summary": "Estado comercial: human_handoff",
+          "diagnostic_status": "not_started",
+          "waitlist_status": "none",
+          "handoff_status": "requested",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "handoff.acknowledge"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "taliya_whatsapp",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "human_follow_up",
+            "handoff_reason": "Você pediu para falar com uma pessoa.",
+            "human_active": true,
+            "ai_paused": true
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 2,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 2,
+          "input_tokens": 3972,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 220,
+          "reasoning_tokens": 0,
+          "latency_ms": 4949.834,
+          "cost_usd": 0.005292
+        },
+        "failure_labels": []
+      }
+    },
+    {
+      "turn": 2,
+      "user_text": "ainda estou aqui",
+      "mode": "handoff",
+      "starting_agent": null,
+      "llm_called": false,
+      "status": "suppressed",
+      "selected_action": null,
+      "template_ids": [],
+      "rendered_messages": [],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 0,
+      "cost_usd": 0.0,
+      "next_state": null,
+      "sales_inbox_projection": {},
+      "trace": {}
+    }
+  ],
+  "final_state": {
+    "conversation_id": "t012-043-final-human-request-silent-after",
+    "lead_id": "t012-043-final-human-request-silent-after",
+    "source": "taliya_whatsapp",
+    "channel": "whatsapp",
+    "canonical_state": "human_handoff",
+    "human_status": "requested"
+  },
+  "checks": [
+    "route:handoff",
+    "handoff_requested",
+    "second_turn_silent",
+    "template_ids_present"
+  ],
+  "check_results": [
+    {
+      "check": "turn_statuses_acceptable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "includes:pessoa",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:diagnostico gratuito",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:checkout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "second_turn_silent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_failed_turns",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "issues": [],
+  "total_model_operations": 2,
+  "total_cost_usd": 0.005292,
+  "cost_cap_exceeded": false
+}

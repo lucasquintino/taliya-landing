@@ -1,0 +1,80 @@
+{
+  "results": [
+    {
+      "scenario": "diagnostic_urgency_final",
+      "status": "delivered",
+      "mode": "diagnostic",
+      "action": "complete_diagnostic",
+      "templates": [
+        "diagnostic.deliver_hold",
+        "diagnostic.deliver_context",
+        "diagnostic.deliver_crm_base",
+        "diagnostic.deliver_operational_step",
+        "diagnostic.deliver_agent_recommendation",
+        "diagnostic.deliver_plan_recommendation",
+        "diagnostic.deliver_demo_not_offered"
+      ],
+      "rendered": [
+        "Perfeito. Ja da para te devolver uma leitura pratica. Vou organizar em partes.\n\nthe studio is losing leads on WhatsApp because replies are slow, with follow-up still being managed manually in spreadsheets and WhatsApp, and the priority is to organize lead follow-up\n\na CRM/workflow to centralize WhatsApp lead follow-up and speed up responses",
+        "start by putting all incoming leads into one tracked flow and setting an immediate response/follow-up routine\n\nAgente Atendimento: ajuda com mensagens e interessados deixarem de ficar sem resposta. Na pratica: acompanha as conversas e avisa a equipe do que precisa de acao.",
+        "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Essencial (R$ 497/mes).\n\nComo eu ainda nao tinha te enviado a demonstracao. Temos algumas demonstracoes que mostram o funcionamento na pratica. Quer que eu te mande?"
+      ],
+      "issues": [],
+      "ops": 1,
+      "repairs": 0,
+      "cost_usd": 0.0033585
+    },
+    {
+      "scenario": "whatsapp_scope",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "answer_whatsapp_scope",
+      "templates": [
+        "product.whatsapp_direct"
+      ],
+      "rendered": [
+        "Oi, tudo bem?",
+        "This commercial conversation runs on Taliya's own widget and Taliya's own WhatsApp number. For product agents to act on student WhatsApp conversations, the studio needs WhatsApp Business connected/configured. Students do not need to download an app or create a password; they talk through WhatsApp. Do not promise automa",
+        "Ver demonstracao: https://www.taliya.com.br/pilates/planos/demonstracao"
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00393975
+    },
+    {
+      "scenario": "demo_request",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "clarify_ambiguous_opening",
+      "templates": [
+        "fallback.unmapped_adaptive"
+      ],
+      "rendered": [
+        "Você quer ver uma demonstração de como funciona na prática?"
+      ],
+      "issues": [],
+      "ops": 3,
+      "repairs": 1,
+      "cost_usd": 0.00639525
+    },
+    {
+      "scenario": "do_not_do_checkout_discount_date_vip",
+      "status": "delivered",
+      "mode": "entry",
+      "action": "answer_direct_product_question",
+      "templates": [
+        "product.price_direct"
+      ],
+      "rendered": [
+        "Oi, tudo bem?",
+        "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+      ],
+      "issues": [],
+      "ops": 2,
+      "repairs": 0,
+      "cost_usd": 0.00417375
+    }
+  ],
+  "total_cost_usd": 0.01786725
+}

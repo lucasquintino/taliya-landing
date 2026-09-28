@@ -1,0 +1,495 @@
+{
+  "number": 10,
+  "scenario_id": "waitlist_curiosity",
+  "channel": "whatsapp",
+  "required_proof": "Curiosity does not become waitlist offer.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "como funciona essa lista de espera?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"waitlist\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "waitlist",
+          "templates": [
+            {
+              "template_id": "waitlist.ask_missing_city",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_contact_path",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_studio",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.joined",
+              "required_variables": [],
+              "optional_variables": [
+                "studio_name",
+                "city_state",
+                "contact_path"
+              ]
+            },
+            {
+              "template_id": "waitlist.offer_after_contract_intent",
+              "required_variables": [
+                "waitlist_context_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "waitlist.status_preserved",
+              "required_variables": [],
+              "optional_variables": [
+                "waitlist_context_summary"
+              ]
+            }
+          ],
+          "variable_specs": {
+            "city_state": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "City/state supplied or confirmed by the lead."
+            },
+            "contact_path": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Approved contact-path enum; never ask WhatsApp leads for their phone."
+            },
+            "missing_detail_label": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state"
+              ],
+              "validation_rule": "Approved enum for one missing waitlist detail."
+            },
+            "studio_name": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Studio name supplied or confirmed by the lead; separate from person name."
+            },
+            "waitlist_context_summary": {
+              "kind": "long_text",
+              "max_length": 220,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "runtime_state"
+              ],
+              "validation_rule": "Why waitlist is allowed now, grounded in clear intent and saved context."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_question"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "Entender como a lista de espera funciona antes de avançar.",
+      "pain_context": null,
+      "source_context": "first_contact",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "direct_question",
+          "kind": "other",
+          "raw_text": "como funciona essa lista de espera?",
+          "value_text": "asked how the waitlist works",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Answer how the waitlist works.",
+        "answering_template_id": "fallback.unmapped_adaptive",
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "waitlist_info_request",
+      "missing_details": [],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "fallback.unmapped_adaptive"
+      ],
+      "variables": [
+        {
+          "name": "clarification_question",
+          "kind": "short_text",
+          "value": "Você quer saber como entrar na lista de espera ou como ela funciona depois que entra?",
+          "source": "model_decision",
+          "evidence": [
+            "user_message"
+          ],
+          "max_length": 140
+        }
+      ],
+      "evidence": [
+        "user_message",
+        "template_registry"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "medium"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "opening",
+      "last_intent": "waitlist_question",
+      "diagnostic_status": null,
+      "waitlist_status": "unknown",
+      "handoff_status": null,
+      "next_action_hint": "clarify waitlist mechanics"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "medium",
+    "risks": [
+      "User asked about waitlist; no state context to confirm eligibility or mechanics."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_waitlist_curiosity",
+    "conversation_id": "spike_conv_waitlist_curiosity",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_question"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "Entender como a lista de espera funciona antes de avançar.",
+      "pain_context": null,
+      "source_context": "first_contact",
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "direct_question",
+          "kind": "other",
+          "raw_text": "como funciona essa lista de espera?",
+          "value": "asked how the waitlist works",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Answer how the waitlist works.",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "unknown",
+      "intent": "waitlist_info_request",
+      "missing_details": [],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "fallback.unmapped_adaptive"
+      ],
+      "variables": {
+        "clarification_question": {
+          "kind": "short_text",
+          "value": "Você quer saber como entrar na lista de espera ou como ela funciona depois que entra?",
+          "source": "model_decision",
+          "evidence": [
+            "user_message"
+          ],
+          "max_length": 140
+        }
+      },
+      "evidence": [
+        "user_message",
+        "template_registry"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "medium"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "opening",
+      "last_intent": "waitlist_question",
+      "waitlist_status": "unknown",
+      "next_action_hint": "clarify waitlist mechanics"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": [
+        "user_message",
+        "template_registry"
+      ]
+    },
+    "confidence": "medium",
+    "risks": [
+      "User asked about waitlist; no state context to confirm eligibility or mechanics."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 8174,
+      "output_tokens": 498,
+      "cost_usd": 0.003533,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_waitlist_curiosity",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Você quer saber como entrar na lista de espera ou como ela funciona depois que entra?",
+      "template_id": "fallback.unmapped_adaptive",
+      "channel": "whatsapp",
+      "sequence": 1
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "opening",
+    "last_intent": "waitlist_question",
+    "waitlist_status": "unknown",
+    "next_action_hint": "clarify waitlist mechanics"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 8174,
+    "output_tokens": 498,
+    "cost_usd": 0.003533,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

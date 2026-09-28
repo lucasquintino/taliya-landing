@@ -1,0 +1,1086 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-product-followup-delta-latest",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-25T22:16:31Z",
+  "finishedAt": "2026-05-25T22:17:05Z",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "estimatedCostUsd": 0.032791,
+    "inputTokens": 29677,
+    "outputTokens": 2953
+  },
+  "releaseGate": "pass",
+  "scenarios": [
+    {
+      "id": "product-delta-how-it-works",
+      "title": "Como funciona must be product explanation, not an opening",
+      "channel": "widget",
+      "checks": [
+        "product_how_it_works_answer",
+        "product_followup_source_keys",
+        "no_crm_lay_copy",
+        "owner_language_no_technical",
+        "llm_usage_required",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_076759f37e6c4c0988d200d027332edb",
+            "conversation_id": "real_eval_product-delta-how-it-works",
+            "lead_id": "lead_product-delta-how-it-works",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "product_how_it_works"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead perguntou \"como funciona?\"",
+                  "Nome confiável disponível: Lucas",
+                  "Produto: Taliya organiza rotina do studio em um lugar: conversas, alunos, agenda, reposições, cobranças, interessados e follow-ups",
+                  "Área de atendimento: mensagens e dúvidas comuns não ficam perdidas",
+                  "Área de vendas: interessados, aulas experimentais e próximos passos ficam organizados",
+                  "Área de agenda: aulas, horários, faltas, encaixes e movimentos da agenda ficam mais claros",
+                  "Área de cobranças/financeiro: mensalidades, vencimentos, renovações e pendências ficam mais visíveis",
+                  "Área de acompanhamento: alunos que somem, faltam ou precisam de retorno ficam no radar da equipe",
+                  "WhatsApp Business do studio precisa estar conectado/configurado para agentes atuarem nas conversas",
+                  "Esta conversa comercial roda no widget e no WhatsApp da própria Taliya"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.how_it_works_direct"
+                ],
+                "template_variables": {
+                  "first_name": {
+                    "value": "Lucas"
+                  },
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "product.how_it_works_direct": {
+                    "contextual_next_step": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim podemos entender como a Taliya encaixaria na sua rotina e por onde começar. O que você acha?",
+                    "recommended_area": ""
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.how_it_works_direct",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Funciona assim: a Taliya ajuda o studio a organizar o que acontece no dia a dia.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.how_it_works_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Ela junta conversas, alunos, agenda, reposições, cobranças, interessados e acompanhamentos para a equipe enxergar melhor o que precisa de ação.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.how_it_works_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Quando o WhatsApp Business do studio está conectado, os agentes podem apoiar conversas com alunos e interessados, sempre com a equipe podendo acompanhar e assumir quando precisar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.how_it_works_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim podemos entender como a Taliya encaixaria na sua rotina e por onde começar. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.how_it_works_direct",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "lead_question",
+                  "value": "como funciona?",
+                  "confidence": "high",
+                  "evidence": [
+                    "user_message.text"
+                  ]
+                },
+                {
+                  "key": "profile_first_name",
+                  "value": "Lucas",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.status=reliable",
+                    "profile_name_assessment.first_name=Lucas"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "profile_name_assessment",
+                    "product_knowledge.how_it_works",
+                    "product_knowledge.routine_areas",
+                    "product_knowledge.whatsapp_scope",
+                    "how_it_works",
+                    "routine_areas",
+                    "whatsapp_scope"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "2"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4944,
+                "output_tokens": 728,
+                "cost_usd": 0.006984
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_e9264209bc024277a2daf28c6c0272f8"
+          },
+          "lead": "como funciona?"
+        }
+      ]
+    },
+    {
+      "id": "product-delta-comparison-planilha",
+      "title": "Spreadsheet comparison should explain practical difference without attacking",
+      "channel": "widget",
+      "checks": [
+        "comparison_current_tool",
+        "product_followup_source_keys",
+        "no_crm_lay_copy",
+        "owner_language_no_technical",
+        "llm_usage_required",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_c201510848554aadb3f43469cfdd333d",
+            "conversation_id": "real_eval_product-delta-comparison-planilha",
+            "lead_id": "lead_product-delta-comparison-planilha",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "comparison_current_tool"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "offer",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "O lead usa planilha e WhatsApp hoje.",
+                  "Comparação com planilha/WhatsApp manual deve reconhecer o que já funciona e explicar a diferença prática.",
+                  "Taliya organiza conversas, agenda, reposições, cobranças, interessados e acompanhamento de alunos."
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.comparison_current_tool"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Essencial ou Avance"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "a rotina prioritária",
+                    "first_step": "organizar a primeira rotina crítica",
+                    "plan_range": "a faixa mais aderente"
+                  },
+                  "product.comparison_current_tool": {
+                    "current_tool_context": "planilha"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.comparison_current_tool",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "incomplete",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Marina, tudo bem? Se o que vocês usam hoje resolve parte da rotina, faz sentido manter o que funciona.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.comparison_current_tool",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "A diferença da Taliya é ajudar a organizar o que costuma ficar espalhado: conversas, agenda, reposições, cobranças, interessados e acompanhamento dos alunos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.comparison_current_tool",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Para comparar sem chute, vale olhar onde a rotina do seu studio mais perde tempo hoje.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.comparison_current_tool",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "current_tools",
+                  "value": "planilha e whatsapp",
+                  "confidence": "high",
+                  "evidence": [
+                    "hoje uso planilha e whatsapp, qual a diferença?"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "offered",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "hoje uso planilha e whatsapp, qual a diferença?",
+                    "evidence": [
+                      "widget:product-delta-comparison-planilha:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "hoje uso planilha e whatsapp, qual a diferença?",
+                    "evidence": [
+                      "widget:product-delta-comparison-planilha:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "missing",
+                    "answer_value": null,
+                    "evidence": [],
+                    "confidence": "low",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": true
+                  }
+                ],
+                "facts_used": [],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [],
+                "unknowns": [
+                  "operation_context"
+                ],
+                "confidence": "low",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "policy_source",
+                    "initial_policy_read",
+                    "profile_name_assessment",
+                    "product_knowledge",
+                    "comparison_management_system",
+                    "comparison_spreadsheet",
+                    "routine_areas"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "offered"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 5088,
+                "output_tokens": 436,
+                "cost_usd": 0.005778
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_b70b67a647744d959c6d30a77729a4f7"
+          },
+          "lead": "hoje uso planilha e whatsapp, qual a diferença?"
+        }
+      ]
+    },
+    {
+      "id": "product-delta-integration-scope",
+      "title": "Integration scope should not overpromise Instagram or current-system setup",
+      "channel": "whatsapp",
+      "checks": [
+        "integration_scope_safe",
+        "product_followup_source_keys",
+        "no_crm_lay_copy",
+        "owner_language_no_technical",
+        "llm_usage_required",
+        "template_ids_present",
+        "whatsapp_max_three_chunks"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_6a90ba2fca9b4493814387528aecdb6a",
+            "conversation_id": "real_eval_product-delta-integration-scope",
+            "lead_id": "lead_product-delta-integration-scope",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "integration_scope_question",
+                  "comparison_current_tool"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "source_instagram",
+                  "reliable_profile_name_Ana",
+                  "user_asked_about_integration_with_instagram_and_current_system",
+                  "official_integration_scope_unknown_no_promise"
+                ],
+                "facts_missing": [
+                  "specific official confirmation about Instagram integration",
+                  "specific official confirmation about integration with current system"
+                ],
+                "template_ids": [
+                  "product.integration_scope_direct"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "product.integration_scope_direct": {
+                    "integration_topic": "instagram"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.integration_scope_direct",
+                    "channel": "whatsapp"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Ana, tudo bem? Para os agentes atuarem no WhatsApp dos alunos, o studio precisa ter WhatsApp Business conectado/configurado.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.integration_scope_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Sobre integrações específicas, eu prefiro não prometer sem confirmar com a equipe.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.integration_scope_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Posso te explicar o caminho geral ou deixar esse ponto para alguém validar com você.",
+                  "channel_hint": "whatsapp",
+                  "kind": "text",
+                  "template_id": "product.integration_scope_direct",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "source",
+                  "value": "instagram",
+                  "confidence": "high",
+                  "evidence": [
+                    "initial_policy_read.current_state=source_instagram",
+                    "metadata.page_path=/pilates"
+                  ]
+                },
+                {
+                  "key": "name",
+                  "value": "Ana",
+                  "confidence": "high",
+                  "evidence": [
+                    "profile_name_assessment.status=reliable",
+                    "profile_name_assessment.first_name=Ana"
+                  ]
+                },
+                {
+                  "key": "question",
+                  "value": "integra com Instagram e com meu sistema atual?",
+                  "confidence": "high",
+                  "evidence": [
+                    "user_message.text"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "initial_policy_read",
+                    "profile_name_assessment",
+                    "user_message",
+                    "product_knowledge",
+                    "comparison_management_system",
+                    "comparison_spreadsheet",
+                    "integration_scope",
+                    "routine_areas",
+                    "unsupported_claims",
+                    "whatsapp_scope"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "3"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 5065,
+                "output_tokens": 577,
+                "cost_usd": 0.006395
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_a4034dd5d0c14784aa17238ebc1bf7c8"
+          },
+          "lead": "integra com Instagram e com meu sistema atual?"
+        }
+      ]
+    },
+    {
+      "id": "product-delta-security-data",
+      "title": "Security/data answer should be conservative and official-fact based",
+      "channel": "widget",
+      "checks": [
+        "security_data_safe",
+        "product_followup_source_keys",
+        "owner_language_no_technical",
+        "llm_usage_required",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_3a0deb4ae4fd4eb7851719e67c8a1b82",
+            "conversation_id": "real_eval_product-delta-security-data",
+            "lead_id": "lead_product-delta-security-data",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "trust_security_question",
+                  "lgpd_question",
+                  "data_sharing_question"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "The chat should not request sensitive data.",
+                  "Privacy, LGPD, certifications, encryption, or access-to-conversation claims require official facts; if the fact is missing, offer human confirmation."
+                ],
+                "facts_missing": [
+                  "Official LGPD/privacy details beyond the safe statement."
+                ],
+                "template_ids": [
+                  "product.security_data_direct"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.security_data_direct",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? É um ponto importante.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.security_data_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Por aqui, eu não preciso que você mande dados sensíveis do studio ou dos alunos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.security_data_direct",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Sobre segurança, privacidade ou LGPD, eu prefiro seguir só informações oficiais. Se faltar algum detalhe, deixo para a equipe confirmar com precisão.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.security_data_direct",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "security_question",
+                  "value": "Lead perguntou se é seguro e sobre LGPD para enviar dados dos alunos.",
+                  "confidence": "high",
+                  "evidence": [
+                    "é seguro? tem LGPD? posso mandar dados dos alunos?"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "product_knowledge.security_and_data",
+                    "product_knowledge.privacy_or_data_notes",
+                    "profile_name_assessment.first_name",
+                    "privacy_or_data_notes",
+                    "security_and_data"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4715,
+                "output_tokens": 481,
+                "cost_usd": 0.005701
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_7536d306affb430487b459c9850963f3"
+          },
+          "lead": "é seguro? tem LGPD? posso mandar dados dos alunos?"
+        }
+      ]
+    },
+    {
+      "id": "product-delta-out-of-profile",
+      "title": "Student/out-of-profile lead should be qualified gently",
+      "channel": "widget",
+      "checks": [
+        "out_of_profile_gentle",
+        "product_followup_source_keys",
+        "no_crm_lay_copy",
+        "owner_language_no_technical",
+        "llm_usage_required",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_77d6b25d552240c6be4c7f326c71c1ac",
+            "conversation_id": "real_eval_product-delta-out-of-profile",
+            "lead_id": "lead_product-delta-out-of-profile",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "out_of_profile"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Taliya is currently intended mainly for Pilates studios.",
+                  "If the person is a student, autonomous teacher, gym, clinic, non-Pilates business, or not-yet-open studio, qualify gently."
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.out_of_profile_redirect"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.out_of_profile_redirect",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Pedro, tudo bem? Hoje a Taliya é pensada principalmente para studios de Pilates.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.out_of_profile_redirect",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Se você é aluno, professor autônomo ou está falando de outro tipo de negócio, me conta rapidinho o contexto para eu não te orientar errado.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.out_of_profile_redirect",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "lead_is_student",
+                  "value": "lead says they are a student",
+                  "confidence": "high",
+                  "evidence": [
+                    "sou aluno, a Taliya serve pra mim?"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "product_knowledge.out_of_profile",
+                    "profile_name_assessment",
+                    "out_of_profile"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4694,
+                "output_tokens": 405,
+                "cost_usd": 0.005343
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_786409e6eb6540bface91d196f739877"
+          },
+          "lead": "sou aluno, a Taliya serve pra mim?"
+        }
+      ]
+    },
+    {
+      "id": "product-delta-diagnostic-refusal",
+      "title": "Diagnostic refusal should be respected",
+      "channel": "widget",
+      "checks": [
+        "mentions_all_prices",
+        "diagnostic_refusal_respected",
+        "has_product_source",
+        "no_crm_lay_copy",
+        "llm_usage_required",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_d2f9201e00d94b0992e7d01ccd82dbad",
+            "conversation_id": "real_eval_product-delta-diagnostic-refusal",
+            "lead_id": "lead_product-delta-diagnostic-refusal",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "product_price_question",
+                  "diagnostic_refusal"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_direct"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_direct",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "none",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_direct",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "plans",
+                    "prices",
+                    "availability_and_onboarding",
+                    "how_it_works",
+                    "routine_areas"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-4.1-mini",
+                "input_tokens": 5171,
+                "output_tokens": 326,
+                "cost_usd": 0.00259
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_da96c5eb7fc24162888a09b5ed7ec2ec"
+          },
+          "lead": "não quero diagnóstico agora, só me fala o preço"
+        }
+      ]
+    }
+  ]
+}

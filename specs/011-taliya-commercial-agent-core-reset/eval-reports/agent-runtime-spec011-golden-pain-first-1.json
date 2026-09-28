@@ -1,0 +1,1108 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-golden-pain-first-1",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-06-04T14:20:59Z",
+  "finishedAt": "2026-06-04T14:21:06Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "estimatedCostUsd": 0.005045,
+    "inputTokens": 4765,
+    "outputTokens": 327
+  },
+  "releaseGate": "fail",
+  "scenarios": [
+    {
+      "id": "final-pain-first",
+      "title": "Golden RC-011-053A pain-first opening",
+      "channel": "widget",
+      "checks": [
+        "route:diagnostic",
+        "diagnostic_offered_or_started",
+        "mentions_user_context",
+        "first_response_greeting",
+        "no_waitlist",
+        "template_ids_present",
+        "sales_inbox_projection_consistent",
+        "all_messages_short"
+      ],
+      "failures": [
+        "did not reuse lead context terms: ['whatsapp', 'interessado']"
+      ],
+      "budget_status": "within_budget",
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_spec011_abbf79a35cc2495ba34ec616e8613b67",
+            "conversation_id": "real_eval_final-pain-first",
+            "lead_id": "lead_final-pain-first",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_spec011_diagnostic_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "entry",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_in_progress",
+                "route": "diagnostic",
+                "opening_type": "cold_greeting_only",
+                "detected_intents": [
+                  "pain_statement",
+                  "interest_in_solutions"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": false,
+                "diagnostic_action": "ask_next",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "not_available",
+                "facts_used": [
+                  "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.cold_greeting",
+                  "diagnostic.offer_soft",
+                  "diagnostic.ask_active_students"
+                ],
+                "template_variables": {
+                  "opening.cold_greeting": {},
+                  "diagnostic.offer_soft": {
+                    "pain_context_human": {
+                      "kind": "long_text",
+                      "value": "Pelo que voce contou, existe um ponto da rotina do studio que merece ser organizado antes de comparar plano.",
+                      "source": "user_message",
+                      "evidence": [
+                        "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                      ],
+                      "max_length": 420
+                    }
+                  },
+                  "diagnostic.ask_active_students": {}
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.cold_greeting",
+                    "channel": "widget",
+                    "variables": {}
+                  },
+                  {
+                    "template_id": "diagnostic.offer_soft",
+                    "channel": null,
+                    "variables": {
+                      "pain_context_human": {
+                        "kind": "long_text",
+                        "value": "Pelo que voce contou, existe um ponto da rotina do studio que merece ser organizado antes de comparar plano.",
+                        "source": "user_message",
+                        "evidence": [
+                          "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                        ],
+                        "max_length": 420
+                      }
+                    }
+                  },
+                  {
+                    "template_id": "diagnostic.ask_active_students",
+                    "channel": "widget",
+                    "variables": {}
+                  }
+                ],
+                "diagnostic_ledger_status": "in_progress",
+                "next_question_kind": "plan_fit",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Em que posso ajudar?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.cold_greeting",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Pelo que voce contou, existe um ponto da rotina do studio que merece ser organizado antes de comparar plano.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "O que voce acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.offer_soft",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.ask_active_students",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "main_pain",
+                  "value": "perde muitos interessados no WhatsApp porque a equipe demora para responder",
+                  "confidence": "high",
+                  "evidence": [
+                    "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "in_progress",
+                "ledger": [],
+                "facts_used": [
+                  "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                ],
+                "main_bottleneck": null,
+                "pain_context_human": null,
+                "likely_cause": null,
+                "crm_base_recommendation": null,
+                "first_recommended_step": null,
+                "indicated_routines_or_agents": [],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": null,
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [
+                  "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                ],
+                "unknowns": [],
+                "confidence": "high",
+                "next_question": "active_students_or_size",
+                "validation_question": null,
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": {
+                "status": "none",
+                "reason": null,
+                "missing_fields": []
+              },
+              "handoff": {
+                "status": "none",
+                "reason": null
+              },
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "plans",
+                    "prices",
+                    "plan_comparison",
+                    "links",
+                    "demo_status",
+                    "waitlist_status",
+                    "checkout_status",
+                    "availability",
+                    "how_it_works",
+                    "routine_areas",
+                    "whatsapp_scope",
+                    "integration_scope",
+                    "out_of_profile",
+                    "unsupported_claims"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4765,
+                "output_tokens": 327,
+                "cost_usd": 0.005045
+              },
+              "confidence": "high",
+              "context_snapshot": {
+                "schema_version": "011.0",
+                "turn_id": "turn_widget_9ac6a7270c031a6f",
+                "conversation_id": "real_eval_final-pain-first",
+                "agent_key": "taliya_commercial",
+                "channel": "widget",
+                "inbound": {
+                  "message_id": "real-msg-final-pain-first-1",
+                  "idempotency_key": "widget:final-pain-first:1",
+                  "text": "perco muitos interessados no WhatsApp porque a equipe demora para responder",
+                  "message_type": "text",
+                  "timestamp": "2026-06-04T14:20:59Z"
+                },
+                "facts": [
+                  {
+                    "key": "source",
+                    "value": "pilates_landing",
+                    "source": "channel_metadata",
+                    "reliability": "internal",
+                    "renderable": false,
+                    "confidence": "medium",
+                    "evidence": [
+                      "conversation.source"
+                    ]
+                  },
+                  {
+                    "key": "channel_conversation_id",
+                    "value": "widget_final-pain-first",
+                    "source": "channel_metadata",
+                    "reliability": "internal",
+                    "renderable": false,
+                    "confidence": "medium",
+                    "evidence": [
+                      "conversation.channel_conversation_id"
+                    ]
+                  },
+                  {
+                    "key": "page_path",
+                    "value": "/pilates",
+                    "source": "channel_metadata",
+                    "reliability": "internal",
+                    "renderable": false,
+                    "confidence": "medium",
+                    "evidence": [
+                      "metadata.page_path"
+                    ]
+                  }
+                ],
+                "product_knowledge": [
+                  {
+                    "key": "plans",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": [
+                      {
+                        "id": "base",
+                        "name": "Base",
+                        "monthly_price_brl": 197,
+                        "price_label": "R$ 197/mes",
+                        "best_for": "Studios that want to organize the routine before active AI.",
+                        "included_agents": [],
+                        "whatsapp_availability": "No automatic WhatsApp AI replies.",
+                        "usage_boundary": "1 studio, 1 user, no AI message quota."
+                      },
+                      {
+                        "id": "one_agent",
+                        "name": "Essencial",
+                        "monthly_price_brl": 497,
+                        "price_label": "R$ 497/mes",
+                        "best_for": "Studios that want to solve one clear pain first.",
+                        "included_agents": [
+                          "1 main agent chosen during setup"
+                        ],
+                        "whatsapp_availability": "Requires the studio WhatsApp Business connected for that agent.",
+                        "usage_boundary": "1 studio, up to 2 users, 1,500 AI messages/month with hard cap."
+                      },
+                      {
+                        "id": "three_agents",
+                        "name": "Avance",
+                        "monthly_price_brl": 897,
+                        "price_label": "R$ 897/mes",
+                        "best_for": "Studios that want help in some priority routines.",
+                        "included_agents": [
+                          "3 main agents chosen during setup"
+                        ],
+                        "whatsapp_availability": "Requires the studio WhatsApp Business connected for included agents.",
+                        "usage_boundary": "1 studio, up to 5 users, 5,000 AI messages/month with hard cap."
+                      },
+                      {
+                        "id": "seven_agents",
+                        "name": "Completo",
+                        "monthly_price_brl": 1497,
+                        "price_label": "R$ 1.497/mes",
+                        "best_for": "Studios that want the complete Taliya.",
+                        "included_agents": [
+                          "Atendimento",
+                          "Agenda",
+                          "Vendas",
+                          "Financeiro",
+                          "Retencao",
+                          "Gestao",
+                          "Historico/Evolucao"
+                        ],
+                        "whatsapp_availability": "Requires the studio WhatsApp Business connected for the complete team.",
+                        "usage_boundary": "1 studio, up to 10 users, 15,000 AI messages/month with hard cap."
+                      }
+                    ],
+                    "excerpt": "Base (base) R$ 197/mes best_for=Studios that want to organize the routine before active AI. included=no active AI agents whatsapp=No automatic WhatsApp AI replies. usage=1 studio, 1 user, no AI message quota. | Essencial (one_agent) R$ 497/mes best_for=Studios that want to solve one clear pain first. included=1 main agent chosen during setup whatsapp=Requires the studio WhatsApp Business connected for that agent. usage=1 studio, up to 2 users, 1,500 AI messages/month with hard cap. | Avance (three_agents) R$ 897/mes best_for=Studios that want help in some priority routines. included=3 main agents chosen during setup whatsapp=Requires the studio WhatsApp Business connected for included agents. usage=1 studio, up to 5 users, 5,000 AI messages/month with hard cap. | Completo (seven_agents) R$ 1.497/mes best_for=Studios that want the complete Taliya. included=Atendimento, Agenda, Vendas, Financeiro, Retencao, Gestao, Historico/Evolucao whatsapp=Requires the studio WhatsApp Business connected for the complete team. usage=1 studio, up to 10 users, 15,000 AI messages/month with hard cap.",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.plans"
+                    ]
+                  },
+                  {
+                    "key": "prices",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": {
+                      "base": "R$ 197/mes",
+                      "one_agent": "R$ 497/mes",
+                      "three_agents": "R$ 897/mes",
+                      "seven_agents": "R$ 1.497/mes"
+                    },
+                    "excerpt": "{\"base\":\"R$ 197/mes\",\"one_agent\":\"R$ 497/mes\",\"seven_agents\":\"R$ 1.497/mes\",\"three_agents\":\"R$ 897/mes\"}",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.prices"
+                    ]
+                  },
+                  {
+                    "key": "plan_comparison",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": [
+                      "Base: Studios that want to organize the routine before active AI.",
+                      "Essencial: Studios that want to solve one clear pain first.",
+                      "Avance: Studios that want help in some priority routines.",
+                      "Completo: Studios that want the complete Taliya."
+                    ],
+                    "excerpt": "[\"Base: Studios that want to organize the routine before active AI.\",\"Essencial: Studios that want to solve one clear pain first.\",\"Avance: Studios that want help in some priority routines.\",\"Completo: Studios that want the complete Taliya.\"]",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.plan_comparison"
+                    ]
+                  },
+                  {
+                    "key": "links",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": {
+                      "landing": "https://www.taliya.com.br/pilates",
+                      "plans": "https://www.taliya.com.br/pilates/planos",
+                      "demonstration": "https://www.taliya.com.br/pilates/planos/demonstracao",
+                      "privacy": "https://www.taliya.com.br/privacidade"
+                    },
+                    "excerpt": "{\"demonstration\":\"https://www.taliya.com.br/pilates/planos/demonstracao\",\"landing\":\"https://www.taliya.com.br/pilates\",\"plans\":\"https://www.taliya.com.br/pilates/planos\",\"privacy\":\"https://www.taliya.com.br/privacidade\"}",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.links"
+                    ]
+                  },
+                  {
+                    "key": "demo_status",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": "available",
+                    "excerpt": "available",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.demo_status"
+                    ]
+                  },
+                  {
+                    "key": "waitlist_status",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": "limited_studios_waitlist",
+                    "excerpt": "limited_studios_waitlist",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.waitlist_status"
+                    ]
+                  },
+                  {
+                    "key": "checkout_status",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": "unavailable",
+                    "excerpt": "unavailable",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.checkout_status"
+                    ]
+                  },
+                  {
+                    "key": "availability",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": "Limited rollout for a small number of studios.",
+                    "excerpt": "Limited rollout for a small number of studios.",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.availability"
+                    ]
+                  },
+                  {
+                    "key": "how_it_works",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": "Taliya helps a Pilates studio organize the daily routine in one place: conversations, students, agenda, reposicoes, cobrancas, interested leads, and follow-ups. The team can see what needs action. When the studio WhatsApp Business is connected and configured, agents can support conversations with students and interested leads while the team follows and takes over when needed.",
+                    "excerpt": "Taliya helps a Pilates studio organize the daily routine in one place: conversations, students, agenda, reposicoes, cobrancas, interested leads, and follow-ups. The team can see what needs action. When the studio WhatsApp Business is connected and configured, agents can support conversations with students and interested leads while the team follows and takes over when needed.",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.how_it_works"
+                    ]
+                  },
+                  {
+                    "key": "routine_areas",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": {
+                      "atendimento": "Mensagens e duvidas comuns nao ficam perdidas.",
+                      "vendas_interessados": "Interessados, aulas experimentais, proximos passos e follow-up ficam organizados.",
+                      "agenda": "Aulas, horarios, faltas, encaixes e movimentos da agenda ficam mais claros.",
+                      "reposicoes": "Pedidos e pendencias de reposicao ficam organizados.",
+                      "cobrancas_financeiro": "Mensalidades, vencimentos, renovacoes e pendencias ficam mais visiveis.",
+                      "acompanhamento_alunos": "Alunos que somem, faltam ou precisam de retorno ficam no radar da equipe.",
+                      "gestao_prioridades": "A equipe enxerga o que precisa resolver primeiro."
+                    },
+                    "excerpt": "{\"acompanhamento_alunos\":\"Alunos que somem, faltam ou precisam de retorno ficam no radar da equipe.\",\"agenda\":\"Aulas, horarios, faltas, encaixes e movimentos da agenda ficam mais claros.\",\"atendimento\":\"Mensagens e duvidas comuns nao ficam perdidas.\",\"cobrancas_financeiro\":\"Mensalidades, vencimentos, renovacoes e pendencias ficam mais visiveis.\",\"gestao_prioridades\":\"A equipe enxerga o que precisa resolver primeiro.\",\"reposicoes\":\"Pedidos e pendencias de reposicao ficam organizados.\",\"vendas_interessados\":\"Interessados, aulas experimentais, proximos passos e follow-up ficam organizados.\"}",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.routine_areas"
+                    ]
+                  },
+                  {
+                    "key": "whatsapp_scope",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": "This commercial conversation runs on Taliya's own widget and Taliya's own WhatsApp number. For product agents to act on student WhatsApp conversations, the studio needs WhatsApp Business connected/configured. Students do not need to download an app or create a password; they talk through WhatsApp. Do not promise automatic setup inside this commercial chat.",
+                    "excerpt": "This commercial conversation runs on Taliya's own widget and Taliya's own WhatsApp number. For product agents to act on student WhatsApp conversations, the studio needs WhatsApp Business connected/configured. Students do not need to download an app or create a password; they talk through WhatsApp. Do not promise automatic setup inside this commercial chat.",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.whatsapp_scope"
+                    ]
+                  },
+                  {
+                    "key": "integration_scope",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": "Do not promise Instagram integration, integration with the lead's current system, mass messaging, checkout, payment links, or automatic migration. If a specific integration is not officially known, say the limit and offer human confirmation.",
+                    "excerpt": "Do not promise Instagram integration, integration with the lead's current system, mass messaging, checkout, payment links, or automatic migration. If a specific integration is not officially known, say the limit and offer human confirmation.",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.integration_scope"
+                    ]
+                  },
+                  {
+                    "key": "out_of_profile",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": "Taliya is currently intended mainly for Pilates studios. If the person is a student, autonomous teacher, gym, clinic, non-Pilates business, or not-yet-open studio, qualify gently. Do not force a studio diagnostic or promise fit for another niche.",
+                    "excerpt": "Taliya is currently intended mainly for Pilates studios. If the person is a student, autonomous teacher, gym, clinic, non-Pilates business, or not-yet-open studio, qualify gently. Do not force a studio diagnostic or promise fit for another niche.",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.out_of_profile"
+                    ]
+                  },
+                  {
+                    "key": "unsupported_claims",
+                    "source": "official_product_knowledge",
+                    "version": "taliya-commercial-2026-05-22",
+                    "value": [
+                      "checkout",
+                      "guaranteed ROI",
+                      "specific integration without confirmation",
+                      "exact broad availability date",
+                      "payment link while checkout is unavailable"
+                    ],
+                    "excerpt": "[\"checkout\",\"guaranteed ROI\",\"specific integration without confirmation\",\"exact broad availability date\",\"payment link while checkout is unavailable\"]",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "product_knowledge.unsupported_claims"
+                    ]
+                  },
+                  {
+                    "key": "spec006.product_positioning",
+                    "source": "spec_006_product_contract",
+                    "version": "spec006-72326e219f12",
+                    "value": {
+                      "source_path": "specs/006-crm-operational-core/spec.md",
+                      "heading": "Product Positioning",
+                      "excerpt": "Taliya is not only a set of agents and not only WhatsApp automation.\n\nTaliya is:\n\n```text\nA vertical operational CRM for Pilates studios, with AI agents integrated into the CRM.\n```\n\nThe Base plan uses CRM features without active agent automation. Paid agent plans unlock one, three or seven active agents that can work in manual, copilot or autonomous mode according to entitlement and configuration."
+                    },
+                    "excerpt": "{\"excerpt\":\"Taliya is not only a set of agents and not only WhatsApp automation.\\n\\nTaliya is:\\n\\n```text\\nA vertical operational CRM for Pilates studios, with AI agents integrated into the CRM.\\n```\\n\\nThe Base plan uses CRM features without active agent automation. Paid agent plans unlock one, three or seven active agents that can work in manual, copilot or autonomous mode according to entitlement and configuration.\",\"heading\":\"Product Positioning\",\"source_path\":\"specs/006-crm-operational-core/spec.md\"}",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "specs/006-crm-operational-core/spec.md#Product Positioning"
+                    ]
+                  },
+                  {
+                    "key": "spec006.plan_entitlements",
+                    "source": "spec_006_product_contract",
+                    "version": "spec006-dbd76cf965b1",
+                    "value": {
+                      "source_path": "specs/006-crm-operational-core/agent-plan-entitlements.pt-BR.md",
+                      "heading": "Regra central",
+                      "excerpt": "O numero de agentes muda automacao, copiloto, execucoes, cotas e bloqueios.\n\nO numero de agentes nao muda o fato de que o Taliya e um CRM completo.\n\n```text\n0 agentes = CRM completo manual/programatico.\n1 agente = CRM completo + 1 dominio com IA ativa.\n3 agentes = CRM completo + pacote operacional principal com IA ativa.\n7 agentes = CRM completo + suite completa de agentes.\n```"
+                    },
+                    "excerpt": "{\"excerpt\":\"O numero de agentes muda automacao, copiloto, execucoes, cotas e bloqueios.\\n\\nO numero de agentes nao muda o fato de que o Taliya e um CRM completo.\\n\\n```text\\n0 agentes = CRM completo manual/programatico.\\n1 agente = CRM completo + 1 dominio com IA ativa.\\n3 agentes = CRM completo + pacote operacional principal com IA ativa.\\n7 agentes = CRM completo + suite completa de agentes.\\n```\",\"heading\":\"Regra central\",\"source_path\":\"specs/006-crm-operational-core/agent-plan-entitlements.pt-BR.md\"}",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "specs/006-crm-operational-core/agent-plan-entitlements.pt-BR.md#Regra central"
+                    ]
+                  },
+                  {
+                    "key": "spec006.access_subscription",
+                    "source": "spec_006_product_contract",
+                    "version": "spec006-2aed74d6c791",
+                    "value": {
+                      "sources": [
+                        {
+                          "source_path": "specs/006-crm-operational-core/access-subscription-pending-confirmation-approved.pt-BR.md",
+                          "heading": "Papel Da Tela",
+                          "excerpt": "Esta tela aparece imediatamente depois que o usuario clica em `Continuar para pagamento seguro` na tela 74.\n\nEla cumpre um papel unico: manter o studio em um estado confiavel enquanto a assinatura e confirmada pelo provedor externo. Ela nao vende plano, nao coleta pagamento, nao configura o CRM e nao libera onboarding.\n\nFluxo aprovado:\n\n```text\nLanding / Planos\n-> criar conta ou entrar\n-> 74 Revisar assinatura\n-> 75 Estamos confirmando sua assinatura\n-> 76 Resolver assinatura / bloqueio, se falhar ou ficar pendente demais\n-> 77 Assinatura confirmada / seguir para onboarding, se confirmar\n```"
+                        },
+                        {
+                          "source_path": "specs/006-crm-operational-core/access-subscription-confirmed-setup-approved.pt-BR.md",
+                          "heading": "Papel Da Tela",
+                          "excerpt": "Esta tela aparece quando a Taliya recebe confirmacao confiavel da assinatura pelo provedor externo.\n\nEla fecha o fluxo de assinatura com sensacao clara de sucesso e leva o usuario para o setup inicial guiado. Ela nao e CRM, nao e onboarding completo e nao deve mostrar operacao do studio. O CRM continua bloqueado ate a configuracao inicial ser concluida.\n\nFluxo aprovado:\n\n```text\nLanding / Planos\n-> criar conta ou entrar\n-> 74 Revisar assinatura\n-> 75 Estamos confirmando sua assinatura\n-> 77 Assinatura confirmada\n-> Setup inicial guiado\n```\n\nA 77 tambem pode aparecer em login futuro quando a assinatura ja esta confirmada, mas o setup inicial ainda nao foi concluido."
+                        }
+                      ]
+                    },
+                    "excerpt": "{\"sources\":[{\"excerpt\":\"Esta tela aparece imediatamente depois que o usuario clica em `Continuar para pagamento seguro` na tela 74.\\n\\nEla cumpre um papel unico: manter o studio em um estado confiavel enquanto a assinatura e confirmada pelo provedor externo. Ela nao vende plano, nao coleta pagamento, nao configura o CRM e nao libera onboarding.\\n\\nFluxo aprovado:\\n\\n```text\\nLanding / Planos\\n-> criar conta ou entrar\\n-> 74 Revisar assinatura\\n-> 75 Estamos confirmando sua assinatura\\n-> 76 Resolver assinatura / bloqueio, se falhar ou ficar pendente demais\\n-> 77 Assinatura confirmada / seguir para onboarding, se confirmar\\n```\",\"heading\":\"Papel Da Tela\",\"source_path\":\"specs/006-crm-operational-core/access-subscription-pending-confirmation-approved.pt-BR.md\"},{\"excerpt\":\"Esta tela aparece quando a Taliya recebe confirmacao confiavel da assinatura pelo provedor externo.\\n\\nEla fecha o ...",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "specs/006-crm-operational-core/access-subscription-pending-confirmation-approved.pt-BR.md#Papel Da Tela",
+                      "specs/006-crm-operational-core/access-subscription-confirmed-setup-approved.pt-BR.md#Papel Da Tela"
+                    ]
+                  },
+                  {
+                    "key": "spec006.navigation_routes",
+                    "source": "spec_006_product_contract",
+                    "version": "spec006-ab30231decbb",
+                    "value": {
+                      "source_path": "specs/006-crm-operational-core/final-navigation-web-app.pt-BR.md",
+                      "heading": "Pre-CRM",
+                      "excerpt": "Estas telas existem antes do usuario acessar o CRM operacional e nao aparecem na sidebar:\n\n| Etapa | Papel | Observacao |\n| --- | --- | --- |\n| Criar conta basica | Criar login antes da assinatura. | Google, Microsoft ou e-mail com link seguro; sem senha na primeira tela. |\n| Login | Entrar na conta. | Conta sem assinatura confirmada nao acessa `/app`. |\n| Escolher plano | Selecionar plano Taliya. | Antes do checkout hospedado. |\n| Checkout hospedado | Pagar/assinar com provedor externo. | Nao e pagina do CRM operacional. |\n| Confirmacao de assinatura | Aguardar confirmacao segura apos iniciar pagamento. | Imagem 75; verificacao automatica, com retomar pagamento e suporte como fallback. |\n| Assinatura pendente/falha | Retomar pagamento ou falar com suporte. | Acesso limitado; imagem 76 aprovada para resolver assinatura. |\n| Assinatura confirmada | Confirmar sucesso e iniciar setup guiado. | Imagem 77; CRM ainda bloqueado ate configuracao inicial. |\n| Onboarding/setup | Configurar o studio apos assinatura confirmada. | Setup guiado por agente de configuracao; usa shell proprio de onboarding, nao a sidebar operacional. |\n\nRegra: antes da assinatura confirmada, o usuario nao acessa `/app`, nao configura studio, nao importa dados, nao convida equipe e nao ativa agentes."
+                    },
+                    "excerpt": "{\"excerpt\":\"Estas telas existem antes do usuario acessar o CRM operacional e nao aparecem na sidebar:\\n\\n| Etapa | Papel | Observacao |\\n| --- | --- | --- |\\n| Criar conta basica | Criar login antes da assinatura. | Google, Microsoft ou e-mail com link seguro; sem senha na primeira tela. |\\n| Login | Entrar na conta. | Conta sem assinatura confirmada nao acessa `/app`. |\\n| Escolher plano | Selecionar plano Taliya. | Antes do checkout hospedado. |\\n| Checkout hospedado | Pagar/assinar com provedor externo. | Nao e pagina do CRM operacional. |\\n| Confirmacao de assinatura | Aguardar confirmacao segura apos iniciar pagamento. | Imagem 75; verificacao automatica, com retomar pagamento e suporte como fallback. |\\n| Assinatura pendente/falha | Retomar pagamento ou falar com suporte. | Acesso limitado; imagem 76 aprovada para resolver assinatura. |\\n| Assinatura confirmada | Confirmar suces...",
+                    "missing": false,
+                    "renderable": false,
+                    "evidence": [
+                      "specs/006-crm-operational-core/final-navigation-web-app.pt-BR.md#Pre-CRM"
+                    ]
+                  }
+                ],
+                "compact_memory": [],
+                "recent_transcript": [],
+                "diagnostic_ledger": [],
+                "waitlist_state": {},
+                "demo_state": {},
+                "handoff_state": {
+                  "status": "none"
+                },
+                "sales_inbox_inputs": {
+                  "lead_id": "lead_final-pain-first",
+                  "source": "pilates_landing",
+                  "entry_intent": null,
+                  "channel_conversation_id": "widget_final-pain-first",
+                  "human_status": "none",
+                  "diagnostic_status": null,
+                  "diagnostic_final_fields": {},
+                  "waitlist_status": null,
+                  "demo_status": null
+                }
+              },
+              "turn_situation": {
+                "schema_version": "011.turn_situation.v1",
+                "turn_id": "turn_widget_9ac6a7270c031a6f",
+                "conversation_id": "real_eval_final-pain-first",
+                "channel": "widget",
+                "mode": "entry",
+                "pending_question_key": null,
+                "completed_diagnostic_keys": [],
+                "missing_diagnostic_keys": [
+                  "active_students_or_size",
+                  "main_pain",
+                  "pain_detail",
+                  "current_process",
+                  "priority",
+                  "urgency"
+                ],
+                "allowed_actions": [
+                  "answer_general_interest",
+                  "answer_source_opening",
+                  "offer_diagnostic_from_pain",
+                  "answer_direct_product_question",
+                  "send_demo",
+                  "answer_plan_fit_with_diagnostic_offer",
+                  "answer_how_it_works",
+                  "answer_whatsapp_scope",
+                  "answer_integration_scope_safely",
+                  "answer_price_objection",
+                  "offer_diagnostic_after_answer",
+                  "clarify_product_question",
+                  "start_requested_diagnostic",
+                  "handoff_requested",
+                  "clarify_ambiguous_opening"
+                ],
+                "required_obligations": [
+                  "llm_must_choose_one_allowed_action",
+                  "llm_must_interpret_latest_inbound"
+                ],
+                "eligible_template_groups": [
+                  "entry_opening",
+                  "product_answer",
+                  "diagnostic_offer"
+                ],
+                "official_fact_keys_available": [
+                  "availability",
+                  "checkout_status",
+                  "demo_status",
+                  "how_it_works",
+                  "integration_scope",
+                  "links",
+                  "out_of_profile",
+                  "plan_comparison",
+                  "plans",
+                  "prices",
+                  "routine_areas",
+                  "spec006.access_subscription",
+                  "spec006.navigation_routes",
+                  "spec006.plan_entitlements",
+                  "spec006.product_positioning",
+                  "unsupported_claims",
+                  "waitlist_status",
+                  "whatsapp_scope"
+                ],
+                "state_constraints": [
+                  "raw_text_keyword_matching_for_commercial_action_forbidden",
+                  "template_selection_from_raw_text_forbidden"
+                ],
+                "forbidden_actions_now": [
+                  "join_waitlist",
+                  "collect_waitlist_missing_detail"
+                ]
+              },
+              "action_decision": {
+                "schema_version": "011.action_decision.v1",
+                "decision_id": "dec_turn_widget_9ac6a7270c031a6f_1",
+                "turn_id": "turn_widget_9ac6a7270c031a6f",
+                "conversation_id": "real_eval_final-pain-first",
+                "channel": "widget",
+                "agent_key": "taliya_commercial",
+                "selected_action": "offer_diagnostic_from_pain",
+                "interpreted_intents": [
+                  "pain_statement",
+                  "interest_in_solutions"
+                ],
+                "direct_question": {
+                  "present": false,
+                  "answered_first": false,
+                  "answer_obligations": []
+                },
+                "captured_slots": [
+                  {
+                    "key": "main_pain",
+                    "value": "perde muitos interessados no WhatsApp porque a equipe demora para responder",
+                    "evidence": [
+                      "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                    ],
+                    "confidence": "high"
+                  }
+                ],
+                "product_fact_keys_used": [
+                  "routine_areas",
+                  "whatsapp_scope",
+                  "how_it_works"
+                ],
+                "numeric_interpretations": [],
+                "diagnostic_intent": {
+                  "status": "not_selected",
+                  "details": {}
+                },
+                "demo_intent": {
+                  "status": "not_selected",
+                  "details": {}
+                },
+                "waitlist_intent": {
+                  "status": "not_selected",
+                  "details": {}
+                },
+                "handoff_intent": {
+                  "status": "not_selected",
+                  "details": {}
+                },
+                "reply_goal": "Acolher a dor e oferecer um diagnóstico curto para entender tamanho, processo atual, prioridade e urgência.",
+                "confidence": "high",
+                "evidence": [
+                  "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                ],
+                "needs_clarification": false,
+                "repair_hints": []
+              },
+              "action_repair_attempt_count": 0,
+              "conductor_json": {
+                "schema_version": "011.0",
+                "decision_id": "decision_246b0e2082c64d3e952f511db06c18db",
+                "turn_id": "turn_widget_9ac6a7270c031a6f",
+                "conversation_id": "real_eval_final-pain-first",
+                "channel": "widget",
+                "agent_key": "taliya_commercial",
+                "role": "diagnostic",
+                "route": "diagnostic",
+                "previous_state": "entry",
+                "current_state": "diagnostic_in_progress",
+                "next_state": "diagnostic_in_progress",
+                "detected_intents": [
+                  "pain_statement",
+                  "interest_in_solutions"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": false,
+                "facts": [
+                  {
+                    "key": "main_pain",
+                    "value": "perde muitos interessados no WhatsApp porque a equipe demora para responder",
+                    "source": "user_message",
+                    "reliability": "customer_provided",
+                    "renderable": false,
+                    "confidence": "high",
+                    "evidence": [
+                      "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                    ]
+                  }
+                ],
+                "numeric_interpretations": [],
+                "diagnostic": {
+                  "action": "ask_next",
+                  "ledger_updates": [],
+                  "next_question_key": "active_students_or_size",
+                  "final_fields": {}
+                },
+                "demo": {
+                  "customer_facing_concept": "commercial_product_demo",
+                  "status": "not_offered",
+                  "next_step": "none"
+                },
+                "waitlist": {
+                  "eligibility": "unknown",
+                  "status": "none",
+                  "missing_details": []
+                },
+                "handoff": {
+                  "status": "none",
+                  "reason": null
+                },
+                "language_policy": {
+                  "language_register": "studio_owner_practical",
+                  "crm_term_policy": "avoid_by_default",
+                  "crm_allowed_reasons": [],
+                  "crm_evidence": []
+                },
+                "template_plan": {
+                  "items": [
+                    {
+                      "template_id": "opening.cold_greeting",
+                      "channel": "widget",
+                      "variables": {}
+                    },
+                    {
+                      "template_id": "diagnostic.offer_soft",
+                      "channel": null,
+                      "variables": {
+                        "pain_context_human": {
+                          "kind": "long_text",
+                          "value": "Pelo que voce contou, existe um ponto da rotina do studio que merece ser organizado antes de comparar plano.",
+                          "source": "user_message",
+                          "evidence": [
+                            "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                          ],
+                          "max_length": 420
+                        }
+                      }
+                    },
+                    {
+                      "template_id": "diagnostic.ask_active_students",
+                      "channel": "widget",
+                      "variables": {}
+                    }
+                  ],
+                  "chunk_policy": "default"
+                },
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_internal_text_leak": true,
+                  "no_early_contact_capture": true,
+                  "no_human_overlap": true
+                },
+                "confidence": "high",
+                "repair_hints": []
+              },
+              "validator_results": [
+                {
+                  "decision_id": "decision_246b0e2082c64d3e952f511db06c18db",
+                  "status": "passed",
+                  "errors": [],
+                  "warnings": [],
+                  "repair_attempt_count": 1,
+                  "final_disposition": "repaired"
+                }
+              ],
+              "repair_attempts": [
+                {
+                  "attempted": true,
+                  "attempt_count": 1,
+                  "status": "repaired",
+                  "errors_sent": [
+                    "first_turn_diagnostic_missing_greeting",
+                    "diagnostic_start_must_ask_active_students"
+                  ],
+                  "repaired_decision": {
+                    "schema_version": "011.0",
+                    "decision_id": "decision_246b0e2082c64d3e952f511db06c18db",
+                    "turn_id": "turn_widget_9ac6a7270c031a6f",
+                    "conversation_id": "real_eval_final-pain-first",
+                    "channel": "widget",
+                    "agent_key": "taliya_commercial",
+                    "role": "diagnostic",
+                    "route": "diagnostic",
+                    "previous_state": "entry",
+                    "current_state": "diagnostic_in_progress",
+                    "next_state": "diagnostic_in_progress",
+                    "detected_intents": [
+                      "pain_statement",
+                      "interest_in_solutions"
+                    ],
+                    "direct_question_present": false,
+                    "direct_question_answered_first": false,
+                    "facts": [
+                      {
+                        "key": "main_pain",
+                        "value": "perde muitos interessados no WhatsApp porque a equipe demora para responder",
+                        "source": "user_message",
+                        "reliability": "customer_provided",
+                        "renderable": false,
+                        "confidence": "high",
+                        "evidence": [
+                          "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                        ]
+                      }
+                    ],
+                    "numeric_interpretations": [],
+                    "diagnostic": {
+                      "action": "ask_next",
+                      "ledger_updates": [],
+                      "next_question_key": "active_students_or_size",
+                      "final_fields": {}
+                    },
+                    "demo": {
+                      "customer_facing_concept": "commercial_product_demo",
+                      "status": "not_offered",
+                      "next_step": "none"
+                    },
+                    "waitlist": {
+                      "eligibility": "unknown",
+                      "status": "none",
+                      "missing_details": []
+                    },
+                    "handoff": {
+                      "status": "none",
+                      "reason": null
+                    },
+                    "language_policy": {
+                      "language_register": "studio_owner_practical",
+                      "crm_term_policy": "avoid_by_default",
+                      "crm_allowed_reasons": [],
+                      "crm_evidence": []
+                    },
+                    "template_plan": {
+                      "items": [
+                        {
+                          "template_id": "opening.cold_greeting",
+                          "channel": "widget",
+                          "variables": {}
+                        },
+                        {
+                          "template_id": "diagnostic.offer_soft",
+                          "channel": null,
+                          "variables": {
+                            "pain_context_human": {
+                              "kind": "long_text",
+                              "value": "Pelo que voce contou, existe um ponto da rotina do studio que merece ser organizado antes de comparar plano.",
+                              "source": "user_message",
+                              "evidence": [
+                                "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                              ],
+                              "max_length": 420
+                            }
+                          }
+                        },
+                        {
+                          "template_id": "diagnostic.ask_active_students",
+                          "channel": "widget",
+                          "variables": {}
+                        }
+                      ],
+                      "chunk_policy": "default"
+                    },
+                    "policy_checks": {
+                      "direct_question_answered_first": true,
+                      "diagnostic_timing_ok": true,
+                      "waitlist_timing_ok": true,
+                      "official_facts_only": true,
+                      "no_internal_text_leak": true,
+                      "no_early_contact_capture": true,
+                      "no_human_overlap": true
+                    },
+                    "confidence": "high",
+                    "repair_hints": []
+                  },
+                  "model_usage": null
+                }
+              ],
+              "runtime_state": {
+                "schema_version": "011.runtime_state_diff.v1",
+                "source": "repaired_decision",
+                "decision_id": "decision_246b0e2082c64d3e952f511db06c18db",
+                "turn_id": "turn_widget_9ac6a7270c031a6f",
+                "conversation_id": "real_eval_final-pain-first",
+                "agent_key": "taliya_commercial",
+                "channel": "widget",
+                "state_transition": {
+                  "previous_state": "entry",
+                  "decision_current_state": "diagnostic_in_progress",
+                  "next_state": "diagnostic_in_progress"
+                },
+                "set": {
+                  "current_state": "diagnostic_in_progress",
+                  "last_decision_id": "decision_246b0e2082c64d3e952f511db06c18db",
+                  "last_turn_id": "turn_widget_9ac6a7270c031a6f",
+                  "last_route": "diagnostic",
+                  "last_role": "diagnostic",
+                  "last_confidence": "high",
+                  "last_selected_template_ids": [
+                    "opening.cold_greeting",
+                    "diagnostic.offer_soft",
+                    "diagnostic.ask_active_students"
+                  ],
+                  "diagnostic": {
+                    "action": "ask_next",
+                    "next_question_key": "active_students_or_size",
+                    "final_fields": {},
+                    "status": "in_progress"
+                  }
+                },
+                "append": {
+                  "diagnostic_ledger": [],
+                  "fact_updates": [
+                    {
+                      "key": "main_pain",
+                      "value": "perde muitos interessados no WhatsApp porque a equipe demora para responder",
+                      "source": "user_message",
+                      "reliability": "customer_provided",
+                      "renderable": false,
+                      "confidence": "high",
+                      "evidence": [
+                        "\"perco muitos interessados no WhatsApp porque a equipe demora para responder\""
+                      ]
+                    }
+                  ]
+                },
+                "validation": {
+                  "status": "passed",
+                  "final_disposition": "repaired",
+                  "repair_attempt_count": 1
+                }
+              },
+              "sales_inbox_projection": {
+                "conversation_id": "real_eval_final-pain-first",
+                "lead_id": "lead_final-pain-first",
+                "commercial_stage": "diagnostic_in_progress",
+                "summary": "Estado comercial: diagnostic_in_progress",
+                "diagnostic_status": "in_progress",
+                "waitlist_status": "none",
+                "handoff_status": "none",
+                "identity": [],
+                "fields": {
+                  "template_ids": [
+                    "opening.cold_greeting",
+                    "diagnostic.offer_soft",
+                    "diagnostic.ask_active_students"
+                  ],
+                  "validator_status": "passed",
+                  "validator_final_disposition": "repaired",
+                  "source_labels": {
+                    "channel": "widget",
+                    "source": "pilates_landing",
+                    "channel_conversation_id": "widget_final-pain-first",
+                    "state_source": "repaired_decision"
+                  },
+                  "operator_next_action": "none"
+                }
+              },
+              "delivery_events": [
+                {
+                  "event": "rendered",
+                  "idempotency_key": "widget:final-pain-first:1",
+                  "status": "planned",
+                  "metadata": {
+                    "message_count": 6,
+                    "shadow_mode": false,
+                    "delivery_suppressed": false,
+                    "suppression_reason": null
+                  }
+                }
+              ],
+              "trace_complete": true
+            },
+            "trace_id": "trace_turn_widget_9ac6a7270c031a6f_b2b3b8ef6429659a",
+            "delivery_control": {
+              "shadow_mode": false,
+              "delivery_suppressed": false,
+              "suppression_reason": null,
+              "rendered_message_count": 6,
+              "trace_contains_rendered_messages": true
+            }
+          },
+          "lead": "perco muitos interessados no WhatsApp porque a equipe demora para responder"
+        }
+      ]
+    }
+  ]
+}

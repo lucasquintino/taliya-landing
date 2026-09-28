@@ -1,0 +1,163 @@
+{
+  "schema": "012.sales_inbox_projection_export.v1",
+  "scenario_id": "t012-046-mocked-sales-inbox-projection",
+  "proof_mode": "mocked_no_cost",
+  "required_projection_fields": [
+    "conversation_id",
+    "lead_id",
+    "commercial_stage",
+    "diagnostic_status",
+    "fields"
+  ],
+  "required_nested_fields": [
+    "template_ids",
+    "validator_status",
+    "source_labels"
+  ],
+  "turn_count": 4,
+  "projection_count": 3,
+  "projection_complete": true,
+  "missing_required_fields": {},
+  "missing_projection_turn_indexes": [],
+  "conversation_summary": {
+    "turns_passed": 3,
+    "final_state": {
+      "conversation_id": "conv_t012_046_mocked_projection",
+      "lead_id": "lead_t012_046_mocked_projection",
+      "source": "pilates_landing",
+      "summary": "Lead perguntou preco, iniciou diagnostico e pediu humano.",
+      "canonical_state": "human_handoff",
+      "answered_obligations": [
+        "quanto custa?"
+      ],
+      "human_status": "requested"
+    },
+    "total_model_operations": 5,
+    "total_cost_usd": 0.0
+  },
+  "turns": [
+    {
+      "index": 0,
+      "status": "delivered",
+      "mode": "entry",
+      "selected_action": "answer_direct_product_question",
+      "template_ids": [
+        "product.price_direct",
+        "diagnostic.price_hook"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "conv_t012_046_mocked_projection",
+        "lead_id": "lead_t012_046_mocked_projection",
+        "commercial_stage": "diagnostic_offered",
+        "summary": "Estado comercial: diagnostic_offered",
+        "diagnostic_status": "offered",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "product.price_direct",
+            "diagnostic.price_hook"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "status": "delivered",
+      "mode": "entry",
+      "selected_action": "start_requested_diagnostic",
+      "template_ids": [
+        "diagnostic.start",
+        "diagnostic.ask_active_students"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "conv_t012_046_mocked_projection",
+        "lead_id": "lead_t012_046_mocked_projection",
+        "commercial_stage": "diagnostic_waiting_answer",
+        "summary": "Lead perguntou preco, iniciou diagnostico e pediu humano.",
+        "diagnostic_status": "in_progress",
+        "waitlist_status": "none",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "diagnostic.start",
+            "diagnostic.ask_active_students"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "none"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "status": "delivered",
+      "mode": "diagnostic",
+      "selected_action": "handoff_requested",
+      "template_ids": [
+        "handoff.acknowledge"
+      ],
+      "projection_required": true,
+      "projection_present": true,
+      "missing_required_fields": [],
+      "projection": {
+        "conversation_id": "conv_t012_046_mocked_projection",
+        "lead_id": "lead_t012_046_mocked_projection",
+        "commercial_stage": "human_handoff",
+        "summary": "Lead perguntou preco, iniciou diagnostico e pediu humano.",
+        "diagnostic_status": "not_started",
+        "waitlist_status": "none",
+        "handoff_status": "requested",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "handoff.acknowledge"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "pilates_landing",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "human_follow_up",
+          "handoff_reason": "preferiu falar com uma pessoa da equipe",
+          "human_active": true,
+          "ai_paused": true
+        }
+      }
+    },
+    {
+      "index": 3,
+      "status": "suppressed",
+      "mode": "handoff",
+      "selected_action": null,
+      "template_ids": [],
+      "projection_required": false,
+      "projection_present": false,
+      "missing_required_fields": [],
+      "projection": {}
+    }
+  ]
+}

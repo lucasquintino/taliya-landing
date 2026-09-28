@@ -1,0 +1,617 @@
+{
+  "number": 11,
+  "scenario_id": "ideal_turn_11",
+  "channel": "whatsapp",
+  "required_proof": "Demo request: official demo path only; demo interest proposed.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico completo e entregue. Demo: {\"status\": \"not_applicable\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"not_qualified\", \"intent\": \"\"}.\nstate: {\"diagnostic\": {\"ledger\": {\"lead_count\": {\"status\": \"answered\", \"answer_value\": \"120\"}, \"response_delay_impact\": {\"status\": \"answered\", \"answer_value\": \"perde interessados porque a resposta sai tarde demais\"}}, \"status\": \"complete\", \"next_question_key\": null}, \"demo\": {\"status\": \"not_applicable\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"not_qualified\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "user",
+      "content": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "A Taliya e a IA do seu studio de Pilates para organizar a rotina que faz o studio girar: agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "content": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Base: R$ 197/mes. Essencial: R$ 497/mes. Avance: R$ 897/mes. Completo: R$ 1.497/mes."
+    },
+    {
+      "role": "user",
+      "content": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "content": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "content": "120"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "A Taliya e a IA do seu studio de Pilates para organizar a rotina que faz o studio girar: agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "content": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "content": "minha maior dor e perder interessado porque demoramos pra responder"
+    },
+    {
+      "role": "assistant",
+      "content": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "content": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "content": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "content": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "content": "hoje e planilha e caderno mesmo, nada organizado"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "content": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "content": "minha prioridade e nao perder mais nenhum lead novo"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "content": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "content": "quero resolver isso agora, esse mes ainda"
+    },
+    {
+      "role": "assistant",
+      "content": "Claro, faco sim."
+    },
+    {
+      "role": "assistant",
+      "content": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje."
+    },
+    {
+      "role": "user",
+      "content": "consigo ver funcionando antes?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"opening\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "opening",
+          "templates": [
+            {
+              "template_id": "opening.cold_greeting",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.cold_greeting_named",
+              "required_variables": [
+                "first_name"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.diagnostic_cta",
+              "required_variables": [],
+              "optional_variables": [
+                "first_name"
+              ]
+            },
+            {
+              "template_id": "opening.general_interest",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.instagram_source",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.site_cta",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "opening.widget_empty_diagnostic",
+              "required_variables": [],
+              "optional_variables": []
+            }
+          ],
+          "variable_specs": {
+            "first_name": {
+              "kind": "short_text",
+              "max_length": 40,
+              "allowed_sources": [
+                "channel_metadata",
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Only a verified real person first name; never a studio name, handle, phone, internal reliability label, or unverified profile value."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "demo_interest",
+        "price_question"
+      ],
+      "direct_question": "consigo ver funcionando antes?",
+      "customer_need": "quer reduzir perda de leads por demora no WhatsApp e quer ver a solução antes de avançar",
+      "pain_context": "a equipe só responde à noite e o lead já fecha com outro studio",
+      "source_context": "Instagram",
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "lead_count",
+          "kind": "unknown_number",
+          "raw_text": "esse mes ainda",
+          "value_text": "este mês",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        },
+        {
+          "key": "pain",
+          "kind": "pain",
+          "raw_text": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio",
+          "value_text": "resposta tarde faz perder lead novo",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "consigo ver funcionando antes?",
+        "answering_template_id": "opening.diagnostic_cta",
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "diagnostic already complete in state snapshot"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "state snapshot demo not_applicable"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_qualified",
+      "intent": "",
+      "missing_details": [],
+      "evidence": [
+        "state snapshot waitlist not_qualified"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "no human handoff needed"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "opening.diagnostic_cta"
+      ],
+      "variables": [],
+      "evidence": [
+        "approved template catalog",
+        "user_message"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "interest",
+      "last_intent": "demo_interest",
+      "diagnostic_status": "complete",
+      "waitlist_status": "not_qualified",
+      "handoff_status": "none",
+      "next_action_hint": "answer demo/preview question with diagnostic CTA"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": [
+      "User asked for preview; only approved opening CTA template is available in this route"
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_ideal_turn_11",
+    "conversation_id": "spike_conv_ideal_turn_11",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "demo_interest",
+        "price_question"
+      ],
+      "direct_question": "consigo ver funcionando antes?",
+      "customer_need": "quer reduzir perda de leads por demora no WhatsApp e quer ver a solução antes de avançar",
+      "pain_context": "a equipe só responde à noite e o lead já fecha com outro studio",
+      "source_context": "Instagram",
+      "mixed_intent": true,
+      "extracted_facts": [
+        {
+          "key": "lead_count",
+          "kind": "unknown_number",
+          "raw_text": "esse mes ainda",
+          "value": "este mês",
+          "evidence": [
+            "user_message"
+          ]
+        },
+        {
+          "key": "pain",
+          "kind": "pain",
+          "raw_text": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio",
+          "value": "resposta tarde faz perder lead novo",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "consigo ver funcionando antes?",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "diagnostic already complete in state snapshot"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": [
+        "state snapshot demo not_applicable"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_qualified",
+      "intent": "",
+      "missing_details": [],
+      "evidence": [
+        "state snapshot waitlist not_qualified"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "none",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "no human handoff needed"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "opening.diagnostic_cta"
+      ],
+      "variables": {},
+      "evidence": [
+        "approved template catalog",
+        "user_message"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {},
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "interest",
+      "last_intent": "demo_interest",
+      "diagnostic_status": "complete",
+      "waitlist_status": "not_qualified",
+      "handoff_status": "none",
+      "next_action_hint": "answer demo/preview question with diagnostic CTA"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "approved template catalog",
+        "user_message"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "User asked for preview; only approved opening CTA template is available in this route"
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 10107,
+      "output_tokens": 510,
+      "cost_usd": 0.004346,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_ideal_turn_11",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Claro, faco sim.",
+      "template_id": "opening.diagnostic_cta",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje.",
+      "template_id": "opening.diagnostic_cta",
+      "channel": "whatsapp",
+      "sequence": 2
+    }
+  ],
+  "proposed_state_diff": {},
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "interest",
+    "last_intent": "demo_interest",
+    "diagnostic_status": "complete",
+    "waitlist_status": "not_qualified",
+    "handoff_status": "none",
+    "next_action_hint": "answer demo/preview question with diagnostic CTA"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 10107,
+    "output_tokens": 510,
+    "cost_usd": 0.004346,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

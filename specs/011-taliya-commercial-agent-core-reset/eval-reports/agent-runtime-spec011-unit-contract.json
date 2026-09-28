@@ -1,0 +1,226 @@
+{
+  "runId": "agent-runtime-spec011-unit-contract-1780583230371",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-101",
+  "createdAt": "2026-06-04T14:27:10.371Z",
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "releaseGate": "pass",
+  "commands": [
+    {
+      "id": "full_runtime_pytest",
+      "ok": true,
+      "command": "python -m pytest tests -q",
+      "cwd": "services\\taliya-agent-runtime",
+      "output": "........................................................................ [ 10%]\r\n........................................................................ [ 20%]\r\n........................................................................ [ 30%]\r\n........................................................................ [ 40%]\r\n........................................................................ [ 50%]\r\n........................................................................ [ 60%]\r\n........................................................................ [ 70%]\r\n........................................................................ [ 80%]\r\n........................................................................ [ 90%]\r\n....................................................................     [100%]\r\n716 passed in 8.30s"
+    },
+    {
+      "id": "focused_api_adapter_shadow_pytest",
+      "ok": true,
+      "command": "python -m pytest tests\\test_settings.py tests\\test_agent_runs_api.py tests\\test_spec011_widget_runtime_adapter.py tests\\test_spec011_shadow_mode.py -q",
+      "cwd": "services\\taliya-agent-runtime",
+      "output": ".....................................                                    [100%]\r\n37 passed in 2.05s"
+    },
+    {
+      "id": "widget_whatsapp_adapter_node",
+      "ok": true,
+      "command": "node --test scripts\\eval-agent-runtime-spec011-widget-adapter.mjs",
+      "cwd": ".",
+      "output": "✔ Spec 011 widget adapter resolves the new core endpoint (159.344ms)\n✔ Spec 011 widget adapter preserves ids/channel/source without commercial pending-context hints (1.963ms)\n✔ Spec 011 WhatsApp adapter resolves the same new core endpoint (0.2339ms)\n✔ Spec 011 WhatsApp adapter preserves provider ids/source without commercial hints (0.2101ms)\n✔ Spec 011 rollback flag returns operational fallback without fetching widget runtime (0.5898ms)\n✔ Spec 011 rollback flag returns operational fallback without fetching WhatsApp runtime (0.3469ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 500.0286"
+    },
+    {
+      "id": "typescript_contract",
+      "ok": true,
+      "command": "node node_modules\\typescript\\bin\\tsc --noEmit --pretty false",
+      "cwd": ".",
+      "output": ""
+    },
+    {
+      "id": "static_audit",
+      "ok": true,
+      "command": "node scripts\\eval-agent-runtime-spec011-static-audit.mjs",
+      "cwd": ".",
+      "output": "agent-runtime-spec011-static-audit: 8/8 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-static-audit.json"
+    },
+    {
+      "id": "runner_quarantine",
+      "ok": true,
+      "command": "node scripts\\eval-agent-runtime-spec011-runner-quarantine.mjs",
+      "cwd": ".",
+      "output": "agent-runtime-spec011-runner-quarantine: 5/5 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-runner-quarantine.json"
+    },
+    {
+      "id": "public_fallback_quarantine",
+      "ok": true,
+      "command": "node scripts\\eval-agent-runtime-spec011-public-fallback-quarantine.mjs",
+      "cwd": ".",
+      "output": "agent-runtime-spec011-public-fallback-quarantine: 4/4 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-public-fallback-quarantine.json"
+    },
+    {
+      "id": "rollback_contract",
+      "ok": true,
+      "command": "node scripts\\eval-agent-runtime-spec011-rollback.mjs",
+      "cwd": ".",
+      "output": "agent-runtime-spec011-rollback: 7/7 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-rollback.json"
+    }
+  ],
+  "protectedDiff": {
+    "id": "protected_source_diff",
+    "ok": true,
+    "command": "git -c safe.directory=C:/Users/lucas/agentes-landing-system diff --name-only -- app/pilates components/landing data/landing lib/landing/floating-agent.ts components/internal/SalesInboxClient.tsx",
+    "cwd": ".",
+    "output": "",
+    "files": []
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "required Spec 011 unit and contract test files exist",
+      "details": {
+        "missingRequiredSpec011Tests": [],
+        "requiredSpec011TestFiles": [
+          "services/taliya-agent-runtime/tests/test_spec011_core_schemas.py",
+          "services/taliya-agent-runtime/tests/test_spec011_contract_schema_map.py",
+          "services/taliya-agent-runtime/tests/test_spec011_context_builder.py",
+          "services/taliya-agent-runtime/tests/test_spec011_product_knowledge_context.py",
+          "services/taliya-agent-runtime/tests/test_spec011_conductor_boundary.py",
+          "services/taliya-agent-runtime/tests/test_spec011_conductor_usage.py",
+          "services/taliya-agent-runtime/tests/test_spec011_validators_core.py",
+          "services/taliya-agent-runtime/tests/test_spec011_validators_diagnostic.py",
+          "services/taliya-agent-runtime/tests/test_spec011_validators_product_claims.py",
+          "services/taliya-agent-runtime/tests/test_spec011_repair_loop.py",
+          "services/taliya-agent-runtime/tests/test_spec011_failed_path_guards.py",
+          "services/taliya-agent-runtime/tests/test_spec011_renderer_validated_plan.py",
+          "services/taliya-agent-runtime/tests/test_spec011_renderer_no_semantic_defaults.py",
+          "services/taliya-agent-runtime/tests/test_spec011_trace_store.py",
+          "services/taliya-agent-runtime/tests/test_spec011_trace_export.py",
+          "services/taliya-agent-runtime/tests/test_spec011_runtime_state_diff.py",
+          "services/taliya-agent-runtime/tests/test_spec011_sales_inbox_projection_builder.py",
+          "services/taliya-agent-runtime/tests/test_spec011_feedback_loop_prevention.py",
+          "services/taliya-agent-runtime/tests/test_spec011_turn_gate_idempotency.py",
+          "services/taliya-agent-runtime/tests/test_spec011_turn_gate_lock.py",
+          "services/taliya-agent-runtime/tests/test_spec011_turn_gate_outbox.py",
+          "services/taliya-agent-runtime/tests/test_spec011_turn_gate_delivery_regressions.py",
+          "services/taliya-agent-runtime/tests/test_spec011_widget_runtime_adapter.py",
+          "services/taliya-agent-runtime/tests/test_spec011_shadow_mode.py",
+          "services/taliya-agent-runtime/tests/test_agent_runs_api.py",
+          "services/taliya-agent-runtime/tests/test_settings.py"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "full runtime pytest suite passes",
+      "details": {
+        "passedCount": 716,
+        "command": {
+          "id": "full_runtime_pytest",
+          "ok": true,
+          "command": "python -m pytest tests -q",
+          "cwd": "services\\taliya-agent-runtime",
+          "output": "........................................................................ [ 10%]\r\n........................................................................ [ 20%]\r\n........................................................................ [ 30%]\r\n........................................................................ [ 40%]\r\n........................................................................ [ 50%]\r\n........................................................................ [ 60%]\r\n........................................................................ [ 70%]\r\n........................................................................ [ 80%]\r\n........................................................................ [ 90%]\r\n....................................................................     [100%]\r\n716 passed in 8.30s"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "focused API/settings/widget/shadow contract suite passes",
+      "details": {
+        "passedCount": 37,
+        "command": {
+          "id": "focused_api_adapter_shadow_pytest",
+          "ok": true,
+          "command": "python -m pytest tests\\test_settings.py tests\\test_agent_runs_api.py tests\\test_spec011_widget_runtime_adapter.py tests\\test_spec011_shadow_mode.py -q",
+          "cwd": "services\\taliya-agent-runtime",
+          "output": ".....................................                                    [100%]\r\n37 passed in 2.05s"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "widget and Taliya-owned WhatsApp Node adapter contract tests pass",
+      "details": {
+        "command": {
+          "id": "widget_whatsapp_adapter_node",
+          "ok": true,
+          "command": "node --test scripts\\eval-agent-runtime-spec011-widget-adapter.mjs",
+          "cwd": ".",
+          "output": "✔ Spec 011 widget adapter resolves the new core endpoint (159.344ms)\n✔ Spec 011 widget adapter preserves ids/channel/source without commercial pending-context hints (1.963ms)\n✔ Spec 011 WhatsApp adapter resolves the same new core endpoint (0.2339ms)\n✔ Spec 011 WhatsApp adapter preserves provider ids/source without commercial hints (0.2101ms)\n✔ Spec 011 rollback flag returns operational fallback without fetching widget runtime (0.5898ms)\n✔ Spec 011 rollback flag returns operational fallback without fetching WhatsApp runtime (0.3469ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 500.0286"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "TypeScript contract check passes",
+      "details": {
+        "command": {
+          "id": "typescript_contract",
+          "ok": true,
+          "command": "node node_modules\\typescript\\bin\\tsc --noEmit --pretty false",
+          "cwd": ".",
+          "output": ""
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "static, runner, public fallback, and rollback contract guards pass",
+      "details": {
+        "commands": [
+          {
+            "id": "static_audit",
+            "ok": true,
+            "command": "node scripts\\eval-agent-runtime-spec011-static-audit.mjs",
+            "cwd": ".",
+            "output": "agent-runtime-spec011-static-audit: 8/8 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-static-audit.json"
+          },
+          {
+            "id": "runner_quarantine",
+            "ok": true,
+            "command": "node scripts\\eval-agent-runtime-spec011-runner-quarantine.mjs",
+            "cwd": ".",
+            "output": "agent-runtime-spec011-runner-quarantine: 5/5 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-runner-quarantine.json"
+          },
+          {
+            "id": "public_fallback_quarantine",
+            "ok": true,
+            "command": "node scripts\\eval-agent-runtime-spec011-public-fallback-quarantine.mjs",
+            "cwd": ".",
+            "output": "agent-runtime-spec011-public-fallback-quarantine: 4/4 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-public-fallback-quarantine.json"
+          },
+          {
+            "id": "rollback_contract",
+            "ok": true,
+            "command": "node scripts\\eval-agent-runtime-spec011-rollback.mjs",
+            "cwd": ".",
+            "output": "agent-runtime-spec011-rollback: 7/7 passed. Report: C:\\Users\\lucas\\agentes-landing-system\\specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-rollback.json"
+          }
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "unit/contract gate produced no protected /pilates, landing visual, floating-agent, or Sales Inbox UI source diff",
+      "details": {
+        "protectedDiff": {
+          "id": "protected_source_diff",
+          "ok": true,
+          "command": "git -c safe.directory=C:/Users/lucas/agentes-landing-system diff --name-only -- app/pilates components/landing data/landing lib/landing/floating-agent.ts components/internal/SalesInboxClient.tsx",
+          "cwd": ".",
+          "output": "",
+          "files": []
+        },
+        "protectedPaths": [
+          "app/pilates",
+          "components/landing",
+          "data/landing",
+          "lib/landing/floating-agent.ts",
+          "components/internal/SalesInboxClient.tsx"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "proof_type": "isolated_spike_paid",
+  "model": "gpt-5.4-mini",
+  "tracing_disabled": true,
+  "public_cutover": false,
+  "paid_call_status": "run",
+  "started_at": "2026-06-10T11:15:44.846758+00:00",
+  "budget": {
+    "max_total_model_operations": 60,
+    "max_total_cost_usd": 1.4,
+    "max_model_operations_per_scenario": 3
+  },
+  "total_model_operations": 2,
+  "total_cost_usd": 0.002974,
+  "aborted": false,
+  "abort_reason": null,
+  "scenarios": [
+    {
+      "number": 1,
+      "scenario_id": "ideal_turn_01",
+      "channel": "whatsapp",
+      "required_proof": "Source opening: greet naturally, acknowledge source, no invented pain.",
+      "input_transcript": [
+        {
+          "role": "system",
+          "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+        },
+        {
+          "role": "user",
+          "content": "oi, vi o perfil de voces no Instagram"
+        }
+      ],
+      "starting_agent": "taliya_triage_agent",
+      "agent_path": [
+        {
+          "event": "start",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": "taliya_entry_agent",
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": null,
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_entry_agent",
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "final",
+          "agent": "taliya_entry_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        }
+      ],
+      "tool_calls": [
+        {
+          "event": "handoff",
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_entry_agent"
+        }
+      ],
+      "sdk_final_output": {
+        "schema_version": "012.sdk_turn_output.v1",
+        "commercial_understanding": {
+          "intents": [
+            "social_source_opening"
+          ],
+          "direct_question": null,
+          "customer_need": "abertura leve após ver o perfil no Instagram",
+          "pain_context": null,
+          "source_context": "vi o perfil de voces no Instagram",
+          "mixed_intent": false,
+          "extracted_facts": [
+            {
+              "key": "source_context",
+              "kind": "source",
+              "raw_text": "vi o perfil de voces no Instagram",
+              "value_text": "Instagram",
+              "currency": null,
+              "evidence": [
+                "user_message"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "answer_obligations": [],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": null,
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "no diagnostic context"
+          ]
+        },
+        "demo_proposal": {
+          "status": "not_applicable",
+          "next_step": "none",
+          "evidence": [
+            "no demo intent"
+          ]
+        },
+        "waitlist_proposal": {
+          "eligibility": "not_applicable",
+          "intent": "none",
+          "missing_details": [],
+          "evidence": [
+            "no waitlist intent"
+          ]
+        },
+        "handoff_proposal": {
+          "status": "not_applicable",
+          "reason": null,
+          "pause_required": false,
+          "evidence": [
+            "no human request"
+          ]
+        },
+        "template_plan": {
+          "template_ids": [
+            "opening.instagram_source"
+          ],
+          "variables": [],
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "state_patch": {
+          "handoff": null,
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "safety": {
+          "guardrail_flags": [],
+          "uncertainty": "low"
+        },
+        "sales_inbox_projection": {
+          "commercial_stage": "opening",
+          "last_intent": "social_source_opening",
+          "diagnostic_status": null,
+          "waitlist_status": null,
+          "handoff_status": null,
+          "next_action_hint": "send_social_source_greeting"
+        },
+        "delivery": {
+          "chunk_policy": "default"
+        },
+        "confidence": "high",
+        "risks": []
+      },
+      "turn_proposal": {
+        "schema_version": "012.turn_proposal.v1",
+        "turn_id": "spike_turn_ideal_turn_01",
+        "conversation_id": "spike_conv_ideal_turn_01",
+        "channel": "whatsapp",
+        "starting_agent": "taliya_triage_agent",
+        "agent_path": [
+          {
+            "event": "start",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": "taliya_entry_agent",
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": null,
+            "from_agent": "taliya_triage_agent",
+            "to_agent": "taliya_entry_agent",
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "final",
+            "agent": "taliya_entry_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          }
+        ],
+        "commercial_understanding": {
+          "intents": [
+            "social_source_opening"
+          ],
+          "direct_question": null,
+          "customer_need": "abertura leve após ver o perfil no Instagram",
+          "pain_context": null,
+          "source_context": "vi o perfil de voces no Instagram",
+          "mixed_intent": false,
+          "extracted_facts": [
+            {
+              "key": "source_context",
+              "kind": "source",
+              "raw_text": "vi o perfil de voces no Instagram",
+              "value": "Instagram",
+              "evidence": [
+                "user_message"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "answer_obligations": [],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": null,
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "no diagnostic context"
+          ]
+        },
+        "demo_proposal": {
+          "status": "not_applicable",
+          "next_step": "none",
+          "evidence": [
+            "no demo intent"
+          ]
+        },
+        "waitlist_proposal": {
+          "eligibility": "not_applicable",
+          "intent": "none",
+          "missing_details": [],
+          "evidence": [
+            "no waitlist intent"
+          ]
+        },
+        "handoff_proposal": {
+          "status": "not_applicable",
+          "reason": null,
+          "pause_required": false,
+          "evidence": [
+            "no human request"
+          ]
+        },
+        "template_proposal": {
+          "template_ids": [
+            "opening.instagram_source"
+          ],
+          "variables": {},
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "safety": {
+          "guardrails": [],
+          "uncertainty": "low"
+        },
+        "state_patch_proposal": {
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "sales_inbox_projection_proposal": {
+          "commercial_stage": "opening",
+          "last_intent": "social_source_opening",
+          "next_action_hint": "send_social_source_greeting"
+        },
+        "delivery_proposal": {
+          "chunk_policy": "default",
+          "render_plan_only": true,
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "confidence": "high",
+        "risks": [],
+        "usage": {
+          "model": "gpt-5.4-mini",
+          "model_operations": 2,
+          "input_tokens": 7040,
+          "output_tokens": 390,
+          "cost_usd": 0.002974,
+          "handoffs": 1,
+          "repairs": 0
+        }
+      },
+      "validator_result": {
+        "decision_id": "sdk_spike_turn_ideal_turn_01",
+        "status": "passed",
+        "errors": [],
+        "warnings": [],
+        "repair_attempt_count": 0,
+        "final_disposition": "accepted"
+      },
+      "rendered_preview": [
+        {
+          "text": "Oi, tudo bem?",
+          "template_id": "opening.instagram_source",
+          "channel": "whatsapp",
+          "sequence": 1
+        },
+        {
+          "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar.",
+          "template_id": "opening.instagram_source",
+          "channel": "whatsapp",
+          "sequence": 2
+        },
+        {
+          "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?",
+          "template_id": "opening.instagram_source",
+          "channel": "whatsapp",
+          "sequence": 3
+        }
+      ],
+      "proposed_state_diff": {
+        "delivery": {
+          "defer_inbound_during_chunks": false,
+          "deferred_inbound_count": 0
+        }
+      },
+      "proposed_sales_inbox_projection": {
+        "commercial_stage": "opening",
+        "last_intent": "social_source_opening",
+        "next_action_hint": "send_social_source_greeting"
+      },
+      "usage": {
+        "model": "gpt-5.4-mini",
+        "model_operations": 2,
+        "input_tokens": 7040,
+        "output_tokens": 390,
+        "cost_usd": 0.002974,
+        "handoffs": 1,
+        "repairs": 0
+      },
+      "status": "passed_structural",
+      "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+      "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+    }
+  ]
+}

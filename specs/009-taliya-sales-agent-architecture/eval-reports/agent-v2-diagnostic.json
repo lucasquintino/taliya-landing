@@ -1,0 +1,48 @@
+{
+  "runId": "agent-v2-diagnostic-1779416638906",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:23:58.906Z",
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "diagnostic offer fixtures exist",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "diagnostic completion fixture exists",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "diagnostic implementation contains getMissingDiagnosticSteps",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "diagnostic implementation contains hasEnoughForDiagnostic",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "diagnostic implementation contains buildDiagnosticOutput",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "diagnostic implementation contains diagnóstico rápido da rotina",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "diagnostic implementation contains validationQuestion",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

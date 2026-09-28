@@ -1,0 +1,27 @@
+.git
+.vercel
+.next
+node_modules
+
+# Runtime/service code is deployed separately to Railway.
+services
+
+# Specs, reports, and local QA artifacts are not needed by the Vercel app build.
+specs
+docs
+reports
+reference
+test-results
+.tmp-local-dev
+.tmp*
+tmp
+demo-kits
+
+# Root-level local screenshots and logs generated during QA.
+/*.png
+/*.jpg
+/*.jpeg
+/*.log
+/.codex-*
+/.toolzz-ai*
+/tmp-*

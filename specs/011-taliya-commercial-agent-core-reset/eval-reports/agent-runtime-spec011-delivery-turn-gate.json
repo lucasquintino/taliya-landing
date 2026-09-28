@@ -1,0 +1,87 @@
+{
+  "runId": "agent-runtime-spec011-delivery-turn-gate-1780243785321",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "createdAt": "2026-05-31T16:09:45.321Z",
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "RC-011-010 duplicate inbound/provider messages are ignored before runtime execution",
+      "details": {
+        "hasProviderDuplicate": true,
+        "hasDuplicateStatus": true,
+        "hasSemanticDuplicateStatus": true
+      }
+    },
+    {
+      "ok": true,
+      "message": "RC-011-010 outbound chunk delivery uses idempotency reservation",
+      "details": {
+        "hasOutboxConflictProtection": true,
+        "hasBatchIdempotencyKey": true
+      }
+    },
+    {
+      "ok": true,
+      "message": "RC-011-011 inbound during an active turn is queued/deferred instead of processed in parallel",
+      "details": {
+        "enqueueIndex": 13381,
+        "lockIndex": 14109,
+        "queuedReturnIndex": 14509,
+        "deferredDrainIndex": 14222
+      }
+    },
+    {
+      "ok": true,
+      "message": "RC-011-011 current outbound delivery is marked after send sequence finishes",
+      "details": {
+        "sendIndex": 21881,
+        "markProcessedIndex": 23097
+      }
+    },
+    {
+      "ok": true,
+      "message": "RC-011-011 deferred inbound must be processed as the next clean turn without delivery-interleaving semantic metadata",
+      "details": {
+        "routeDeliveryMetadataHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "RC-011-011 active Taliya commercial path is quarantined from legacy runner interleaving classifiers",
+      "details": {
+        "runtimeClientUsesSpec011Endpoint": true,
+        "runtimeClientLegacyTurnHits": [],
+        "runtimeApiLegacyQuarantineHits": [
+          {
+            "line": 231,
+            "text": "\"legacy_commercial_runner_quarantined\","
+          }
+        ],
+        "runtimeApiRunnerImportHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "RC-011-011 delivery layer must not use text-specific social acknowledgement shortcuts",
+      "details": {
+        "routeSemanticAckHits": []
+      }
+    }
+  ],
+  "releaseGate": "pass",
+  "regressionCases": [
+    "RC-011-010",
+    "RC-011-011"
+  ],
+  "auditedFiles": [
+    "app/api/landing/ai-attendant/whatsapp/route.ts",
+    "lib/landing/ai-attendant/whatsapp.ts",
+    "services/taliya-agent-runtime/app/main.py",
+    "lib/landing/ai-attendant/runtime-client.ts"
+  ]
+}

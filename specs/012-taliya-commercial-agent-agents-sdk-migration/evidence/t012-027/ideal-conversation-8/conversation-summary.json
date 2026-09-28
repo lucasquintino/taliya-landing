@@ -1,0 +1,34 @@
+{
+  "turns_total": 12,
+  "turns_passed": 1,
+  "stopped_at_turn": 2,
+  "total_model_operations": 5,
+  "total_cost_usd": 0.022251,
+  "final_state": {
+    "demo": {
+      "status": "not_applicable"
+    },
+    "waitlist": {
+      "eligibility": "not_applicable"
+    },
+    "summary": "Conversa comercial em andamento no WhatsApp da Taliya. Demo: {\"status\": \"not_applicable\"}. Waitlist: {\"eligibility\": \"not_applicable\"}."
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "text": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    }
+  ]
+}

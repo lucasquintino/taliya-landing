@@ -1,0 +1,43 @@
+{
+  "runId": "agent-v2-trace-1779416637341",
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-22T02:23:57.341Z",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "trace path contains recordAgentV2Trace",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "trace path contains agent_v2_traces",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "trace path contains product_source_version",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "trace path contains semanticInterpretation",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "trace path contains orchestrationDecision",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "trace path contains deliveryResult",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass"
+}

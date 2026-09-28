@@ -1,0 +1,20 @@
+[
+  {
+    "id": "widget-cold-open",
+    "channel": "web",
+    "message": "Oi, queria entender se a Taliya serve para meu studio.",
+    "expect": ["Taliya"]
+  },
+  {
+    "id": "widget-direct-price",
+    "channel": "web",
+    "message": "Quanto custa e quais planos existem?",
+    "expect": ["R$ 197", "R$ 497", "R$ 897", "R$ 1.497"]
+  },
+  {
+    "id": "whatsapp-confused-opening",
+    "channel": "whatsapp",
+    "message": "Tenho agenda e reposicoes meio perdidas, mas tambem queria saber preco.",
+    "expect": ["R$"]
+  }
+]

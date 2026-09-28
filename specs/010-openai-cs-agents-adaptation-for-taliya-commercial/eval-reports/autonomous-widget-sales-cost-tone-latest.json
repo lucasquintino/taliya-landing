@@ -1,0 +1,2086 @@
+{
+  "runId": "autonomous-widget-sales-cost-tone-latest-1779504058227",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-05-23T02:40:58.227Z",
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "Visual widget CTA renders in desktop and mobile screenshots",
+      "details": {
+        "ok": true,
+        "latencyMs": 31004,
+        "failures": [],
+        "screenshots": {
+          "desktop": "specs\\010-openai-cs-agents-adaptation-for-taliya-commercial\\eval-reports\\assets\\autonomous-widget-sales-cost-tone-latest\\widget-demo-desktop.png",
+          "mobile": "specs\\010-openai-cs-agents-adaptation-for-taliya-commercial\\eval-reports\\assets\\autonomous-widget-sales-cost-tone-latest\\widget-demo-mobile.png"
+        },
+        "playwright": {
+          "status": 0,
+          "stderr": "",
+          "stdout": "{\n  \"config\": {\n    \"rootDir\": \"C:/Users/lucas/agentes-landing-system\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"projects\": [\n      {\n        \"outputDir\": \"C:/Users/lucas/agentes-landing-system/test-results\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"\",\n        \"name\": \"\",\n        \"testDir\": \"C:/Users/lucas/agentes-landing-system\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 120000\n      }\n    ],\n    \"quiet\": false,\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.60.0\",\n    \"workers\": 8,\n    \"webServer\": null\n  },\n  \"suites\": [\n    {\n      \"title\": \"scripts\\\\generated\\\\autonomous-widget-visual.spec.js\",\n      \"file\": \"scripts/generated/autonomous-widget-visual.spec.js\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"desktop widget demo CTA renders\",\n          \"ok\": true,\n          \"tags\": [],\n          \"tests\": [\n            {\n              \"timeout\": 120000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"\",\n              \"projectName\": \"\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                  \"parallelIndex\": 0,\n                  \"status\": \"passed\",\n                  \"duration\": 17479,\n                  \"errors\": [],\n                  \"stdout\": [],\n                  \"stderr\": [],\n                  \"retry\": 0,\n                  \"startTime",
+          "suites": 1
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "Widget API complete Sales Inbox flow returned HTTP 200 for every turn",
+      "details": {
+        "statuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox detail endpoint returned persisted lead",
+      "details": {
+        "ok": true,
+        "leadId": "lead-autoval-sales-1779503948154",
+        "listStatus": 200,
+        "detailStatus": 200,
+        "listCount": 915,
+        "lead": {
+          "leadId": "lead-autoval-sales-1779503948154",
+          "status": "handoff_requested",
+          "priority": "manual",
+          "channel": "web",
+          "conversionPath": "human_whatsapp_assist",
+          "waitlistStatus": "joined",
+          "diagnosticStatus": "completed",
+          "commercialStage": "human_handoff",
+          "closureState": "human_active",
+          "humanActive": true,
+          "aiPaused": false,
+          "externalSyncStatus": "skipped",
+          "recentMessages": [
+            {
+              "id": "user-autoval-sales-1779503948154-1",
+              "role": "user",
+              "content": "quanto custa?",
+              "createdAt": "2026-05-23T02:39:11.869Z"
+            },
+            {
+              "id": "web_autoval-sales-1779503948154_1_user",
+              "role": "user",
+              "content": "quanto custa?",
+              "createdAt": "2026-05-23T02:39:11.965Z"
+            },
+            {
+              "id": "assistant_1779503951023_496",
+              "role": "assistant",
+              "content": "Oi, Ana, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+              "createdAt": "2026-05-23T02:39:12.061Z"
+            },
+            {
+              "id": "assistant_1779503951023_497",
+              "role": "assistant",
+              "content": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia. O que você acha?",
+              "createdAt": "2026-05-23T02:39:12.157Z"
+            },
+            {
+              "id": "user-autoval-sales-1779503948154-2",
+              "role": "user",
+              "content": "quero fazer diagnostico gratuito",
+              "createdAt": "2026-05-23T02:39:16.142Z"
+            },
+            {
+              "id": "web_autoval-sales-1779503948154_4_user",
+              "role": "user",
+              "content": "quero fazer diagnostico gratuito",
+              "createdAt": "2026-05-23T02:39:16.238Z"
+            },
+            {
+              "id": "assistant_1779503955653_498",
+              "role": "assistant",
+              "content": "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?",
+              "createdAt": "2026-05-23T02:39:16.336Z"
+            },
+            {
+              "id": "user-autoval-sales-1779503948154-3",
+              "role": "user",
+              "content": "tenho 120 alunos, perco interessados no WhatsApp, hoje respondo manualmente, prioridade vendas, urgente agora, quero comparar plano",
+              "createdAt": "2026-05-23T02:39:22.765Z"
+            },
+            {
+              "id": "web_autoval-sales-1779503948154_6_user",
+              "role": "user",
+              "content": "tenho 120 alunos, perco interessados no WhatsApp, hoje respondo manualmente, prioridade vendas, urgente agora, quero comparar plano",
+              "createdAt": "2026-05-23T02:39:22.860Z"
+            },
+            {
+              "id": "assistant_1779503961844_499",
+              "role": "assistant",
+              "content": "Pelo contexto, o principal gargalo parece ser atendimento e follow-up no WhatsApp. O primeiro passo seria organizar o fluxo de atendimento e follow-up primeiro.",
+              "createdAt": "2026-05-23T02:39:22.956Z"
+            },
+            {
+              "id": "assistant_1779503961844_500",
+              "role": "assistant",
+              "content": "Para plano, eu compararia Essencial ou Avance, dependendo do peso do atendimento e do follow-up.",
+              "createdAt": "2026-05-23T02:39:23.051Z"
+            },
+            {
+              "id": "user-autoval-sales-1779503948154-4",
+              "role": "user",
+              "content": "quero contratar, pode me colocar na lista de espera",
+              "createdAt": "2026-05-23T02:39:27.829Z"
+            },
+            {
+              "id": "web_autoval-sales-1779503948154_9_user",
+              "role": "user",
+              "content": "quero contratar, pode me colocar na lista de espera",
+              "createdAt": "2026-05-23T02:39:27.926Z"
+            },
+            {
+              "id": "assistant_1779503966597_501",
+              "role": "assistant",
+              "content": "Estamos trabalhando com um número pequeno de studios agora.",
+              "createdAt": "2026-05-23T02:39:28.024Z"
+            },
+            {
+              "id": "assistant_1779503966597_502",
+              "role": "assistant",
+              "content": "Se fizer sentido, posso colocar seu studio na lista de espera e chamar assim que abrir uma próxima janela.",
+              "createdAt": "2026-05-23T02:39:28.119Z"
+            },
+            {
+              "id": "user-autoval-sales-1779503948154-5",
+              "role": "user",
+              "content": "pode colocar o Studio Viva em Vitoria ES",
+              "createdAt": "2026-05-23T02:39:32.742Z"
+            },
+            {
+              "id": "web_autoval-sales-1779503948154_12_user",
+              "role": "user",
+              "content": "pode colocar o Studio Viva em Vitoria ES",
+              "createdAt": "2026-05-23T02:39:32.838Z"
+            },
+            {
+              "id": "assistant_1779503971232_503",
+              "role": "assistant",
+              "content": "Perfeito, deixei seu studio na lista de espera da Taliya.",
+              "createdAt": "2026-05-23T02:39:32.936Z"
+            },
+            {
+              "id": "assistant_1779503971232_504",
+              "role": "assistant",
+              "content": "Quando abrir uma próxima janela, a equipe chama com o contexto dessa conversa.",
+              "createdAt": "2026-05-23T02:39:33.032Z"
+            },
+            {
+              "id": "user-autoval-sales-1779503948154-6",
+              "role": "user",
+              "content": "quanto custa o Completo?",
+              "createdAt": "2026-05-23T02:39:38.754Z"
+            },
+            {
+              "id": "web_autoval-sales-1779503948154_15_user",
+              "role": "user",
+              "content": "quanto custa o Completo?",
+              "createdAt": "2026-05-23T02:39:38.848Z"
+            },
+            {
+              "id": "assistant_1779503976937_505",
+              "role": "assistant",
+              "content": "O Completo fica em R$ 1.497/mês.",
+              "createdAt": "2026-05-23T02:39:38.944Z"
+            },
+            {
+              "id": "user-autoval-sales-1779503948154-7",
+              "role": "user",
+              "content": "quero falar com humano",
+              "createdAt": "2026-05-23T02:39:43.147Z"
+            },
+            {
+              "id": "web_autoval-sales-1779503948154_16_user",
+              "role": "user",
+              "content": "quero falar com humano",
+              "createdAt": "2026-05-23T02:39:43.242Z"
+            },
+            {
+              "id": "assistant_1779503981263_506",
+              "role": "assistant",
+              "content": "Claro. Vou deixar uma pessoa assumir daqui.",
+              "createdAt": "2026-05-23T02:39:43.339Z"
+            },
+            {
+              "id": "assistant_1779503981263_507",
+              "role": "assistant",
+              "content": "Também deixo o contexto salvo para você não precisar repetir tudo.",
+              "createdAt": "2026-05-23T02:39:43.434Z"
+            }
+          ],
+          "agentRuntime": {
+            "route": "handoff",
+            "runId": "run_5a7143aefa934e63987524b1f4a1a32e",
+            "traceId": "trace_03e61c071152421fadb3f4d6596ea426",
+            "nextState": "paused_by_human",
+            "templateIds": "handoff.acknowledge",
+            "currentAgent": "taliya_commercial_handoff_agent",
+            "currentState": "human_handoff",
+            "previousState": "product_question",
+            "guardrailFlags": "",
+            "detectedIntents": "handoff",
+            "estimatedCostUsd": 0.008474,
+            "productSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticLedgerStatus": "complete"
+          },
+          "contact": {
+            "name": "Ana Paula",
+            "email": "autoval-sales-1779503948154@example.com",
+            "whatsapp": "+5511999999999",
+            "normalizedWhatsapp": "+5511999999999"
+          },
+          "summary": "perda de interessados e falta de previsibilidade na rotina comercial Entrou na lista de espera.",
+          "nextAction": "Humano deve assumir a conversa; automacao pausada."
+        },
+        "auditCount": 0
+      }
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox persisted full conversation messages",
+      "details": {
+        "messageCount": 26
+      }
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox persisted joined waitlist",
+      "details": {
+        "waitlistStatus": "joined"
+      }
+    },
+    {
+      "ok": true,
+      "message": "Sales Inbox persisted handoff/human pause",
+      "details": {
+        "humanActive": true,
+        "aiPaused": false
+      }
+    },
+    {
+      "ok": true,
+      "message": "OpenAI real usage cost was recorded",
+      "details": {
+        "scenarioCount": 7,
+        "turnCount": 21,
+        "totalCostUsd": 0.179618,
+        "avgCostPerTurnUsd": 0.008553,
+        "avgCostPerLeadUsd": 0.02566,
+        "maxTurnCostUsd": 0.011599,
+        "totalLatencyMs": 109300,
+        "avgLatencyMs": 5205,
+        "p95LatencyMs": 7003,
+        "maxLatencyMs": 7385,
+        "mostExpensiveTurn": {
+          "index": 5,
+          "user": "tenho 90 alunos, hoje controlo em planilha, prioridade e agenda, urgente agora",
+          "httpStatus": 200,
+          "latencyMs": 7385,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504032815_529",
+              "role": "assistant",
+              "content": "Qual é a principal dor ou rotina que você quer melhorar primeiro?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+            "agentRuntimeTraceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+            "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_in_progress",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_in_progress",
+            "agentRuntimeRoute": "diagnostic",
+            "agentRuntimeDetectedIntents": "diagnostic",
+            "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.011599",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "in_progress",
+            "diagnosticSummary": "rotina operacional prioritária",
+            "diagnosticNextStep": "Você quer comparar plano para uma rotina específica ou para a Taliya mais completa?"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.011599,
+          "traceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+          "runId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+          "currentAgent": "taliya_commercial_diagnostic_agent",
+          "route": "diagnostic",
+          "templateIds": "diagnostic.ask_main_pain",
+          "scenarioId": "autoval-long-1779503984318"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "Autonomous validation stayed under US$1.00 cost budget",
+      "details": {
+        "scenarioCount": 7,
+        "turnCount": 21,
+        "totalCostUsd": 0.179618,
+        "avgCostPerTurnUsd": 0.008553,
+        "avgCostPerLeadUsd": 0.02566,
+        "maxTurnCostUsd": 0.011599,
+        "totalLatencyMs": 109300,
+        "avgLatencyMs": 5205,
+        "p95LatencyMs": 7003,
+        "maxLatencyMs": 7385,
+        "mostExpensiveTurn": {
+          "index": 5,
+          "user": "tenho 90 alunos, hoje controlo em planilha, prioridade e agenda, urgente agora",
+          "httpStatus": 200,
+          "latencyMs": 7385,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504032815_529",
+              "role": "assistant",
+              "content": "Qual é a principal dor ou rotina que você quer melhorar primeiro?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+            "agentRuntimeTraceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+            "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_in_progress",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_in_progress",
+            "agentRuntimeRoute": "diagnostic",
+            "agentRuntimeDetectedIntents": "diagnostic",
+            "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.011599",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "in_progress",
+            "diagnosticSummary": "rotina operacional prioritária",
+            "diagnosticNextStep": "Você quer comparar plano para uma rotina específica ou para a Taliya mais completa?"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.011599,
+          "traceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+          "runId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+          "currentAgent": "taliya_commercial_diagnostic_agent",
+          "route": "diagnostic",
+          "templateIds": "diagnostic.ask_main_pain",
+          "scenarioId": "autoval-long-1779503984318"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "P95 latency stayed below 45s",
+      "details": {
+        "scenarioCount": 7,
+        "turnCount": 21,
+        "totalCostUsd": 0.179618,
+        "avgCostPerTurnUsd": 0.008553,
+        "avgCostPerLeadUsd": 0.02566,
+        "maxTurnCostUsd": 0.011599,
+        "totalLatencyMs": 109300,
+        "avgLatencyMs": 5205,
+        "p95LatencyMs": 7003,
+        "maxLatencyMs": 7385,
+        "mostExpensiveTurn": {
+          "index": 5,
+          "user": "tenho 90 alunos, hoje controlo em planilha, prioridade e agenda, urgente agora",
+          "httpStatus": 200,
+          "latencyMs": 7385,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504032815_529",
+              "role": "assistant",
+              "content": "Qual é a principal dor ou rotina que você quer melhorar primeiro?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+            "agentRuntimeTraceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+            "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_in_progress",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_in_progress",
+            "agentRuntimeRoute": "diagnostic",
+            "agentRuntimeDetectedIntents": "diagnostic",
+            "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.011599",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "in_progress",
+            "diagnosticSummary": "rotina operacional prioritária",
+            "diagnosticNextStep": "Você quer comparar plano para uma rotina específica ou para a Taliya mais completa?"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.011599,
+          "traceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+          "runId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+          "currentAgent": "taliya_commercial_diagnostic_agent",
+          "route": "diagnostic",
+          "templateIds": "diagnostic.ask_main_pain",
+          "scenarioId": "autoval-long-1779503984318"
+        }
+      }
+    },
+    {
+      "ok": true,
+      "message": "Mapped behavior QA passed for waitlist, handoff, product, diagnostic, and pt-BR copy",
+      "details": {
+        "ok": true,
+        "failures": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "Tone rubric passed for every autonomous transcript",
+      "details": [
+        {
+          "scenarioId": "autoval-sales-1779503948154",
+          "title": "Widget -> Sales Inbox complete flow",
+          "score": 5,
+          "ok": true,
+          "failures": [],
+          "notes": "Tone is concise, punctuated, and commercially aligned."
+        },
+        {
+          "scenarioId": "autoval-price-1779503984318",
+          "title": "Price short lead",
+          "score": 5,
+          "ok": true,
+          "failures": [],
+          "notes": "Tone is concise, punctuated, and commercially aligned."
+        },
+        {
+          "scenarioId": "autoval-demo-1779503984318",
+          "title": "Demo lead",
+          "score": 5,
+          "ok": true,
+          "failures": [],
+          "notes": "Tone is concise, punctuated, and commercially aligned."
+        },
+        {
+          "scenarioId": "autoval-pain-1779503984318",
+          "title": "Pain-first lead",
+          "score": 5,
+          "ok": true,
+          "failures": [],
+          "notes": "Tone is concise, punctuated, and commercially aligned."
+        },
+        {
+          "scenarioId": "autoval-plan-1779503984318",
+          "title": "Plan fit lead",
+          "score": 5,
+          "ok": true,
+          "failures": [],
+          "notes": "Tone is concise, punctuated, and commercially aligned."
+        },
+        {
+          "scenarioId": "autoval-human-1779503984318",
+          "title": "Human handoff lead",
+          "score": 5,
+          "ok": true,
+          "failures": [],
+          "notes": "Tone is concise, punctuated, and commercially aligned."
+        },
+        {
+          "scenarioId": "autoval-long-1779503984318",
+          "title": "Long mixed lead",
+          "score": 5,
+          "ok": true,
+          "failures": [],
+          "notes": "Tone is concise, punctuated, and commercially aligned."
+        }
+      ]
+    },
+    {
+      "ok": true,
+      "message": "All widget responses used at most three chunks",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  },
+  "startedAt": "2026-05-23T02:38:37.146Z",
+  "finishedAt": "2026-05-23T02:40:58.227Z",
+  "appUrl": "http://127.0.0.1:3999",
+  "demoUrl": "https://www.taliya.com.br/pilates/planos/demonstracao",
+  "visual": {
+    "ok": true,
+    "latencyMs": 31004,
+    "failures": [],
+    "screenshots": {
+      "desktop": "specs\\010-openai-cs-agents-adaptation-for-taliya-commercial\\eval-reports\\assets\\autonomous-widget-sales-cost-tone-latest\\widget-demo-desktop.png",
+      "mobile": "specs\\010-openai-cs-agents-adaptation-for-taliya-commercial\\eval-reports\\assets\\autonomous-widget-sales-cost-tone-latest\\widget-demo-mobile.png"
+    },
+    "playwright": {
+      "status": 0,
+      "stderr": "",
+      "stdout": "{\n  \"config\": {\n    \"rootDir\": \"C:/Users/lucas/agentes-landing-system\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"projects\": [\n      {\n        \"outputDir\": \"C:/Users/lucas/agentes-landing-system/test-results\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"\",\n        \"name\": \"\",\n        \"testDir\": \"C:/Users/lucas/agentes-landing-system\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 120000\n      }\n    ],\n    \"quiet\": false,\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.60.0\",\n    \"workers\": 8,\n    \"webServer\": null\n  },\n  \"suites\": [\n    {\n      \"title\": \"scripts\\\\generated\\\\autonomous-widget-visual.spec.js\",\n      \"file\": \"scripts/generated/autonomous-widget-visual.spec.js\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"desktop widget demo CTA renders\",\n          \"ok\": true,\n          \"tags\": [],\n          \"tests\": [\n            {\n              \"timeout\": 120000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"\",\n              \"projectName\": \"\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                  \"parallelIndex\": 0,\n                  \"status\": \"passed\",\n                  \"duration\": 17479,\n                  \"errors\": [],\n                  \"stdout\": [],\n                  \"stderr\": [],\n                  \"retry\": 0,\n                  \"startTime",
+      "suites": 1
+    }
+  },
+  "salesInbox": {
+    "ok": true,
+    "leadId": "lead-autoval-sales-1779503948154",
+    "listStatus": 200,
+    "detailStatus": 200,
+    "listCount": 915,
+    "lead": {
+      "leadId": "lead-autoval-sales-1779503948154",
+      "status": "handoff_requested",
+      "priority": "manual",
+      "channel": "web",
+      "conversionPath": "human_whatsapp_assist",
+      "waitlistStatus": "joined",
+      "diagnosticStatus": "completed",
+      "commercialStage": "human_handoff",
+      "closureState": "human_active",
+      "humanActive": true,
+      "aiPaused": false,
+      "externalSyncStatus": "skipped",
+      "recentMessages": [
+        {
+          "id": "user-autoval-sales-1779503948154-1",
+          "role": "user",
+          "content": "quanto custa?",
+          "createdAt": "2026-05-23T02:39:11.869Z"
+        },
+        {
+          "id": "web_autoval-sales-1779503948154_1_user",
+          "role": "user",
+          "content": "quanto custa?",
+          "createdAt": "2026-05-23T02:39:11.965Z"
+        },
+        {
+          "id": "assistant_1779503951023_496",
+          "role": "assistant",
+          "content": "Oi, Ana, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+          "createdAt": "2026-05-23T02:39:12.061Z"
+        },
+        {
+          "id": "assistant_1779503951023_497",
+          "role": "assistant",
+          "content": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia. O que você acha?",
+          "createdAt": "2026-05-23T02:39:12.157Z"
+        },
+        {
+          "id": "user-autoval-sales-1779503948154-2",
+          "role": "user",
+          "content": "quero fazer diagnostico gratuito",
+          "createdAt": "2026-05-23T02:39:16.142Z"
+        },
+        {
+          "id": "web_autoval-sales-1779503948154_4_user",
+          "role": "user",
+          "content": "quero fazer diagnostico gratuito",
+          "createdAt": "2026-05-23T02:39:16.238Z"
+        },
+        {
+          "id": "assistant_1779503955653_498",
+          "role": "assistant",
+          "content": "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?",
+          "createdAt": "2026-05-23T02:39:16.336Z"
+        },
+        {
+          "id": "user-autoval-sales-1779503948154-3",
+          "role": "user",
+          "content": "tenho 120 alunos, perco interessados no WhatsApp, hoje respondo manualmente, prioridade vendas, urgente agora, quero comparar plano",
+          "createdAt": "2026-05-23T02:39:22.765Z"
+        },
+        {
+          "id": "web_autoval-sales-1779503948154_6_user",
+          "role": "user",
+          "content": "tenho 120 alunos, perco interessados no WhatsApp, hoje respondo manualmente, prioridade vendas, urgente agora, quero comparar plano",
+          "createdAt": "2026-05-23T02:39:22.860Z"
+        },
+        {
+          "id": "assistant_1779503961844_499",
+          "role": "assistant",
+          "content": "Pelo contexto, o principal gargalo parece ser atendimento e follow-up no WhatsApp. O primeiro passo seria organizar o fluxo de atendimento e follow-up primeiro.",
+          "createdAt": "2026-05-23T02:39:22.956Z"
+        },
+        {
+          "id": "assistant_1779503961844_500",
+          "role": "assistant",
+          "content": "Para plano, eu compararia Essencial ou Avance, dependendo do peso do atendimento e do follow-up.",
+          "createdAt": "2026-05-23T02:39:23.051Z"
+        },
+        {
+          "id": "user-autoval-sales-1779503948154-4",
+          "role": "user",
+          "content": "quero contratar, pode me colocar na lista de espera",
+          "createdAt": "2026-05-23T02:39:27.829Z"
+        },
+        {
+          "id": "web_autoval-sales-1779503948154_9_user",
+          "role": "user",
+          "content": "quero contratar, pode me colocar na lista de espera",
+          "createdAt": "2026-05-23T02:39:27.926Z"
+        },
+        {
+          "id": "assistant_1779503966597_501",
+          "role": "assistant",
+          "content": "Estamos trabalhando com um número pequeno de studios agora.",
+          "createdAt": "2026-05-23T02:39:28.024Z"
+        },
+        {
+          "id": "assistant_1779503966597_502",
+          "role": "assistant",
+          "content": "Se fizer sentido, posso colocar seu studio na lista de espera e chamar assim que abrir uma próxima janela.",
+          "createdAt": "2026-05-23T02:39:28.119Z"
+        },
+        {
+          "id": "user-autoval-sales-1779503948154-5",
+          "role": "user",
+          "content": "pode colocar o Studio Viva em Vitoria ES",
+          "createdAt": "2026-05-23T02:39:32.742Z"
+        },
+        {
+          "id": "web_autoval-sales-1779503948154_12_user",
+          "role": "user",
+          "content": "pode colocar o Studio Viva em Vitoria ES",
+          "createdAt": "2026-05-23T02:39:32.838Z"
+        },
+        {
+          "id": "assistant_1779503971232_503",
+          "role": "assistant",
+          "content": "Perfeito, deixei seu studio na lista de espera da Taliya.",
+          "createdAt": "2026-05-23T02:39:32.936Z"
+        },
+        {
+          "id": "assistant_1779503971232_504",
+          "role": "assistant",
+          "content": "Quando abrir uma próxima janela, a equipe chama com o contexto dessa conversa.",
+          "createdAt": "2026-05-23T02:39:33.032Z"
+        },
+        {
+          "id": "user-autoval-sales-1779503948154-6",
+          "role": "user",
+          "content": "quanto custa o Completo?",
+          "createdAt": "2026-05-23T02:39:38.754Z"
+        },
+        {
+          "id": "web_autoval-sales-1779503948154_15_user",
+          "role": "user",
+          "content": "quanto custa o Completo?",
+          "createdAt": "2026-05-23T02:39:38.848Z"
+        },
+        {
+          "id": "assistant_1779503976937_505",
+          "role": "assistant",
+          "content": "O Completo fica em R$ 1.497/mês.",
+          "createdAt": "2026-05-23T02:39:38.944Z"
+        },
+        {
+          "id": "user-autoval-sales-1779503948154-7",
+          "role": "user",
+          "content": "quero falar com humano",
+          "createdAt": "2026-05-23T02:39:43.147Z"
+        },
+        {
+          "id": "web_autoval-sales-1779503948154_16_user",
+          "role": "user",
+          "content": "quero falar com humano",
+          "createdAt": "2026-05-23T02:39:43.242Z"
+        },
+        {
+          "id": "assistant_1779503981263_506",
+          "role": "assistant",
+          "content": "Claro. Vou deixar uma pessoa assumir daqui.",
+          "createdAt": "2026-05-23T02:39:43.339Z"
+        },
+        {
+          "id": "assistant_1779503981263_507",
+          "role": "assistant",
+          "content": "Também deixo o contexto salvo para você não precisar repetir tudo.",
+          "createdAt": "2026-05-23T02:39:43.434Z"
+        }
+      ],
+      "agentRuntime": {
+        "route": "handoff",
+        "runId": "run_5a7143aefa934e63987524b1f4a1a32e",
+        "traceId": "trace_03e61c071152421fadb3f4d6596ea426",
+        "nextState": "paused_by_human",
+        "templateIds": "handoff.acknowledge",
+        "currentAgent": "taliya_commercial_handoff_agent",
+        "currentState": "human_handoff",
+        "previousState": "product_question",
+        "guardrailFlags": "",
+        "detectedIntents": "handoff",
+        "estimatedCostUsd": 0.008474,
+        "productSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticLedgerStatus": "complete"
+      },
+      "contact": {
+        "name": "Ana Paula",
+        "email": "autoval-sales-1779503948154@example.com",
+        "whatsapp": "+5511999999999",
+        "normalizedWhatsapp": "+5511999999999"
+      },
+      "summary": "perda de interessados e falta de previsibilidade na rotina comercial Entrou na lista de espera.",
+      "nextAction": "Humano deve assumir a conversa; automacao pausada."
+    },
+    "auditCount": 0
+  },
+  "costSummary": {
+    "scenarioCount": 7,
+    "turnCount": 21,
+    "totalCostUsd": 0.179618,
+    "avgCostPerTurnUsd": 0.008553,
+    "avgCostPerLeadUsd": 0.02566,
+    "maxTurnCostUsd": 0.011599,
+    "totalLatencyMs": 109300,
+    "avgLatencyMs": 5205,
+    "p95LatencyMs": 7003,
+    "maxLatencyMs": 7385,
+    "mostExpensiveTurn": {
+      "index": 5,
+      "user": "tenho 90 alunos, hoje controlo em planilha, prioridade e agenda, urgente agora",
+      "httpStatus": 200,
+      "latencyMs": 7385,
+      "assistantMessages": [
+        {
+          "id": "assistant_1779504032815_529",
+          "role": "assistant",
+          "content": "Qual é a principal dor ou rotina que você quer melhorar primeiro?",
+          "intent": "answer_question"
+        }
+      ],
+      "shouldOfferDiagnostic": true,
+      "qualificationPatch": {
+        "leadSourceChannel": "widget",
+        "agentRuntimeRunId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+        "agentRuntimeTraceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+        "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+        "agentRuntimePreviousState": "diagnostic_in_progress",
+        "agentRuntimeCurrentState": "diagnostic_in_progress",
+        "agentRuntimeNextState": "diagnostic_in_progress",
+        "agentRuntimeRoute": "diagnostic",
+        "agentRuntimeDetectedIntents": "diagnostic",
+        "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+        "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+        "agentRuntimeGuardrailFlags": "",
+        "agentRuntimeCostEstimateUsd": "0.011599",
+        "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+        "diagnosticStatus": "in_progress",
+        "diagnosticSummary": "rotina operacional prioritária",
+        "diagnosticNextStep": "Você quer comparar plano para uma rotina específica ou para a Taliya mais completa?"
+      },
+      "guardrailDecision": {
+        "category": "allowed",
+        "action": "respond",
+        "reason": "agent_runtime:succeeded"
+      },
+      "costUsd": 0.011599,
+      "traceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+      "runId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+      "currentAgent": "taliya_commercial_diagnostic_agent",
+      "route": "diagnostic",
+      "templateIds": "diagnostic.ask_main_pain",
+      "scenarioId": "autoval-long-1779503984318"
+    }
+  },
+  "toneReviews": [
+    {
+      "scenarioId": "autoval-sales-1779503948154",
+      "title": "Widget -> Sales Inbox complete flow",
+      "score": 5,
+      "ok": true,
+      "failures": [],
+      "notes": "Tone is concise, punctuated, and commercially aligned."
+    },
+    {
+      "scenarioId": "autoval-price-1779503984318",
+      "title": "Price short lead",
+      "score": 5,
+      "ok": true,
+      "failures": [],
+      "notes": "Tone is concise, punctuated, and commercially aligned."
+    },
+    {
+      "scenarioId": "autoval-demo-1779503984318",
+      "title": "Demo lead",
+      "score": 5,
+      "ok": true,
+      "failures": [],
+      "notes": "Tone is concise, punctuated, and commercially aligned."
+    },
+    {
+      "scenarioId": "autoval-pain-1779503984318",
+      "title": "Pain-first lead",
+      "score": 5,
+      "ok": true,
+      "failures": [],
+      "notes": "Tone is concise, punctuated, and commercially aligned."
+    },
+    {
+      "scenarioId": "autoval-plan-1779503984318",
+      "title": "Plan fit lead",
+      "score": 5,
+      "ok": true,
+      "failures": [],
+      "notes": "Tone is concise, punctuated, and commercially aligned."
+    },
+    {
+      "scenarioId": "autoval-human-1779503984318",
+      "title": "Human handoff lead",
+      "score": 5,
+      "ok": true,
+      "failures": [],
+      "notes": "Tone is concise, punctuated, and commercially aligned."
+    },
+    {
+      "scenarioId": "autoval-long-1779503984318",
+      "title": "Long mixed lead",
+      "score": 5,
+      "ok": true,
+      "failures": [],
+      "notes": "Tone is concise, punctuated, and commercially aligned."
+    }
+  ],
+  "behaviorReview": {
+    "ok": true,
+    "failures": []
+  },
+  "scenarios": [
+    {
+      "id": "autoval-sales-1779503948154",
+      "title": "Widget -> Sales Inbox complete flow",
+      "sessionId": "autoval-sales-1779503948154",
+      "leadId": "lead-autoval-sales-1779503948154",
+      "turns": [
+        {
+          "index": 1,
+          "user": "quanto custa?",
+          "httpStatus": 200,
+          "latencyMs": 4129,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503951023_496",
+              "role": "assistant",
+              "content": "Oi, Ana, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779503951023_497",
+              "role": "assistant",
+              "content": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia. O que você acha?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_106ced0022fa4226bea789942ecb17c6",
+            "agentRuntimeTraceId": "trace_6eaab26760d94adea2bff202b4d56901",
+            "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "product_question",
+            "agentRuntimeRoute": "product",
+            "agentRuntimeDetectedIntents": "product, price",
+            "agentRuntimeTemplateIds": "product.price_direct, diagnostic.price_hook",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.006893",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "offered"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.006893,
+          "traceId": "trace_6eaab26760d94adea2bff202b4d56901",
+          "runId": "run_106ced0022fa4226bea789942ecb17c6",
+          "currentAgent": "taliya_commercial_product_agent",
+          "route": "product",
+          "templateIds": "product.price_direct, diagnostic.price_hook"
+        },
+        {
+          "index": 2,
+          "user": "quero fazer diagnostico gratuito",
+          "httpStatus": 200,
+          "latencyMs": 4172,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503955653_498",
+              "role": "assistant",
+              "content": "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_5adad15712e44cc29482033849e99080",
+            "agentRuntimeTraceId": "trace_83e08adc14d3409dbbc1d388e8b7e624",
+            "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+            "agentRuntimePreviousState": "product_question",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_in_progress",
+            "agentRuntimeRoute": "diagnostic",
+            "agentRuntimeDetectedIntents": "diagnostic",
+            "agentRuntimeTemplateIds": "diagnostic.ask_active_students",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.008077",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "in_progress",
+            "diagnosticNextStep": "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.008077,
+          "traceId": "trace_83e08adc14d3409dbbc1d388e8b7e624",
+          "runId": "run_5adad15712e44cc29482033849e99080",
+          "currentAgent": "taliya_commercial_diagnostic_agent",
+          "route": "diagnostic",
+          "templateIds": "diagnostic.ask_active_students"
+        },
+        {
+          "index": 3,
+          "user": "tenho 120 alunos, perco interessados no WhatsApp, hoje respondo manualmente, prioridade vendas, urgente agora, quero comparar plano",
+          "httpStatus": 200,
+          "latencyMs": 6715,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503961844_499",
+              "role": "assistant",
+              "content": "Pelo contexto, o principal gargalo parece ser atendimento e follow-up no WhatsApp. O primeiro passo seria organizar o fluxo de atendimento e follow-up primeiro.",
+              "intent": "crm_agent_diagnostic"
+            },
+            {
+              "id": "assistant_1779503961844_500",
+              "role": "assistant",
+              "content": "Para plano, eu compararia Essencial ou Avance, dependendo do peso do atendimento e do follow-up.",
+              "intent": "crm_agent_diagnostic"
+            }
+          ],
+          "conversionPath": "crm_agent_diagnostic",
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_cc3b465ef9b84cd7940af49deaed256d",
+            "agentRuntimeTraceId": "trace_6c27d9c21df6459cb64257727c1eb25f",
+            "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_in_progress",
+            "agentRuntimeCurrentState": "diagnostic_delivered",
+            "agentRuntimeNextState": "diagnostic_delivered",
+            "agentRuntimeRoute": "diagnostic",
+            "agentRuntimeDetectedIntents": "diagnostic, plan_fit, urgency",
+            "agentRuntimeTemplateIds": "diagnostic.deliver",
+            "agentRuntimeDiagnosticLedgerStatus": "complete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.010875",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "completed",
+            "diagnosticSummary": "atendimento e follow-up no WhatsApp",
+            "diagnosticCompletedAt": "2026-05-23T02:39:21.844Z",
+            "commercialStage": "diagnostic_completed"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.010875,
+          "traceId": "trace_6c27d9c21df6459cb64257727c1eb25f",
+          "runId": "run_cc3b465ef9b84cd7940af49deaed256d",
+          "currentAgent": "taliya_commercial_diagnostic_agent",
+          "route": "diagnostic",
+          "templateIds": "diagnostic.deliver"
+        },
+        {
+          "index": 4,
+          "user": "quero contratar, pode me colocar na lista de espera",
+          "httpStatus": 200,
+          "latencyMs": 5066,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503966597_501",
+              "role": "assistant",
+              "content": "Estamos trabalhando com um número pequeno de studios agora.",
+              "intent": "waitlist_intent"
+            },
+            {
+              "id": "assistant_1779503966597_502",
+              "role": "assistant",
+              "content": "Se fizer sentido, posso colocar seu studio na lista de espera e chamar assim que abrir uma próxima janela.",
+              "intent": "waitlist_intent"
+            }
+          ],
+          "conversionPath": "waitlist_intent",
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_7396222560ac41a09a5f1c7c1a6b0c7b",
+            "agentRuntimeTraceId": "trace_b0d6f57e6a0f4e7ebaef9b7529d2b443",
+            "agentRuntimeCurrentAgent": "taliya_commercial_waitlist_agent",
+            "agentRuntimePreviousState": "diagnostic_delivered",
+            "agentRuntimeCurrentState": "waitlist_offered",
+            "agentRuntimeNextState": "waitlist_offered",
+            "agentRuntimeRoute": "waitlist",
+            "agentRuntimeDetectedIntents": "waitlist, buy_intent",
+            "agentRuntimeTemplateIds": "waitlist.offer_after_contract_intent",
+            "agentRuntimeDiagnosticLedgerStatus": "complete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeWaitlistIntentEvidence": "previous_state.diagnostic.main_bottleneck | previous_state.diagnostic.first_recommended_step | previous_state.diagnostic.plan_or_range_to_compare | product_knowledge.facts.availability | product_knowledge.facts.waitlist_status | profile_name_assessment.first_name",
+            "agentRuntimeCostEstimateUsd": "0.009107",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "waitlistStatus": "offered",
+            "missingWaitlistFields": "",
+            "diagnosticStatus": "completed",
+            "diagnosticSummary": "perda de interessados e falta de previsibilidade na rotina comercial",
+            "diagnosticCompletedAt": "2026-05-23T02:39:26.597Z",
+            "commercialStage": "diagnostic_completed"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.009107,
+          "traceId": "trace_b0d6f57e6a0f4e7ebaef9b7529d2b443",
+          "runId": "run_7396222560ac41a09a5f1c7c1a6b0c7b",
+          "currentAgent": "taliya_commercial_waitlist_agent",
+          "route": "waitlist",
+          "templateIds": "waitlist.offer_after_contract_intent"
+        },
+        {
+          "index": 5,
+          "user": "pode colocar o Studio Viva em Vitoria ES",
+          "httpStatus": 200,
+          "latencyMs": 4915,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503971232_503",
+              "role": "assistant",
+              "content": "Perfeito, deixei seu studio na lista de espera da Taliya.",
+              "intent": "waitlist_intent"
+            },
+            {
+              "id": "assistant_1779503971232_504",
+              "role": "assistant",
+              "content": "Quando abrir uma próxima janela, a equipe chama com o contexto dessa conversa.",
+              "intent": "waitlist_intent"
+            }
+          ],
+          "conversionPath": "waitlist_intent",
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_7a7a9c18678b483987d3cd24c4ac5528",
+            "agentRuntimeTraceId": "trace_6c3917b751a048f2a1f5ac1caaf2023b",
+            "agentRuntimeCurrentAgent": "taliya_commercial_waitlist_agent",
+            "agentRuntimePreviousState": "waitlist_offered",
+            "agentRuntimeCurrentState": "waitlist_joined",
+            "agentRuntimeNextState": "waitlist_joined",
+            "agentRuntimeRoute": "waitlist",
+            "agentRuntimeDetectedIntents": "waitlist, buy_intent",
+            "agentRuntimeTemplateIds": "waitlist.joined",
+            "agentRuntimeDiagnosticLedgerStatus": "complete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeWaitlistIntentEvidence": "previous_state.diagnostic.main_bottleneck | previous_state.diagnostic.first_recommended_step | previous_state.diagnostic.plan_or_range_to_compare | product_knowledge.facts.availability | product_knowledge.facts.waitlist_status | profile_name_assessment.first_name",
+            "agentRuntimeCostEstimateUsd": "0.009409",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "waitlistStatus": "joined",
+            "missingWaitlistFields": "",
+            "waitlistJoinedAt": "2026-05-23T02:39:31.232Z",
+            "commercialStage": "diagnostic_completed",
+            "closureState": "waitlist_joined",
+            "diagnosticStatus": "completed",
+            "diagnosticSummary": "perda de interessados e falta de previsibilidade na rotina comercial",
+            "diagnosticCompletedAt": "2026-05-23T02:39:31.232Z"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.009409,
+          "traceId": "trace_6c3917b751a048f2a1f5ac1caaf2023b",
+          "runId": "run_7a7a9c18678b483987d3cd24c4ac5528",
+          "currentAgent": "taliya_commercial_waitlist_agent",
+          "route": "waitlist",
+          "templateIds": "waitlist.joined"
+        },
+        {
+          "index": 6,
+          "user": "quanto custa o Completo?",
+          "httpStatus": 200,
+          "latencyMs": 5913,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503976937_505",
+              "role": "assistant",
+              "content": "O Completo fica em R$ 1.497/mês.",
+              "intent": "crm_agent_diagnostic"
+            }
+          ],
+          "conversionPath": "crm_agent_diagnostic",
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_29a398dd3bf043ad97c481a94aa1a9a6",
+            "agentRuntimeTraceId": "trace_82853b6a9731455bbad755f5f076b7ce",
+            "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+            "agentRuntimePreviousState": "waitlist_joined",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "product_question",
+            "agentRuntimeRoute": "product",
+            "agentRuntimeDetectedIntents": "product, price",
+            "agentRuntimeTemplateIds": "product.price_complete_direct",
+            "agentRuntimeDiagnosticLedgerStatus": "complete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.008815",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "completed",
+            "diagnosticSummary": "perda de interessados e falta de previsibilidade na rotina comercial",
+            "diagnosticCompletedAt": "2026-05-23T02:39:36.937Z",
+            "commercialStage": "diagnostic_completed"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.008815,
+          "traceId": "trace_82853b6a9731455bbad755f5f076b7ce",
+          "runId": "run_29a398dd3bf043ad97c481a94aa1a9a6",
+          "currentAgent": "taliya_commercial_product_agent",
+          "route": "product",
+          "templateIds": "product.price_complete_direct"
+        },
+        {
+          "index": 7,
+          "user": "quero falar com humano",
+          "httpStatus": 200,
+          "latencyMs": 4488,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503981263_506",
+              "role": "assistant",
+              "content": "Claro. Vou deixar uma pessoa assumir daqui.",
+              "intent": "human_whatsapp_handoff"
+            },
+            {
+              "id": "assistant_1779503981263_507",
+              "role": "assistant",
+              "content": "Também deixo o contexto salvo para você não precisar repetir tudo.",
+              "intent": "human_whatsapp_handoff"
+            }
+          ],
+          "conversionPath": "human_whatsapp_assist",
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_5a7143aefa934e63987524b1f4a1a32e",
+            "agentRuntimeTraceId": "trace_03e61c071152421fadb3f4d6596ea426",
+            "agentRuntimeCurrentAgent": "taliya_commercial_handoff_agent",
+            "agentRuntimePreviousState": "product_question",
+            "agentRuntimeCurrentState": "human_handoff",
+            "agentRuntimeNextState": "paused_by_human",
+            "agentRuntimeRoute": "handoff",
+            "agentRuntimeDetectedIntents": "handoff",
+            "agentRuntimeTemplateIds": "handoff.acknowledge",
+            "agentRuntimeDiagnosticLedgerStatus": "complete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.008474",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "completed",
+            "diagnosticSummary": "perda de interessados e falta de previsibilidade na rotina comercial",
+            "diagnosticCompletedAt": "2026-05-23T02:39:41.263Z",
+            "commercialStage": "human_handoff",
+            "humanActive": "requested",
+            "aiPaused": "true",
+            "closureState": "human_active",
+            "nextAction": "Humano deve assumir a conversa; automacao pausada."
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "handoff",
+            "reason": "agent_runtime:human_paused"
+          },
+          "costUsd": 0.008474,
+          "traceId": "trace_03e61c071152421fadb3f4d6596ea426",
+          "runId": "run_5a7143aefa934e63987524b1f4a1a32e",
+          "currentAgent": "taliya_commercial_handoff_agent",
+          "route": "handoff",
+          "templateIds": "handoff.acknowledge"
+        }
+      ],
+      "totals": {
+        "turns": 7,
+        "costUsd": 0.06165,
+        "latencyMs": 35398,
+        "avgLatencyMs": 5057,
+        "maxLatencyMs": 6715
+      }
+    },
+    {
+      "id": "autoval-price-1779503984318",
+      "title": "Price short lead",
+      "sessionId": "autoval-price-1779503984318",
+      "leadId": "lead-autoval-price-1779503984318",
+      "turns": [
+        {
+          "index": 1,
+          "user": "quanto custa?",
+          "httpStatus": 200,
+          "latencyMs": 5602,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503989059_508",
+              "role": "assistant",
+              "content": "Oi, Ana, tudo bem? Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779503989059_509",
+              "role": "assistant",
+              "content": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia. O que você acha?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_0512bceafbbe4e4ca514b0eb0bfa9f51",
+            "agentRuntimeTraceId": "trace_aa87f5b7692d4cd0abfc1018af3bf0df",
+            "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "product_question",
+            "agentRuntimeRoute": "product",
+            "agentRuntimeDetectedIntents": "product, price",
+            "agentRuntimeTemplateIds": "product.price_direct, diagnostic.price_hook",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.007645",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "offered",
+            "diagnosticNextStep": "Se quiser, eu também posso te dizer qual comparativo faz mais sentido pro seu studio com um diagnóstico gratuito."
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.007645,
+          "traceId": "trace_aa87f5b7692d4cd0abfc1018af3bf0df",
+          "runId": "run_0512bceafbbe4e4ca514b0eb0bfa9f51",
+          "currentAgent": "taliya_commercial_product_agent",
+          "route": "product",
+          "templateIds": "product.price_direct, diagnostic.price_hook"
+        }
+      ],
+      "totals": {
+        "turns": 1,
+        "costUsd": 0.007645,
+        "latencyMs": 5602,
+        "avgLatencyMs": 5602,
+        "maxLatencyMs": 5602
+      }
+    },
+    {
+      "id": "autoval-demo-1779503984318",
+      "title": "Demo lead",
+      "sessionId": "autoval-demo-1779503984318",
+      "leadId": "lead-autoval-demo-1779503984318",
+      "turns": [
+        {
+          "index": 1,
+          "user": "quero ver uma demonstracao",
+          "httpStatus": 200,
+          "latencyMs": 3720,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503992683_510",
+              "role": "assistant",
+              "content": "Oi, Ana, tudo bem?",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779503992684_511",
+              "role": "assistant",
+              "content": "Ver demonstração",
+              "intent": "answer_question",
+              "action": {
+                "label": "Ver demonstração",
+                "href": "https://www.taliya.com.br/pilates/planos/demonstracao"
+              }
+            },
+            {
+              "id": "assistant_1779503992684_512",
+              "role": "assistant",
+              "content": "Conte mais sobre os problemas do seu studio, posso te indicar uma demonstração que resolva algo seu.",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_40acf00480804f7084882d7f10a8d095",
+            "agentRuntimeTraceId": "trace_1468d87da4a742b182eb963b67a1b5fb",
+            "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "product_question",
+            "agentRuntimeRoute": "product",
+            "agentRuntimeDetectedIntents": "demo",
+            "agentRuntimeTemplateIds": "product.demo_direct",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.006796",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.006796,
+          "traceId": "trace_1468d87da4a742b182eb963b67a1b5fb",
+          "runId": "run_40acf00480804f7084882d7f10a8d095",
+          "currentAgent": "taliya_commercial_product_agent",
+          "route": "product",
+          "templateIds": "product.demo_direct"
+        }
+      ],
+      "totals": {
+        "turns": 1,
+        "costUsd": 0.006796,
+        "latencyMs": 3720,
+        "avgLatencyMs": 3720,
+        "maxLatencyMs": 3720
+      }
+    },
+    {
+      "id": "autoval-pain-1779503984318",
+      "title": "Pain-first lead",
+      "sessionId": "autoval-pain-1779503984318",
+      "leadId": "lead-autoval-pain-1779503984318",
+      "turns": [
+        {
+          "index": 1,
+          "user": "perco interessados no WhatsApp porque a equipe demora para responder",
+          "httpStatus": 200,
+          "latencyMs": 4655,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779503997319_513",
+              "role": "assistant",
+              "content": "Oi, Ana, tudo bem? Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779503997319_514",
+              "role": "assistant",
+              "content": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779503997319_515",
+              "role": "assistant",
+              "content": "O que você acha?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_d28acfe88151445b86dafc425a625204",
+            "agentRuntimeTraceId": "trace_e3b5c352784b485ba4996d0eb8500952",
+            "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "diagnostic_offered",
+            "agentRuntimeNextState": "diagnostic_in_progress",
+            "agentRuntimeRoute": "diagnostic",
+            "agentRuntimeDetectedIntents": "product, pain",
+            "agentRuntimeTemplateIds": "diagnostic.offer_soft",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.007687",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "offered"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.007687,
+          "traceId": "trace_e3b5c352784b485ba4996d0eb8500952",
+          "runId": "run_d28acfe88151445b86dafc425a625204",
+          "currentAgent": "taliya_commercial_diagnostic_agent",
+          "route": "diagnostic",
+          "templateIds": "diagnostic.offer_soft"
+        }
+      ],
+      "totals": {
+        "turns": 1,
+        "costUsd": 0.007687,
+        "latencyMs": 4655,
+        "avgLatencyMs": 4655,
+        "maxLatencyMs": 4655
+      }
+    },
+    {
+      "id": "autoval-plan-1779503984318",
+      "title": "Plan fit lead",
+      "sessionId": "autoval-plan-1779503984318",
+      "leadId": "lead-autoval-plan-1779503984318",
+      "turns": [
+        {
+          "index": 1,
+          "user": "qual plano voce recomenda pra mim?",
+          "httpStatus": 200,
+          "latencyMs": 4950,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504002262_516",
+              "role": "assistant",
+              "content": "Oi, Ana, tudo bem? Para comparar plano sem chutar, vale entender a rotina do studio antes.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779504002262_517",
+              "role": "assistant",
+              "content": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779504002262_518",
+              "role": "assistant",
+              "content": "O que você acha?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_9dce34b226a34445b17617a072b999b2",
+            "agentRuntimeTraceId": "trace_d3280cf571cf4f448808f81e8aecee3e",
+            "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "product_question",
+            "agentRuntimeRoute": "product",
+            "agentRuntimeDetectedIntents": "plan_recommendation",
+            "agentRuntimeTemplateIds": "product.plan_fit_with_diagnostic",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.00811",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "offered",
+            "diagnosticNextStep": "Hoje sua maior prioridade é atendimento, agenda, vendas ou rotina?"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.00811,
+          "traceId": "trace_d3280cf571cf4f448808f81e8aecee3e",
+          "runId": "run_9dce34b226a34445b17617a072b999b2",
+          "currentAgent": "taliya_commercial_product_agent",
+          "route": "product",
+          "templateIds": "product.plan_fit_with_diagnostic"
+        }
+      ],
+      "totals": {
+        "turns": 1,
+        "costUsd": 0.00811,
+        "latencyMs": 4950,
+        "avgLatencyMs": 4950,
+        "maxLatencyMs": 4950
+      }
+    },
+    {
+      "id": "autoval-human-1779503984318",
+      "title": "Human handoff lead",
+      "sessionId": "autoval-human-1779503984318",
+      "leadId": "lead-autoval-human-1779503984318",
+      "turns": [
+        {
+          "index": 1,
+          "user": "quero falar com uma pessoa",
+          "httpStatus": 200,
+          "latencyMs": 3397,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504005794_519",
+              "role": "assistant",
+              "content": "Oi, Ana, tudo bem? Claro. Vou deixar uma pessoa assumir daqui.",
+              "intent": "human_whatsapp_handoff"
+            },
+            {
+              "id": "assistant_1779504005794_520",
+              "role": "assistant",
+              "content": "Também deixo o contexto salvo para você não precisar repetir tudo.",
+              "intent": "human_whatsapp_handoff"
+            }
+          ],
+          "conversionPath": "human_whatsapp_assist",
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_61b31970660b4367b52dfb31095f9cbf",
+            "agentRuntimeTraceId": "trace_c4e31c4ec5754823bce1378de43671f0",
+            "agentRuntimeCurrentAgent": "taliya_commercial_handoff_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "human_handoff",
+            "agentRuntimeNextState": "paused_by_human",
+            "agentRuntimeRoute": "handoff",
+            "agentRuntimeDetectedIntents": "handoff",
+            "agentRuntimeTemplateIds": "handoff.acknowledge",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.006724",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "humanActive": "requested",
+            "aiPaused": "true",
+            "commercialStage": "human_handoff",
+            "closureState": "human_active",
+            "nextAction": "Humano deve assumir a conversa; automacao pausada."
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "handoff",
+            "reason": "agent_runtime:human_paused"
+          },
+          "costUsd": 0.006724,
+          "traceId": "trace_c4e31c4ec5754823bce1378de43671f0",
+          "runId": "run_61b31970660b4367b52dfb31095f9cbf",
+          "currentAgent": "taliya_commercial_handoff_agent",
+          "route": "handoff",
+          "templateIds": "handoff.acknowledge"
+        }
+      ],
+      "totals": {
+        "turns": 1,
+        "costUsd": 0.006724,
+        "latencyMs": 3397,
+        "avgLatencyMs": 3397,
+        "maxLatencyMs": 3397
+      }
+    },
+    {
+      "id": "autoval-long-1779503984318",
+      "title": "Long mixed lead",
+      "sessionId": "autoval-long-1779503984318",
+      "leadId": "lead-autoval-long-1779503984318",
+      "turns": [
+        {
+          "index": 1,
+          "user": "vim pelo instagram e queria entender melhor",
+          "httpStatus": 200,
+          "latencyMs": 3798,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504009569_521",
+              "role": "assistant",
+              "content": "Oi, Ana, tudo bem? A Taliya é um CRM para studios de Pilates, com IA para atendimento, agenda, vendas e rotina.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779504009569_522",
+              "role": "assistant",
+              "content": "Você quer entender a ideia geral primeiro ou tem alguma parte do studio que está pesando mais hoje?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_6506e7835d8d4a19b24c6185ae8fe77f",
+            "agentRuntimeTraceId": "trace_73d31853b70648b9875eed3dd191adff",
+            "agentRuntimeCurrentAgent": "taliya_commercial_entry_agent",
+            "agentRuntimePreviousState": "new_lead",
+            "agentRuntimeCurrentState": "source_instagram",
+            "agentRuntimeNextState": "source_instagram",
+            "agentRuntimeRoute": "entry",
+            "agentRuntimeDetectedIntents": "greeting, overview_request",
+            "agentRuntimeTemplateIds": "opening.instagram_source",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.007222",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.007222,
+          "traceId": "trace_73d31853b70648b9875eed3dd191adff",
+          "runId": "run_6506e7835d8d4a19b24c6185ae8fe77f",
+          "currentAgent": "taliya_commercial_entry_agent",
+          "route": "entry",
+          "templateIds": "opening.instagram_source"
+        },
+        {
+          "index": 2,
+          "user": "tenho agenda meio baguncada e algumas reposicoes se perdem",
+          "httpStatus": 200,
+          "latencyMs": 5427,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504014864_523",
+              "role": "assistant",
+              "content": "Entendi: a reposição bagunçada na agenda já é um bom sinal de onde o diagnóstico deve começar.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779504014864_524",
+              "role": "assistant",
+              "content": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779504014864_525",
+              "role": "assistant",
+              "content": "O que você acha?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_3bd31503137f4fe4812b4ecd96160183",
+            "agentRuntimeTraceId": "trace_f209bde9a2944f2e871ef0cf034fff19",
+            "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+            "agentRuntimePreviousState": "source_instagram",
+            "agentRuntimeCurrentState": "diagnostic_offered",
+            "agentRuntimeNextState": "diagnostic_in_progress",
+            "agentRuntimeRoute": "diagnostic",
+            "agentRuntimeDetectedIntents": "pain, diagnostic",
+            "agentRuntimeTemplateIds": "diagnostic.offer_soft",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.008389",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "in_progress",
+            "diagnosticNextStep": "Hoje, como vocês controlam agenda e reposições?"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.008389,
+          "traceId": "trace_f209bde9a2944f2e871ef0cf034fff19",
+          "runId": "run_3bd31503137f4fe4812b4ecd96160183",
+          "currentAgent": "taliya_commercial_diagnostic_agent",
+          "route": "diagnostic",
+          "templateIds": "diagnostic.offer_soft"
+        },
+        {
+          "index": 3,
+          "user": "quanto custa?",
+          "httpStatus": 200,
+          "latencyMs": 4236,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504018820_526",
+              "role": "assistant",
+              "content": "Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779504018820_527",
+              "role": "assistant",
+              "content": "Se fizer sentido para você, estamos oferecendo um diagnóstico gratuito para o seu studio. Assim você entende se algum dos nossos planos te atenderia. O que você acha?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_497fd3065e774ee7886ae132ba5d15b6",
+            "agentRuntimeTraceId": "trace_ab5022a249a843ee9f7eb5de6ada4c61",
+            "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+            "agentRuntimePreviousState": "diagnostic_in_progress",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "product_question",
+            "agentRuntimeRoute": "product",
+            "agentRuntimeDetectedIntents": "product, price",
+            "agentRuntimeTemplateIds": "product.price_direct, diagnostic.price_hook",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.008241",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "in_progress"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.008241,
+          "traceId": "trace_ab5022a249a843ee9f7eb5de6ada4c61",
+          "runId": "run_497fd3065e774ee7886ae132ba5d15b6",
+          "currentAgent": "taliya_commercial_product_agent",
+          "route": "product",
+          "templateIds": "product.price_direct, diagnostic.price_hook"
+        },
+        {
+          "index": 4,
+          "user": "pode fazer diagnostico gratuito",
+          "httpStatus": 200,
+          "latencyMs": 7003,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504025622_528",
+              "role": "assistant",
+              "content": "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_496cc972be7d4b94b84b993b3ce39527",
+            "agentRuntimeTraceId": "trace_57f59f61432a4052a2bcecebe5f32e2b",
+            "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+            "agentRuntimePreviousState": "product_question",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_in_progress",
+            "agentRuntimeRoute": "diagnostic",
+            "agentRuntimeDetectedIntents": "diagnostic",
+            "agentRuntimeTemplateIds": "diagnostic.ask_active_students",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.010875",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "in_progress",
+            "diagnosticSummary": "a rotina prioritária",
+            "diagnosticNextStep": "Hoje o studio tem mais ou menos quantos alunos ativos ou qual volume de leads por mês?"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.010875,
+          "traceId": "trace_57f59f61432a4052a2bcecebe5f32e2b",
+          "runId": "run_496cc972be7d4b94b84b993b3ce39527",
+          "currentAgent": "taliya_commercial_diagnostic_agent",
+          "route": "diagnostic",
+          "templateIds": "diagnostic.ask_active_students"
+        },
+        {
+          "index": 5,
+          "user": "tenho 90 alunos, hoje controlo em planilha, prioridade e agenda, urgente agora",
+          "httpStatus": 200,
+          "latencyMs": 7385,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504032815_529",
+              "role": "assistant",
+              "content": "Qual é a principal dor ou rotina que você quer melhorar primeiro?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+            "agentRuntimeTraceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+            "agentRuntimeCurrentAgent": "taliya_commercial_diagnostic_agent",
+            "agentRuntimePreviousState": "diagnostic_in_progress",
+            "agentRuntimeCurrentState": "diagnostic_in_progress",
+            "agentRuntimeNextState": "diagnostic_in_progress",
+            "agentRuntimeRoute": "diagnostic",
+            "agentRuntimeDetectedIntents": "diagnostic",
+            "agentRuntimeTemplateIds": "diagnostic.ask_main_pain",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.011599",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "in_progress",
+            "diagnosticSummary": "rotina operacional prioritária",
+            "diagnosticNextStep": "Você quer comparar plano para uma rotina específica ou para a Taliya mais completa?"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.011599,
+          "traceId": "trace_369fd0a4e77e4ba4b9ebeef993d04995",
+          "runId": "run_f5bf60b1c87f44ffb36756d76f64f6e0",
+          "currentAgent": "taliya_commercial_diagnostic_agent",
+          "route": "diagnostic",
+          "templateIds": "diagnostic.ask_main_pain"
+        },
+        {
+          "index": 6,
+          "user": "quero ver uma demonstracao",
+          "httpStatus": 200,
+          "latencyMs": 4761,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504037270_530",
+              "role": "assistant",
+              "content": "Ver demonstração",
+              "intent": "answer_question",
+              "action": {
+                "label": "Ver demonstração",
+                "href": "https://www.taliya.com.br/pilates/planos/demonstracao"
+              }
+            },
+            {
+              "id": "assistant_1779504037270_531",
+              "role": "assistant",
+              "content": "Conte mais sobre os problemas do seu studio, posso te indicar uma demonstração que resolva algo seu.",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_3be3b0d1cf5d446a8ff7e90763b0d899",
+            "agentRuntimeTraceId": "trace_e829235db4004cfa86c49ae4ee3583ec",
+            "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+            "agentRuntimePreviousState": "diagnostic_in_progress",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "product_question",
+            "agentRuntimeRoute": "product",
+            "agentRuntimeDetectedIntents": "product",
+            "agentRuntimeTemplateIds": "product.demo_direct",
+            "agentRuntimeDiagnosticLedgerStatus": "not_started",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.008489",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.008489,
+          "traceId": "trace_e829235db4004cfa86c49ae4ee3583ec",
+          "runId": "run_3be3b0d1cf5d446a8ff7e90763b0d899",
+          "currentAgent": "taliya_commercial_product_agent",
+          "route": "product",
+          "templateIds": "product.demo_direct"
+        },
+        {
+          "index": 7,
+          "user": "qual plano faria mais sentido?",
+          "httpStatus": 200,
+          "latencyMs": 6652,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504043715_532",
+              "role": "assistant",
+              "content": "Para comparar plano sem chutar, vale entender a rotina do studio antes.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779504043715_533",
+              "role": "assistant",
+              "content": "Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.",
+              "intent": "answer_question"
+            },
+            {
+              "id": "assistant_1779504043715_534",
+              "role": "assistant",
+              "content": "O que você acha?",
+              "intent": "answer_question"
+            }
+          ],
+          "shouldOfferDiagnostic": true,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_74ca5b000f274b55afd7fa3bd434e0b4",
+            "agentRuntimeTraceId": "trace_f10381a4004b49e08880a63395625d65",
+            "agentRuntimeCurrentAgent": "taliya_commercial_product_agent",
+            "agentRuntimePreviousState": "product_question",
+            "agentRuntimeCurrentState": "product_question",
+            "agentRuntimeNextState": "product_question",
+            "agentRuntimeRoute": "product",
+            "agentRuntimeDetectedIntents": "plan_fit",
+            "agentRuntimeTemplateIds": "product.plan_fit_with_diagnostic",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeCostEstimateUsd": "0.008952",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "diagnosticStatus": "offered",
+            "diagnosticNextStep": "Quer seguir com o diagnóstico gratuito?"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.008952,
+          "traceId": "trace_f10381a4004b49e08880a63395625d65",
+          "runId": "run_74ca5b000f274b55afd7fa3bd434e0b4",
+          "currentAgent": "taliya_commercial_product_agent",
+          "route": "product",
+          "templateIds": "product.plan_fit_with_diagnostic"
+        },
+        {
+          "index": 8,
+          "user": "quero contratar quando abrir vaga",
+          "httpStatus": 200,
+          "latencyMs": 6869,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504050427_535",
+              "role": "assistant",
+              "content": "Estamos trabalhando com um número pequeno de studios agora.",
+              "intent": "waitlist_intent"
+            },
+            {
+              "id": "assistant_1779504050427_536",
+              "role": "assistant",
+              "content": "Se fizer sentido, posso colocar seu studio na lista de espera e chamar assim que abrir uma próxima janela.",
+              "intent": "waitlist_intent"
+            }
+          ],
+          "conversionPath": "waitlist_intent",
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_2ab6f31809b34899959d0e346142ba78",
+            "agentRuntimeTraceId": "trace_31f3ea974a614b7d8bb7dbcdf966ddff",
+            "agentRuntimeCurrentAgent": "taliya_commercial_waitlist_agent",
+            "agentRuntimePreviousState": "product_question",
+            "agentRuntimeCurrentState": "waitlist_offered",
+            "agentRuntimeNextState": "waitlist_offered",
+            "agentRuntimeRoute": "waitlist",
+            "agentRuntimeDetectedIntents": "waitlist, buy_intent",
+            "agentRuntimeTemplateIds": "waitlist.offer_after_contract_intent",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeWaitlistIntentEvidence": "nome confiável: Ana | lead quer contratar quando abrir vaga | disponibilidade limitada para poucos studios | checkout indisponível",
+            "agentRuntimeCostEstimateUsd": "0.008794",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "waitlistStatus": "offered",
+            "missingWaitlistFields": ""
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.008794,
+          "traceId": "trace_31f3ea974a614b7d8bb7dbcdf966ddff",
+          "runId": "run_2ab6f31809b34899959d0e346142ba78",
+          "currentAgent": "taliya_commercial_waitlist_agent",
+          "route": "waitlist",
+          "templateIds": "waitlist.offer_after_contract_intent"
+        },
+        {
+          "index": 9,
+          "user": "pode colocar o Studio Movimento em Campinas SP",
+          "httpStatus": 200,
+          "latencyMs": 5447,
+          "assistantMessages": [
+            {
+              "id": "assistant_1779504055886_537",
+              "role": "assistant",
+              "content": "Perfeito, deixei seu studio na lista de espera da Taliya.",
+              "intent": "waitlist_intent"
+            },
+            {
+              "id": "assistant_1779504055886_538",
+              "role": "assistant",
+              "content": "Quando abrir uma próxima janela, a equipe chama com o contexto dessa conversa.",
+              "intent": "waitlist_intent"
+            }
+          ],
+          "conversionPath": "waitlist_intent",
+          "shouldOfferDiagnostic": false,
+          "qualificationPatch": {
+            "leadSourceChannel": "widget",
+            "agentRuntimeRunId": "run_16949a95322242c087098f04bb97bf6e",
+            "agentRuntimeTraceId": "trace_5e9d278b074a438ca01dc2e257dbef7a",
+            "agentRuntimeCurrentAgent": "taliya_commercial_waitlist_agent",
+            "agentRuntimePreviousState": "waitlist_offered",
+            "agentRuntimeCurrentState": "waitlist_joined",
+            "agentRuntimeNextState": "waitlist_joined",
+            "agentRuntimeRoute": "waitlist",
+            "agentRuntimeDetectedIntents": "waitlist, buy_intent",
+            "agentRuntimeTemplateIds": "waitlist.joined",
+            "agentRuntimeDiagnosticLedgerStatus": "incomplete",
+            "agentRuntimeGuardrailFlags": "",
+            "agentRuntimeWaitlistIntentEvidence": "nome confiável: Ana | lead quer contratar quando abrir vaga | disponibilidade limitada para poucos studios | checkout indisponível",
+            "agentRuntimeCostEstimateUsd": "0.008445",
+            "agentRuntimeProductSourceVersion": "taliya-commercial-2026-05-22",
+            "waitlistStatus": "joined",
+            "missingWaitlistFields": "",
+            "waitlistJoinedAt": "2026-05-23T02:40:55.886Z",
+            "commercialStage": "waitlist_joined",
+            "closureState": "waitlist_joined"
+          },
+          "guardrailDecision": {
+            "category": "allowed",
+            "action": "respond",
+            "reason": "agent_runtime:succeeded"
+          },
+          "costUsd": 0.008445,
+          "traceId": "trace_5e9d278b074a438ca01dc2e257dbef7a",
+          "runId": "run_16949a95322242c087098f04bb97bf6e",
+          "currentAgent": "taliya_commercial_waitlist_agent",
+          "route": "waitlist",
+          "templateIds": "waitlist.joined"
+        }
+      ],
+      "totals": {
+        "turns": 9,
+        "costUsd": 0.081006,
+        "latencyMs": 51578,
+        "avgLatencyMs": 5731,
+        "maxLatencyMs": 7385
+      }
+    }
+  ]
+}

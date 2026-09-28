@@ -1,0 +1,799 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-step3e-post-diagnostic-final2",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-26T14:22:41Z",
+  "finishedAt": "2026-05-26T14:23:08Z",
+  "summary": {
+    "total": 2,
+    "passed": 1,
+    "failed": 1,
+    "estimatedCostUsd": 0.017144,
+    "inputTokens": 13445,
+    "outputTokens": 1569
+  },
+  "releaseGate": "fail",
+  "scenarios": [
+    {
+      "id": "step3e-post-diagnostic-price-objection",
+      "title": "After diagnostic price objection should use memory and not restart diagnostic",
+      "channel": "widget",
+      "checks": [
+        "diagnostic_completed",
+        "diagnostic_ledger_complete",
+        "price_objection_value_argument",
+        "price_objection_contextual",
+        "price_objection_next_step",
+        "no_roi_promise",
+        "no_checkout_link",
+        "has_product_source",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_9dde90232cdd4e3399174984ccf3feb7",
+            "conversation_id": "real_eval_step3e-post-diagnostic-price-objection",
+            "lead_id": "lead_step3e-post-diagnostic-price-objection",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "diagnostic_delivered",
+                "next_state": "diagnostic_delivered",
+                "route": "diagnostic",
+                "opening_type": "none",
+                "detected_intents": [
+                  "product_how_it_works",
+                  "diagnostic_request",
+                  "price_comparison"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "complete",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "ask_demo_reaction",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead pediu diagnostico gratuito.",
+                  "Tem 110 alunos ativos.",
+                  "Perde interessados no WhatsApp.",
+                  "Hoje controla em planilha.",
+                  "Dor principal: retorno comercial.",
+                  "Prioridade: vendas.",
+                  "Urgente para este mes.",
+                  "Quer comparar plano.",
+                  "Nome confiavel do profile: Lucas."
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "diagnostic.deliver_hold",
+                  "diagnostic.deliver_context",
+                  "diagnostic.deliver_crm_base",
+                  "diagnostic.deliver_operational_step",
+                  "diagnostic.deliver_agent_recommendation",
+                  "diagnostic.deliver_agent_recommendation",
+                  "diagnostic.deliver_plan_recommendation",
+                  "diagnostic.deliver_demo_not_offered"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "O primeiro passo seria separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas."
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_agent_recommendation#2": {
+                    "agent_name": "Vendas",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "follow-ups e conversas que esfriam",
+                    "agent_recommendation_reason": "vendas apareceu como prioridade de impacto",
+                    "agent_practical_action": "ele lembra próximos passos e ajuda a não deixar interessado parado"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "interessados chegando pelo WhatsApp e ficando sem retorno claro",
+                    "first_step": "separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas",
+                    "plan_range": "Essencial ou Avance"
+                  },
+                  "product.post_diagnostic_plan_recap": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "product.how_it_works_direct": {
+                    "contextual_next_step": "Pelo diagnóstico que fizemos, isso entraria primeiro em atendimento. Posso te mandar uma demonstração para você ver esse funcionamento na prática.",
+                    "recommended_area": "atendimento"
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "diagnostic.deliver_hold",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_context",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_crm_base",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_operational_step",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_agent_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_agent_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_plan_recommendation",
+                    "channel": "widget"
+                  },
+                  {
+                    "template_id": "diagnostic.deliver_demo_not_offered",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "complete",
+                "next_question_kind": "pain",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, Lucas, tudo bem? Perfeito. Já dá pra te devolver uma leitura prática. Vou organizar em partes.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_hold",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_context",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_crm_base",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "O primeiro passo seria separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_operational_step",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Agente Atendimento faria sentido primeiro: ele ajuda com interessados que ficam sem resposta. Faz sentido aqui porque essa foi a dor comercial mais clara; na prática, ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_agent_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Agente Vendas também faria sentido: ele ajuda com follow-ups e conversas que esfriam. Faz sentido aqui porque vendas apareceu como prioridade de impacto; na prática, ele lembra próximos passos e ajuda a não deixar interessado parado.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_agent_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance ou Completo.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_plan_recommendation",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "diagnostic.deliver_demo_not_offered",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "request",
+                  "value": "diagnostico gratuito",
+                  "confidence": "high",
+                  "evidence": [
+                    "quero diagnostico gratuito"
+                  ]
+                },
+                {
+                  "key": "active_students",
+                  "value": "110 alunos ativos",
+                  "confidence": "high",
+                  "evidence": [
+                    "Tenho 110 alunos ativos"
+                  ]
+                },
+                {
+                  "key": "pain",
+                  "value": "perde interessados no WhatsApp",
+                  "confidence": "high",
+                  "evidence": [
+                    "perco interessados no WhatsApp"
+                  ]
+                },
+                {
+                  "key": "current_process",
+                  "value": "controla em planilha",
+                  "confidence": "high",
+                  "evidence": [
+                    "hoje controlo em planilha"
+                  ]
+                },
+                {
+                  "key": "main_pain",
+                  "value": "retorno comercial",
+                  "confidence": "high",
+                  "evidence": [
+                    "a dor principal e retorno comercial"
+                  ]
+                },
+                {
+                  "key": "priority",
+                  "value": "vendas",
+                  "confidence": "high",
+                  "evidence": [
+                    "a prioridade e vendas"
+                  ]
+                },
+                {
+                  "key": "urgency",
+                  "value": "este mes",
+                  "confidence": "high",
+                  "evidence": [
+                    "e urgente para esse mes"
+                  ]
+                },
+                {
+                  "key": "comparison_request",
+                  "value": "comparar plano",
+                  "confidence": "high",
+                  "evidence": [
+                    "quero comparar plano"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "completed",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  }
+                ],
+                "facts_used": [
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano."
+                ],
+                "main_bottleneck": "interessados chegando pelo WhatsApp e ficando sem retorno claro",
+                "pain_context_human": "Então, Lucas, pelo que você contou, o que mais parece estar pesando hoje é perder interessados no WhatsApp porque o retorno ainda depende muito de planilha e controle manual.",
+                "likely_cause": "o atendimento e o acompanhamento ainda dependem demais de controle manual.",
+                "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos.",
+                "first_recommended_step": "O primeiro passo seria separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas.",
+                "indicated_routines_or_agents": [
+                  "Atendimento",
+                  "Vendas"
+                ],
+                "indicated_agents": [
+                  {
+                    "name": "Atendimento",
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  {
+                    "name": "Vendas",
+                    "agent_name": "Vendas",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "follow-ups e conversas que esfriam",
+                    "agent_recommendation_reason": "vendas apareceu como prioridade de impacto",
+                    "agent_practical_action": "ele lembra próximos passos e ajuda a não deixar interessado parado"
+                  }
+                ],
+                "plan_or_range_to_compare": "Avance ou Completo",
+                "final_plan_line": "Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance ou Completo.",
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?",
+                "evidence": [
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano."
+                ],
+                "unknowns": [],
+                "confidence": "medium",
+                "next_question": null,
+                "validation_question": null,
+                "final_demo_next_step_question": "Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?"
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "initial_policy_read",
+                    "profile_name_assessment",
+                    "user_message",
+                    "product_knowledge",
+                    "how_it_works",
+                    "routine_areas",
+                    "whatsapp_scope"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "8"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "completed"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 5638,
+                "output_tokens": 1175,
+                "cost_usd": 0.009516
+              },
+              "confidence": "medium"
+            },
+            "trace_id": "trace_8d7e72f1b0bc451e97458933b54b6c60"
+          },
+          "lead": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano."
+        },
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_4968b4486c06421b9f311d4f7f5354b0",
+            "conversation_id": "real_eval_step3e-post-diagnostic-price-objection",
+            "lead_id": "lead_step3e-post-diagnostic-price-objection",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_product_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "diagnostic_delivered",
+                "current_state": "product_question",
+                "next_state": "product_question",
+                "route": "product",
+                "opening_type": "none",
+                "detected_intents": [
+                  "general_objection",
+                  "price_comparison",
+                  "price_objection"
+                ],
+                "direct_question_present": true,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "complete",
+                "diagnostic_allowed_now": true,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "Lead já recebeu diagnóstico",
+                  "Objeção de preço: 'achei caro'",
+                  "Nome confiável: Lucas"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "product.price_objection_value"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Entendi: o gargalo parece estar nos interessados que chegam pelo WhatsApp e demoram a receber retorno."
+                  },
+                  "diagnostic.deliver_context": {
+                    "pain_context_human": "Pelo que você contou, o ponto principal parece ser interessados chegando pelo WhatsApp e ficando sem retorno claro."
+                  },
+                  "diagnostic.deliver_crm_base": {
+                    "crm_base_recommendation": "Antes dos agentes, eu organizaria tudo em um só lugar: contatos, conversas, situação de cada interessado e próximos passos."
+                  },
+                  "diagnostic.deliver_operational_step": {
+                    "operational_first_step": "separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas"
+                  },
+                  "diagnostic.deliver_agent_recommendation": {
+                    "agent_name": "Atendimento",
+                    "agent_fit_phrase": "faria sentido primeiro",
+                    "agent_pain_resolved": "interessados que ficam sem resposta",
+                    "agent_recommendation_reason": "essa foi a dor comercial mais clara",
+                    "agent_practical_action": "ele ajuda a responder, guardar o histórico e chamar alguém da equipe quando precisar de humano"
+                  },
+                  "diagnostic.deliver_agent_recommendation#2": {
+                    "agent_name": "Vendas",
+                    "agent_fit_phrase": "também faria sentido",
+                    "agent_pain_resolved": "follow-ups e conversas que esfriam",
+                    "agent_recommendation_reason": "vendas apareceu como prioridade de impacto",
+                    "agent_practical_action": "ele lembra próximos passos e ajuda a não deixar interessado parado"
+                  },
+                  "diagnostic.deliver_plan_recommendation": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "diagnostic.deliver": {
+                    "main_bottleneck": "interessados chegando pelo WhatsApp e ficando sem retorno claro",
+                    "first_step": "separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas",
+                    "plan_range": "Essencial ou Avance"
+                  },
+                  "product.post_diagnostic_plan_recap": {
+                    "recommended_plan_or_range": "Avance ou Completo"
+                  },
+                  "product.price_objection_value": {
+                    "value_context": "Pelo diagnóstico, compare esse valor com o que pesa hoje: interessados chegando pelo WhatsApp e ficando sem retorno claro. Não é só ferramenta; é organizar atendimento, retorno e próximos passos.",
+                    "next_step": "Com o diagnóstico em mãos, o melhor próximo passo é ver a demonstração prática e comparar se o plano recomendado faz sentido para você."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "product.price_objection_value",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "complete",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Entendo. É um valor para olhar com calma mesmo. Pelo diagnóstico, compare esse valor com o que pesa hoje: interessados chegando pelo WhatsApp e ficando sem retorno claro. Não é só ferramenta; é organizar atendimento, retorno e próximos passos.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                },
+                {
+                  "text": "Com o diagnóstico em mãos, o melhor próximo passo é ver a demonstração prática e comparar se o plano recomendado faz sentido para você.",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "product.price_objection_value",
+                  "requires_product_source": true
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "pain_objection",
+                  "value": "achou caro",
+                  "confidence": "high",
+                  "evidence": [
+                    "achei caro"
+                  ]
+                }
+              ],
+              "diagnostic": {
+                "status": "completed",
+                "ledger": [
+                  {
+                    "question_key": "active_students_or_size",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "main_pain",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "pain_detail",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "current_process",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "priority",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  },
+                  {
+                    "question_key": "urgency",
+                    "status": "inferred_from_prior_message",
+                    "answer_value": "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                    "evidence": [
+                      "widget:step3e-post-diagnostic-price-objection:1"
+                    ],
+                    "confidence": "medium",
+                    "last_asked_timestamp": null,
+                    "may_ask_again": false
+                  }
+                ],
+                "facts_used": [
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano."
+                ],
+                "main_bottleneck": "interessados chegando pelo WhatsApp e ficando sem retorno claro",
+                "pain_context_human": null,
+                "likely_cause": "o atendimento e o acompanhamento ainda dependem demais de controle manual.",
+                "crm_base_recommendation": null,
+                "first_recommended_step": "separar quem chegou agora, quem precisa de retorno e quais conversas estão paradas",
+                "indicated_routines_or_agents": [
+                  "Atendimento",
+                  "Vendas"
+                ],
+                "indicated_agents": [],
+                "plan_or_range_to_compare": "Essencial ou Avance",
+                "final_plan_line": null,
+                "demo_status_at_delivery": "not_offered",
+                "final_demo_line": null,
+                "evidence": [
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano.",
+                  "quero diagnostico gratuito. Tenho 110 alunos ativos, perco interessados no WhatsApp, hoje controlo em planilha, a dor principal e retorno comercial, a prioridade e vendas, e urgente para esse mes. Quero comparar plano."
+                ],
+                "unknowns": [],
+                "confidence": "medium",
+                "next_question": null,
+                "validation_question": "Faz sentido com o que você vê no dia a dia?",
+                "final_demo_next_step_question": null
+              },
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message",
+                    "previous_state",
+                    "product_knowledge",
+                    "availability_and_onboarding",
+                    "how_it_works",
+                    "routine_areas",
+                    "plans",
+                    "prices",
+                    "plan_comparison"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                },
+                {
+                  "name": "save_diagnostic_record",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "completed"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 7807,
+                "output_tokens": 394,
+                "cost_usd": 0.007628
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_2b38454c7d814c7ea65ce8a2a4c6d1fd"
+          },
+          "lead": "achei caro"
+        }
+      ]
+    },
+    {
+      "id": "step3e-post-diagnostic-think",
+      "title": "After diagnostic vou pensar should not force waitlist",
+      "channel": "widget",
+      "checks": [
+        "diagnostic_completed",
+        "diagnostic_ledger_complete",
+        "no_waitlist",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [
+        "runtime returned non-200 status: [500, 422]"
+      ],
+      "turns": [
+        {
+          "http_status": 500,
+          "payload": {
+            "error": {
+              "code": "internal_error",
+              "message": "Invalid JSON when parsing {\"current_agent\":\"taliya_commercial_diagnostic_agent\",\"decision\":{\"previous_state\":\"new_lead\",\"current_state\":\"product_question\",\"next_state\":\"product_question\",\"route\":\"diagnostic\",\"opening_type\":\"diagnostic_cta_opening\",\"detected_intents\":[\"product_how_it_works\",\"comparison_current_tool\",\"plan_fit\",\"urgent_need\",\"diagnostic_request\"],\"direct_question_present\":true,\"direct_question_answered_first\":true,\"diagnostic_action\":\"complete\",\"diagnostic_allowed_now\":true,\"waitlist_allowed_now\":false,\"demo_status\":\"not_offered\",\"demo_next_step\":\"offer_demo\",\"profile_name_usage\":\"used_reliable_name\",\"facts_used\":[\"100 alunos ativos\",\"agenda e reposicoes se perdem\",\"usa planilha\",\"dor principal: agenda\",\"prioridade: organizar reposicoes\",\"urgente para este mes\",\"quer comparar plano para rotina completa\"],\"facts_missing\":[],\"template_ids\":[],\"template_variables\":{},\"render_plan\":[],\"diagnostic_ledger_status\":\"complete\",\"next_question_kind\":\"none\",\"policy_checks\":{\"direct_question_answered_first\":true,\"diagnostic_timing_ok\":true,\"waitlist_timing_ok\":true,\"official_facts_only\":true,\"no_early_contact_capture\":true,\"no_whatsapp_phone_request\":true,\"no_fake_certainty\":true,\"no_human_overlap\":true,\"channel_brevity_ok\":true}},\"messages\":[\"Oi, Lucas. Tudo bem?\",\"Pelo que você contou, o ponto principal é a agenda e as reposições se perdendo na planilha. Quando isso fica espalhado, a rotina inteira perde ritmo: atendimento, encaixes, faltas e retornos acabam exigindo mais acompanhamento da equipe.\",\"Como base, eu olharia para uma organização que centraliza agenda, reposições, cobranças, atendimento e acompanhamento dos alunos.\",\"Agente Agenda faria sentido primeiro para organizar horários, faltas e encaixes.\",\"Agente Atendimento faria sentido para não deixar mensagens e dúvidas comuns se perderem.\",\"Agente Reposição faria sentido para deixar pedidos e pendências mais claros.\",\"Agente Acompanhamento faria sentido para trazer de volta alunos que somem ou ficam sem retorno.\",\"Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance.\",\"Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?\"],\"lead_facts\":[{\"key\":\"studio_size\",\"value\":\"100 alunos ativos\",\"confidence\":\"high\",\"evidence\":[\"Tenho 100 alunos ativos\"]},{\"key\":\"current_tool\",\"value\":\"planilha\",\"confidence\":\"high\",\"evidence\":[\"hoje controlo em planilha\"]},{\"key\":\"main_pain\",\"value\":\"agenda\",\"confidence\":\"high\",\"evidence\":[\"a dor principal e agenda\"]},{\"key\":\"priority\",\"value\":\"organizar reposicoes\",\"confidence\":\"high\",\"evidence\":[\"a prioridade e organizar reposicoes\"]},{\"key\":\"urgency\",\"value\":\"precisa neste mes\",\"confidence\":\"high\",\"evidence\":[\"e urgente para esse mes\"]},{\"key\":\"plan_fit_goal\",\"value\":\"comparar plano para rotina completa\",\"confidence\":\"high\",\"evidence\":[\"Quero comparar plano para rotina completa\"]}],\"diagnostic\":{\"status\":\"completed\",\"ledger\":[{\"step\":\"hold\",\"text\":\"Entendi: a agenda e as reposições estão se perdendo na planilha.\"},{\"step\":\"context_reading\",\"text\":\"Isso costuma puxar o resto da rotina junto: atendimento, encaixes, faltas e retornos.\"},{\"step\":\"crm_base_recommendation\",\"text\":\"Como base, a organização precisa centralizar a rotina do studio.\"},{\"step\":\"operational_step\",\"text\":\"Primeiro eu arrumaria agenda e reposições.\"},{\"step\":\"indicated_routines_or_agents\",\"text\":\"Agente Agenda, Agente Atendimento, Agente Reposição e Agente Acompanhamento fazem sentido.\"},{\"step\":\"final_plan_line\",\"text\":\"Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance.\"},{\"step\":\"demo_bridge\",\"text\":\"Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?\"}],\"facts_used\":[\"100 alunos ativos\",\"agenda e reposicoes se perdem\",\"usa planilha\",\"dor principal: agenda\",\"prioridade: organizar reposicoes\",\"urgente para este mes\",\"quer comparar plano para rotina completa\"],\"main_bottleneck\":\"agenda e reposições espalhadas na planilha\",\"pain_context_human\":\"Hoje a rotina está dependendo demais da planilha, e isso faz a agenda e as reposições escaparem do controle.\",\"likely_cause\":\"processo manual espalhado, com pouca centralização da rotina\",\"crm_base_recommendation\":\"Centralizar a rotina do studio para que agenda, reposições, atendimento e acompanhamentos não fiquem soltos.\",\"first_recommended_step\":\"Organizar primeiro agenda e reposições.\",\"indicated_routines_or_agents\":[\"Agente Agenda\",\"Agente Atendimento\",\"Agente Reposição\",\"Agente Acompanhamento\"],\"indicated_agents\":[{\"name\":\"Agente Agenda\",\"reason\":\"organizar horários, faltas e encaixes\"},{\"name\":\"Agente Atendimento\",\"reason\":\"segurar mensagens e dúvidas comuns\"},{\"name\":\"Agente Reposição\",\"reason\":\"organizar pedidos e pendências\"},{\"name\":\"Agente Acompanhamento\",\"reason\":\"trazer de volta alunos que somem ou ficam sem retorno\"}],\"plan_or_range_to_compare\":\"Avance\",\"final_plan_line\":\"Pelo tamanho, momento do studio e todo o contexto acima, eu recomendaria pra você o plano Avance.\",\"demo_status_at_delivery\":\"offered\",\"final_demo_line\":\"Temos algumas demonstrações que mostram o funcionamento na prática. Quer que eu te mande?\",\"evidence\":[\"100 alunos ativos\",\"agenda e reposicoes se perdem\",\"usa planilha\",\"dor principal: agenda\",\"prioridade: organizar reposicoes\",\"urgente para este mes\"],\"unknowns\":[\"se a equipe quer resolver só uma dor ou mais rotinas ao mesmo tempo\",\"quantas pessoas vão usar\",\"se o studio WhatsApp Business já está pronto\"],\"confidence\":\"high\",\"next_question\":null,\"validation_question\":null,\"final_demo_next_step_question\":\"Quer que eu te mande?\"},\"waitlist_action\":null,\"handoff\":null,\"source_keys\":[\"user_message\",\"product_knowledge\",\"initial_policy_read\",\"profile_name_assessment\"],\"confidence\":\"high\"} for TypeAdapter(LLMStructuredDraft); 1 validation error for LLMStructuredDraft\nmessages\n  List should have at most 8 items after validation, not 9 [type=too_long, input_value=['Oi, Lucas. Tudo bem?', ... Quer que eu te mande?'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/too_long",
+              "retryable": true
+            }
+          },
+          "lead": "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa."
+        },
+        {
+          "http_status": 422,
+          "payload": {
+            "error": {
+              "code": "template_not_allowed_in_state",
+              "message": "Template opening.general_interest is not allowed in product_question.",
+              "retryable": false
+            }
+          },
+          "lead": "vou pensar"
+        }
+      ]
+    }
+  ]
+}

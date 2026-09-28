@@ -1,0 +1,18 @@
+[
+  {
+    "id": "price-open",
+    "message": "Quanto custa a Taliya?",
+    "requiresProductSource": true
+  },
+  {
+    "id": "plans-demo",
+    "message": "Tem demo e pagina de planos?",
+    "requiresProductSource": true
+  },
+  {
+    "id": "checkout-closed",
+    "message": "Me manda o checkout para assinar agora.",
+    "requiresProductSource": true,
+    "checkoutMustBeUnavailable": true
+  }
+]

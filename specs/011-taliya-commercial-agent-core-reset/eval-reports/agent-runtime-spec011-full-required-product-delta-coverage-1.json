@@ -1,0 +1,73 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-full-required-product-delta-coverage-1",
+  "fixture": "scripts\\fixtures\\agent-runtime\\product-followup-delta-real-openai.json",
+  "reports": [
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-budgeted-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-integration-fixed-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-remaining-budgeted-1.json",
+    "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-diagnostic-refusal-fixed-1.json"
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "missing": 0,
+    "failed": 0,
+    "estimatedCostUsd": 0.085131
+  },
+  "releaseGate": "pass",
+  "passedScenarioIds": [
+    "product-delta-comparison-planilha",
+    "product-delta-diagnostic-refusal",
+    "product-delta-how-it-works",
+    "product-delta-integration-scope",
+    "product-delta-out-of-profile",
+    "product-delta-security-data"
+  ],
+  "missingScenarioIds": [],
+  "failedScenarios": [],
+  "selectedEvidence": [
+    {
+      "id": "product-delta-comparison-planilha",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014512
+    },
+    {
+      "id": "product-delta-diagnostic-refusal",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-diagnostic-refusal-fixed-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014228
+    },
+    {
+      "id": "product-delta-how-it-works",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014598
+    },
+    {
+      "id": "product-delta-integration-scope",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-integration-fixed-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014003
+    },
+    {
+      "id": "product-delta-out-of-profile",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-remaining-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.014117
+    },
+    {
+      "id": "product-delta-security-data",
+      "report": "specs\\011-taliya-commercial-agent-core-reset\\eval-reports\\agent-runtime-spec011-full-required-product-delta-remaining-budgeted-1.json",
+      "failures": [],
+      "budget_status": "within_budget",
+      "cost_usd": 0.013673
+    }
+  ]
+}

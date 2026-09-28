@@ -1,0 +1,643 @@
+{
+  "title": "Fale como você já fala no dia a dia.",
+  "subtitle": "Conte o que aconteceu ou o que precisa fazer. Quando uma informação importante estiver faltando, a Taliya pergunta só o necessário.",
+  "closing": "Você fala. A Taliya organiza o contexto para continuar depois.",
+  "appNote": "Prefere usar o app? Você também pode registrar, consultar e corrigir diretamente por lá.",
+  "cta": {
+    "label": "Veja tudo que você pode resolver",
+    "href": "#agentes"
+  },
+  "messageCount": 84,
+  "initialIds": [
+    "MSG-AG03",
+    "MSG-AG01",
+    "MSG-AG07",
+    "MSG-AG09",
+    "MSG-SV01",
+    "MSG-OR01",
+    "MSG-OR08",
+    "MSG-RC03",
+    "MSG-RC09",
+    "MSG-LE01",
+    "MSG-SV04",
+    "MSG-OR11",
+    "MSG-RC11",
+    "MSG-AR01",
+    "MSG-AG06",
+    "MSG-SV07",
+    "MSG-CL04",
+    "MSG-LE08",
+    "MSG-RC06",
+    "MSG-AR10",
+    "MSG-SV06",
+    "MSG-CL09",
+    "MSG-SV09",
+    "MSG-AR09"
+  ],
+  "messages": [
+    {
+      "id": "MSG-CL01",
+      "category": "CL",
+      "targetSubtype": "CL01",
+      "text": "Cadastra a Marina com esse contato.",
+      "contextNote": "Cartão compartilhado e intenção explícita."
+    },
+    {
+      "id": "MSG-CL02",
+      "category": "CL",
+      "targetSubtype": "CL02",
+      "text": "Qual é o telefone da Empresa Norte?",
+      "contextNote": "Telefone previamente registrado."
+    },
+    {
+      "id": "MSG-CL03",
+      "category": "CL",
+      "targetSubtype": "CL04",
+      "text": "O que eu já fiz para o Carlos?",
+      "contextNote": "Histórico existente; diferenciar agendado de realizado."
+    },
+    {
+      "id": "MSG-CL04",
+      "category": "CL",
+      "targetSubtype": "CL04",
+      "text": "Quando foi o último serviço concluído da Júlia?",
+      "contextNote": "Conclusão registrada, não inferida."
+    },
+    {
+      "id": "MSG-CL05",
+      "category": "CL",
+      "targetSubtype": "CL02",
+      "text": "Me mostra os serviços ativos da Marina.",
+      "contextNote": "Cliente e registros existentes."
+    },
+    {
+      "id": "MSG-CL06",
+      "category": "CL",
+      "targetSubtype": "CL02",
+      "text": "O que ficou combinado com a Ana?",
+      "contextNote": "Serviço deve ser inequívoco."
+    },
+    {
+      "id": "MSG-CL07",
+      "category": "CL",
+      "targetSubtype": "CL02",
+      "text": "A Empresa Norte tem algum valor em aberto?",
+      "contextNote": "Consulta dos recebíveis registrados."
+    },
+    {
+      "id": "MSG-CL08",
+      "category": "CL",
+      "targetSubtype": "CL03",
+      "text": "Atualiza o e-mail da Marina para marina@example.com.",
+      "contextNote": "E-mail fictício; dado explicitamente informado."
+    },
+    {
+      "id": "MSG-CL09",
+      "category": "CL",
+      "targetSubtype": "CL05",
+      "text": "Aquela instalação é da Camila, não da Carla.",
+      "contextNote": "Exige resolver serviço e cliente antes de alterar."
+    },
+    {
+      "id": "MSG-CL10",
+      "category": "CL",
+      "targetSubtype": "CL04",
+      "text": "Me mostra o histórico desse cliente.",
+      "contextNote": "Cliente contextualizado."
+    },
+    {
+      "id": "MSG-CL11",
+      "category": "CL",
+      "targetSubtype": "CL01",
+      "text": "É a Marina do telefone final 8421.",
+      "contextNote": "Resposta a uma pergunta de desambiguação."
+    },
+    {
+      "id": "MSG-CL12",
+      "category": "CL",
+      "targetSubtype": "CL03",
+      "text": "O endereço dessa visita é Rua das Flores, 120.",
+      "contextNote": "Endereço fictício vinculado ao serviço, não alteração global silenciosa."
+    },
+    {
+      "id": "MSG-SV01",
+      "category": "SV",
+      "targetSubtype": "SV02",
+      "text": "Fechei uma limpeza de sofá para a Luana por R$250.",
+      "contextNote": "Intenção de contratação explícita."
+    },
+    {
+      "id": "MSG-SV02",
+      "category": "SV",
+      "targetSubtype": "SV02",
+      "text": "Registra a instalação do Carlos por R$750.",
+      "contextNote": "Confirmar que é venda se o contexto for ambíguo."
+    },
+    {
+      "id": "MSG-SV03",
+      "category": "SV",
+      "targetSubtype": "SV01",
+      "text": "Ana pediu um orçamento de limpeza.",
+      "contextNote": "Pedido novo, ainda não contratado."
+    },
+    {
+      "id": "MSG-SV04",
+      "category": "SV",
+      "targetSubtype": "SV03",
+      "text": "João fechou um pacote de oito atendimentos por R$600.",
+      "contextNote": "Pacote com quantidade total."
+    },
+    {
+      "id": "MSG-SV05",
+      "category": "SV",
+      "targetSubtype": "SV03",
+      "text": "Vou marcar as sessões do pacote depois.",
+      "contextNote": "Não criar datas por obrigação."
+    },
+    {
+      "id": "MSG-SV06",
+      "category": "SV",
+      "targetSubtype": "SV04",
+      "text": "Carlos entrou no plano mensal de R$350 a partir de outubro.",
+      "contextNote": "Contexto do serviço e início devem estar claros."
+    },
+    {
+      "id": "MSG-SV07",
+      "category": "SV",
+      "targetSubtype": "SV05",
+      "text": "Essa pintura vai de segunda a quarta.",
+      "contextNote": "Período sem horas não bloqueia dias inteiros."
+    },
+    {
+      "id": "MSG-SV08",
+      "category": "SV",
+      "targetSubtype": "SV05",
+      "text": "Esse trabalho tem duas visitas, nos dias 22 e 24.",
+      "contextNote": "Um serviço; datas sem horas podem ser informativas."
+    },
+    {
+      "id": "MSG-SV09",
+      "category": "SV",
+      "targetSubtype": "SV06",
+      "text": "Terminei o serviço inteiro da Marina.",
+      "contextNote": "Conclusão do serviço não implica pagamento."
+    },
+    {
+      "id": "MSG-SV10",
+      "category": "SV",
+      "targetSubtype": "SV06",
+      "text": "Cancela a contratação da instalação do Carlos.",
+      "contextNote": "Revisar efeitos e manter pagamentos; alvo explícito."
+    },
+    {
+      "id": "MSG-SV11",
+      "category": "SV",
+      "targetSubtype": "SV04",
+      "text": "O plano mensal da jardinagem é fixo, não por visita.",
+      "contextNote": "Regra comercial aprovada pelo dono."
+    },
+    {
+      "id": "MSG-SV12",
+      "category": "SV",
+      "targetSubtype": "SV02",
+      "text": "Esse valor é só para esta instalação.",
+      "contextNote": "Exceção do caso não altera preço padrão."
+    },
+    {
+      "id": "MSG-AG01",
+      "category": "AG",
+      "targetSubtype": "AG01",
+      "text": "Marca a Júlia amanhã às 14h por uma hora.",
+      "contextNote": "Cliente/serviço identificados; data contextual."
+    },
+    {
+      "id": "MSG-AG02",
+      "category": "AG",
+      "targetSubtype": "AG01",
+      "text": "Agenda a manutenção sexta às 10h por duas horas.",
+      "contextNote": "Serviço contextualizado e conflito revalidado."
+    },
+    {
+      "id": "MSG-AG03",
+      "category": "AG",
+      "targetSubtype": "AG02",
+      "text": "O que eu tenho hoje?",
+      "contextNote": "Consulta de registros, não criação de tarefas."
+    },
+    {
+      "id": "MSG-AG04",
+      "category": "AG",
+      "targetSubtype": "AG02",
+      "text": "Como está minha agenda amanhã?",
+      "contextNote": "Resposta limitada à agenda conhecida."
+    },
+    {
+      "id": "MSG-AG05",
+      "category": "AG",
+      "targetSubtype": "AG02",
+      "text": "Quem é meu primeiro cliente amanhã?",
+      "contextNote": "Compromissos registrados."
+    },
+    {
+      "id": "MSG-AG06",
+      "category": "AG",
+      "targetSubtype": "AG02",
+      "text": "Quais horários já tenho ocupados na sexta?",
+      "contextNote": "Pode responder ocupações sem expediente configurado."
+    },
+    {
+      "id": "MSG-AG07",
+      "category": "AG",
+      "targetSubtype": "AG04",
+      "text": "Passa a Júlia de quinta para sexta às 10h.",
+      "contextNote": "Preservar duração conhecida."
+    },
+    {
+      "id": "MSG-AG08",
+      "category": "AG",
+      "targetSubtype": "AG04",
+      "text": "Muda a visita da Empresa Norte para as 14h.",
+      "contextNote": "Ocorrência e data contextualizadas."
+    },
+    {
+      "id": "MSG-AG09",
+      "category": "AG",
+      "targetSubtype": "AG05",
+      "text": "Cancela só o atendimento da Ana de amanhã.",
+      "contextNote": "Não cancelar serviço inteiro."
+    },
+    {
+      "id": "MSG-AG10",
+      "category": "AG",
+      "targetSubtype": "AG06",
+      "text": "Marca quatro atendimentos, às terças, das 7h às 8h, a partir do dia 22.",
+      "contextNote": "Alcance finito; saldo de pacote e conflitos validados."
+    },
+    {
+      "id": "MSG-AG11",
+      "category": "AG",
+      "targetSubtype": "AG03",
+      "text": "Tenho uma janela livre de uma hora na sexta?",
+      "contextNote": "Expediente e ocupações conhecidos; consulta não agenda."
+    },
+    {
+      "id": "MSG-AG12",
+      "category": "AG",
+      "targetSubtype": "AG04",
+      "text": "Remarca só esta sessão, não as próximas.",
+      "contextNote": "Alcance explícito da alteração de série."
+    },
+    {
+      "id": "MSG-OR01",
+      "category": "OR",
+      "targetSubtype": "OR01",
+      "text": "Faz um orçamento de instalação de R$850 para a Marina.",
+      "contextNote": "Escopo suficiente ou pergunta curta se faltar."
+    },
+    {
+      "id": "MSG-OR02",
+      "category": "OR",
+      "targetSubtype": "OR01",
+      "text": "Orça duas luminárias por R$300 cada e instalação por R$250.",
+      "contextNote": "Total850; são itens cobrados ao cliente."
+    },
+    {
+      "id": "MSG-OR03",
+      "category": "OR",
+      "targetSubtype": "OR02",
+      "text": "Adiciona R$180 de material ao orçamento.",
+      "contextNote": "Item comercial, não registro de custo."
+    },
+    {
+      "id": "MSG-OR04",
+      "category": "OR",
+      "targetSubtype": "OR02",
+      "text": "Inclui a instalação de R$250 nessa proposta.",
+      "contextNote": "Nova versão preserva o que foi aprovado antes."
+    },
+    {
+      "id": "MSG-OR05",
+      "category": "OR",
+      "targetSubtype": "OR03",
+      "text": "Troca a mão de obra da proposta para R$550.",
+      "contextNote": "Revisão de proposta não é aprovação de novo combinado."
+    },
+    {
+      "id": "MSG-OR06",
+      "category": "OR",
+      "targetSubtype": "OR02",
+      "text": "Remove esse item do orçamento.",
+      "contextNote": "Item contextualizado; histórico conforme estado."
+    },
+    {
+      "id": "MSG-OR07",
+      "category": "OR",
+      "targetSubtype": "OR03",
+      "text": "Faz uma nova versão com R$100 de desconto.",
+      "contextNote": "Desconto reduz proposta, não vira pagamento."
+    },
+    {
+      "id": "MSG-OR08",
+      "category": "OR",
+      "targetSubtype": "OR04",
+      "text": "A Marina aprovou a versão 2 do orçamento.",
+      "contextNote": "Mesma identidade de serviço."
+    },
+    {
+      "id": "MSG-OR09",
+      "category": "OR",
+      "targetSubtype": "OR04",
+      "text": "O cliente recusou esta proposta.",
+      "contextNote": "Registrar recusa da versão; não encerrar toda negociação sem instrução."
+    },
+    {
+      "id": "MSG-OR10",
+      "category": "OR",
+      "targetSubtype": "OR05",
+      "text": "Qual foi o último orçamento que preparei para o Carlos?",
+      "contextNote": "Mais recente não equivale a aprovado."
+    },
+    {
+      "id": "MSG-OR11",
+      "category": "OR",
+      "targetSubtype": "OR05",
+      "text": "Cadê a versão aprovada da Empresa Norte?",
+      "contextNote": "Consultar estado da versão."
+    },
+    {
+      "id": "MSG-OR12",
+      "category": "OR",
+      "targetSubtype": "OR05",
+      "text": "Gera o PDF da versão atual para eu compartilhar.",
+      "contextNote": "Arquivo entregue ao dono, não envio automático ao cliente."
+    },
+    {
+      "id": "MSG-RC01",
+      "category": "RC",
+      "targetSubtype": "RC01",
+      "text": "A Ana pagou os R$450 da limpeza.",
+      "contextNote": "Total e alvo conhecidos."
+    },
+    {
+      "id": "MSG-RC02",
+      "category": "RC",
+      "targetSubtype": "RC01",
+      "text": "Recebi R$250 da Luana pelo sofá.",
+      "contextNote": "Pagamento informado pelo dono."
+    },
+    {
+      "id": "MSG-RC03",
+      "category": "RC",
+      "targetSubtype": "RC02",
+      "text": "A Marina pagou R$300 e ainda faltam R$150.",
+      "contextNote": "Contexto com combinado450."
+    },
+    {
+      "id": "MSG-RC04",
+      "category": "RC",
+      "targetSubtype": "RC02",
+      "text": "Entraram R$500 daquele serviço.",
+      "contextNote": "Serviço e recebível precisam estar resolvidos."
+    },
+    {
+      "id": "MSG-RC05",
+      "category": "RC",
+      "targetSubtype": "RC02",
+      "text": "Ele pagou metade hoje.",
+      "contextNote": "Só calcular metade se total e alvo forem conhecidos."
+    },
+    {
+      "id": "MSG-RC06",
+      "category": "RC",
+      "targetSubtype": "RC03",
+      "text": "Recebi R$200 de sinal da instalação do Carlos.",
+      "contextNote": "Entrada não quita automaticamente."
+    },
+    {
+      "id": "MSG-RC07",
+      "category": "RC",
+      "targetSubtype": "RC04",
+      "text": "Quanto falta a Ana pagar pela limpeza?",
+      "contextNote": "Saldo registrado."
+    },
+    {
+      "id": "MSG-RC08",
+      "category": "RC",
+      "targetSubtype": "RC04",
+      "text": "Qual é o saldo do serviço da Marina?",
+      "contextNote": "Cliente e serviço inequívocos."
+    },
+    {
+      "id": "MSG-RC09",
+      "category": "RC",
+      "targetSubtype": "RC04",
+      "text": "Quem ainda tem valor em aberto?",
+      "contextNote": "Lista paginada/resumida dos valores registrados."
+    },
+    {
+      "id": "MSG-RC10",
+      "category": "RC",
+      "targetSubtype": "RC04",
+      "text": "Quanto registrei como recebido neste mês?",
+      "contextNote": "Não chamar de lucro nem receita bancária total."
+    },
+    {
+      "id": "MSG-RC11",
+      "category": "RC",
+      "targetSubtype": "RC05",
+      "text": "Corrige aquele pagamento: foram R$350, não R$300.",
+      "contextNote": "Correção mantém trilha e não soma como novo pagamento."
+    },
+    {
+      "id": "MSG-RC12",
+      "category": "RC",
+      "targetSubtype": "RC06",
+      "text": "O Carlos pagou o plano mensal referente a outubro.",
+      "contextNote": "Valor/ciclo e alvo conhecidos, ou pergunta mínima."
+    },
+    {
+      "id": "MSG-LE01",
+      "category": "LE",
+      "targetSubtype": "LE01",
+      "text": "Me lembra segunda às 9h de cobrar os R$150 da Ana.",
+      "contextNote": "Aviso ao dono; não contato automático."
+    },
+    {
+      "id": "MSG-LE02",
+      "category": "LE",
+      "targetSubtype": "LE01",
+      "text": "Amanhã às 10h me lembra do restante da Marina.",
+      "contextNote": "Contexto do saldo conhecido."
+    },
+    {
+      "id": "MSG-LE03",
+      "category": "LE",
+      "targetSubtype": "LE02",
+      "text": "Me lembra terça às 10h de falar com a Júlia.",
+      "contextNote": "Lembrete pode existir só com cliente."
+    },
+    {
+      "id": "MSG-LE04",
+      "category": "LE",
+      "targetSubtype": "LE02",
+      "text": "Daqui a 30 dias, às 9h, me lembra de procurar o Carlos.",
+      "contextNote": "Momento calculado pelo relógio do negócio."
+    },
+    {
+      "id": "MSG-LE05",
+      "category": "LE",
+      "targetSubtype": "LE03",
+      "text": "Me lembra amanhã às 8h de levar o equipamento.",
+      "contextNote": "Lembrete não controla estoque."
+    },
+    {
+      "id": "MSG-LE06",
+      "category": "LE",
+      "targetSubtype": "LE05",
+      "text": "Uma hora antes, me lembra dessa visita.",
+      "contextNote": "Relativo à ocorrência."
+    },
+    {
+      "id": "MSG-LE07",
+      "category": "LE",
+      "targetSubtype": "LE04",
+      "text": "Me lembra segunda às 9h de revisar o orçamento.",
+      "contextNote": "Documento contextualizado ou lembrete livre."
+    },
+    {
+      "id": "MSG-LE08",
+      "category": "LE",
+      "targetSubtype": "LE04",
+      "text": "Toda segunda às 9h me lembra de revisar as propostas.",
+      "contextNote": "Rotina recorrente."
+    },
+    {
+      "id": "MSG-LE09",
+      "category": "LE",
+      "targetSubtype": "LE06",
+      "text": "Sexta às 9h me avisa se esses R$300 ainda estiverem em aberto.",
+      "contextNote": "Condição baseada no registro da Taliya."
+    },
+    {
+      "id": "MSG-LE10",
+      "category": "LE",
+      "targetSubtype": "LE02",
+      "text": "Quais lembretes eu tenho para amanhã?",
+      "contextNote": "Consulta, sem alteração."
+    },
+    {
+      "id": "MSG-LE11",
+      "category": "LE",
+      "targetSubtype": "LE01",
+      "text": "Muda esse lembrete para sexta às 10h.",
+      "contextNote": "Lembrete contextualizado."
+    },
+    {
+      "id": "MSG-LE12",
+      "category": "LE",
+      "targetSubtype": "LE04",
+      "text": "Pausa o lembrete semanal de revisar propostas.",
+      "contextNote": "Pausa a regra, não os documentos."
+    },
+    {
+      "id": "MSG-AR01",
+      "category": "AR",
+      "targetSubtype": "AR01",
+      "text": "Guarda esse PDF no serviço da Marina.",
+      "contextNote": "Arquivo realmente recebido antes da confirmação."
+    },
+    {
+      "id": "MSG-AR02",
+      "category": "AR",
+      "targetSubtype": "AR01",
+      "text": "Salva essa foto na instalação do Carlos.",
+      "contextNote": "Vínculo específico."
+    },
+    {
+      "id": "MSG-AR03",
+      "category": "AR",
+      "targetSubtype": "AR01",
+      "text": "Esse é o contrato da instalação da Empresa Norte.",
+      "contextNote": "Arquivo e intenção contextualizados."
+    },
+    {
+      "id": "MSG-AR04",
+      "category": "AR",
+      "targetSubtype": "AR01",
+      "text": "Guarda esse comprovante na limpeza da Ana.",
+      "contextNote": "Anexar não confirma liquidação."
+    },
+    {
+      "id": "MSG-AR05",
+      "category": "AR",
+      "targetSubtype": "AR01",
+      "text": "Anexa essas fotos ao trabalho da Júlia.",
+      "contextNote": "Não criar novos serviços por arquivo."
+    },
+    {
+      "id": "MSG-AR06",
+      "category": "AR",
+      "targetSubtype": "AR02",
+      "text": "Cadê o orçamento aprovado da Marina?",
+      "contextNote": "Consulta a versão, sem alterar aprovação."
+    },
+    {
+      "id": "MSG-AR07",
+      "category": "AR",
+      "targetSubtype": "AR02",
+      "text": "Me mostra as fotos daquele serviço.",
+      "contextNote": "Serviço resolvido."
+    },
+    {
+      "id": "MSG-AR08",
+      "category": "AR",
+      "targetSubtype": "AR02",
+      "text": "Procura o contrato da Empresa Norte.",
+      "contextNote": "Identificar entre versões se necessário."
+    },
+    {
+      "id": "MSG-AR09",
+      "category": "AR",
+      "targetSubtype": "AR02",
+      "text": "Me mostra os documentos dessa instalação.",
+      "contextNote": "Lista dos documentos do serviço."
+    },
+    {
+      "id": "MSG-AR10",
+      "category": "AR",
+      "targetSubtype": "AR03",
+      "text": "Esse PDF é uma nova versão da proposta.",
+      "contextNote": "Upload não muda combinado aprovado."
+    },
+    {
+      "id": "MSG-AR11",
+      "category": "AR",
+      "targetSubtype": "AR05",
+      "text": "Esse arquivo é da Marina, não da Ana.",
+      "contextNote": "Corrigir só o vínculo autorizado."
+    },
+    {
+      "id": "MSG-AR12",
+      "category": "AR",
+      "targetSubtype": "AR04",
+      "text": "Prepara um recibo daquele pagamento de R$300.",
+      "contextNote": "Modelo suportado e pagamento registrado; não é nota fiscal."
+    }
+  ],
+  "ui": {
+    "desktop": "Três faixas de oito balões na seleção inicial; não exibir os 84 ao mesmo tempo.",
+    "mobile": "Primeiras12 mensagens na lista acessível; mostrar mais12 com botão.",
+    "showMore": "Ver mais mensagens",
+    "showLess": "Mostrar menos",
+    "pause": "Pausar mensagens",
+    "resume": "Retomar mensagens",
+    "defaultMotion": "manual",
+    "onClick": "Seleciona a frente/subtipo correspondente em S07 e rola até o painel. Não envia mensagem nem abre um chat real.",
+    "featured": {
+      "text": "A Marina aprovou o orçamento de R$900, pagou R$300 de entrada e quer fazer dia 24.",
+      "note": "A data sem horário pode ficar informativa. Para agendar, a Taliya precisa do início e da duração.",
+      "target": "FL01"
+    },
+    "motionRule": "Animação opcional; desligada por padrão. Com movimento, pausar em foco/hover, oferecer pausa explícita e respeitar preferência de movimento reduzido."
+  }
+}

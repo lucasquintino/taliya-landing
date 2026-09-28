@@ -1,0 +1,17 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-stage2-wave1-dry-run",
+  "dryRun": true,
+  "selectedScenarioCount": 6,
+  "estimatedModelCalls": 6,
+  "maxModelCalls": 15,
+  "maxCostUsd": 0.25,
+  "scenarioIds": [
+    "stage2-wave1-cold-greeting",
+    "stage2-wave1-widget-diagnostic-acceptance",
+    "stage2-wave1-instagram-interest",
+    "stage2-wave1-price-first",
+    "stage2-wave1-mixed-price-pain-whatsapp",
+    "stage2-wave1-diagnostic-first"
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "scenario_id": "final-waitlist-joined",
+  "title": "Golden RC-011-057 waitlist after fit/intent",
+  "status": "passed",
+  "messages": [
+    "pode colocar o Studio Viva em Vitoria ES"
+  ],
+  "transcript": [
+    {
+      "role": "user",
+      "content": "pode colocar o Studio Viva em Vitoria ES"
+    },
+    {
+      "role": "assistant",
+      "content": "Perfeito, deixei seu interesse registrado para a equipe da Taliya."
+    },
+    {
+      "role": "assistant",
+      "content": "Studio: Studio Viva."
+    },
+    {
+      "role": "assistant",
+      "content": "Cidade/estado: Vitória, ES."
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "user_text": "pode colocar o Studio Viva em Vitoria ES",
+      "mode": "waitlist",
+      "starting_agent": "taliya_waitlist_agent",
+      "llm_called": true,
+      "status": "delivered",
+      "selected_action": "join_waitlist",
+      "template_ids": [
+        "waitlist.joined"
+      ],
+      "rendered_messages": [
+        "Perfeito, deixei seu interesse registrado para a equipe da Taliya.",
+        "Studio: Studio Viva.",
+        "Cidade/estado: Vitória, ES."
+      ],
+      "issues": [],
+      "issue_details": [],
+      "repairs": 0,
+      "model_operations": 1,
+      "cost_usd": 0.002635,
+      "next_state": "waitlist_joined",
+      "sales_inbox_projection": {
+        "conversation_id": "t012-043-final-waitlist-joined",
+        "lead_id": "t012-043-final-waitlist-joined",
+        "commercial_stage": "waitlist_joined",
+        "summary": "Lead already asked to start and was asked for studio name and city/state.",
+        "diagnostic_status": "not_started",
+        "waitlist_status": "joined",
+        "handoff_status": "none",
+        "identity": [],
+        "fields": {
+          "template_ids": [
+            "waitlist.joined"
+          ],
+          "validator_status": "passed",
+          "validator_final_disposition": "accepted",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "taliya_whatsapp",
+            "state_source": "accepted_decision"
+          },
+          "operator_next_action": "monitor_waitlist",
+          "waitlist_eligibility": "eligible",
+          "waitlist_idempotency_key": "waitlist:waitlist_joined:1",
+          "waitlist_joined_at": "mocked",
+          "missing_waitlist_fields": []
+        }
+      },
+      "trace": {
+        "trace_schema": "012.action_turn_trace.v1",
+        "trace_complete": true,
+        "inbound": {
+          "text": "pode colocar o Studio Viva em Vitoria ES",
+          "message_type": "text"
+        },
+        "turn_gate": {
+          "status": "accepted"
+        },
+        "context_snapshot": {
+          "state_snapshot": {
+            "canonical_state": "waitlist_pending_data",
+            "waitlist": {
+              "status": "pending_data",
+              "eligibility": "eligible",
+              "missing_details": [
+                "studio_name",
+                "city_state"
+              ]
+            },
+            "summary": "Lead already asked to start and was asked for studio name and city/state.",
+            "conversation_id": "t012-043-final-waitlist-joined",
+            "lead_id": "t012-043-final-waitlist-joined",
+            "source": "taliya_whatsapp",
+            "channel": "whatsapp"
+          },
+          "compact_memory": "Lead already asked to start and was asked for studio name and city/state.",
+          "official_fact_keys_available": [],
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "turn_situation": {
+          "mode": "waitlist",
+          "pending_question_key": null,
+          "allowed_actions": [
+            "offer_waitlist",
+            "collect_waitlist_missing_detail",
+            "join_waitlist",
+            "decline_waitlist",
+            "answer_question_then_continue_waitlist",
+            "handoff_requested"
+          ],
+          "eligible_template_groups": [
+            "waitlist.",
+            "product.",
+            "handoff.",
+            "fallback."
+          ],
+          "forbidden_actions_now": [],
+          "required_obligations": [],
+          "llm_turn_allowed": true,
+          "post_diagnostic_context": null,
+          "profile_name_context": {
+            "usage": "not_available"
+          }
+        },
+        "sdk_start": {
+          "starting_agent": "taliya_waitlist_agent",
+          "llm_called": true
+        },
+        "sdk_run_items": [
+          {
+            "item_type": "MessageOutputItem",
+            "raw_item_type": "ResponseOutputMessage",
+            "agent_name": "taliya_waitlist_agent",
+            "tool_name": null,
+            "handoff_target": null
+          }
+        ],
+        "sdk_final_output": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_0001",
+          "turn_id": "turn_0001",
+          "selected_action": "join_waitlist",
+          "interpreted_intents": [
+            "waitlist_acceptance",
+            "provides_missing_details"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "studio_name",
+              "value_text": "Studio Viva",
+              "status": "answered",
+              "evidence": [
+                "pode colocar o Studio Viva em Vitoria ES"
+              ]
+            },
+            {
+              "key": "city_state",
+              "value_text": "Vitória, ES",
+              "status": "answered",
+              "evidence": [
+                "pode colocar o Studio Viva em Vitoria ES"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "accepts",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Perfeito, já deixei o Studio Viva em Vitória/ES na lista de espera.",
+              "evidence": [
+                "pode colocar o Studio Viva em Vitoria ES"
+              ]
+            }
+          ],
+          "reply_goal": "Confirmar a inclusão na lista de espera com os dados informados.",
+          "confidence": "high",
+          "evidence": [
+            "pode colocar o Studio Viva em Vitoria ES"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "taliya_proposal": {
+          "boundary": "action_first",
+          "superseded_schema": "TaliyaTurnProposal",
+          "action_decision": {
+            "schema_version": "012.conductor_action_decision.v1",
+            "decision_id": "decision_0001",
+            "turn_id": "turn_0001",
+            "selected_action": "join_waitlist",
+            "interpreted_intents": [
+              "waitlist_acceptance",
+              "provides_missing_details"
+            ],
+            "direct_question": null,
+            "direct_answer_obligations": [],
+            "captured_slots": [
+              {
+                "key": "studio_name",
+                "value_text": "Studio Viva",
+                "status": "answered",
+                "evidence": [
+                  "pode colocar o Studio Viva em Vitoria ES"
+                ]
+              },
+              {
+                "key": "city_state",
+                "value_text": "Vitória, ES",
+                "status": "answered",
+                "evidence": [
+                  "pode colocar o Studio Viva em Vitoria ES"
+                ]
+              }
+            ],
+            "product_fact_keys_used": [],
+            "numeric_interpretations": [],
+            "diagnostic_intent": "none",
+            "demo_intent": "none",
+            "waitlist_intent": "accepts",
+            "handoff_intent": "none",
+            "composition_variables": [
+              {
+                "name": "answer_feedback",
+                "value": "Perfeito, já deixei o Studio Viva em Vitória/ES na lista de espera.",
+                "evidence": [
+                  "pode colocar o Studio Viva em Vitoria ES"
+                ]
+              }
+            ],
+            "reply_goal": "Confirmar a inclusão na lista de espera com os dados informados.",
+            "confidence": "high",
+            "evidence": [
+              "pode colocar o Studio Viva em Vitoria ES"
+            ],
+            "needs_clarification": false,
+            "repair_hints": []
+          },
+          "direct_sdk_delivery_allowed": false
+        },
+        "action_decision": {
+          "schema_version": "012.conductor_action_decision.v1",
+          "decision_id": "decision_0001",
+          "turn_id": "turn_0001",
+          "selected_action": "join_waitlist",
+          "interpreted_intents": [
+            "waitlist_acceptance",
+            "provides_missing_details"
+          ],
+          "direct_question": null,
+          "direct_answer_obligations": [],
+          "captured_slots": [
+            {
+              "key": "studio_name",
+              "value_text": "Studio Viva",
+              "status": "answered",
+              "evidence": [
+                "pode colocar o Studio Viva em Vitoria ES"
+              ]
+            },
+            {
+              "key": "city_state",
+              "value_text": "Vitória, ES",
+              "status": "answered",
+              "evidence": [
+                "pode colocar o Studio Viva em Vitoria ES"
+              ]
+            }
+          ],
+          "product_fact_keys_used": [],
+          "numeric_interpretations": [],
+          "diagnostic_intent": "none",
+          "demo_intent": "none",
+          "waitlist_intent": "accepts",
+          "handoff_intent": "none",
+          "composition_variables": [
+            {
+              "name": "answer_feedback",
+              "value": "Perfeito, já deixei o Studio Viva em Vitória/ES na lista de espera.",
+              "evidence": [
+                "pode colocar o Studio Viva em Vitoria ES"
+              ]
+            }
+          ],
+          "reply_goal": "Confirmar a inclusão na lista de espera com os dados informados.",
+          "confidence": "high",
+          "evidence": [
+            "pode colocar o Studio Viva em Vitoria ES"
+          ],
+          "needs_clarification": false,
+          "repair_hints": []
+        },
+        "compiler": {
+          "selected_action": "join_waitlist",
+          "previous_state": "waitlist_pending_data",
+          "current_state": "waitlist_pending_data",
+          "next_state": "waitlist_joined",
+          "template_ids": [
+            "waitlist.joined"
+          ],
+          "issues": []
+        },
+        "validators": {
+          "decision_id": "action_join_waitlist",
+          "status": "passed",
+          "errors": [],
+          "warnings": [],
+          "repair_attempt_count": 0,
+          "final_disposition": "accepted"
+        },
+        "repair_or_escalation": {
+          "repair_attempt_count": 0,
+          "validator_feedback": [],
+          "repair_sdk_run_items": []
+        },
+        "render_plan": {
+          "template_ids": [
+            "waitlist.joined"
+          ],
+          "variables": {
+            "studio_name": {
+              "kind": "short_text",
+              "value": "Studio Viva",
+              "source": "user_message",
+              "evidence": [
+                "pode colocar o Studio Viva em Vitoria ES"
+              ],
+              "max_length": 80
+            },
+            "city_state": {
+              "kind": "short_text",
+              "value": "Vitória, ES",
+              "source": "user_message",
+              "evidence": [
+                "pode colocar o Studio Viva em Vitoria ES"
+              ],
+              "max_length": 80
+            }
+          },
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "rendered_messages": [
+          "Perfeito, deixei seu interesse registrado para a equipe da Taliya.",
+          "Studio: Studio Viva.",
+          "Cidade/estado: Vitória, ES."
+        ],
+        "state_diff": {
+          "next_state": "waitlist_joined",
+          "state_patch": {
+            "waitlist": {
+              "status": "joined",
+              "missing_details": []
+            }
+          },
+          "ledger_updates": []
+        },
+        "sales_inbox_projection": {
+          "conversation_id": "t012-043-final-waitlist-joined",
+          "lead_id": "t012-043-final-waitlist-joined",
+          "commercial_stage": "waitlist_joined",
+          "summary": "Lead already asked to start and was asked for studio name and city/state.",
+          "diagnostic_status": "not_started",
+          "waitlist_status": "joined",
+          "handoff_status": "none",
+          "identity": [],
+          "fields": {
+            "template_ids": [
+              "waitlist.joined"
+            ],
+            "validator_status": "passed",
+            "validator_final_disposition": "accepted",
+            "source_labels": {
+              "channel": "whatsapp",
+              "source": "taliya_whatsapp",
+              "state_source": "accepted_decision"
+            },
+            "operator_next_action": "monitor_waitlist",
+            "waitlist_eligibility": "eligible",
+            "waitlist_idempotency_key": "waitlist:waitlist_joined:1",
+            "waitlist_joined_at": "mocked",
+            "missing_waitlist_fields": []
+          }
+        },
+        "delivery": {
+          "public_delivery": false,
+          "outbox_reserved": false,
+          "rendered_count": 3,
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "usage_cost": {
+          "model_operations": 1,
+          "cost_usd": 0.00263475
+        },
+        "failure_labels": []
+      }
+    }
+  ],
+  "final_state": {
+    "canonical_state": "waitlist_joined",
+    "waitlist": {
+      "status": "joined",
+      "eligibility": "eligible",
+      "missing_details": []
+    },
+    "summary": "Lead already asked to start and was asked for studio name and city/state.",
+    "conversation_id": "t012-043-final-waitlist-joined",
+    "lead_id": "t012-043-final-waitlist-joined",
+    "source": "taliya_whatsapp",
+    "channel": "whatsapp"
+  },
+  "checks": [
+    "route:waitlist",
+    "waitlist_joined",
+    "no_checkout_link",
+    "no_phone_request",
+    "template_ids_present",
+    "sales_inbox_projection_consistent",
+    "whatsapp_max_three_chunks",
+    "all_messages_short"
+  ],
+  "check_results": [
+    {
+      "check": "turn_statuses_acceptable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "includes:Studio Viva",
+      "passed": true,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "includes:Vitoria",
+      "passed": true,
+      "detail": "missing expected rendered text"
+    },
+    {
+      "check": "excludes:checkout",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:VIP",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "excludes:desconto",
+      "passed": true,
+      "detail": "banned rendered text present"
+    },
+    {
+      "check": "no_failed_turns",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "issues": [],
+  "total_model_operations": 1,
+  "total_cost_usd": 0.002635,
+  "cost_cap_exceeded": false
+}

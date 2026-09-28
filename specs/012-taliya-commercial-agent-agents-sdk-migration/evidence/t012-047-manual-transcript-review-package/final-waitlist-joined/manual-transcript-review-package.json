@@ -1,0 +1,154 @@
+{
+  "schema": "012.manual_transcript_review.v1",
+  "scenario_id": "final-waitlist-joined",
+  "proof_mode": "real_model_t012_043_approved_9_of_9",
+  "review_status": "pending_manual_review",
+  "reviewer": "product_owner",
+  "checklist": [
+    {
+      "id": "answers_direct_questions_first",
+      "label": "Direct questions are answered before steering",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "studio_owner_language",
+      "label": "Language sounds natural for a Pilates studio owner",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "official_facts_only",
+      "label": "Prices, demo link, availability, and product claims use official facts",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "diagnostic_flow_quality",
+      "label": "Diagnostic questions progress naturally without repeats",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "final_diagnostic_quality",
+      "label": "Final diagnostic is complete, practical, and not truncated",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "handoff_and_suppression",
+      "label": "Human handoff pauses AI replies after acknowledgement",
+      "status": "pending",
+      "notes": ""
+    },
+    {
+      "id": "no_unsafe_promises",
+      "label": "No checkout, discount, VIP, date, or integration promises are invented",
+      "status": "pending",
+      "notes": ""
+    }
+  ],
+  "summary": {
+    "turn_count": 1,
+    "delivered_turn_count": 1,
+    "suppressed_turn_count": 0,
+    "total_model_operations": 1,
+    "total_cost_usd": 0.002439
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "content": "pode colocar o Studio Viva em Vitoria ES"
+    },
+    {
+      "role": "assistant",
+      "content": "Perfeito, deixei seu interesse registrado para a equipe da Taliya."
+    },
+    {
+      "role": "assistant",
+      "content": "Studio: Studio Viva."
+    },
+    {
+      "role": "assistant",
+      "content": "Cidade/estado: Vitória, ES."
+    }
+  ],
+  "turns": [
+    {
+      "index": 0,
+      "status": "delivered",
+      "mode": "waitlist",
+      "selected_action": "join_waitlist",
+      "template_ids": [
+        "waitlist.joined"
+      ],
+      "rendered_messages": [
+        "Perfeito, deixei seu interesse registrado para a equipe da Taliya.",
+        "Studio: Studio Viva.",
+        "Cidade/estado: Vitória, ES."
+      ],
+      "issues": [],
+      "repairs": 0,
+      "model_operations": 1,
+      "cost_usd": 0.002439,
+      "trace_present": true,
+      "trace_complete": true,
+      "sales_inbox_projection_present": true,
+      "projection_lead_id": "t012-043-final-waitlist-joined"
+    }
+  ],
+  "final_state": {
+    "canonical_state": "waitlist_joined",
+    "waitlist": {
+      "status": "joined",
+      "eligibility": "eligible",
+      "missing_details": []
+    },
+    "summary": "Lead already asked to start and was asked for studio name and city/state.",
+    "conversation_id": "t012-043-final-waitlist-joined",
+    "lead_id": "t012-043-final-waitlist-joined",
+    "source": "taliya_whatsapp",
+    "channel": "whatsapp"
+  },
+  "manual_review_notes": "Pending product-owner review in T012-048.",
+  "manual_decision": "pending",
+  "source_status": "passed",
+  "source_checks": [
+    {
+      "check": "turn_statuses_acceptable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "includes:Studio Viva",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "includes:Vitoria",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:checkout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:VIP",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "excludes:desconto",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_failed_turns",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "source_issues": []
+}

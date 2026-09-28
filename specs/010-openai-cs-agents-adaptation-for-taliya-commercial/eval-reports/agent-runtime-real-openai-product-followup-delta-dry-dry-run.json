@@ -1,0 +1,17 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-product-followup-delta-dry",
+  "dryRun": true,
+  "selectedScenarioCount": 6,
+  "estimatedModelCalls": 6,
+  "maxModelCalls": 6,
+  "maxCostUsd": 0.08,
+  "scenarioIds": [
+    "product-delta-how-it-works",
+    "product-delta-comparison-planilha",
+    "product-delta-integration-scope",
+    "product-delta-security-data",
+    "product-delta-out-of-profile",
+    "product-delta-diagnostic-refusal"
+  ]
+}

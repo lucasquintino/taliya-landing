@@ -1,0 +1,4 @@
+interface:
+  display_name: "Taliya LLM-First Agent"
+  short_description: "Prevent deterministic agent regressions"
+  default_prompt: "Use this skill before changing or reviewing the Taliya commercial agent so conversation understanding stays LLM-first and deterministic code remains limited to operations and safety."

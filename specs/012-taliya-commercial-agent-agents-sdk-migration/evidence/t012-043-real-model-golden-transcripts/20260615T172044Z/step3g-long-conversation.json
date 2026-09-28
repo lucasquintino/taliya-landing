@@ -1,0 +1,45 @@
+{
+  "scenario_id": "step3g-long-conversation",
+  "title": "Golden RC-011-056/060 diagnostic question-by-question and long conversation",
+  "status": "runtime_error",
+  "messages": [
+    "quanto custa?",
+    "pode fazer diagnostico",
+    "95 alunos ativos",
+    "whatsapp e follow-up dao mais trabalho",
+    "nao consigo ver quem precisa de retorno no dia",
+    "hoje fica em planilha e whatsapp",
+    "prioridade e vendas primeiro",
+    "quero resolver agora",
+    "me manda demo",
+    "achei caro",
+    "quero comecar, me coloca na lista",
+    "como funciona mesmo?",
+    "quero falar com alguem"
+  ],
+  "transcript": [],
+  "turns": [],
+  "final_state": {},
+  "checks": [
+    "mentions_all_prices",
+    "diagnostic_question_has_feedback",
+    "no_repeat_answered_size_question",
+    "diagnostic_completed",
+    "diagnostic_ledger_complete",
+    "mentions_demo_link",
+    "price_objection_value_argument",
+    "no_roi_promise",
+    "waitlist_offered_or_handoff",
+    "handoff_requested",
+    "template_ids_present",
+    "sales_inbox_projection_consistent",
+    "all_messages_short"
+  ],
+  "check_results": [],
+  "issues": [
+    "SalesInboxProjectionBuildError: Sales Inbox projection failed validation: sales_inbox_diagnostic_status_mismatch:[{\"code\":\"sales_inbox_diagnostic_status_mismatch\",\"severity\":\"P0\",\"message\":\"Sales Inbox diagnostic status does not match decision/context\",\"path\":\"sales_inbox_projection.diagnostic_status\"}]"
+  ],
+  "total_model_operations": 0,
+  "total_cost_usd": 0.0,
+  "cost_cap_exceeded": false
+}

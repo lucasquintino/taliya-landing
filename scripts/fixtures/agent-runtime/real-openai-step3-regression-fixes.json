@@ -1,0 +1,149 @@
+[
+  {
+    "id": "fix-small-studio-valid",
+    "title": "Small studio is valid Pilates studio profile and should get diagnostic path",
+    "channel": "widget",
+    "sender_name": "Ana Paula",
+    "messages": ["sou studio pequeno"],
+    "checks": [
+      "first_response_greeting",
+      "diagnostic_offered_or_started",
+      "not_fake_evidence",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "fix-size-pain-no-internal-leak",
+    "title": "Size plus pain should not leak internal English facts",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": ["tenho 80 aluno e agenda baguncada"],
+    "checks": [
+      "first_response_greeting",
+      "mentions_user_context",
+      "diagnostic_offered_or_started",
+      "no_prompt_leak",
+      "no_internal_agent_text",
+      "whatsapp_max_three_chunks",
+      "llm_usage_required",
+      "template_ids_present"
+    ]
+  },
+  {
+    "id": "fix-discount-direct",
+    "title": "Discount objection should answer discount directly",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["tem desconto? achei salgado"],
+    "checks": [
+      "first_response_greeting",
+      "price_objection_value_argument",
+      "price_objection_next_step",
+      "no_checkout_link",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "fix-roi-no-guarantee",
+    "title": "ROI challenge should not promise results and should answer directly",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["isso se paga? garante resultado?"],
+    "checks": [
+      "first_response_greeting",
+      "price_objection_value_argument",
+      "price_objection_next_step",
+      "no_roi_promise",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "fix-whatsapp-business-direct",
+    "title": "WhatsApp Business requirement should not use generic integration answer",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["preciso ter whatsapp business?"],
+    "checks": [
+      "first_response_greeting",
+      "whatsapp_business_specific",
+      "has_product_source",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "fix-tecnofit-direct",
+    "title": "Specific integration question should name the requested tool",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": ["integra com tecnofit?"],
+    "checks": [
+      "first_response_greeting",
+      "integration_scope_safe",
+      "has_product_source",
+      "llm_usage_required",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "fix-diagnostic-current-process",
+    "title": "Diagnostic should continue after current-process answer instead of switching to comparison",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero fazer diagnostico gratuito",
+      "tenho 90 alunos ativos",
+      "agenda e reposicoes dao mais trabalho",
+      "nao consigo ver facil o que precisa resolver no dia",
+      "hoje fica em planilha e whatsapp"
+    ],
+    "checks": [
+      "diagnostic_question_has_feedback",
+      "no_repeat_answered_size_question",
+      "route:diagnostic",
+      "diagnostic_incomplete_requires_question",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "fix-post-diagnostic-thinking",
+    "title": "Post diagnostic thinking response should not reset to generic overview",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+      "vou pensar"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "fix-pending-waitlist-price-resume",
+    "title": "Pending waitlist product question should answer and resume missing studio name lightly",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+      "quero começar, me coloca na lista",
+      "quanto custa mesmo?"
+    ],
+    "checks": [
+      "mentions_all_prices",
+      "waitlist_status_preserved",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  }
+]

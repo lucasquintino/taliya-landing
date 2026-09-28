@@ -1,0 +1,19 @@
+ESCOPO DA VERIFICAÇÃO DESTE PACOTE
+
+A verificação realizada nesta montagem cobre:
+- abertura/CRC dos dois ZIPs originais;
+- preservação byte a byte dos ZIPs recebidos;
+- preservação byte a byte de cada arquivo extraído;
+- igualdade do prompt mestre MD/TXT com os arquivos disponíveis na conversa;
+- inventário com tamanho e SHA-256 dos arquivos transportados;
+- abertura/CRC do ZIP final e conferência dos hashes depois da extração de teste.
+
+Não cobre execução da aplicação, inspeção do repositório, scripts do dataset,
+instalação de Spec Kit, testes do site, validação jurídica, configurações
+externas, SEO em produção ou publicação. Relatórios históricos nos documentos
+de origem permanecem históricos e não foram reemitidos como testes atuais.
+
+MANIFESTO.json inventaria os arquivos exceto ele próprio, evitando hash
+circular. SHA256SUMS.txt inclui todos os demais arquivos, inclusive o manifesto,
+mas não inclui a si próprio. Todos os caminhos são relativos à pasta
+TALIYA_INICIAR dentro do ZIP final.

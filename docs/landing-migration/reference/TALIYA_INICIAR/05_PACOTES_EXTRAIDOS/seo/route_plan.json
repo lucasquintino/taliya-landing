@@ -1,0 +1,99 @@
+{
+  "version": "1.1",
+  "date": "2026-09-19",
+  "proposed_not_live": true,
+  "canonicalOrigin": "https://www.taliya.com.br",
+  "launchArchitecture": [
+    {
+      "path": "/",
+      "priority": "P0",
+      "kind": "home",
+      "purpose": "Marca, categoria, capacidades, demonstração e conversão. Deve cobrir semanticamente clientes, serviços, agenda, orçamentos, recebimentos, lembretes e arquivos.",
+      "publishWhenComplete": true
+    },
+    {
+      "path": "/privacidade",
+      "priority": "P0/P1",
+      "kind": "policy",
+      "purpose": "Política revisada para o pivot e para a coleta realmente existente.",
+      "publishWhenComplete": true
+    },
+    {
+      "path": "/seguranca",
+      "priority": "P1",
+      "kind": "trust",
+      "purpose": "Dados, limites, controle, WhatsApp/app e práticas verificáveis.",
+      "publishWhenComplete": true
+    },
+    {
+      "path": "/sobre",
+      "priority": "P1",
+      "kind": "trust",
+      "purpose": "Empresa/projeto, responsáveis, contato e estágio reais.",
+      "publishWhenComplete": true
+    },
+    {
+      "path": "/termos",
+      "priority": "conditional",
+      "kind": "policy",
+      "purpose": "Publicar quando a oferta/uso exigir termos públicos reais.",
+      "publishWhenComplete": true
+    },
+    {
+      "path": "/ajuda",
+      "priority": "post-beta",
+      "kind": "support",
+      "purpose": "Documentação operacional baseada no produto real.",
+      "publishWhenComplete": true
+    }
+  ],
+  "featureRoutesDecision": {
+    "launchRequired": false,
+    "pathsNotPlannedNow": [
+      "/recursos/agenda-pelo-whatsapp",
+      "/recursos/orcamentos",
+      "/recursos/recebimentos",
+      "/recursos/pacotes-e-planos",
+      "/recursos/lembretes",
+      "/recursos/arquivos"
+    ],
+    "reason": "A home aprovada já cobre essas intenções com sete frentes, subtipos, mensagens e fluxos. Uma URL separada não é requisito para Google/IA encontrar a capacidade.",
+    "createOnlyIf": [
+      "Existe intenção distinta que a home não responde com profundidade suficiente",
+      "A nova página acrescenta conteúdo substancial e próprio",
+      "Search Console/Bing/analytics mostram demanda ou lacuna relevante",
+      "A URL tem utilidade independente para compartilhamento, campanha, creator, parceiro ou suporte",
+      "Há necessidade real de destino citável/backlink/documentação"
+    ]
+  },
+  "homeAnchorsSuggested": [
+    "#como-funciona",
+    "#clientes",
+    "#servicos",
+    "#agenda",
+    "#orcamentos",
+    "#recebimentos",
+    "#lembretes",
+    "#arquivos",
+    "#faq"
+  ],
+  "legacy": [
+    {
+      "path": "/pilates",
+      "decision": "Mapear sucessor equivalente; caso não exista, transição/arquivo histórico ou encerramento explícito.",
+      "destination": null
+    },
+    {
+      "path": "/pilates/planos",
+      "decision": "Mapear oferta substituta verdadeira quando existir; não direcionar a checkout indisponível.",
+      "destination": null
+    }
+  ],
+  "sitemapRules": [
+    "Somente páginas reais, 200, públicas e canônicas",
+    "Não incluir âncoras como URLs do sitemap",
+    "Não criar rotas de feature apenas para aumentar contagem de páginas",
+    "Sem query strings de tracking ou staging",
+    "Lastmod corresponde a atualização relevante real"
+  ]
+}

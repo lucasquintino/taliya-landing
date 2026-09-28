@@ -1,0 +1,20 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-step3-regression-fixes-final-verified-dry",
+  "dryRun": true,
+  "selectedScenarioCount": 9,
+  "estimatedModelCalls": 16,
+  "maxModelCalls": 0,
+  "maxCostUsd": 0.0,
+  "scenarioIds": [
+    "fix-small-studio-valid",
+    "fix-size-pain-no-internal-leak",
+    "fix-discount-direct",
+    "fix-roi-no-guarantee",
+    "fix-whatsapp-business-direct",
+    "fix-tecnofit-direct",
+    "fix-diagnostic-current-process",
+    "fix-post-diagnostic-thinking",
+    "fix-pending-waitlist-price-resume"
+  ]
+}

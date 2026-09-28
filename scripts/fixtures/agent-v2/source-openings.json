@@ -1,0 +1,10 @@
+[
+  { "id": "SRC-001", "channel": "whatsapp", "message": "Bom dia", "expect": ["Oi! Tudo bem?", "Em que posso te ajudar?"] },
+  { "id": "SRC-002", "channel": "whatsapp", "profileName": "Lucas Quintino", "message": "Bom dia", "expect": ["Oi, Lucas. Tudo bem?", "Em que posso te ajudar?"] },
+  { "id": "SRC-003", "channel": "whatsapp", "profileName": "Studio Pilates Oficial", "message": "Bom dia", "expect": ["Oi! Tudo bem?", "Em que posso te ajudar?"] },
+  { "id": "SRC-004", "channel": "whatsapp", "message": "Oi, vim pelo site da Taliya e queria entender como ela pode ajudar meu studio de Pilates.", "expect": ["A Taliya", "rotina"] },
+  { "id": "SRC-005", "channel": "whatsapp", "message": "Oi, vim pelo Instagram da Taliya e queria entender melhor como funciona para studios de Pilates.", "expect": ["CRM", "studios de Pilates"] },
+  { "id": "SRC-006", "channel": "whatsapp", "message": "Oi, vim pelo anúncio da Taliya. Quero fazer o diagnóstico gratuito para entender o que organizar primeiro no meu studio.", "expect": ["diagnostico", "Pode ser?"] },
+  { "id": "SRC-007", "channel": "widget", "message": "oi", "expect": ["Oi! Tudo bem?", "Em que posso te ajudar?"] }
+]
+

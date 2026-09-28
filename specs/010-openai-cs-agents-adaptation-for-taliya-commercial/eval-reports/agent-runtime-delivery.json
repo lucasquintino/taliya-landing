@@ -1,0 +1,193 @@
+{
+  "runId": "agent-runtime-delivery-1785894953865",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-08-05T01:55:53.865Z",
+  "summary": {
+    "total": 34,
+    "passed": 34,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "duplicate webhook fixture is present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route checks duplicate provider messages",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route returns duplicate_ignored instead of replying twice",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route creates a same-text/same-state semantic idempotency key",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route reserves semantic turn idempotency before runtime execution",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route skips delayed duplicate text in the same pending state",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route queues inbound turns before runtime processing",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route serializes processing per WhatsApp conversation",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route drains pending split-message batches after delivery",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route has an inbound debounce window for split user messages",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route has a post-delivery drain window for messages sent during chunks",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route waits for the post-delivery drain window before releasing a conversation with no pending rows",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route does not use text-specific social acknowledgement shortcuts",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp route does not silently ignore interleaved user replies by phrase",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp outbox uses idempotency key conflict protection",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp keep-alive helper is still available",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp webhook awaits the initial typing indicator before runtime work",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp webhook starts typing before calling the runtime",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp webhook keeps typing alive through chunk delivery",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp chunk pacing uses delay instead of unsupported per-chunk typing",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp Graph API defaults to a typing-indicator-compatible version",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "WhatsApp typing failures are logged for production debugging",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "delivery slicing stays in responseToWhatsAppTexts helper",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime client preserves completed diagnostic closing chunks while capping normal turns",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime renderer renders selected template plans",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "renderer has WhatsApp-specific chunk cap",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "template registry records button/channel constraints",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "template registry records official link constraints",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "demo template is allowed to render as widget action",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "renderer marks widget button-enabled links as action messages",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime client maps action messages to widget actions",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime client forwards sanitized transport metadata to the LLM runtime",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime client strips legacy commercial hints from transport metadata",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "floating panel renders assistant action hrefs",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  },
+  "fixtures": [
+    "lead-requests-human",
+    "manual-business-app-echo",
+    "duplicate-provider-message"
+  ]
+}

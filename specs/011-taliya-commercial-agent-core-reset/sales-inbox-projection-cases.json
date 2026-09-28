@@ -1,0 +1,763 @@
+{
+  "version": "011.0",
+  "status": "binding_projection_contract",
+  "source_contracts": [
+    "sales-inbox-contract.md",
+    "regression-cases.md",
+    "lib/landing/ai-attendant/leads.ts",
+    "lib/landing/ai-attendant/runtime-client.ts",
+    "components/internal/SalesInboxClient.tsx"
+  ],
+  "common_field_expectations": [
+    {
+      "key": "lead_identity",
+      "current_field": "leadId, contact, leadSourceChannel",
+      "status": "reuse_with_validator",
+      "requirement": "required",
+      "source_of_truth": "channel_metadata",
+      "rule": "Preserve existing lead/contact/channel fields, but identity values must keep customer-provided/channel-provided/inferred/unverified labels."
+    },
+    {
+      "key": "conversation_state",
+      "current_field": "commercialStage, agentRuntime.previousState, agentRuntime.currentState, agentRuntime.nextState, agentRuntime.route",
+      "status": "reuse_with_validator",
+      "requirement": "required",
+      "source_of_truth": "validated_runtime_state",
+      "rule": "State shown in Sales Inbox must come from validated conductor decision and runtime state, not adapter inference."
+    },
+    {
+      "key": "template_ids",
+      "current_field": "agentRuntime.templateIds",
+      "status": "reuse_with_validator",
+      "requirement": "required",
+      "source_of_truth": "validated_conductor_decision",
+      "rule": "Rendered template ids must match the validated render plan."
+    },
+    {
+      "key": "trace_id",
+      "current_field": "agentRuntime.traceId, agentRuntime.runId",
+      "status": "reuse_with_validator",
+      "requirement": "required",
+      "source_of_truth": "trace_store",
+      "rule": "Every meaningful turn must link to the runtime trace/run used to produce the projection."
+    },
+    {
+      "key": "model_usage",
+      "current_field": "agentRuntime.estimatedCostUsd",
+      "status": "reuse_with_validator",
+      "requirement": "conditional",
+      "source_of_truth": "trace_store",
+      "rule": "Commercial turns require model usage/cost unless explicitly operational, safety, or pure cold greeting."
+    },
+    {
+      "key": "validator_status",
+      "current_field": "missing:agentRuntime.validatorStatus",
+      "status": "missing",
+      "requirement": "required",
+      "source_of_truth": "trace_store",
+      "implementation_task": "T011-066,T011-080,T011-086",
+      "rule": "Projection must expose validator status/repair disposition before eval PASS."
+    },
+    {
+      "key": "runtime_source_labels",
+      "current_field": "sourcePage, sourceSection, leadSourceDetail, agentRuntime.productSourceVersion",
+      "status": "reuse_with_validator",
+      "requirement": "required",
+      "source_of_truth": "channel_metadata",
+      "rule": "Source labels may help operators but must not become customer-facing text or reliable identity/fact evidence."
+    },
+    {
+      "key": "operator_next_action",
+      "current_field": "summary, nextAction",
+      "status": "reuse_with_validator",
+      "requirement": "required",
+      "source_of_truth": "validated_runtime_state",
+      "rule": "Operator summary/action must be derived from validated runtime state and trace facts."
+    }
+  ],
+  "case_families": [
+    {
+      "id": "cold_greeting",
+      "label": "Cold greeting / empty widget opening",
+      "regression_cases": ["RC-011-015", "RC-011-016"],
+      "field_expectations": [
+        {
+          "key": "commercial_stage",
+          "current_field": "commercialStage",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_runtime_state",
+          "rule": "Stage remains light greeting/general interest; no diagnostic, waitlist, contact capture, or product claim is projected from a pure greeting."
+        },
+        {
+          "key": "unverified_name",
+          "current_field": "contact.name",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Do not store a verified person name from unreliable channel metadata, studio names, phone numbers, handles, or internal profile labels."
+        },
+        {
+          "key": "waitlist_status",
+          "current_field": "waitlistStatus",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_runtime_state",
+          "rule": "Must remain none/not offered for pure greeting."
+        }
+      ]
+    },
+    {
+      "id": "source_opening",
+      "label": "Instagram/site/source opening",
+      "regression_cases": ["RC-011-002", "RC-011-054"],
+      "field_expectations": [
+        {
+          "key": "source_context",
+          "current_field": "sourcePage, sourceSection, leadSourceDetail",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "channel_metadata",
+          "rule": "Source context may be projected for operators with internal labels, confidence, and provenance."
+        },
+        {
+          "key": "source_text_leak",
+          "current_field": "summary, nextAction, transcript",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Projection must not preserve customer-facing/internal leaked text like lead came from the site."
+        }
+      ]
+    },
+    {
+      "id": "price_question",
+      "label": "Direct price question",
+      "regression_cases": ["RC-011-003", "RC-011-017", "RC-011-048"],
+      "field_expectations": [
+        {
+          "key": "product_source_keys",
+          "current_field": "agentRuntime.productSourceKeys, agentRuntime.productSourceVersion",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "official_product_knowledge",
+          "rule": "Price answer must record official product source keys/version."
+        },
+        {
+          "key": "direct_question_status",
+          "current_field": "agentRuntime.detectedIntents, agentRuntime.route",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Projection must show price/product direct question was answered before steering."
+        },
+        {
+          "key": "price_as_student_count",
+          "current_field": "crmAgentDiagnostic.studioSizeRange, qualification",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "A price such as 497 must not be projected as active students, student count, studio size, or lead volume."
+        }
+      ]
+    },
+    {
+      "id": "plan_fit_question",
+      "label": "Plan fit question",
+      "regression_cases": ["RC-011-019"],
+      "field_expectations": [
+        {
+          "key": "plan_fit_context",
+          "current_field": "primaryPainOrIntent, agentRuntime.detectedIntents",
+          "status": "reuse_with_validator",
+          "requirement": "conditional",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Thin-context plan fit must be recorded as context, not as completed recommendation."
+        },
+        {
+          "key": "premature_recommended_plan",
+          "current_field": "recommendedPlanId, crmAgentDiagnostic.recommendedPlan, agentRuntime.finalPlanLine",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Do not project final plan/range unless diagnostic completion or official product-answer criteria are met."
+        }
+      ]
+    },
+    {
+      "id": "pain_first",
+      "label": "Pain-first commercial message",
+      "regression_cases": ["RC-011-018", "RC-011-053"],
+      "field_expectations": [
+        {
+          "key": "pain_summary",
+          "current_field": "primaryPainOrIntent, selectedPainIds",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Pain must be grounded in lead message or diagnostic ledger evidence."
+        },
+        {
+          "key": "diagnostic_offer",
+          "current_field": "diagnosticStatus, commercialStage, nextAction",
+          "status": "reuse_with_validator",
+          "requirement": "conditional",
+          "source_of_truth": "validated_runtime_state",
+          "rule": "Diagnostic may be offered after pain context, but must not be marked completed or started unless accepted."
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_in_progress",
+      "label": "Diagnostic in progress",
+      "regression_cases": ["RC-011-006", "RC-011-007", "RC-011-008", "RC-011-026"],
+      "field_expectations": [
+        {
+          "key": "diagnostic_status",
+          "current_field": "diagnosticStatus, commercialStage",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "diagnostic_ledger",
+          "rule": "Must be in_progress with next missing required question; simple numeric answers like 120 must be captured when they answer active students."
+        },
+        {
+          "key": "diagnostic_ledger_evidence",
+          "current_field": "agentRuntime.diagnosticLedgerStatus",
+          "status": "missing",
+          "requirement": "required",
+          "source_of_truth": "diagnostic_ledger",
+          "implementation_task": "T011-062,T011-080,T011-082",
+          "rule": "Projection needs per-key ledger evidence, not only a summary status string."
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_completed",
+      "label": "Completed diagnostic",
+      "regression_cases": ["RC-011-004", "RC-011-009", "RC-011-012", "RC-011-013", "RC-011-029"],
+      "field_expectations": [
+        {
+          "key": "diagnostic_ledger_complete",
+          "current_field": "agentRuntime.diagnosticLedgerStatus",
+          "status": "missing",
+          "requirement": "required",
+          "source_of_truth": "diagnostic_ledger",
+          "implementation_task": "T011-062,T011-080,T011-082,T011-084",
+          "rule": "Projection must expose all six completed keys including urgency before completed diagnostic can PASS."
+        },
+        {
+          "key": "final_plan_or_range",
+          "current_field": "recommendedPlanId, agentRuntime.finalPlanLine, crmAgentDiagnostic.recommendedPlan",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "official_product_knowledge",
+          "rule": "Final plan/range must be grounded in diagnostic evidence plus official product facts."
+        },
+        {
+          "key": "final_demo_line",
+          "current_field": "agentRuntime.finalDemoLine, diagnosticNextStep",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Final demo/next-step phrase must be complete and consistent with persisted demo status."
+        },
+        {
+          "key": "waitlist_before_intent",
+          "current_field": "waitlistStatus",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Completed diagnostic alone must not project waitlist joined/offered without clear contract/start intent."
+        }
+      ]
+    },
+    {
+      "id": "demo_offered",
+      "label": "Demo offered",
+      "regression_cases": ["RC-011-020", "RC-011-059"],
+      "field_expectations": [
+        {
+          "key": "demo_status",
+          "current_field": "demoStatus, demoOfferedAt, agentRuntime.demoStatus",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_runtime_state",
+          "rule": "Demo offer must persist status and timestamp."
+        },
+        {
+          "key": "official_demo_source",
+          "current_field": "agentRuntime.productSourceKeys, agentRuntime.productSourceVersion",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "official_product_knowledge",
+          "rule": "Demo link/source must be official and recorded."
+        }
+      ]
+    },
+    {
+      "id": "demo_already_offered",
+      "label": "Demo already offered before diagnostic completion",
+      "regression_cases": ["RC-011-059"],
+      "field_expectations": [
+        {
+          "key": "demo_prior_state",
+          "current_field": "demoStatus, demoOfferedAt, agentRuntime.demoStatus",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_runtime_state",
+          "rule": "Completed diagnostic must preserve that demo was already offered and ask for reaction instead of re-offering blindly."
+        },
+        {
+          "key": "final_demo_line",
+          "current_field": "agentRuntime.finalDemoLine",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Final line must match already-offered demo status."
+        }
+      ]
+    },
+    {
+      "id": "post_demo_reaction",
+      "label": "Post-demo reaction",
+      "regression_cases": ["RC-011-059"],
+      "field_expectations": [
+        {
+          "key": "demo_reaction",
+          "current_field": "demoStatus, demoSeenAt",
+          "status": "reuse_with_validator",
+          "requirement": "conditional",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Lead reaction to demo must be recorded when present."
+        },
+        {
+          "key": "waitlist_eligibility_from_demo",
+          "current_field": "agentRuntime.waitlistIntentEvidence, waitlistStatus",
+          "status": "reuse_with_validator",
+          "requirement": "conditional",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Positive demo reaction can contribute to waitlist eligibility only with clear next-step/contract intent."
+        }
+      ]
+    },
+    {
+      "id": "post_diagnostic_question",
+      "label": "Post-diagnostic product/question turn",
+      "regression_cases": ["RC-011-032", "RC-011-060"],
+      "field_expectations": [
+        {
+          "key": "post_diagnostic_context_used",
+          "current_field": "agentRuntime.postDiagnosticContextUsed",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Projection must show saved diagnostic context was used when relevant."
+        },
+        {
+          "key": "diagnostic_restart",
+          "current_field": "diagnosticStatus, commercialStage, agentRuntime.templateIds",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Post-diagnostic question must not restart diagnostic or ask answered facts again."
+        }
+      ]
+    },
+    {
+      "id": "direct_buying_intent",
+      "label": "Direct buying/contract intent",
+      "regression_cases": ["RC-011-030", "RC-011-031"],
+      "field_expectations": [
+        {
+          "key": "waitlist_intent_evidence",
+          "current_field": "agentRuntime.waitlistIntentEvidence",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Projection must preserve evidence of clear contract/start intent before waitlist action."
+        },
+        {
+          "key": "checkout_or_vip_claim",
+          "current_field": "nextAction, summary, commercialStage",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Do not project checkout, VIP, launch date, discount, or guaranteed availability."
+        }
+      ]
+    },
+    {
+      "id": "waitlist_offered",
+      "label": "Waitlist offered",
+      "regression_cases": ["RC-011-031"],
+      "field_expectations": [
+        {
+          "key": "waitlist_status",
+          "current_field": "waitlistStatus, waitlistOfferedAt",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_runtime_state",
+          "rule": "Waitlist offered must include timestamp and clear intent evidence."
+        },
+        {
+          "key": "waitlist_context",
+          "current_field": "agentRuntime.waitlistIntentEvidence, primaryPainOrIntent",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Context summary must be enough for an operator to understand why waitlist was offered."
+        }
+      ]
+    },
+    {
+      "id": "waitlist_accepted_missing_data",
+      "label": "Waitlist accepted with missing data",
+      "regression_cases": ["RC-011-031"],
+      "field_expectations": [
+        {
+          "key": "waitlist_pending_details",
+          "current_field": "waitlistStatus, missingWaitlistFields",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_runtime_state",
+          "rule": "Must show pending_details plus the exact missing fields."
+        },
+        {
+          "key": "over_collection",
+          "current_field": "contact, missingWaitlistFields",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Ask only one missing actionable detail at a time and never ask WhatsApp leads for their phone."
+        }
+      ]
+    },
+    {
+      "id": "waitlist_joined",
+      "label": "Waitlist joined",
+      "regression_cases": ["RC-011-031", "RC-011-057"],
+      "field_expectations": [
+        {
+          "key": "waitlist_joined_state",
+          "current_field": "waitlistStatus, waitlistJoinedAt, commercialStage, closureState",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_runtime_state",
+          "rule": "Joined status must persist once accepted."
+        },
+        {
+          "key": "waitlist_idempotency",
+          "current_field": "idempotencyKey",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "turn_gate",
+          "rule": "Duplicate waitlist joins must be prevented by idempotency key or equivalent marker."
+        }
+      ]
+    },
+    {
+      "id": "human_handoff",
+      "label": "Human handoff requested",
+      "regression_cases": ["RC-011-033", "RC-011-058"],
+      "field_expectations": [
+        {
+          "key": "ai_paused",
+          "current_field": "aiPaused",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "operator_state",
+          "rule": "AI must be paused after handoff request."
+        },
+        {
+          "key": "human_active",
+          "current_field": "humanActive, closureState, commercialStage",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "operator_state",
+          "rule": "Sales Inbox must show human owns the conversation."
+        },
+        {
+          "key": "handoff_reason",
+          "current_field": "nextAction, agentRuntime.route",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Reason must be grounded in lead request or operator state."
+        }
+      ]
+    },
+    {
+      "id": "paused_human_conversation",
+      "label": "Paused human conversation",
+      "regression_cases": ["RC-011-034", "RC-011-058"],
+      "field_expectations": [
+        {
+          "key": "human_pause_state",
+          "current_field": "aiPaused, humanActive, closureState",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "operator_state",
+          "rule": "Inbound is persisted but AI does not reply while human pause is active."
+        },
+        {
+          "key": "ai_reply_during_pause",
+          "current_field": "transcript, delivery status",
+          "status": "missing",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "implementation_task": "T011-032,T011-080,T011-086",
+          "rule": "No AI outbound delivery may be projected during active human ownership."
+        }
+      ]
+    },
+    {
+      "id": "duplicate_webhook",
+      "label": "Duplicate webhook/inbound",
+      "regression_cases": ["RC-011-010", "RC-011-011", "RC-011-034"],
+      "field_expectations": [
+        {
+          "key": "inbound_idempotency",
+          "current_field": "idempotencyKey",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "turn_gate",
+          "rule": "Duplicate inbound/provider event must not create duplicate transcript, duplicate outbox, or duplicate side effect."
+        },
+        {
+          "key": "duplicate_state_change",
+          "current_field": "commercialStage, waitlistStatus, diagnosticStatus",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Duplicate or deferred inbound creates no new commercial state until processed as the next clean turn; no new commercial state is allowed during duplicate handling."
+        }
+      ]
+    },
+    {
+      "id": "invalid_json_fallback",
+      "label": "Invalid JSON / provider failure fallback",
+      "regression_cases": ["RC-011-043", "RC-011-071"],
+      "field_expectations": [
+        {
+          "key": "fallback_state",
+          "current_field": "agentRuntime.guardrailFlags, nextAction, summary",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "trace_store",
+          "rule": "Fallback must show provider/JSON error and repair status without producing deterministic commercial answer."
+        },
+        {
+          "key": "commercial_answer_without_model",
+          "current_field": "summary, nextAction, messages",
+          "status": "missing",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "implementation_task": "T011-068,T011-069B,T011-086",
+          "rule": "Timeout/repair failure may produce safe operational fallback/handoff only."
+        }
+      ]
+    },
+    {
+      "id": "unsupported_media",
+      "label": "Unsupported media",
+      "regression_cases": ["RC-011-037"],
+      "field_expectations": [
+        {
+          "key": "unsupported_media_flag",
+          "current_field": "agentRuntime.guardrailFlags, nextAction",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_runtime_state",
+          "rule": "Projection records unsupported media operational fallback."
+        },
+        {
+          "key": "commercial_inference_from_media",
+          "current_field": "primaryPainOrIntent, diagnosticStatus, waitlistStatus",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Unsupported media must not create commercial inference, diagnostic answer, product claim, or waitlist status."
+        }
+      ]
+    },
+    {
+      "id": "product_how_it_works",
+      "label": "Product how-it-works explanation",
+      "regression_cases": ["RC-011-021", "RC-011-040A"],
+      "field_expectations": [
+        {
+          "key": "product_followup_intent",
+          "current_field": "agentRuntime.latestProductFollowupIntent",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Intent must be product_how_it_works and selected by conductor, not deterministic phrase matching."
+        },
+        {
+          "key": "product_source_keys",
+          "current_field": "agentRuntime.productSourceKeys, agentRuntime.productSourceVersion",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "official_product_knowledge",
+          "rule": "Must record how_it_works/routine areas or equivalent official product keys."
+        },
+        {
+          "key": "technical_crm_jargon_for_lay_lead",
+          "current_field": "summary, messages, agentRuntime.templateIds",
+          "status": "missing",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "implementation_task": "T011-057,T011-065,T011-086",
+          "rule": "Lay explanation must not lead with technical CRM jargon unless the lead asked about CRM."
+        }
+      ]
+    },
+    {
+      "id": "post_diagnostic_followup",
+      "label": "Product follow-up after completed diagnostic",
+      "regression_cases": ["RC-011-032", "RC-011-060"],
+      "field_expectations": [
+        {
+          "key": "post_diagnostic_summary_used",
+          "current_field": "agentRuntime.postDiagnosticContextUsed, agentRuntime.finalPlanLine, agentRuntime.demoStatus",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Projection must show saved diagnostic recommendation/demo/waitlist context used when relevant."
+        },
+        {
+          "key": "diagnostic_restart",
+          "current_field": "diagnosticStatus, agentRuntime.templateIds",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Follow-up must not restart diagnostic unless the lead explicitly asks for a new diagnostic."
+        }
+      ]
+    },
+    {
+      "id": "comparison_current_tool",
+      "label": "Comparison with spreadsheet/current system",
+      "regression_cases": ["RC-011-023", "RC-011-038", "RC-011-040B"],
+      "field_expectations": [
+        {
+          "key": "product_followup_intent",
+          "current_field": "agentRuntime.latestProductFollowupIntent",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Must record comparison_current_tool or equivalent product-followup intent."
+        },
+        {
+          "key": "current_tool_context",
+          "current_field": "primaryPainOrIntent, qualification.currentSystem",
+          "status": "reuse_with_validator",
+          "requirement": "conditional",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Current tool/competitor may be projected only if lead mentioned it."
+        },
+        {
+          "key": "invented_migration_or_integration",
+          "current_field": "summary, nextAction, messages",
+          "status": "missing",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "implementation_task": "T011-065,T011-069A,T011-086",
+          "rule": "Do not project migration, integration, or competitor attack claims."
+        }
+      ]
+    },
+    {
+      "id": "whatsapp_integration_scope",
+      "label": "WhatsApp/integration/scope question",
+      "regression_cases": ["RC-011-022", "RC-011-023", "RC-011-065"],
+      "field_expectations": [
+        {
+          "key": "product_source_keys",
+          "current_field": "agentRuntime.productSourceKeys, agentRuntime.unsupportedFactRequested",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "official_product_knowledge",
+          "rule": "Must record whatsapp_scope/integration_scope official keys or unsupported fact needing human confirmation."
+        },
+        {
+          "key": "client_whatsapp_capture",
+          "current_field": "contact.whatsapp, missingWaitlistFields, nextAction",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Commercial chat must not connect/request the client's studio WhatsApp as an integration step."
+        }
+      ]
+    },
+    {
+      "id": "security_data",
+      "label": "Security/privacy/data question",
+      "regression_cases": ["RC-011-024", "RC-011-036", "RC-011-064"],
+      "field_expectations": [
+        {
+          "key": "security_product_source",
+          "current_field": "agentRuntime.productSourceKeys, agentRuntime.humanConfirmationOffered",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "official_product_knowledge",
+          "rule": "Security/privacy answer must record official source keys or human confirmation if facts are missing."
+        },
+        {
+          "key": "sensitive_data_capture",
+          "current_field": "qualification, contact, summary",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Do not request or store CPF, payment, medical, or sensitive student data as commercial fact."
+        }
+      ]
+    },
+    {
+      "id": "out_of_profile",
+      "label": "Out-of-profile lead",
+      "regression_cases": ["RC-011-025"],
+      "field_expectations": [
+        {
+          "key": "out_of_profile_intent",
+          "current_field": "agentRuntime.latestProductFollowupIntent, agentRuntime.route",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Projection must preserve out_of_profile context for operator."
+        },
+        {
+          "key": "sales_diagnostic_for_student",
+          "current_field": "diagnosticStatus, commercialStage, nextAction",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Do not automatically offer studio diagnostic or treat students/autonomous teachers as buyers."
+        }
+      ]
+    },
+    {
+      "id": "diagnostic_refusal",
+      "label": "Diagnostic refusal",
+      "regression_cases": ["RC-011-028"],
+      "field_expectations": [
+        {
+          "key": "diagnostic_refusal_respected",
+          "current_field": "agentRuntime.diagnosticRefusalRespected",
+          "status": "reuse_with_validator",
+          "requirement": "required",
+          "source_of_truth": "validated_conductor_decision",
+          "rule": "Projection must show refusal was respected and direct question/product path continued."
+        },
+        {
+          "key": "diagnostic_reoffer_same_turn",
+          "current_field": "diagnosticStatus, agentRuntime.templateIds",
+          "status": "reuse_with_validator",
+          "requirement": "forbidden",
+          "source_of_truth": "none_forbidden",
+          "rule": "Do not immediately re-offer diagnostic or project diagnostic_in_progress in the same refusal turn."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,826 @@
+{
+  "runId": "agent-runtime-spec011-static-audit-1780583241375",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-100",
+  "createdAt": "2026-06-04T14:27:21.375Z",
+  "summary": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "active runtime API and Spec 011 core do not import/call runtime/runner.py for commercial answering",
+      "details": {
+        "activeRunnerHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "public widget/WhatsApp entrypoints use Spec 011 endpoint and cannot reach old TS v2 commercial fallback",
+      "details": {
+        "forbiddenReachability": [],
+        "endpointOk": true,
+        "runtimeClientLegacyHintHits": [],
+        "requestBodyLegacyHints": [],
+        "allowedLegacyOperationalModules": [
+          "lib/landing/ai-attendant/agent-v2-idempotency.ts"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime adapter keeps commercial understanding inside conduct_turn before validation/render/state updates",
+      "details": {
+        "conductIndex": 4036,
+        "validateIndex": 5222,
+        "renderIndex": 6702,
+        "stateDiffIndex": 6855,
+        "runtimeAdapterCommercialBranchHits": [],
+        "runtimeAdapterMessageTextHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "public conversion path is derived from runtime structured output, not user-text regex routing",
+      "details": {
+        "conversionPathTextParsingHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "active production-path prompts/templates/fallbacks do not hardcode product facts outside official product knowledge or Spec 006",
+      "details": {
+        "activeProductFactHits": [],
+        "legacyReferenceProductFactHits": [
+          {
+            "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+            "line": 3071,
+            "text": "\"Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\",",
+            "classification": "legacy_reference_not_active_path"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+            "line": 3202,
+            "text": "\"O Completo fica em R$ 1.497/mes.\",",
+            "classification": "legacy_reference_not_active_path"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+            "line": 3249,
+            "text": "\"Claro. Hoje os planos da Taliya para studios de Pilates comecam em R$ 197/mes no Base, \"",
+            "classification": "legacy_reference_not_active_path"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+            "line": 3250,
+            "text": "\"R$ 497/mes no Essencial, R$ 897/mes no Avance e R$ 1.497/mes no Completo. \"",
+            "classification": "legacy_reference_not_active_path"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+            "line": 3259,
+            "text": "\"Os planos oficiais sao Base, Essencial, Avance e Completo. Posso te explicar a diferenca por faixa e, se voce me disser a rotina que mais pesa hoje, eu comparo sem inventar link de pagamento.\"",
+            "classification": "legacy_reference_not_active_path"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+            "line": 3888,
+            "text": "if entry_intent == \"waitlist_intent\" and normalized.startswith(\"quero assinar o plano \") and \"checkout seguro\" in normalized:",
+            "classification": "legacy_reference_not_active_path"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/domains/taliya_commercial/templates.py",
+            "line": 112,
+            "text": "body=(\"Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.\",),",
+            "classification": "legacy_reference_not_active_path"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/domains/taliya_commercial/templates.py",
+            "line": 119,
+            "text": "body=(\"O Completo fica em R$ 1.497/mês.\",),",
+            "classification": "legacy_reference_not_active_path"
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/domains/taliya_commercial/behavior_policy.py",
+            "line": 94,
+            "text": "7a. When the lead asks price, list the official plan names and prices: Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, and Completo R$ 1.497/mes. Do not answer only a range or one plan price unless the lead asked about that specif",
+            "classification": "legacy_reference_not_active_path"
+          },
+          {
+            "path": "lib/landing/ai-attendant/agent-v2-response-generator.ts",
+            "line": 415,
+            "text": "messages.push(\"Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.\");",
+            "classification": "legacy_reference_not_active_path"
+          }
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "generic whole-response fields are blocked by guards and absent from active renderer/template/runtime output surfaces",
+      "details": {
+        "genericWholeResponseActiveHits": [],
+        "genericWholeResponseGuardHits": [
+          {
+            "path": "services/taliya-agent-runtime/app/core/taliya_commercial/schemas.py",
+            "line": 324,
+            "text": "\"message_text\","
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/core/taliya_commercial/schemas.py",
+            "line": 325,
+            "text": "\"freeform_response\","
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/core/taliya_commercial/schemas.py",
+            "line": 326,
+            "text": "\"assistant_reply\","
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/core/taliya_commercial/failed_path_guards.py",
+            "line": 38,
+            "text": "\"assistant_reply\","
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/core/taliya_commercial/failed_path_guards.py",
+            "line": 39,
+            "text": "\"freeform_response\","
+          },
+          {
+            "path": "services/taliya-agent-runtime/app/core/taliya_commercial/failed_path_guards.py",
+            "line": 41,
+            "text": "\"message_text\","
+          }
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "message": "active renderer/template registry do not invent semantic defaults for missing commercial variables",
+      "details": {
+        "rendererDefaultHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "static audit work produced no protected /pilates, landing visual, floating-agent, or Sales Inbox UI source diff",
+      "details": {
+        "protectedDiff": [],
+        "protectedPaths": [
+          "app/pilates",
+          "components/landing",
+          "data/landing",
+          "lib/landing/floating-agent.ts",
+          "components/internal/SalesInboxClient.tsx"
+        ]
+      }
+    }
+  ],
+  "releaseGate": "pass",
+  "auditedFiles": {
+    "activePythonPaths": [
+      "services/taliya-agent-runtime/app/main.py",
+      "services/taliya-agent-runtime/app/settings.py",
+      "services/taliya-agent-runtime/app/runtime/schemas.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/__init__.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/conductor.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/conductor_policy.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/context_builder.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/context_profile.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/context_snapshot.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/cost_report.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/decision_compiler.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/failed_path_guards.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/fallback.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/governance.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/outbox.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/product_fact_static_audit.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/product_knowledge.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/renderer.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/repair.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_adapter.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_state.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/sales_inbox_projection.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/schema_versioning.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/schemas.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/template_registry.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/trace_export.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/trace_store.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/turn_gate.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/turn_situation.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/validators.py"
+    ],
+    "activeTsPaths": [
+      "app/api/landing/ai-attendant/route.ts",
+      "app/api/landing/ai-attendant/whatsapp/route.ts",
+      "lib/landing/ai-attendant/runtime-client.ts",
+      "lib/landing/floating-agent.ts"
+    ],
+    "activeProductFactSurfaces": [
+      "services/taliya-agent-runtime/app/core/taliya_commercial/conductor.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/conductor_policy.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/context_builder.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/fallback.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/renderer.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/repair.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_adapter.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/runtime_state.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/sales_inbox_projection.py",
+      "services/taliya-agent-runtime/app/core/taliya_commercial/template_registry.py",
+      "lib/landing/ai-attendant/runtime-client.ts"
+    ],
+    "legacyReferencePaths": [
+      "services/taliya-agent-runtime/app/runtime/runner.py",
+      "services/taliya-agent-runtime/app/domains/taliya_commercial/templates.py",
+      "services/taliya-agent-runtime/app/domains/taliya_commercial/prompts.py",
+      "services/taliya-agent-runtime/app/domains/taliya_commercial/behavior_policy.py",
+      "services/taliya-agent-runtime/app/domains/taliya_commercial/renderer.py",
+      "lib/landing/ai-attendant/agent-v2-response-generator.ts",
+      "lib/landing/ai-attendant/agent-v2-loop.ts"
+    ]
+  },
+  "publicEntrypoints": [
+    "app/api/landing/ai-attendant/route.ts",
+    "app/api/landing/ai-attendant/whatsapp/route.ts",
+    "lib/landing/floating-agent.ts",
+    "lib/landing/ai-attendant/runtime-client.ts"
+  ],
+  "forbiddenPublicModules": [
+    "lib/landing/ai-attendant/agent-v2-loop.ts",
+    "lib/landing/ai-attendant/agent-v2-orchestrator.ts",
+    "lib/landing/ai-attendant/agent-v2-response-generator.ts",
+    "lib/landing/ai-attendant/agent-v2-semantic-interpreter.ts",
+    "lib/landing/ai-attendant/agent-v2-tools.ts",
+    "lib/landing/ai-attendant/fallback.ts",
+    "lib/landing/ai-attendant/provider.ts"
+  ],
+  "reachability": [
+    {
+      "entrypoint": "app/api/landing/ai-attendant/route.ts",
+      "visited": [
+        "app/api/landing/ai-attendant/route.ts",
+        "data/landing/niches/pilates.ts",
+        "data/landing/niches/types.ts",
+        "lib/landing/ai-attendant/commercial-knowledge.ts",
+        "lib/landing/ai-attendant/context.ts",
+        "lib/landing/ai-attendant/conversion.ts",
+        "lib/landing/ai-attendant/follow-up.ts",
+        "lib/landing/ai-attendant/funnel-events.ts",
+        "lib/landing/ai-attendant/leads.ts",
+        "lib/landing/ai-attendant/n8n.ts",
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "lib/landing/ai-attendant/sales-inbox-store.ts",
+        "lib/landing/ai-attendant/schema.ts",
+        "lib/landing/ai-attendant/storage/postgres.ts",
+        "lib/landing/ai-attendant/summarize.ts"
+      ],
+      "edges": [
+        {
+          "from": "app/api/landing/ai-attendant/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/runtime-client",
+          "to": "lib/landing/ai-attendant/runtime-client.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/context",
+          "to": "lib/landing/ai-attendant/context.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/conversion",
+          "to": "lib/landing/ai-attendant/conversion.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/leads",
+          "to": "lib/landing/ai-attendant/leads.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/n8n",
+          "to": "lib/landing/ai-attendant/n8n.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/funnel-events",
+          "to": "lib/landing/ai-attendant/funnel-events.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/sales-inbox-store",
+          "to": "lib/landing/ai-attendant/sales-inbox-store.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/summarize",
+          "to": "lib/landing/ai-attendant/summarize.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/summarize.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/schema.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/sales-inbox-store.ts",
+          "specifier": "./leads",
+          "to": "lib/landing/ai-attendant/leads.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/sales-inbox-store.ts",
+          "specifier": "./follow-up",
+          "to": "lib/landing/ai-attendant/follow-up.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/sales-inbox-store.ts",
+          "specifier": "./storage/postgres",
+          "to": "lib/landing/ai-attendant/storage/postgres.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/follow-up.ts",
+          "specifier": "./leads",
+          "to": "lib/landing/ai-attendant/leads.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/leads.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/leads.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/funnel-events.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/funnel-events.ts",
+          "specifier": "./storage/postgres",
+          "to": "lib/landing/ai-attendant/storage/postgres.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/conversion.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/conversion.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/context.ts",
+          "specifier": "@/data/landing/niches/pilates",
+          "to": "data/landing/niches/pilates.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/context.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/context.ts",
+          "specifier": "./commercial-knowledge",
+          "to": "lib/landing/ai-attendant/commercial-knowledge.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/context.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/commercial-knowledge.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "data/landing/niches/pilates.ts",
+          "specifier": "./types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/runtime-client.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/runtime-client.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        }
+      ],
+      "forbiddenHits": []
+    },
+    {
+      "entrypoint": "app/api/landing/ai-attendant/whatsapp/route.ts",
+      "visited": [
+        "app/api/landing/ai-attendant/whatsapp/route.ts",
+        "data/landing/niches/pilates.ts",
+        "data/landing/niches/types.ts",
+        "lib/landing/ai-attendant/channels.ts",
+        "lib/landing/ai-attendant/commercial-knowledge.ts",
+        "lib/landing/ai-attendant/context.ts",
+        "lib/landing/ai-attendant/conversion.ts",
+        "lib/landing/ai-attendant/delivery-timing.ts",
+        "lib/landing/ai-attendant/follow-up.ts",
+        "lib/landing/ai-attendant/funnel-events.ts",
+        "lib/landing/ai-attendant/guardrails.ts",
+        "lib/landing/ai-attendant/leads.ts",
+        "lib/landing/ai-attendant/n8n.ts",
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "lib/landing/ai-attendant/sales-inbox-store.ts",
+        "lib/landing/ai-attendant/schema.ts",
+        "lib/landing/ai-attendant/session-store.ts",
+        "lib/landing/ai-attendant/storage/postgres.ts",
+        "lib/landing/ai-attendant/summarize.ts",
+        "lib/landing/ai-attendant/usage.ts",
+        "lib/landing/ai-attendant/whatsapp.ts"
+      ],
+      "edges": [
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/data/landing/niches/pilates",
+          "to": "data/landing/niches/pilates.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/context",
+          "to": "lib/landing/ai-attendant/context.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/conversion",
+          "to": "lib/landing/ai-attendant/conversion.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/channels",
+          "to": "lib/landing/ai-attendant/channels.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/channels",
+          "to": "lib/landing/ai-attendant/channels.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/guardrails",
+          "to": "lib/landing/ai-attendant/guardrails.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/agent-v2-idempotency",
+          "to": "lib/landing/ai-attendant/agent-v2-idempotency.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/leads",
+          "to": "lib/landing/ai-attendant/leads.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/n8n",
+          "to": "lib/landing/ai-attendant/n8n.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/funnel-events",
+          "to": "lib/landing/ai-attendant/funnel-events.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/session-store",
+          "to": "lib/landing/ai-attendant/session-store.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/usage",
+          "to": "lib/landing/ai-attendant/usage.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/sales-inbox-store",
+          "to": "lib/landing/ai-attendant/sales-inbox-store.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/storage/postgres",
+          "to": "lib/landing/ai-attendant/storage/postgres.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/summarize",
+          "to": "lib/landing/ai-attendant/summarize.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/whatsapp",
+          "to": "lib/landing/ai-attendant/whatsapp.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/runtime-client",
+          "to": "lib/landing/ai-attendant/runtime-client.ts"
+        },
+        {
+          "from": "app/api/landing/ai-attendant/whatsapp/route.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/schema.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/runtime-client.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/runtime-client.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/whatsapp.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/whatsapp.ts",
+          "specifier": "./channels",
+          "to": "lib/landing/ai-attendant/channels.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/whatsapp.ts",
+          "specifier": "./delivery-timing",
+          "to": "lib/landing/ai-attendant/delivery-timing.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/whatsapp.ts",
+          "specifier": "./storage/postgres",
+          "to": "lib/landing/ai-attendant/storage/postgres.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/channels.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/summarize.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/sales-inbox-store.ts",
+          "specifier": "./leads",
+          "to": "lib/landing/ai-attendant/leads.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/sales-inbox-store.ts",
+          "specifier": "./follow-up",
+          "to": "lib/landing/ai-attendant/follow-up.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/sales-inbox-store.ts",
+          "specifier": "./storage/postgres",
+          "to": "lib/landing/ai-attendant/storage/postgres.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/follow-up.ts",
+          "specifier": "./leads",
+          "to": "lib/landing/ai-attendant/leads.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/leads.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/leads.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/usage.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/usage.ts",
+          "specifier": "./storage/postgres",
+          "to": "lib/landing/ai-attendant/storage/postgres.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/session-store.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/session-store.ts",
+          "specifier": "./storage/postgres",
+          "to": "lib/landing/ai-attendant/storage/postgres.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/funnel-events.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/funnel-events.ts",
+          "specifier": "./storage/postgres",
+          "to": "lib/landing/ai-attendant/storage/postgres.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/guardrails.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/conversion.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/conversion.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/context.ts",
+          "specifier": "@/data/landing/niches/pilates",
+          "to": "data/landing/niches/pilates.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/context.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/context.ts",
+          "specifier": "./commercial-knowledge",
+          "to": "lib/landing/ai-attendant/commercial-knowledge.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/context.ts",
+          "specifier": "./schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/commercial-knowledge.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "data/landing/niches/pilates.ts",
+          "specifier": "./types",
+          "to": "data/landing/niches/types.ts"
+        }
+      ],
+      "forbiddenHits": []
+    },
+    {
+      "entrypoint": "lib/landing/floating-agent.ts",
+      "visited": [
+        "data/landing/niches/types.ts",
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "lib/landing/ai-attendant/schema.ts",
+        "lib/landing/floating-agent.ts"
+      ],
+      "edges": [
+        {
+          "from": "lib/landing/floating-agent.ts",
+          "specifier": "@/lib/landing/ai-attendant/runtime-client",
+          "to": "lib/landing/ai-attendant/runtime-client.ts"
+        },
+        {
+          "from": "lib/landing/floating-agent.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/schema.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/runtime-client.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/runtime-client.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        }
+      ],
+      "forbiddenHits": []
+    },
+    {
+      "entrypoint": "lib/landing/ai-attendant/runtime-client.ts",
+      "visited": [
+        "data/landing/niches/types.ts",
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "lib/landing/ai-attendant/schema.ts"
+      ],
+      "edges": [
+        {
+          "from": "lib/landing/ai-attendant/runtime-client.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/runtime-client.ts",
+          "specifier": "@/lib/landing/ai-attendant/schema",
+          "to": "lib/landing/ai-attendant/schema.ts"
+        },
+        {
+          "from": "lib/landing/ai-attendant/schema.ts",
+          "specifier": "@/data/landing/niches/types",
+          "to": "data/landing/niches/types.ts"
+        }
+      ],
+      "forbiddenHits": []
+    }
+  ],
+  "legacyReferenceFindings": {
+    "productFactHits": [
+      {
+        "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+        "line": 3071,
+        "text": "\"Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.\",",
+        "classification": "legacy_reference_not_active_path"
+      },
+      {
+        "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+        "line": 3202,
+        "text": "\"O Completo fica em R$ 1.497/mes.\",",
+        "classification": "legacy_reference_not_active_path"
+      },
+      {
+        "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+        "line": 3249,
+        "text": "\"Claro. Hoje os planos da Taliya para studios de Pilates comecam em R$ 197/mes no Base, \"",
+        "classification": "legacy_reference_not_active_path"
+      },
+      {
+        "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+        "line": 3250,
+        "text": "\"R$ 497/mes no Essencial, R$ 897/mes no Avance e R$ 1.497/mes no Completo. \"",
+        "classification": "legacy_reference_not_active_path"
+      },
+      {
+        "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+        "line": 3259,
+        "text": "\"Os planos oficiais sao Base, Essencial, Avance e Completo. Posso te explicar a diferenca por faixa e, se voce me disser a rotina que mais pesa hoje, eu comparo sem inventar link de pagamento.\"",
+        "classification": "legacy_reference_not_active_path"
+      },
+      {
+        "path": "services/taliya-agent-runtime/app/runtime/runner.py",
+        "line": 3888,
+        "text": "if entry_intent == \"waitlist_intent\" and normalized.startswith(\"quero assinar o plano \") and \"checkout seguro\" in normalized:",
+        "classification": "legacy_reference_not_active_path"
+      },
+      {
+        "path": "services/taliya-agent-runtime/app/domains/taliya_commercial/templates.py",
+        "line": 112,
+        "text": "body=(\"Hoje os planos são Base R$ 197/mês, Essencial R$ 497/mês, Avance R$ 897/mês e Completo R$ 1.497/mês.\",),",
+        "classification": "legacy_reference_not_active_path"
+      },
+      {
+        "path": "services/taliya-agent-runtime/app/domains/taliya_commercial/templates.py",
+        "line": 119,
+        "text": "body=(\"O Completo fica em R$ 1.497/mês.\",),",
+        "classification": "legacy_reference_not_active_path"
+      },
+      {
+        "path": "services/taliya-agent-runtime/app/domains/taliya_commercial/behavior_policy.py",
+        "line": 94,
+        "text": "7a. When the lead asks price, list the official plan names and prices: Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes, and Completo R$ 1.497/mes. Do not answer only a range or one plan price unless the lead asked about that specif",
+        "classification": "legacy_reference_not_active_path"
+      },
+      {
+        "path": "lib/landing/ai-attendant/agent-v2-response-generator.ts",
+        "line": 415,
+        "text": "messages.push(\"Hoje a Taliya tem quatro faixas de plano, começando em R$ 197/mês.\");",
+        "classification": "legacy_reference_not_active_path"
+      }
+    ],
+    "note": "Legacy runner/domain/TS v2 findings remain visible but are not active release-path evidence when runner/public fallback quarantine reports pass."
+  }
+}

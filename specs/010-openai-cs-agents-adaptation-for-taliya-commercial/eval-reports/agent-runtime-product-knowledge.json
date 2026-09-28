@@ -1,0 +1,48 @@
+{
+  "runId": "agent-runtime-product-knowledge-1780089881051",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-05-29T21:24:41.051Z",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "product question fixtures are present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product source has explicit version",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product source uses official demo/commercial link",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "checkout is explicitly unavailable",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "product knowledge contract tests pass",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  },
+  "fixtures": [
+    "price-open",
+    "plans-demo",
+    "checkout-closed"
+  ]
+}

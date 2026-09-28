@@ -1,0 +1,51 @@
+{
+  "runId": "agent-runtime-conversations-1780089878467",
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "createdAt": "2026-05-29T21:24:38.467Z",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "results": [
+    {
+      "ok": true,
+      "message": "free-form opening fixtures are present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "mixed-message fixtures are present",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "skipped scenarios are labeled when eval budget trims cases",
+      "details": {}
+    },
+    {
+      "ok": true,
+      "message": "runtime API and runner conversation contracts pass",
+      "details": {}
+    }
+  ],
+  "releaseGate": "pass",
+  "budget": {
+    "maxScenarios": 50,
+    "maxModelCalls": 0,
+    "maxCostUsd": 0
+  },
+  "fixtureCounts": {
+    "openings": 3,
+    "mixed": 3
+  },
+  "selectedScenarios": [
+    "widget-cold-open",
+    "widget-direct-price",
+    "whatsapp-confused-opening",
+    "price-plus-fit",
+    "human-request",
+    "diagnostic-pain"
+  ],
+  "skippedScenarios": []
+}

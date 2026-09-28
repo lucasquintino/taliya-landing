@@ -1,0 +1,25 @@
+# agent-runtime-spec011-p0-debug-one
+
+Started at: 2026-05-31T14:20:41Z
+Finished at: 2026-05-31T14:20:51Z
+Provider: openai
+Model: gpt-5.4-mini
+Release gate: pass
+Passed: 1/1
+Estimated cost: US$0.015315
+
+## PASS spec011-rc014-false-pass-protection
+
+Title: Spec 011 RC-011-014 eval must require model usage, traceable structure, and non-empty rendered behavior
+Channel: widget
+
+Lead 1: quanto custa?
+Taliya 1.1: Base: R$ 197/mes; Essencial: R$ 497/mes; Avance: R$ 897/mes; Completo: R$ 1.497/mes.
+Taliya 1.2: Se fizer sentido para voce, estamos oferecendo um diagnostico gratuito para o seu studio. Assim voce entende se algum dos nossos planos te atenderia. O que voce acha?
+Runtime: http=200 status=succeeded agent=taliya_commercial_spec011_product_agent trace=trace_turn_widget_f3b98958ce31dca9_298dabb96c00b4eb
+Diagnostic: {"status": "offered", "ledger": [{"question_key": "active_students_or_size", "status": "missing", "answer_value": null, "evidence": ["user_message: quanto custa?"], "confidence": "low", "may_ask_again": true}, {"question_key": "main_pain", "status": "missing", "answer_value": null, "evidence": ["user_message: quanto custa?"], "confidence": "low", "may_ask_again": true}, {"question_key": "pain_detail", "status": "missing", "answer_value": null, "evidence": ["user_message: quanto custa?"], "confidence": "low", "may_ask_again": true}, {"question_key": "current_process", "status": "missing", "answer_value": null, "evidence": ["user_message: quanto custa?"], "confidence": "low", "may_ask_again": true}, {"question_key": "priority", "status": "missing", "answer_value": null, "evidence": ["user_message: quanto custa?"], "confidence": "low", "may_ask_again": true}, {"question_key": "urgency", "status": "missing", "answer_value": null, "evidence": ["user_message: quanto custa?"], "confidence": "low", "may_ask_again": true}], "facts_used": ["sender.name", "metadata.page_path"], "main_bottleneck": null, "pain_context_human": null, "likely_cause": null, "crm_base_recommendation": "A Taliya é um CRM operacional vertical para Pilates. O plano Base custa R$ 197/mes e organiza a rotina antes da IA ativa; os planos pagos adicionam 1, 3 ou 7 agentes ativos conforme a necessidade do studio.", "first_recommended_step": null, "indicated_routines_or_agents": [], "indicated_agents": [], "plan_or_range_to_compare": null, "final_plan_line": null, "demo_status_at_delivery": "not_offered", "final_demo_line": null, "evidence": ["sender.name", "metadata.page_path"], "unknowns": [], "confidence": "high", "next_question": "main_pain", "validation_question": null, "final_demo_next_step_question": null}
+Decision: {"previous_state": "entry", "current_state": "product_price_answer", "next_state": "diagnostic_offer", "route": "product", "opening_type": "none", "detected_intents": ["price_question"], "direct_question_present": true, "direct_question_answered_first": true, "diagnostic_action": "offer", "diagnostic_allowed_now": true, "waitlist_allowed_now": false, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "not_needed", "facts_used": ["sender.name", "metadata.page_path"], "facts_missing": ["Keep the price answer grounded in official plan facts only.", "Do not over-qualify with extra facts when the user only asked price.", "Avoid using demo next_step=offer_demo unless the user explicitly asks for a demo."], "template_ids": ["product.price_direct", "diagnostic.price_hook"], "template_variables": {"product.price_direct": {"plan_price_summary": {"kind": "long_text", "value": "Base: R$ 197/mes; Essencial: R$ 497/mes; Avance: R$ 897/mes; Completo: R$ 1.497/mes.", "source": "official_product_knowledge", "evidence": ["product_knowledge.plans", "product_knowledge.prices"], "max_length": 360}}, "diagnostic.price_hook": {}}, "render_plan": [{"template_id": "product.price_direct", "channel": "widget", "variables": {"plan_price_summary": {"kind": "long_text", "value": "Base: R$ 197/mes; Essencial: R$ 497/mes; Avance: R$ 897/mes; Completo: R$ 1.497/mes.", "source": "official_product_knowledge", "evidence": ["product_knowledge.plans", "product_knowledge.prices"], "max_length": 360}}}, {"template_id": "diagnostic.price_hook", "channel": "widget", "variables": {}}], "diagnostic_ledger_status": "not_started", "next_question_kind": "pain", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Waitlist: {"status": "none", "reason": null, "missing_fields": []}
+Handoff: {"status": "none", "reason": null}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["plans", "prices", "plan_comparison", "links", "demo_status", "waitlist_status", "checkout_status", "availability", "unsupported_claims"]}]
+Usage: {"model": "gpt-5.4-mini", "input_tokens": 13454, "output_tokens": 1161, "cost_usd": 0.015315}

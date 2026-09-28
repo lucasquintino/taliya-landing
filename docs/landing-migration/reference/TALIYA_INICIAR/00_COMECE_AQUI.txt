@@ -1,0 +1,91 @@
+TALIYA / COPILOTO — PACOTE PARA INICIAR OUTRA CONVERSA
+Preparado em 24/09/2026 | Continuidade documental com SDD por seção
+
+O QUE FAZER
+Anexe TALIYA_INICIAR.zip à próxima conversa e cole o conteúdo de
+01_PROMPT_PARA_NOVA_CONVERSA.txt. O agente deve extrair o ZIP, ler este guia,
+o contexto e o prompt mestre antes de trabalhar. Não é necessário baixar
+ou anexar separadamente o MD e os dois ZIPs originais.
+
+DEPENDÊNCIA IMPORTANTE: CÓDIGO-FONTE
+O código-fonte da landing Taliya Pilates NÃO está neste pacote: ele não foi
+fornecido nesta conversa. Disponibilize o repositório/pasta no ambiente de
+implementação ou anexe um ZIP do código, sem segredos nem arquivos .env reais.
+O agente deve primeiro conferir os arquivos e o ambiente antes de pedir algo.
+Se o código já estiver disponível, não é necessário enviá-lo novamente.
+
+Este pacote é suficiente para transferir as orientações e os documentos
+presentes nesta conversa. Ele não substitui o código-fonte necessário para
+implementar a migração, nem credenciais/configurações externas autorizadas.
+
+OBJETIVO FIXADO
+Criar um NOVO projeto com o MESMO código-base da landing Taliya Pilates e
+migrar seu conteúdo para Taliya/Copiloto. Preservar o projeto original, a stack,
+a identidade visual, os componentes e as interações. Não redesenhar, não
+reconstruir do zero e não implementar o aplicativo Copiloto nesta tarefa.
+Adaptações mínimas exigidas pelos pacotes continuam autorizadas, conforme
+os limites detalhados no prompt mestre.
+
+MÉTODO FIXADO
+SDD com Spec Kit: fundação + SEO transversal + uma spec por seção S01–S14
++ integração final. São 17 recortes documentais, não 17 seções públicas.
+As specs detalhadas e os planos técnicos devem ser preparados na base real.
+Este pacote não afirma que as 17 specs já foram escritas ou implementadas.
+
+ORDEM DE LEITURA
+1. 00_COMECE_AQUI.txt (este arquivo).
+2. 03_CONTEXTO_E_ESTADO.md.
+3. 02_PROMPT_MESTRE_SDD.md ou sua cópia idêntica em TXT.
+4. 04_MAPA_DE_SPECS.md.
+5. Pacote da landing em 05_PACOTES_EXTRAIDOS/landing/Taliya_Landing_v1/.
+6. Adendo SEO em 05_PACOTES_EXTRAIDOS/seo/.
+7. Código-fonte e instruções reais do repositório de origem/destino.
+
+Os documentos de leitura dos itens 5 e 6 estão enumerados na seção 2 do
+prompt mestre. Os PDFs e DOCX originais também estão preservados, mas a
+copy e os dados devem vir das fontes textuais/JSON canônicas descritas ali.
+
+QUAL PROMPT USAR
+02_PROMPT_MESTRE_SDD.md é uma cópia byte a byte de
+PROMPT_Taliya_Copiloto_Landing_SDD_v2.md. O arquivo TXT é idêntico.
+Use somente esta versão v2 como prompt mestre; o prompt anterior, sem SDD,
+não foi incluído como alternativa para evitar execução contraditória.
+
+O arquivo PROMPT_IMPLEMENTACAO.md dentro do pacote original da landing foi
+preservado como documento de origem. Ele não substitui o prompt mestre v2
+nem elimina as revisões de SEO ou o SDD definido nesta conversa.
+
+AUTORIDADE DAS FONTES
+O prompt mestre define escopo, preservação e processo SDD. O código real
+é a referência técnica/visual. O JSON da landing governa copy, IDs e cenários.
+O adendo SEO v1.1 prevalece nas revisões que faz explicitamente. Specs são
+derivadas dessas fontes e não autorizam inventar conteúdo ou recursos.
+Este guia e o mapa são índices auxiliares; não alteram o prompt mestre.
+
+PASTAS
+05_PACOTES_EXTRAIDOS: cópias completas, já abertas, dos dois pacotes.
+06_ZIPS_ORIGINAIS: os dois ZIPs originais preservados sem alterações.
+07_INTEGRIDADE: inventário, hashes e escopo da verificação deste pacote.
+
+Não copie estas pastas documentais para public/ ou equivalente da landing.
+Não extraia os ZIPs cegamente sobre o código. Use uma área de referência
+fora dos arquivos públicos e mantenha os dois pacotes separados.
+
+ESTADO REAL
+Preparado: prompt mestre SDD, mapa de trabalho, documentos de origem,
+instruções de continuidade e pacote íntegro.
+Não executado aqui: inspeção do repositório, criação da cópia de código,
+inicialização de Spec Kit, specs apoiadas no código, implementação da
+landing, testes da aplicação ou publicação.
+
+PRIMEIRA ENTREGA ESPERADA NA PRÓXIMA CONVERSA
+Ler as fontes, verificar a disponibilidade do código, identificar origem e
+destino, inventariar a base, preparar a cópia independente, estabelecer as
+regras comuns e iniciar a spec 001. Depois seguir o ciclo do prompt mestre,
+sem encerrar somente em um plano e sem pedir aprovação a cada microetapa.
+Não inventar código ausente, integração real, teste executado ou aprovação.
+
+PUBLICAÇÃO
+Este pacote não autoriza push, merge, deploy, alteração de DNS, do site
+original ou de serviços de produção. Pré-lançamento permanece como modo
+inicial. Dados/configurações ausentes devem ficar explicitamente pendentes.

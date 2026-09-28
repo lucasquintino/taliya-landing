@@ -1,0 +1,78 @@
+[
+  {
+    "id": "step3f-post-waitlist-price",
+    "title": "After waitlist pending details, product price question should answer and preserve waitlist state",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+      "quero começar, me coloca na lista",
+      "quanto custa mesmo?"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "mentions_all_prices",
+      "waitlist_status_preserved",
+      "has_product_source",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3f-post-waitlist-demo",
+    "title": "After waitlist pending details, demo question should answer without re-offering waitlist",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+      "quero começar, me coloca na lista",
+      "me manda a demo"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "mentions_demo_link",
+      "waitlist_status_preserved",
+      "has_product_source",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3f-post-waitlist-how-works",
+    "title": "After waitlist pending details, how-it-works question should answer product and preserve state",
+    "channel": "widget",
+    "sender_name": "Lucas Andrade",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+      "quero começar, me coloca na lista",
+      "como funciona?"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "product_how_it_works_answer",
+      "product_followup_source_keys",
+      "waitlist_status_preserved",
+      "no_crm_lay_copy",
+      "owner_language_no_technical",
+      "template_ids_present",
+      "all_messages_short"
+    ]
+  },
+  {
+    "id": "step3f-post-waitlist-human",
+    "title": "After waitlist pending details, human request should handoff",
+    "channel": "whatsapp",
+    "sender_name": "Marina Costa",
+    "messages": [
+      "quero diagnostico gratuito. Tenho 100 alunos ativos, agenda e reposicoes se perdem, hoje controlo em planilha, a dor principal e agenda, a prioridade e organizar reposicoes, e urgente para esse mes. Quero comparar plano para rotina completa.",
+      "quero começar, me coloca na lista",
+      "quero falar com uma pessoa"
+    ],
+    "checks": [
+      "diagnostic_completed",
+      "route:handoff",
+      "handoff_requested",
+      "template_ids_present"
+    ]
+  }
+]

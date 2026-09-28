@@ -1,0 +1,173 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-step3-regression-fixes",
+  "provider": "openai",
+  "model": "gpt-5.4-mini",
+  "used_database": false,
+  "startedAt": "2026-05-26T17:51:42Z",
+  "finishedAt": "2026-05-26T17:51:49Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "estimatedCostUsd": 0.005213,
+    "inputTokens": 4815,
+    "outputTokens": 356
+  },
+  "releaseGate": "fail",
+  "scenarios": [
+    {
+      "id": "fix-small-studio-valid",
+      "title": "Small studio is valid Pilates studio profile and should get diagnostic path",
+      "channel": "widget",
+      "checks": [
+        "first_response_greeting",
+        "diagnostic_offered_or_started",
+        "not_fake_evidence",
+        "llm_usage_required",
+        "template_ids_present",
+        "all_messages_short"
+      ],
+      "failures": [
+        "expected diagnostic offer/start, got None"
+      ],
+      "turns": [
+        {
+          "http_status": 200,
+          "payload": {
+            "run_id": "run_b15c6cb339164222bcc1be3d6d4af269",
+            "conversation_id": "real_eval_fix-small-studio-valid",
+            "lead_id": "lead_fix-small-studio-valid",
+            "agent_key": "taliya_commercial",
+            "agent_family": "taliya",
+            "owner_scope": "taliya",
+            "tenant_id": null,
+            "current_agent": "taliya_commercial_entry_agent",
+            "status": "succeeded",
+            "output": {
+              "decision": {
+                "previous_state": "new_lead",
+                "current_state": "general_interest",
+                "next_state": "general_interest",
+                "route": "entry",
+                "opening_type": "widget_opening",
+                "detected_intents": [
+                  "general_interest"
+                ],
+                "direct_question_present": false,
+                "direct_question_answered_first": true,
+                "diagnostic_action": "none",
+                "diagnostic_allowed_now": false,
+                "waitlist_allowed_now": false,
+                "demo_status": "not_offered",
+                "demo_next_step": "none",
+                "profile_name_usage": "used_reliable_name",
+                "facts_used": [
+                  "lead said they are a small studio",
+                  "reliable profile name available: Ana"
+                ],
+                "facts_missing": [],
+                "template_ids": [
+                  "opening.widget_empty_diagnostic"
+                ],
+                "template_variables": {
+                  "diagnostic.offer_soft": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  },
+                  "diagnostic.price_hook_with_context": {
+                    "pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."
+                  }
+                },
+                "render_plan": [
+                  {
+                    "template_id": "opening.widget_empty_diagnostic",
+                    "channel": "widget"
+                  }
+                ],
+                "diagnostic_ledger_status": "not_started",
+                "next_question_kind": "clarification",
+                "policy_checks": {
+                  "direct_question_answered_first": true,
+                  "diagnostic_timing_ok": true,
+                  "waitlist_timing_ok": true,
+                  "official_facts_only": true,
+                  "no_early_contact_capture": true,
+                  "no_whatsapp_phone_request": true,
+                  "no_fake_certainty": true,
+                  "no_human_overlap": true,
+                  "channel_brevity_ok": true
+                }
+              },
+              "messages": [
+                {
+                  "text": "Oi, tudo bem?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.widget_empty_diagnostic",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Em que posso ajudar?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.widget_empty_diagnostic",
+                  "requires_product_source": false
+                },
+                {
+                  "text": "Se fizer sentido pra você, estamos oferecendo um diagnóstico gratuito pro seu studio. O que você acha?",
+                  "channel_hint": "widget",
+                  "kind": "text",
+                  "template_id": "opening.widget_empty_diagnostic",
+                  "requires_product_source": false
+                }
+              ],
+              "lead_facts": [
+                {
+                  "key": "studio_size",
+                  "value": "pequeno",
+                  "confidence": "high",
+                  "evidence": [
+                    "sou studio pequeno"
+                  ]
+                }
+              ],
+              "diagnostic": null,
+              "waitlist_action": null,
+              "handoff": null,
+              "sources": [
+                {
+                  "type": "product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "keys": [
+                    "user_message.text",
+                    "profile_name_assessment.first_name",
+                    "initial_policy_read",
+                    "product_knowledge.facts.waitlist_status"
+                  ]
+                }
+              ],
+              "safety_flags": [],
+              "tool_results": [
+                {
+                  "name": "save_lead_facts",
+                  "status": "ok",
+                  "idempotency_key": null,
+                  "summary": "1"
+                }
+              ],
+              "usage": {
+                "model": "gpt-5.4-mini",
+                "input_tokens": 4815,
+                "output_tokens": 356,
+                "cost_usd": 0.005213
+              },
+              "confidence": "high"
+            },
+            "trace_id": "trace_630ced45b0b44e9b8c8b72242aaa1b93"
+          },
+          "lead": "sou studio pequeno"
+        }
+      ]
+    }
+  ]
+}

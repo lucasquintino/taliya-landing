@@ -1,0 +1,155 @@
+{
+  "schema": "012.mandatory_trace_evidence_summary.v1",
+  "source_report": "specs\\012-taliya-commercial-agent-agents-sdk-migration\\evidence\\t012-043-real-model-golden-transcripts\\20260616T121413Z\\report.json",
+  "source_started_at": "2026-06-16T12:14:13.388512+00:00",
+  "source_finished_at": "2026-06-16T12:15:29.883430+00:00",
+  "model": "gpt-5.4-mini",
+  "paid_call_status": "attempted_real_openai",
+  "source_total_cost_usd": 0.087158,
+  "source_total_model_operations": 33,
+  "external_trace_export": {
+    "enabled": false,
+    "reason": "blocked_by_d_012_007_and_d_012_009"
+  },
+  "required_sections": [
+    "inbound",
+    "turn_gate",
+    "context_snapshot",
+    "turn_situation",
+    "sdk_start",
+    "sdk_run_items",
+    "sdk_final_output",
+    "taliya_proposal",
+    "action_decision",
+    "compiler",
+    "validators",
+    "repair_or_escalation",
+    "render_plan",
+    "rendered_messages",
+    "state_diff",
+    "sales_inbox_projection",
+    "delivery",
+    "usage_cost"
+  ],
+  "scenario_count": 9,
+  "all_trace_complete": true,
+  "total_turn_count": 22,
+  "total_trace_count": 21,
+  "missing_required_sections": {},
+  "missing_trace_turn_indexes": {},
+  "incomplete_trace_turn_indexes": {},
+  "scenario_summaries": [
+    {
+      "scenario_id": "final-price-first",
+      "trace_complete": true,
+      "turn_count": 1,
+      "trace_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004206,
+      "actions": [
+        "answer_direct_product_question"
+      ]
+    },
+    {
+      "scenario_id": "final-price-plus-pain",
+      "trace_complete": true,
+      "turn_count": 1,
+      "trace_count": 1,
+      "total_model_operations": 3,
+      "total_cost_usd": 0.007814,
+      "actions": [
+        "answer_direct_product_question"
+      ]
+    },
+    {
+      "scenario_id": "final-pain-first",
+      "trace_complete": true,
+      "turn_count": 1,
+      "trace_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004431,
+      "actions": [
+        "offer_diagnostic_from_pain"
+      ]
+    },
+    {
+      "scenario_id": "final-instagram-interest",
+      "trace_complete": true,
+      "turn_count": 1,
+      "trace_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004432,
+      "actions": [
+        "answer_source_opening"
+      ]
+    },
+    {
+      "scenario_id": "final-whatsapp-question",
+      "trace_complete": true,
+      "turn_count": 1,
+      "trace_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.004188,
+      "actions": [
+        "answer_whatsapp_scope"
+      ]
+    },
+    {
+      "scenario_id": "step3g-long-conversation",
+      "trace_complete": true,
+      "turn_count": 13,
+      "trace_count": 13,
+      "total_model_operations": 16,
+      "total_cost_usd": 0.048401,
+      "actions": [
+        "answer_direct_product_question",
+        "start_requested_diagnostic",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "capture_pending_diagnostic_answer",
+        "complete_diagnostic",
+        "send_demo",
+        "answer_price_objection_with_context",
+        "offer_or_join_waitlist_if_eligible",
+        "answer_question_then_continue_waitlist",
+        "handoff_requested"
+      ]
+    },
+    {
+      "scenario_id": "final-waitlist-joined",
+      "trace_complete": true,
+      "turn_count": 1,
+      "trace_count": 1,
+      "total_model_operations": 1,
+      "total_cost_usd": 0.002439,
+      "actions": [
+        "join_waitlist"
+      ]
+    },
+    {
+      "scenario_id": "final-human-request-silent-after",
+      "trace_complete": true,
+      "turn_count": 2,
+      "trace_count": 1,
+      "total_model_operations": 2,
+      "total_cost_usd": 0.003932,
+      "actions": [
+        "handoff_requested",
+        null
+      ]
+    },
+    {
+      "scenario_id": "final-demo-request",
+      "trace_complete": true,
+      "turn_count": 1,
+      "trace_count": 1,
+      "total_model_operations": 3,
+      "total_cost_usd": 0.007316,
+      "actions": [
+        "send_demo"
+      ]
+    }
+  ]
+}

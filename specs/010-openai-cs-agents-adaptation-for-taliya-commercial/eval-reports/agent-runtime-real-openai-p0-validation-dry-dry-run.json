@@ -1,0 +1,21 @@
+{
+  "feature": "010-openai-cs-agents-adaptation-for-taliya-commercial",
+  "name": "agent-runtime-real-openai-p0-validation-dry",
+  "dryRun": true,
+  "selectedScenarioCount": 10,
+  "estimatedModelCalls": 12,
+  "maxModelCalls": 12,
+  "maxCostUsd": 0.12,
+  "scenarioIds": [
+    "p0-cold-greeting",
+    "p0-widget-empty-acceptance",
+    "p0-instagram-interest",
+    "p0-price-first",
+    "p0-price-plus-pain",
+    "p0-diagnostic-direct-start",
+    "p0-diagnostic-complete-rich",
+    "p0-post-diagnostic-follow-up",
+    "p0-waitlist-intent",
+    "p0-handoff"
+  ]
+}

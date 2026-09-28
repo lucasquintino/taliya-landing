@@ -1,0 +1,1025 @@
+{
+  "number": 6,
+  "scenario_id": "diagnostic_numeric_120",
+  "channel": "whatsapp",
+  "required_proof": "`120` becomes active-student/size answer, not price.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] Stored conversation state snapshot:\nsummary: Lead pediu o diagnostico gratuito. A pergunta atual pendente e o numero de alunos ativos do studio.\nstate: {\"diagnostic\": {\"status\": \"in_progress\", \"next_question_key\": \"active_students_or_size\", \"ledger\": {\"active_students_or_size\": {\"status\": \"pending\"}, \"main_pain\": {\"status\": \"pending\"}, \"pain_detail\": {\"status\": \"pending\"}, \"current_process\": {\"status\": \"pending\"}, \"priority\": {\"status\": \"pending\"}, \"urgency\": {\"status\": \"pending\"}}}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+    },
+    {
+      "role": "user",
+      "content": "quero fazer o diagnostico gratuito"
+    },
+    {
+      "role": "assistant",
+      "content": "Vamos comecar o diagnostico gratuito. Hoje, quantos alunos ativos o seu studio tem?"
+    },
+    {
+      "role": "user",
+      "content": "120"
+    }
+  ],
+  "starting_agent": "taliya_diagnostic_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_product_knowledge",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_diagnostic_ledger",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_conversation_summary",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_demo_waitlist_handoff_state",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": "get_approved_template_catalog",
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "tool",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_diagnostic_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_product_knowledge",
+      "arguments": "{\"keys\":[\"plans\",\"prices\"]}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_diagnostic_ledger",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_conversation_summary",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_demo_waitlist_handoff_state",
+      "arguments": "{}"
+    },
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"diagnostic\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_product_knowledge",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "refs": [
+            {
+              "key": "plans",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": [
+                {
+                  "id": "base",
+                  "name": "Base",
+                  "monthly_price_brl": 197,
+                  "price_label": "R$ 197/mes",
+                  "best_for": "Studios that want to organize the routine before active AI.",
+                  "included_agents": [],
+                  "whatsapp_availability": "No automatic WhatsApp AI replies.",
+                  "usage_boundary": "1 studio, 1 user, no AI message quota."
+                },
+                {
+                  "id": "one_agent",
+                  "name": "Essencial",
+                  "monthly_price_brl": 497,
+                  "price_label": "R$ 497/mes",
+                  "best_for": "Studios that want to solve one clear pain first.",
+                  "included_agents": [
+                    "1 main agent chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for that agent.",
+                  "usage_boundary": "1 studio, up to 2 users, 1,500 AI messages/month with hard cap."
+                },
+                {
+                  "id": "three_agents",
+                  "name": "Avance",
+                  "monthly_price_brl": 897,
+                  "price_label": "R$ 897/mes",
+                  "best_for": "Studios that want help in some priority routines.",
+                  "included_agents": [
+                    "3 main agents chosen during setup"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for included agents.",
+                  "usage_boundary": "1 studio, up to 5 users, 5,000 AI messages/month with hard cap."
+                },
+                {
+                  "id": "seven_agents",
+                  "name": "Completo",
+                  "monthly_price_brl": 1497,
+                  "price_label": "R$ 1.497/mes",
+                  "best_for": "Studios that want the complete Taliya.",
+                  "included_agents": [
+                    "Atendimento",
+                    "Agenda",
+                    "Vendas",
+                    "Financeiro",
+                    "Retencao",
+                    "Gestao",
+                    "Historico/Evolucao"
+                  ],
+                  "whatsapp_availability": "Requires the studio WhatsApp Business connected for the complete team.",
+                  "usage_boundary": "1 studio, up to 10 users, 15,000 AI messages/month with hard cap."
+                }
+              ],
+              "excerpt": "Base (base) R$ 197/mes best_for=Studios that want to organize the routine before active AI. included=no active AI agents whatsapp=No automatic WhatsApp AI replies. usage=1 studio, 1 user, no AI message quota. | Essencial (one_agent) R$ 497/mes best_for=Studios that want to solve one clear pain first. included=1 main agent chosen during setup whatsapp=Requires the studio WhatsApp Business connected for that agent. usage=1 studio, up to 2 users, 1,500 AI messages/month with hard cap. | Avance (three_agents) R$ 897/mes best_for=Studios that want help in some priority routines. included=3 main agents chosen during setup whatsapp=Requires the studio WhatsApp Business connected for included agents. usage=1 studio, up to 5 users, 5,000 AI messages/month with hard cap. | Completo (seven_agents) R$ 1.497/mes best_for=Studios that want the complete Taliya. included=Atendimento, Agenda, Vendas, Financeiro, Retencao, Gestao, Historico/Evolucao whatsapp=Requires the studio WhatsApp Business connected for the complete team. usage=1 studio, up to 10 users, 15,000 AI messages/month with hard cap.",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.plans"
+              ]
+            },
+            {
+              "key": "prices",
+              "source": "official_product_knowledge",
+              "version": "taliya-commercial-2026-05-22",
+              "value": {
+                "base": "R$ 197/mes",
+                "one_agent": "R$ 497/mes",
+                "three_agents": "R$ 897/mes",
+                "seven_agents": "R$ 1.497/mes"
+              },
+              "excerpt": "{\"base\":\"R$ 197/mes\",\"one_agent\":\"R$ 497/mes\",\"seven_agents\":\"R$ 1.497/mes\",\"three_agents\":\"R$ 897/mes\"}",
+              "missing": false,
+              "renderable": false,
+              "evidence": [
+                "product_knowledge.prices"
+              ]
+            }
+          ],
+          "requested_keys": [
+            "plans",
+            "prices"
+          ]
+        },
+        "evidence": [
+          "product_knowledge.plans",
+          "product_knowledge.prices"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_diagnostic_ledger",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_diagnostic_numeric_120",
+          "diagnostic": {
+            "status": "in_progress",
+            "next_question_key": "active_students_or_size",
+            "ledger": {
+              "active_students_or_size": {
+                "status": "pending"
+              },
+              "main_pain": {
+                "status": "pending"
+              },
+              "pain_detail": {
+                "status": "pending"
+              },
+              "current_process": {
+                "status": "pending"
+              },
+              "priority": {
+                "status": "pending"
+              },
+              "urgency": {
+                "status": "pending"
+              }
+            }
+          },
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_diagnostic_numeric_120.diagnostic"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_conversation_summary",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_diagnostic_numeric_120",
+          "summary": "Lead pediu o diagnostico gratuito. A pergunta atual pendente e o numero de alunos ativos do studio.",
+          "lead_fact_count": 0,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_diagnostic_numeric_120.summary"
+        ],
+        "uncertainty": "medium"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "conversation_id": "spike_conv_diagnostic_numeric_120",
+          "demo": {},
+          "waitlist": {},
+          "human_status": null,
+          "human_reason": null,
+          "source": "run_context_snapshot"
+        },
+        "evidence": [
+          "conversation.spike_conv_diagnostic_numeric_120.operational_state"
+        ],
+        "uncertainty": "low"
+      }
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "diagnostic",
+          "templates": [
+            {
+              "template_id": "diagnostic.ask_active_students",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_current_process",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_main_pain",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_pain_detail",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_priority",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.ask_urgency",
+              "required_variables": [],
+              "optional_variables": [
+                "answer_feedback"
+              ]
+            },
+            {
+              "template_id": "diagnostic.deliver",
+              "required_variables": [
+                "pain_context_human",
+                "crm_base_recommendation",
+                "operational_first_step",
+                "recommended_plan_or_range",
+                "demo_status"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_agent_recommendation",
+              "required_variables": [
+                "agent_name",
+                "agent_pain_resolved",
+                "agent_practical_action"
+              ],
+              "optional_variables": [
+                "agent_fit_phrase",
+                "agent_recommendation_reason"
+              ]
+            },
+            {
+              "template_id": "diagnostic.deliver_context",
+              "required_variables": [
+                "pain_context_human"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_crm_base",
+              "required_variables": [
+                "crm_base_recommendation"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_demo_already_offered",
+              "required_variables": [
+                "demo_status"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_demo_not_offered",
+              "required_variables": [
+                "demo_status"
+              ],
+              "optional_variables": [
+                "official_demo_link"
+              ]
+            },
+            {
+              "template_id": "diagnostic.deliver_hold",
+              "required_variables": [],
+              "optional_variables": [
+                "first_name"
+              ]
+            },
+            {
+              "template_id": "diagnostic.deliver_operational_step",
+              "required_variables": [
+                "operational_first_step"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.deliver_plan_recommendation",
+              "required_variables": [
+                "recommended_plan_or_range"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.insufficient_evidence",
+              "required_variables": [],
+              "optional_variables": [
+                "clarification_question"
+              ]
+            },
+            {
+              "template_id": "diagnostic.offer_soft",
+              "required_variables": [],
+              "optional_variables": [
+                "pain_context_human"
+              ]
+            },
+            {
+              "template_id": "diagnostic.partial_progress",
+              "required_variables": [
+                "answer_feedback"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.price_hook",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.price_hook_with_context",
+              "required_variables": [
+                "plan_fit_context"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.start",
+              "required_variables": [],
+              "optional_variables": []
+            },
+            {
+              "template_id": "diagnostic.start_named",
+              "required_variables": [
+                "first_name"
+              ],
+              "optional_variables": []
+            }
+          ],
+          "variable_specs": {
+            "agent_fit_phrase": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "model_decision"
+              ],
+              "validation_rule": "Approved enum phrase such as first_fit or also_fit; renderer owns copy."
+            },
+            "agent_name": {
+              "kind": "short_text",
+              "max_length": 60,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official routine or agent name from product knowledge."
+            },
+            "agent_pain_resolved": {
+              "kind": "long_text",
+              "max_length": 180,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Concrete pain this routine/agent helps with, grounded in diagnostic facts."
+            },
+            "agent_practical_action": {
+              "kind": "long_text",
+              "max_length": 280,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Practical action the studio can understand without technical SaaS terms."
+            },
+            "agent_recommendation_reason": {
+              "kind": "long_text",
+              "max_length": 280,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Reason this routine/agent fits the diagnostic evidence."
+            },
+            "answer_feedback": {
+              "kind": "short_text",
+              "max_length": 180,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "user_message"
+              ],
+              "validation_rule": "Grounded reflection on the immediately previous diagnostic answer; not generic filler and not mechanical repetition."
+            },
+            "clarification_question": {
+              "kind": "short_text",
+              "max_length": 140,
+              "allowed_sources": [
+                "model_decision"
+              ],
+              "validation_rule": "One neutral clarification question; no product claim, no side effect."
+            },
+            "crm_base_recommendation": {
+              "kind": "long_text",
+              "max_length": 260,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Grounded recommendation for organizing the base/routine before agents; no technical CRM jargon unless the lead used it."
+            },
+            "demo_status": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state"
+              ],
+              "validation_rule": "Persisted demo state: not_offered, offered, viewed_or_asked, or reacted_positive."
+            },
+            "first_name": {
+              "kind": "short_text",
+              "max_length": 40,
+              "allowed_sources": [
+                "channel_metadata",
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Only a verified real person first name; never a studio name, handle, phone, internal reliability label, or unverified profile value."
+            },
+            "official_demo_link": {
+              "kind": "url",
+              "max_length": null,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official demo URL from product knowledge; never invented or shortened ad hoc."
+            },
+            "operational_first_step": {
+              "kind": "long_text",
+              "max_length": 240,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "First practical operational step tied to the lead's stated priority."
+            },
+            "pain_context_human": {
+              "kind": "long_text",
+              "max_length": 420,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "user_message"
+              ],
+              "validation_rule": "Practical studio-owner reading grounded in diagnostic facts or the lead's own pain/context message."
+            },
+            "plan_fit_context": {
+              "kind": "short_text",
+              "max_length": 180,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "user_message"
+              ],
+              "validation_rule": "Lead-provided context used only to explain why fit needs diagnostic evidence."
+            },
+            "recommended_plan_or_range": {
+              "kind": "short_text",
+              "max_length": 90,
+              "allowed_sources": [
+                "official_product_knowledge",
+                "spec_006_product_contract"
+              ],
+              "validation_rule": "Official plan or range from product knowledge; never inferred from one number without diagnostic evidence."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "fazer o diagnóstico gratuito",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "active_students_or_size",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value_text": "120",
+          "currency": null,
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "active_students_or_size",
+          "status": "answered",
+          "answer_value": "120",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "next_question_key": "main_pain",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "not_applicable",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_plan": {
+      "template_ids": [
+        "diagnostic.ask_main_pain"
+      ],
+      "variables": [],
+      "evidence": [
+        "template_registry"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "diagnostic",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "in_progress",
+      "waitlist_status": null,
+      "handoff_status": null,
+      "next_action_hint": "ask_main_pain"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_diagnostic_numeric_120",
+    "conversation_id": "spike_conv_diagnostic_numeric_120",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_diagnostic_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_product_knowledge",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_diagnostic_ledger",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_conversation_summary",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_demo_waitlist_handoff_state",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": "get_approved_template_catalog",
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "tool",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_diagnostic_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "diagnostic"
+      ],
+      "direct_question": null,
+      "customer_need": "fazer o diagnóstico gratuito",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "active_students_or_size",
+          "kind": "student_count",
+          "raw_text": "120",
+          "value": 120,
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [
+        {
+          "question_key": "active_students_or_size",
+          "status": "answered",
+          "answer_value": "120",
+          "evidence": [
+            "user_message"
+          ]
+        }
+      ],
+      "next_question_key": "main_pain",
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "",
+      "evidence": []
+    },
+    "waitlist_proposal": {
+      "eligibility": "",
+      "intent": "",
+      "missing_details": [],
+      "evidence": []
+    },
+    "handoff_proposal": {
+      "status": "not_applicable",
+      "reason": null,
+      "pause_required": false,
+      "evidence": []
+    },
+    "template_proposal": {
+      "template_ids": [
+        "diagnostic.ask_main_pain"
+      ],
+      "variables": {},
+      "evidence": [
+        "template_registry"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "diagnostic",
+      "last_intent": "diagnostic",
+      "diagnostic_status": "in_progress",
+      "next_action_hint": "ask_main_pain"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": [
+        "template_registry"
+      ]
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 12205,
+      "output_tokens": 469,
+      "cost_usd": 0.007463,
+      "handoffs": 0,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_diagnostic_numeric_120",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?",
+      "template_id": "diagnostic.ask_main_pain",
+      "channel": "whatsapp",
+      "sequence": 1
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "diagnostic",
+    "last_intent": "diagnostic",
+    "diagnostic_status": "in_progress",
+    "next_action_hint": "ask_main_pain"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 12205,
+    "output_tokens": 469,
+    "cost_usd": 0.007463,
+    "handoffs": 0,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

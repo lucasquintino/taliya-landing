@@ -1,0 +1,38 @@
+export type TaliyaBrandVariant = "wordmark" | "mark";
+
+export function TaliyaBrand({
+  variant = "wordmark",
+  width = 148,
+}: {
+  variant?: TaliyaBrandVariant;
+  width?: number;
+}) {
+  const isMark = variant === "mark";
+  const height = isMark ? width : width * (224 / 1000);
+
+  if (isMark) {
+    return (
+      <svg aria-label="Taliya" height={height} role="img" viewBox="0 0 272 272" width={width}>
+        <defs>
+          <radialGradient cx="35%" cy="28%" id="taliya-favicon-dot" r="72%">
+            <stop offset="0" stopColor="#3A78FF" />
+            <stop offset="0.52" stopColor="#2464FF" />
+            <stop offset="1" stopColor="#1F61FF" />
+          </radialGradient>
+        </defs>
+        <path fill="#030507" fillRule="evenodd" d="M193.49 120.44 L191.65 114.29 L188.57 109.38 L183.05 104.47 L135.14 72.53 L100.74 41.81 L90.91 36.29 L85.38 35.06 L27.03 35.06 L18.43 38.74 L13.51 44.27 L11.06 51.64 L11.67 57.78 L14.13 63.31 L53.44 103.24 L58.35 105.7 L64.5 106.92 L123.46 106.92 L124.69 108.15 L124.69 219.33 L127.76 227.32 L132.68 232.23 L139.43 235.3 L179.36 235.3 L186.73 231.62 L191.03 226.7 L193.49 220.56 Z" />
+        <path fill="url(#taliya-favicon-dot)" fillRule="evenodd" d="M261.06 67 L259.83 59.63 L255.53 50.41 L247.54 41.81 L237.1 36.29 L224.82 35.06 L211.92 39.36 L201.47 48.57 L195.95 59.01 L194.72 63.93 L194.72 74.98 L198.4 85.43 L203.93 92.8 L213.14 99.55 L219.9 102.01 L232.8 102.62 L240.79 100.17 L246.31 97.1 L254.91 88.5 L260.44 76.21 Z" />
+      </svg>
+    );
+  }
+
+  return (
+    <img
+      alt="Taliya"
+      height={height}
+      src="/taliya-logo.svg"
+      style={{ objectFit: "contain", width, height }}
+      width={width}
+    />
+  );
+}

@@ -1,0 +1,847 @@
+{
+  "proof_type": "isolated_spike_paid",
+  "model": "gpt-5.4-mini",
+  "tracing_disabled": true,
+  "public_cutover": false,
+  "paid_call_status": "run",
+  "started_at": "2026-06-10T18:12:40.808617+00:00",
+  "budget": {
+    "max_total_model_operations": 40,
+    "max_total_cost_usd": 0.42002300000000004,
+    "max_model_operations_per_scenario": 4
+  },
+  "total_model_operations": 3,
+  "total_cost_usd": 0.017899,
+  "aborted": false,
+  "abort_reason": null,
+  "scenarios": [
+    {
+      "number": 10,
+      "scenario_id": "ideal_turn_10",
+      "channel": "whatsapp",
+      "required_proof": "urgency captured; deliver the final staged diagnostic grounded in the ledger and official plan facts.",
+      "input_transcript": [
+        {
+          "role": "system",
+          "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico em andamento. Respondido: active_students_or_size=120; main_pain=perder interessado porque demoramos pra responder; pain_detail=so conseguimos responder de noite e o lead ja fechou com outro studio; current_process=planilha e caderno, nada organizado; priority=nao perder mais nenhum lead novo. Proxima pergunta pendente: urgency. Demo: {\"status\": \"\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"\", \"intent\": \"\"}. Perguntas diretas ja respondidas em turnos anteriores (nao criam novas obrigacoes): quanto custa isso?; Explaining how the free diagnostic works, while not forgetting the already-open diagnostic flow.; quanto custa isso?; Quanto custa isso?.\nstate: {\"diagnostic\": {\"status\": \"in_progress\", \"next_question_key\": \"urgency\", \"ledger\": {\"active_students_or_size\": {\"status\": \"answered\", \"answer_value\": \"120\"}, \"main_pain\": {\"status\": \"answered\", \"answer_value\": \"perder interessado porque demoramos pra responder\"}, \"pain_detail\": {\"status\": \"answered\", \"answer_value\": \"so conseguimos responder de noite e o lead ja fechou com outro studio\"}, \"current_process\": {\"status\": \"answered\", \"answer_value\": \"planilha e caderno, nada organizado\"}, \"priority\": {\"status\": \"answered\", \"answer_value\": \"nao perder mais nenhum lead novo\"}, \"urgency\": {\"status\": \"pending\"}}}, \"demo\": {\"status\": \"\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+        },
+        {
+          "role": "user",
+          "content": "oi, vi o perfil de voces no Instagram"
+        },
+        {
+          "role": "assistant",
+          "content": "Oi, tudo bem?"
+        },
+        {
+          "role": "assistant",
+          "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+        },
+        {
+          "role": "user",
+          "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o atraso no WhatsApp já está fazendo voce perder aluno novo."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        },
+        {
+          "role": "user",
+          "content": "quanto custa isso?"
+        },
+        {
+          "role": "assistant",
+          "content": "studio perdendo aluno novo por atraso no WhatsApp"
+        },
+        {
+          "role": "assistant",
+          "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+        },
+        {
+          "role": "assistant",
+          "content": "O que voce acha?"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o atraso no WhatsApp já está fazendo voce perder aluno novo."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        },
+        {
+          "role": "user",
+          "content": "faz sentido... como funciona esse diagnostico gratuito?"
+        },
+        {
+          "role": "assistant",
+          "content": "Claro — é um passo a passo rápido para entender seu cenário e indicar o melhor caminho."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Claro — é um passo a passo rápido para entender seu cenário e indicar o melhor caminho."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+        },
+        {
+          "role": "user",
+          "content": "120"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfeito — 120 alunos ativos já da uma boa noção do tamanho."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfeito — 120 alunos ativos já da uma boa noção do tamanho."
+        },
+        {
+          "role": "assistant",
+          "content": "Quais partes mais dao trabalho hoje: WhatsApp, agenda/reposicoes, vendas, financeiro ou acompanhamento dos alunos?"
+        },
+        {
+          "role": "user",
+          "content": "minha maior dor e perder interessado porque demoramos pra responder"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o atraso no WhatsApp está fazendo vocês perderem interessados."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: o atraso no WhatsApp está fazendo vocês perderem interessados."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?"
+        },
+        {
+          "role": "user",
+          "content": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: vocês só conseguem responder à noite e o lead já fecha com outro studio."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: vocês só conseguem responder à noite e o lead já fecha com outro studio."
+        },
+        {
+          "role": "assistant",
+          "content": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+        },
+        {
+          "role": "user",
+          "content": "hoje e planilha e caderno mesmo, nada organizado"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: hoje voce responde so no fim do dia e isso faz o lead fechar com outro studio."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: hoje voce responde so no fim do dia e isso faz o lead fechar com outro studio."
+        },
+        {
+          "role": "assistant",
+          "content": "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+        },
+        {
+          "role": "user",
+          "content": "minha prioridade e nao perder mais nenhum lead novo"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: sua prioridade é nao perder mais nenhum lead novo."
+        },
+        {
+          "role": "assistant",
+          "content": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendi: sua prioridade é nao perder mais nenhum lead novo."
+        },
+        {
+          "role": "assistant",
+          "content": "Voces estao buscando resolver isso agora ou so pesquisando por enquanto?"
+        },
+        {
+          "role": "user",
+          "content": "quero resolver isso agora, esse mes ainda"
+        }
+      ],
+      "starting_agent": "taliya_diagnostic_agent",
+      "agent_path": [
+        {
+          "event": "start",
+          "agent": "taliya_diagnostic_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "final",
+          "agent": "taliya_diagnostic_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        }
+      ],
+      "tool_calls": [
+        {
+          "event": "tool_call",
+          "name": "get_product_knowledge",
+          "arguments": "{\"keys\":[\"plans\",\"prices\"]}"
+        },
+        {
+          "event": "tool_output",
+          "output": {
+            "tool_name": "get_product_knowledge",
+            "side_effect_class": "read_only",
+            "commits_state": false,
+            "renders_customer_response": false,
+            "chooses_commercial_route": false,
+            "payload": {
+              "refs": [
+                {
+                  "key": "plans",
+                  "source": "official_product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "value": [
+                    {
+                      "id": "base",
+                      "name": "Base",
+                      "monthly_price_brl": 197,
+                      "price_label": "R$ 197/mes",
+                      "best_for": "Studios that want to organize the routine before active AI.",
+                      "included_agents": [],
+                      "whatsapp_availability": "No automatic WhatsApp AI replies.",
+                      "usage_boundary": "1 studio, 1 user, no AI message quota."
+                    },
+                    {
+                      "id": "one_agent",
+                      "name": "Essencial",
+                      "monthly_price_brl": 497,
+                      "price_label": "R$ 497/mes",
+                      "best_for": "Studios that want to solve one clear pain first.",
+                      "included_agents": [
+                        "1 main agent chosen during setup"
+                      ],
+                      "whatsapp_availability": "Requires the studio WhatsApp Business connected for that agent.",
+                      "usage_boundary": "1 studio, up to 2 users, 1,500 AI messages/month with hard cap."
+                    },
+                    {
+                      "id": "three_agents",
+                      "name": "Avance",
+                      "monthly_price_brl": 897,
+                      "price_label": "R$ 897/mes",
+                      "best_for": "Studios that want help in some priority routines.",
+                      "included_agents": [
+                        "3 main agents chosen during setup"
+                      ],
+                      "whatsapp_availability": "Requires the studio WhatsApp Business connected for included agents.",
+                      "usage_boundary": "1 studio, up to 5 users, 5,000 AI messages/month with hard cap."
+                    },
+                    {
+                      "id": "seven_agents",
+                      "name": "Completo",
+                      "monthly_price_brl": 1497,
+                      "price_label": "R$ 1.497/mes",
+                      "best_for": "Studios that want the complete Taliya.",
+                      "included_agents": [
+                        "Atendimento",
+                        "Agenda",
+                        "Vendas",
+                        "Financeiro",
+                        "Retencao",
+                        "Gestao",
+                        "Historico/Evolucao"
+                      ],
+                      "whatsapp_availability": "Requires the studio WhatsApp Business connected for the complete team.",
+                      "usage_boundary": "1 studio, up to 10 users, 15,000 AI messages/month with hard cap."
+                    }
+                  ],
+                  "excerpt": "Base (base) R$ 197/mes best_for=Studios that want to organize the routine before active AI. included=no active AI agents whatsapp=No automatic WhatsApp AI replies. usage=1 studio, 1 user, no AI message quota. | Essencial (one_agent) R$ 497/mes best_for=Studios that want to solve one clear pain first. included=1 main agent chosen during setup whatsapp=Requires the studio WhatsApp Business connected for that agent. usage=1 studio, up to 2 users, 1,500 AI messages/month with hard cap. | Avance (three_agents) R$ 897/mes best_for=Studios that want help in some priority routines. included=3 main agents chosen during setup whatsapp=Requires the studio WhatsApp Business connected for included agents. usage=1 studio, up to 5 users, 5,000 AI messages/month with hard cap. | Completo (seven_agents) R$ 1.497/mes best_for=Studios that want the complete Taliya. included=Atendimento, Agenda, Vendas, Financeiro, Retencao, Gestao, Historico/Evolucao whatsapp=Requires the studio WhatsApp Business connected for the complete team. usage=1 studio, up to 10 users, 15,000 AI messages/month with hard cap.",
+                  "missing": false,
+                  "renderable": false,
+                  "evidence": [
+                    "product_knowledge.plans"
+                  ]
+                },
+                {
+                  "key": "prices",
+                  "source": "official_product_knowledge",
+                  "version": "taliya-commercial-2026-05-22",
+                  "value": {
+                    "base": "R$ 197/mes",
+                    "one_agent": "R$ 497/mes",
+                    "three_agents": "R$ 897/mes",
+                    "seven_agents": "R$ 1.497/mes"
+                  },
+                  "excerpt": "{\"base\":\"R$ 197/mes\",\"one_agent\":\"R$ 497/mes\",\"seven_agents\":\"R$ 1.497/mes\",\"three_agents\":\"R$ 897/mes\"}",
+                  "missing": false,
+                  "renderable": false,
+                  "evidence": [
+                    "product_knowledge.prices"
+                  ]
+                }
+              ],
+              "requested_keys": [
+                "plans",
+                "prices"
+              ]
+            },
+            "evidence": [
+              "product_knowledge.plans",
+              "product_knowledge.prices"
+            ],
+            "uncertainty": "low"
+          }
+        }
+      ],
+      "sdk_final_output": {
+        "schema_version": "012.sdk_turn_output.v1",
+        "commercial_understanding": {
+          "intents": [
+            "diagnostic",
+            "price"
+          ],
+          "direct_question": "quanto custa isso?",
+          "customer_need": "resolver atraso no WhatsApp para nao perder leads novos ainda este mes",
+          "pain_context": "studio com 120 alunos, atendendo interesse novo só à noite, com leads fechando com outro studio, hoje operando em planilha e caderno sem organização",
+          "source_context": "Instagram/WhatsApp",
+          "mixed_intent": true,
+          "extracted_facts": [
+            {
+              "key": "students",
+              "kind": "student_count",
+              "raw_text": "120",
+              "value_text": "120",
+              "currency": null,
+              "evidence": [
+                "user_message: 120"
+              ]
+            },
+            {
+              "key": "pain",
+              "kind": "pain",
+              "raw_text": "perder interessado porque demoramos pra responder",
+              "value_text": "perder interessado porque demoramos pra responder",
+              "currency": null,
+              "evidence": [
+                "user_message: minha maior dor e perder interessado porque demoramos pra responder"
+              ]
+            },
+            {
+              "key": "pain_detail",
+              "kind": "pain",
+              "raw_text": "so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+              "value_text": "so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+              "currency": null,
+              "evidence": [
+                "user_message: a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ]
+            },
+            {
+              "key": "current_process",
+              "kind": "other",
+              "raw_text": "planilha e caderno mesmo, nada organizado",
+              "value_text": "planilha e caderno mesmo, nada organizado",
+              "currency": null,
+              "evidence": [
+                "user_message: hoje e planilha e caderno mesmo, nada organizado"
+              ]
+            },
+            {
+              "key": "priority",
+              "kind": "pain",
+              "raw_text": "nao perder mais nenhum lead novo",
+              "value_text": "nao perder mais nenhum lead novo",
+              "currency": null,
+              "evidence": [
+                "user_message: minha prioridade e nao perder mais nenhum lead novo"
+              ]
+            },
+            {
+              "key": "urgency",
+              "kind": "date_time",
+              "raw_text": "quero resolver isso agora, esse mes ainda",
+              "value_text": "esse mes ainda",
+              "currency": null,
+              "evidence": [
+                "user_message: quero resolver isso agora, esse mes ainda"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message: quanto custa isso?",
+            "user_message: 120",
+            "user_message: minha maior dor e perder interessado porque demoramos pra responder",
+            "user_message: a gente so consegue responder de noite, ai o lead ja fechou com outro studio",
+            "user_message: hoje e planilha e caderno mesmo, nada organizado",
+            "user_message: minha prioridade e nao perder mais nenhum lead novo",
+            "user_message: quero resolver isso agora, esse mes ainda"
+          ]
+        },
+        "answer_obligations": [
+          {
+            "obligation": "O lead perguntou quanto custa isso?",
+            "answering_template_id": "diagnostic.deliver_plan_recommendation",
+            "evidence": [
+              "user_message: quanto custa isso?"
+            ]
+          }
+        ],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [
+            {
+              "question_key": "active_students_or_size",
+              "status": "answered",
+              "answer_value": "120",
+              "evidence": [
+                "user_message: 120"
+              ]
+            },
+            {
+              "question_key": "main_pain",
+              "status": "answered",
+              "answer_value": "perder interessado porque demoramos pra responder",
+              "evidence": [
+                "user_message: minha maior dor e perder interessado porque demoramos pra responder"
+              ]
+            },
+            {
+              "question_key": "pain_detail",
+              "status": "answered",
+              "answer_value": "so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+              "evidence": [
+                "user_message: a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ]
+            },
+            {
+              "question_key": "current_process",
+              "status": "answered",
+              "answer_value": "planilha e caderno, nada organizado",
+              "evidence": [
+                "user_message: hoje e planilha e caderno mesmo, nada organizado"
+              ]
+            },
+            {
+              "question_key": "priority",
+              "status": "answered",
+              "answer_value": "nao perder mais nenhum lead novo",
+              "evidence": [
+                "user_message: minha prioridade e nao perder mais nenhum lead novo"
+              ]
+            },
+            {
+              "question_key": "urgency",
+              "status": "answered",
+              "answer_value": "quero resolver isso agora, esse mes ainda",
+              "evidence": [
+                "user_message: quero resolver isso agora, esse mes ainda"
+              ]
+            }
+          ],
+          "next_question_key": null,
+          "final_diagnostic_ready": true,
+          "evidence": [
+            "product_knowledge.plans",
+            "product_knowledge.prices",
+            "user_message: quero resolver isso agora, esse mes ainda"
+          ]
+        },
+        "demo_proposal": {
+          "status": "",
+          "next_step": "",
+          "evidence": []
+        },
+        "waitlist_proposal": {
+          "eligibility": "",
+          "intent": "",
+          "missing_details": [],
+          "evidence": []
+        },
+        "handoff_proposal": {
+          "status": "",
+          "reason": null,
+          "pause_required": false,
+          "evidence": []
+        },
+        "template_plan": {
+          "template_ids": [
+            "diagnostic.deliver_plan_recommendation"
+          ],
+          "variables": [
+            {
+              "name": "recommended_plan_or_range",
+              "kind": "short_text",
+              "value": "Essencial — R$ 497/mes",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "product_knowledge.plans",
+                "product_knowledge.prices"
+              ],
+              "max_length": 90
+            }
+          ],
+          "evidence": [
+            "product_knowledge.plans",
+            "product_knowledge.prices",
+            "user_message: quanto custa isso?"
+          ]
+        },
+        "state_patch": {
+          "handoff": null,
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "safety": {
+          "guardrail_flags": [],
+          "uncertainty": "low"
+        },
+        "sales_inbox_projection": {
+          "commercial_stage": "diagnostic_complete",
+          "last_intent": "price",
+          "diagnostic_status": "complete",
+          "waitlist_status": null,
+          "handoff_status": null,
+          "next_action_hint": "answer_price_and_recommend_plan"
+        },
+        "delivery": {
+          "chunk_policy": "whatsapp_max_3"
+        },
+        "confidence": "high",
+        "risks": []
+      },
+      "turn_proposal": {
+        "schema_version": "012.turn_proposal.v1",
+        "turn_id": "spike_turn_ideal_turn_10",
+        "conversation_id": "spike_conv_ideal_turn_10",
+        "channel": "whatsapp",
+        "starting_agent": "taliya_diagnostic_agent",
+        "agent_path": [
+          {
+            "event": "start",
+            "agent": "taliya_diagnostic_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "final",
+            "agent": "taliya_diagnostic_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          }
+        ],
+        "commercial_understanding": {
+          "intents": [
+            "diagnostic",
+            "price"
+          ],
+          "direct_question": null,
+          "customer_need": "resolver atraso no WhatsApp para nao perder leads novos ainda este mes",
+          "pain_context": "studio com 120 alunos, atendendo interesse novo só à noite, com leads fechando com outro studio, hoje operando em planilha e caderno sem organização",
+          "source_context": "Instagram/WhatsApp",
+          "mixed_intent": true,
+          "extracted_facts": [
+            {
+              "key": "students",
+              "kind": "student_count",
+              "raw_text": "120",
+              "value": 120,
+              "evidence": [
+                "user_message: 120"
+              ]
+            },
+            {
+              "key": "pain",
+              "kind": "pain",
+              "raw_text": "perder interessado porque demoramos pra responder",
+              "value": "perder interessado porque demoramos pra responder",
+              "evidence": [
+                "user_message: minha maior dor e perder interessado porque demoramos pra responder"
+              ]
+            },
+            {
+              "key": "pain_detail",
+              "kind": "pain",
+              "raw_text": "so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+              "value": "so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+              "evidence": [
+                "user_message: a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ]
+            },
+            {
+              "key": "current_process",
+              "kind": "other",
+              "raw_text": "planilha e caderno mesmo, nada organizado",
+              "value": "planilha e caderno mesmo, nada organizado",
+              "evidence": [
+                "user_message: hoje e planilha e caderno mesmo, nada organizado"
+              ]
+            },
+            {
+              "key": "priority",
+              "kind": "pain",
+              "raw_text": "nao perder mais nenhum lead novo",
+              "value": "nao perder mais nenhum lead novo",
+              "evidence": [
+                "user_message: minha prioridade e nao perder mais nenhum lead novo"
+              ]
+            },
+            {
+              "key": "urgency",
+              "kind": "date_time",
+              "raw_text": "quero resolver isso agora, esse mes ainda",
+              "value": "esse mes ainda",
+              "evidence": [
+                "user_message: quero resolver isso agora, esse mes ainda"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message: quanto custa isso?",
+            "user_message: 120",
+            "user_message: minha maior dor e perder interessado porque demoramos pra responder",
+            "user_message: a gente so consegue responder de noite, ai o lead ja fechou com outro studio",
+            "user_message: hoje e planilha e caderno mesmo, nada organizado",
+            "user_message: minha prioridade e nao perder mais nenhum lead novo",
+            "user_message: quero resolver isso agora, esse mes ainda"
+          ]
+        },
+        "answer_obligations": [
+          {
+            "obligation": "O lead perguntou quanto custa isso?",
+            "answered_before_steering": true,
+            "evidence": [
+              "user_message: quanto custa isso?"
+            ]
+          }
+        ],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [
+            {
+              "question_key": "active_students_or_size",
+              "status": "answered",
+              "answer_value": "120",
+              "evidence": [
+                "user_message: 120"
+              ]
+            },
+            {
+              "question_key": "main_pain",
+              "status": "answered",
+              "answer_value": "perder interessado porque demoramos pra responder",
+              "evidence": [
+                "user_message: minha maior dor e perder interessado porque demoramos pra responder"
+              ]
+            },
+            {
+              "question_key": "pain_detail",
+              "status": "answered",
+              "answer_value": "so conseguimos responder de noite, ai o lead ja fechou com outro studio",
+              "evidence": [
+                "user_message: a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+              ]
+            },
+            {
+              "question_key": "current_process",
+              "status": "answered",
+              "answer_value": "planilha e caderno, nada organizado",
+              "evidence": [
+                "user_message: hoje e planilha e caderno mesmo, nada organizado"
+              ]
+            },
+            {
+              "question_key": "priority",
+              "status": "answered",
+              "answer_value": "nao perder mais nenhum lead novo",
+              "evidence": [
+                "user_message: minha prioridade e nao perder mais nenhum lead novo"
+              ]
+            },
+            {
+              "question_key": "urgency",
+              "status": "answered",
+              "answer_value": "quero resolver isso agora, esse mes ainda",
+              "evidence": [
+                "user_message: quero resolver isso agora, esse mes ainda"
+              ]
+            }
+          ],
+          "next_question_key": null,
+          "final_diagnostic_ready": true,
+          "evidence": [
+            "product_knowledge.plans",
+            "product_knowledge.prices",
+            "user_message: quero resolver isso agora, esse mes ainda"
+          ]
+        },
+        "demo_proposal": {
+          "status": "",
+          "next_step": "",
+          "evidence": []
+        },
+        "waitlist_proposal": {
+          "eligibility": "",
+          "intent": "",
+          "missing_details": [],
+          "evidence": []
+        },
+        "handoff_proposal": {
+          "status": "",
+          "reason": null,
+          "pause_required": false,
+          "evidence": []
+        },
+        "template_proposal": {
+          "template_ids": [
+            "diagnostic.deliver_plan_recommendation"
+          ],
+          "variables": {
+            "recommended_plan_or_range": {
+              "kind": "short_text",
+              "value": "Essencial — R$ 497/mes",
+              "source": "official_product_knowledge",
+              "evidence": [
+                "product_knowledge.plans",
+                "product_knowledge.prices"
+              ],
+              "max_length": 90
+            }
+          },
+          "evidence": [
+            "product_knowledge.plans",
+            "product_knowledge.prices",
+            "user_message: quanto custa isso?"
+          ]
+        },
+        "safety": {
+          "guardrails": [],
+          "uncertainty": "low"
+        },
+        "state_patch_proposal": {
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "sales_inbox_projection_proposal": {
+          "commercial_stage": "diagnostic_complete",
+          "last_intent": "price",
+          "diagnostic_status": "complete",
+          "next_action_hint": "answer_price_and_recommend_plan"
+        },
+        "delivery_proposal": {
+          "chunk_policy": "whatsapp_max_3",
+          "render_plan_only": true,
+          "evidence": [
+            "product_knowledge.plans",
+            "product_knowledge.prices",
+            "user_message: quanto custa isso?"
+          ]
+        },
+        "confidence": "high",
+        "risks": [
+          "stale_direct_question_scrubbed"
+        ],
+        "usage": {
+          "model": "gpt-5.4-mini",
+          "model_operations": 3,
+          "input_tokens": 21766,
+          "output_tokens": 2577,
+          "cost_usd": 0.017899,
+          "handoffs": 0,
+          "repairs": 1
+        }
+      },
+      "validator_result": {
+        "decision_id": "sdk_spike_turn_ideal_turn_10",
+        "status": "passed",
+        "errors": [],
+        "warnings": [],
+        "repair_attempt_count": 0,
+        "final_disposition": "accepted"
+      },
+      "rendered_preview": [
+        {
+          "text": "Pelo tamanho, momento do studio e contexto acima, eu recomendaria pra voce o plano Essencial — R$ 497/mes.",
+          "template_id": "diagnostic.deliver_plan_recommendation",
+          "channel": "whatsapp",
+          "sequence": 1
+        }
+      ],
+      "proposed_state_diff": {
+        "delivery": {
+          "defer_inbound_during_chunks": false,
+          "deferred_inbound_count": 0
+        }
+      },
+      "proposed_sales_inbox_projection": {
+        "commercial_stage": "diagnostic_complete",
+        "last_intent": "price",
+        "diagnostic_status": "complete",
+        "next_action_hint": "answer_price_and_recommend_plan"
+      },
+      "usage": {
+        "model": "gpt-5.4-mini",
+        "model_operations": 3,
+        "input_tokens": 21766,
+        "output_tokens": 2577,
+        "cost_usd": 0.017899,
+        "handoffs": 0,
+        "repairs": 1
+      },
+      "status": "passed_structural",
+      "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+      "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+    }
+  ]
+}

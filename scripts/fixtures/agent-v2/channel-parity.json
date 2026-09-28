@@ -1,0 +1,5 @@
+[
+  { "id": "PAR-001", "message": "quanto custa?", "channels": ["widget", "whatsapp"], "truth": "same_price_source" },
+  { "id": "PAR-002", "message": "quero fazer diagnostico", "channels": ["widget", "whatsapp"], "truth": "same_diagnostic_meaning" }
+]
+

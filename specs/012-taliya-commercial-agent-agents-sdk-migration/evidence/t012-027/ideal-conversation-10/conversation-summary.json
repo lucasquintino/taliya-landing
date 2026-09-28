@@ -1,0 +1,236 @@
+{
+  "turns_total": 12,
+  "turns_passed": 9,
+  "stopped_at_turn": 10,
+  "total_model_operations": 19,
+  "total_cost_usd": 0.099189,
+  "final_state": {
+    "demo": {
+      "status": "",
+      "next_step": ""
+    },
+    "waitlist": {
+      "eligibility": "",
+      "intent": ""
+    },
+    "summary": "Conversa comercial em andamento no WhatsApp da Taliya. Diagnostico em andamento. Respondido: active_students_or_size=120; main_pain=perder interessado porque demoramos pra responder; pain_detail=so conseguimos responder de noite, ai o lead ja fechou com outro studio; current_process=planilha e caderno, nada organizado; priority=nao perder mais nenhum lead novo. Proxima pergunta pendente: urgency. Demo: {\"status\": \"\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"\", \"intent\": \"\"}. Perguntas diretas ja respondidas em turnos anteriores (nao criam novas obrigacoes): Responder quanto custa isso; Responder como funciona esse diagnostico gratuito.; quanto custa isso?; como funciona esse diagnostico gratuito?.",
+    "diagnostic": {
+      "status": "in_progress",
+      "next_question_key": "urgency",
+      "ledger": {
+        "active_students_or_size": {
+          "status": "answered",
+          "answer_value": "120"
+        },
+        "main_pain": {
+          "status": "answered",
+          "answer_value": "perder interessado porque demoramos pra responder"
+        },
+        "pain_detail": {
+          "status": "answered",
+          "answer_value": "so conseguimos responder de noite, ai o lead ja fechou com outro studio"
+        },
+        "current_process": {
+          "status": "answered",
+          "answer_value": "planilha e caderno, nada organizado"
+        },
+        "priority": {
+          "status": "answered",
+          "answer_value": "nao perder mais nenhum lead novo"
+        },
+        "urgency": {
+          "status": "pending"
+        }
+      }
+    },
+    "current_sdk_agent": "taliya_diagnostic_agent",
+    "answered_obligations": [
+      "Responder quanto custa isso",
+      "Responder como funciona esse diagnostico gratuito.",
+      "quanto custa isso?",
+      "como funciona esse diagnostico gratuito?"
+    ]
+  },
+  "transcript": [
+    {
+      "role": "user",
+      "text": "oi, vi o perfil de voces no Instagram"
+    },
+    {
+      "role": "assistant",
+      "text": "Oi, tudo bem?"
+    },
+    {
+      "role": "assistant",
+      "text": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+    },
+    {
+      "role": "assistant",
+      "text": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+    },
+    {
+      "role": "user",
+      "text": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: o gargalo e o atraso no WhatsApp, e isso pode estar fazendo voce perder leads novos."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "text": "quanto custa isso?"
+    },
+    {
+      "role": "assistant",
+      "text": "Seu caso parece bem focado em resolver o atraso no WhatsApp para nao perder alunos novos."
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: o gargalo e o atraso no WhatsApp, e isso pode estar fazendo voce perder leads novos."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "text": "faz sentido... como funciona esse diagnostico gratuito?"
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: o gargalo e o atraso no WhatsApp, e isso pode estar fazendo voce perder leads novos."
+    },
+    {
+      "role": "assistant",
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: o gargalo e o atraso no WhatsApp, e isso pode estar fazendo voce perder leads novos."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje seu studio tem mais ou menos quantos alunos ativos?"
+    },
+    {
+      "role": "user",
+      "text": "120"
+    },
+    {
+      "role": "assistant",
+      "text": "Perfeito, com 120 alunos ativos já da para ver que o volume é relevante."
+    },
+    {
+      "role": "assistant",
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Perfeito, com 120 alunos ativos já da para ver que o volume é relevante."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje voce consegue ver facilmente o que precisa ser resolvido no dia?"
+    },
+    {
+      "role": "user",
+      "text": "minha maior dor e perder interessado porque demoramos pra responder"
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: o problema principal e perder interessados por demora no WhatsApp."
+    },
+    {
+      "role": "assistant",
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: o problema principal e perder interessados por demora no WhatsApp."
+    },
+    {
+      "role": "assistant",
+      "text": "Hoje isso fica em algum sistema ou mais em WhatsApp, planilha e caderno?"
+    },
+    {
+      "role": "user",
+      "text": "a gente so consegue responder de noite, ai o lead ja fechou com outro studio"
+    },
+    {
+      "role": "assistant",
+      "text": "No seu caso, o maior risco e perder o lead antes da resposta."
+    },
+    {
+      "role": "assistant",
+      "text": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+    },
+    {
+      "role": "assistant",
+      "text": "O que voce acha?"
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: o atraso no WhatsApp e o ponto que mais pesa hoje."
+    },
+    {
+      "role": "assistant",
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: o atraso no WhatsApp e o ponto que mais pesa hoje."
+    },
+    {
+      "role": "assistant",
+      "text": "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+    },
+    {
+      "role": "user",
+      "text": "hoje e planilha e caderno mesmo, nada organizado"
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: hoje vocês usam planilha e caderno e isso trava o atendimento.\n\nJa tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Entendi: hoje vocês usam planilha e caderno e isso trava o atendimento."
+    },
+    {
+      "role": "assistant",
+      "text": "Pensando na rotina do studio, qual tarefa voce mais gostaria de deixar mais leve primeiro?"
+    },
+    {
+      "role": "user",
+      "text": "minha prioridade e nao perder mais nenhum lead novo"
+    },
+    {
+      "role": "assistant",
+      "text": "Perfeito — sua prioridade é nao perder mais nenhum lead novo."
+    },
+    {
+      "role": "assistant",
+      "text": "Ja tenho parte do contexto. Falta so um ponto para nao te devolver um diagnostico chutado."
+    },
+    {
+      "role": "assistant",
+      "text": "Perfeito — sua prioridade é nao perder mais nenhum lead novo."
+    },
+    {
+      "role": "assistant",
+      "text": "Voces estao buscando resolver isso agora ou so pesquisando por enquanto?"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+# agent-runtime-real-openai-model-gpt41-mini-critical
+
+Started at: 2026-05-24T13:12:01Z
+Finished at: 2026-05-24T13:12:39Z
+Provider: openai
+Model: gpt-4.1-mini
+Release gate: fail
+Passed: 2/3
+Estimated cost: US$0.006349
+
+## FAIL real-plan-fit-with-context
+
+Title: Plano ideal com contexto nao pode virar abertura generica
+Channel: widget
+Failures:
+- did not reuse lead context terms: ['reposi', '80', 'alunos']
+
+Lead 1: Tenho 80 alunos, reposicao baguncada e quero saber o plano ideal.
+Taliya 1.1: Oi, tudo bem? Para comparar plano sem chutar, vale entender a rotina do studio antes.
+Taliya 1.2: Posso fazer um diagnóstico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar.
+Taliya 1.3: O que você acha?
+Runtime: http=200 status=succeeded agent=taliya_commercial_product_agent trace=trace_43fdeff2000d4bb59d048ca282a7a82d
+Diagnostic: {"status": "offered", "ledger": [], "facts_used": [], "main_bottleneck": null, "pain_context_human": null, "likely_cause": null, "crm_base_recommendation": null, "first_recommended_step": null, "indicated_routines_or_agents": [], "indicated_agents": [], "plan_or_range_to_compare": null, "final_plan_line": null, "demo_status_at_delivery": "not_offered", "final_demo_line": null, "evidence": [], "unknowns": ["maior detalhe sobre rotina de reposição", "objetivos com o plano ideal"], "confidence": "low", "next_question": null, "validation_question": null, "final_demo_next_step_question": null}
+Decision: {"previous_state": "new_lead", "current_state": "product_question", "next_state": "product_question", "route": "product", "opening_type": "direct_question_opening", "detected_intents": ["product"], "direct_question_present": true, "direct_question_answered_first": true, "diagnostic_action": "offer", "diagnostic_allowed_now": true, "waitlist_allowed_now": false, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "not_available", "facts_used": [], "facts_missing": ["maior detalhe sobre rotina de reposição", "objetivos com o plano ideal"], "template_ids": ["diagnostic.offer_soft"], "template_variables": {"diagnostic.offer_soft": {"pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."}, "diagnostic.price_hook_with_context": {"pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."}, "diagnostic.deliver_context": {"pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."}, "diagnostic.deliver_crm_base": {"crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."}, "diagnostic.deliver_operational_step": {"operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."}, "diagnostic.deliver_agent_recommendation": {"agent_name": "Atendimento", "agent_pain_resolved": "perda de interessados e follow-up", "agent_recommendation_reason": "essa foi a dor comercial mais clara", "agent_practical_action": "ele responde, registra contexto e avisa a equipe quando precisa de humano"}, "diagnostic.deliver_plan_recommendation": {"recommended_plan_or_range": "Essencial ou Avance"}, "diagnostic.deliver": {"main_bottleneck": "a rotina prioritária", "first_step": "organizar a primeira rotina crítica", "plan_range": "a faixa mais aderente"}}, "render_plan": [{"template_id": "diagnostic.offer_soft", "channel": "widget"}], "diagnostic_ledger_status": "incomplete", "next_question_kind": "plan_fit", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["product_knowledge"]}]
+Usage: {"model": "gpt-4.1-mini", "input_tokens": 4317, "output_tokens": 378, "cost_usd": 0.002332}
+
+## PASS real-thin-diagnostic
+
+Title: Diagnostico com pouco dado nao pode fingir conclusao
+Channel: widget
+
+Lead 1: Quero um diagnostico.
+Taliya 1.1: Oi, tudo bem? Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje.
+Taliya 1.2: Hoje seu studio tem mais ou menos quantos alunos ativos?
+Runtime: http=200 status=succeeded agent=taliya_commercial_diagnostic_agent trace=trace_a7d059358f9c4d33b6e9be68b37292d2
+Diagnostic: {"status": "in_progress", "ledger": [{"question_key": "active_students_or_size", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "last_asked_timestamp": null, "may_ask_again": true}, {"question_key": "main_pain", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "last_asked_timestamp": null, "may_ask_again": true}, {"question_key": "pain_detail", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "last_asked_timestamp": null, "may_ask_again": true}, {"question_key": "current_process", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "last_asked_timestamp": null, "may_ask_again": true}, {"question_key": "priority", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "last_asked_timestamp": null, "may_ask_again": true}, {"question_key": "urgency", "status": "missing", "answer_value": null, "evidence": [], "confidence": "low", "last_asked_timestamp": null, "may_ask_again": true}], "facts_used": [], "main_bottleneck": null, "pain_context_human": null, "likely_cause": null, "crm_base_recommendation": null, "first_recommended_step": null, "indicated_routines_or_agents": [], "indicated_agents": [], "plan_or_range_to_compare": null, "final_plan_line": null, "demo_status_at_delivery": "not_offered", "final_demo_line": null, "evidence": [], "unknowns": ["active_students_or_size"], "confidence": "low", "next_question": "Hoje seu studio tem mais ou menos quantos alunos ativos?", "validation_question": null, "final_demo_next_step_question": null}
+Decision: {"previous_state": "new_lead", "current_state": "diagnostic_in_progress", "next_state": "diagnostic_in_progress", "route": "diagnostic", "opening_type": "diagnostic_cta_opening", "detected_intents": ["diagnostic_request"], "direct_question_present": false, "direct_question_answered_first": true, "diagnostic_action": "ask_next", "diagnostic_allowed_now": true, "waitlist_allowed_now": false, "demo_status": "not_offered", "demo_next_step": "none", "profile_name_usage": "not_available", "facts_used": [], "facts_missing": [], "template_ids": ["diagnostic.ask_active_students"], "template_variables": {"diagnostic.offer_soft": {"pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."}, "diagnostic.price_hook_with_context": {"pain_context": "Para te orientar sem chutar, preciso entender um pouco da rotina do studio."}, "diagnostic.deliver_context": {"pain_context_human": "Pelo que você contou, o ponto principal parece ser a rotina prioritária."}, "diagnostic.deliver_crm_base": {"crm_base_recommendation": "Antes dos agentes, eu organizaria a base do CRM para deixar contatos, conversas, status e próximos passos claros."}, "diagnostic.deliver_operational_step": {"operational_first_step": "O primeiro passo seria transformar a rotina mais crítica em uma fila clara de ação."}, "diagnostic.deliver_agent_recommendation": {"agent_name": "Atendimento", "agent_pain_resolved": "perda de interessados e follow-up", "agent_recommendation_reason": "essa foi a dor comercial mais clara", "agent_practical_action": "ele responde, registra contexto e avisa a equipe quando precisa de humano"}, "diagnostic.deliver_plan_recommendation": {"recommended_plan_or_range": "Essencial ou Avance"}, "diagnostic.deliver": {"main_bottleneck": "a rotina prioritária", "first_step": "organizar a primeira rotina crítica", "plan_range": "a faixa mais aderente"}, "diagnostic.ask_active_students": {"answer_feedback": "Beleza então. Pra te devolver algo útil, preciso entender rapidinho como está a rotina do studio hoje."}}, "render_plan": [{"template_id": "diagnostic.ask_active_students", "channel": "widget"}], "diagnostic_ledger_status": "incomplete", "next_question_kind": "none", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["product_knowledge"]}]
+Usage: {"model": "gpt-4.1-mini", "input_tokens": 3827, "output_tokens": 368, "cost_usd": 0.00212}
+
+## PASS real-demo-link
+
+Title: Demo deve usar link oficial
+Channel: widget
+
+Lead 1: Tem demo ou pagina para eu ver como funciona?
+Taliya 1.1: Oi, tudo bem?
+Taliya 1.2: Ver demonstração: https://www.taliya.com.br/pilates/planos/demonstracao
+Taliya 1.3: Conte mais sobre os problemas do seu studio, posso te indicar uma demonstração que resolva algo seu.
+Runtime: http=200 status=succeeded agent=taliya_commercial_product_agent trace=trace_583e2f1cba9c497bad18f74c919ac237
+Decision: {"previous_state": "new_lead", "current_state": "product_question", "next_state": "product_question", "route": "product", "opening_type": "direct_question_opening", "detected_intents": ["product"], "direct_question_present": true, "direct_question_answered_first": true, "diagnostic_action": "none", "diagnostic_allowed_now": false, "waitlist_allowed_now": false, "demo_status": "offered", "demo_next_step": "ask_demo_reaction", "profile_name_usage": "not_available", "facts_used": [], "facts_missing": [], "template_ids": ["product.demo_direct"], "template_variables": {"diagnostic.offer_soft": {"pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."}, "diagnostic.price_hook_with_context": {"pain_context": "Para comparar plano sem chutar, vale entender a rotina do studio antes."}}, "render_plan": [{"template_id": "product.demo_direct", "channel": "widget"}], "diagnostic_ledger_status": "not_started", "next_question_kind": "none", "policy_checks": {"direct_question_answered_first": true, "diagnostic_timing_ok": true, "waitlist_timing_ok": true, "official_facts_only": true, "no_early_contact_capture": true, "no_whatsapp_phone_request": true, "no_fake_certainty": true, "no_human_overlap": true, "channel_brevity_ok": true}}
+Sources: [{"type": "product_knowledge", "version": "taliya-commercial-2026-05-22", "keys": ["product_knowledge"]}]
+Usage: {"model": "gpt-4.1-mini", "input_tokens": 3874, "output_tokens": 217, "cost_usd": 0.001897}

@@ -1,0 +1,91 @@
+{
+  "runId": "agent-runtime-spec011-legacy-reference-quarantine-1780229684221",
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "task": "T011-094",
+  "createdAt": "2026-05-31T12:14:44.221Z",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "releaseGate": "pass",
+  "results": [
+    {
+      "ok": true,
+      "message": "all tests importing the legacy runner are explicitly marked as legacy_runner_reference",
+      "details": {
+        "runnerImportTests": [
+          {
+            "file": "services/taliya-agent-runtime/tests/test_diagnostic.py",
+            "marked": true
+          },
+          {
+            "file": "services/taliya-agent-runtime/tests/test_handoffs.py",
+            "marked": true
+          },
+          {
+            "file": "services/taliya-agent-runtime/tests/test_human_handoff.py",
+            "marked": true
+          },
+          {
+            "file": "services/taliya-agent-runtime/tests/test_llm_output_repair.py",
+            "marked": true
+          },
+          {
+            "file": "services/taliya-agent-runtime/tests/test_model_usage.py",
+            "marked": true
+          },
+          {
+            "file": "services/taliya-agent-runtime/tests/test_product_knowledge.py",
+            "marked": true
+          },
+          {
+            "file": "services/taliya-agent-runtime/tests/test_runner_events.py",
+            "marked": true
+          },
+          {
+            "file": "services/taliya-agent-runtime/tests/test_runtime_behavior_regressions.py",
+            "marked": true
+          },
+          {
+            "file": "services/taliya-agent-runtime/tests/test_waitlist_tool.py",
+            "marked": true
+          },
+          {
+            "file": "services/taliya-agent-runtime/tests/test_widget_opening_policy.py",
+            "marked": true
+          }
+        ],
+        "unmarkedRunnerImportTests": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "pytest marker registry documents legacy runner reference tests",
+      "details": {
+        "markerPath": "services/taliya-agent-runtime/pyproject.toml"
+      }
+    },
+    {
+      "ok": true,
+      "message": "runtime README names Spec 011 as active endpoint and quarantines /v1/agent-runs",
+      "details": {
+        "readmePath": "services/taliya-agent-runtime/README.md"
+      }
+    },
+    {
+      "ok": true,
+      "message": "real OpenAI production-path eval posts to the Spec 011 endpoint, not /v1/agent-runs",
+      "details": {
+        "realOpenAiLegacyEndpointHits": []
+      }
+    },
+    {
+      "ok": true,
+      "message": "legacy behavior eval is labeled as reference-only and not production-path evidence",
+      "details": {
+        "legacyEvalPath": "scripts/eval-agent-runtime-legacy-behavior.py"
+      }
+    }
+  ]
+}

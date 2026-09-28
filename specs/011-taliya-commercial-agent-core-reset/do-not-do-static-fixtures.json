@@ -1,0 +1,24 @@
+{
+  "schema_version": "011.do_not_do_static.v1",
+  "source": "regression-cases.md",
+  "cases": [
+    {
+      "id": "do-not-do-hardcoded-product-facts",
+      "do_not_do_case_ids": ["RC-011-067"],
+      "title": "Active path must not hardcode product facts outside official product knowledge or Spec 006",
+      "static_report_required_message": "active production-path prompts/templates/fallbacks do not hardcode product facts outside official product knowledge or Spec 006"
+    },
+    {
+      "id": "do-not-do-generic-freeform-template-variable",
+      "do_not_do_case_ids": ["RC-011-068"],
+      "title": "Active path must not render generic whole-response template variables",
+      "static_report_required_message": "generic whole-response fields are blocked"
+    },
+    {
+      "id": "do-not-do-tactical-runner-patch",
+      "do_not_do_case_ids": ["RC-011-069"],
+      "title": "Active commercial path must not patch runtime/runner.py or old TS v2 brain",
+      "static_report_required_message": "active runtime API and Spec 011 core do not import/call runtime/runner.py"
+    }
+  ]
+}

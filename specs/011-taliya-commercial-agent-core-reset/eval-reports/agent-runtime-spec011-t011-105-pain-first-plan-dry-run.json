@@ -1,0 +1,12 @@
+{
+  "feature": "011-taliya-commercial-agent-core-reset",
+  "name": "agent-runtime-spec011-t011-105-pain-first-plan",
+  "dryRun": true,
+  "selectedScenarioCount": 1,
+  "estimatedModelCalls": 1,
+  "maxModelCalls": 1,
+  "maxCostUsd": 0.03,
+  "scenarioIds": [
+    "final-pain-first"
+  ]
+}

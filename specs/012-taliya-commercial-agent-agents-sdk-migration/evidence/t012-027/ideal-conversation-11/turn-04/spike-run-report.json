@@ -1,0 +1,504 @@
+{
+  "proof_type": "isolated_spike_paid",
+  "model": "gpt-5.4-mini",
+  "tracing_disabled": true,
+  "public_cutover": false,
+  "paid_call_status": "run",
+  "started_at": "2026-06-10T18:03:26.519034+00:00",
+  "budget": {
+    "max_total_model_operations": 52,
+    "max_total_cost_usd": 0.917055,
+    "max_model_operations_per_scenario": 4
+  },
+  "total_model_operations": 2,
+  "total_cost_usd": 0.009124,
+  "aborted": false,
+  "abort_reason": null,
+  "scenarios": [
+    {
+      "number": 4,
+      "scenario_id": "ideal_turn_04",
+      "channel": "whatsapp",
+      "required_proof": "Diagnostic start: begin and ask exactly one question (active students).",
+      "input_transcript": [
+        {
+          "role": "system",
+          "content": "[runtime context] Stored conversation state snapshot:\nsummary: Conversa comercial em andamento no WhatsApp da Taliya. Demo: {\"status\": \"\", \"next_step\": \"\"}. Waitlist: {\"eligibility\": \"\", \"intent\": \"\"}. Perguntas diretas ja respondidas em turnos anteriores (nao criam novas obrigacoes): Responder ao preco pedido pelo lead..\nstate: {\"demo\": {\"status\": \"\", \"next_step\": \"\"}, \"waitlist\": {\"eligibility\": \"\", \"intent\": \"\"}}\nThis snapshot is authoritative for this turn; you normally do not need the state read tools."
+        },
+        {
+          "role": "user",
+          "content": "oi, vi o perfil de voces no Instagram"
+        },
+        {
+          "role": "assistant",
+          "content": "Oi, tudo bem?"
+        },
+        {
+          "role": "assistant",
+          "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+        },
+        {
+          "role": "user",
+          "content": "tenho um studio de pilates e to perdendo aluno novo porque o WhatsApp vive atrasado"
+        },
+        {
+          "role": "assistant",
+          "content": "Oi, tudo bem?"
+        },
+        {
+          "role": "assistant",
+          "content": "Legal voce vir por aqui. A Taliya e a IA do seu studio de Pilates para organizar agenda, reposicoes, cobrancas, gestao, atendimento e acompanhamento em um so lugar."
+        },
+        {
+          "role": "assistant",
+          "content": "Se fizer sentido, posso fazer um diagnostico gratuito com poucas perguntas para entender por onde comecar. O que voce acha?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perda de alunos novos porque o WhatsApp está atrasado."
+        },
+        {
+          "role": "assistant",
+          "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+        },
+        {
+          "role": "assistant",
+          "content": "O que voce acha?"
+        },
+        {
+          "role": "user",
+          "content": "quanto custa isso?"
+        },
+        {
+          "role": "assistant",
+          "content": "Oi, tudo bem?"
+        },
+        {
+          "role": "assistant",
+          "content": "Tenho que confirmar o valor oficial do plano antes de informar o preço com segurança."
+        },
+        {
+          "role": "assistant",
+          "content": "Você disse que tem um studio de Pilates e está perdendo aluno novo porque o WhatsApp vive atrasado."
+        },
+        {
+          "role": "assistant",
+          "content": "Posso fazer um diagnostico gratuito com poucas perguntas e te devolver o que organizar primeiro, quais agentes fariam sentido e qual plano vale comparar."
+        },
+        {
+          "role": "assistant",
+          "content": "O que voce acha?"
+        },
+        {
+          "role": "user",
+          "content": "faz sentido... como funciona esse diagnostico gratuito?"
+        }
+      ],
+      "starting_agent": "taliya_triage_agent",
+      "agent_path": [
+        {
+          "event": "start",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": "taliya_triage_agent",
+          "from_agent": null,
+          "to_agent": "taliya_diagnostic_agent",
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "handoff",
+          "agent": null,
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_diagnostic_agent",
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        },
+        {
+          "event": "final",
+          "agent": "taliya_diagnostic_agent",
+          "from_agent": null,
+          "to_agent": null,
+          "tool_name": null,
+          "guardrail_name": null,
+          "evidence": []
+        }
+      ],
+      "tool_calls": [
+        {
+          "event": "handoff",
+          "from_agent": "taliya_triage_agent",
+          "to_agent": "taliya_diagnostic_agent"
+        }
+      ],
+      "sdk_final_output": {
+        "schema_version": "012.sdk_turn_output.v1",
+        "commercial_understanding": {
+          "intents": [
+            "diagnostic_explanation"
+          ],
+          "direct_question": "como funciona esse diagnostico gratuito?",
+          "customer_need": "entender como funciona o diagnostico gratuito antes de continuar",
+          "pain_context": "o lead tem um studio de pilates e sente que está perdendo aluno novo porque o WhatsApp vive atrasado",
+          "source_context": "Instagram",
+          "mixed_intent": true,
+          "extracted_facts": [
+            {
+              "key": "studio_pilates",
+              "kind": "other",
+              "raw_text": "tenho um studio de pilates",
+              "value_text": "studio de pilates",
+              "currency": null,
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "whatsapp_atrasado",
+              "kind": "pain",
+              "raw_text": "to perdendo aluno novo porque o WhatsApp vive atrasado",
+              "value_text": "WhatsApp atrasado está fazendo perder aluno novo",
+              "currency": null,
+              "evidence": [
+                "user_message"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message",
+            "runtime_state"
+          ]
+        },
+        "answer_obligations": [
+          {
+            "obligation": "Responder como funciona o diagnostico gratuito",
+            "answering_template_id": "diagnostic.start",
+            "evidence": [
+              "user_message"
+            ]
+          }
+        ],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": null,
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "demo_proposal": {
+          "status": "",
+          "next_step": "",
+          "evidence": [
+            "runtime_state"
+          ]
+        },
+        "waitlist_proposal": {
+          "eligibility": "",
+          "intent": "",
+          "missing_details": [],
+          "evidence": [
+            "runtime_state"
+          ]
+        },
+        "handoff_proposal": {
+          "status": "",
+          "reason": null,
+          "pause_required": false,
+          "evidence": [
+            "runtime_state"
+          ]
+        },
+        "template_plan": {
+          "template_ids": [
+            "diagnostic.start"
+          ],
+          "variables": [
+            {
+              "name": "answer_feedback",
+              "kind": "short_text",
+              "value": "Faz sentido.",
+              "source": "user_message",
+              "evidence": [
+                "user_message"
+              ],
+              "max_length": 180
+            }
+          ],
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "state_patch": {
+          "handoff": null,
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "safety": {
+          "guardrail_flags": [],
+          "uncertainty": "low"
+        },
+        "sales_inbox_projection": {
+          "commercial_stage": "diagnostic",
+          "last_intent": "diagnostic_explanation",
+          "diagnostic_status": "not_started",
+          "waitlist_status": null,
+          "handoff_status": null,
+          "next_action_hint": "explicar diagnostico e iniciar perguntas"
+        },
+        "delivery": {
+          "chunk_policy": "default"
+        },
+        "confidence": "high",
+        "risks": []
+      },
+      "turn_proposal": {
+        "schema_version": "012.turn_proposal.v1",
+        "turn_id": "spike_turn_ideal_turn_04",
+        "conversation_id": "spike_conv_ideal_turn_04",
+        "channel": "whatsapp",
+        "starting_agent": "taliya_triage_agent",
+        "agent_path": [
+          {
+            "event": "start",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": "taliya_triage_agent",
+            "from_agent": null,
+            "to_agent": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "handoff",
+            "agent": null,
+            "from_agent": "taliya_triage_agent",
+            "to_agent": "taliya_diagnostic_agent",
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          },
+          {
+            "event": "final",
+            "agent": "taliya_diagnostic_agent",
+            "from_agent": null,
+            "to_agent": null,
+            "tool_name": null,
+            "guardrail_name": null,
+            "evidence": []
+          }
+        ],
+        "commercial_understanding": {
+          "intents": [
+            "diagnostic_explanation"
+          ],
+          "direct_question": "como funciona esse diagnostico gratuito?",
+          "customer_need": "entender como funciona o diagnostico gratuito antes de continuar",
+          "pain_context": "o lead tem um studio de pilates e sente que está perdendo aluno novo porque o WhatsApp vive atrasado",
+          "source_context": "Instagram",
+          "mixed_intent": true,
+          "extracted_facts": [
+            {
+              "key": "studio_pilates",
+              "kind": "other",
+              "raw_text": "tenho um studio de pilates",
+              "value": "studio de pilates",
+              "evidence": [
+                "user_message"
+              ]
+            },
+            {
+              "key": "whatsapp_atrasado",
+              "kind": "pain",
+              "raw_text": "to perdendo aluno novo porque o WhatsApp vive atrasado",
+              "value": "WhatsApp atrasado está fazendo perder aluno novo",
+              "evidence": [
+                "user_message"
+              ]
+            }
+          ],
+          "evidence": [
+            "user_message",
+            "runtime_state"
+          ]
+        },
+        "answer_obligations": [
+          {
+            "obligation": "Responder como funciona o diagnostico gratuito",
+            "answered_before_steering": true,
+            "evidence": [
+              "user_message"
+            ]
+          }
+        ],
+        "product_claims": [],
+        "diagnostic_proposal": {
+          "ledger_updates": [],
+          "next_question_key": null,
+          "final_diagnostic_ready": false,
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "demo_proposal": {
+          "status": "",
+          "next_step": "",
+          "evidence": [
+            "runtime_state"
+          ]
+        },
+        "waitlist_proposal": {
+          "eligibility": "",
+          "intent": "",
+          "missing_details": [],
+          "evidence": [
+            "runtime_state"
+          ]
+        },
+        "handoff_proposal": {
+          "status": "",
+          "reason": null,
+          "pause_required": false,
+          "evidence": [
+            "runtime_state"
+          ]
+        },
+        "template_proposal": {
+          "template_ids": [
+            "diagnostic.start"
+          ],
+          "variables": {
+            "answer_feedback": {
+              "kind": "short_text",
+              "value": "Faz sentido.",
+              "source": "user_message",
+              "evidence": [
+                "user_message"
+              ],
+              "max_length": 180
+            }
+          },
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "safety": {
+          "guardrails": [],
+          "uncertainty": "low"
+        },
+        "state_patch_proposal": {
+          "delivery": {
+            "defer_inbound_during_chunks": false,
+            "deferred_inbound_count": 0
+          }
+        },
+        "sales_inbox_projection_proposal": {
+          "commercial_stage": "diagnostic",
+          "last_intent": "diagnostic_explanation",
+          "diagnostic_status": "not_started",
+          "next_action_hint": "explicar diagnostico e iniciar perguntas"
+        },
+        "delivery_proposal": {
+          "chunk_policy": "default",
+          "render_plan_only": true,
+          "evidence": [
+            "user_message"
+          ]
+        },
+        "confidence": "high",
+        "risks": [],
+        "usage": {
+          "model": "gpt-5.4-mini",
+          "model_operations": 2,
+          "input_tokens": 9045,
+          "output_tokens": 520,
+          "cost_usd": 0.009124,
+          "handoffs": 1,
+          "repairs": 0
+        }
+      },
+      "validator_result": {
+        "decision_id": "sdk_spike_turn_ideal_turn_04",
+        "status": "passed",
+        "errors": [],
+        "warnings": [],
+        "repair_attempt_count": 0,
+        "final_disposition": "accepted"
+      },
+      "rendered_preview": [
+        {
+          "text": "Claro, faco sim. Pra te devolver algo util, vou entender rapidinho como esta a rotina do studio hoje.",
+          "template_id": "diagnostic.start",
+          "channel": "whatsapp",
+          "sequence": 1
+        }
+      ],
+      "proposed_state_diff": {
+        "delivery": {
+          "defer_inbound_during_chunks": false,
+          "deferred_inbound_count": 0
+        }
+      },
+      "proposed_sales_inbox_projection": {
+        "commercial_stage": "diagnostic",
+        "last_intent": "diagnostic_explanation",
+        "diagnostic_status": "not_started",
+        "next_action_hint": "explicar diagnostico e iniciar perguntas"
+      },
+      "usage": {
+        "model": "gpt-5.4-mini",
+        "model_operations": 2,
+        "input_tokens": 9045,
+        "output_tokens": 520,
+        "cost_usd": 0.009124,
+        "handoffs": 1,
+        "repairs": 0
+      },
+      "status": "passed_structural",
+      "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+      "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+    }
+  ]
+}

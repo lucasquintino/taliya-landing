@@ -1,0 +1,439 @@
+{
+  "number": 10,
+  "scenario_id": "waitlist_curiosity",
+  "channel": "whatsapp",
+  "required_proof": "Curiosity does not become waitlist offer.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "como funciona essa lista de espera?"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "tool_call",
+      "name": "get_approved_template_catalog",
+      "arguments": "{\"route_or_family\":\"waitlist\"}"
+    },
+    {
+      "event": "tool_output",
+      "output": {
+        "tool_name": "get_approved_template_catalog",
+        "side_effect_class": "read_only",
+        "commits_state": false,
+        "renders_customer_response": false,
+        "chooses_commercial_route": false,
+        "payload": {
+          "route_or_family": "waitlist",
+          "templates": [
+            {
+              "template_id": "waitlist.ask_missing_city",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_contact_path",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.ask_missing_studio",
+              "required_variables": [],
+              "optional_variables": [
+                "missing_detail_label"
+              ]
+            },
+            {
+              "template_id": "waitlist.joined",
+              "required_variables": [],
+              "optional_variables": [
+                "studio_name",
+                "city_state",
+                "contact_path"
+              ]
+            },
+            {
+              "template_id": "waitlist.offer_after_contract_intent",
+              "required_variables": [
+                "waitlist_context_summary"
+              ],
+              "optional_variables": []
+            },
+            {
+              "template_id": "waitlist.status_preserved",
+              "required_variables": [],
+              "optional_variables": [
+                "waitlist_context_summary"
+              ]
+            }
+          ],
+          "variable_specs": {
+            "city_state": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "City/state supplied or confirmed by the lead."
+            },
+            "contact_path": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Approved contact-path enum; never ask WhatsApp leads for their phone."
+            },
+            "missing_detail_label": {
+              "kind": "enum",
+              "max_length": 0,
+              "allowed_sources": [
+                "runtime_state"
+              ],
+              "validation_rule": "Approved enum for one missing waitlist detail."
+            },
+            "studio_name": {
+              "kind": "short_text",
+              "max_length": 80,
+              "allowed_sources": [
+                "runtime_state",
+                "user_message"
+              ],
+              "validation_rule": "Studio name supplied or confirmed by the lead; separate from person name."
+            },
+            "waitlist_context_summary": {
+              "kind": "long_text",
+              "max_length": 220,
+              "allowed_sources": [
+                "diagnostic_ledger",
+                "runtime_state"
+              ],
+              "validation_rule": "Why waitlist is allowed now, grounded in clear intent and saved context."
+            }
+          },
+          "variable_registry_size": 31
+        },
+        "evidence": [
+          "template_registry"
+        ],
+        "uncertainty": "low"
+      }
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_interest"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "entender como a lista de espera funciona",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Explain how the waitlist works",
+        "answering_template_id": "waitlist.offer_after_contract_intent",
+        "evidence": [
+          "user_message: como funciona essa lista de espera?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "likely_eligible",
+      "intent": "understand_waitlist",
+      "missing_details": [],
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "waitlist.offer_after_contract_intent"
+      ],
+      "variables": [
+        {
+          "name": "waitlist_context_summary",
+          "kind": "long_text",
+          "value": "Lead perguntou como funciona a lista de espera e quer entender o processo.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "user_message: como funciona essa lista de espera?"
+          ],
+          "max_length": 220
+        }
+      ],
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "state_patch": {
+      "handoff": null,
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "safety": {
+      "guardrail_flags": [],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "waitlist_interest",
+      "last_intent": "waitlist_interest",
+      "diagnostic_status": null,
+      "waitlist_status": "likely_eligible",
+      "handoff_status": "not_needed",
+      "next_action_hint": "Answer waitlist function with approved waitlist template"
+    },
+    "delivery": {
+      "chunk_policy": "default"
+    },
+    "confidence": "high",
+    "risks": []
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_waitlist_curiosity",
+    "conversation_id": "spike_conv_waitlist_curiosity",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "waitlist_interest"
+      ],
+      "direct_question": "como funciona essa lista de espera?",
+      "customer_need": "entender como a lista de espera funciona",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [],
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "answer_obligations": [
+      {
+        "obligation": "Explain how the waitlist works",
+        "answered_before_steering": true,
+        "evidence": [
+          "user_message: como funciona essa lista de espera?"
+        ]
+      }
+    ],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "none",
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "likely_eligible",
+      "intent": "understand_waitlist",
+      "missing_details": [],
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "not_needed",
+      "reason": null,
+      "pause_required": false,
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "waitlist.offer_after_contract_intent"
+      ],
+      "variables": {
+        "waitlist_context_summary": {
+          "kind": "long_text",
+          "value": "Lead perguntou como funciona a lista de espera e quer entender o processo.",
+          "source": "diagnostic_ledger",
+          "evidence": [
+            "user_message: como funciona essa lista de espera?"
+          ],
+          "max_length": 220
+        }
+      },
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "safety": {
+      "guardrails": [],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {
+      "delivery": {
+        "defer_inbound_during_chunks": false,
+        "deferred_inbound_count": 0
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "waitlist_interest",
+      "last_intent": "waitlist_interest",
+      "waitlist_status": "likely_eligible",
+      "handoff_status": "not_needed",
+      "next_action_hint": "Answer waitlist function with approved waitlist template"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "default",
+      "render_plan_only": true,
+      "evidence": [
+        "user_message: como funciona essa lista de espera?"
+      ]
+    },
+    "confidence": "high",
+    "risks": [],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 3,
+      "input_tokens": 13176,
+      "output_tokens": 998,
+      "cost_usd": 0.007115,
+      "handoffs": 0,
+      "repairs": 1
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_waitlist_curiosity",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Lead perguntou como funciona a lista de espera e quer entender o processo.",
+      "template_id": "waitlist.offer_after_contract_intent",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Hoje a entrada acontece por uma lista para um numero pequeno de studios. Posso deixar o interesse registrado sem prometer checkout, data ou condicao especial.",
+      "template_id": "waitlist.offer_after_contract_intent",
+      "channel": "whatsapp",
+      "sequence": 2
+    }
+  ],
+  "proposed_state_diff": {
+    "delivery": {
+      "defer_inbound_during_chunks": false,
+      "deferred_inbound_count": 0
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "waitlist_interest",
+    "last_intent": "waitlist_interest",
+    "waitlist_status": "likely_eligible",
+    "handoff_status": "not_needed",
+    "next_action_hint": "Answer waitlist function with approved waitlist template"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 3,
+    "input_tokens": 13176,
+    "output_tokens": 998,
+    "cost_usd": 0.007115,
+    "handoffs": 0,
+    "repairs": 1
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

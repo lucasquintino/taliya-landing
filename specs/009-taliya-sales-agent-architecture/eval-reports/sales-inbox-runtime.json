@@ -1,0 +1,27 @@
+{
+  "feature": "009-taliya-sales-agent-architecture",
+  "createdAt": "2026-05-21T19:21:38.000Z",
+  "target": "http://localhost:3999/api/internal/sales-inbox/leads?limit=10",
+  "releaseGate": "pass",
+  "summary": {
+    "httpStatus": 200,
+    "runtimeGeneratedLeadsVisible": true,
+    "agentV2MetadataVisible": true,
+    "waitlistLeadVisible": true,
+    "whatsappLeadVisible": true,
+    "sensitiveDumpOmitted": true
+  },
+  "checkedFields": [
+    "leadId",
+    "channel",
+    "conversionPath",
+    "commercialStage",
+    "waitlistStatus",
+    "contact.normalizedWhatsapp",
+    "crmAgentDiagnostic",
+    "agentV2.traceId",
+    "agentV2.macroState",
+    "agentV2.estimatedCostUsd",
+    "agentV2.productSourceVersion"
+  ]
+}

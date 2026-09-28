@@ -1,0 +1,405 @@
+{
+  "number": 12,
+  "scenario_id": "human_handoff",
+  "channel": "whatsapp",
+  "required_proof": "Handoff pause is proposed in state, not just worded.",
+  "input_transcript": [
+    {
+      "role": "system",
+      "content": "[runtime context] No stored conversation state: this is the first contact. The state read tools would return nothing; do not call them this turn."
+    },
+    {
+      "role": "user",
+      "content": "quero falar com uma pessoa"
+    }
+  ],
+  "starting_agent": "taliya_triage_agent",
+  "agent_path": [
+    {
+      "event": "start",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": "taliya_triage_agent",
+      "from_agent": null,
+      "to_agent": "taliya_handoff_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "handoff",
+      "agent": null,
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_handoff_agent",
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    },
+    {
+      "event": "final",
+      "agent": "taliya_handoff_agent",
+      "from_agent": null,
+      "to_agent": null,
+      "tool_name": null,
+      "guardrail_name": null,
+      "evidence": []
+    }
+  ],
+  "tool_calls": [
+    {
+      "event": "handoff",
+      "from_agent": "taliya_triage_agent",
+      "to_agent": "taliya_handoff_agent"
+    }
+  ],
+  "sdk_final_output": {
+    "schema_version": "012.sdk_turn_output.v1",
+    "commercial_understanding": {
+      "intents": [
+        "handoff_request"
+      ],
+      "direct_question": null,
+      "customer_need": "Falar com uma pessoa",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "handoff_request",
+          "kind": "other",
+          "raw_text": "quero falar com uma pessoa",
+          "value_text": "customer requests human agent",
+          "currency": null,
+          "evidence": [
+            "quero falar com uma pessoa"
+          ]
+        }
+      ],
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "handoff",
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "handoff",
+      "missing_details": [],
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "requested",
+      "reason": "Customer explicitly asked to speak with a person.",
+      "pause_required": true,
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "template_plan": {
+      "template_ids": [
+        "handoff.acknowledge",
+        "handoff.paused"
+      ],
+      "variables": [
+        {
+          "name": "handoff_reason",
+          "kind": "short_text",
+          "value": "Você pediu para falar com uma pessoa.",
+          "source": "user_message",
+          "evidence": [
+            "quero falar com uma pessoa"
+          ],
+          "max_length": 120
+        }
+      ],
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "state_patch": {
+      "handoff": {
+        "status": "requested",
+        "pause_ai": true
+      },
+      "delivery": null
+    },
+    "safety": {
+      "guardrail_flags": [
+        "human_handoff_requested"
+      ],
+      "uncertainty": "low"
+    },
+    "sales_inbox_projection": {
+      "commercial_stage": "handoff",
+      "last_intent": "handoff_request",
+      "diagnostic_status": null,
+      "waitlist_status": null,
+      "handoff_status": "requested",
+      "next_action_hint": "pause_ai_and_route_to_human"
+    },
+    "delivery": {
+      "chunk_policy": "none"
+    },
+    "confidence": "high",
+    "risks": [
+      "Need to pause automation and route to human support."
+    ]
+  },
+  "turn_proposal": {
+    "schema_version": "012.turn_proposal.v1",
+    "turn_id": "spike_turn_human_handoff",
+    "conversation_id": "spike_conv_human_handoff",
+    "channel": "whatsapp",
+    "starting_agent": "taliya_triage_agent",
+    "agent_path": [
+      {
+        "event": "start",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": "taliya_triage_agent",
+        "from_agent": null,
+        "to_agent": "taliya_handoff_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "handoff",
+        "agent": null,
+        "from_agent": "taliya_triage_agent",
+        "to_agent": "taliya_handoff_agent",
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      },
+      {
+        "event": "final",
+        "agent": "taliya_handoff_agent",
+        "from_agent": null,
+        "to_agent": null,
+        "tool_name": null,
+        "guardrail_name": null,
+        "evidence": []
+      }
+    ],
+    "commercial_understanding": {
+      "intents": [
+        "handoff_request"
+      ],
+      "direct_question": null,
+      "customer_need": "Falar com uma pessoa",
+      "pain_context": null,
+      "source_context": null,
+      "mixed_intent": false,
+      "extracted_facts": [
+        {
+          "key": "handoff_request",
+          "kind": "other",
+          "raw_text": "quero falar com uma pessoa",
+          "value": "customer requests human agent",
+          "evidence": [
+            "quero falar com uma pessoa"
+          ]
+        }
+      ],
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "answer_obligations": [],
+    "product_claims": [],
+    "diagnostic_proposal": {
+      "ledger_updates": [],
+      "next_question_key": null,
+      "final_diagnostic_ready": false,
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "demo_proposal": {
+      "status": "not_applicable",
+      "next_step": "handoff",
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "waitlist_proposal": {
+      "eligibility": "not_applicable",
+      "intent": "handoff",
+      "missing_details": [],
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "handoff_proposal": {
+      "status": "requested",
+      "reason": "Customer explicitly asked to speak with a person.",
+      "pause_required": true,
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "template_proposal": {
+      "template_ids": [
+        "handoff.acknowledge",
+        "handoff.paused"
+      ],
+      "variables": {
+        "handoff_reason": {
+          "kind": "short_text",
+          "value": "Você pediu para falar com uma pessoa.",
+          "source": "user_message",
+          "evidence": [
+            "quero falar com uma pessoa"
+          ],
+          "max_length": 120
+        }
+      },
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "safety": {
+      "guardrails": [
+        {
+          "name": "human_handoff_requested",
+          "outcome": "flagged"
+        }
+      ],
+      "uncertainty": "low"
+    },
+    "state_patch_proposal": {
+      "handoff": {
+        "status": "requested",
+        "pause_ai": true
+      }
+    },
+    "sales_inbox_projection_proposal": {
+      "commercial_stage": "handoff",
+      "last_intent": "handoff_request",
+      "handoff_status": "requested",
+      "next_action_hint": "pause_ai_and_route_to_human"
+    },
+    "delivery_proposal": {
+      "chunk_policy": "none",
+      "render_plan_only": true,
+      "evidence": [
+        "quero falar com uma pessoa"
+      ]
+    },
+    "confidence": "high",
+    "risks": [
+      "Need to pause automation and route to human support."
+    ],
+    "usage": {
+      "model": "gpt-5.4-mini",
+      "model_operations": 2,
+      "input_tokens": 6621,
+      "output_tokens": 478,
+      "cost_usd": 0.004093,
+      "handoffs": 1,
+      "repairs": 0
+    }
+  },
+  "validator_result": {
+    "decision_id": "sdk_spike_turn_human_handoff",
+    "status": "passed",
+    "errors": [],
+    "warnings": [],
+    "repair_attempt_count": 0,
+    "final_disposition": "accepted"
+  },
+  "rendered_preview": [
+    {
+      "text": "Claro. Vou deixar uma pessoa assumir daqui.",
+      "template_id": "handoff.acknowledge",
+      "channel": "whatsapp",
+      "sequence": 1
+    },
+    {
+      "text": "Tambem deixo o contexto salvo para voce nao precisar repetir tudo.",
+      "template_id": "handoff.acknowledge",
+      "channel": "whatsapp",
+      "sequence": 2
+    },
+    {
+      "text": "A conversa segue com uma pessoa da Taliya; mantive sua mensagem registrada.",
+      "template_id": "handoff.paused",
+      "channel": "whatsapp",
+      "sequence": 3
+    }
+  ],
+  "proposed_state_diff": {
+    "handoff": {
+      "status": "requested",
+      "pause_ai": true
+    }
+  },
+  "proposed_sales_inbox_projection": {
+    "commercial_stage": "handoff",
+    "last_intent": "handoff_request",
+    "handoff_status": "requested",
+    "next_action_hint": "pause_ai_and_route_to_human"
+  },
+  "usage": {
+    "model": "gpt-5.4-mini",
+    "model_operations": 2,
+    "input_tokens": 6621,
+    "output_tokens": 478,
+    "cost_usd": 0.004093,
+    "handoffs": 1,
+    "repairs": 0
+  },
+  "status": "passed_structural",
+  "pass_fail_reason": "Structured proposal validated and approved templates rendered. Conversational-quality pass/fail still requires the manual review described in the approval packet.",
+  "comparison_notes": "Compare manually against the local Spec 011 path evidence; no new paid Spec 011 calls are allowed for this comparison."
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "012.luna_paid_gate_budget_ledger.v1",
+  "task": "T012-057",
+  "model": "gpt-5.6-luna",
+  "approval": "Aprovo o T012-057 com gpt-5.6-luna e teto cumulativo máximo de US$ 0,75.",
+  "approved_cap_usd": 0.75,
+  "user_reported_balance_usd": 1.03,
+  "operational_reserve_usd": 0.10,
+  "planned_spend_cap_usd": 0.65,
+  "reported_spend_usd": 0.691486,
+  "unreconciled_spend_reserve_usd": 0.02,
+  "operational_accounted_spend_usd": 0.711486,
+  "remaining_planned_spend_usd": -0.061486,
+  "remaining_approved_cap_usd": 0.038514,
+  "phases": [
+    {
+      "id": "canary",
+      "allocated_cap_usd": 0.03,
+      "status": "passed_after_no_cost_fix",
+      "spent_usd": 0.027981,
+      "failed_attempt_evidence": "canary/20260805T002009Z/report.md",
+      "passed_rerun_evidence": "canary-rerun/20260805T003332Z/report.md",
+      "resolved_failure": "price_question_missing_diagnostic_offer"
+    },
+    {
+      "id": "targeted",
+      "allocated_cap_usd": 0.08,
+      "status": "passed_across_isolated_recovery_runs",
+      "reported_spend_usd": 0.024483,
+      "unreconciled_spend_reserve_usd": 0.02,
+      "evidence": "targeted/20260805T003434Z/report.md",
+      "passed_scenarios": [
+        "luna-price-objection-context",
+        "luna-waitlist-hesitation",
+        "luna-diagnostic-acceptance-no-regreeting"
+      ],
+      "stopped_scenario": "luna-waitlist-hesitation",
+      "stop_reason": "invalid completed-diagnostic fixture caused Sales Inbox projection validation to raise before the harness returned complete usage",
+      "no_cost_fix_evidence": "targeted-preflight-after-fix/preflight-20260805T003758Z/preflight.json",
+      "passed_waitlist_rerun_evidence": "targeted-waitlist-rerun/20260805T004909Z/report.md",
+      "passed_diagnostic_acceptance_evidence": "targeted-diagnostic-acceptance/20260805T005006Z/report.md",
+      "pending_scenarios": []
+    },
+    {
+      "id": "canonical_round_1",
+      "allocated_cap_usd": 0.18,
+      "status": "failed_6_of_9_stopped_for_no_cost_correction",
+      "reported_spend_usd": 0.118506,
+      "evidence": "canonical-round-1/20260805T005102Z/report.md",
+      "passed_scenarios": 6,
+      "failed_scenarios": [
+        "final-pain-first",
+        "final-instagram-interest",
+        "final-waitlist-joined"
+      ],
+      "runner_stop_defect": "batch continued after failed scenario; no further paid run until fail-fast is covered by a no-cost regression"
+    },
+    {
+      "id": "canonical_round_1_failed_scenario_retests",
+      "allocated_cap_usd": 0.042,
+      "status": "passed_3_of_3",
+      "reported_spend_usd": 0.015518,
+      "passed_scenarios": [
+        "final-pain-first",
+        "final-instagram-interest",
+        "final-waitlist-joined"
+      ],
+      "pending_scenarios": [],
+      "evidence": [
+        "canonical-failed-rerun-pain/20260805T011218Z/report.md",
+        "canonical-failed-rerun-instagram/20260805T011311Z/report.md",
+        "canonical-failed-rerun-waitlist/20260805T011343Z/report.md"
+      ]
+    },
+    {
+      "id": "canonical_success_round_1",
+      "allocated_cap_usd": 0.18,
+      "status": "passed_as_consecutive_success_round_1",
+      "spent_usd": 0.124465,
+      "passed_scenarios": 9,
+      "evidence": "canonical-round-1-rerun/20260805T011429Z/report.md",
+      "human_review": "canonical-round-1-rerun-review.md"
+    },
+    {
+      "id": "canonical_success_round_2",
+      "allocated_cap_usd": 0.18,
+      "status": "passed",
+      "spent_usd": 0.123919,
+      "passed_scenarios": 9,
+      "evidence": "canonical-success-round-2/20260805T011813Z/report.md",
+      "human_review": "canonical-success-round-2-review.md"
+    },
+    {
+      "id": "canonical_success_round_3",
+      "allocated_cap_usd": 0.18,
+      "status": "automated_9_of_9_manual_review_failed",
+      "spent_usd": 0.122368,
+      "passed_scenarios": 9,
+      "evidence": "canonical-success-round-3/20260805T012022Z/report.md",
+      "manual_review_failure": "final-whatsapp-question rendered redundant product.whatsapp_direct plus product.how_it_works_direct content"
+    },
+    {
+      "id": "final_whatsapp_answer_adequacy_retest",
+      "allocated_cap_usd": 0.012,
+      "status": "passed",
+      "spent_usd": 0.006085,
+      "passed_scenarios": 1,
+      "evidence": "final-whatsapp-retest/20260805T012646Z/report.md"
+    },
+    {
+      "id": "canonical_success_round_3_recovery",
+      "allocated_cap_usd": 0.14,
+      "status": "passed_human_reviewed",
+      "spent_usd": 0.12207,
+      "passed_scenarios": 9,
+      "evidence": "canonical-success-round-3-recovery/20260805T012739Z/report.md",
+      "human_review": "canonical-success-round-3-recovery-review.md"
+    },
+    {
+      "id": "production_smoke_t012_059",
+      "allocated_cap_usd": 0.012,
+      "status": "passed_human_reviewed",
+      "spent_usd": 0.006091,
+      "passed_scenarios": 1,
+      "evidence": "../t012-059-luna-production-switch.md",
+      "runtime_run_id": "run_fce0735f630f4f04aa8ee661569d44cc",
+      "model_operations": 2,
+      "repairs": 0
+    }
+  ],
+  "stop_conditions": [
+    "runtime_or_model_access_failure",
+    "failed_scenario",
+    "safety_or_internal_language_leak",
+    "silent_successful_turn",
+    "incomplete_trace_or_usage",
+    "phase_or_cumulative_budget_cap"
+  ]
+}

@@ -1,0 +1,426 @@
+{
+  "schema_version": "011.shadow_compare.samples.v1",
+  "review_basis": [
+    "regression-cases.md",
+    "eval-plan.md",
+    "T011-097"
+  ],
+  "golden_transcript_status": {
+    "versioned_golden_transcripts_complete": false,
+    "open_tasks": [
+      "T011-019",
+      "T011-019A"
+    ],
+    "comparison_basis": "manual_review_samples_until_phase_10_goldens",
+    "phase_10_claim": "not_satisfied_by_this_fixture"
+  },
+  "samples": [
+    {
+      "id": "shadow_widget_price_497_plan_fit_manual",
+      "title": "Widget price plus plan-fit with 497 as plan price and 80 as student count",
+      "review_cases": [
+        "RC-011-003",
+        "RC-011-017",
+        "RC-011-019",
+        "RC-011-040",
+        "RC-011-072"
+      ],
+      "channel": "widget",
+      "conversation": {
+        "conversation_id": "shadow_compare_widget_price_plan_fit_1",
+        "lead_id": "lead_shadow_compare_widget_1",
+        "channel_conversation_id": "widget_shadow_compare_channel_1",
+        "source": "pilates_landing",
+        "entry_intent": "floating_agent"
+      },
+      "sender": {
+        "name": "Ana"
+      },
+      "message": {
+        "idempotency_key": "widget:shadow_compare:price_plan_fit:1",
+        "channel_message_id": "widget_shadow_compare_msg_1",
+        "type": "text",
+        "text": "Vi o plano de 497 e tenho 80 alunos. Quanto custa e serve pro meu studio?",
+        "timestamp": "2026-05-31T12:10:00Z"
+      },
+      "metadata": {
+        "page_path": "/pilates",
+        "source_section": "floating_agent"
+      },
+      "decision": {
+        "schema_version": "011.0",
+        "role": "product",
+        "route": "product",
+        "previous_state": "new_lead",
+        "current_state": "product_question",
+        "next_state": "product_question",
+        "detected_intents": [
+          "price_question",
+          "plan_fit_question"
+        ],
+        "direct_question_present": true,
+        "direct_question_answered_first": true,
+        "facts": [
+          {
+            "key": "active_students_or_size",
+            "value": 80,
+            "source": "user_message",
+            "reliability": "customer_provided",
+            "confidence": "high",
+            "evidence": [
+              "inbound.text"
+            ]
+          }
+        ],
+        "numeric_interpretations": [
+          {
+            "raw_text": "497",
+            "kind": "plan_price",
+            "value": 497,
+            "currency": "BRL",
+            "evidence": [
+              "inbound.text"
+            ],
+            "confidence": "high"
+          },
+          {
+            "raw_text": "80",
+            "kind": "student_count",
+            "value": 80,
+            "evidence": [
+              "inbound.text"
+            ],
+            "confidence": "high"
+          }
+        ],
+        "language_policy": {
+          "register": "studio_owner_practical",
+          "crm_term_policy": "avoid_by_default"
+        },
+        "template_plan": {
+          "items": [
+            {
+              "template_id": "product.price_direct",
+              "variables": {
+                "plan_price_summary": {
+                  "kind": "long_text",
+                  "value": "Hoje os planos sao Base R$ 197/mes, Essencial R$ 497/mes, Avance R$ 897/mes e Completo R$ 1.497/mes.",
+                  "source": "official_product_knowledge",
+                  "evidence": [
+                    "product_knowledge.prices"
+                  ],
+                  "max_length": 360
+                }
+              }
+            },
+            {
+              "template_id": "product.plan_fit_with_diagnostic",
+              "variables": {
+                "plan_fit_context": {
+                  "kind": "short_text",
+                  "value": "Com 80 alunos, eu nao fecharia o plano so por esse numero.",
+                  "source": "user_message",
+                  "evidence": [
+                    "inbound.text"
+                  ],
+                  "max_length": 180
+                }
+              }
+            }
+          ]
+        },
+        "policy_checks": {
+          "direct_question_answered_first": true,
+          "diagnostic_timing_ok": true,
+          "waitlist_timing_ok": true,
+          "official_facts_only": true,
+          "no_internal_text_leak": true,
+          "no_early_contact_capture": true,
+          "no_human_overlap": true
+        },
+        "confidence": "high"
+      },
+      "model_usage": {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 812,
+        "output_tokens": 246,
+        "cost_usd": 0.0021
+      },
+      "expected": {
+        "role": "product",
+        "route": "product",
+        "current_state": "product_question",
+        "next_state": "product_question",
+        "detected_intents": [
+          "price_question",
+          "plan_fit_question"
+        ],
+        "direct_question_answered_first": true,
+        "diagnostic_action": "none",
+        "waitlist_status": "none",
+        "demo_status": "not_offered",
+        "handoff_status": "none",
+        "numeric_interpretations": [
+          {
+            "raw_text": "497",
+            "kind": "plan_price",
+            "value": 497
+          },
+          {
+            "raw_text": "80",
+            "kind": "student_count",
+            "value": 80
+          }
+        ],
+        "template_ids": [
+          "product.price_direct",
+          "product.plan_fit_with_diagnostic"
+        ],
+        "rendered_text_must_include": [
+          "Base R$ 197/mes",
+          "Essencial R$ 497/mes",
+          "Com 80 alunos",
+          "diagnostico gratuito"
+        ],
+        "rendered_text_must_not_include": [
+          "Reliable profile first name",
+          "lead came from the site",
+          "497 alunos",
+          "checkout",
+          "VIP"
+        ],
+        "sales_inbox": {
+          "commercial_stage": "product_question",
+          "diagnostic_status": "not_started",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "operator_next_action": "none",
+          "source_labels": {
+            "channel": "widget",
+            "source": "pilates_landing",
+            "entry_intent": "floating_agent",
+            "channel_conversation_id": "widget_shadow_compare_channel_1",
+            "state_source": "accepted_decision"
+          }
+        }
+      }
+    },
+    {
+      "id": "shadow_whatsapp_diagnostic_priority_manual",
+      "title": "Taliya-owned WhatsApp diagnostic continues without repeating answered fields",
+      "review_cases": [
+        "RC-011-005",
+        "RC-011-006",
+        "RC-011-007",
+        "RC-011-032",
+        "RC-011-040",
+        "RC-011-072"
+      ],
+      "channel": "whatsapp",
+      "conversation": {
+        "conversation_id": "shadow_compare_whatsapp_diagnostic_1",
+        "lead_id": "lead_shadow_compare_whatsapp_1",
+        "channel_conversation_id": "wa_shadow_compare_channel_1",
+        "source": "taliya_whatsapp",
+        "entry_intent": "taliya_owned_whatsapp"
+      },
+      "sender": {
+        "name": "Bruna",
+        "whatsapp_phone": "+5511999991111"
+      },
+      "message": {
+        "idempotency_key": "wa:shadow_compare:diagnostic_priority:1",
+        "channel_message_id": "wamid_shadow_compare_1",
+        "type": "text",
+        "text": "Hoje eu controlo reposicao em planilha e WhatsApp, mas esta ficando pesado.",
+        "timestamp": "2026-05-31T12:12:00Z"
+      },
+      "metadata": {
+        "source_section": "taliya_owned_whatsapp"
+      },
+      "initial_state": {
+        "current_agent_name": "taliya_commercial_spec011_diagnostic_agent",
+        "summary": "Lead esta no diagnostico gratuito e ja respondeu tamanho, dor principal e detalhe da dor.",
+        "diagnostic": {
+          "status": "in_progress",
+          "ledger": [
+            {
+              "question_key": "active_students_or_size",
+              "status": "answered",
+              "answer_value": "120 alunos",
+              "confidence": "high",
+              "evidence": [
+                "historical:user said 120 alunos"
+              ],
+              "may_ask_again": false
+            },
+            {
+              "question_key": "main_pain",
+              "status": "answered",
+              "answer_value": "reposicao baguncada",
+              "confidence": "high",
+              "evidence": [
+                "historical:reposicao baguncada"
+              ],
+              "may_ask_again": false
+            },
+            {
+              "question_key": "pain_detail",
+              "status": "answered",
+              "answer_value": "equipe perde tempo conferindo faltas e encaixes",
+              "confidence": "high",
+              "evidence": [
+                "historical:faltas e encaixes"
+              ],
+              "may_ask_again": false
+            },
+            {
+              "question_key": "current_process",
+              "status": "missing",
+              "confidence": "low",
+              "evidence": [],
+              "may_ask_again": true
+            },
+            {
+              "question_key": "priority",
+              "status": "missing",
+              "confidence": "low",
+              "evidence": [],
+              "may_ask_again": true
+            },
+            {
+              "question_key": "urgency",
+              "status": "missing",
+              "confidence": "low",
+              "evidence": [],
+              "may_ask_again": true
+            }
+          ]
+        },
+        "waitlist": {
+          "status": "none"
+        },
+        "demo": {
+          "status": "not_offered"
+        }
+      },
+      "decision": {
+        "schema_version": "011.0",
+        "role": "diagnostic",
+        "route": "diagnostic",
+        "previous_state": "diagnostic_in_progress",
+        "current_state": "diagnostic_in_progress",
+        "next_state": "diagnostic_in_progress",
+        "detected_intents": [
+          "diagnostic_answer"
+        ],
+        "direct_question_present": false,
+        "direct_question_answered_first": true,
+        "diagnostic": {
+          "action": "ask_next",
+          "ledger_updates": [
+            {
+              "question_key": "current_process",
+              "status": "answered",
+              "answer_value": "planilha e WhatsApp",
+              "evidence": [
+                "inbound.text"
+              ],
+              "confidence": "high",
+              "may_ask_again": false
+            }
+          ],
+          "next_question_key": "priority"
+        },
+        "language_policy": {
+          "register": "studio_owner_practical",
+          "crm_term_policy": "avoid_by_default"
+        },
+        "template_plan": {
+          "items": [
+            {
+              "template_id": "diagnostic.ask_priority",
+              "variables": {
+                "answer_feedback": {
+                  "kind": "short_text",
+                  "value": "Entendi: hoje a reposicao passa por planilha e WhatsApp.",
+                  "source": "user_message",
+                  "evidence": [
+                    "inbound.text"
+                  ],
+                  "max_length": 180
+                }
+              }
+            }
+          ]
+        },
+        "policy_checks": {
+          "direct_question_answered_first": true,
+          "diagnostic_timing_ok": true,
+          "waitlist_timing_ok": true,
+          "official_facts_only": true,
+          "no_internal_text_leak": true,
+          "no_early_contact_capture": true,
+          "no_human_overlap": true
+        },
+        "confidence": "high"
+      },
+      "model_usage": {
+        "model": "gpt-5.4-mini",
+        "input_tokens": 754,
+        "output_tokens": 219,
+        "cost_usd": 0.0019
+      },
+      "expected": {
+        "role": "diagnostic",
+        "route": "diagnostic",
+        "current_state": "diagnostic_in_progress",
+        "next_state": "diagnostic_in_progress",
+        "detected_intents": [
+          "diagnostic_answer"
+        ],
+        "direct_question_answered_first": true,
+        "diagnostic_action": "ask_next",
+        "next_question_key": "priority",
+        "waitlist_status": "none",
+        "demo_status": "not_offered",
+        "handoff_status": "none",
+        "ledger_updates": [
+          {
+            "question_key": "current_process",
+            "status": "answered",
+            "answer_value": "planilha e WhatsApp"
+          }
+        ],
+        "template_ids": [
+          "diagnostic.ask_priority"
+        ],
+        "rendered_text_must_include": [
+          "reposicao passa por planilha e WhatsApp",
+          "qual tarefa voce mais gostaria"
+        ],
+        "rendered_text_must_not_include": [
+          "nao entendi",
+          "quantos alunos",
+          "Reliable profile first name",
+          "lead came from the site",
+          "gargalo principal"
+        ],
+        "sales_inbox": {
+          "commercial_stage": "diagnostic_in_progress",
+          "diagnostic_status": "in_progress",
+          "waitlist_status": "none",
+          "handoff_status": "none",
+          "operator_next_action": "none",
+          "source_labels": {
+            "channel": "whatsapp",
+            "source": "taliya_whatsapp",
+            "entry_intent": "taliya_owned_whatsapp",
+            "channel_conversation_id": "wa_shadow_compare_channel_1",
+            "state_source": "accepted_decision"
+          }
+        }
+      }
+    }
+  ]
+}
