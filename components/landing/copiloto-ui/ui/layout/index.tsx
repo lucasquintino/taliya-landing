@@ -394,9 +394,7 @@ export function ScreenLayout({
             </ScrollView>
           )}
           {footer ? (
-            <ActionFooter safeAreaBottom={variant !== "principal"}>
-              {footer}
-            </ActionFooter>
+            <ActionFooter>{footer}</ActionFooter>
           ) : null}
         </View>
         {showNavigation && navigation ? (
