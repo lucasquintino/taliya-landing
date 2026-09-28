@@ -178,13 +178,13 @@ export default function PrivacyPage() {
 
             <PolicySection id="retencao" title="Retenção e exclusão">
               <p>
-                Mantemos os dados enquanto forem necessários para responder e acompanhar sua solicitação, operar os
-                canais de atendimento, cumprir obrigações legais ou proteger direitos. O prazo pode variar conforme o
-                tipo de registro e a situação.
+                Os registros de leads e conversas podem permanecer na caixa interna de atendimento até que a equipe os
+                exclua. Atualmente, eles não são apagados automaticamente após um número fixo de dias.
               </p>
               <p>
-                Quando deixarem de ser necessários, os dados serão eliminados ou anonimizados quando possível, salvo
-                quando a lei permitir ou exigir sua conservação.
+                Você pode solicitar a exclusão pelo contato de privacidade desta página. O pedido será analisado conforme
+                a situação e os dados poderão ser mantidos quando houver obrigação legal ou necessidade de exercer
+                direitos.
               </p>
             </PolicySection>
 
