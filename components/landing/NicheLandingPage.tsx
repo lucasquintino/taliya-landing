@@ -46,7 +46,6 @@ export function NicheLandingPage({ config }: Props) {
   const [isLoaderExiting, setIsLoaderExiting] = useState(false);
   const [isLoaderVisible, setIsLoaderVisible] = useState(true);
   const [isPageReady, setIsPageReady] = useState(false);
-  const [isLoaderMotionReady, setIsLoaderMotionReady] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -56,23 +55,31 @@ export function NicheLandingPage({ config }: Props) {
   useEffect(() => {
     let isMounted = true;
     const timers: number[] = [];
-    const motionFrame = window.requestAnimationFrame(() => {
-      if (isMounted) setIsLoaderMotionReady(true);
-    });
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const minimumDuration = new Promise<void>((resolve) => {
-      timers.push(window.setTimeout(resolve, prefersReducedMotion ? 520 : 2600));
+    const entryAnimation = new Promise<void>((resolve) => {
+      if (prefersReducedMotion) {
+        timers.push(window.setTimeout(resolve, 520));
+        return;
+      }
+
+      const animation = document.querySelector<HTMLElement>(".landing-loader-logo-dot-flight")?.getAnimations()[0];
+      if (animation) {
+        void animation.finished.then(() => resolve(), () => resolve());
+        return;
+      }
+
+      timers.push(window.setTimeout(resolve, 2150));
     });
 
     document.body.classList.add("landing-page-loading");
 
-    waitForLandingEntryReadiness(minimumDuration).then(() => {
+    waitForLandingEntryReadiness(entryAnimation).then(() => {
       if (!isMounted) return;
       lockHeroEntryMetrics();
+      setIsPageReady(true);
       setIsLoaderExiting(true);
       timers.push(window.setTimeout(() => {
         if (!isMounted) return;
-        setIsPageReady(true);
         setIsLoaderVisible(false);
         document.body.classList.remove("landing-page-loading");
       }, 280));
@@ -80,7 +87,6 @@ export function NicheLandingPage({ config }: Props) {
 
     return () => {
       isMounted = false;
-      window.cancelAnimationFrame(motionFrame);
       timers.forEach((timer) => window.clearTimeout(timer));
       document.body.classList.remove("landing-page-loading");
       unlockHeroEntryMetrics();
@@ -138,6 +144,9 @@ export function NicheLandingPage({ config }: Props) {
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          if (entry.target.id === "fale-do-seu-jeito") {
+            entry.target.classList.toggle("is-motion-visible", entry.isIntersecting);
+          }
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
           }
@@ -414,7 +423,7 @@ export function NicheLandingPage({ config }: Props) {
   if (!isPageReady && !isLoaderVisible) {
     return (
       <main className={`landing-page-loader ${isLoaderExiting ? "is-exiting" : ""}`} aria-busy="true" aria-label="Carregando página">
-        <div className={`landing-loader-shell landing-loader-taliya ${isLoaderMotionReady ? "is-motion-ready" : ""}`} aria-hidden="true">
+        <div className="landing-loader-shell landing-loader-taliya is-motion-ready" aria-hidden="true">
           <svg className="landing-loader-logo-mark" viewBox="0 0 272 224" focusable="false">
             <path
               className="landing-loader-logo-body"
@@ -454,7 +463,7 @@ export function NicheLandingPage({ config }: Props) {
       </main>
       {isLoaderVisible ? (
         <div className={`landing-page-loader ${isLoaderExiting ? "is-exiting" : ""}`} aria-busy="true" aria-label="Carregando pÃ¡gina" role="status">
-          <div className={`landing-loader-shell landing-loader-taliya ${isLoaderMotionReady ? "is-motion-ready" : ""}`} aria-hidden="true">
+          <div className="landing-loader-shell landing-loader-taliya is-motion-ready" aria-hidden="true">
             <svg className="landing-loader-logo-mark" viewBox="0 0 272 224" focusable="false">
               <path
                 className="landing-loader-logo-body"
@@ -471,10 +480,10 @@ export function NicheLandingPage({ config }: Props) {
   );
 }
 
-async function waitForLandingEntryReadiness(minimumDuration: Promise<void>) {
+async function waitForLandingEntryReadiness(entryAnimation: Promise<void>) {
   await nextPaint();
-  await Promise.all([waitForFonts(), waitForWindowLoad(), waitForCriticalImages(), minimumDuration]);
-  await waitForHeroLayoutStability();
+  await Promise.all([waitForFonts(), waitForWindowLoad(), waitForCriticalImages()]);
+  await Promise.all([waitForHeroLayoutStability(), entryAnimation]);
   await nextPaint();
 }
 

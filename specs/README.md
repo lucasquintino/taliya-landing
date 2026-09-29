@@ -1,3 +1,12 @@
+# Specs do repositório
+
+Programa ativo: [013-fundacao-e-contratos](013-fundacao-e-contratos/spec.md).
+013–025 incorporadas do plano integral v3, com apenas 013 em execução.
+Status/matriz: [docs/taliya-sdd](../docs/taliya-sdd/README.md).
+O ponteiro `.specify/feature.json` é a fonte de seleção; branch Git não renumera specs.
+
+## Histórico preservado
+
 # Specs do repositório-base e da migração
 
 - Os specs já existentes na raiz permanecem como vieram do repositório de origem.

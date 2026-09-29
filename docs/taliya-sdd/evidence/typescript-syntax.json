@@ -1,0 +1,6 @@
+{
+  "scope": "syntax_only_not_build_or_typecheck",
+  "typescript_version": "5.8.3",
+  "files_checked": 130,
+  "errors": []
+}

@@ -1,0 +1,916 @@
+[
+  {
+    "id": "T013-01",
+    "spec": "013",
+    "description": "Gerar inventário e matriz de autoridade a partir do commit atual; resolver rotas Internal locais/remotas.",
+    "requirement_ids": [
+      "R013-01"
+    ],
+    "status": "blocked",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md",
+      "docs/taliya-sdd/evidence/billing-source-search.json"
+    ]
+  },
+  {
+    "id": "T013-02",
+    "spec": "013",
+    "description": "Registrar contratos existentes de conta/negócio/acesso e contratos-alvo de oferta, checkout, assinatura e webhooks Asaas.",
+    "requirement_ids": [
+      "R013-01",
+      "R013-03"
+    ],
+    "status": "completed",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md",
+      "docs/taliya-sdd/contracts/current-contracts.md",
+      "docs/taliya-sdd/DECISAO_BILLING_2026-09-29.md"
+    ]
+  },
+  {
+    "id": "T013-03",
+    "spec": "013",
+    "description": "Aplicar o adendo scoped de AGENTS/constituição; arquivar regras antigas sem excluí-las.",
+    "requirement_ids": [
+      "R013-02"
+    ],
+    "status": "completed",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ]
+  },
+  {
+    "id": "T013-04",
+    "spec": "013",
+    "description": "Verificar Spec Kit instalado, scripts ps/sh/py e disponibilidade de converge; fixar versão e registrar comandos corretos.",
+    "requirement_ids": [
+      "R013-04"
+    ],
+    "status": "completed",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ]
+  },
+  {
+    "id": "T013-05",
+    "spec": "013",
+    "description": "Salvar baselines de desktop/mobile e mapa de dependências materiais/contas/políticas; não ativar serviços pagos.",
+    "requirement_ids": [
+      "R013-05"
+    ],
+    "status": "completed",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ]
+  },
+  {
+    "id": "T013-06",
+    "spec": "013",
+    "description": "Revisar checklist de requisitos, plan/tasks e registrar evidências sanitizadas antes de liberar a 014/015.",
+    "requirement_ids": [
+      "R013-01",
+      "R013-02",
+      "R013-03",
+      "R013-04",
+      "R013-05"
+    ],
+    "status": "in_progress",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ]
+  },
+  {
+    "id": "T014-01",
+    "spec": "014",
+    "description": "Mapear entidades existentes; definir relações e projeções comerciais sem duplicar identidade ou billing.",
+    "requirement_ids": [
+      "R014-02"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T014-02",
+    "spec": "014",
+    "description": "Integrar staff auth e RBAC viewer/operator/admin; eliminar token da URL e header de ator não confiável.",
+    "requirement_ids": [
+      "R014-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T014-03",
+    "spec": "014",
+    "description": "Adicionar sessão web opaca e validação server-side de posse; vincular conta somente após autenticação.",
+    "requirement_ids": [
+      "R014-02",
+      "R014-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T014-04",
+    "spec": "014",
+    "description": "Migrar somente tabelas/índices necessários com rollback; revisar pool/TLS e permissões dos leitores analíticos.",
+    "requirement_ids": [
+      "R014-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T014-05",
+    "spec": "014",
+    "description": "Implementar saneamento de logs, estados de consentimento e caminho auditável de exclusão.",
+    "requirement_ids": [
+      "R014-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T014-06",
+    "spec": "014",
+    "description": "Executar testes de autorização/IDOR/merge/produção sem banco; registrar evidências.",
+    "requirement_ids": [
+      "R014-01",
+      "R014-02",
+      "R014-03",
+      "R014-04",
+      "R014-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-01",
+    "spec": "015",
+    "description": "Consolidar capacidades reais por integração/documento aprovado e remover catálogo comercial de Pilates do caminho v2.",
+    "requirement_ids": [
+      "R015-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-02",
+    "spec": "015",
+    "description": "Implementar fonte server-side e leitor da oferta versionada, com valores aprovados em centavos e disponibilidade explícita.",
+    "requirement_ids": [
+      "R015-02",
+      "R015-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-03",
+    "spec": "015",
+    "description": "Definir schema do catálogo compartilhado e pasta/serviço já existente para armazenamento.",
+    "requirement_ids": [
+      "R015-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-04",
+    "spec": "015",
+    "description": "Importar somente vídeos/demos/UGCs entregues e autorizados; preparar transcrição/resumo/caption.",
+    "requirement_ids": [
+      "R015-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-05",
+    "spec": "015",
+    "description": "Implementar validação de publicação, URL, revisão e expiração de material; não criar CMS novo.",
+    "requirement_ids": [
+      "R015-03",
+      "R015-04",
+      "R015-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-06",
+    "spec": "015",
+    "description": "Convergir oferta, billing e catálogo; testar mudança de versão/material em conversa e registrar guia de operação.",
+    "requirement_ids": [
+      "R015-01",
+      "R015-02",
+      "R015-03",
+      "R015-04",
+      "R015-05",
+      "R015-06",
+      "R015-07",
+      "R015-08"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-07",
+    "spec": "015",
+    "description": "Criar modelo/migrações de tentativas, vínculo Asaas por negócio e fatos financeiros sem alterar Auth.",
+    "requirement_ids": [
+      "R015-06",
+      "R015-07"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-08",
+    "spec": "015",
+    "description": "Implementar checkout hospedado para cartão recorrente mensal/anual com idempotência e retorno sem concessão de acesso.",
+    "requirement_ids": [
+      "R015-06"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-09",
+    "spec": "015",
+    "description": "Implementar Pix Automático mensal/anual com QR inicial e estado de autorização separado do pagamento.",
+    "requirement_ids": [
+      "R015-06",
+      "R015-07"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-10",
+    "spec": "015",
+    "description": "Implementar webhook autenticado, inbox, processamento idempotente, reconciliação e projeção de acesso.",
+    "requirement_ids": [
+      "R015-07"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-11",
+    "spec": "015",
+    "description": "Implementar consulta/gestão de assinatura, cancelamento e solicitação de reembolso com estados explícitos.",
+    "requirement_ids": [
+      "R015-08"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T015-12",
+    "spec": "015",
+    "description": "Homologar no sandbox autorizado as quatro combinações, falhas, replay, cancelamento e garantia.",
+    "requirement_ids": [
+      "R015-06",
+      "R015-07",
+      "R015-08"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T016-01",
+    "spec": "016",
+    "description": "Criar adaptador v2 por trás da fronteira comercial atual, preservando linguagem e transporte úteis.",
+    "requirement_ids": [
+      "R016-01",
+      "R016-02"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T016-02",
+    "spec": "016",
+    "description": "Homologar SDK/REST e payload na conta com ferramentas somente de leitura e custo limitado aprovado.",
+    "requirement_ids": [
+      "R016-01",
+      "R016-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T016-03",
+    "spec": "016",
+    "description": "Implementar registry de versões e binding das sessões; desenhar migração de sessões abertas.",
+    "requirement_ids": [
+      "R016-02"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T016-04",
+    "spec": "016",
+    "description": "Acoplar fila/worker existente, inbox/outbox, lease, retry e dead-letter; não usar after() como garantia de durabilidade.",
+    "requirement_ids": [
+      "R016-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T016-05",
+    "spec": "016",
+    "description": "Consumir ações e eventos documentados, persistir resultados e reconstruir estado após desconexão.",
+    "requirement_ids": [
+      "R016-03",
+      "R016-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T016-06",
+    "spec": "016",
+    "description": "Medir Luna/max, limites operacionais e fallback estático; registrar teste real e não somente JSON válido.",
+    "requirement_ids": [
+      "R016-01",
+      "R016-02",
+      "R016-03",
+      "R016-04",
+      "R016-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T017-01",
+    "spec": "017",
+    "description": "Implementar handlers restritos com schemas, contexto autenticado, versões e recibos persistidos.",
+    "requirement_ids": [
+      "R017-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T017-02",
+    "spec": "017",
+    "description": "Reutilizar contato/lead store com patch allowlist e prova por message_id original.",
+    "requirement_ids": [
+      "R017-02"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T017-03",
+    "spec": "017",
+    "description": "Assinar eventos de domínio do app/billing ou consultar projeção via interfaces existentes; definir idempotência e reconciliação.",
+    "requirement_ids": [
+      "R017-03",
+      "R017-04",
+      "R017-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T017-04",
+    "spec": "017",
+    "description": "Desativar conversão antiga baseada no texto no caminho v2; mapear compatibilidade para UI sem preservar regras de diagnóstico.",
+    "requirement_ids": [
+      "R017-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T017-05",
+    "spec": "017",
+    "description": "Conectar navegação à contratação e cliente ativo à gestão/app, sem iniciar pagamento dentro da ferramenta.",
+    "requirement_ids": [
+      "R017-01",
+      "R017-03",
+      "R017-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T017-06",
+    "spec": "017",
+    "description": "Testar compra sem IA, criação assistida, renovação, falha e migração de contatos históricos.",
+    "requirement_ids": [
+      "R017-01",
+      "R017-02",
+      "R017-03",
+      "R017-04",
+      "R017-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T018-01",
+    "spec": "018",
+    "description": "Mapear cada CTA atual e destino existente; alterar somente handlers e conteúdo necessário ao contrato.",
+    "requirement_ids": [
+      "R018-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T018-02",
+    "spec": "018",
+    "description": "Atualizar widget para nova resposta, cards e estado assíncrono com IDs estáveis.",
+    "requirement_ids": [
+      "R018-02",
+      "R018-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T018-03",
+    "spec": "018",
+    "description": "Implementar retomada/autenticação sem confiar em sessionId do navegador; preservar conversa autorizada.",
+    "requirement_ids": [
+      "R018-03",
+      "R018-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T018-04",
+    "spec": "018",
+    "description": "Fazer baseline visual e corrigir foco/teclado/safe-area/scroll/tamanhos/contraste no recorte alterado.",
+    "requirement_ids": [
+      "R018-02",
+      "R018-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T018-05",
+    "spec": "018",
+    "description": "Revisar FAQ, oferta, metadata, redirects e indexação com a mesma fonte de produto.",
+    "requirement_ids": [
+      "R018-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T018-06",
+    "spec": "018",
+    "description": "Executar regressão de contratação direta e assistida em mobile/desktop e registrar capturas.",
+    "requirement_ids": [
+      "R018-01",
+      "R018-02",
+      "R018-03",
+      "R018-04",
+      "R018-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T019-01",
+    "spec": "019",
+    "description": "Inventariar arquivos de mídia entregues com direitos, classificação de UGC e relações com capacidades.",
+    "requirement_ids": [
+      "R019-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T019-02",
+    "spec": "019",
+    "description": "Preparar thumbnails, legendas/transcrições revisadas e tamanhos adequados usando hospedagem existente.",
+    "requirement_ids": [
+      "R019-01",
+      "R019-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T019-03",
+    "spec": "019",
+    "description": "Construir um card/player reutilizável para landing e chat sem tocar na composição global.",
+    "requirement_ids": [
+      "R019-02",
+      "R019-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T019-04",
+    "spec": "019",
+    "description": "Implementar medição de intervalos assistidos quando suportado e poucos marcos, sem evento por segundo.",
+    "requirement_ids": [
+      "R019-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T019-05",
+    "spec": "019",
+    "description": "Validar fallback sem vídeo, link quebrado, arquivo retirado e teclado/foco.",
+    "requirement_ids": [
+      "R019-02",
+      "R019-03",
+      "R019-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T019-06",
+    "spec": "019",
+    "description": "Registrar biblioteca de lançamento e procedimento de manutenção com responsável.",
+    "requirement_ids": [
+      "R019-01",
+      "R019-02",
+      "R019-03",
+      "R019-04",
+      "R019-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T020-01",
+    "spec": "020",
+    "description": "Resolver dono/domínio do Internal antes de escolher onde alterar o código.",
+    "requirement_ids": [
+      "R020-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T020-02",
+    "spec": "020",
+    "description": "Reaproveitar fila/ficha atuais retirando campos Pilates/diagnóstico e controles financeiros fictícios.",
+    "requirement_ids": [
+      "R020-02",
+      "R020-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T020-03",
+    "spec": "020",
+    "description": "Implementar estados de atendimento com versão/lock; validar take_over/resume_ai no worker e na outbox.",
+    "requirement_ids": [
+      "R020-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T020-04",
+    "spec": "020",
+    "description": "Implementar entrega humana web se faltar; no WhatsApp revisar timestamp do último inbound e regras do provedor.",
+    "requirement_ids": [
+      "R020-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T020-05",
+    "spec": "020",
+    "description": "Adicionar pesquisa, filtros, notas operacionais mínimas e atalhos para serviços oficiais sem novos dashboards.",
+    "requirement_ids": [
+      "R020-02",
+      "R020-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T020-06",
+    "spec": "020",
+    "description": "Treinar operação com cenário de erro e garantir auditoria de identidade, envio e pausa.",
+    "requirement_ids": [
+      "R020-01",
+      "R020-02",
+      "R020-03",
+      "R020-04",
+      "R020-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T021-01",
+    "spec": "021",
+    "description": "Mapear eventos existentes para catálogo v3 com compatibilidade e corte de versão.",
+    "requirement_ids": [
+      "R021-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T021-02",
+    "spec": "021",
+    "description": "Instrumentar produtores da landing, runtime, app e billing sem duplicar o mesmo evento client/server.",
+    "requirement_ids": [
+      "R021-01",
+      "R021-02"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T021-03",
+    "spec": "021",
+    "description": "Conectar SDKs e preferências de coleta; associar identidade sem fingerprinting.",
+    "requirement_ids": [
+      "R021-03",
+      "R021-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T021-04",
+    "spec": "021",
+    "description": "Implementar relay/outbox/dedup, alertas de atraso e rotina de reconciliação de marcos críticos.",
+    "requirement_ids": [
+      "R021-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T021-05",
+    "spec": "021",
+    "description": "Configurar projeto PostHog conforme limites reais da conta; homologação usa mock/local ou projeto isolado autorizado.",
+    "requirement_ids": [
+      "R021-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T021-06",
+    "spec": "021",
+    "description": "Executar jornadas canônicas e ataque de evento financeiro fabricado; conferir relatórios contra fonte real.",
+    "requirement_ids": [
+      "R021-01",
+      "R021-02",
+      "R021-03",
+      "R021-04",
+      "R021-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T022-01",
+    "spec": "022",
+    "description": "Versionar dicionário de métricas, denominadores e fontes de receita antes dos gráficos.",
+    "requirement_ids": [
+      "R022-01",
+      "R022-02",
+      "R022-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T022-02",
+    "spec": "022",
+    "description": "Construir os seis dashboards no PostHog com filters padrão e links de investigação.",
+    "requirement_ids": [
+      "R022-01",
+      "R022-02"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T022-03",
+    "spec": "022",
+    "description": "Preparar consultas/snapshots analíticos sanitizados; evitar sincronizar banco inteiro ou ativar CDC sem revisão.",
+    "requirement_ids": [
+      "R022-03",
+      "R022-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T022-04",
+    "spec": "022",
+    "description": "Conferir resultados com fixture financeira e casos anual/renovação/estorno/inadimplência.",
+    "requirement_ids": [
+      "R022-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T022-05",
+    "spec": "022",
+    "description": "Configurar custo/uso e alertas 70/85/95% do teto aprovado por produto; registrar limite do plano/projetos.",
+    "requirement_ids": [
+      "R022-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T022-06",
+    "spec": "022",
+    "description": "Documentar guia de leitura dos painéis e auditoria semanal de dados, sem duplicar no Internal.",
+    "requirement_ids": [
+      "R022-01",
+      "R022-02",
+      "R022-03",
+      "R022-04",
+      "R022-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T023-01",
+    "spec": "023",
+    "description": "Inventariar todas as notificações atuais e designar um emissor por categoria.",
+    "requirement_ids": [
+      "R023-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T023-02",
+    "spec": "023",
+    "description": "Configurar Workflows quando disponível ou reutilizar a automação já adotada sem criar motor paralelo.",
+    "requirement_ids": [
+      "R023-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T023-03",
+    "spec": "023",
+    "description": "Criar webhook de solicitação autenticado e revalidação server-side antes da entrega pelo provedor existente.",
+    "requirement_ids": [
+      "R023-02"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T023-04",
+    "spec": "023",
+    "description": "Criar templates curtos com link seguro, cancelamento de contato e nenhum desconto inventado.",
+    "requirement_ids": [
+      "R023-01",
+      "R023-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T023-05",
+    "spec": "023",
+    "description": "Testar supressão em corrida com pagamento/opt-out/pausa humana e limites do provedor.",
+    "requirement_ids": [
+      "R023-02",
+      "R023-03",
+      "R023-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T023-06",
+    "spec": "023",
+    "description": "Liberar de forma controlada somente após aprovação de mensagem, canal e volume; documentar kill switch.",
+    "requirement_ids": [
+      "R023-01",
+      "R023-02",
+      "R023-03",
+      "R023-04",
+      "R023-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T024-01",
+    "spec": "024",
+    "description": "Integrar testes e comandos ao CI real; separar offline, mocks, sandbox e execução paga.",
+    "requirement_ids": [
+      "R024-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T024-02",
+    "spec": "024",
+    "description": "Portar casos aproveitáveis da suíte anterior, substituir roteiros de Pilates e adicionar os casos deste plano.",
+    "requirement_ids": [
+      "R024-01",
+      "R024-02"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T024-03",
+    "spec": "024",
+    "description": "Rodar cenários financeiros controlados nas quatro combinações e conferir analytics/cliente/acesso.",
+    "requirement_ids": [
+      "R024-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T024-04",
+    "spec": "024",
+    "description": "Executar fault injection, segurança, teste manual acessível e baseline de desempenho/rede móvel.",
+    "requirement_ids": [
+      "R024-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T024-05",
+    "spec": "024",
+    "description": "Rodar bateria Luna/max com orçamento aprovado e rubric de correção/completude/brevidade; não usar somente juiz LLM.",
+    "requirement_ids": [
+      "R024-02",
+      "R024-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T024-06",
+    "spec": "024",
+    "description": "Executar analyze/converge e resolver gaps; compilar dossiê sanitizado para gate de release.",
+    "requirement_ids": [
+      "R024-01",
+      "R024-02",
+      "R024-03",
+      "R024-04",
+      "R024-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T025-01",
+    "spec": "025",
+    "description": "Ensaiar backup/migração/restore em homologação e reconciliar dados/sessões legadas.",
+    "requirement_ids": [
+      "R025-01"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T025-02",
+    "spec": "025",
+    "description": "Registrar autorização de deploy, flags, versões e playbook de rollback; não executar por inferência do pedido de plano.",
+    "requirement_ids": [
+      "R025-02",
+      "R025-03"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T025-03",
+    "spec": "025",
+    "description": "Liberar interno e coortes graduais com janela mínima e volume documentado; baixa amostra não vira aprovação estatística.",
+    "requirement_ids": [
+      "R025-02"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T025-04",
+    "spec": "025",
+    "description": "Monitorar fila, latência, erros, incidentes, discrepâncias financeiras e gasto; pausar ao ultrapassar gate crítico.",
+    "requirement_ids": [
+      "R025-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T025-05",
+    "spec": "025",
+    "description": "Treinar operador e fazer simulação de queda OpenAI/PostHog/banco/canal e takeover.",
+    "requirement_ids": [
+      "R025-03",
+      "R025-04"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T025-06",
+    "spec": "025",
+    "description": "Consolidar evidências, fechar specs e publicar handoff; programar revisão operacional no sistema escolhido, não implicitamente no ChatGPT.",
+    "requirement_ids": [
+      "R025-01",
+      "R025-02",
+      "R025-03",
+      "R025-04",
+      "R025-05"
+    ],
+    "status": "not_started"
+  },
+  {
+    "id": "T013-07",
+    "spec": "013",
+    "description": "Registrar a correção de escopo, fonte dos valores documentados e contrato-alvo do novo billing Asaas, sem declarar API futura como publicada.",
+    "requirement_ids": [
+      "R013-01",
+      "R013-03"
+    ],
+    "status": "completed",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md",
+      "docs/taliya-sdd/contracts/current-contracts.md",
+      "docs/taliya-sdd/DECISAO_BILLING_2026-09-29.md"
+    ],
+    "origin": "convergence"
+  },
+  {
+    "id": "T013-08",
+    "spec": "013",
+    "description": "Confirmar SHA da implantação Internal ativa, dono operacional e identidade staff real.",
+    "requirement_ids": [
+      "R013-01"
+    ],
+    "status": "blocked",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ],
+    "origin": "convergence"
+  },
+  {
+    "id": "T013-09",
+    "spec": "013",
+    "description": "Homologar contratos externos no ambiente autorizado e fechar os cinco casos antes de liberar dependências.",
+    "requirement_ids": [
+      "R013-01",
+      "R013-03",
+      "R013-05"
+    ],
+    "status": "blocked",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ],
+    "origin": "convergence"
+  }
+]

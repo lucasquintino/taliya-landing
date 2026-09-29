@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "maxItems": 2
+    },
+    "asset_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 1
+    },
+    "action_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 2
+    }
+  },
+  "required": [
+    "messages",
+    "asset_ids",
+    "action_refs"
+  ],
+  "additionalProperties": false
+}

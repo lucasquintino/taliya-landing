@@ -1,0 +1,2474 @@
+{
+  "schema_version": 1,
+  "purpose": "Implementation preparation updated after 2026-09-29 user correction: Asaas billing must be built, not integrated as an existing service.",
+  "source_commit": "b09c4d39d0151822ab1a43f95edd68b9d4730df2",
+  "active_spec": "013",
+  "owner_shared_files": "Codex principal; uma spec ativa; sem subagentes",
+  "blockers": {
+    "B013-01": {
+      "state": "open",
+      "owner": "Responsável do produto/billing Asaas",
+      "resolution": "Conta Asaas sandbox, elegibilidade Pix Automático, credencial pelo mecanismo seguro, preços ratificados e URLs de teste. Bloqueia ativação/homologação da 015, não o contrato local da 013.",
+      "evidence": [
+        "docs/taliya-sdd/DECISAO_BILLING_2026-09-29.md"
+      ]
+    },
+    "B013-02": {
+      "state": "open",
+      "owner": "Responsável do Internal/operação, a nomear",
+      "resolution": "URL/deployment/SHA ativo, fonte de dados, autenticação staff e responsável; reconciliar local/remoto."
+    },
+    "B013-03": {
+      "state": "open",
+      "owner": "Responsável de plataforma, a nomear",
+      "resolution": "Ambiente sintético, canais, permissões por teste, limites de gasto/volume e credenciais pelo mecanismo seguro."
+    },
+    "B013-04": {
+      "state": "open",
+      "owner": "Responsável editorial, a nomear",
+      "resolution": "Materiais reais aprovados com direitos, classificação, captions/transcrição, versão e dono."
+    }
+  },
+  "profiles": {
+    "013": {
+      "existing_paths": [
+        "docs/taliya-sdd/contracts/current-contracts.md",
+        "next.config.ts",
+        ".specify/feature.json"
+      ],
+      "proposed_paths": [
+        "docs/taliya-sdd/contracts/integration-handoff.md"
+      ],
+      "interface": "Registrar app/Auth/acesso existentes e contrato-alvo de billing Asaas ausente; Internal continua com deploy/staff pendentes. Não declarar endpoint futuro como publicado.",
+      "data_and_failure_plan": "Nenhuma migração. Guardar SHA, diff e evidência sanitizada; scripts locais não homologam serviços."
+    },
+    "014": {
+      "existing_paths": [
+        "app/api/internal/sales-inbox/auth.ts",
+        "app/internal/sales-inbox/page.tsx",
+        "lib/landing/ai-attendant/sales-inbox-store.ts",
+        "lib/landing/ai-attendant/storage/postgres.ts",
+        "lib/landing/ai-attendant/schema.ts"
+      ],
+      "proposed_paths": [
+        "lib/landing/ai-attendant/session-context.ts",
+        "lib/landing/ai-attendant/storage/migrations/",
+        "scripts/tests/sdd/identity.test.mjs"
+      ],
+      "interface": "Reutilizar auth.users, business_members, e01_resolve_business e e01_access_decision do app. Contexto autenticado server-side; sessão anônima separada; nenhuma tabela de contas paralela. Staff depende do mecanismo real confirmado na 013.",
+      "data_and_failure_plan": "Extrair DDL em request para migrações versionadas; expandir apenas vínculos/recibos ausentes, índices únicos e versão. Ensaiar forward/restore em banco descartável; não aplicar migrations do Copiloto nesta landing. Falhar fechado sem DB/TLS válido."
+    },
+    "015": {
+      "existing_paths": [
+        "data/landing/niches/pilates.ts",
+        "lib/landing/ai-attendant/commercial-knowledge.ts",
+        "services/taliya-agent-runtime/app/shared/product_knowledge/source.py",
+        "docs/taliya-sdd/contracts/material.schema.json",
+        "docs/taliya-sdd/contracts/materials.catalog.json"
+      ],
+      "proposed_paths": [
+        "lib/landing/ai-attendant/offer-source.ts",
+        "lib/landing/ai-attendant/material-catalog.ts",
+        "scripts/tests/sdd/catalog.test.mjs",
+        "docs/taliya-sdd/DECISAO_BILLING_2026-09-29.md"
+      ],
+      "interface": "Construir billing no backend do app com oferta versionada, checkout hospedado para cartão, Pix Automático por autorização, webhooks idempotentes e projeção de acesso; landing/agente consomem a oferta.",
+      "data_and_failure_plan": "Migrações aditivas no app para tentativa, provider IDs, inbox/recibos e fatos de pagamento; usar Auth/business_id e access_entitlements existentes. Timeout exige reconciliação antes de repetir; falha de analytics/IA não bloqueia contratação direta."
+    },
+    "016": {
+      "existing_paths": [
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "services/taliya-agent-runtime/app/main.py",
+        "services/taliya-agent-runtime/pyproject.toml",
+        "services/taliya-agent-runtime/app/core/taliya_commercial/outbox.py",
+        "services/taliya-agent-runtime/migrations/001_agent_runtime_tables.sql"
+      ],
+      "proposed_paths": [
+        "services/taliya-agent-runtime/app/core/taliya_commercial_managed/",
+        "services/taliya-agent-runtime/tests/test_sdd_managed_runtime.py"
+      ],
+      "interface": "Manter Next→Python/HMAC. Adaptador Agents API com Luna/max/none, uma sessão por conversa autorizada, exatamente cinco tools e reply.schema.json. Endpoint/payload/SDK final só após documentação oficial e smoke autorizado; config.intent.json não é request.",
+      "data_and_failure_plan": "Reusar fila/outbox/locks existentes; persistir versão do agente, binding remoto, call/efeito/recibo e cursor de reconciliação. Migração aditiva no dono real de cada tabela, não dois migradores. Versionar lease/fencing e atendimento. Timeout não significa efeito não realizado."
+    },
+    "017": {
+      "existing_paths": [
+        "app/api/landing/ai-attendant/route.ts",
+        "lib/landing/ai-attendant/conversion.ts",
+        "lib/landing/ai-attendant/leads.ts",
+        "lib/landing/ai-attendant/sales-inbox-store.ts",
+        "app/api/landing/ai-attendant/whatsapp/route.ts",
+        "docs/taliya-sdd/contracts/tools.json"
+      ],
+      "proposed_paths": [
+        "services/taliya-agent-runtime/app/core/taliya_commercial_managed/tools/",
+        "lib/landing/ai-attendant/billing-projection.ts",
+        "scripts/tests/sdd/commercial-effects.test.mjs"
+      ],
+      "interface": "Modelo pede operação; backend resolve contexto, autorização, evidência e resultado. Um dono por efeito entre tools, pós-processamento Next e webhooks. Billing produz compra/renovação/acesso; ferramentas nunca cobram nem marcam pago.",
+      "data_and_failure_plan": "Projeções usam IDs canônicos/versão/event_id; registros órfãos vão para reconciliação. Reutilizar recibos/outbox de 014/016 e migrações aditivas. Duplicado devolve mesmo recibo; conflito de versão recarrega autoridade, não sobrescreve."
+    },
+    "018": {
+      "existing_paths": [
+        "components/landing/NicheLandingPage.tsx",
+        "components/landing/shared/FloatingAiAttendant.tsx",
+        "components/landing/shared/FloatingAiAttendantPanel.tsx",
+        "data/landing/niches/pilates.ts",
+        "app/page.tsx",
+        "app/robots.ts",
+        "app/sitemap.ts",
+        "next.config.ts"
+      ],
+      "proposed_paths": [
+        "scripts/tests/sdd/journey.spec.mjs"
+      ],
+      "interface": "CTA direto usa destino válido do billing e não espera agente/analytics. Widget apresenta aceite persistido e recupera estado autenticado por polling/SSE conforme transporte escolhido na 016. Browser não fornece identidade nem URL autoritativa.",
+      "data_and_failure_plan": "Sem migração de banco. Preservar layout/rotas aprovadas e redirects atuais. Recuperar offline/reconexão/erro/humano sem spinner infinito; não reenviar efeito automaticamente ao remontar componente."
+    },
+    "019": {
+      "existing_paths": [
+        "components/landing/sections",
+        "components/landing/shared",
+        "data/landing",
+        "docs/taliya-sdd/contracts/materials.catalog.json",
+        "docs/taliya-sdd/contracts/material.schema.json"
+      ],
+      "proposed_paths": [
+        "components/landing/shared/ApprovedMaterialCard.tsx",
+        "scripts/tests/sdd/material-player.spec.mjs"
+      ],
+      "interface": "Card resolve asset_id no catálogo vigente, máximo um por resposta. Player voluntário, captions/transcript e consentimento do embed. Recomendação, exposição, play e conclusão têm produtores distintos; link externo não prova vídeo assistido.",
+      "data_and_failure_plan": "Sem migração. Catálogo em Git com direitos/aprovação/retirada; publicação depende B013-04. Falha/404/retirada mostra alternativa textual e mantém contratação disponível."
+    },
+    "020": {
+      "existing_paths": [
+        "components/internal/SalesInboxClient.tsx",
+        "app/internal/sales-inbox/page.tsx",
+        "app/api/internal/sales-inbox/leads/[leadId]/actions/route.ts",
+        "next.config.ts",
+        "lib/landing/ai-attendant/sales-inbox-store.ts"
+      ],
+      "proposed_paths": [
+        "docs/taliya-sdd/operations/internal-cutover.md",
+        "scripts/tests/sdd/human-handoff.test.mjs"
+      ],
+      "interface": "Escolher fonte autoritativa só com B013-02. Internal independente usa /internal/actions, cookie de staff e commercial-ops.v2; embedded usa outro contrato. Aplicar UI/rotas no repo dono, remover exposição duplicada somente após verificar roteamento. Não desenvolver duas caixas.",
+      "data_and_failure_plan": "take_over/resume usam versão de atendimento + ator verificado + recibo + outbox na mesma transação onde possível. Worker/dispatcher rejeitam versão anterior antes da operação e da entrega. Janela WhatsApp deriva da última mensagem inbound, não lead.updatedAt."
+    },
+    "021": {
+      "existing_paths": [
+        "lib/landing/ai-attendant/funnel-events.ts",
+        "app/api/landing/ai-attendant/events/route.ts",
+        "lib/landing/ai-attendant/storage/postgres.ts",
+        "components/landing/shared/FloatingAiAttendant.tsx",
+        "docs/taliya-sdd/contracts/event.envelope.schema.json",
+        "docs/taliya-sdd/contracts/events.catalog.v3.json"
+      ],
+      "proposed_paths": [
+        "lib/landing/analytics/posthog-relay.ts",
+        "scripts/tests/sdd/events.test.mjs"
+      ],
+      "interface": "Browser: interação; player: reprodução; backend: operação aceita; app: primeiro valor; billing: financeiro. IDs de evento e negócio não são credenciais. Relay transforma envelope canônico para PostHog depois de verificar contrato oficial/projeto.",
+      "data_and_failure_plan": "Outbox na transação do produtor quando disponível; entre serviços, inbox/dedup e reconciliação. Não depender de browser aberto. Quota/timeout geram atraso/lacuna explícita; falha de analytics não bloqueia checkout."
+    },
+    "022": {
+      "existing_paths": [
+        "docs/taliya-sdd/08_POSTHOG_METRICAS_E_CUSTOS.md",
+        "docs/taliya-sdd/contracts/events.catalog.v3.json",
+        "lib/landing/ai-attendant/funnel-events.ts"
+      ],
+      "proposed_paths": [
+        "docs/taliya-sdd/analytics/metric-dictionary.md",
+        "docs/taliya-sdd/analytics/posthog-exports/",
+        "scripts/tests/sdd/metrics.test.mjs"
+      ],
+      "interface": "Seis painéis no PostHog: aquisição, conversão, conteúdo, atendimento, ativação/retenção e receita. Propriedades financeiras canônicas; separar caixa, MRR, receita e clientes/negócios/usuários. Nenhum BI no Internal.",
+      "data_and_failure_plan": "Sem banco analítico próprio. Exportar configurações/queries sem dados privados. Agregação por business_id sem ativar addon pago. Falta de amostra/coorte imatura mostra indisponibilidade, não zero inventado."
+    },
+    "023": {
+      "existing_paths": [
+        "lib/landing/ai-attendant/n8n.ts",
+        "docs/taliya-sdd/09_CONTEUDO_UX_E_AUTOMACOES.md"
+      ],
+      "proposed_paths": [
+        "lib/landing/ai-attendant/relationship-eligibility.ts",
+        "docs/taliya-sdd/operations/relationship-flows.md",
+        "scripts/tests/sdd/relationship.test.mjs"
+      ],
+      "interface": "PostHog segmenta; backend revalida opt-in/opt-out, humano, pagamento/acesso e canal imediatamente antes da entrega. Integrar provedor existente identificado; nunca criar motor próprio nem mensagens transacionais duplicadas.",
+      "data_and_failure_plan": "Reusar ledger/outbox/dedup por gatilho/alvo/janela. Três fluxos desligados por padrão. Dry-run não envia. Timeout após aceite exige consultar recibo antes de repetir. Canais/templates/limites dependem homologação e aprovação de ativação."
+    },
+    "024": {
+      "existing_paths": [
+        "package.json",
+        "scripts",
+        "services/taliya-agent-runtime/tests",
+        "docs/taliya-sdd/evals/acceptance-cases.json",
+        "docs/taliya-sdd/06_TESTES_E_ACEITE.md"
+      ],
+      "proposed_paths": [
+        "scripts/tests/sdd/README.md",
+        "docs/taliya-sdd/evidence/homologation/",
+        "docs/taliya-sdd/evals/legacy-test-disposition.json"
+      ],
+      "interface": "Separar testes locais, banco descartável, integração sandbox e modelo real pago. Casos do plano vinculados ao código; fixture prova comportamento local, nunca integração real. Portar invariantes legados sem preservar expectativa Pilates.",
+      "data_and_failure_plan": "Nenhuma migração de domínio. Ambiente isolado com egress bloqueado nas suítes offline; credenciais via mecanismo seguro. Relatórios possuem commit, amostra, custo, caso, esperado/obtido e evidência; sem resultados sintéticos verdes."
+    },
+    "025": {
+      "existing_paths": [
+        "next.config.ts",
+        "AGENTS.md",
+        "docs/taliya-sdd/07_RUNBOOK_RELEASE_E_OPERACAO.md",
+        "docs/taliya-sdd/STATUS.json"
+      ],
+      "proposed_paths": [
+        "docs/taliya-sdd/operations/release-manifest.json",
+        "docs/taliya-sdd/operations/rollback.md",
+        "docs/taliya-sdd/evidence/release/"
+      ],
+      "interface": "Release manifesto fixa commits por serviço, migrações, flags, owners, aprovações e evidências G0–G6. Publicação e operação real só com autorização específica. Checkout independe do percentual do agente e das flags analytics.",
+      "data_and_failure_plan": "Ensaio expand/contract, backup/restore/reconciliação antes de produção. Kill switch desliga geração/escritas/proativo seletivamente; preserva recibos, assinatura direta e humano. Nunca voltar ao agente Pilates. Não executar migração destrutiva no rollback."
+    }
+  },
+  "external_sources": [
+    {
+      "repository": "internal",
+      "inspected_checkout": "/tmp/taliya-foundation-sources/internal",
+      "commit": "7cbe9e9b92a4d3b18b3961ab51f9eec10515b38e",
+      "usage": "read_only_reference",
+      "paths": [
+        {
+          "path": "services/security/internal-auth.ts",
+          "sha256": "7ac6cd16d663fd6d126bb23415de6959d5a156aff4c528ca135aa40bb2733582"
+        },
+        {
+          "path": "services/operators/current-operator.ts",
+          "sha256": "43e2e0aa1e7d0749ab913c9025376bbad26e1220a0e0a131a93378223447ae1d"
+        },
+        {
+          "path": "services/views/operational-view.ts",
+          "sha256": "51194aca4fb3415a134951c119aaab5147cd0aeca27509b8e2352948faecad36"
+        },
+        {
+          "path": "services/actions/postgres-rpc-actions.ts",
+          "sha256": "32693d1f4143cda18985e8c7e5766cc0a137ba23e62c0a006e8062e4ce74be16"
+        },
+        {
+          "path": "app/internal/actions/route.ts",
+          "sha256": "8dd7e0ebcc6b0a2a5b3c3e61933932359f21612d212ffa91411905ca571e98cd"
+        }
+      ]
+    },
+    {
+      "repository": "copiloto",
+      "inspected_checkout": "/tmp/taliya-foundation-sources/copiloto",
+      "commit": "d99ef897f3033ace6a23ee009e2578ffc04a259d",
+      "usage": "read_only_reference",
+      "paths": [
+        {
+          "path": "supabase/functions/_shared/http.ts",
+          "sha256": "c4f6ab0f8b6e5c91f8a9afe750d730932a1f4a8defacccdb4fb61316382b502f"
+        },
+        {
+          "path": "supabase/functions/_shared/business-context.ts",
+          "sha256": "13c8328fc57e9fa981c3856ac186fdf9cec509bc96ecc470f7045bcd200cb863"
+        },
+        {
+          "path": "supabase/functions/_shared/authorize.ts",
+          "sha256": "cb232ac0c60802ecc3a4adc7078dcda506deffe48ac6d546ac7a9aae066540d1"
+        }
+      ]
+    },
+    {
+      "repository": "unversioned incomplete landing copy",
+      "inspected_checkout": "/Users/lucasquintino/Projects/taliya-copiloto-landing-incomplete-2026-09-28",
+      "commit": null,
+      "usage": "read_only_historical_reference_only",
+      "paths": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "aa9a03f05c7a0066d0e4b64e2407947cc86bd1160fad41ecb2dfca38bbc434c7"
+        },
+        {
+          "path": "specs/003-billing-subscriptions-entitlements/spec.md",
+          "sha256": "d97540aee46f774cc730fabe7d153433b1bece38901cfdd284a13be40c589574"
+        },
+        {
+          "path": "specs/003-billing-subscriptions-entitlements/plan.md",
+          "sha256": "95031da224532d995ab4f9e4c8f381e545946f18fb5a0d013702749d6f08ab8d"
+        },
+        {
+          "path": "specs/003-billing-subscriptions-entitlements/contracts/billing-contract.md",
+          "sha256": "beb11cdacc89e5d765771f9d3034c1bf5d87aefe04de6320d95ab8effd9129c2"
+        }
+      ],
+      "limitations": [
+        "no .git metadata",
+        "no app/api/billing or lib/billing handlers",
+        "legacy terms conflict with 14-day current user decision"
+      ]
+    }
+  ],
+  "source_hashes": {
+    "docs/taliya-sdd/contracts/current-contracts.md": "01f3554f85cd6dd13e438aacc0b2632e04cfcfba054af5cd89ac161b9332c933",
+    "next.config.ts": "4a2225734509695cefc378a89a272584b901ede8c67c716aa885e6ab6fa2a07d",
+    ".specify/feature.json": "b307396b21f6e341eaf65a9b07a8ebdbca30c1e55fc0659ce4ec410f28d44415",
+    "app/api/internal/sales-inbox/auth.ts": "3f08d7754faf58945db3ad6a165e8c4142527c3621d8379a45f40c99872f1bb1",
+    "app/internal/sales-inbox/page.tsx": "5bb1673bb8d94f23ef85f8a11f1b2a8395e04e99df99e146f23372ace5f60fd4",
+    "lib/landing/ai-attendant/sales-inbox-store.ts": "f28a42155a806813649abc9c15aeddc0e5db8cdb93d51f2ce1100d113b194a5d",
+    "lib/landing/ai-attendant/storage/postgres.ts": "09fbe3b34244e48872161dc8c9fe15861bb97d5abefee0a020ae3174423f1a06",
+    "lib/landing/ai-attendant/schema.ts": "a4df407d49234038e341ad198d6bd9ffdabca8e9fa760cec7cb9e7888bd04913",
+    "data/landing/niches/pilates.ts": "be2a2c38d48e1a966c802ad20622977fc59c8be0e922e45d45e38e9142766812",
+    "lib/landing/ai-attendant/commercial-knowledge.ts": "74db5875c7745373940fdf0313663531147a950d6a6a95ce4df8029f0e2c416d",
+    "services/taliya-agent-runtime/app/shared/product_knowledge/source.py": "bc60b606643cfd4bc91d745e8c30b94fcfd14e1b02e62c26ada4b7538ca72dea",
+    "docs/taliya-sdd/contracts/material.schema.json": "a459e89b81b73d0828503dfaabc8f4013af49c0de6cef066a48b719fc05a19c0",
+    "docs/taliya-sdd/contracts/materials.catalog.json": "a352927c26039ef087aafa4631bdca8ee98945866696b7dd40c824564d30c933",
+    "lib/landing/ai-attendant/runtime-client.ts": "f5e8885ee150629410af726ce700f4ffe3709c2db1034c6adde7afb8fbee5268",
+    "services/taliya-agent-runtime/app/main.py": "8927c23122018ff0839a4cbec5f9f363cc4b6f4d4638122029be5893e44f0979",
+    "services/taliya-agent-runtime/pyproject.toml": "ed3eab751df14502434f6de606e3cfaa7cdc120be6057270faeb2f993d210082",
+    "services/taliya-agent-runtime/app/core/taliya_commercial/outbox.py": "13ceaf49e354c4c40194142fea18ed18f7436af19a8c4938ad73dec2643ea478",
+    "services/taliya-agent-runtime/migrations/001_agent_runtime_tables.sql": "f7a2c00fc9534e78672f5a96cd4f8829a2bf8cfc3e053bedd7b5567024c52211",
+    "app/api/landing/ai-attendant/route.ts": "bd3ea571125407d959c4a1e077f89b0ef8eecf0f53a7ef23428b5ae18f6fcb41",
+    "lib/landing/ai-attendant/conversion.ts": "f2d40c1bb900c3697d829310270c7bbe613c332e0a0e87ccdf9e8b58d2c4debf",
+    "lib/landing/ai-attendant/leads.ts": "c8aa4c3c1a3d6de4bba889f838b2f82181c7278936eec9c6bc85bd4542149062",
+    "app/api/landing/ai-attendant/whatsapp/route.ts": "2437b54b0f44b83b096b1e66fee0c1f44d1872b3e67596bde6239f3c9aa3752e",
+    "docs/taliya-sdd/contracts/tools.json": "106e73f3c76ef7b5473fb09273d12946482c0ed347df7bdc430e1cdf013f15d3",
+    "components/landing/NicheLandingPage.tsx": "98dc1184073bc3fb49b2b0549ef7a4af65b1d238dd009d471ca730062d525ff7",
+    "components/landing/shared/FloatingAiAttendant.tsx": "e8b88da2fc4c0db31f263cc9e0dc871abd591291b1f16cc5baefc5f49f2dd7f4",
+    "components/landing/shared/FloatingAiAttendantPanel.tsx": "f262a5dc9cb004ac5c27d8da453be3d5e6c40245102e2b059d3cb2e983aa3209",
+    "app/page.tsx": "33174b4902cb16b05c8be43eb2638b50634467f770dbb4b3e579ac966e97c0b9",
+    "app/robots.ts": "83fdd6adfbbdcbd95633183fd36f51ea6a266d823a192d0c14191fc5e96443e7",
+    "app/sitemap.ts": "8dd17adaed4dc5f444a1770536bc30366c51699d2f8df2bf45608f3f3f71151e",
+    "components/landing/sections/AgentsDemoSection.tsx": "d71cf26b8046ee59b47475086261a258189f7010977ff8b2116e473d0c3584ed",
+    "components/landing/sections/FAQSection.tsx": "0d4dad29ee86bf104da5d8d4c0d7a48ae2d73ebeca14ba582016ed2443b57e9e",
+    "components/landing/sections/FinalCTASection.tsx": "4adde6e1907faf38390bb3092d7a35e4e74a3f7be9e120b9c91b68332eb8d207",
+    "components/landing/sections/FooterSection.tsx": "8e2448c9d50dd0e8f3f4fa33267995a1c19ac0515b4a2c488df12d8e9f36f873",
+    "components/landing/sections/HeroSection.tsx": "fbe804d6b354eed7755f40aaaa4dc668a619cb66ab7bab9038e9ece88b0da27f",
+    "components/landing/sections/HowItWorksSection.tsx": "e12870a2ce1e7ab3c811cd4f783bdeab12eb76e2b10aa9559c67197e45f78790",
+    "components/landing/sections/IntentSelectorSection.tsx": "413bcb02a2e7fea5eb30f19130eaa74a0e93491ca850d15eee0c798c398f16e2",
+    "components/landing/sections/MessageWallSection.tsx": "4167603a3d33503892077620f13d5606c9c3f3cc5cd5c8283969ac116aab6b6b",
+    "components/landing/sections/MoneyCalculatorSection.tsx": "599b7cc7a5d10c7c3ed76f27df5901d6905e6a66e5faf334802af88c891d2a48",
+    "components/landing/sections/PlanOfferSection.tsx": "b5043f1bcd68aaf7402d131dc99e935bdbe9523afb83ec9677c40ed1d1e083a1",
+    "components/landing/sections/ProblemDiagnosisSection.tsx": "b8bb608b2937442a92ab45c9fc86bb791231b8c48fcb2adc15d9620e1ca8047e",
+    "components/landing/sections/SalesStartSection.tsx": "647aca63d663a2c13384a4258ad3465c290492cf9657c485611115b846fa2f0b",
+    "components/landing/shared/AutonomousWhatsAppFlowMockup.tsx": "a380ec2dc016a52d4facf788743b46241f926ea7ecf449c41da8b6d9d56ccecf",
+    "components/landing/shared/FloatingAiAttendantButton.tsx": "fd48b324efcf55ef2aaa7434329ec7e4992d2c724eac87aeae4e19d4b5dfced1",
+    "components/landing/shared/Header.tsx": "914414a52456faefbb00f975a88e9712915a57ef27c25ab9fd55afe1e145e0c3",
+    "components/landing/shared/MoneyPanelMockup.tsx": "997e3e73509a771d823be0e19e02bef4a29ebc16374b549abd370a07cb2dc3fa",
+    "components/landing/shared/SectionIntro.tsx": "872dcb53e4fd75281b2242d3092e05abb455c086bb65e0cb38ead96f4944edd0",
+    "components/landing/shared/SectionShell.tsx": "0ffc09d5d79d765614824bd4bba18c061b430641d90f390ead90b7104cf57206",
+    "components/landing/shared/StructuredData.tsx": "0963957b2208eee8d9eb1493e8124d69fc61c4c5eab9f0cddb45ac7a43b12ca2",
+    "components/landing/shared/TaliyaLogo.tsx": "4e9b8beec59c6878dce92fa48c32d61a7ae4ec1f5f2dfe6c8a6f0adfcfe25294",
+    "data/landing/agentFlowCatalog.ts": "86216e8db5408525435ce4f14fd76b835b21404c65f3c86fd1ecaa392bbed5d1",
+    "data/landing/agentVisuals.ts": "282700e0027c973f5cd1cb1f6d62161ad45f8d4b23f64e649a26525348eb36f3",
+    "data/landing/message-wall.json": "234a7c2c5fd178868477085fde5279e2cf8726d2269f1442827c7125a3ffa539",
+    "data/landing/niches/types.ts": "afd389ce2da50e6b64006d9bebd4c2f3e8d9fbb76e1a9fbfe142d209ce0d1609",
+    "components/internal/SalesInboxClient.tsx": "58adb935b8f095d11776f5459e69b7c7217bec6dfba1632b5d599a70ebe4a373",
+    "app/api/internal/sales-inbox/leads/[leadId]/actions/route.ts": "50982f4c8c39c5f3115f3c868c0892ddb8829fc53894447305ddb1cbca6a7ad9",
+    "lib/landing/ai-attendant/funnel-events.ts": "f7caafa9ec41148be2cf2993d956d72977674ddb4dfb6ed4407a964e561a44fd",
+    "app/api/landing/ai-attendant/events/route.ts": "4d5df7c3a5237f3bbc2a85afa6d284f0f96aee05f52f482e79ad8af3a9bc3df7",
+    "docs/taliya-sdd/contracts/event.envelope.schema.json": "db621de2332787b941254dd1bc483e063d3f67077e4dbc23121d931079a834c5",
+    "docs/taliya-sdd/contracts/events.catalog.v3.json": "ee08aff470c6b3003829ac8a4d1d13beed0282f016b9fd62dd57cd1b4673a842",
+    "docs/taliya-sdd/08_POSTHOG_METRICAS_E_CUSTOS.md": "38776d599951a815f2d08de3570e7b703a193607bf5f12a5dd8454ba819bcb91",
+    "lib/landing/ai-attendant/n8n.ts": "780edb08d1a09a8601f828be053c93efb5575441d62f2f1f03d1f8a1da36b786",
+    "docs/taliya-sdd/09_CONTEUDO_UX_E_AUTOMACOES.md": "af4d15fb7c45ed3b228184748845bdb34c245bd8ffa262378a0ab49070b4e2bf",
+    "package.json": "c72f8690548c27541cf720930d4c4cda3c542df06cc586e03beb5634367d82d4",
+    "scripts/cleanup-ai-test-data.mjs": "1db7d3cdbc63d631b3ef7025ca4b7e74a7cdd19b7ae66822442c8b315a18d4b7",
+    "scripts/eval-agent-delivery-timing.mjs": "26d952fea8067fe2f40bc59e096e0140ff2ac3ea81bdeddb5853c2a653e37c76",
+    "scripts/eval-agent-runtime-autonomous-validation.mjs": "e0a8b04f9c8bf0dae79d115ac976c8c3e6be6b497db8b107e6616171e9116d65",
+    "scripts/eval-agent-runtime-completion-evidence.mjs": "93e429eafe1ccd1b2eb590faee2013a6d628d7f808112c17f91df5c9d3653959",
+    "scripts/eval-agent-runtime-conversations.mjs": "52b890f6009bba750be3734c170ab338287d3e5573103792d4e2792491784e7c",
+    "scripts/eval-agent-runtime-cost.mjs": "a7ca94f81450b0d4f32bf2a7fc8bf4d41f3ce9ec488adfc72416328cfae19b60",
+    "scripts/eval-agent-runtime-delivery.mjs": "ccdde5085e83ebfe057cc8385913be07f4961401478664e247b5003ee4102acc",
+    "scripts/eval-agent-runtime-diagnostic.mjs": "7d225e4c40452e56e70d614dbcfe8b86c2212782ce9b5dfec7af8f6bd5ce4ae5",
+    "scripts/eval-agent-runtime-handoff.mjs": "026f6da9847fa84a82eac00fa558070af5cd92584614491dcf07a28dc26bfcab",
+    "scripts/eval-agent-runtime-invariants.mjs": "012ab8c96fdb0be0879326af079a8effaebbb371f6257dc825ff4c01c7f40fad",
+    "scripts/eval-agent-runtime-legacy-behavior.py": "679fc00f69c2083fbc0cf647eec4039aa644667c37617b45e150178b73dd8f16",
+    "scripts/eval-agent-runtime-naming.mjs": "3b7815fff151dabda00bd4a48d6ec43bb83705bee1206d6fee1d4315fb5648df",
+    "scripts/eval-agent-runtime-product-knowledge.mjs": "3ffd5e3a732473bbd6be4c5afaef4dbcf2a71476234ba05eab68e16977d5e9c5",
+    "scripts/eval-agent-runtime-quality-judge.mjs": "8afbc833e484b67ad9c7570d2fc54aecb4312219825ab8a76f78011fad338467",
+    "scripts/eval-agent-runtime-real-openai.py": "2151432d957641bf884f244d32036a212e071bff0bf2b65ec47adc3e549fae7f",
+    "scripts/eval-agent-runtime-report.mjs": "62bc11d24ddb48c71bcaae9b24f5a913f1169187947ee3d66fb962dd3ed9988e",
+    "scripts/eval-agent-runtime-sales-inbox.mjs": "0cc21acd3e65a6238ac5a0c6de8b691ff42d7784f97651824d115f312918285f",
+    "scripts/eval-agent-runtime-spec011-coverage-gate.mjs": "c25a01820c31bf91f17680ec7eac1a055e36e28102d0dd591ffe0c47606b75a9",
+    "scripts/eval-agent-runtime-spec011-delivery-turn-gate.mjs": "59e2203f082cbf4b3fbd6ffd2c0249db0592594c6489299a1cb8131fba530b23",
+    "scripts/eval-agent-runtime-spec011-fixture-inventory.mjs": "2968fafad0cc54ed97344d276aab7384ec2e541eee64ca66f9d0c6835e2c1087",
+    "scripts/eval-agent-runtime-spec011-golden-do-not-do.mjs": "aeec3eed51950d018f39f12cc0db7d20a5efd4bd5b7bf89a512702306e617900",
+    "scripts/eval-agent-runtime-spec011-known-validator-recovery.mjs": "ae1e6ef3239896770bc0fdcc53a828843043f9ed66eb6e81c8e673051e3426e2",
+    "scripts/eval-agent-runtime-spec011-legacy-reference-quarantine.mjs": "3893e43fb3d37ad20217a45a4b8429b4b78bd8839f03d94b263f36cfb37f33b3",
+    "scripts/eval-agent-runtime-spec011-mocked-conductor.mjs": "6b52da03322fbf7ff2fa13f3e318fa788ded1f7092a6398a32f71e3f0d769d80",
+    "scripts/eval-agent-runtime-spec011-p0-real-model-gate.mjs": "8eb4b5ea4458b1124c4e8cabadc37abe7afc0c21cba38394da92b896b18e3847",
+    "scripts/eval-agent-runtime-spec011-pilates-no-drift.mjs": "1d32f737c40bae1a41b1b08ad659e4f03ef919c18d3583abe63786c80dd78761",
+    "scripts/eval-agent-runtime-spec011-production-watch.mjs": "aff9f2e863fcfab7ba76afe62c8a0d40b88ba19ee577880a7d608a35236d2f14",
+    "scripts/eval-agent-runtime-spec011-public-fallback-quarantine.mjs": "9de412804d6b73bfbc538ee798037b4ce190ca28d388fbbc2e83d2d144e7b59d",
+    "scripts/eval-agent-runtime-spec011-report-contract.mjs": "8794f47770d124745e3ffebf570c898c8bafd3579b61c80e43d03f539d66d751",
+    "scripts/eval-agent-runtime-spec011-rollback.mjs": "b13b075af2114b5486c48c2251bd08eadcb9e50bd5ab5b67ebf3b0cd8bdd6f18",
+    "scripts/eval-agent-runtime-spec011-runner-quarantine.mjs": "3817f8d6155554dca8f3d565de2f233602ed94bde4829d0349584284b083c288",
+    "scripts/eval-agent-runtime-spec011-shadow-compare.py": "b16e844d661e50d82306f11625beccd0339eafc4213a63f7de96228e6d279270",
+    "scripts/eval-agent-runtime-spec011-shadow-mode.mjs": "27ff71b5787f14434020e35256d8fe8f95c89fce6fc09be673de2e4637921762",
+    "scripts/eval-agent-runtime-spec011-static-audit.mjs": "76674f9d37a8ed1e48deda7b925b86dc4a8fb823c7d0486a0a0c30ba1e2fbc18",
+    "scripts/eval-agent-runtime-spec011-t011-105-closure.mjs": "2fca319a84c30b68434d090e63bf33ea29814916c65ce704771375cfa0e7708e",
+    "scripts/eval-agent-runtime-spec011-t011-105-paid-batch.mjs": "e5331aa9c6f5e3cc765a3b6ee3f09a579bf7d5f87731a52052add20da84c942c",
+    "scripts/eval-agent-runtime-spec011-t011-105-readiness.mjs": "56e38c0a2b7a6942c6d6e3166225f397fbda2bfa1bad9ada0c3e2412e8a7f20e",
+    "scripts/eval-agent-runtime-spec011-t011-105-safety-audit.mjs": "b9c585e46d1dbf3a528f70a6e922c126f5648e8fe636b9659ac84b8ddd1448b8",
+    "scripts/eval-agent-runtime-spec011-unit-contract.mjs": "6dd211dd05a3f3731d088f46488fe95c9c421a34bd6294afb8fd0600cb6ebb12",
+    "scripts/eval-agent-runtime-spec011-widget-adapter.mjs": "ff02bd2f2a4d6e326385854c78287e65fc5b45c63b2732be96fb86a91afb5704",
+    "scripts/eval-agent-runtime-spec011.py": "2038b6716b25e023dfb699393a025a7eae3afddfd79d1d194ec135bd4781893b",
+    "scripts/eval-agent-runtime-spec012-real-model-golden.py": "d1e2da35e222db1fc836d08c3e83953baec15ce2dc2d221596cba40ea914bfc2",
+    "scripts/eval-agent-runtime-utils.mjs": "e090feba5d66794e644ed680ad2aef68248b59a2d58ab9eb555f8b4173011eb8",
+    "scripts/eval-agent-runtime-waitlist.mjs": "0182a0aac25f80dc5ac9a62a31dcd4a43f66533f770851591d549d5541519f83",
+    "scripts/eval-agent-runtime-zero-cost-gates.mjs": "954f89dd77db0ecaffecec4c8717b101b3a28d75c42a75ba01e8fa8f130b5517",
+    "scripts/eval-agent-v2-blocking-failures.mjs": "f9ae66cab0dc6bb0c21d2052f6dcdf34318f0db3cca55979d7aa79c47f8f2393",
+    "scripts/eval-agent-v2-conversation-matrix.mjs": "95741c9c6247bfca0e500d41ef2025629be1a04e77c939a39e6ec0fef906b48e",
+    "scripts/eval-agent-v2-cost-report.mjs": "c55b219fc9aae1b8ef5df77c2f92614411fd13b8a06741b20545a51cd1ef3fb6",
+    "scripts/eval-agent-v2-cost.mjs": "02d35a996df5869c114a31097e0c8234a5c3033d21376460492168749592c082",
+    "scripts/eval-agent-v2-delivery.mjs": "e735485305cf70b33f6f2df955534a5396da456d75c54ed11b270eae5b1d0e22",
+    "scripts/eval-agent-v2-diagnostic.mjs": "a2762355521437bff7fd297e9ea495488dbdb2270d5c7579697854a4911d63c4",
+    "scripts/eval-agent-v2-direct-questions.mjs": "2db294188b7e5e09b841c636646ca9a33beca35dbf4668c8d1e9f543318e6769",
+    "scripts/eval-agent-v2-guardrails.mjs": "b3cd74b7cc8eba0862856117b4105ef7c0263b8a10190f540471db708c52c865",
+    "scripts/eval-agent-v2-handoff.mjs": "e520a926fa50ee8cf5290dcad34f6fbf90ff0de49f8cd6966c1824f58f0ea2f7",
+    "scripts/eval-agent-v2-idempotency.mjs": "4a03d504b931d1ff71dbf6fe3edacfdacd02c42ebf13ae9112d000e9db59a889",
+    "scripts/eval-agent-v2-lead-data.mjs": "b240c46c74994b7e3e84384053bfacc12015a77dec2029e1df17a86892350b06",
+    "scripts/eval-agent-v2-openings.mjs": "61760e9c5d712f448e4b9e0d792d244f638ab19ae12a2d9c24de9886d4179b53",
+    "scripts/eval-agent-v2-product-knowledge.mjs": "10de55f8315cc638ef40d7f8a9629dc571386ed9a1f7db67470bc1c76404d9d7",
+    "scripts/eval-agent-v2-quality-judge.mjs": "263b14f84798cc88dc89571bcc7a9552d8098b879e898b629e54aadfe286fb29",
+    "scripts/eval-agent-v2-runtime.mjs": "13643656185a229caf684052d8965d4dd968d6dd27a8adcd0e1c0a850fd7467c",
+    "scripts/eval-agent-v2-sales-inbox.mjs": "745a890269f4861545ad0fe37105a5d619dbf52b15526e3c9c2a7a75614cc295",
+    "scripts/eval-agent-v2-state.mjs": "e2a0965c10e7fd2e623418b73714702d66ede22b0cf0d80ef93d4181a4aac86f",
+    "scripts/eval-agent-v2-trace.mjs": "6aab92a579b16a6717a7c167ccd4093d7dfb8c644f520405f4f646039f2706ee",
+    "scripts/eval-agent-v2-utils.mjs": "2705c6f6846b544f342dbb888db3c95d91e4ef5ea70dbcbe60a2817054e13ac7",
+    "scripts/eval-agent-v2-waitlist.mjs": "9ac0e9ba8d23b9c13b8d85f1a0126fbf61f477afb75f67342c133d8d6f7810d8",
+    "scripts/eval-ai-multiturn.mjs": "6ce95668acdb65de864772f6021f6f8668bfa92629c1764191a93710ac571031",
+    "scripts/eval-ai-sales-humanization.mjs": "bd5de2ac49e49c60d2d1543ae17a02c7d7c7e4d7d9156ca60a38c2a232dcef17",
+    "scripts/eval-commercial-conversation-matrix.mjs": "59f418e16b3cb3c8b26ee3e46b868f4a8c7d4f8437f3bc1d42e7fff69e55eadd",
+    "scripts/eval-conversation-route-matrix.mjs": "2770b79074049cc170d21a4b129dc3424344869b8ab8b271eaf539221ed2a1dc",
+    "scripts/eval-custom-agent-diagnostic.mjs": "d45fb08106cb00b329607df6ffb64731d8402c51e0821028ae20709d6cf19ee0",
+    "scripts/eval-lead-pipeline-e2e.mjs": "d551c800545690cf6e17a949ecf5baf2e669c558ed291c5c60b162802b7397a0",
+    "scripts/eval-message-delivery-matrix.mjs": "16243f070fb45a3e454ce93895e777a60c6d7cadcb55e6793cc5cc7fb4816ae0",
+    "scripts/eval-price-plan-commercial-matrix.mjs": "da15e1383630cb37133398c88963f188cf2d16cfb69ee91460179e52b5ffd94f",
+    "scripts/eval-whatsapp-webhook.mjs": "6f8328f57b8cd05c63c748dc28a3c95adc3b660b2791f0b90f29106eda746102",
+    "scripts/fixtures/agent-runtime/diagnostic-rich-context.json": "ac72b73d738f3ba3e348a0e5ac63d895f7725a48d4ab5f8957379be583f04911",
+    "scripts/fixtures/agent-runtime/diagnostic-thin-context.json": "a9cfcd3b75bf140a5229ceed00a87fb25f5236cf61ed08394a6571ad2ff6a5d7",
+    "scripts/fixtures/agent-runtime/final-behavior-matrix.json": "c92d05431b06033d6a4f074bc621cf977590e7a811e64c9b98345a82a89dc37a",
+    "scripts/fixtures/agent-runtime/free-form-openings.json": "082dbc54ea4dad1811ff577cdb588771be93c0db40ef74d0459aa3dd2ff84ff1",
+    "scripts/fixtures/agent-runtime/handoff-whatsapp.json": "e160f0359050c94a83d1a37418aa13614457af6025384777e3beffa9d3a8fa64",
+    "scripts/fixtures/agent-runtime/mixed-messages.json": "279d6c4b90317e59a381354415fcdde8d2111b055de8b88404ddfdf6160abfaa",
+    "scripts/fixtures/agent-runtime/product-followup-delta-real-openai.json": "e8a3ded91797f212e291ef507402beca4568b19aee7ae39dba528d7be307da06",
+    "scripts/fixtures/agent-runtime/product-questions.json": "a6772a577724d3989d19c69a117c5275ed40807a9f178fe283c6ca7f3bf5dac1",
+    "scripts/fixtures/agent-runtime/real-openai-behavior.json": "2e22a97cf1a4de9f40da08d8ac6088f7ac724b0a2bc988f1e6269f390f9e9179",
+    "scripts/fixtures/agent-runtime/real-openai-final-corrections.json": "c7b3b6bcdf97f37a4657aed933e12e99eba359aa318060b133d0b82f8d335683",
+    "scripts/fixtures/agent-runtime/real-openai-low-budget-validation.json": "be2bb74b67e4292c695d6113d1c67e212ef5d167fec17b0b270c5d7d3a474c25",
+    "scripts/fixtures/agent-runtime/real-openai-p0-validation.json": "a49ec14b5850a0865f8e0966ebbe84f8d67617007cf1178a99c37ed6384aa08e",
+    "scripts/fixtures/agent-runtime/real-openai-smoke.json": "70b050e054c704e0da2a18b263c1ba78972805631cd569e4ac78b6b4b2a805c7",
+    "scripts/fixtures/agent-runtime/real-openai-stage2-price-objections.json": "62afd15ad59ad0bc938d46253ec7eb4708ba38df1a56c5cd284b43e11e208bbf",
+    "scripts/fixtures/agent-runtime/real-openai-stage2-wave1.json": "2d530cf1ffe339e385eeed2302bb7fad573bccf93afee67bc0417acc954a4175",
+    "scripts/fixtures/agent-runtime/real-openai-step3-regression-fixes.json": "18c028cc713aa3bb98becfc5d4bf84538dc10cba2617031cf4356cf0c6016b05",
+    "scripts/fixtures/agent-runtime/real-openai-step3a-human-entry.json": "4c54494848639a412fd2670150b5cc0589323b5ce36ace7921488b3d25b1b42e",
+    "scripts/fixtures/agent-runtime/real-openai-step3b-price-objections.json": "4a4873c841ce961acb350cf9fe346a7e178b52a4662302ceec9108a8fa658a86",
+    "scripts/fixtures/agent-runtime/real-openai-step3c-product-limits.json": "1ae884eff9b03bef586d1a8d01b2aa3724d46d21cf395ba309ad7d7ca657648d",
+    "scripts/fixtures/agent-runtime/real-openai-step3d-diagnostic-question-by-question.json": "a4c225add123109a2d09ebe7b7579ff8b16cd9e1a6e54b50015e1e6626025849",
+    "scripts/fixtures/agent-runtime/real-openai-step3e-post-diagnostic.json": "82d992a8e50613b45035de147b23f61e75f80882788af61495b0ac371a97e4d1",
+    "scripts/fixtures/agent-runtime/real-openai-step3f-post-waitlist.json": "76bfa0e717ed8380a7201e7b1eab9589ff8b3d5915d74f0e529ae363d3b3c462",
+    "scripts/fixtures/agent-runtime/real-openai-step3g-long-conversation.json": "b2aa775523b8bfa7acb75beadd2d3035b55628bdd8183eefcab198e3933268c0",
+    "scripts/fixtures/agent-runtime/sales-inbox.json": "5060e8b4e5f2d5b3bf236e5ac92621bf976f3b8245413c4af3e8fc43509ce126",
+    "scripts/fixtures/agent-runtime/spec-011-do-not-do-runtime.json": "070a8914f359dcfd97a6ebb3be9f2f1891d526393e9bef143ac8d7a0ef7064c3",
+    "scripts/fixtures/agent-runtime/spec-011-golden-transcripts.json": "7fa17bc172bf1d7f22ef5899f8d28bfd60cdb2946a67732d88f8d414083aa130",
+    "scripts/fixtures/agent-runtime/spec-011-real-openai-p0.json": "8b7b2bf6b9bdfa0199abd43d1eebc9bf870588174dcf75cb95ef6a468800e2a1",
+    "scripts/fixtures/agent-runtime/spec-012-luna-targeted.json": "e130154b2d7f50deb908f0fe8b1feb6b2f83155be7435b6ad7f7137ea1f83e44",
+    "scripts/fixtures/agent-runtime/waitlist-timing.json": "e1a01d68e1d726430454662025d32b05052fefa05debff8033e8fdd68bfd4be7",
+    "scripts/fixtures/agent-v2/channel-parity.json": "d8e56284419884ccd90a62fd6c7d453a5f30482a91a08134bc6884d962aa7784",
+    "scripts/fixtures/agent-v2/diagnostic-offers.json": "e54033cae94b620f7aa1c71b01223f978c65344c07046900cfbdc258991be161",
+    "scripts/fixtures/agent-v2/diagnostic-state.json": "1b3251424b9d6b63ebe0c53eebe0d16353ce70bbd158054001276c19285f8774",
+    "scripts/fixtures/agent-v2/direct-questions.json": "565a8c6ac7e2f89389d61377c19e9ccadc4b3321607fbd0416dac843b7d29735",
+    "scripts/fixtures/agent-v2/handoff.json": "54d887ec8833aeed321c2e7a70c9cb1bf411c8f668f7b99d2ee1059f5e2ff855",
+    "scripts/fixtures/agent-v2/lead-data-after-value.json": "c78066bd56b4832169350c9b0243b8097a1bd223db5a54120acf222cf8d08d3b",
+    "scripts/fixtures/agent-v2/safety-and-media.json": "a94d1379a20955fcd1f79115897f18766587bc876a5aba7f966234acf050697b",
+    "scripts/fixtures/agent-v2/sales-inbox.json": "05d758f7099453f4684f8534146d9ea5ab1e3f743f0568e8b2edb076c15d1fc2",
+    "scripts/fixtures/agent-v2/source-openings.json": "6aa0ba14c9b31f4e4e595597e2af48b8f04fc6b04bb501a2faca783f5361275c",
+    "scripts/fixtures/agent-v2/waitlist.json": "059e451d61f506821ab4b1fa5310c77c28ef386bb292fecf94e492bae787fbc8",
+    "scripts/generate-taliya-complete-flow-details.py": "ecba7e50c8137dce4efe104f9014f683e325974a387b1131689f25654959f2cb",
+    "scripts/generate-taliya-detailed-mode-rules.py": "b41be1cfef2b9213e9916ab5432229326ac72ff205593143b2d29eaedfc91293",
+    "scripts/generate-taliya-flow-test-simulations.py": "23364b440b794e5b2f847327744c3eb1be8c855eeb8b0bfc8f0cf06bfbf311b2",
+    "scripts/generated/autonomous-widget-visual.spec.js": "76a355891fe6ab3ad14a65f6ce36b6b7f7b7828cdd591074921c55aaea2ad6dd",
+    "scripts/spec011-t011-105-source-fingerprint.mjs": "985cf9b2d113b50fed64a5a532027f5b8e9da5b87efa08afa39d1db2a18e0671",
+    "scripts/sql/001_ai_attendant_whatsapp_sales_inbox.sql": "3f517b70cb3f183a2d9db3a788fbbdf5dc1101036543d2786c7af399570480f4",
+    "scripts/sql/002_ai_attendant_commercial_stage_waitlist.sql": "2376c027d4fa84bb7c625e8411706aeacc68358c17126b7853152687c400e7ac",
+    "scripts/sql/003_taliya_agent_v2_architecture.sql": "6d41c97e548150690922c4f7cb33c2321c62492f77f7bd17ee8a1bb14706ebf3",
+    "scripts/sql/004_taliya_commercial_ops_v1.sql": "f83e6e730c2c33458369451bea40590f4d0e13cceb57ecbb435c3dbba8214c00",
+    "scripts/sql/005_taliya_commercial_ops_identity_backfill.sql": "a9dc2d626ab5f099e82b0d0449d6249959920296a7db72f419a8bc70086b494a",
+    "scripts/sql/006_taliya_agent_runtime_fk_indexes.sql": "91ee1de87932a2a785484c33eb0a5427dd2c95e4cdacc3c144321f360e4bedda",
+    "scripts/validate-agent-flow-docs.ps1": "f9df699f40bf7613b5e0e776cf8a6d383ba2697f9d8527b9b67c4cb97ca27406",
+    "services/taliya-agent-runtime/tests/__init__.py": "12115979c2a3c265d24462c1e3c643bfec8d8ebe1833f9118b8ea9414294d223",
+    "services/taliya-agent-runtime/tests/test_agent_registry.py": "a8780b090fcc2d3e6d42cc327b9aaf76d6396eaccadd6feb771f88abaf687e13",
+    "services/taliya-agent-runtime/tests/test_agent_runs_api.py": "1417787772244748bb5f6cbdb5c4dbb17b93df36eecf99f9f3cddbb2ed155bf1",
+    "services/taliya-agent-runtime/tests/test_behavior_policy.py": "e4ebe457c3fe7f80fa8ad67e3b1bb6599bd41bd4ae4e8cccf1d6d863885e35b0",
+    "services/taliya-agent-runtime/tests/test_conversation_ordering.py": "b61ccc2d6013b8d65b851cd7952f7bfb490105414a7271c8d0484f6c4a9f263d",
+    "services/taliya-agent-runtime/tests/test_conversation_state_contract.py": "ca2817162718110a34931a0021964eac0a1fa0b162a778e1c882be0b3ddc6bff",
+    "services/taliya-agent-runtime/tests/test_diagnostic.py": "74f9369659191b9938c3a20ec2ec9d012ab998cca953d6675e4678e796ad85f7",
+    "services/taliya-agent-runtime/tests/test_diagnostic_ledger.py": "5db9af38c2620e436e5e282762f0221b5d081772c95cfc20f50f1d7f84ea53a6",
+    "services/taliya-agent-runtime/tests/test_handoffs.py": "1d35a7da910729a7a8055abc896938240b584d1234b5853083dd3edb3f5e47f9",
+    "services/taliya-agent-runtime/tests/test_hmac_auth.py": "366cf1d4fc69324b059c3d257f696ac0da899da545e0813adafa44f3adac9cd4",
+    "services/taliya-agent-runtime/tests/test_human_handoff.py": "f12dc3f503fc8c1cf4f85c5707e0c6473d9809c024995b3abc332dea9b7de5bb",
+    "services/taliya-agent-runtime/tests/test_idempotency_contract.py": "2797c7a9f0afc10d1f1becbe0f6f6faf4133d55d7a9173cc645d69c15bd0c492",
+    "services/taliya-agent-runtime/tests/test_llm_output_repair.py": "922e0b290acf0fdb287ecfd279d49d933f239824340f2d42941ee70b69bbfbd7",
+    "services/taliya-agent-runtime/tests/test_memory_store.py": "1dc1e619e93f10f79a7cad49339e73eb8c142c54c3b056882901c9516c7a9498",
+    "services/taliya-agent-runtime/tests/test_message_renderer.py": "04539c683925db89d9a256826787cfc61270eeb9f87de89eaaedfbaacf5eb065",
+    "services/taliya-agent-runtime/tests/test_message_templates.py": "c4236fe3795922514d7ecb1754d9d97bd5daca3c97ea0dbcd637f5fde0fbb3c3",
+    "services/taliya-agent-runtime/tests/test_model_usage.py": "7f1bf887e0b46d9ace60dc466e557f179ea4fef4767b05cba2300b22a800930e",
+    "services/taliya-agent-runtime/tests/test_name_policy.py": "0d434dadbcbdfdf52f423ffc842e28da85e05f42603ef82ef2cdb7901e479272",
+    "services/taliya-agent-runtime/tests/test_output_guardrails.py": "de92cb88fcc5f5f8c62e06a58b3afd6966fb8563c34ba38d3f0fdf754cc56f45",
+    "services/taliya-agent-runtime/tests/test_product_knowledge.py": "48b793e3bc96c4f84012403082c97109655e433452a9e323ceb24959737cefbd",
+    "services/taliya-agent-runtime/tests/test_reference_structure.py": "8387f8b0d0d66d526722c7055b48e8452ad855a24cf68be51dbc488cc1f5b8a7",
+    "services/taliya-agent-runtime/tests/test_runner_events.py": "f9ba7ce4c5b66ec9b848ebc9ce2e00c78f42e8f98dcb0c98cebcb1735adbdf6e",
+    "services/taliya-agent-runtime/tests/test_runtime_behavior_regressions.py": "74373e053642752111b05a2a109187909502870d30ad971fc13cb5a972ab2790",
+    "services/taliya-agent-runtime/tests/test_runtime_schema_scope.py": "6b518779f250887303a7635f9fec94b757a2c2678b6d0a9d6c2fcdac2ad25123",
+    "services/taliya-agent-runtime/tests/test_settings.py": "4b791e2ed5fa50530220915bed5c54973b1e30fd3461f566a1518f68e69a74dc",
+    "services/taliya-agent-runtime/tests/test_spec011_action_coverage_contract.py": "8766fb675fd77ffb243dc141c90a5058b89b679c0b50390b37e5639a4b6137bf",
+    "services/taliya-agent-runtime/tests/test_spec011_action_first_static_audit.py": "96be0ecf77d90cd53c63e358f1de6307ea95157d7bccaf568eace9fbb7000719",
+    "services/taliya-agent-runtime/tests/test_spec011_action_mode_matrix.py": "1f766bc2c42d60638619880cf535b56f776865c860574de3e053a140ab32d7fb",
+    "services/taliya-agent-runtime/tests/test_spec011_conductor_boundary.py": "7726d0bb31a50f6fd0139d515f9a676c1a5d111c4bb3586eb1f617572b3f5b50",
+    "services/taliya-agent-runtime/tests/test_spec011_conductor_demo_concept.py": "7ee9f118b1a38f44efc5a8bd41a0624b5c458cb13f6f078593a4c8b68eff4435",
+    "services/taliya-agent-runtime/tests/test_spec011_conductor_evidence.py": "56639535983503352cf9065d63be4cd6fd35386353cf5ee4df36e4fa80d42274",
+    "services/taliya-agent-runtime/tests/test_spec011_conductor_language_policy.py": "e8878086c92876f841e5ad3579db394c265c19c55f57a8dd07fa976efc78cf7f",
+    "services/taliya-agent-runtime/tests/test_spec011_conductor_policy_pack.py": "c6175b7b383c25adc1e831fe6df3c1c83b5e0d0e1b850e5421eeff215f8dcbbe",
+    "services/taliya-agent-runtime/tests/test_spec011_conductor_self_checks.py": "222ab43cf9c641af5a62e519ad626eadff4d94555335d2047eaab73c1ccaca45",
+    "services/taliya-agent-runtime/tests/test_spec011_conductor_template_plan.py": "e7f6c97672dc6e9957917b9bdd02f913c7ac94a9a7e4264a32ff3ab4bfaed6ad",
+    "services/taliya-agent-runtime/tests/test_spec011_conductor_usage.py": "9a28ccb23f27b53697e8827c66fe2c9e07eedcb0daa4dbc8d47ea4bf084fb968",
+    "services/taliya-agent-runtime/tests/test_spec011_conductor_whole_response_fields.py": "6fb1c961584e7e668f746c67b412febde1b91eb3fb183edb948a2e2d862c930a",
+    "services/taliya-agent-runtime/tests/test_spec011_context_builder.py": "1ef2050939d79c92898ea5e85be8faf2087103444268432f5f4f47524911c648",
+    "services/taliya-agent-runtime/tests/test_spec011_context_snapshot.py": "9536bf3bbc048487057240f4c72a02f404215b70b4bb8c3a035a18d31de7bf2b",
+    "services/taliya-agent-runtime/tests/test_spec011_contract_schema_map.py": "1877e35420212c53243efa05ffe87a3e8a9a7a9ae12d59df22f9a7c05e2a282a",
+    "services/taliya-agent-runtime/tests/test_spec011_core_schemas.py": "cc26f10e565c5214cd8dbb101c90e181f68ec49a4c4edca22ddac330fe9afc10",
+    "services/taliya-agent-runtime/tests/test_spec011_cost_report.py": "7ccb464ded8a8adc07a309904b7ff052af3df1ca46ddd09fd400eb1217241122",
+    "services/taliya-agent-runtime/tests/test_spec011_decision_compiler.py": "c5a7c58629a04c98aad6e35c8dc3bba4b5d90df4ec1e65d3024487b8b5eb722b",
+    "services/taliya-agent-runtime/tests/test_spec011_eval_fixture_contract.py": "e41a69054fdbd3093b1a1fff3533660549cb137b148e33a2c5eeeee6dcf608b3",
+    "services/taliya-agent-runtime/tests/test_spec011_failed_path_guards.py": "b91c9776857c36417b837de657f5563e8a3f3c7fea77948f6456bb541a9c0033",
+    "services/taliya-agent-runtime/tests/test_spec011_feedback_loop_prevention.py": "b567968caa4851eb022ddc7c378d0a6f8f23a559bfb9950ef9bf809c110f0fbb",
+    "services/taliya-agent-runtime/tests/test_spec011_governance_metadata.py": "a7368b745e3ebe21f92d7b45252ba67471cb294d9f6180229eebc645f45a8b91",
+    "services/taliya-agent-runtime/tests/test_spec011_identity_contact_reliability.py": "e5a2f3b8af2b8f98b9d0ad10f83cf33a45ba354d12e8853d7cf452dd7ae145f5",
+    "services/taliya-agent-runtime/tests/test_spec011_internal_metadata_non_renderable.py": "1dff27d3419481a6525eeefe68ad4d60e7eb802d19923ceaa25edbcf0787de5e",
+    "services/taliya-agent-runtime/tests/test_spec011_mocked_conductor_fixtures.py": "b8c8119c7486a1aacea8d5faa12beec651c0d5b399df8ab96dde16800a1ab35b",
+    "services/taliya-agent-runtime/tests/test_spec011_product_fact_static_audit.py": "f8e834bbf9e5c58dd76ad1d8a4e329b5b013af2e302947c0402dd360267be451",
+    "services/taliya-agent-runtime/tests/test_spec011_product_knowledge_context.py": "be970f64d5fa4fbe687f0a8406b8b4e1589d2974188cce7c54566bfb45f74f3c",
+    "services/taliya-agent-runtime/tests/test_spec011_renderer_channel_rules.py": "53c486ed1b83a8f09cb88e0ff968ad648eb25a2e02ec28adf096abcec1fa0dd1",
+    "services/taliya-agent-runtime/tests/test_spec011_renderer_final_diagnostic.py": "8080e57b1283f583501c6fbb4714595277dd28f2e5491792b30091538be7cee7",
+    "services/taliya-agent-runtime/tests/test_spec011_renderer_no_semantic_defaults.py": "532f7d76b7b6fefcf45cb84d7c67525fa7b670a8bd720c0ab9a32d4b0f3cc8ae",
+    "services/taliya-agent-runtime/tests/test_spec011_renderer_validated_plan.py": "728d4524d491493e7d911b59e1053df119b0949afc19cde01e7833e1649554ad",
+    "services/taliya-agent-runtime/tests/test_spec011_renderer_variable_contract.py": "26031b7285796495bac5878123edc16aa98c5ff5866da14acfedd81e678085bc",
+    "services/taliya-agent-runtime/tests/test_spec011_repair_loop.py": "f951e7e31347a94d90c0a2cd5721ebd0c08f6cb933fcf4f7ac07956951381a5d",
+    "services/taliya-agent-runtime/tests/test_spec011_runtime_context_profile.py": "0568ec95645f9ea5555c6f26d53a6e37e26a01cef7289d269b3e915d1521657f",
+    "services/taliya-agent-runtime/tests/test_spec011_runtime_state_diff.py": "dea745149df81f37c61a89dec9a47e60ae6ac8d4a751517d99eb4a9ac7f265f0",
+    "services/taliya-agent-runtime/tests/test_spec011_safe_fallback.py": "7848e84fc744ffa91c2d41d3216f916a36e389971b0526d583565cac46a7c1ad",
+    "services/taliya-agent-runtime/tests/test_spec011_sales_inbox_identity_projection.py": "1a7815854df90a6b57cdd1116303236668b4ae308d7b7f4647c92be23f7c73ad",
+    "services/taliya-agent-runtime/tests/test_spec011_sales_inbox_projection_builder.py": "0de464df7f1982d912b8b15e11803dad95b0611c4b27b3fbfd9c093b4b488dc3",
+    "services/taliya-agent-runtime/tests/test_spec011_sales_inbox_projection_cases.py": "094b81564b168250c158670eebe52bdc56634b55aef675f307b2dacf08f9d538",
+    "services/taliya-agent-runtime/tests/test_spec011_sales_inbox_projection_completeness.py": "208e4ff96b493a33379a37654595309b42ba23fac2f9e75f58eeaa077e0f22dd",
+    "services/taliya-agent-runtime/tests/test_spec011_schema_versioning.py": "117b9313373439d3abd9b9530cf52f07ebabd5674da55cf909449b07362753e7",
+    "services/taliya-agent-runtime/tests/test_spec011_shadow_mode.py": "cecc7688383cfd4dbd167dbcd92507318c6141b30cb8caaa5f499417acb9fda2",
+    "services/taliya-agent-runtime/tests/test_spec011_spec006_context.py": "72231cdc97f8a8c73bd06b85ebecb8d13083a9dd1e319e915bdc27b620e5b05b",
+    "services/taliya-agent-runtime/tests/test_spec011_template_registry.py": "b5f13031874daf10cd3291eefefb8a11101041a1888c7c220cc3a87bcc18a4d0",
+    "services/taliya-agent-runtime/tests/test_spec011_trace_export.py": "88f2d45513d871666cba7f73eda7b5f6653784b408c08684a6d1254c23d8b611",
+    "services/taliya-agent-runtime/tests/test_spec011_trace_store.py": "156003a2921cc6c85eed97053b0c6a5c24e060a21c28d93db5bea5edd552973a",
+    "services/taliya-agent-runtime/tests/test_spec011_turn_gate_delivery_regressions.py": "59db66a564fdad4ba4f92743bc485a2626c93d699d7f112b5a296be66364a0c6",
+    "services/taliya-agent-runtime/tests/test_spec011_turn_gate_human_pause.py": "fabe6b8c3b3d9a2a90474e529a80183484d2e55b139c1176ee1bb80884a705f8",
+    "services/taliya-agent-runtime/tests/test_spec011_turn_gate_idempotency.py": "65dd1ed046ec7ecb1ed22963924b5c35801789b0ca312a8b165feb612d12ee07",
+    "services/taliya-agent-runtime/tests/test_spec011_turn_gate_lock.py": "83fe2a406da46a905e25a6c82ff9d99930f00017f925a3708acfd7e64ed155b8",
+    "services/taliya-agent-runtime/tests/test_spec011_turn_gate_outbox.py": "b2221d65749ab1eb0e5885a95bc7c4ecadbee6ad5b9fab610ed8d91449dc5931",
+    "services/taliya-agent-runtime/tests/test_spec011_turn_gate_sequence.py": "4aed070eb34b89a580a8438291caa5eb0a1f6249199e18c35b8f1edf5e909960",
+    "services/taliya-agent-runtime/tests/test_spec011_turn_situation.py": "100f2cec87bb8f9af4be0df444ac5874591a56df0d6ca309fd85694d23921d74",
+    "services/taliya-agent-runtime/tests/test_spec011_validators_core.py": "1b766509aa31790312902e9dba6c4e640681921aceac0813b168b42951c0281e",
+    "services/taliya-agent-runtime/tests/test_spec011_validators_diagnostic.py": "254631419e29e6c8132475ff90bcff6512a4f27336ee2a72b44fb7820bdd6e35",
+    "services/taliya-agent-runtime/tests/test_spec011_validators_leak_banned_phrases.py": "4103917a5de4a820759fce19007617291f8e75ddf50f888e2b0c8dfd55ef87fc",
+    "services/taliya-agent-runtime/tests/test_spec011_validators_policy_corroboration.py": "43ade78498aa5353b501d098e2b5faff0343c7ea2bc5ecc448cb539be6812518",
+    "services/taliya-agent-runtime/tests/test_spec011_validators_product_claims.py": "75a9b6c9abd1c684b0640c8aec3b25fb162ae601fd275cb521c54db2bdc40281",
+    "services/taliya-agent-runtime/tests/test_spec011_validators_sales_inbox.py": "ea0d5aa0033be4822fe4402460653e08c1f82590b3af187453889afc221401fd",
+    "services/taliya-agent-runtime/tests/test_spec011_validators_waitlist_demo_handoff.py": "902a5061ea3bf331f623c3e91b0731650f3f3bf19f931c80200834721a0c9a3c",
+    "services/taliya-agent-runtime/tests/test_spec011_widget_runtime_adapter.py": "4a02eea1c23c4251f788c274d99f424d77a774dfa58c00f06ea22347ee23df0b",
+    "services/taliya-agent-runtime/tests/test_spec012_action_agents.py": "761e496a633ec79edc5c72284147a7203e440fa9b1054d542ecf55a8c0bbff65",
+    "services/taliya-agent-runtime/tests/test_spec012_action_safety.py": "363096700361c8a41d91578f034e944ea984876d872d2906e276db996a7a01a7",
+    "services/taliya-agent-runtime/tests/test_spec012_action_trace_export.py": "0c1da98ab60adf6f9356f87983ac00341026101f39208916644c2316c780f8b9",
+    "services/taliya-agent-runtime/tests/test_spec012_action_turn_runner.py": "0c2d4bb1338f777efaf3c27417a081684ea810de39ea28ed13f1fbcae0de19ac",
+    "services/taliya-agent-runtime/tests/test_spec012_action_validators.py": "6ee284a2559ccc11d4b4ea03e77036a9f76baba3d3e39bf17b132a2ca0156d45",
+    "services/taliya-agent-runtime/tests/test_spec012_action_validators_ported.py": "506a0ee7a82e04d638962113ee7e1b39a575d4020b96e617113ff653ed66026e",
+    "services/taliya-agent-runtime/tests/test_spec012_canonical_action_first_mocked.py": "f27b47f73e74bcdd9d31aa901fd316274940ebb8b66bb5b9d7e6b1cf203423dd",
+    "services/taliya-agent-runtime/tests/test_spec012_canonical_do_not_do_mocked.py": "d6fbb46b4c36612d25c007beacfb276fd914a7090b8a4aced0dfe74eb3eae96b",
+    "services/taliya-agent-runtime/tests/test_spec012_canonical_fixture_port.py": "9ea0eccfabb95d8caaa0456c077851072bbad60305321318394c84b112fae135",
+    "services/taliya-agent-runtime/tests/test_spec012_canonical_p0_mocked.py": "38d7de8b6774c625fff7df236d4df31f0c6efd5f01aae3bd8a6a25c026502e89",
+    "services/taliya-agent-runtime/tests/test_spec012_conductor_decision.py": "dc896d21cad2506b91959f3ba07113f78a265313f7ccca2584abd3c6076eddac",
+    "services/taliya-agent-runtime/tests/test_spec012_decision_compiler.py": "c3eb60c1888a450f4a3069306a68a69ded261def1da924dde9d154fd211168ce",
+    "services/taliya-agent-runtime/tests/test_spec012_manual_review_package.py": "3dee221450f8a566736b9a67ebdf337b21103cbac30c85b31e0e3eb2d3d7c4ad",
+    "services/taliya-agent-runtime/tests/test_spec012_quality_judge.py": "8328a27f626fb341399394ac57acf200fea305fdd1c4e8f8665625e774c8c29b",
+    "services/taliya-agent-runtime/tests/test_spec012_real_model_fixture_preflight.py": "3a3485d352491b46834dd2ae90e3ca1515a1dee02d95abe14ef3519e4ebfcd7a",
+    "services/taliya-agent-runtime/tests/test_spec012_renderer_compiler.py": "b4b9f20ee6ab2efdede0c0acbdbacc8f8e1c4da8bedfdb398f63524c10cbb883",
+    "services/taliya-agent-runtime/tests/test_spec012_runtime_adapter.py": "b7e86f1a8d5f7ce2c0bb29f744ac8e058cdae12ebdcc3951654de8b8ad2fc6f0",
+    "services/taliya-agent-runtime/tests/test_spec012_sales_inbox_projection.py": "d072bd1e55eaf0c4ad49ab7eb964ee15c576f291d677c3ae9720af37b915cd61",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_agents.py": "9fa87f32892b67b2f0c9732bef91633327eb8b54215abd6b6dc8bf22e304623e",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_contract_gate.py": "f33bd55f46464f74f0ac1604b7786abb8fe6e60589fb0394c446165cb575ca81",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_ideal_conversation.py": "0d7ae1a11984364c5ef9b1989427ce1f591366996bf7c112b85654ed6e9fe0d7",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_mocked_contracts.py": "d7406e0376f4e0d412dd2e7eb56b159eb10e0c8d016eccc5f6c1cca88801a693",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_output_adapter.py": "3db70f617ba128624d799c6db601a58767e81abea6e2190375250ed186b09ce0",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_paid_harness_dry_run.py": "42b2fae6ed6231bb1a849bb573f4b67b53182c466c3dce43fe1fbbc500ccb0d3",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_preflight.py": "edae68867b0e42c50c843d90b420e14fd0bad32d5a67fd1892c5d20080358319",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_run_items_mocked.py": "79d64951a30ba11d54dc338c4fe60bf89d2256f3dbc1d291b5bba84466896195",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_spike_isolation.py": "bae3480de6fa612d81f71ede2a7a4f1068f80936a46f0a1e76c63e22fa0fb6d2",
+    "services/taliya-agent-runtime/tests/test_spec012_sdk_validators_adapter.py": "0fa0354402c9fb79f72bfd21cb8dc240b4f77ff5b8e3e5b53592865d2b93f5ea",
+    "services/taliya-agent-runtime/tests/test_spec012_static_audit.py": "812094607396065f98a6cb12e1358a19adc2855c6db4a246d13a2cb97ae012f7",
+    "services/taliya-agent-runtime/tests/test_spec012_turn_situation.py": "6365feb6f1bc6812f1250ab2d636015aaf843c471ab2040a7916849c0d0a3e8b",
+    "services/taliya-agent-runtime/tests/test_structured_output.py": "bcea869075dc1180c0a4ce4dc7546b115ee20e07911ad477cc1da90333864849",
+    "services/taliya-agent-runtime/tests/test_tool_idempotency.py": "fd40fdf55347b2dcb60f081222ac551e4d9c259b7d093d01c262c995abaa1f7b",
+    "services/taliya-agent-runtime/tests/test_tool_registration.py": "f190d5a4a084530ce5a4ccc24e4db41af6571322aced4ba3f2b7bd22420cbe17",
+    "services/taliya-agent-runtime/tests/test_waitlist_contract.py": "0aefad53565fa57650a270c0fe5369f93c99ae33d1c71b1a89278ba896360869",
+    "services/taliya-agent-runtime/tests/test_waitlist_tool.py": "13811958d5728eb6585cc2c9c4f263b4f78ec2a45525093b63bca6efa5cf9c9a",
+    "services/taliya-agent-runtime/tests/test_widget_opening_policy.py": "635d93be12c1575c0498cd7b262082cfdea8c81353b4114151e73af0e444291f",
+    "docs/taliya-sdd/evals/acceptance-cases.json": "7ff0ef6973eaf41740efa01dec3265dc921d2a8633186600b7511492be670323",
+    "docs/taliya-sdd/06_TESTES_E_ACEITE.md": "7147a9e333cf7f9c5b7d4852f3c64c6f80a187178cb722c6fbb84784982e5728",
+    "AGENTS.md": "5177df4905ee76265b933305b876e049f3d314619368c6d4ed7e92ca5610f80c",
+    "docs/taliya-sdd/07_RUNBOOK_RELEASE_E_OPERACAO.md": "8f15fb29bda0c31cc970dd6642b7811dea34fd85426eb84306cc2a3a20c68fdb",
+    "docs/taliya-sdd/STATUS.json": "c823f23454731db7c13c06fd9adbd13e10458b2bf6389547713f28564cf9e8a6"
+  },
+  "tasks": [
+    {
+      "id": "T013-01",
+      "spec": "013",
+      "requirement_ids": [
+        "R013-01"
+      ],
+      "case_ids": [
+        "C013-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [
+        "B013-02"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Atualizar matriz landing/runtime/app/Internal com SHA e dono e vincular cada rota ao deployment real.",
+      "test_oracle": "Comparar next.config.ts, rota física e URL servida; HTTP 401 isolado não comprova SHA.",
+      "evidence_target": "specs/013-fundacao-e-contratos/verification.md"
+    },
+    {
+      "id": "T013-02",
+      "spec": "013",
+      "requirement_ids": [
+        "R013-01",
+        "R013-03"
+      ],
+      "case_ids": [
+        "C013-01",
+        "C013-03"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Registrar contrato existente de identidade/negócio/acesso e desenhar as interfaces a implementar para oferta, checkout, assinatura, Pix Automático, webhook e reconciliação; documentar estados, erros e responsáveis sem payload publicado fictício.",
+      "test_oracle": "Diferenciar código observado de contrato-alvo; quatro combinações e compra direta permanecem para teste de implementação na 015/024.",
+      "evidence_target": "specs/013-fundacao-e-contratos/verification.md"
+    },
+    {
+      "id": "T013-03",
+      "spec": "013",
+      "requirement_ids": [
+        "R013-02"
+      ],
+      "case_ids": [
+        "C013-02"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Preservar adendo de AGENTS/constituição e pointer 013 separado do número da branch.",
+      "test_oracle": "Diff limitado; histórico copy-only intacto e somente 013 ativa.",
+      "evidence_target": "specs/013-fundacao-e-contratos/verification.md"
+    },
+    {
+      "id": "T013-04",
+      "spec": "013",
+      "requirement_ids": [
+        "R013-04"
+      ],
+      "case_ids": [
+        "C013-04"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Manter Bash oficial e versão CLI com procedência; executar prerequisites sem reinicializar.",
+      "test_oracle": "FEATURE_DIR deve resolver 013; hash/proveniência e comandos reais registrados.",
+      "evidence_target": "specs/013-fundacao-e-contratos/verification.md"
+    },
+    {
+      "id": "T013-05",
+      "spec": "013",
+      "requirement_ids": [
+        "R013-05"
+      ],
+      "case_ids": [
+        "C013-05"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Reutilizar inventário de mídia e baseline desktop/mobile; registrar permissões e contas pendentes.",
+      "test_oracle": "Screenshots e hashes presentes; catálogo vazio não recebe mídia inventada.",
+      "evidence_target": "specs/013-fundacao-e-contratos/verification.md"
+    },
+    {
+      "id": "T013-06",
+      "spec": "013",
+      "requirement_ids": [
+        "R013-01",
+        "R013-02",
+        "R013-03",
+        "R013-04",
+        "R013-05"
+      ],
+      "case_ids": [
+        "C013-01",
+        "C013-02",
+        "C013-03",
+        "C013-04",
+        "C013-05"
+      ],
+      "depends_on_tasks": [
+        "T013-01",
+        "T013-02",
+        "T013-03",
+        "T013-04",
+        "T013-05",
+        "T013-07",
+        "T013-08",
+        "T013-09"
+      ],
+      "blocker_ids": [
+        "B013-02",
+        "B013-03"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Consolidar consistência/revisão e evidências de todos os C013 antes de liberar dependentes.",
+      "test_oracle": "G0 continua bloqueado enquanto autoridade do Internal e homologação da fundação faltarem; billing funcional é gate da 015, não evidência exigida da 013.",
+      "evidence_target": "specs/013-fundacao-e-contratos/verification.md"
+    },
+    {
+      "id": "T013-07",
+      "spec": "013",
+      "requirement_ids": [
+        "R013-01",
+        "R013-03"
+      ],
+      "case_ids": [
+        "C013-01",
+        "C013-03"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Registrar que o billing não existe, localizar valores documentados, consultar o contrato oficial Asaas e atribuir construção e testes à 015. A cópia sem Git `taliya-copiloto-landing-incomplete-2026-09-28/specs/003-*` contém contrato antigo com URL placeholder e garantia de 30 dias/oferta anual condicionada; não é fonte do produto novo.",
+      "test_oracle": "Decisão do usuário, fonte de valores, contrato-alvo e limites de conta/sandbox registrados; nenhum endpoint ou cobrança alegado como existente. Evidência da busca histórica em `docs/taliya-sdd/evidence/billing-source-search.json`.",
+      "evidence_target": "specs/013-fundacao-e-contratos/verification.md"
+    },
+    {
+      "id": "T013-08",
+      "spec": "013",
+      "requirement_ids": [
+        "R013-01"
+      ],
+      "case_ids": [
+        "C013-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [
+        "B013-02"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Confirmar URL→deployment→SHA do Internal e fluxo real de staff no serviço autoritativo.",
+      "test_oracle": "Prova autenticada sanitizada e origem dos dados; não deduzir versão dos deploys falhados.",
+      "evidence_target": "specs/013-fundacao-e-contratos/verification.md"
+    },
+    {
+      "id": "T013-09",
+      "spec": "013",
+      "requirement_ids": [
+        "R013-01",
+        "R013-03",
+        "R013-05"
+      ],
+      "case_ids": [
+        "C013-01",
+        "C013-03",
+        "C013-05"
+      ],
+      "depends_on_tasks": [
+        "T013-07",
+        "T013-08"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Receber ambiente sintético, canais, permissões e limite de gasto; executar apenas consultas/testes aprovados da fundação. Homologação financeira das quatro combinações ocorre após a implementação na 015.",
+      "test_oracle": "Cinco casos C013 têm evidência adequada; registrar resultados não executados e decisões antes de G0.",
+      "evidence_target": "specs/013-fundacao-e-contratos/verification.md"
+    },
+    {
+      "id": "T014-01",
+      "spec": "014",
+      "requirement_ids": [
+        "R014-02"
+      ],
+      "case_ids": [
+        "C014-02"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [
+        "B013-01"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Mapear sessão/contato/pessoa/business/subscription; desenhar relação e owner no data-model da spec.",
+      "test_oracle": "Mesmo e-mail declarado em duas sessões não une pessoas nem libera acesso; não criar auth/billing.",
+      "evidence_target": "specs/014-identidade-dados-e-seguranca/verification.md"
+    },
+    {
+      "id": "T014-02",
+      "spec": "014",
+      "requirement_ids": [
+        "R014-01"
+      ],
+      "case_ids": [
+        "C014-01"
+      ],
+      "depends_on_tasks": [
+        "T014-01"
+      ],
+      "blocker_ids": [
+        "B013-02"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Trocar shared token por sessão staff existente, RBAC viewer/operator/admin e validação issuer/audience/expiração quando aplicável.",
+      "test_oracle": "Viewer não escreve; x-operator-id forjado e token em query não autorizam; teste 401/403 e CSRF/origin.",
+      "evidence_target": "specs/014-identidade-dados-e-seguranca/verification.md"
+    },
+    {
+      "id": "T014-03",
+      "spec": "014",
+      "requirement_ids": [
+        "R014-02",
+        "R014-03"
+      ],
+      "case_ids": [
+        "C014-02",
+        "C014-03"
+      ],
+      "depends_on_tasks": [
+        "T014-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Emitir sessão opaca server-side e resolver posse de conversa; autenticação existente prova vínculo ao negócio.",
+      "test_oracle": "Trocar leadId/sessionId/businessId ou fabricar histórico não expõe nem grava dados; logout remove vínculo da sessão.",
+      "evidence_target": "specs/014-identidade-dados-e-seguranca/verification.md"
+    },
+    {
+      "id": "T014-04",
+      "spec": "014",
+      "requirement_ids": [
+        "R014-04"
+      ],
+      "case_ids": [
+        "C014-04"
+      ],
+      "depends_on_tasks": [
+        "T014-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Extrair DDL em request; testar migrations/índices/rollback, pool limitado e TLS validado; impedir memory fallback em produção.",
+      "test_oracle": "Sem banco, request não confirma persistência; certificado inválido falha; reexecução da migration não duplica entidades.",
+      "evidence_target": "specs/014-identidade-dados-e-seguranca/verification.md"
+    },
+    {
+      "id": "T014-05",
+      "spec": "014",
+      "requirement_ids": [
+        "R014-05"
+      ],
+      "case_ids": [
+        "C014-05"
+      ],
+      "depends_on_tasks": [
+        "T014-01"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Mapear PII, retenção, finalidade/consentimento e exclusão correlacionada sem logs de token/texto privado.",
+      "test_oracle": "Opt-in de marketing não nasce de suporte; exclusão cobre vínculos/outbox/analytics/sessão remota conforme política aprovada.",
+      "evidence_target": "specs/014-identidade-dados-e-seguranca/verification.md"
+    },
+    {
+      "id": "T014-06",
+      "spec": "014",
+      "requirement_ids": [
+        "R014-01",
+        "R014-02",
+        "R014-03",
+        "R014-04",
+        "R014-05"
+      ],
+      "case_ids": [
+        "C014-01",
+        "C014-02",
+        "C014-03",
+        "C014-04",
+        "C014-05"
+      ],
+      "depends_on_tasks": [
+        "T014-02",
+        "T014-03",
+        "T014-04",
+        "T014-05"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar testes de autenticação cruzada, merge indevido, sessão revogada e produção sem DB antes de concluir.",
+      "test_oracle": "Nenhum caso negativo altera linha autorizada/contagem; evidência registra usuário e negócio sintéticos e asserts.",
+      "evidence_target": "specs/014-identidade-dados-e-seguranca/verification.md"
+    },
+    {
+      "id": "T015-01",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-01"
+      ],
+      "case_ids": [
+        "C015-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Confrontar capacidades do produto publicado com commercial-knowledge.ts/source.py; retirar pressupostos Pilates da fonte nova.",
+      "test_oracle": "Fixture de recurso não confirmado retorna indisponível; nenhum diagnóstico legado vira requisito.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-02",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-02",
+        "R015-05"
+      ],
+      "case_ids": [
+        "C015-02",
+        "C015-05"
+      ],
+      "depends_on_tasks": [
+        "T015-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar fonte server-side e leitor da oferta versionada com centavos/BRL, vigência, disponibilidade e garantia, reusados por landing/agente/checkout.",
+      "test_oracle": "Alteração de preço/URL na autoridade propaga; mensal/anual e garantia não anunciam trial; falha não inventa preço.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-03",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-03"
+      ],
+      "case_ids": [
+        "C015-03"
+      ],
+      "depends_on_tasks": [
+        "T015-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Adaptar catálogo/schema compartilhado existente para leitura pelo frontend e runtime.",
+      "test_oracle": "Mesmo asset_id/versão resolve nas duas linguagens; schema rejeita propriedade extra e item sem direitos.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-04",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-03"
+      ],
+      "case_ids": [
+        "C015-03"
+      ],
+      "depends_on_tasks": [
+        "T015-03"
+      ],
+      "blocker_ids": [
+        "B013-04"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Incluir somente arquivos reais com aprovação, direitos, resumo/transcrição e captions; manter ausentes ocultos.",
+      "test_oracle": "Nenhum UGC ilustrativo é depoimento; registro sem autorização não fica publicado.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-05",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-03",
+        "R015-04",
+        "R015-05"
+      ],
+      "case_ids": [
+        "C015-03",
+        "C015-04",
+        "C015-05"
+      ],
+      "depends_on_tasks": [
+        "T015-03"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar verificação editorial/URLs allowlist/protocolo/versionamento/retirada antes de consumir material.",
+      "test_oracle": "URL arbitrária, aprovação ausente, revisão vencida e retired são recusados; não criar CMS.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-06",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-01",
+        "R015-02",
+        "R015-03",
+        "R015-04",
+        "R015-05",
+        "R015-06",
+        "R015-07",
+        "R015-08"
+      ],
+      "case_ids": [
+        "C015-01",
+        "C015-02",
+        "C015-03",
+        "C015-04",
+        "C015-05",
+        "C015-06",
+        "C015-07",
+        "C015-08"
+      ],
+      "depends_on_tasks": [
+        "T015-02",
+        "T015-04",
+        "T015-05",
+        "T015-10",
+        "T015-11",
+        "T015-12"
+      ],
+      "blocker_ids": [
+        "B013-01",
+        "B013-03",
+        "B013-04"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Convergir oferta, billing e catálogo; testar mudança de versão/retirada durante conversa e escrever guia de operação com dono.",
+      "test_oracle": "Sessão antiga não emite item retirado nem preço obsoleto; erro recuperável e versão observáveis.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-07",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-06",
+        "R015-07"
+      ],
+      "case_ids": [
+        "C015-06",
+        "C015-07"
+      ],
+      "depends_on_tasks": [
+        "T015-02"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Criar modelo/migrações de tentativas, vínculo Asaas por negócio e fatos financeiros sem alterar Auth.",
+      "test_oracle": "Preço em centavos e versão ficam fixos por tentativa; cross-business é negado; intenção não cria entitlement.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-08",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-06"
+      ],
+      "case_ids": [
+        "C015-06"
+      ],
+      "depends_on_tasks": [
+        "T015-07"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar checkout hospedado para cartão recorrente mensal/anual com idempotência e retorno sem concessão de acesso.",
+      "test_oracle": "Contrato local separa criação de confirmação; timeout não recria checkout; callback não ativa entitlement.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-09",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-06",
+        "R015-07"
+      ],
+      "case_ids": [
+        "C015-06",
+        "C015-07"
+      ],
+      "depends_on_tasks": [
+        "T015-07"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar Pix Automático mensal/anual com QR inicial e estado de autorização separado do pagamento.",
+      "test_oracle": "Pagamento inicial recebido não implica recorrência ativa; recusa posterior mantém fatos independentes e não agenda outro débito.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-10",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-07"
+      ],
+      "case_ids": [
+        "C015-07"
+      ],
+      "depends_on_tasks": [
+        "T015-07",
+        "T015-08",
+        "T015-09"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar webhook autenticado, inbox, processamento idempotente, reconciliação e projeção de acesso.",
+      "test_oracle": "Duplicado, fora de ordem e reinício têm um efeito; HTTP 200 só após persistência; redirect/chat não liberam acesso.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-11",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-08"
+      ],
+      "case_ids": [
+        "C015-08"
+      ],
+      "depends_on_tasks": [
+        "T015-10"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar consulta/gestão de assinatura, cancelamento e solicitação de reembolso com estados explícitos.",
+      "test_oracle": "Solicitação não confirma reembolso; timeout mantém pendente/reconciliação; acesso segue períodos pagos e política ratificada.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T015-12",
+      "spec": "015",
+      "requirement_ids": [
+        "R015-06",
+        "R015-07",
+        "R015-08"
+      ],
+      "case_ids": [
+        "C015-06",
+        "C015-07",
+        "C015-08"
+      ],
+      "depends_on_tasks": [
+        "T015-08",
+        "T015-09",
+        "T015-10",
+        "T015-11"
+      ],
+      "blocker_ids": [
+        "B013-01",
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Homologar no sandbox autorizado as quatro combinações, falhas, replay, cancelamento e garantia.",
+      "test_oracle": "Registrar requisições/respostas sanitizadas, cobrança inicial, autorização Pix, webhooks, entitlement, custo e recuperação; zero dinheiro real.",
+      "evidence_target": "specs/015-produto-oferta-e-catalogo/verification.md"
+    },
+    {
+      "id": "T016-01",
+      "spec": "016",
+      "requirement_ids": [
+        "R016-01",
+        "R016-02"
+      ],
+      "case_ids": [
+        "C016-01",
+        "C016-02"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Isolar managed adapter atrás de runtime-client.ts/main.py; definir envelope v2 preservando HMAC e IDs persistidos.",
+      "test_oracle": "Contrato local recusa payload inválido; desabilitado oferece jornada estática sem invocar o núcleo Pilates.",
+      "evidence_target": "specs/016-runtime-agents-api-luna/verification.md"
+    },
+    {
+      "id": "T016-02",
+      "spec": "016",
+      "requirement_ids": [
+        "R016-01",
+        "R016-04"
+      ],
+      "case_ids": [
+        "C016-01",
+        "C016-04"
+      ],
+      "depends_on_tasks": [
+        "T016-01"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Fixar cliente suportado a partir de docs/tipos e smoke real autorizado com tools read-only Luna/max/none.",
+      "test_oracle": "Guardar versão/request sanitizado/response; incompatibilidade bloqueia, sem downgrade de modelo ou esforço.",
+      "evidence_target": "specs/016-runtime-agents-api-luna/verification.md"
+    },
+    {
+      "id": "T016-03",
+      "spec": "016",
+      "requirement_ids": [
+        "R016-02"
+      ],
+      "case_ids": [
+        "C016-02"
+      ],
+      "depends_on_tasks": [
+        "T016-02"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Persistir agent_version, remote_session_id e conversation_id autorizado; plano para sessões abertas.",
+      "test_oracle": "Duas conversas não compartilham sessão; migração pausa turno e transfere só resumo permitido, com recibo.",
+      "evidence_target": "specs/016-runtime-agents-api-luna/verification.md"
+    },
+    {
+      "id": "T016-04",
+      "spec": "016",
+      "requirement_ids": [
+        "R016-03"
+      ],
+      "case_ids": [
+        "C016-03"
+      ],
+      "depends_on_tasks": [
+        "T016-03"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Conectar aceite durável à fila existente com worker, lease/fencing, retry limitado e dead-letter.",
+      "test_oracle": "Fechar browser/reiniciar worker antes e depois do commit recupera uma única operação por conversa.",
+      "evidence_target": "specs/016-runtime-agents-api-luna/verification.md"
+    },
+    {
+      "id": "T016-05",
+      "spec": "016",
+      "requirement_ids": [
+        "R016-03",
+        "R016-04"
+      ],
+      "case_ids": [
+        "C016-03",
+        "C016-04"
+      ],
+      "depends_on_tasks": [
+        "T016-04"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Tratar required_actions e reconciliação por IDs; salvar efeito+resultado antes de confirmar ao provedor.",
+      "test_oracle": "Desconectar após efeito e antes da resposta, reentregar por stream/webhook: mesmo recibo, um efeito.",
+      "evidence_target": "specs/016-runtime-agents-api-luna/verification.md"
+    },
+    {
+      "id": "T016-06",
+      "spec": "016",
+      "requirement_ids": [
+        "R016-01",
+        "R016-02",
+        "R016-03",
+        "R016-04",
+        "R016-05"
+      ],
+      "case_ids": [
+        "C016-01",
+        "C016-02",
+        "C016-03",
+        "C016-04",
+        "C016-05"
+      ],
+      "depends_on_tasks": [
+        "T016-05"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Aplicar limites de abuso/custo/timeout, validar reply público e medir conjunto real com Luna/max.",
+      "test_oracle": "P95/amostra/custo registrados; limite interrompe novas chamadas sem inventar sucesso nem afetar contratação direta.",
+      "evidence_target": "specs/016-runtime-agents-api-luna/verification.md"
+    },
+    {
+      "id": "T017-01",
+      "spec": "017",
+      "requirement_ids": [
+        "R017-01"
+      ],
+      "case_ids": [
+        "C017-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar somente cinco handlers a partir de tools.json; contexto de autorização fora dos argumentos do modelo.",
+      "test_oracle": "Schema estrito e resultado por recibo; SQL genérico, mark_paid, URLs livres e 6a ferramenta rejeitados.",
+      "evidence_target": "specs/017-ferramentas-e-ciclo-comercial/verification.md"
+    },
+    {
+      "id": "T017-02",
+      "spec": "017",
+      "requirement_ids": [
+        "R017-02"
+      ],
+      "case_ids": [
+        "C017-02"
+      ],
+      "depends_on_tasks": [
+        "T017-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Atualizar contato com allowlist e evidence_message_id original da conversa autorizada.",
+      "test_oracle": "Mensagem fabricada/de outra conversa e alteração de auth/consentimento financeiro não produzem patch.",
+      "evidence_target": "specs/017-ferramentas-e-ciclo-comercial/verification.md"
+    },
+    {
+      "id": "T017-03",
+      "spec": "017",
+      "requirement_ids": [
+        "R017-03",
+        "R017-04",
+        "R017-05"
+      ],
+      "case_ids": [
+        "C017-03",
+        "C017-04",
+        "C017-05"
+      ],
+      "depends_on_tasks": [
+        "T017-01"
+      ],
+      "blocker_ids": [
+        "B013-01"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Consumir eventos reais de app/billing para projeção comercial e reconciliar IDs/ordem.",
+      "test_oracle": "Compra sem chat cria vínculo uma vez; renovação não cria novo cliente; replay/falsa assinatura não ativa acesso.",
+      "evidence_target": "specs/017-ferramentas-e-ciclo-comercial/verification.md"
+    },
+    {
+      "id": "T017-04",
+      "spec": "017",
+      "requirement_ids": [
+        "R017-05"
+      ],
+      "case_ids": [
+        "C017-05"
+      ],
+      "depends_on_tasks": [
+        "T017-02",
+        "T017-03"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Remover escrita duplicada do pós-processamento Next para o caminho novo e marcar origem legado.",
+      "test_oracle": "Tool+webhook+retry resultam num efeito; histórico preservado e nunca importado como instrução de sistema.",
+      "evidence_target": "specs/017-ferramentas-e-ciclo-comercial/verification.md"
+    },
+    {
+      "id": "T017-05",
+      "spec": "017",
+      "requirement_ids": [
+        "R017-01",
+        "R017-03",
+        "R017-04"
+      ],
+      "case_ids": [
+        "C017-01",
+        "C017-03",
+        "C017-04"
+      ],
+      "depends_on_tasks": [
+        "T017-01",
+        "T017-03"
+      ],
+      "blocker_ids": [
+        "B013-01"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Resolver subscribe/resume/open_app/manage/verify via serviço existente e autorização server-side.",
+      "test_oracle": "Cliente ativo abre destino correto; URL retorno adulterada não paga; ferramenta não inicia operação financeira.",
+      "evidence_target": "specs/017-ferramentas-e-ciclo-comercial/verification.md"
+    },
+    {
+      "id": "T017-06",
+      "spec": "017",
+      "requirement_ids": [
+        "R017-01",
+        "R017-02",
+        "R017-03",
+        "R017-04",
+        "R017-05"
+      ],
+      "case_ids": [
+        "C017-01",
+        "C017-02",
+        "C017-03",
+        "C017-04",
+        "C017-05"
+      ],
+      "depends_on_tasks": [
+        "T017-04",
+        "T017-05"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Cobrir contratação direta/assistida, cancelamento/estorno, renovação e contatos históricos.",
+      "test_oracle": "Cancelamento preserva período pago; pedido de estorno difere de concluído; uma pessoa multi-negócio não duplica receita.",
+      "evidence_target": "specs/017-ferramentas-e-ciclo-comercial/verification.md"
+    },
+    {
+      "id": "T018-01",
+      "spec": "018",
+      "requirement_ids": [
+        "R018-01"
+      ],
+      "case_ids": [
+        "C018-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Mapear cada CTA para chat ou checkout real; manter escolha mensal/anual e remover oferta gratuita nos pontos afetados.",
+      "test_oracle": "Compra direta funciona com agente/PostHog indisponíveis; destino ausente apresenta erro honesto, não URL inventada.",
+      "evidence_target": "specs/018-landing-widget-e-jornada/verification.md"
+    },
+    {
+      "id": "T018-02",
+      "spec": "018",
+      "requirement_ids": [
+        "R018-02",
+        "R018-03"
+      ],
+      "case_ids": [
+        "C018-02",
+        "C018-03"
+      ],
+      "depends_on_tasks": [
+        "T018-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Adaptar widget para reply/schema, asset_id e action refs; usar ID estável do turno/recibo.",
+      "test_oracle": "Estados vazio/enviando/esperando/erro/offline/reconectando/humano sem spinner infinito e sem duplo efeito.",
+      "evidence_target": "specs/018-landing-widget-e-jornada/verification.md"
+    },
+    {
+      "id": "T018-03",
+      "spec": "018",
+      "requirement_ids": [
+        "R018-03",
+        "R018-04"
+      ],
+      "case_ids": [
+        "C018-03",
+        "C018-04"
+      ],
+      "depends_on_tasks": [
+        "T018-02"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Recuperar histórico autorizado do servidor após recarga/login sem confiar no histórico do browser.",
+      "test_oracle": "Duas abas e reconexão não duplicam mensagem nem exibem conversa alheia; logout limpa contexto privado.",
+      "evidence_target": "specs/018-landing-widget-e-jornada/verification.md"
+    },
+    {
+      "id": "T018-04",
+      "spec": "018",
+      "requirement_ids": [
+        "R018-02",
+        "R018-04"
+      ],
+      "case_ids": [
+        "C018-02",
+        "C018-04"
+      ],
+      "depends_on_tasks": [
+        "T018-02",
+        "T018-03"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Comparar baseline desktop/mobile e corrigir somente foco/teclado/scroll/safe area necessários.",
+      "test_oracle": "Screenshots mesmas dimensões, contraste/teclado/leitura e toque documentados; composição aprovada preservada.",
+      "evidence_target": "specs/018-landing-widget-e-jornada/verification.md"
+    },
+    {
+      "id": "T018-05",
+      "spec": "018",
+      "requirement_ids": [
+        "R018-05"
+      ],
+      "case_ids": [
+        "C018-05"
+      ],
+      "depends_on_tasks": [
+        "T018-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Atualizar FAQ/metadata/structured data apenas com fonte vigente; manter redirects/robots/noindex coerentes.",
+      "test_oracle": "HTML/JSON-LD não anuncia trial/preço legado nem inclui tokens; privadas exigem auth além de noindex.",
+      "evidence_target": "specs/018-landing-widget-e-jornada/verification.md"
+    },
+    {
+      "id": "T018-06",
+      "spec": "018",
+      "requirement_ids": [
+        "R018-01",
+        "R018-02",
+        "R018-03",
+        "R018-04",
+        "R018-05"
+      ],
+      "case_ids": [
+        "C018-01",
+        "C018-02",
+        "C018-03",
+        "C018-04",
+        "C018-05"
+      ],
+      "depends_on_tasks": [
+        "T018-04",
+        "T018-05"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Executar jornadas sem IA e assistidas no mobile/desktop com falhas dos serviços independentes.",
+      "test_oracle": "Canal humano, retorno login e checkout continuam corretos; evidência visual e assertions do backend separados.",
+      "evidence_target": "specs/018-landing-widget-e-jornada/verification.md"
+    },
+    {
+      "id": "T019-01",
+      "spec": "019",
+      "requirement_ids": [
+        "R019-01"
+      ],
+      "case_ids": [
+        "C019-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [
+        "B013-04"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Classificar inventário em explainer/demo/UGC com origem e direitos; solicitar só lacunas reais.",
+      "test_oracle": "Arquivo existente não vira aprovado automaticamente; catálogo pode ficar vazio com bloqueio explícito.",
+      "evidence_target": "specs/019-midia-e-demonstracoes/verification.md"
+    },
+    {
+      "id": "T019-02",
+      "spec": "019",
+      "requirement_ids": [
+        "R019-01",
+        "R019-03"
+      ],
+      "case_ids": [
+        "C019-01",
+        "C019-03"
+      ],
+      "depends_on_tasks": [
+        "T019-01"
+      ],
+      "blocker_ids": [
+        "B013-04"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Preparar thumbnails/captions/transcrições e hospedagem existente sem publicar externamente.",
+      "test_oracle": "Legendas e texto equivalentes; URLs restritas; embed não carrega antes do consentimento quando exigido.",
+      "evidence_target": "specs/019-midia-e-demonstracoes/verification.md"
+    },
+    {
+      "id": "T019-03",
+      "spec": "019",
+      "requirement_ids": [
+        "R019-02",
+        "R019-03"
+      ],
+      "case_ids": [
+        "C019-02",
+        "C019-03"
+      ],
+      "depends_on_tasks": [
+        "T019-02"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Reusar card/player do DS ou adicionar componente mínimo no slot existente; uma mídia por resposta.",
+      "test_oracle": "Contratar não exige assistir; teclado/play/pause/foco funcionam; não redesenhar seção.",
+      "evidence_target": "specs/019-midia-e-demonstracoes/verification.md"
+    },
+    {
+      "id": "T019-04",
+      "spec": "019",
+      "requirement_ids": [
+        "R019-04"
+      ],
+      "case_ids": [
+        "C019-04"
+      ],
+      "depends_on_tasks": [
+        "T019-03"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Instrumentar intervalos assistidos e seek para emitir progress/conclusion confiáveis.",
+      "test_oracle": "Seek ao fim, aba oculta e link externo não geram conclusão falsa; reenvio de evento deduplicado.",
+      "evidence_target": "specs/019-midia-e-demonstracoes/verification.md"
+    },
+    {
+      "id": "T019-05",
+      "spec": "019",
+      "requirement_ids": [
+        "R019-02",
+        "R019-03",
+        "R019-05"
+      ],
+      "case_ids": [
+        "C019-02",
+        "C019-03",
+        "C019-05"
+      ],
+      "depends_on_tasks": [
+        "T019-03",
+        "T019-04"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Exercitar catálogo vazio, mídia retirada durante sessão, 404, rede lenta e navegação por teclado.",
+      "test_oracle": "Alternativa textual e contratação acessíveis; item retired não reaparece do cache.",
+      "evidence_target": "specs/019-midia-e-demonstracoes/verification.md"
+    },
+    {
+      "id": "T019-06",
+      "spec": "019",
+      "requirement_ids": [
+        "R019-01",
+        "R019-02",
+        "R019-03",
+        "R019-04",
+        "R019-05"
+      ],
+      "case_ids": [
+        "C019-01",
+        "C019-02",
+        "C019-03",
+        "C019-04",
+        "C019-05"
+      ],
+      "depends_on_tasks": [
+        "T019-05"
+      ],
+      "blocker_ids": [
+        "B013-04"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Entregar biblioteca aprovada e guia de inclusão/retirada com revisão e responsável.",
+      "test_oracle": "Versão/rastreio editorial completos; material faltante segue bloqueado, sem fixture publicada.",
+      "evidence_target": "specs/019-midia-e-demonstracoes/verification.md"
+    },
+    {
+      "id": "T020-01",
+      "spec": "020",
+      "requirement_ids": [
+        "R020-01"
+      ],
+      "case_ids": [
+        "C020-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [
+        "B013-02"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Confirmar implantação/contratos reais e escolher um Internal; planejar corte das rotas duplicadas.",
+      "test_oracle": "Mapa URL→repo→SHA→banco e auth verificados; não editar clone temporário como se fosse deploy ativo.",
+      "evidence_target": "specs/020-internal-minimo/verification.md"
+    },
+    {
+      "id": "T020-02",
+      "spec": "020",
+      "requirement_ids": [
+        "R020-02",
+        "R020-05"
+      ],
+      "case_ids": [
+        "C020-02",
+        "C020-05"
+      ],
+      "depends_on_tasks": [
+        "T020-01"
+      ],
+      "blocker_ids": [
+        "B013-02"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Reusar fila/ficha atuais e projetar conta/business/assinatura oficiais; retirar métricas financeiras manuais.",
+      "test_oracle": "Sem funil Pilates ou editor de pagamento/acesso; suporte enxerga status derivado e links autorizados.",
+      "evidence_target": "specs/020-internal-minimo/verification.md"
+    },
+    {
+      "id": "T020-03",
+      "spec": "020",
+      "requirement_ids": [
+        "R020-04"
+      ],
+      "case_ids": [
+        "C020-04"
+      ],
+      "depends_on_tasks": [
+        "T020-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Unificar take_over/resume_ai e handoff via versão/lock/recibo consumidos por tools/worker/dispatcher.",
+      "test_oracle": "Corrida entre operador, tool e entrega: nenhuma escrita/resposta tardia após pausa; retomada exige papel válido.",
+      "evidence_target": "specs/020-internal-minimo/verification.md"
+    },
+    {
+      "id": "T020-04",
+      "spec": "020",
+      "requirement_ids": [
+        "R020-03"
+      ],
+      "case_ids": [
+        "C020-03"
+      ],
+      "depends_on_tasks": [
+        "T020-03"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Entregar humano no canal original com receipt e timestamp inbound WhatsApp correto.",
+      "test_oracle": "Web não recebe falso sucesso de envio WhatsApp; atualização da ficha não reabre janela; falha é explícita.",
+      "evidence_target": "specs/020-internal-minimo/verification.md"
+    },
+    {
+      "id": "T020-05",
+      "spec": "020",
+      "requirement_ids": [
+        "R020-02",
+        "R020-05"
+      ],
+      "case_ids": [
+        "C020-02",
+        "C020-05"
+      ],
+      "depends_on_tasks": [
+        "T020-02"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Limitar pesquisa/filtros/notas/atalhos oficiais aos papéis permitidos e dados necessários.",
+      "test_oracle": "Viewer não modifica; mark_won não produz pagamento; nenhum CRM/BI/editor adicional.",
+      "evidence_target": "specs/020-internal-minimo/verification.md"
+    },
+    {
+      "id": "T020-06",
+      "spec": "020",
+      "requirement_ids": [
+        "R020-01",
+        "R020-02",
+        "R020-03",
+        "R020-04",
+        "R020-05"
+      ],
+      "case_ids": [
+        "C020-01",
+        "C020-02",
+        "C020-03",
+        "C020-04",
+        "C020-05"
+      ],
+      "depends_on_tasks": [
+        "T020-04",
+        "T020-05"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Ensaiar operação com usuários sintéticos, dois operadores, erro de canal e audit trail.",
+      "test_oracle": "Ator servidor, request_id e efeito correlacionados; instruções de recuperação e limite operacional documentados.",
+      "evidence_target": "specs/020-internal-minimo/verification.md"
+    },
+    {
+      "id": "T021-01",
+      "spec": "021",
+      "requirement_ids": [
+        "R021-01"
+      ],
+      "case_ids": [
+        "C021-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Mapear eventos legados ao catálogo v3 e indicar produtor, ID, versão, tempo e destino de cada um.",
+      "test_oracle": "Nenhum evento financeiro parte de browser/IA; eventos obsoletos têm destino explícito sem dupla emissão.",
+      "evidence_target": "specs/021-eventos-e-posthog/verification.md"
+    },
+    {
+      "id": "T021-02",
+      "spec": "021",
+      "requirement_ids": [
+        "R021-01",
+        "R021-02"
+      ],
+      "case_ids": [
+        "C021-01",
+        "C021-02"
+      ],
+      "depends_on_tasks": [
+        "T021-01"
+      ],
+      "blocker_ids": [
+        "B013-01"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Instrumentar produtores reais app/billing/backend/browser/player com envelope minimizado.",
+      "test_oracle": "Cadastro/compra direta sem chat aparecem uma vez; retorno do checkout não emite payment_confirmed.",
+      "evidence_target": "specs/021-eventos-e-posthog/verification.md"
+    },
+    {
+      "id": "T021-03",
+      "spec": "021",
+      "requirement_ids": [
+        "R021-03",
+        "R021-04"
+      ],
+      "case_ids": [
+        "C021-03",
+        "C021-04"
+      ],
+      "depends_on_tasks": [
+        "T021-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Integrar SDK de browser/servidor com consentimento e reset de identidade no logout.",
+      "test_oracle": "PII/texto de chat/tokens não chegam ao payload; business_id separado e sem fingerprinting.",
+      "evidence_target": "specs/021-eventos-e-posthog/verification.md"
+    },
+    {
+      "id": "T021-04",
+      "spec": "021",
+      "requirement_ids": [
+        "R021-05"
+      ],
+      "case_ids": [
+        "C021-05"
+      ],
+      "depends_on_tasks": [
+        "T021-02"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar relay/outbox com dedup e reconciliação, sem depender de after/browser aberto.",
+      "test_oracle": "Timeout/worker morto/repetição/quota não perdem efeito de domínio; atraso/lacuna registrados.",
+      "evidence_target": "specs/021-eventos-e-posthog/verification.md"
+    },
+    {
+      "id": "T021-05",
+      "spec": "021",
+      "requirement_ids": [
+        "R021-04"
+      ],
+      "case_ids": [
+        "C021-04"
+      ],
+      "depends_on_tasks": [
+        "T021-01"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Configurar projeto/ambientes/limites e autocapture/replay conservadores somente quando autorizado.",
+      "test_oracle": "Tráfego sintético não contamina produção; nenhum addon pago ativado por script local.",
+      "evidence_target": "specs/021-eventos-e-posthog/verification.md"
+    },
+    {
+      "id": "T021-06",
+      "spec": "021",
+      "requirement_ids": [
+        "R021-01",
+        "R021-02",
+        "R021-03",
+        "R021-04",
+        "R021-05"
+      ],
+      "case_ids": [
+        "C021-01",
+        "C021-02",
+        "C021-03",
+        "C021-04",
+        "C021-05"
+      ],
+      "depends_on_tasks": [
+        "T021-02",
+        "T021-03",
+        "T021-04",
+        "T021-05"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Comparar jornadas e totais com fontes canônicas e simular falso evento financeiro.",
+      "test_oracle": "Tentativa client-side não altera financeiro/acesso; outbox reenvia com ID estável e não infla contagem.",
+      "evidence_target": "specs/021-eventos-e-posthog/verification.md"
+    },
+    {
+      "id": "T022-01",
+      "spec": "022",
+      "requirement_ids": [
+        "R022-01",
+        "R022-02",
+        "R022-03"
+      ],
+      "case_ids": [
+        "C022-01",
+        "C022-02",
+        "C022-03"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Definir denominadores, entidades, janelas, timezone, centavos e eventos de cada métrica.",
+      "test_oracle": "Mensal/anual, churn pedido/efetivo, garantia e coorte imatura têm exemplos reproduzíveis.",
+      "evidence_target": "specs/022-paineis-metricas-e-custos/verification.md"
+    },
+    {
+      "id": "T022-02",
+      "spec": "022",
+      "requirement_ids": [
+        "R022-01",
+        "R022-02"
+      ],
+      "case_ids": [
+        "C022-01",
+        "C022-02"
+      ],
+      "depends_on_tasks": [
+        "T022-01"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Preparar seis painéis/insights no PostHog com filtros de ambiente e links de operação.",
+      "test_oracle": "Compra direta fica no funil; agent_assisted é associação, não causalidade; nada de BI no Internal.",
+      "evidence_target": "specs/022-paineis-metricas-e-custos/verification.md"
+    },
+    {
+      "id": "T022-03",
+      "spec": "022",
+      "requirement_ids": [
+        "R022-03",
+        "R022-05"
+      ],
+      "case_ids": [
+        "C022-03",
+        "C022-05"
+      ],
+      "depends_on_tasks": [
+        "T022-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Definir consultas/snapshots minimizados a partir de autoridades e exportar configuração versionada.",
+      "test_oracle": "Consultas não exigem cópia integral de DB; contagens distinguem usuários/membros/negócios/clientes.",
+      "evidence_target": "specs/022-paineis-metricas-e-custos/verification.md"
+    },
+    {
+      "id": "T022-04",
+      "spec": "022",
+      "requirement_ids": [
+        "R022-03"
+      ],
+      "case_ids": [
+        "C022-03"
+      ],
+      "depends_on_tasks": [
+        "T022-01",
+        "T022-03"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Testar fixtures financeiras identificadas com anual/renovação/cancelamento/estorno/fuso.",
+      "test_oracle": "Igualdade exata com valores canônicos; anual normalizado; reembolso solicitado não diminui caixa como concluído.",
+      "evidence_target": "specs/022-paineis-metricas-e-custos/verification.md"
+    },
+    {
+      "id": "T022-05",
+      "spec": "022",
+      "requirement_ids": [
+        "R022-04"
+      ],
+      "case_ids": [
+        "C022-04"
+      ],
+      "depends_on_tasks": [
+        "T022-01"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Calcular volumes/addons e propor alarmes 70/85/95 por cento do orçamento aprovado.",
+      "test_oracle": "Teto proposto não é gasto autorizado; alerta não bloqueia acesso nem ativa Group Analytics/replay.",
+      "evidence_target": "specs/022-paineis-metricas-e-custos/verification.md"
+    },
+    {
+      "id": "T022-06",
+      "spec": "022",
+      "requirement_ids": [
+        "R022-01",
+        "R022-02",
+        "R022-03",
+        "R022-04",
+        "R022-05"
+      ],
+      "case_ids": [
+        "C022-01",
+        "C022-02",
+        "C022-03",
+        "C022-04",
+        "C022-05"
+      ],
+      "depends_on_tasks": [
+        "T022-02",
+        "T022-04",
+        "T022-05"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Entregar guia dos painéis, frescor, lacunas e dono de reconciliação.",
+      "test_oracle": "Operador consegue rastrear divergência até produtor; dado ausente não aparece como venda inexistente.",
+      "evidence_target": "specs/022-paineis-metricas-e-custos/verification.md"
+    },
+    {
+      "id": "T023-01",
+      "spec": "023",
+      "requirement_ids": [
+        "R023-03"
+      ],
+      "case_ids": [
+        "C023-03"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [
+        "B013-01"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Inventariar notificações do billing/app/n8n/PostHog e fixar um dono por mensagem.",
+      "test_oracle": "Confirmação/cobrança/estorno permanecem no emissor existente; nenhum envio duplicado.",
+      "evidence_target": "specs/023-automacoes-de-relacionamento/verification.md"
+    },
+    {
+      "id": "T023-02",
+      "spec": "023",
+      "requirement_ids": [
+        "R023-01"
+      ],
+      "case_ids": [
+        "C023-01"
+      ],
+      "depends_on_tasks": [
+        "T023-01"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Configurar três fluxos no sistema existente, Workflows se disponível/aprovado; exportar desligados.",
+      "test_oracle": "Dry-run registra elegíveis sem enviar; ausência de licença não cria motor novo.",
+      "evidence_target": "specs/023-automacoes-de-relacionamento/verification.md"
+    },
+    {
+      "id": "T023-03",
+      "spec": "023",
+      "requirement_ids": [
+        "R023-02"
+      ],
+      "case_ids": [
+        "C023-02"
+      ],
+      "depends_on_tasks": [
+        "T023-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Implementar entrega autenticada com consulta de estado atual e revalidação de consentimento/pausa.",
+      "test_oracle": "Pagamento ou opt-out entre segmento e entrega cancela envio; webhook falso/duplicado não envia.",
+      "evidence_target": "specs/023-automacoes-de-relacionamento/verification.md"
+    },
+    {
+      "id": "T023-04",
+      "spec": "023",
+      "requirement_ids": [
+        "R023-01",
+        "R023-04"
+      ],
+      "case_ids": [
+        "C023-01",
+        "C023-04"
+      ],
+      "depends_on_tasks": [
+        "T023-01"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "local_after_dependencies",
+      "deliverable": "Preparar templates, destino autenticado e opt-out sem descontos ou promessas inventadas.",
+      "test_oracle": "Preview sanitizado aprovado; link não contém credencial; provedor/canal/template reais identificados.",
+      "evidence_target": "specs/023-automacoes-de-relacionamento/verification.md"
+    },
+    {
+      "id": "T023-05",
+      "spec": "023",
+      "requirement_ids": [
+        "R023-02",
+        "R023-03",
+        "R023-04"
+      ],
+      "case_ids": [
+        "C023-02",
+        "C023-03",
+        "C023-04"
+      ],
+      "depends_on_tasks": [
+        "T023-02",
+        "T023-03",
+        "T023-04"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Testar corrida com pagamento, humano, opt-out, falha e rate limit com ledger único.",
+      "test_oracle": "Máximo por gatilho e teto global proposto 1/7 dias; timeout pós-aceite não gera segundo envio.",
+      "evidence_target": "specs/023-automacoes-de-relacionamento/verification.md"
+    },
+    {
+      "id": "T023-06",
+      "spec": "023",
+      "requirement_ids": [
+        "R023-01",
+        "R023-02",
+        "R023-03",
+        "R023-04",
+        "R023-05"
+      ],
+      "case_ids": [
+        "C023-01",
+        "C023-02",
+        "C023-03",
+        "C023-04",
+        "C023-05"
+      ],
+      "depends_on_tasks": [
+        "T023-05"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Preparar ativação gradual com donos, canal, volume, orçamento e kill switch.",
+      "test_oracle": "Só ativar após aprovação específica registrada; nesta entrega permanece desligado e sem pessoas reais.",
+      "evidence_target": "specs/023-automacoes-de-relacionamento/verification.md"
+    },
+    {
+      "id": "T024-01",
+      "spec": "024",
+      "requirement_ids": [
+        "R024-01"
+      ],
+      "case_ids": [
+        "C024-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Criar comandos explícitos separados offline/DB descartável/sandbox/live e CI do código tocado.",
+      "test_oracle": "Suíte offline falha se tentar rede; scripts antigos pagos não entram no comando local por engano.",
+      "evidence_target": "specs/024-qualidade-e-homologacao/verification.md"
+    },
+    {
+      "id": "T024-02",
+      "spec": "024",
+      "requirement_ids": [
+        "R024-01",
+        "R024-02"
+      ],
+      "case_ids": [
+        "C024-01",
+        "C024-02"
+      ],
+      "depends_on_tasks": [
+        "T024-01"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Classificar casos legados preservar/adaptar/arquivar e ligar os 68 casos vigentes a testes/evidências.",
+      "test_oracle": "Nenhum teste é excluído só por falhar; invariantes mantidas, expectativas Pilates não governam produto atual.",
+      "evidence_target": "specs/024-qualidade-e-homologacao/verification.md"
+    },
+    {
+      "id": "T024-03",
+      "spec": "024",
+      "requirement_ids": [
+        "R024-03"
+      ],
+      "case_ids": [
+        "C024-03"
+      ],
+      "depends_on_tasks": [
+        "T024-01",
+        "T024-02"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Regredir mensal/anual x cartão/Pix Automático no billing implementado na 015, em sandbox autorizado.",
+      "test_oracle": "Confirmação/falha/retomada/replay/cancelamento/estorno por IDs reais sanitizados, sem fixture como homologação.",
+      "evidence_target": "specs/024-qualidade-e-homologacao/verification.md"
+    },
+    {
+      "id": "T024-04",
+      "spec": "024",
+      "requirement_ids": [
+        "R024-04"
+      ],
+      "case_ids": [
+        "C024-04"
+      ],
+      "depends_on_tasks": [
+        "T024-01",
+        "T024-02"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Executar fault injection, IDOR, URLs, cookies, takeover, recuperação, a11y e desempenho.",
+      "test_oracle": "Asserts de banco/recibo e screenshots; sample/dispositivo/rede reportados; sem falsa medição de campo.",
+      "evidence_target": "specs/024-qualidade-e-homologacao/verification.md"
+    },
+    {
+      "id": "T024-05",
+      "spec": "024",
+      "requirement_ids": [
+        "R024-02",
+        "R024-05"
+      ],
+      "case_ids": [
+        "C024-02",
+        "C024-05"
+      ],
+      "depends_on_tasks": [
+        "T024-01",
+        "T024-02"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Executar Luna/max com orçamento autorizado, rubric e revisão humana; repetir críticos >=3 vezes.",
+      "test_oracle": "Zero falha crítica; medir utilidade, p95 e custo com n e limites; modelo/esforço explicitamente comprovados.",
+      "evidence_target": "specs/024-qualidade-e-homologacao/verification.md"
+    },
+    {
+      "id": "T024-06",
+      "spec": "024",
+      "requirement_ids": [
+        "R024-01",
+        "R024-02",
+        "R024-03",
+        "R024-04",
+        "R024-05"
+      ],
+      "case_ids": [
+        "C024-01",
+        "C024-02",
+        "C024-03",
+        "C024-04",
+        "C024-05"
+      ],
+      "depends_on_tasks": [
+        "T024-03",
+        "T024-04",
+        "T024-05"
+      ],
+      "blocker_ids": [],
+      "mode": "local_after_dependencies",
+      "deliverable": "Rodar análise/convergência e consolidar dossiê por commit antes da 025.",
+      "test_oracle": "Zero P0/P1 aberto e todos casos com resultado adequado; falha gera tarefa corretiva, não ajuste do aceite.",
+      "evidence_target": "specs/024-qualidade-e-homologacao/verification.md"
+    },
+    {
+      "id": "T025-01",
+      "spec": "025",
+      "requirement_ids": [
+        "R025-01"
+      ],
+      "case_ids": [
+        "C025-01"
+      ],
+      "depends_on_tasks": [],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Ensaiar inventário/migração de leads/sessões, backup/restore e reconciliação em ambiente autorizado.",
+      "test_oracle": "Contagens/IDs/recibos mantidos; nenhum merge automático por e-mail; resultados do ensaio anexados.",
+      "evidence_target": "specs/025-migracao-release-e-operacao/verification.md"
+    },
+    {
+      "id": "T025-02",
+      "spec": "025",
+      "requirement_ids": [
+        "R025-02",
+        "R025-03"
+      ],
+      "case_ids": [
+        "C025-02",
+        "C025-03"
+      ],
+      "depends_on_tasks": [
+        "T025-01"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Montar manifesto de release com SHA por serviço, flags, migrações, aprovação e rollback.",
+      "test_oracle": "Sem autorização explícita o procedimento para antes de publicar; kill switches não dependem de PostHog.",
+      "evidence_target": "specs/025-migracao-release-e-operacao/verification.md"
+    },
+    {
+      "id": "T025-03",
+      "spec": "025",
+      "requirement_ids": [
+        "R025-02"
+      ],
+      "case_ids": [
+        "C025-02"
+      ],
+      "depends_on_tasks": [
+        "T025-02"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Executar interno→5→25→100 por cento após gates e autorização, com mínimo proposto 24h/50 turnos por etapa.",
+      "test_oracle": "Registrar denominador/amostra/tempo; volume insuficiente não é sucesso; sintéticos distintos de tráfego real.",
+      "evidence_target": "specs/025-migracao-release-e-operacao/verification.md"
+    },
+    {
+      "id": "T025-04",
+      "spec": "025",
+      "requirement_ids": [
+        "R025-04"
+      ],
+      "case_ids": [
+        "C025-04"
+      ],
+      "depends_on_tasks": [
+        "T025-03"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Monitorar latência/erro/financeiro/custo; testar desligamento seletivo e reconciliação.",
+      "test_oracle": "Uma falha crítica interrompe rollout; erros >1 por cento com n>=100 investigados; checkout preservado.",
+      "evidence_target": "specs/025-migracao-release-e-operacao/verification.md"
+    },
+    {
+      "id": "T025-05",
+      "spec": "025",
+      "requirement_ids": [
+        "R025-03",
+        "R025-04"
+      ],
+      "case_ids": [
+        "C025-03",
+        "C025-04"
+      ],
+      "depends_on_tasks": [
+        "T025-02"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Treinar operação com incidentes provedor/banco/canal/analytics e exercício de retomada.",
+      "test_oracle": "Responsáveis nomeados e procedimento executado; nenhuma resposta tardia após humano e nenhum reenvio financeiro.",
+      "evidence_target": "specs/025-migracao-release-e-operacao/verification.md"
+    },
+    {
+      "id": "T025-06",
+      "spec": "025",
+      "requirement_ids": [
+        "R025-01",
+        "R025-02",
+        "R025-03",
+        "R025-04",
+        "R025-05"
+      ],
+      "case_ids": [
+        "C025-01",
+        "C025-02",
+        "C025-03",
+        "C025-04",
+        "C025-05"
+      ],
+      "depends_on_tasks": [
+        "T025-04",
+        "T025-05"
+      ],
+      "blocker_ids": [
+        "B013-03"
+      ],
+      "mode": "authorized_environment",
+      "deliverable": "Fechar gates G0–G6 e estabilização proposta 48h; atualizar continuidade e rotina no sistema da equipe.",
+      "test_oracle": "100 por cento só com operação comprovada; sem automação criada no chat nem promessa de execução em segundo plano.",
+      "evidence_target": "specs/025-migracao-release-e-operacao/verification.md"
+    }
+  ]
+}

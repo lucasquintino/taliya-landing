@@ -1,5 +1,21 @@
 # Constituição — Landing Taliya/Copiloto
 
+## Adendo ratificado pelo pedido de 2026-09-28 — versão 1.1
+
+Para o programa `specs/013-*` a `specs/025-*`, o pedido atual e
+`docs/taliya-sdd/EXECUTION_ADDENDUM.md` autorizam integrações locais de backend,
+identidade, agente, construção da contratação Asaas, Internal e PostHog. Isso substitui
+somente os limites históricos copy-only/Pilates incompatíveis com essas entregas.
+Uma spec ativa; ponteiro em `.specify/feature.json`; continuidade no arquivo
+`docs/conversation-handoff-2026-05-14.md`. Preservar visual, arquitetura, históricos
+e mudanças locais. App e auth existentes são reutilizados. Em 2026-09-29 o usuário
+esclareceu que não existe billing/Asaas; a implementação deve criar esse serviço,
+como registrado em `docs/taliya-sdd/DECISAO_BILLING_2026-09-29.md`. A oferta
+publicada pelo novo backend e seus eventos governarão pagamento/acesso. Chat é opcional.
+Não usar trial sem cobrança como oferta aprovada, nem reviver agente Pilates no
+fallback. Não publicar, gastar remotamente ou operar produção sem autorização.
+As regras originais abaixo ficam preservadas para o escopo histórico.
+
 ## Princípios
 
 ### I. Origem preservada

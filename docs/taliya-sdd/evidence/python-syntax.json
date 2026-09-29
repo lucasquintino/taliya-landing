@@ -1,0 +1,7 @@
+{
+  "scope": "syntax_only_not_runtime_tests",
+  "parser": "ast.parse(original_bytes), respects source encoding/BOM",
+  "files_checked": 205,
+  "bom_files_handled": 5,
+  "errors": []
+}

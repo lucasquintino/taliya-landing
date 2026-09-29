@@ -1,0 +1,699 @@
+[
+  {
+    "id": "R013-01",
+    "spec": "013",
+    "description": "Registrar commit, repositórios e donos dos contratos atuais de app, billing, landing, Internal e agente.",
+    "acceptance": "O mapa contém endpoints reais, autenticação, IDs, estados, payloads sanitizados e responsáveis; nenhuma rota inventada é aprovada.",
+    "test_ids": [
+      "C013-01"
+    ],
+    "status": "partial",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md",
+      "docs/taliya-sdd/evidence/billing-source-search.json"
+    ]
+  },
+  {
+    "id": "R013-02",
+    "spec": "013",
+    "description": "Substituir regras de copy-only apenas no escopo desta nova entrega, preservando identidade visual e históricos.",
+    "acceptance": "AGENTS/constituição/pointer não direcionam novas tarefas ao projeto Pilates e não autorizam redesign ou deploy automático.",
+    "test_ids": [
+      "C013-02"
+    ],
+    "status": "verified",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ]
+  },
+  {
+    "id": "R013-03",
+    "spec": "013",
+    "description": "Preservar app e autenticação existentes; definir a fonte e os contratos do billing Asaas que será construído.",
+    "acceptance": "O mapa distingue app/Auth observados de pagamento ainda inexistente, identifica dono dos dados e contrato-alvo para oferta, checkout, webhooks e acesso, e direciona a implementação à 015. Nenhum endpoint não implementado é apresentado como publicado.",
+    "test_ids": [
+      "C013-03"
+    ],
+    "status": "partial",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md",
+      "docs/taliya-sdd/evidence/billing-source-search.json"
+    ]
+  },
+  {
+    "id": "R013-04",
+    "spec": "013",
+    "description": "Fixar uma versão operacional do Spec Kit e um método de scripts compatível com a máquina.",
+    "acceptance": "A integração Codex e as invocações disponíveis são verificadas; nenhum --force apaga customizações e o ponteiro aponta à spec ativa.",
+    "test_ids": [
+      "C013-04"
+    ],
+    "status": "verified",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ]
+  },
+  {
+    "id": "R013-05",
+    "spec": "013",
+    "description": "Registrar fontes, baselines e disponibilidade dos serviços.",
+    "acceptance": "Há inventário de materiais disponíveis, ambientes, credenciais necessárias sem valores, baseline visual e gates por dependência.",
+    "test_ids": [
+      "C013-05"
+    ],
+    "status": "verified",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ]
+  },
+  {
+    "id": "R014-01",
+    "spec": "014",
+    "description": "Usar identidade autenticada e papéis de staff; remover token compartilhado de URL/frontend.",
+    "acceptance": "Auth existente valida issuer/audience/expiração e papéis; actor_id vem da sessão, nunca de x-operator-id arbitrário.",
+    "test_ids": [
+      "C014-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R014-02",
+    "spec": "014",
+    "description": "Separar sessão anônima, contato, pessoa autenticada, negócio e assinatura.",
+    "acceptance": "E-mail/telefone declarado não abre conta nem permite merge global; vínculo exige prova apropriada e auditoria.",
+    "test_ids": [
+      "C014-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R014-03",
+    "spec": "014",
+    "description": "Derivar autorizações no servidor e validar cada parâmetro das ferramentas.",
+    "acceptance": "Requests cruzados entre usuários/negócios, replay de tokens e histórico fabricado não alteram registros.",
+    "test_ids": [
+      "C014-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R014-04",
+    "spec": "014",
+    "description": "Evoluir dados com migrações versionadas, privilégios mínimos e persistência obrigatória em produção.",
+    "acceptance": "Sem DDL em request de produção, fallback de memória comercial ou TLS com verificação desativada no perfil publicado.",
+    "test_ids": [
+      "C014-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R014-05",
+    "spec": "014",
+    "description": "Definir minimização, consentimentos e exclusão correlacionada.",
+    "acceptance": "Contato para suporte não vira opt-in; política de retenção e exclusão cobre app, chat, analytics e sessões remotas com exceções justificadas.",
+    "test_ids": [
+      "C014-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R015-01",
+    "spec": "015",
+    "description": "Criar catálogo versionado de capacidades publicadas, limites e FAQ.",
+    "acceptance": "Somente recursos confirmados entram; equipes/booking e outros recursos antigos não são presumidos por aparecer em documento histórico.",
+    "test_ids": [
+      "C015-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R015-02",
+    "spec": "015",
+    "description": "Publicar uma oferta versionada no novo backend de billing e consumi-la por contrato central, sem preço duplicado no prompt.",
+    "acceptance": "Mensal/anual, cobrança inicial e garantia de 14 dias são coerentes; nenhum teste sem cartão é vendido.",
+    "test_ids": [
+      "C015-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R015-03",
+    "spec": "015",
+    "description": "Catalogar mídia com aprovação, origem e classificação de prova social.",
+    "acceptance": "Cada material publicado possui ID, tipo, URL autorizada, versão, resumo/transcrição, direitos e status; UGC encenado não vira depoimento.",
+    "test_ids": [
+      "C015-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R015-04",
+    "spec": "015",
+    "description": "Definir comportamento quando informações ou materiais faltam.",
+    "acceptance": "A informação ausente é explicitada; o agente não inventa preço, link, prazo ou mídia e o CTA depende de destino válido.",
+    "test_ids": [
+      "C015-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R015-05",
+    "spec": "015",
+    "description": "Versionar e propagar atualizações.",
+    "acceptance": "Oferta nova é consultada no momento relevante; material retirado não é emitido em sessão antiga; compatibilidade e freshness ficam registradas.",
+    "test_ids": [
+      "C015-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R015-06",
+    "spec": "015",
+    "description": "Implementar contratação direta autenticada com cartão recorrente e Pix Automático mensal/anual, sem depender da IA.",
+    "acceptance": "Preço/versão vêm do servidor; identidade e negócio são verificados; tentativas repetidas não criam cobrança duplicada; cartão usa checkout hospedado e Pix usa autorização específica, ambos com cobrança inicial conforme a oferta aprovada. Conta/eligibilidade Asaas são homologadas antes de ativar.",
+    "test_ids": [
+      "C015-06"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R015-07",
+    "spec": "015",
+    "description": "Processar eventos financeiros de forma autenticada, idempotente e recuperável, projetando acesso somente após confirmação do backend.",
+    "acceptance": "Webhook persiste event.id antes do aceite; replay/fora de ordem não duplicam efeito; retorno do navegador ou fala da IA não liberam acesso; pagamento inicial Pix e autorização recorrente são estados independentes.",
+    "test_ids": [
+      "C015-07"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R015-08",
+    "spec": "015",
+    "description": "Permitir gestão e reconciliação de assinatura, cancelamento e garantia de 14 dias com estados explícitos.",
+    "acceptance": "Solicitação de reembolso não é confirmação; timeout após efeito externo é reconciliado antes de repetir; renovação/falha/cancelamento preservam acesso conforme fatos pagos e política aprovada, com testes sandbox antes da publicação.",
+    "test_ids": [
+      "C015-08"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R016-01",
+    "spec": "016",
+    "description": "Executar gpt-6-luna com esforço max, ambiente none e subagentes desativados.",
+    "acceptance": "Smoke test real registra modelo/esforço, formato e versão do cliente; erro de compatibilidade não muda modelo silenciosamente.",
+    "test_ids": [
+      "C016-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R016-02",
+    "spec": "016",
+    "description": "Usar uma configuração versionada e sessões remotas isoladas.",
+    "acceptance": "Mapeamento conversa-versão-sessão é persistido e protegido; versões antigas recebem migração controlada.",
+    "test_ids": [
+      "C016-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R016-03",
+    "spec": "016",
+    "description": "Processar turnos de modo durável, ordenado e recuperável.",
+    "acceptance": "Fechar navegador ou reiniciar worker não perde operação aceita; locks/lease e dedup impedem concorrência incorreta.",
+    "test_ids": [
+      "C016-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R016-04",
+    "spec": "016",
+    "description": "Executar required_actions pelo backend e reconciliar desconexões.",
+    "acceptance": "Resultado já salvo é reutilizado; itens e eventos são reconciliados por IDs; não há execução dupla por stream + webhook.",
+    "test_ids": [
+      "C016-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R016-05",
+    "spec": "016",
+    "description": "Controlar timeout, abuso, custo e resposta pública.",
+    "acceptance": "Limites por contexto/conta/canal e kill switch existem; usuário vê espera honesta e somente resposta validada, sem traces internos.",
+    "test_ids": [
+      "C016-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R017-01",
+    "spec": "017",
+    "description": "Implementar as cinco ferramentas contratadas e nada de SQL/mark_paid genérico.",
+    "acceptance": "consultar_taliya, buscar_material, atualizar_contato, preparar_proximo_passo e solicitar_atendimento_humano passam em validação e teste real.",
+    "test_ids": [
+      "C017-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R017-02",
+    "spec": "017",
+    "description": "Criar/atualizar contato apenas com dados/evidências autorizadas.",
+    "acceptance": "Mensagens originais persistidas sustentam patches; dados de login/consentimento financeiro não são editados pelo modelo.",
+    "test_ids": [
+      "C017-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R017-03",
+    "spec": "017",
+    "description": "Criar/vincular cliente independentemente da existência de chat.",
+    "acceptance": "Cadastro e primeira compra no fluxo pronto atualizam projeção comercial; renovação não gera novo cliente.",
+    "test_ids": [
+      "C017-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R017-04",
+    "spec": "017",
+    "description": "Separar aquisição, billing, acesso e atendimento.",
+    "acceptance": "Cancelamento de renovação com período pago preserva acesso; estorno solicitado não é devolução concluída; status é derivado de autoridade real.",
+    "test_ids": [
+      "C017-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R017-05",
+    "spec": "017",
+    "description": "Eliminar dupla gravação e preservar histórico de modo seguro.",
+    "acceptance": "Ferramenta e pós-processamento antigo não gravam o mesmo lead; eventos fora de ordem são reconciliados; legado fica identificado.",
+    "test_ids": [
+      "C017-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R018-01",
+    "spec": "018",
+    "description": "Separar CTA de contratação de CTA de dúvidas.",
+    "acceptance": "Começar agora abre o fluxo existente; tirar dúvidas abre chat. Escolha mensal/anual e contexto permitidos são preservados.",
+    "test_ids": [
+      "C018-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R018-02",
+    "spec": "018",
+    "description": "Preservar design system e composição com ajustes localizados.",
+    "acceptance": "Diferenças desktop/mobile são aprovadas; nenhum redesign geral, substituição de carrosséis/tabs ou reconstrução do app.",
+    "test_ids": [
+      "C018-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R018-03",
+    "spec": "018",
+    "description": "Cobrir todos os estados do atendimento.",
+    "acceptance": "Fechado/aberto/vazio/enviando/esperando/erro/offline/reconectando/humano possuem comportamento testado, sem spinner infinito.",
+    "test_ids": [
+      "C018-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R018-04",
+    "spec": "018",
+    "description": "Manter navegação segura e acessível.",
+    "acceptance": "URLs vêm do backend; teclado, foco, leitura, toque e retorno após login funcionam; tokens não entram em analytics/referrer.",
+    "test_ids": [
+      "C018-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R018-05",
+    "spec": "018",
+    "description": "Alinhar FAQ, oferta, SEO e conteúdo legível.",
+    "acceptance": "Metadados/structured data e rotas não anunciam legado; privadas ficam protegidas e noindex; não há promessa de indexação garantida.",
+    "test_ids": [
+      "C018-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R019-01",
+    "spec": "019",
+    "description": "Publicar um conjunto inicial útil sem inventar material pronto.",
+    "acceptance": "Catálogo entregue contém explicação geral, demonstrações prioritárias reais e UGCs aprovados; indisponíveis ficam ocultos.",
+    "test_ids": [
+      "C019-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R019-02",
+    "spec": "019",
+    "description": "Mostrar no máximo um material por resposta e permitir contratação sem assistir.",
+    "acceptance": "Cards reutilizam o DS; o agente seleciona ID aprovado e o vídeo não cria barreira ao checkout.",
+    "test_ids": [
+      "C019-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R019-03",
+    "spec": "019",
+    "description": "Otimizar carregamento e privacidade do player.",
+    "acceptance": "Thumbnail/lazy load, reprodução voluntária, legendas e alternativa textual; embeds não burlam preferência de cookies.",
+    "test_ids": [
+      "C019-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R019-04",
+    "spec": "019",
+    "description": "Medir recomendação, exposição e reprodução separadamente.",
+    "acceptance": "video_completed exige observação verificável do player; link externo sem telemetria não registra conclusão.",
+    "test_ids": [
+      "C019-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R019-05",
+    "spec": "019",
+    "description": "Manter manutenção operacional simples.",
+    "acceptance": "Autor de conteúdo edita catálogo versionado com revisão; publicação/retirada é auditável; não há CMS/editor novo obrigatório.",
+    "test_ids": [
+      "C019-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R020-01",
+    "spec": "020",
+    "description": "Definir uma implantação autoritativa do Internal.",
+    "acceptance": "Rewrite e rotas locais estão conciliados com a implantação atual; não existem dois painéis editando estados divergentes.",
+    "test_ids": [
+      "C020-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R020-02",
+    "spec": "020",
+    "description": "Entregar fila de atendimento e ficha de contato/cliente.",
+    "acceptance": "Fila filtra espera/humano/erro e ficha mostra conta/negócio/status oficiais; atalhos abrem PostHog e billing autorizado.",
+    "test_ids": [
+      "C020-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R020-03",
+    "spec": "020",
+    "description": "Permitir resposta humana no canal original suportado.",
+    "acceptance": "Web e WhatsApp possuem prova de entrega ou falha explícita; enviar WhatsApp não substitui silenciosamente resposta ao webchat.",
+    "test_ids": [
+      "C020-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R020-04",
+    "spec": "020",
+    "description": "Aplicar pausa/retomada atômicas e auditáveis.",
+    "acceptance": "Assumir bloqueia novos turnos/ações/entregas atrasadas; só operador autorizado retoma; recibo de handoff é único.",
+    "test_ids": [
+      "C020-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R020-05",
+    "spec": "020",
+    "description": "Restringir ações administrativas e remover controles antigos inadequados.",
+    "acceptance": "mark_won não concede assinatura nem receita; nenhum operador altera custo/status financeiro diretamente; trilha do ator é verificável.",
+    "test_ids": [
+      "C020-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R021-01",
+    "spec": "021",
+    "description": "Adotar contrato de eventos com IDs, versões, origem e tempo.",
+    "acceptance": "Cada evento tem produtor, ocorrência e chave de dedup; marcos de conta/negócio não usam identidade analítica como credencial.",
+    "test_ids": [
+      "C021-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R021-02",
+    "spec": "021",
+    "description": "Emitir acontecimentos financeiros/de valor pelo serviço responsável.",
+    "acceptance": "Pagamento/ativação não derivam de clique ou retorno de checkout; ferramentas da IA não incluem track_event.",
+    "test_ids": [
+      "C021-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R021-03",
+    "spec": "021",
+    "description": "Instrumentar web, app e backend com identidade consistente.",
+    "acceptance": "ID estável após auth, reset no logout e business_id separado; visitantes não viram leads identificados automaticamente.",
+    "test_ids": [
+      "C021-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R021-04",
+    "spec": "021",
+    "description": "Controlar privacidade, ambientes e consumo.",
+    "acceptance": "Autocapture desnecessário/replay sensível estão off; testes não contaminam produção e nenhum texto completo de chat/PII sensível é enviado por padrão.",
+    "test_ids": [
+      "C021-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R021-05",
+    "spec": "021",
+    "description": "Garantir entrega recuperável e reconciliação.",
+    "acceptance": "Outbox reenvia de forma idempotente; dashboards financeiros conferem fonte canônica; quota perdida é registrada como lacuna, não venda inexistente.",
+    "test_ids": [
+      "C021-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R022-01",
+    "spec": "022",
+    "description": "Configurar aquisição, conversão, conteúdo, atendimento, ativação/retenção e receita.",
+    "acceptance": "Cada painel tem perguntas, denominadores, filtros, unidade, janela, timezone e fonte; negócios e usuários não se confundem.",
+    "test_ids": [
+      "C022-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R022-02",
+    "spec": "022",
+    "description": "Usar funil principal com chat/vídeo opcionais.",
+    "acceptance": "Compra direta permanece no denominador correto; agent_assisted indica associação, não ganho causal comprovado.",
+    "test_ids": [
+      "C022-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R022-03",
+    "spec": "022",
+    "description": "Definir MRR, caixa, churn, garantia e retenção de modo reproduzível.",
+    "acceptance": "Anual é normalizado; cancelamento pedido difere do acesso encerrado; reembolso pedido/concluído é separado; coortes imaturas não recebem taxa inventada.",
+    "test_ids": [
+      "C022-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R022-04",
+    "spec": "022",
+    "description": "Controlar orçamento sem prometer gratuidade universal.",
+    "acceptance": "Estimativa usa volume real e addons; teto US$50 é proposta sujeita à aprovação; Group Analytics/replay/Workflows não são ativados automaticamente.",
+    "test_ids": [
+      "C022-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R022-05",
+    "spec": "022",
+    "description": "Habilitar métricas por negócio sem forçar addon pago.",
+    "acceptance": "business_id existe na origem; consultas/exports canônicos fornecem agregação por negócio; Group Analytics só entra após teste de necessidade/custo.",
+    "test_ids": [
+      "C022-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R023-01",
+    "spec": "023",
+    "description": "Implementar apenas três fluxos de relacionamento propostos.",
+    "acceptance": "Abandono elegível, pagamento sem primeiro valor e inatividade elegível possuem templates, limites e destino útil.",
+    "test_ids": [
+      "C023-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R023-02",
+    "spec": "023",
+    "description": "Revalidar elegibilidade e consentimento antes de enviar.",
+    "acceptance": "Pagamento, acesso, opt-out, humano ativo e canal são conferidos no backend no instante da entrega; dado desatualizado no PostHog não decide sozinho.",
+    "test_ids": [
+      "C023-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R023-03",
+    "spec": "023",
+    "description": "Preservar notificações transacionais existentes.",
+    "acceptance": "Confirmação/cobrança/estorno não migram sem motivo nem são enviados duas vezes por PostHog + n8n + app.",
+    "test_ids": [
+      "C023-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R023-04",
+    "spec": "023",
+    "description": "Suprimir spam e reclamações.",
+    "acceptance": "No máximo uma mensagem por gatilho e teto global proposto de uma mensagem de relacionamento por sete dias; opt-out impede novos envios dessa categoria.",
+    "test_ids": [
+      "C023-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R023-05",
+    "spec": "023",
+    "description": "Configurar antes de ativar.",
+    "acceptance": "Fluxos estão testados em dry-run, modelos/domínio/canais validados e desligados até autorização específica de campanha/produção.",
+    "test_ids": [
+      "C023-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R024-01",
+    "spec": "024",
+    "description": "Executar suíte automatizada de unidade/contrato/integração/E2E.",
+    "acceptance": "Build, lint, tipos e testes do código tocado passam no CI; testes antigos têm destino explícito: preservar/adaptar/arquivar.",
+    "test_ids": [
+      "C024-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R024-02",
+    "spec": "024",
+    "description": "Avaliar Luna Max com conversas reais de homologação e critérios reproduzíveis.",
+    "acceptance": "Os casos vigentes do plano (68 após a correção de billing) e cenários reutilizáveis anteriores têm resultado; casos críticos repetidos não podem falhar; amostra de linguagem recebe revisão humana.",
+    "test_ids": [
+      "C024-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R024-03",
+    "spec": "024",
+    "description": "Homologar todas as combinações da assinatura Asaas implementada na 015.",
+    "acceptance": "Mensal/anual × cartão/Pix Automático, retorno, falha, cancelamento e reembolso têm evidência sandbox; produção depende de gate próprio.",
+    "test_ids": [
+      "C024-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R024-04",
+    "spec": "024",
+    "description": "Validar falhas, acessibilidade, desempenho e segurança.",
+    "acceptance": "IDOR, injeção, URL arbitrária, repetição, takeover, desconexão, fila, cookies e restauração possuem evidências.",
+    "test_ids": [
+      "C024-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R024-05",
+    "spec": "024",
+    "description": "Concluir critérios sem rebaixar exigência silenciosamente.",
+    "acceptance": "Nenhum P0/P1 de lançamento aberto; metas não atingidas geram correção ou exceção explícita, não marcação verde por criar documentação.",
+    "test_ids": [
+      "C024-05"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R025-01",
+    "spec": "025",
+    "description": "Migrar dados/sessões com ensaio e reconciliação.",
+    "acceptance": "Registros legados permanecem marcados; não há merge automático por e-mail; backup/restore e contagens são verificados.",
+    "test_ids": [
+      "C025-01"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R025-02",
+    "spec": "025",
+    "description": "Publicar por gates com autorização explícita.",
+    "acceptance": "Interno → 5% → 25% → 100% conforme evidência; não confundir percentual de tráfego com conclusão da entrega.",
+    "test_ids": [
+      "C025-02"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R025-03",
+    "spec": "025",
+    "description": "Manter rollback sem agente Pilates.",
+    "acceptance": "Kill switch desliga geração e preserva assinar/entrar/ajuda/handoff; schemas compatíveis e eventos continuam íntegros.",
+    "test_ids": [
+      "C025-03"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R025-04",
+    "spec": "025",
+    "description": "Entregar responsáveis, alertas e procedimentos.",
+    "acceptance": "Há dono de fila, mídia, fonte comercial, financeiro e analytics; problemas de custo, privacidade e entrega têm resposta definida.",
+    "test_ids": [
+      "C025-04"
+    ],
+    "status": "not_verified"
+  },
+  {
+    "id": "R025-05",
+    "spec": "025",
+    "description": "Fechar 100% por aceite operacional.",
+    "acceptance": "Todos os gates obrigatórios aprovados, estabilização observada, documentação alinhada e nenhuma pendência escondida de segurança/contratação/dados.",
+    "test_ids": [
+      "C025-05"
+    ],
+    "status": "not_verified"
+  }
+]

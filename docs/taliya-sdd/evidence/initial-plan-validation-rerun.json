@@ -1,0 +1,357 @@
+{
+  "scope": "planning_integrity_only",
+  "checks_passed": 87,
+  "checks": [
+    {
+      "name": "all_json_parse",
+      "passed": true
+    },
+    {
+      "name": "13_unique_specs",
+      "passed": true
+    },
+    {
+      "name": "planned_weights_100_not_current_progress",
+      "passed": true
+    },
+    {
+      "name": "65_unique_requirements",
+      "passed": true
+    },
+    {
+      "name": "65_unique_acceptance_cases",
+      "passed": true
+    },
+    {
+      "name": "78_unique_work_items",
+      "passed": true
+    },
+    {
+      "name": "all_requirements_have_tests",
+      "passed": true
+    },
+    {
+      "name": "no_orphan_test",
+      "passed": true
+    },
+    {
+      "name": "no_orphan_task",
+      "passed": true
+    },
+    {
+      "name": "all_requirements_have_work",
+      "passed": true
+    },
+    {
+      "name": "dependency_graph_acyclic",
+      "passed": true
+    },
+    {
+      "name": "artifact_013_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_013_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_013_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_013_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_014_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_014_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_014_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_014_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_015_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_015_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_015_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_015_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_016_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_016_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_016_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_016_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_017_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_017_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_017_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_017_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_018_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_018_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_018_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_018_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_019_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_019_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_019_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_019_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_020_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_020_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_020_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_020_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_021_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_021_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_021_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_021_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_022_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_022_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_022_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_022_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_023_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_023_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_023_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_023_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_024_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_024_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_024_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_024_verification.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_025_spec.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_025_plan.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_025_tasks.md",
+      "passed": true
+    },
+    {
+      "name": "artifact_025_verification.md",
+      "passed": true
+    },
+    {
+      "name": "acceptance_not_misrepresented_as_run",
+      "passed": true
+    },
+    {
+      "name": "implementation_not_misrepresented_as_done",
+      "passed": true
+    },
+    {
+      "name": "luna_max",
+      "passed": true
+    },
+    {
+      "name": "five_functions",
+      "passed": true
+    },
+    {
+      "name": "no_fake_media",
+      "passed": true
+    },
+    {
+      "name": "one_material_per_reply",
+      "passed": true
+    },
+    {
+      "name": "43_unique_events",
+      "passed": true
+    },
+    {
+      "name": "event_enum_matches_catalog",
+      "passed": true
+    },
+    {
+      "name": "event_version_type_consistent",
+      "passed": true
+    },
+    {
+      "name": "event_producers_match",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_013",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_014",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_015",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_016",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_017",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_018",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_019",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_020",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_021",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_022",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_023",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_024",
+      "passed": true
+    },
+    {
+      "name": "tasks_traceability_025",
+      "passed": true
+    },
+    {
+      "name": "validation_report_present",
+      "passed": true
+    }
+  ],
+  "acceptance_cases_executed": 0,
+  "live_model_calls": 0,
+  "production_changes": 0
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "internal",
+    "path": "/tmp/taliya-foundation-sources/internal",
+    "head": "7cbe9e9b92a4d3b18b3961ab51f9eec10515b38e",
+    "branch": "main",
+    "status": ""
+  },
+  {
+    "name": "copiloto_snapshot",
+    "path": "/tmp/taliya-foundation-sources/copiloto",
+    "head": "d99ef897f3033ace6a23ee009e2578ffc04a259d",
+    "branch": "main",
+    "status": ""
+  },
+  {
+    "name": "copiloto_working",
+    "path": "/Users/lucasquintino/Downloads/copiloto-github",
+    "head": "d99ef897f3033ace6a23ee009e2578ffc04a259d",
+    "branch": "codex/e02-icloud-recovery-20260928",
+    "status": " M ESTADO_ATUAL_E_PENDENCIAS.md\n M LEIA_PRIMEIRO.md\n M apps/mobile/src/features/onboarding/OnboardingFlow.tsx\n M docs/evidencias/e02/PROGRESSO.md\n M docs/evidencias/e02/auth-identidades.md\n M docs/evidencias/e02/onboarding.md\n M specs/003-e02-componentes-navegacao-onboarding-clientes/tasks.md\n M tests/ui/onboarding-visual.test.tsx\n?? docs/evidencias/e02/auth-otp-post-pkce-on01-2026-09-28.png\n?? docs/evidencias/e02/onboarding-authenticated-2026-09-28.png\n?? docs/evidencias/e02/onboarding-postfix-today-2026-09-28.png\n?? docs/evidencias/e02/onboarding-return-guarded-today-2026-09-28.png\n?? docs/evidencias/e02/onboarding-review-post-pkce-2026-09-28.png\n?? docs/evidencias/e02/onboarding-review-whatsapp-pending-2026-09-28.png\n?? docs/evidencias/e02/runtime-auth-local-2026-09-28.json\n?? docs/evidencias/e02/runtime-onboarding-minimum-2026-09-28.json\n?? docs/evidencias/e02/runtime-onboarding-postfix-2026-09-28.json\n"
+  }
+]

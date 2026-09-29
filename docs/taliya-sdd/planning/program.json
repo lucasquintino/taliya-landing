@@ -1,0 +1,905 @@
+{
+  "version": "3.0",
+  "date": "2026-09-29",
+  "kind": "implementation_plan_not_deployment",
+  "stages": [
+    {
+      "id": "013",
+      "slug": "fundacao-e-contratos",
+      "title": "Fundação, governança e contratos da Taliya",
+      "deps": [],
+      "days": [
+        1,
+        2
+      ],
+      "weight": 5,
+      "owner": "Liderança técnica + responsável pelo produto",
+      "goal": "Registrar o estado real: app/Auth existentes, billing Asaas ainda inexistente e interfaces a construir, preservando visual e histórico.",
+      "files": [
+        "AGENTS.md",
+        ".specify/memory/constitution.md",
+        ".specify/feature.json",
+        ".specify/init-options.json",
+        "next.config.ts",
+        "docs/landing-migration/decisions.md"
+      ],
+      "req": [
+        [
+          "Registrar commit, repositórios e donos dos contratos atuais de app, billing, landing, Internal e agente.",
+          "O mapa contém endpoints reais, autenticação, IDs, estados, payloads sanitizados e responsáveis; nenhuma rota inventada é aprovada."
+        ],
+        [
+          "Substituir regras de copy-only apenas no escopo desta nova entrega, preservando identidade visual e históricos.",
+          "AGENTS/constituição/pointer não direcionam novas tarefas ao projeto Pilates e não autorizam redesign ou deploy automático."
+        ],
+        [
+          "Preservar app e autenticação existentes; definir a fonte e os contratos do billing Asaas que será construído.",
+          "O mapa distingue app/Auth observados de pagamento ainda inexistente, identifica dono dos dados e contrato-alvo para oferta, checkout, webhooks e acesso, e direciona a implementação à 015. Nenhum endpoint não implementado é apresentado como publicado."
+        ],
+        [
+          "Fixar uma versão operacional do Spec Kit e um método de scripts compatível com a máquina.",
+          "A integração Codex e as invocações disponíveis são verificadas; nenhum --force apaga customizações e o ponteiro aponta à spec ativa."
+        ],
+        [
+          "Registrar fontes, baselines e disponibilidade dos serviços.",
+          "Há inventário de materiais disponíveis, ambientes, credenciais necessárias sem valores, baseline visual e gates por dependência."
+        ]
+      ],
+      "tasks": [
+        "Gerar inventário e matriz de autoridade a partir do commit atual; resolver rotas Internal locais/remotas.",
+        "Registrar contratos existentes de conta/negócio/acesso e contratos-alvo de oferta, checkout, assinatura e webhooks Asaas.",
+        "Aplicar o adendo scoped de AGENTS/constituição; arquivar regras antigas sem excluí-las.",
+        "Verificar Spec Kit instalado, scripts ps/sh/py e disponibilidade de converge; fixar versão e registrar comandos corretos.",
+        "Salvar baselines de desktop/mobile e mapa de dependências materiais/contas/políticas; não ativar serviços pagos.",
+        "Revisar checklist de requisitos, plan/tasks e registrar evidências sanitizadas antes de liberar a 014/015."
+      ],
+      "tests": [
+        "Comparar o commit atual com o ZIP e inspecionar os contratos de app, billing, landing e Internal, incluindo rotas locais e remotas.",
+        "Executar o agente de código na nova spec com as regras anteriores de copy-only ainda presentes no histórico; verificar o adendo de escopo efetivamente aplicado.",
+        "Verificar que o mapa distingue Auth/acesso observados de billing ainda inexistente e define contrato-alvo sem declarar endpoint futuro publicado.",
+        "Executar verificação da integração Spec Kit na máquina-alvo e localizar a spec ativa pelos comandos realmente instalados.",
+        "Revisar baseline visual, inventário de mídia, ambientes e dependências; simular uma dependência ausente sem bloquear recortes independentes."
+      ],
+      "directory": "013-fundacao-e-contratos",
+      "additional_regression_scenarios": [
+        "O repositório atual diverge do ZIP: diferenças são documentadas sem sobrescrever progresso.",
+        "App/Auth existentes são encontrados; billing ausente é registrado como trabalho da 015 sem segunda base de contas.",
+        "As instruções antigas de proibir backend não bloqueiam o escopo novo nem autorizam redesign.",
+        "Codex resolve a spec correta sem retornar a 001-fundacao-migracao.",
+        "Dependência indisponível bloqueia somente a tarefa dependente e continua o trabalho independente."
+      ]
+    },
+    {
+      "id": "014",
+      "slug": "identidade-dados-e-seguranca",
+      "title": "Identidade, dados e segurança de base",
+      "deps": [
+        "013"
+      ],
+      "days": [
+        3,
+        4
+      ],
+      "weight": 10,
+      "owner": "Backend + segurança",
+      "goal": "Garantir que cada escrita pertença ao contato/negócio correto e que a operação administrativa seja autenticada.",
+      "files": [
+        "app/api/internal/sales-inbox/auth.ts",
+        "app/internal/sales-inbox/page.tsx",
+        "lib/landing/ai-attendant/sales-inbox-store.ts",
+        "lib/landing/ai-attendant/storage/postgres.ts",
+        "lib/landing/ai-attendant/schema.ts"
+      ],
+      "req": [
+        [
+          "Usar identidade autenticada e papéis de staff; remover token compartilhado de URL/frontend.",
+          "Auth existente valida issuer/audience/expiração e papéis; actor_id vem da sessão, nunca de x-operator-id arbitrário."
+        ],
+        [
+          "Separar sessão anônima, contato, pessoa autenticada, negócio e assinatura.",
+          "E-mail/telefone declarado não abre conta nem permite merge global; vínculo exige prova apropriada e auditoria."
+        ],
+        [
+          "Derivar autorizações no servidor e validar cada parâmetro das ferramentas.",
+          "Requests cruzados entre usuários/negócios, replay de tokens e histórico fabricado não alteram registros."
+        ],
+        [
+          "Evoluir dados com migrações versionadas, privilégios mínimos e persistência obrigatória em produção.",
+          "Sem DDL em request de produção, fallback de memória comercial ou TLS com verificação desativada no perfil publicado."
+        ],
+        [
+          "Definir minimização, consentimentos e exclusão correlacionada.",
+          "Contato para suporte não vira opt-in; política de retenção e exclusão cobre app, chat, analytics e sessões remotas com exceções justificadas."
+        ]
+      ],
+      "tasks": [
+        "Mapear entidades existentes; definir relações e projeções comerciais sem duplicar identidade ou billing.",
+        "Integrar staff auth e RBAC viewer/operator/admin; eliminar token da URL e header de ator não confiável.",
+        "Adicionar sessão web opaca e validação server-side de posse; vincular conta somente após autenticação.",
+        "Migrar somente tabelas/índices necessários com rollback; revisar pool/TLS e permissões dos leitores analíticos.",
+        "Implementar saneamento de logs, estados de consentimento e caminho auditável de exclusão.",
+        "Executar testes de autorização/IDOR/merge/produção sem banco; registrar evidências."
+      ],
+      "tests": [
+        "Tentar abrir Internal por token na query, forjar x-operator-id, usar conta comum e usar papel viewer em uma mutação; repetir com operador autorizado.",
+        "Fornecer o mesmo e-mail em duas sessões anônimas e autenticar pessoas distintas; verificar que conta, contato, negócio e assinatura não são mesclados por declaração.",
+        "Enviar IDs de outra conversa/negócio, histórico fabricado, parâmetro fora da allowlist e sessão expirada para cada operação mutante.",
+        "Iniciar produção sem banco e revisar migração/restore, DDL fora do request e validação TLS em ambiente configurado.",
+        "Revogar preferência de coleta, sair da conta e solicitar exclusão em cenário controlado; verificar logs, analytics e vinculações retidas/descartadas conforme política."
+      ],
+      "directory": "014-identidade-dados-e-seguranca",
+      "additional_regression_scenarios": [
+        "Mesmo e-mail declarado por dois anônimos não mescla identidades verificadas.",
+        "Staff viewer não escreve e usuário comum não lê leads administrativos.",
+        "Token em query string e x-operator-id forjado não concedem privilégios.",
+        "Produção sem banco não confirma falso registro e não migra schema durante request.",
+        "Logout, conta compartilhada no navegador e exclusão não reutilizam identidade privada."
+      ]
+    },
+    {
+      "id": "015",
+      "slug": "produto-oferta-e-catalogo",
+      "title": "Fonte única de produto, oferta, billing e materiais",
+      "deps": [
+        "013",
+        "014"
+      ],
+      "days": [
+        2,
+        3
+      ],
+      "weight": 7,
+      "owner": "Produto + frontend/backend",
+      "goal": "Construir oferta e billing Asaas sobre identidade/negócio existentes e publicar a mesma oferta para landing e agente.",
+      "files": [
+        "data/landing/niches/pilates.ts",
+        "lib/landing/ai-attendant/commercial-knowledge.ts",
+        "services/taliya-agent-runtime/app/shared/product_knowledge/source.py",
+        "docs/landing-migration/shared-contracts.md"
+      ],
+      "req": [
+        [
+          "Criar catálogo versionado de capacidades publicadas, limites e FAQ.",
+          "Somente recursos confirmados entram; equipes/booking e outros recursos antigos não são presumidos por aparecer em documento histórico."
+        ],
+        [
+          "Publicar uma oferta versionada no novo backend de billing e consumi-la por contrato central, sem preço duplicado no prompt.",
+          "Mensal/anual, cobrança inicial e garantia de 14 dias são coerentes; nenhum teste sem cartão é vendido."
+        ],
+        [
+          "Catalogar mídia com aprovação, origem e classificação de prova social.",
+          "Cada material publicado possui ID, tipo, URL autorizada, versão, resumo/transcrição, direitos e status; UGC encenado não vira depoimento."
+        ],
+        [
+          "Definir comportamento quando informações ou materiais faltam.",
+          "A informação ausente é explicitada; o agente não inventa preço, link, prazo ou mídia e o CTA depende de destino válido."
+        ],
+        [
+          "Versionar e propagar atualizações.",
+          "Oferta nova é consultada no momento relevante; material retirado não é emitido em sessão antiga; compatibilidade e freshness ficam registradas."
+        ],
+        [
+          "Implementar contratação direta autenticada com cartão recorrente e Pix Automático mensal/anual, sem depender da IA.",
+          "Preço/versão vêm do servidor; identidade e negócio são verificados; tentativas repetidas não criam cobrança duplicada; cartão usa checkout hospedado e Pix usa autorização específica, ambos com cobrança inicial conforme a oferta aprovada. Conta/eligibilidade Asaas são homologadas antes de ativar."
+        ],
+        [
+          "Processar eventos financeiros de forma autenticada, idempotente e recuperável, projetando acesso somente após confirmação do backend.",
+          "Webhook persiste event.id antes do aceite; replay/fora de ordem não duplicam efeito; retorno do navegador ou fala da IA não liberam acesso; pagamento inicial Pix e autorização recorrente são estados independentes."
+        ],
+        [
+          "Permitir gestão e reconciliação de assinatura, cancelamento e garantia de 14 dias com estados explícitos.",
+          "Solicitação de reembolso não é confirmação; timeout após efeito externo é reconciliado antes de repetir; renovação/falha/cancelamento preservam acesso conforme fatos pagos e política aprovada, com testes sandbox antes da publicação."
+        ]
+      ],
+      "tasks": [
+        "Consolidar capacidades reais por integração/documento aprovado e remover catálogo comercial de Pilates do caminho v2.",
+        "Implementar fonte server-side e leitor da oferta versionada, com valores aprovados em centavos e disponibilidade explícita.",
+        "Definir schema do catálogo compartilhado e pasta/serviço já existente para armazenamento.",
+        "Importar somente vídeos/demos/UGCs entregues e autorizados; preparar transcrição/resumo/caption.",
+        "Implementar validação de publicação, URL, revisão e expiração de material; não criar CMS novo.",
+        "Convergir oferta, billing e catálogo; testar mudança de versão/material em conversa e registrar guia de operação.",
+        "Criar modelo/migrações de tentativas, vínculo Asaas por negócio e fatos financeiros sem alterar Auth.",
+        "Implementar checkout hospedado para cartão recorrente mensal/anual com idempotência e retorno sem concessão de acesso.",
+        "Implementar Pix Automático mensal/anual com QR inicial e estado de autorização separado do pagamento.",
+        "Implementar webhook autenticado, inbox, processamento idempotente, reconciliação e projeção de acesso.",
+        "Implementar consulta/gestão de assinatura, cancelamento e solicitação de reembolso com estados explícitos.",
+        "Homologar no sandbox autorizado as quatro combinações, falhas, replay, cancelamento e garantia."
+      ],
+      "tests": [
+        "Perguntar sobre capacidades atuais, recursos indisponíveis e funcionamento antigo de Pilates; comparar resposta e FAQ com a fonte aprovada.",
+        "Comparar página, resposta do agente e oferta de contratação em mensal/anual; perguntar sobre teste sem cartão e garantia vigente.",
+        "Importar creator demonstrando produto e depoimento verificado; tentar publicar um arquivo sem aprovação ou direitos registrados.",
+        "Desativar a fonte de produto e retirar o vídeo solicitado; verificar que o agente informa o limite sem oferecer link, preço ou acesso inventado.",
+        "Atualizar oferta, FAQ e situação de material durante uma sessão existente; conferir invalidação e versão usada em cada nova resposta.",
+        "Iniciar contratação direta nas quatro combinações; negar identidade/negócio forjados, repetição e retorno usado como confirmação.",
+        "Repetir e reordenar eventos Asaas; pagamento Pix inicial e autorização recusada permanecem distintos; acesso só após fato confiável.",
+        "Solicitar cancelamento/reembolso e simular timeout/confirmacão tardia; distinguir solicitado de confirmado e reconciliar antes de repetir."
+      ],
+      "directory": "015-produto-oferta-e-catalogo",
+      "additional_regression_scenarios": [
+        "Preço na página e resposta comercial vêm da mesma versão publicada.",
+        "Pergunta sobre teste sem cartão recebe explicação da garantia atual.",
+        "Vídeo removido/privado não gera card quebrado nem URL inventada.",
+        "Creator contratado não é apresentado como cliente comprovado.",
+        "Fonte indisponível produz fallback honesto sem retornar planos de Pilates.",
+        "Checkout direto funciona sem agente; webhook repetido não duplica dinheiro nem acesso."
+      ]
+    },
+    {
+      "id": "016",
+      "slug": "runtime-agents-api-luna",
+      "title": "Runtime Agents API com Luna Max",
+      "deps": [
+        "014",
+        "015"
+      ],
+      "days": [
+        3,
+        5
+      ],
+      "weight": 12,
+      "owner": "Backend/IA",
+      "goal": "Trocar o núcleo comercial antigo por execução gerenciada com um agente único e continuidade confiável.",
+      "files": [
+        "lib/landing/ai-attendant/runtime-client.ts",
+        "services/taliya-agent-runtime/app/main.py",
+        "services/taliya-agent-runtime/app/core/taliya_commercial_sdk/action_agents.py",
+        "services/taliya-agent-runtime/pyproject.toml"
+      ],
+      "req": [
+        [
+          "Executar gpt-6-luna com esforço max, ambiente none e subagentes desativados.",
+          "Smoke test real registra modelo/esforço, formato e versão do cliente; erro de compatibilidade não muda modelo silenciosamente."
+        ],
+        [
+          "Usar uma configuração versionada e sessões remotas isoladas.",
+          "Mapeamento conversa-versão-sessão é persistido e protegido; versões antigas recebem migração controlada."
+        ],
+        [
+          "Processar turnos de modo durável, ordenado e recuperável.",
+          "Fechar navegador ou reiniciar worker não perde operação aceita; locks/lease e dedup impedem concorrência incorreta."
+        ],
+        [
+          "Executar required_actions pelo backend e reconciliar desconexões.",
+          "Resultado já salvo é reutilizado; itens e eventos são reconciliados por IDs; não há execução dupla por stream + webhook."
+        ],
+        [
+          "Controlar timeout, abuso, custo e resposta pública.",
+          "Limites por contexto/conta/canal e kill switch existem; usuário vê espera honesta e somente resposta validada, sem traces internos."
+        ]
+      ],
+      "tasks": [
+        "Criar adaptador v2 por trás da fronteira comercial atual, preservando linguagem e transporte úteis.",
+        "Homologar SDK/REST e payload na conta com ferramentas somente de leitura e custo limitado aprovado.",
+        "Implementar registry de versões e binding das sessões; desenhar migração de sessões abertas.",
+        "Acoplar fila/worker existente, inbox/outbox, lease, retry e dead-letter; não usar after() como garantia de durabilidade.",
+        "Consumir ações e eventos documentados, persistir resultados e reconstruir estado após desconexão.",
+        "Medir Luna/max, limites operacionais e fallback estático; registrar teste real e não somente JSON válido."
+      ],
+      "tests": [
+        "Executar um turno real em homologação e inspecionar modelo/esforço, ambiente e ferramentas efetivamente usados.",
+        "Criar duas conversas independentes, editar o agente salvo e migrar uma sessão; verificar isolamento e versões, sem importar instruções antigas.",
+        "Repetir mensagem/webhook e reiniciar worker antes e depois da gravação de um efeito; verificar ordem por conversa e recuperação sem dupla escrita.",
+        "Simular chamada pendente, perda de stream e repetição de callback; recuperar itens persistidos e devolver o mesmo recibo da ferramenta.",
+        "Acionar limite de entrada, abuso, falha de provedor e timeout; verificar entrega pública sanitizada, custo observado e acesso às ações estáticas."
+      ],
+      "directory": "016-runtime-agents-api-luna",
+      "additional_regression_scenarios": [
+        "Turno real confirma Luna/max e nenhuma permissão de shell/MCP amplo.",
+        "Request repetido e webhook repetido retornam um único resultado comercial.",
+        "Worker reiniciado após gravação da ferramenta retoma sem nova escrita.",
+        "Sessão salva em versão antiga é migrada sem carregar oferta obsoleta.",
+        "Timeout ou indisponibilidade deixa contratação e atendimento humano acessíveis."
+      ]
+    },
+    {
+      "id": "017",
+      "slug": "ferramentas-e-ciclo-comercial",
+      "title": "Cinco ferramentas e ciclo de leads/clientes",
+      "deps": [
+        "014",
+        "015",
+        "016"
+      ],
+      "days": [
+        3,
+        5
+      ],
+      "weight": 12,
+      "owner": "Backend comercial + app/billing",
+      "goal": "Conectar conversa, cadastro e assinatura com uma autoridade por operação.",
+      "files": [
+        "app/api/landing/ai-attendant/route.ts",
+        "lib/landing/ai-attendant/conversion.ts",
+        "lib/landing/ai-attendant/leads.ts",
+        "lib/landing/ai-attendant/sales-inbox-store.ts",
+        "app/api/landing/ai-attendant/whatsapp/route.ts"
+      ],
+      "req": [
+        [
+          "Implementar as cinco ferramentas contratadas e nada de SQL/mark_paid genérico.",
+          "consultar_taliya, buscar_material, atualizar_contato, preparar_proximo_passo e solicitar_atendimento_humano passam em validação e teste real."
+        ],
+        [
+          "Criar/atualizar contato apenas com dados/evidências autorizadas.",
+          "Mensagens originais persistidas sustentam patches; dados de login/consentimento financeiro não são editados pelo modelo."
+        ],
+        [
+          "Criar/vincular cliente independentemente da existência de chat.",
+          "Cadastro e primeira compra no fluxo pronto atualizam projeção comercial; renovação não gera novo cliente."
+        ],
+        [
+          "Separar aquisição, billing, acesso e atendimento.",
+          "Cancelamento de renovação com período pago preserva acesso; estorno solicitado não é devolução concluída; status é derivado de autoridade real."
+        ],
+        [
+          "Eliminar dupla gravação e preservar histórico de modo seguro.",
+          "Ferramenta e pós-processamento antigo não gravam o mesmo lead; eventos fora de ordem são reconciliados; legado fica identificado."
+        ]
+      ],
+      "tasks": [
+        "Implementar handlers restritos com schemas, contexto autenticado, versões e recibos persistidos.",
+        "Reutilizar contato/lead store com patch allowlist e prova por message_id original.",
+        "Assinar eventos de domínio do app/billing ou consultar projeção via interfaces existentes; definir idempotência e reconciliação.",
+        "Desativar conversão antiga baseada no texto no caminho v2; mapear compatibilidade para UI sem preservar regras de diagnóstico.",
+        "Conectar navegação à contratação e cliente ativo à gestão/app, sem iniciar pagamento dentro da ferramenta.",
+        "Testar compra sem IA, criação assistida, renovação, falha e migração de contatos históricos."
+      ],
+      "tests": [
+        "Executar cada uma das cinco funções em contexto autorizado e tentar operações mark_paid, SQL e compra implícita não expostas.",
+        "Pedir alteração legítima de nome e atividade, depois alteração de login ou contato de outra conta; conferir evidência original e patch aplicado.",
+        "Contratar sem abrir o chat, depois renovar e retornar pelo agente autenticado; conferir um vínculo comercial por entidade real.",
+        "Simular cancelamento de renovação com período pago, pedido de reembolso pendente e mensagem já paguei; conferir estados independentes.",
+        "Repetir escrita da ferramenta com callback antigo, entregar eventos fora de ordem e migrar um contato legado; conferir dedup, histórico e reconciliação."
+      ],
+      "directory": "017-ferramentas-e-ciclo-comercial",
+      "additional_regression_scenarios": [
+        "Pessoa compra sem chat e aparece uma vez como cliente do negócio certo.",
+        "Ferramenta e callback antigo não criam dois leads.",
+        "Já paguei escrito no chat não muda assinatura nem receita.",
+        "Evento atrasado não reativa acesso estornado nem duplica renovação.",
+        "Cliente ativo vai ao app/gestão, não a uma segunda compra."
+      ]
+    },
+    {
+      "id": "018",
+      "slug": "landing-widget-e-jornada",
+      "title": "Landing, widget e integração à assinatura",
+      "deps": [
+        "015",
+        "017"
+      ],
+      "days": [
+        2,
+        4
+      ],
+      "weight": 8,
+      "owner": "Frontend + design/QA",
+      "goal": "Permitir contratar diretamente ou receber ajuda sem mudar a identidade visual aprovada.",
+      "files": [
+        "components/landing/NicheLandingPage.tsx",
+        "components/landing/shared/FloatingAiAttendant.tsx",
+        "data/landing/niches/pilates.ts",
+        "app/page.tsx",
+        "app/robots.ts",
+        "app/sitemap.ts",
+        "next.config.ts"
+      ],
+      "req": [
+        [
+          "Separar CTA de contratação de CTA de dúvidas.",
+          "Começar agora abre o fluxo existente; tirar dúvidas abre chat. Escolha mensal/anual e contexto permitidos são preservados."
+        ],
+        [
+          "Preservar design system e composição com ajustes localizados.",
+          "Diferenças desktop/mobile são aprovadas; nenhum redesign geral, substituição de carrosséis/tabs ou reconstrução do app."
+        ],
+        [
+          "Cobrir todos os estados do atendimento.",
+          "Fechado/aberto/vazio/enviando/esperando/erro/offline/reconectando/humano possuem comportamento testado, sem spinner infinito."
+        ],
+        [
+          "Manter navegação segura e acessível.",
+          "URLs vêm do backend; teclado, foco, leitura, toque e retorno após login funcionam; tokens não entram em analytics/referrer."
+        ],
+        [
+          "Alinhar FAQ, oferta, SEO e conteúdo legível.",
+          "Metadados/structured data e rotas não anunciam legado; privadas ficam protegidas e noindex; não há promessa de indexação garantida."
+        ]
+      ],
+      "tasks": [
+        "Mapear cada CTA atual e destino existente; alterar somente handlers e conteúdo necessário ao contrato.",
+        "Atualizar widget para nova resposta, cards e estado assíncrono com IDs estáveis.",
+        "Implementar retomada/autenticação sem confiar em sessionId do navegador; preservar conversa autorizada.",
+        "Fazer baseline visual e corrigir foco/teclado/safe-area/scroll/tamanhos/contraste no recorte alterado.",
+        "Revisar FAQ, oferta, metadata, redirects e indexação com a mesma fonte de produto.",
+        "Executar regressão de contratação direta e assistida em mobile/desktop e registrar capturas."
+      ],
+      "tests": [
+        "Desligar o serviço de IA e acionar CTA principal; comparar com CTA secundário de dúvidas e preservar mensal/anual na autenticação.",
+        "Comparar capturas mobile/desktop com baseline de tokens, proporções e componentes; verificar ausência de redesign fora do recorte.",
+        "Percorrer abertura, processamento, resposta, erro, expiração, retomada e pausa humana; recarregar página sem duplicar mensagens.",
+        "Usar teclado/leitor de tela, adulterar referência de navegação e tentar retomar outra conversa; conferir foco, autorização e redirecionamento permitido.",
+        "Revisar FAQ, preço, garantia, metadata, redirects e conteúdo indexável contra a fonte comercial atual."
+      ],
+      "directory": "018-landing-widget-e-jornada",
+      "additional_regression_scenarios": [
+        "Contratação direta funciona com serviço de IA desligado.",
+        "Trocar mensal/anual e entrar na conta preserva a modalidade válida.",
+        "Conversa reinicia ou retoma com clareza após expiração, sem mostrar dados de outro visitante.",
+        "Falha recuperável não duplica mensagem nem cobra outra vez.",
+        "Teclado, leitor de tela e viewport móvel operam chat, mídia e CTAs sem regressão."
+      ]
+    },
+    {
+      "id": "019",
+      "slug": "midia-e-demonstracoes",
+      "title": "Vídeos, demonstrações e UGCs na experiência",
+      "deps": [
+        "015"
+      ],
+      "days": [
+        1,
+        3
+      ],
+      "weight": 6,
+      "owner": "Conteúdo + frontend",
+      "goal": "Integrar a biblioteca aprovada à landing e ao agente com reprodução e medição coerentes.",
+      "files": [
+        "components/landing/sections/",
+        "components/landing/shared/",
+        "data/landing/"
+      ],
+      "req": [
+        [
+          "Publicar um conjunto inicial útil sem inventar material pronto.",
+          "Catálogo entregue contém explicação geral, demonstrações prioritárias reais e UGCs aprovados; indisponíveis ficam ocultos."
+        ],
+        [
+          "Mostrar no máximo um material por resposta e permitir contratação sem assistir.",
+          "Cards reutilizam o DS; o agente seleciona ID aprovado e o vídeo não cria barreira ao checkout."
+        ],
+        [
+          "Otimizar carregamento e privacidade do player.",
+          "Thumbnail/lazy load, reprodução voluntária, legendas e alternativa textual; embeds não burlam preferência de cookies."
+        ],
+        [
+          "Medir recomendação, exposição e reprodução separadamente.",
+          "video_completed exige observação verificável do player; link externo sem telemetria não registra conclusão."
+        ],
+        [
+          "Manter manutenção operacional simples.",
+          "Autor de conteúdo edita catálogo versionado com revisão; publicação/retirada é auditável; não há CMS/editor novo obrigatório."
+        ]
+      ],
+      "tasks": [
+        "Inventariar arquivos de mídia entregues com direitos, classificação de UGC e relações com capacidades.",
+        "Preparar thumbnails, legendas/transcrições revisadas e tamanhos adequados usando hospedagem existente.",
+        "Construir um card/player reutilizável para landing e chat sem tocar na composição global.",
+        "Implementar medição de intervalos assistidos quando suportado e poucos marcos, sem evento por segundo.",
+        "Validar fallback sem vídeo, link quebrado, arquivo retirado e teclado/foco.",
+        "Registrar biblioteca de lançamento e procedimento de manutenção com responsável."
+      ],
+      "tests": [
+        "Publicar a biblioteca inicial com arquivos realmente entregues; conferir direitos, aprovação e classificação de prova social.",
+        "Pedir várias demonstrações e tentar assinar sem assistir; validar máximo de um card por resposta e CTA independente.",
+        "Abrir página em rede móvel e sem autorização analítica; verificar carregamento sob demanda, áudio, dados enviados, foco e legendas.",
+        "Exibir, clicar, iniciar, avançar por seek e assistir intervalos reais; abrir link externo sem telemetria; conferir marcos sem falsa conclusão.",
+        "Retirar e substituir material publicado; conferir invalidação na landing e no chat e execução do procedimento por responsável."
+      ],
+      "directory": "019-midia-e-demonstracoes",
+      "additional_regression_scenarios": [
+        "Material selecionado existe e sua prova social corresponde à classificação.",
+        "Avançar o vídeo até o final não equivale a assistir 90% do conteúdo.",
+        "Abrir link externo não dispara video_started/completed sem evidência.",
+        "Vídeo não carrega bytes pesados nem reproduz som antes da ação permitida.",
+        "Material retirado some do chat e da página sem deploy improvisado ou URL fabricada."
+      ]
+    },
+    {
+      "id": "020",
+      "slug": "internal-minimo",
+      "title": "Taliya Internal mínimo e operação humana",
+      "deps": [
+        "014",
+        "017"
+      ],
+      "days": [
+        3,
+        4
+      ],
+      "weight": 10,
+      "owner": "Frontend/backend + operação",
+      "goal": "Entregar duas áreas operacionais, sem duplicar CRM analítico ou financeiro.",
+      "files": [
+        "components/internal/SalesInboxClient.tsx",
+        "app/internal/sales-inbox/page.tsx",
+        "app/api/internal/sales-inbox/leads/[leadId]/actions/route.ts",
+        "app/api/internal/sales-inbox/[leadId]/handoff/route.ts",
+        "next.config.ts"
+      ],
+      "req": [
+        [
+          "Definir uma implantação autoritativa do Internal.",
+          "Rewrite e rotas locais estão conciliados com a implantação atual; não existem dois painéis editando estados divergentes."
+        ],
+        [
+          "Entregar fila de atendimento e ficha de contato/cliente.",
+          "Fila filtra espera/humano/erro e ficha mostra conta/negócio/status oficiais; atalhos abrem PostHog e billing autorizado."
+        ],
+        [
+          "Permitir resposta humana no canal original suportado.",
+          "Web e WhatsApp possuem prova de entrega ou falha explícita; enviar WhatsApp não substitui silenciosamente resposta ao webchat."
+        ],
+        [
+          "Aplicar pausa/retomada atômicas e auditáveis.",
+          "Assumir bloqueia novos turnos/ações/entregas atrasadas; só operador autorizado retoma; recibo de handoff é único."
+        ],
+        [
+          "Restringir ações administrativas e remover controles antigos inadequados.",
+          "mark_won não concede assinatura nem receita; nenhum operador altera custo/status financeiro diretamente; trilha do ator é verificável."
+        ]
+      ],
+      "tasks": [
+        "Resolver dono/domínio do Internal antes de escolher onde alterar o código.",
+        "Reaproveitar fila/ficha atuais retirando campos Pilates/diagnóstico e controles financeiros fictícios.",
+        "Implementar estados de atendimento com versão/lock; validar take_over/resume_ai no worker e na outbox.",
+        "Implementar entrega humana web se faltar; no WhatsApp revisar timestamp do último inbound e regras do provedor.",
+        "Adicionar pesquisa, filtros, notas operacionais mínimas e atalhos para serviços oficiais sem novos dashboards.",
+        "Treinar operação com cenário de erro e garantir auditoria de identidade, envio e pausa."
+      ],
+      "tests": [
+        "Inspecionar rota /internal e /api/internal nos ambientes reais e registrar qual deploy valida identidade e executa cada ação.",
+        "Operador localiza atendimento e abre ficha vinculada à conta correta, filtra pendências e acessa o atalho analítico sem duplicar cadastro.",
+        "Responder humano em conversa web e no WhatsApp comercial; comparar entrega original, timestamp do último inbound e permissão do provedor.",
+        "Dois operadores assumem enquanto a IA está concluindo; verificar lock/versão, bloqueio de resposta tardia e retomada apenas autorizada.",
+        "Tentar modificar cobrança por anotação de oportunidade ganha, escrever como viewer e usar controle legado de diagnóstico; verificar restrições e auditoria."
+      ],
+      "directory": "020-internal-minimo",
+      "additional_regression_scenarios": [
+        "Dois operadores tentam assumir: apenas um estado final coerente é aceito.",
+        "Resposta da IA pronta antes do takeover não é enviada após a pausa.",
+        "Humano responde visitante web no webchat, não em outro canal implícito.",
+        "Alteração de ficha não estende indevidamente janela de envio do WhatsApp.",
+        "Marcar oportunidade ganha não cria cliente pago nem altera o billing."
+      ]
+    },
+    {
+      "id": "021",
+      "slug": "eventos-e-posthog",
+      "title": "Instrumentação confiável e integração PostHog",
+      "deps": [
+        "017",
+        "018",
+        "019",
+        "020"
+      ],
+      "days": [
+        2,
+        4
+      ],
+      "weight": 10,
+      "owner": "Backend/frontend + analytics",
+      "goal": "Registrar acontecimentos canônicos uma vez e conectar a jornada sem depender do modelo.",
+      "files": [
+        "lib/landing/ai-attendant/funnel-events.ts",
+        "app/api/landing/ai-attendant/events/route.ts",
+        "lib/landing/ai-attendant/storage/postgres.ts",
+        "components/landing/shared/FloatingAiAttendant.tsx"
+      ],
+      "req": [
+        [
+          "Adotar contrato de eventos com IDs, versões, origem e tempo.",
+          "Cada evento tem produtor, ocorrência e chave de dedup; marcos de conta/negócio não usam identidade analítica como credencial."
+        ],
+        [
+          "Emitir acontecimentos financeiros/de valor pelo serviço responsável.",
+          "Pagamento/ativação não derivam de clique ou retorno de checkout; ferramentas da IA não incluem track_event."
+        ],
+        [
+          "Instrumentar web, app e backend com identidade consistente.",
+          "ID estável após auth, reset no logout e business_id separado; visitantes não viram leads identificados automaticamente."
+        ],
+        [
+          "Controlar privacidade, ambientes e consumo.",
+          "Autocapture desnecessário/replay sensível estão off; testes não contaminam produção e nenhum texto completo de chat/PII sensível é enviado por padrão."
+        ],
+        [
+          "Garantir entrega recuperável e reconciliação.",
+          "Outbox reenvia de forma idempotente; dashboards financeiros conferem fonte canônica; quota perdida é registrada como lacuna, não venda inexistente."
+        ]
+      ],
+      "tasks": [
+        "Mapear eventos existentes para catálogo v3 com compatibilidade e corte de versão.",
+        "Instrumentar produtores da landing, runtime, app e billing sem duplicar o mesmo evento client/server.",
+        "Conectar SDKs e preferências de coleta; associar identidade sem fingerprinting.",
+        "Implementar relay/outbox/dedup, alertas de atraso e rotina de reconciliação de marcos críticos.",
+        "Configurar projeto PostHog conforme limites reais da conta; homologação usa mock/local ou projeto isolado autorizado.",
+        "Executar jornadas canônicas e ataque de evento financeiro fabricado; conferir relatórios contra fonte real."
+      ],
+      "tests": [
+        "Validar cada nome de evento, versão, IDs, produtor e timestamp; repetir a mesma operação lógica nos transportes disponíveis.",
+        "Fabricar payment_confirmed no browser e comparar com evento/registro financeiro canônico; verificar que não altera acesso nem a apuração oficial.",
+        "Acompanhar visita anônima, login, troca de conta, compra e app com dois membros no mesmo negócio; verificar correlação sem duplicar assinante.",
+        "Negar coleta opcional, testar ambiente de desenvolvimento e atingir limite de gravação; conferir ausência de PII bruta e separação de dados.",
+        "Desligar PostHog/relay, produzir acontecimentos reais e retomar; verificar recuperação, dedup, lacuna visível e conciliação com fonte de origem."
+      ],
+      "directory": "021-eventos-e-posthog",
+      "additional_regression_scenarios": [
+        "Visita anônima, login, compra e app mantêm jornada válida sem expor credenciais.",
+        "Duas pessoas no mesmo negócio não contam dois assinantes.",
+        "Bloquear cookies analíticos não impede compra nem gera reconstrução invasiva do visitante.",
+        "PostHog indisponível não perde pagamento e mostra atraso quando o relay retorna.",
+        "Evento payment_confirmed fabricado no navegador não altera acesso nem a fonte da receita oficial."
+      ]
+    },
+    {
+      "id": "022",
+      "slug": "paineis-metricas-e-custos",
+      "title": "Painéis SaaS, definições e limites de custo",
+      "deps": [
+        "021"
+      ],
+      "days": [
+        2,
+        3
+      ],
+      "weight": 6,
+      "owner": "Analytics + produto",
+      "goal": "Entregar seis painéis utilizáveis com definições explícitas, sem construir BI no Internal.",
+      "files": [
+        "lib/landing/ai-attendant/funnel-events.ts",
+        "docs/ (novos contratos de métricas e configurações exportadas)"
+      ],
+      "req": [
+        [
+          "Configurar aquisição, conversão, conteúdo, atendimento, ativação/retenção e receita.",
+          "Cada painel tem perguntas, denominadores, filtros, unidade, janela, timezone e fonte; negócios e usuários não se confundem."
+        ],
+        [
+          "Usar funil principal com chat/vídeo opcionais.",
+          "Compra direta permanece no denominador correto; agent_assisted indica associação, não ganho causal comprovado."
+        ],
+        [
+          "Definir MRR, caixa, churn, garantia e retenção de modo reproduzível.",
+          "Anual é normalizado; cancelamento pedido difere do acesso encerrado; reembolso pedido/concluído é separado; coortes imaturas não recebem taxa inventada."
+        ],
+        [
+          "Controlar orçamento sem prometer gratuidade universal.",
+          "Estimativa usa volume real e addons; teto US$50 é proposta sujeita à aprovação; Group Analytics/replay/Workflows não são ativados automaticamente."
+        ],
+        [
+          "Habilitar métricas por negócio sem forçar addon pago.",
+          "business_id existe na origem; consultas/exports canônicos fornecem agregação por negócio; Group Analytics só entra após teste de necessidade/custo."
+        ]
+      ],
+      "tasks": [
+        "Versionar dicionário de métricas, denominadores e fontes de receita antes dos gráficos.",
+        "Construir os seis dashboards no PostHog com filters padrão e links de investigação.",
+        "Preparar consultas/snapshots analíticos sanitizados; evitar sincronizar banco inteiro ou ativar CDC sem revisão.",
+        "Conferir resultados com fixture financeira e casos anual/renovação/estorno/inadimplência.",
+        "Configurar custo/uso e alertas 70/85/95% do teto aprovado por produto; registrar limite do plano/projetos.",
+        "Documentar guia de leitura dos painéis e auditoria semanal de dados, sem duplicar no Internal."
+      ],
+      "tests": [
+        "Carregar dataset de homologação conhecido e revisar as seis áreas de dashboard, filtros, fontes e períodos.",
+        "Comparar compradores diretos, compradores com chat e compradores com vídeo; todos devem integrar o funil principal sem etapa opcional obrigatória.",
+        "Conferir fixture de pagamentos, anual, renovação, inadimplência, cancelamento e estorno; revisar denominadores, coortes maduras e atribuição sem causalidade.",
+        "Projetar consumo observado por módulo, aproximar-se dos limites e simular teto; conferir alertas e que billing não depende do analytics.",
+        "Contar negócios pagantes/ativados com dois usuários por negócio, sem habilitar Group Analytics automaticamente; avaliar addon em configuração separada aprovada."
+      ],
+      "directory": "022-paineis-metricas-e-custos",
+      "additional_regression_scenarios": [
+        "100 pagamentos de teste canônicos geram exatamente valores/contas esperados no dataset de homologação.",
+        "Renovação não aparece como novo cliente e anual não infla MRR por 12.",
+        "Coorte sem janela madura mostra indisponibilidade e tamanho, não zero enganoso.",
+        "Primeiro/último toque e agent_assisted usam a janela documentada sem causalidade presumida.",
+        "Grupo pago e projeção de gastos só são ativados com aprovação; atingir teto não altera billing."
+      ]
+    },
+    {
+      "id": "023",
+      "slug": "automacoes-de-relacionamento",
+      "title": "Automações enxutas de relacionamento",
+      "deps": [
+        "017",
+        "020",
+        "021",
+        "022"
+      ],
+      "days": [
+        1,
+        2
+      ],
+      "weight": 4,
+      "owner": "Operação + backend/analytics",
+      "goal": "Recuperar jornadas elegíveis com regras previsíveis e um único responsável por cada mensagem.",
+      "files": [
+        "lib/landing/ai-attendant/n8n.ts",
+        "serviços existentes de notificações e billing (mapear na 013)"
+      ],
+      "req": [
+        [
+          "Implementar apenas três fluxos de relacionamento propostos.",
+          "Abandono elegível, pagamento sem primeiro valor e inatividade elegível possuem templates, limites e destino útil."
+        ],
+        [
+          "Revalidar elegibilidade e consentimento antes de enviar.",
+          "Pagamento, acesso, opt-out, humano ativo e canal são conferidos no backend no instante da entrega; dado desatualizado no PostHog não decide sozinho."
+        ],
+        [
+          "Preservar notificações transacionais existentes.",
+          "Confirmação/cobrança/estorno não migram sem motivo nem são enviados duas vezes por PostHog + n8n + app."
+        ],
+        [
+          "Suprimir spam e reclamações.",
+          "No máximo uma mensagem por gatilho e teto global proposto de uma mensagem de relacionamento por sete dias; opt-out impede novos envios dessa categoria."
+        ],
+        [
+          "Configurar antes de ativar.",
+          "Fluxos estão testados em dry-run, modelos/domínio/canais validados e desligados até autorização específica de campanha/produção."
+        ]
+      ],
+      "tasks": [
+        "Inventariar todas as notificações atuais e designar um emissor por categoria.",
+        "Configurar Workflows quando disponível ou reutilizar a automação já adotada sem criar motor paralelo.",
+        "Criar webhook de solicitação autenticado e revalidação server-side antes da entrega pelo provedor existente.",
+        "Criar templates curtos com link seguro, cancelamento de contato e nenhum desconto inventado.",
+        "Testar supressão em corrida com pagamento/opt-out/pausa humana e limites do provedor.",
+        "Liberar de forma controlada somente após aprovação de mensagem, canal e volume; documentar kill switch."
+      ],
+      "tests": [
+        "Executar dry-run dos fluxos de contratação abandonada, primeiro valor e recuperação de uso com fixtures elegíveis.",
+        "Pagar, ativar produto, manter Pix pendente legítimo ou revogar consentimento imediatamente antes do envio agendado; conferir revalidação.",
+        "Executar confirmação, renovação e estorno existentes enquanto Workflows está ativo em sandbox; verificar um emissor por notificação.",
+        "Repetir gatilho e manter pessoa em coorte desatualizada após opt-out; verificar limite global e supressão.",
+        "Manter configuração em dry-run e depois autorizar uma coorte de teste; conferir canal, reputação, destinatários e kill switch sem envio público não autorizado."
+      ],
+      "directory": "023-automacoes-de-relacionamento",
+      "additional_regression_scenarios": [
+        "Pessoa paga um instante antes do envio: recuperação de abandono é suprimida.",
+        "Pix pendente legítimo não recebe falsa cobrança/compra nova para recuperar abandono.",
+        "Opt-out vale mesmo que a pessoa continue numa coorte antiga.",
+        "App, n8n e PostHog não enviam confirmação duplicada.",
+        "Gatilho repetido não gera várias mensagens e dry-run não contata usuários reais."
+      ]
+    },
+    {
+      "id": "024",
+      "slug": "qualidade-e-homologacao",
+      "title": "QA integrada, segurança, performance e evals",
+      "deps": [
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023"
+      ],
+      "days": [
+        3,
+        5
+      ],
+      "weight": 6,
+      "owner": "QA + backend/frontend + produto",
+      "goal": "Provar a jornada completa com dados controlados e falhas deliberadas antes da liberação.",
+      "files": [
+        "package.json",
+        "scripts/",
+        "services/taliya-agent-runtime/tests/",
+        "specs/013–025 (novos artefatos)"
+      ],
+      "req": [
+        [
+          "Executar suíte automatizada de unidade/contrato/integração/E2E.",
+          "Build, lint, tipos e testes do código tocado passam no CI; testes antigos têm destino explícito: preservar/adaptar/arquivar."
+        ],
+        [
+          "Avaliar Luna Max com conversas reais de homologação e critérios reproduzíveis.",
+          "Os casos vigentes do plano (68 após a correção de billing) e cenários reutilizáveis anteriores têm resultado; casos críticos repetidos não podem falhar; amostra de linguagem recebe revisão humana."
+        ],
+        [
+          "Homologar todas as combinações da assinatura Asaas implementada na 015.",
+          "Mensal/anual × cartão/Pix Automático, retorno, falha, cancelamento e reembolso têm evidência sandbox; produção depende de gate próprio."
+        ],
+        [
+          "Validar falhas, acessibilidade, desempenho e segurança.",
+          "IDOR, injeção, URL arbitrária, repetição, takeover, desconexão, fila, cookies e restauração possuem evidências."
+        ],
+        [
+          "Concluir critérios sem rebaixar exigência silenciosamente.",
+          "Nenhum P0/P1 de lançamento aberto; metas não atingidas geram correção ou exceção explícita, não marcação verde por criar documentação."
+        ]
+      ],
+      "tasks": [
+        "Integrar testes e comandos ao CI real; separar offline, mocks, sandbox e execução paga.",
+        "Portar casos aproveitáveis da suíte anterior, substituir roteiros de Pilates e adicionar os casos deste plano.",
+        "Rodar cenários financeiros controlados nas quatro combinações e conferir analytics/cliente/acesso.",
+        "Executar fault injection, segurança, teste manual acessível e baseline de desempenho/rede móvel.",
+        "Rodar bateria Luna/max com orçamento aprovado e rubric de correção/completude/brevidade; não usar somente juiz LLM.",
+        "Executar analyze/converge e resolver gaps; compilar dossiê sanitizado para gate de release."
+      ],
+      "tests": [
+        "Executar CI de unidade, contrato, integração e E2E; verificar que skips/mocks não são apresentados como integração real aprovada.",
+        "Rodar conversas Luna/max com múltiplas mensagens, intenções, recusa, limitações e ataques; revisar rubric e repetir casos críticos.",
+        "Executar mensal/anual com cartão/Pix Automático em homologação da assinatura Asaas implementada e conferir conta, projeção comercial e analytics.",
+        "Aplicar falhas de provedor, worker, banco e canal; realizar testes de autorização, acessibilidade e desempenho nas superfícies alteradas.",
+        "Revisar analyze/converge e o dossiê; inserir uma falha crítica controlada para comprovar que bloqueia o gate e não é removida por mudança silenciosa do teste."
+      ],
+      "directory": "024-qualidade-e-homologacao",
+      "additional_regression_scenarios": [
+        "Suíte crítica inteira passa sem falsos sucessos nem teste mutado para concordar com implementação errada.",
+        "Conversa com múltiplas mensagens/intenções é respondida sem diagnóstico obrigatório.",
+        "Quatro combinações financeiras levam à conta correta e não duplicam cliente.",
+        "Falha de um provedor não bloqueia outras superfícies e estado fica recuperável.",
+        "Evidência permite a outra pessoa repetir os testes e diferenciar mock de resultado real."
+      ]
+    },
+    {
+      "id": "025",
+      "slug": "migracao-release-e-operacao",
+      "title": "Migração, publicação controlada e operação",
+      "deps": [
+        "024"
+      ],
+      "days": [
+        1,
+        2
+      ],
+      "weight": 4,
+      "owner": "Liderança técnica + operação/produto",
+      "goal": "Encerrar com serviço operável, rollback seguro e indicadores confiáveis, não apenas código compilando.",
+      "files": [
+        "next.config.ts",
+        "variáveis e pipelines de deploy atuais (mapear na 013)",
+        "AGENTS.md",
+        "docs de operação e status"
+      ],
+      "req": [
+        [
+          "Migrar dados/sessões com ensaio e reconciliação.",
+          "Registros legados permanecem marcados; não há merge automático por e-mail; backup/restore e contagens são verificados."
+        ],
+        [
+          "Publicar por gates com autorização explícita.",
+          "Interno → 5% → 25% → 100% conforme evidência; não confundir percentual de tráfego com conclusão da entrega."
+        ],
+        [
+          "Manter rollback sem agente Pilates.",
+          "Kill switch desliga geração e preserva assinar/entrar/ajuda/handoff; schemas compatíveis e eventos continuam íntegros."
+        ],
+        [
+          "Entregar responsáveis, alertas e procedimentos.",
+          "Há dono de fila, mídia, fonte comercial, financeiro e analytics; problemas de custo, privacidade e entrega têm resposta definida."
+        ],
+        [
+          "Fechar 100% por aceite operacional.",
+          "Todos os gates obrigatórios aprovados, estabilização observada, documentação alinhada e nenhuma pendência escondida de segurança/contratação/dados."
+        ]
+      ],
+      "tasks": [
+        "Ensaiar backup/migração/restore em homologação e reconciliar dados/sessões legadas.",
+        "Registrar autorização de deploy, flags, versões e playbook de rollback; não executar por inferência do pedido de plano.",
+        "Liberar interno e coortes graduais com janela mínima e volume documentado; baixa amostra não vira aprovação estatística.",
+        "Monitorar fila, latência, erros, incidentes, discrepâncias financeiras e gasto; pausar ao ultrapassar gate crítico.",
+        "Treinar operador e fazer simulação de queda OpenAI/PostHog/banco/canal e takeover.",
+        "Consolidar evidências, fechar specs e publicar handoff; programar revisão operacional no sistema escolhido, não implicitamente no ChatGPT."
+      ],
+      "tests": [
+        "Ensaiar migração de contatos/sessões e restore de backup; conferir IDs, permissões, eventos e reconciliar estado financeiro sem duplicação.",
+        "Revisar autorização e liberar coortes internas/limitadas; tentar avanço com gate pendente e conferir bloqueio.",
+        "Desligar geração e fazer rollback de configuração; confirmar ausência de agente/promessas de Pilates e manutenção do acesso à contratação.",
+        "Entregar runbook a operador e simular incidentes de OpenAI, PostHog, banco e canal; verificar alertas, permissões e responsáveis.",
+        "Percorrer matriz final requisito → código/config → teste → evidência → operação; verificar que bloqueador crítico ou conteúdo inexistente impede declaração de 100%."
+      ],
+      "directory": "025-migracao-release-e-operacao",
+      "additional_regression_scenarios": [
+        "Rollback não retorna promessa/fluxo de Pilates e contratação segue disponível.",
+        "Backup restaurado mantém vínculos, permissões e eventos sem duplicação.",
+        "Deploy não publica segredos, ambiente de teste ou material não aprovado.",
+        "Operador resolve atendimento pendente usando só runbook e permissões próprias.",
+        "Declaração de 100% referencia evidências reais; reprovação crítica bloqueia avanço."
+      ]
+    }
+  ]
+}

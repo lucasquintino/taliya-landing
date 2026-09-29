@@ -1,0 +1,19 @@
+{
+  "kind": "configuration_intent_not_live_api_request",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "max",
+  "verbosity": "low",
+  "environment_type": "none",
+  "multi_agent_enabled": false,
+  "web_search_enabled": false,
+  "shell_enabled": false,
+  "tool_names": [
+    "consultar_taliya",
+    "buscar_material",
+    "atualizar_contato",
+    "preparar_proximo_passo",
+    "solicitar_atendimento_humano"
+  ],
+  "reply_schema": "../contracts/reply.schema.json",
+  "compatibility_gate": "Spec 016: validate exact provider schema and account acceptance before release"
+}

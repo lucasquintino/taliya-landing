@@ -1,0 +1,14 @@
+{
+  "scope": "JSON_Schema_syntax_only_not_remote_API_acceptance",
+  "schemas_checked": 8,
+  "passed": [
+    "contracts/event.envelope.schema.json",
+    "contracts/material.schema.json",
+    "contracts/reply.schema.json",
+    "tool:consultar_taliya",
+    "tool:buscar_material",
+    "tool:atualizar_contato",
+    "tool:preparar_proximo_passo",
+    "tool:solicitar_atendimento_humano"
+  ]
+}

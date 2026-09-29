@@ -1,0 +1,136 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "explainer",
+        "demo",
+        "ugc"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capability_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "thumbnail_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "duration_seconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "publication_status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "approved",
+        "published",
+        "retired"
+      ]
+    },
+    "evidence_type": {
+      "type": "string",
+      "enum": [
+        "product_walkthrough",
+        "illustrative_scenario",
+        "creator_demonstration",
+        "verified_customer_testimonial"
+      ]
+    },
+    "disclosure": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approved_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "review_after": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "transcript": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "captions_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "product_version": {
+      "type": "string"
+    },
+    "rights_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "kind",
+    "title",
+    "summary",
+    "topics",
+    "capability_ids",
+    "url",
+    "thumbnail_url",
+    "duration_seconds",
+    "publication_status",
+    "evidence_type",
+    "disclosure",
+    "approved_at",
+    "review_after",
+    "transcript",
+    "captions_url",
+    "product_version",
+    "rights_reference",
+    "owner"
+  ],
+  "additionalProperties": false,
+  "description": "Item do catálogo operacional. A regra de publicação valida direitos, URLs allowlist, classificação e aprovação; JSON válido isolado não prova essas condições."
+}

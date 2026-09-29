@@ -8815,6 +8815,12 @@ body #dinheiro-na-mesa .plans-price-defense-card > div:first-child {
 
 .message-wall-track {
   animation: message-wall-sideways 52s linear infinite;
+  animation-play-state: paused;
+  will-change: auto;
+}
+
+#fale-do-seu-jeito.is-motion-visible .message-wall:not(:hover):not(:focus-within) .message-wall-track {
+  animation-play-state: running;
   will-change: transform;
 }
 

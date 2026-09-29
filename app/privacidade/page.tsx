@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { StructuredData } from "@/components/landing/shared/StructuredData";
 import { absoluteSiteUrl } from "@/lib/landing/seo";
@@ -22,11 +23,13 @@ export const metadata: Metadata = {
     description: privacyDescription,
     type: "website",
     url: absoluteSiteUrl("/privacidade"),
+    images: [absoluteSiteUrl("/opengraph-image")],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: privacyTitle,
     description: privacyDescription,
+    images: [absoluteSiteUrl("/twitter-image")],
   },
 };
 
@@ -85,13 +88,13 @@ export default function PrivacyPage() {
       <main className="min-h-screen bg-[#F7F3EA] text-[#101B3A]">
       <article className="mx-auto grid max-w-6xl gap-8 px-5 py-8 sm:px-8 sm:py-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:px-12">
         <aside className="lg:sticky lg:top-8 lg:self-start">
-          <a
+          <Link
             aria-label="Voltar para a página da Taliya"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#D8E6DC] bg-white text-xl font-black leading-none text-[#0E8F7E] transition hover:border-[#0E8F7E] hover:bg-[#F3FBF8] focus:outline-none focus:ring-4 focus:ring-[#0E8F7E]/18"
             href="/"
           >
             <span aria-hidden="true">←</span>
-          </a>
+          </Link>
 
           <nav aria-label="Índice da política de privacidade" className="mt-8 hidden border-l border-[#D8E6DC] pl-4 lg:block">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-[#667085]">Nesta página</p>

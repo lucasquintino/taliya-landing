@@ -1,0 +1,117 @@
+[
+  {
+    "path": "public/file.svg",
+    "sha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/taliya-logo.svg",
+    "sha256": "24d87e2b875ad376cf0df2e01765a9f7299591420cf96c79f81d10cd21f64ebb",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/vercel.svg",
+    "sha256": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/next.svg",
+    "sha256": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/globe.svg",
+    "sha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/window.svg",
+    "sha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/illustrations/pilates-studio-loop.webm",
+    "sha256": "1f2b1a3cbac1f318825c9f25ffb44503549b308bcd3725b4ba044c349583a792",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/illustrations/pilates-studio-loop.mp4",
+    "sha256": "020f4716b3565ded93b4cb96ffd89103fc46aba17dc644257b7510d0d2f47a9a",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/diagnosis/com-agente.png",
+    "sha256": "3a5a30350c1814d669de992e3a1dd67f10424c6eb01ae53c49b9759e45d63199",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/diagnosis/sem-agente.png",
+    "sha256": "77803e9adc5265abd857e3632bad053d8db514435538ae7bf9e8913f7dff6860",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/agents/mini/financeiro.png",
+    "sha256": "d6f8c6bdf0e9293bbcd6907f6555ce975df5018bbc6dc0ef9063c48cefdb9b2b",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/agents/mini/atendimento.png",
+    "sha256": "4c26b9b6c3bdb0a68bdc23dd07ca489120c12c17a5df00113fb4a6211bd38155",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/agents/mini/vendas.png",
+    "sha256": "903a7030abeb58eecd15a87470df2ade7901053fc8ae599b1c76a61034a80ad6",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/agents/mini/retencao.png",
+    "sha256": "c6c21df7d2178be58cc29cc330a6eb2c563dc471505be7e7e291d894a5e8d03a",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/agents/mini/gestao.png",
+    "sha256": "5e8435054be5a1c76d27509e9763c392e9e2e532de487c61aac9d73e34ed2db7",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/agents/mini/historico-evolucao.png",
+    "sha256": "2c0062cdff203e295cd107562423094fb91c4de0ac9130174fb01f4f6be11f44",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/agents/mini/agenda.png",
+    "sha256": "a272349a03db71e4e19b3c8b6f0007aac7ee54f436d74269751d8c9dc3087426",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/avatars/whatsapp/carol.png",
+    "sha256": "f3d6003b2045365c4ef32482e8b8f74b39436bf49d7b36f9a81956504b43fa11",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/avatars/whatsapp/bia.png",
+    "sha256": "e5d7b433a37e4531b56b8f24a7855ede019d9b2643157b2cfb2185932ecf2dba",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/avatars/whatsapp/ana.png",
+    "sha256": "4adafd954bb6f8c544a088b52aa7f3b20e2c37f3f98b356e63b8cb9ea498714a",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/avatars/whatsapp/marina.png",
+    "sha256": "a31b540b67a66a66a89ff0d7cf5953cc085f817d8b1114c2ef6c7929a8212136",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/avatars/whatsapp/pedro.png",
+    "sha256": "40de9eab74e87264da3d22debd05e165fc5b27ad64583cca637dd45b6d2d4d7c",
+    "approval": "not_verified"
+  },
+  {
+    "path": "public/avatars/whatsapp/julia.png",
+    "sha256": "96269c94926b55548d5ffd736c1f0cdac0f21a6217a477633064c18afc65e7e9",
+    "approval": "not_verified"
+  }
+]

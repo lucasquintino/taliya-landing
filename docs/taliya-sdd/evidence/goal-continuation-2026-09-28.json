@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-28",
+  "scope": "T013 billing source location continuation, read-only discovery and documentation",
+  "source_commit": "b09c4d39d0151822ab1a43f95edd68b9d4730df2",
+  "active_spec": "013",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "docs/taliya-sdd/scripts/validate_progress.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "output_excerpt": "{\n  \"scope\": \"execution_artifact_consistency_only\",\n  \"passed\": true,\n  \"errors\": []\n}"
+    },
+    {
+      "command": [
+        "python3",
+        "docs/taliya-sdd/scripts/check_readiness.py",
+        "--spec",
+        "013"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "summary": {
+        "passed": true,
+        "execution_unblocked": false,
+        "active_spec": "013",
+        "task_count": 9
+      }
+    },
+    {
+      "command": [
+        "python3",
+        "docs/taliya-sdd/scripts/check_readiness.py",
+        "--spec",
+        "013",
+        "--require-unblocked"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "expectation_met": true,
+      "summary": {
+        "passed": true,
+        "execution_unblocked": false,
+        "active_spec": "013",
+        "task_count": 9
+      }
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "output_excerpt": ""
+    },
+    {
+      "command": [
+        "gh",
+        "search",
+        "code",
+        "asaas",
+        "--owner",
+        "lucasquintino",
+        "--json",
+        "path,repository,url",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_met": true,
+      "indexed_matches": 0
+    }
+  ],
+  "product_paths_changed_this_continuation": [],
+  "remote_writes": 0,
+  "remote_tests_or_transactions": 0,
+  "T013-07": "still blocked: no deployed service source identified",
+  "other_checkout_limit": "Documents/ChatGPT/copiloto root status failed because .git/index could not be mapped; its broad recursive scan stalled and was stopped. No absence claim is made from that copy."
+}

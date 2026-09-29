@@ -1,0 +1,830 @@
+[
+  {
+    "id": "C013-01",
+    "requirement_ids": [
+      "R013-01"
+    ],
+    "spec": "013",
+    "scenario": "Comparar o commit atual com o ZIP e inspecionar os contratos de app, billing, landing e Internal, incluindo rotas locais e remotas.",
+    "expected": "O mapa contém endpoints reais, autenticação, IDs, estados, payloads sanitizados e responsáveis; nenhuma rota inventada é aprovada.",
+    "execution_status": "partial",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md",
+      "docs/taliya-sdd/evidence/billing-source-search.json"
+    ],
+    "critical": true
+  },
+  {
+    "id": "C013-02",
+    "requirement_ids": [
+      "R013-02"
+    ],
+    "spec": "013",
+    "scenario": "Executar o agente de código na nova spec com as regras anteriores de copy-only ainda presentes no histórico; verificar o adendo de escopo efetivamente aplicado.",
+    "expected": "AGENTS/constituição/pointer não direcionam novas tarefas ao projeto Pilates e não autorizam redesign ou deploy automático.",
+    "execution_status": "passed",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ],
+    "critical": true
+  },
+  {
+    "id": "C013-03",
+    "requirement_ids": [
+      "R013-03"
+    ],
+    "spec": "013",
+    "scenario": "Verificar que o mapa distingue Auth/acesso observados de billing ainda inexistente e define contrato-alvo sem declarar endpoint futuro publicado.",
+    "expected": "O mapa distingue app/Auth observados de pagamento ainda inexistente, identifica dono dos dados e contrato-alvo para oferta, checkout, webhooks e acesso, e direciona a implementação à 015. Nenhum endpoint não implementado é apresentado como publicado.",
+    "execution_status": "partial",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md",
+      "docs/taliya-sdd/evidence/billing-source-search.json"
+    ],
+    "critical": true
+  },
+  {
+    "id": "C013-04",
+    "requirement_ids": [
+      "R013-04"
+    ],
+    "spec": "013",
+    "scenario": "Executar verificação da integração Spec Kit na máquina-alvo e localizar a spec ativa pelos comandos realmente instalados.",
+    "expected": "A integração Codex e as invocações disponíveis são verificadas; nenhum --force apaga customizações e o ponteiro aponta à spec ativa.",
+    "execution_status": "passed",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ],
+    "critical": true
+  },
+  {
+    "id": "C013-05",
+    "requirement_ids": [
+      "R013-05"
+    ],
+    "spec": "013",
+    "scenario": "Revisar baseline visual, inventário de mídia, ambientes e dependências; simular uma dependência ausente sem bloquear recortes independentes.",
+    "expected": "Há inventário de materiais disponíveis, ambientes, credenciais necessárias sem valores, baseline visual e gates por dependência.",
+    "execution_status": "passed",
+    "evidence": [
+      "specs/013-fundacao-e-contratos/verification.md"
+    ],
+    "critical": true
+  },
+  {
+    "id": "C014-01",
+    "requirement_ids": [
+      "R014-01"
+    ],
+    "spec": "014",
+    "scenario": "Tentar abrir Internal por token na query, forjar x-operator-id, usar conta comum e usar papel viewer em uma mutação; repetir com operador autorizado.",
+    "expected": "Auth existente valida issuer/audience/expiração e papéis; actor_id vem da sessão, nunca de x-operator-id arbitrário.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C014-02",
+    "requirement_ids": [
+      "R014-02"
+    ],
+    "spec": "014",
+    "scenario": "Fornecer o mesmo e-mail em duas sessões anônimas e autenticar pessoas distintas; verificar que conta, contato, negócio e assinatura não são mesclados por declaração.",
+    "expected": "E-mail/telefone declarado não abre conta nem permite merge global; vínculo exige prova apropriada e auditoria.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C014-03",
+    "requirement_ids": [
+      "R014-03"
+    ],
+    "spec": "014",
+    "scenario": "Enviar IDs de outra conversa/negócio, histórico fabricado, parâmetro fora da allowlist e sessão expirada para cada operação mutante.",
+    "expected": "Requests cruzados entre usuários/negócios, replay de tokens e histórico fabricado não alteram registros.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C014-04",
+    "requirement_ids": [
+      "R014-04"
+    ],
+    "spec": "014",
+    "scenario": "Iniciar produção sem banco e revisar migração/restore, DDL fora do request e validação TLS em ambiente configurado.",
+    "expected": "Sem DDL em request de produção, fallback de memória comercial ou TLS com verificação desativada no perfil publicado.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C014-05",
+    "requirement_ids": [
+      "R014-05"
+    ],
+    "spec": "014",
+    "scenario": "Revogar preferência de coleta, sair da conta e solicitar exclusão em cenário controlado; verificar logs, analytics e vinculações retidas/descartadas conforme política.",
+    "expected": "Contato para suporte não vira opt-in; política de retenção e exclusão cobre app, chat, analytics e sessões remotas com exceções justificadas.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C015-01",
+    "requirement_ids": [
+      "R015-01"
+    ],
+    "spec": "015",
+    "scenario": "Perguntar sobre capacidades atuais, recursos indisponíveis e funcionamento antigo de Pilates; comparar resposta e FAQ com a fonte aprovada.",
+    "expected": "Somente recursos confirmados entram; equipes/booking e outros recursos antigos não são presumidos por aparecer em documento histórico.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C015-02",
+    "requirement_ids": [
+      "R015-02"
+    ],
+    "spec": "015",
+    "scenario": "Comparar oferta do novo backend, página e agente em mensal/anual, incluindo cobrança inicial, preços e garantia de 14 dias.",
+    "expected": "Mensal/anual, cobrança inicial e garantia de 14 dias são coerentes; nenhum teste sem cartão é vendido.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C015-03",
+    "requirement_ids": [
+      "R015-03"
+    ],
+    "spec": "015",
+    "scenario": "Importar creator demonstrando produto e depoimento verificado; tentar publicar um arquivo sem aprovação ou direitos registrados.",
+    "expected": "Cada material publicado possui ID, tipo, URL autorizada, versão, resumo/transcrição, direitos e status; UGC encenado não vira depoimento.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C015-04",
+    "requirement_ids": [
+      "R015-04"
+    ],
+    "spec": "015",
+    "scenario": "Desativar a fonte de produto e retirar o vídeo solicitado; verificar que o agente informa o limite sem oferecer link, preço ou acesso inventado.",
+    "expected": "A informação ausente é explicitada; o agente não inventa preço, link, prazo ou mídia e o CTA depende de destino válido.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C015-05",
+    "requirement_ids": [
+      "R015-05"
+    ],
+    "spec": "015",
+    "scenario": "Atualizar oferta, FAQ e situação de material durante uma sessão existente; conferir invalidação e versão usada em cada nova resposta.",
+    "expected": "Oferta nova é consultada no momento relevante; material retirado não é emitido em sessão antiga; compatibilidade e freshness ficam registradas.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C015-06",
+    "requirement_ids": [
+      "R015-06"
+    ],
+    "spec": "015",
+    "scenario": "Iniciar contratação direta sem chat em mensal/anual × cartão/Pix Automático; repetir intenção, forjar negócio e simular timeout.",
+    "expected": "Preço/versão vêm do servidor; identidade e negócio são verificados; tentativas repetidas não criam cobrança duplicada; cartão usa checkout hospedado e Pix usa autorização específica, ambos com cobrança inicial conforme a oferta aprovada. Conta/eligibilidade Asaas são homologadas antes de ativar.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C015-07",
+    "requirement_ids": [
+      "R015-07"
+    ],
+    "spec": "015",
+    "scenario": "Entregar webhook duplicado/fora de ordem, acessar URL de sucesso sem webhook e receber Pix pago com autorização recusada.",
+    "expected": "Webhook persiste event.id antes do aceite; replay/fora de ordem não duplicam efeito; retorno do navegador ou fala da IA não liberam acesso; pagamento inicial Pix e autorização recorrente são estados independentes.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C015-08",
+    "requirement_ids": [
+      "R015-08"
+    ],
+    "spec": "015",
+    "scenario": "Consultar, cancelar e solicitar reembolso em garantia com timeout e confirmação financeira tardia.",
+    "expected": "Solicitação de reembolso não é confirmação; timeout após efeito externo é reconciliado antes de repetir; renovação/falha/cancelamento preservam acesso conforme fatos pagos e política aprovada, com testes sandbox antes da publicação.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C016-01",
+    "requirement_ids": [
+      "R016-01"
+    ],
+    "spec": "016",
+    "scenario": "Executar um turno real em homologação e inspecionar modelo/esforço, ambiente e ferramentas efetivamente usados.",
+    "expected": "Smoke test real registra modelo/esforço, formato e versão do cliente; erro de compatibilidade não muda modelo silenciosamente.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C016-02",
+    "requirement_ids": [
+      "R016-02"
+    ],
+    "spec": "016",
+    "scenario": "Criar duas conversas independentes, editar o agente salvo e migrar uma sessão; verificar isolamento e versões, sem importar instruções antigas.",
+    "expected": "Mapeamento conversa-versão-sessão é persistido e protegido; versões antigas recebem migração controlada.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C016-03",
+    "requirement_ids": [
+      "R016-03"
+    ],
+    "spec": "016",
+    "scenario": "Repetir mensagem/webhook e reiniciar worker antes e depois da gravação de um efeito; verificar ordem por conversa e recuperação sem dupla escrita.",
+    "expected": "Fechar navegador ou reiniciar worker não perde operação aceita; locks/lease e dedup impedem concorrência incorreta.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C016-04",
+    "requirement_ids": [
+      "R016-04"
+    ],
+    "spec": "016",
+    "scenario": "Simular chamada pendente, perda de stream e repetição de callback; recuperar itens persistidos e devolver o mesmo recibo da ferramenta.",
+    "expected": "Resultado já salvo é reutilizado; itens e eventos são reconciliados por IDs; não há execução dupla por stream + webhook.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C016-05",
+    "requirement_ids": [
+      "R016-05"
+    ],
+    "spec": "016",
+    "scenario": "Acionar limite de entrada, abuso, falha de provedor e timeout; verificar entrega pública sanitizada, custo observado e acesso às ações estáticas.",
+    "expected": "Limites por contexto/conta/canal e kill switch existem; usuário vê espera honesta e somente resposta validada, sem traces internos.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C017-01",
+    "requirement_ids": [
+      "R017-01"
+    ],
+    "spec": "017",
+    "scenario": "Executar cada uma das cinco funções em contexto autorizado e tentar operações mark_paid, SQL e compra implícita não expostas.",
+    "expected": "consultar_taliya, buscar_material, atualizar_contato, preparar_proximo_passo e solicitar_atendimento_humano passam em validação e teste real.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C017-02",
+    "requirement_ids": [
+      "R017-02"
+    ],
+    "spec": "017",
+    "scenario": "Pedir alteração legítima de nome e atividade, depois alteração de login ou contato de outra conta; conferir evidência original e patch aplicado.",
+    "expected": "Mensagens originais persistidas sustentam patches; dados de login/consentimento financeiro não são editados pelo modelo.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C017-03",
+    "requirement_ids": [
+      "R017-03"
+    ],
+    "spec": "017",
+    "scenario": "Contratar sem abrir o chat, depois renovar e retornar pelo agente autenticado; conferir um vínculo comercial por entidade real.",
+    "expected": "Cadastro e primeira compra no fluxo pronto atualizam projeção comercial; renovação não gera novo cliente.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C017-04",
+    "requirement_ids": [
+      "R017-04"
+    ],
+    "spec": "017",
+    "scenario": "Simular cancelamento de renovação com período pago, pedido de reembolso pendente e mensagem já paguei; conferir estados independentes.",
+    "expected": "Cancelamento de renovação com período pago preserva acesso; estorno solicitado não é devolução concluída; status é derivado de autoridade real.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C017-05",
+    "requirement_ids": [
+      "R017-05"
+    ],
+    "spec": "017",
+    "scenario": "Repetir escrita da ferramenta com callback antigo, entregar eventos fora de ordem e migrar um contato legado; conferir dedup, histórico e reconciliação.",
+    "expected": "Ferramenta e pós-processamento antigo não gravam o mesmo lead; eventos fora de ordem são reconciliados; legado fica identificado.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C018-01",
+    "requirement_ids": [
+      "R018-01"
+    ],
+    "spec": "018",
+    "scenario": "Desligar o serviço de IA e acionar CTA principal; comparar com CTA secundário de dúvidas e preservar mensal/anual na autenticação.",
+    "expected": "Começar agora abre o fluxo existente; tirar dúvidas abre chat. Escolha mensal/anual e contexto permitidos são preservados.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C018-02",
+    "requirement_ids": [
+      "R018-02"
+    ],
+    "spec": "018",
+    "scenario": "Comparar capturas mobile/desktop com baseline de tokens, proporções e componentes; verificar ausência de redesign fora do recorte.",
+    "expected": "Diferenças desktop/mobile são aprovadas; nenhum redesign geral, substituição de carrosséis/tabs ou reconstrução do app.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C018-03",
+    "requirement_ids": [
+      "R018-03"
+    ],
+    "spec": "018",
+    "scenario": "Percorrer abertura, processamento, resposta, erro, expiração, retomada e pausa humana; recarregar página sem duplicar mensagens.",
+    "expected": "Fechado/aberto/vazio/enviando/esperando/erro/offline/reconectando/humano possuem comportamento testado, sem spinner infinito.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C018-04",
+    "requirement_ids": [
+      "R018-04"
+    ],
+    "spec": "018",
+    "scenario": "Usar teclado/leitor de tela, adulterar referência de navegação e tentar retomar outra conversa; conferir foco, autorização e redirecionamento permitido.",
+    "expected": "URLs vêm do backend; teclado, foco, leitura, toque e retorno após login funcionam; tokens não entram em analytics/referrer.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C018-05",
+    "requirement_ids": [
+      "R018-05"
+    ],
+    "spec": "018",
+    "scenario": "Revisar FAQ, preço, garantia, metadata, redirects e conteúdo indexável contra a fonte comercial atual.",
+    "expected": "Metadados/structured data e rotas não anunciam legado; privadas ficam protegidas e noindex; não há promessa de indexação garantida.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C019-01",
+    "requirement_ids": [
+      "R019-01"
+    ],
+    "spec": "019",
+    "scenario": "Publicar a biblioteca inicial com arquivos realmente entregues; conferir direitos, aprovação e classificação de prova social.",
+    "expected": "Catálogo entregue contém explicação geral, demonstrações prioritárias reais e UGCs aprovados; indisponíveis ficam ocultos.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C019-02",
+    "requirement_ids": [
+      "R019-02"
+    ],
+    "spec": "019",
+    "scenario": "Pedir várias demonstrações e tentar assinar sem assistir; validar máximo de um card por resposta e CTA independente.",
+    "expected": "Cards reutilizam o DS; o agente seleciona ID aprovado e o vídeo não cria barreira ao checkout.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C019-03",
+    "requirement_ids": [
+      "R019-03"
+    ],
+    "spec": "019",
+    "scenario": "Abrir página em rede móvel e sem autorização analítica; verificar carregamento sob demanda, áudio, dados enviados, foco e legendas.",
+    "expected": "Thumbnail/lazy load, reprodução voluntária, legendas e alternativa textual; embeds não burlam preferência de cookies.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C019-04",
+    "requirement_ids": [
+      "R019-04"
+    ],
+    "spec": "019",
+    "scenario": "Exibir, clicar, iniciar, avançar por seek e assistir intervalos reais; abrir link externo sem telemetria; conferir marcos sem falsa conclusão.",
+    "expected": "video_completed exige observação verificável do player; link externo sem telemetria não registra conclusão.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C019-05",
+    "requirement_ids": [
+      "R019-05"
+    ],
+    "spec": "019",
+    "scenario": "Retirar e substituir material publicado; conferir invalidação na landing e no chat e execução do procedimento por responsável.",
+    "expected": "Autor de conteúdo edita catálogo versionado com revisão; publicação/retirada é auditável; não há CMS/editor novo obrigatório.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C020-01",
+    "requirement_ids": [
+      "R020-01"
+    ],
+    "spec": "020",
+    "scenario": "Inspecionar rota /internal e /api/internal nos ambientes reais e registrar qual deploy valida identidade e executa cada ação.",
+    "expected": "Rewrite e rotas locais estão conciliados com a implantação atual; não existem dois painéis editando estados divergentes.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C020-02",
+    "requirement_ids": [
+      "R020-02"
+    ],
+    "spec": "020",
+    "scenario": "Operador localiza atendimento e abre ficha vinculada à conta correta, filtra pendências e acessa o atalho analítico sem duplicar cadastro.",
+    "expected": "Fila filtra espera/humano/erro e ficha mostra conta/negócio/status oficiais; atalhos abrem PostHog e billing autorizado.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C020-03",
+    "requirement_ids": [
+      "R020-03"
+    ],
+    "spec": "020",
+    "scenario": "Responder humano em conversa web e no WhatsApp comercial; comparar entrega original, timestamp do último inbound e permissão do provedor.",
+    "expected": "Web e WhatsApp possuem prova de entrega ou falha explícita; enviar WhatsApp não substitui silenciosamente resposta ao webchat.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C020-04",
+    "requirement_ids": [
+      "R020-04"
+    ],
+    "spec": "020",
+    "scenario": "Dois operadores assumem enquanto a IA está concluindo; verificar lock/versão, bloqueio de resposta tardia e retomada apenas autorizada.",
+    "expected": "Assumir bloqueia novos turnos/ações/entregas atrasadas; só operador autorizado retoma; recibo de handoff é único.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C020-05",
+    "requirement_ids": [
+      "R020-05"
+    ],
+    "spec": "020",
+    "scenario": "Tentar modificar cobrança por anotação de oportunidade ganha, escrever como viewer e usar controle legado de diagnóstico; verificar restrições e auditoria.",
+    "expected": "mark_won não concede assinatura nem receita; nenhum operador altera custo/status financeiro diretamente; trilha do ator é verificável.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C021-01",
+    "requirement_ids": [
+      "R021-01"
+    ],
+    "spec": "021",
+    "scenario": "Validar cada nome de evento, versão, IDs, produtor e timestamp; repetir a mesma operação lógica nos transportes disponíveis.",
+    "expected": "Cada evento tem produtor, ocorrência e chave de dedup; marcos de conta/negócio não usam identidade analítica como credencial.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C021-02",
+    "requirement_ids": [
+      "R021-02"
+    ],
+    "spec": "021",
+    "scenario": "Fabricar payment_confirmed no browser e comparar com evento/registro financeiro canônico; verificar que não altera acesso nem a apuração oficial.",
+    "expected": "Pagamento/ativação não derivam de clique ou retorno de checkout; ferramentas da IA não incluem track_event.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C021-03",
+    "requirement_ids": [
+      "R021-03"
+    ],
+    "spec": "021",
+    "scenario": "Acompanhar visita anônima, login, troca de conta, compra e app com dois membros no mesmo negócio; verificar correlação sem duplicar assinante.",
+    "expected": "ID estável após auth, reset no logout e business_id separado; visitantes não viram leads identificados automaticamente.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C021-04",
+    "requirement_ids": [
+      "R021-04"
+    ],
+    "spec": "021",
+    "scenario": "Negar coleta opcional, testar ambiente de desenvolvimento e atingir limite de gravação; conferir ausência de PII bruta e separação de dados.",
+    "expected": "Autocapture desnecessário/replay sensível estão off; testes não contaminam produção e nenhum texto completo de chat/PII sensível é enviado por padrão.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C021-05",
+    "requirement_ids": [
+      "R021-05"
+    ],
+    "spec": "021",
+    "scenario": "Desligar PostHog/relay, produzir acontecimentos reais e retomar; verificar recuperação, dedup, lacuna visível e conciliação com fonte de origem.",
+    "expected": "Outbox reenvia de forma idempotente; dashboards financeiros conferem fonte canônica; quota perdida é registrada como lacuna, não venda inexistente.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C022-01",
+    "requirement_ids": [
+      "R022-01"
+    ],
+    "spec": "022",
+    "scenario": "Carregar dataset de homologação conhecido e revisar as seis áreas de dashboard, filtros, fontes e períodos.",
+    "expected": "Cada painel tem perguntas, denominadores, filtros, unidade, janela, timezone e fonte; negócios e usuários não se confundem.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C022-02",
+    "requirement_ids": [
+      "R022-02"
+    ],
+    "spec": "022",
+    "scenario": "Comparar compradores diretos, compradores com chat e compradores com vídeo; todos devem integrar o funil principal sem etapa opcional obrigatória.",
+    "expected": "Compra direta permanece no denominador correto; agent_assisted indica associação, não ganho causal comprovado.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C022-03",
+    "requirement_ids": [
+      "R022-03"
+    ],
+    "spec": "022",
+    "scenario": "Conferir fixture de pagamentos, anual, renovação, inadimplência, cancelamento e estorno; revisar denominadores, coortes maduras e atribuição sem causalidade.",
+    "expected": "Anual é normalizado; cancelamento pedido difere do acesso encerrado; reembolso pedido/concluído é separado; coortes imaturas não recebem taxa inventada.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C022-04",
+    "requirement_ids": [
+      "R022-04"
+    ],
+    "spec": "022",
+    "scenario": "Projetar consumo observado por módulo, aproximar-se dos limites e simular teto; conferir alertas e que billing não depende do analytics.",
+    "expected": "Estimativa usa volume real e addons; teto US$50 é proposta sujeita à aprovação; Group Analytics/replay/Workflows não são ativados automaticamente.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C022-05",
+    "requirement_ids": [
+      "R022-05"
+    ],
+    "spec": "022",
+    "scenario": "Contar negócios pagantes/ativados com dois usuários por negócio, sem habilitar Group Analytics automaticamente; avaliar addon em configuração separada aprovada.",
+    "expected": "business_id existe na origem; consultas/exports canônicos fornecem agregação por negócio; Group Analytics só entra após teste de necessidade/custo.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": false
+  },
+  {
+    "id": "C023-01",
+    "requirement_ids": [
+      "R023-01"
+    ],
+    "spec": "023",
+    "scenario": "Executar dry-run dos fluxos de contratação abandonada, primeiro valor e recuperação de uso com fixtures elegíveis.",
+    "expected": "Abandono elegível, pagamento sem primeiro valor e inatividade elegível possuem templates, limites e destino útil.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C023-02",
+    "requirement_ids": [
+      "R023-02"
+    ],
+    "spec": "023",
+    "scenario": "Pagar, ativar produto, manter Pix pendente legítimo ou revogar consentimento imediatamente antes do envio agendado; conferir revalidação.",
+    "expected": "Pagamento, acesso, opt-out, humano ativo e canal são conferidos no backend no instante da entrega; dado desatualizado no PostHog não decide sozinho.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C023-03",
+    "requirement_ids": [
+      "R023-03"
+    ],
+    "spec": "023",
+    "scenario": "Executar confirmação, renovação e estorno existentes enquanto Workflows está ativo em sandbox; verificar um emissor por notificação.",
+    "expected": "Confirmação/cobrança/estorno não migram sem motivo nem são enviados duas vezes por PostHog + n8n + app.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C023-04",
+    "requirement_ids": [
+      "R023-04"
+    ],
+    "spec": "023",
+    "scenario": "Repetir gatilho e manter pessoa em coorte desatualizada após opt-out; verificar limite global e supressão.",
+    "expected": "No máximo uma mensagem por gatilho e teto global proposto de uma mensagem de relacionamento por sete dias; opt-out impede novos envios dessa categoria.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C023-05",
+    "requirement_ids": [
+      "R023-05"
+    ],
+    "spec": "023",
+    "scenario": "Manter configuração em dry-run e depois autorizar uma coorte de teste; conferir canal, reputação, destinatários e kill switch sem envio público não autorizado.",
+    "expected": "Fluxos estão testados em dry-run, modelos/domínio/canais validados e desligados até autorização específica de campanha/produção.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C024-01",
+    "requirement_ids": [
+      "R024-01"
+    ],
+    "spec": "024",
+    "scenario": "Executar CI de unidade, contrato, integração e E2E; verificar que skips/mocks não são apresentados como integração real aprovada.",
+    "expected": "Build, lint, tipos e testes do código tocado passam no CI; testes antigos têm destino explícito: preservar/adaptar/arquivar.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C024-02",
+    "requirement_ids": [
+      "R024-02"
+    ],
+    "spec": "024",
+    "scenario": "Rodar conversas Luna/max com múltiplas mensagens, intenções, recusa, limitações e ataques; revisar rubric e repetir casos críticos.",
+    "expected": "Os casos vigentes do plano (68 após a correção de billing) e cenários reutilizáveis anteriores têm resultado; casos críticos repetidos não podem falhar; amostra de linguagem recebe revisão humana.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C024-03",
+    "requirement_ids": [
+      "R024-03"
+    ],
+    "spec": "024",
+    "scenario": "Executar mensal/anual com cartão/Pix Automático em sandbox da assinatura Asaas implementada e conferir conta, projeção comercial e analytics.",
+    "expected": "Mensal/anual × cartão/Pix Automático, retorno, falha, cancelamento e reembolso têm evidência sandbox; produção depende de gate próprio.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C024-04",
+    "requirement_ids": [
+      "R024-04"
+    ],
+    "spec": "024",
+    "scenario": "Aplicar falhas de provedor, worker, banco e canal; realizar testes de autorização, acessibilidade e desempenho nas superfícies alteradas.",
+    "expected": "IDOR, injeção, URL arbitrária, repetição, takeover, desconexão, fila, cookies e restauração possuem evidências.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C024-05",
+    "requirement_ids": [
+      "R024-05"
+    ],
+    "spec": "024",
+    "scenario": "Revisar analyze/converge e o dossiê; inserir uma falha crítica controlada para comprovar que bloqueia o gate e não é removida por mudança silenciosa do teste.",
+    "expected": "Nenhum P0/P1 de lançamento aberto; metas não atingidas geram correção ou exceção explícita, não marcação verde por criar documentação.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C025-01",
+    "requirement_ids": [
+      "R025-01"
+    ],
+    "spec": "025",
+    "scenario": "Ensaiar migração de contatos/sessões e restore de backup; conferir IDs, permissões, eventos e reconciliar estado financeiro sem duplicação.",
+    "expected": "Registros legados permanecem marcados; não há merge automático por e-mail; backup/restore e contagens são verificados.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C025-02",
+    "requirement_ids": [
+      "R025-02"
+    ],
+    "spec": "025",
+    "scenario": "Revisar autorização e liberar coortes internas/limitadas; tentar avanço com gate pendente e conferir bloqueio.",
+    "expected": "Interno → 5% → 25% → 100% conforme evidência; não confundir percentual de tráfego com conclusão da entrega.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C025-03",
+    "requirement_ids": [
+      "R025-03"
+    ],
+    "spec": "025",
+    "scenario": "Desligar geração e fazer rollback de configuração; confirmar ausência de agente/promessas de Pilates e manutenção do acesso à contratação.",
+    "expected": "Kill switch desliga geração e preserva assinar/entrar/ajuda/handoff; schemas compatíveis e eventos continuam íntegros.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C025-04",
+    "requirement_ids": [
+      "R025-04"
+    ],
+    "spec": "025",
+    "scenario": "Entregar runbook a operador e simular incidentes de OpenAI, PostHog, banco e canal; verificar alertas, permissões e responsáveis.",
+    "expected": "Há dono de fila, mídia, fonte comercial, financeiro e analytics; problemas de custo, privacidade e entrega têm resposta definida.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  },
+  {
+    "id": "C025-05",
+    "requirement_ids": [
+      "R025-05"
+    ],
+    "spec": "025",
+    "scenario": "Percorrer matriz final requisito → código/config → teste → evidência → operação; verificar que bloqueador crítico ou conteúdo inexistente impede declaração de 100%.",
+    "expected": "Todos os gates obrigatórios aprovados, estabilização observada, documentação alinhada e nenhuma pendência escondida de segurança/contratação/dados.",
+    "execution_status": "not_run",
+    "evidence": null,
+    "critical": true
+  }
+]

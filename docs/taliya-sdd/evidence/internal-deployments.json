@@ -1,0 +1,20 @@
+{
+  "source": "GitHub deployments/statuses read-only",
+  "repository": "lucasquintino/taliya-internal",
+  "inspected_sha": "7cbe9e9b92a4d3b18b3961ab51f9eec10515b38e",
+  "deployments": [
+    {
+      "id": 6707338891,
+      "state": "failure"
+    },
+    {
+      "id": 6690504385,
+      "state": "failure"
+    },
+    {
+      "id": 6676800521,
+      "state": "failure"
+    }
+  ],
+  "active_serving_sha": "not_verified"
+}

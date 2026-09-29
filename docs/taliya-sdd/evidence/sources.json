@@ -1,0 +1,184 @@
+[
+  {
+    "id": "L1",
+    "title": "Código original anexado",
+    "location": "taliya-landing-main.zip",
+    "note": "Inspeção estática de cópia isolada; SHA-256 f37abaa6ebbdd4bf44e277bc09c944e3889490a41233c945c02b6c9069ed9aab.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "L2",
+    "title": "Pacote anterior",
+    "location": "Taliya_Agente_Comercial_v2_Luna_Max.zip",
+    "note": "27 arquivos; contratos e propostas, não integração executada. SHA-256 9467dbb9b8c9d05a5e6a49b602e60b5b419b72f712d066c0cf0d811b8b7168a2.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "L3",
+    "title": "Decisões diretas da conversa",
+    "location": "Conversa atual",
+    "note": "App e assinatura prontos; Agents API; Luna max; PostHog + Internal mínimo; SDD/Spec Kit; materiais compartilhados; simplicidade.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "L4",
+    "title": "Plano de assinatura recuperado",
+    "location": "Plano_Assinatura_Taliya_Asaas_v2.md",
+    "note": "Política: Asaas, mensal/anual, cartão recorrente/Pix Automático, cobrança na contratação e garantia de 14 dias. Documento de plano não comprova produção; a atualização do usuário prevalece para prontidão.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "L5",
+    "title": "Prompt SDD anterior recuperado",
+    "location": "PROMPT_Taliya_Copiloto_Landing_SDD_v2.md",
+    "note": "Preservação visual; uma spec por seção na migração de conteúdo. O programa atual acrescenta capacidades transversais sem reexecutar 17 seções.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "O1",
+    "title": "Modelo GPT-6 Luna",
+    "location": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "note": "Modelo e esforço max documentados; compatibilidade integral precisa de smoke test na conta.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "O2",
+    "title": "Agents API — arquitetura",
+    "location": "https://developers.openai.com/api/docs/guides/agents-api/architecture",
+    "note": "Execução gerenciada, ambiente none, ferramentas do backend.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "O3",
+    "title": "Agents API — configuração",
+    "location": "https://developers.openai.com/api/docs/guides/agents-api/configuration",
+    "note": "Configuração salva é copiada na criação das sessões.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "O4",
+    "title": "Agents API — funções",
+    "location": "https://developers.openai.com/api/docs/guides/agents-api/tools/functions",
+    "note": "required_actions e devolução de resultados; handler continua na aplicação.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "O5",
+    "title": "Agents API — eventos",
+    "location": "https://developers.openai.com/api/docs/guides/agents-api/sessions/events",
+    "note": "Streams não reexecutam eventos perdidos; recuperar itens persistidos.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "O6",
+    "title": "Agents API — dados e visão geral",
+    "location": "https://developers.openai.com/api/docs/guides/agents-api/overview",
+    "note": "Estado retido; residência somente EUA e ausência de ZDR na documentação consultada.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "P1",
+    "title": "PostHog — preços",
+    "location": "https://posthog.com/pricing",
+    "note": "Franquia analytics 1M/mês, free com 1 projeto, limites por produto e descarte após teto. Sem garantia de custo futuro.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "P2",
+    "title": "PostHog — Next.js",
+    "location": "https://posthog.com/docs/libraries/next-js",
+    "note": "Identificação estável, eventos cliente/servidor e reset no logout.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "P3",
+    "title": "PostHog — otimização de custos",
+    "location": "https://posthog.com/handbook/cs-and-onboarding/cost-optimization",
+    "note": "Controlar autocapture, identify/group repetidos e gravações.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "P4",
+    "title": "PostHog — Group Analytics",
+    "location": "https://github.com/PostHog/posthog.com/blob/master/contents/docs/product-analytics/group-analytics.mdx",
+    "note": "Adicional a avaliar; não condição para a identidade de negócio no backend.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "P5",
+    "title": "PostHog — receita",
+    "location": "https://posthog.com/docs/revenue-analytics",
+    "note": "Dashboard dedicado removido; configurar insights/SQL/views para o modelo da Taliya.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "P6",
+    "title": "PostHog — Postgres",
+    "location": "https://posthog.com/docs/data-warehouse/sources/postgres",
+    "note": "Integração seletiva. CDC implica permissões extras; não presumir que basta SELECT.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "P7",
+    "title": "PostHog — Workflows",
+    "location": "https://posthog.com/workflows",
+    "note": "Fluxos e integrações; nenhuma transferência de autoridade financeira.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "P8",
+    "title": "PostHog — envio",
+    "location": "https://posthog.com/docs/workflows/sending-reputation",
+    "note": "Limites de envio e reputação. Franquia mensal não garante capacidade imediata de envio.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "K1",
+    "title": "Spec Kit — fluxo de comandos",
+    "location": "https://github.github.com/spec-kit/reference/agentic-sdd.html",
+    "note": "Specify/clarify/plan/checklist/tasks/analyze/implement/converge; forma da invocação depende da integração.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "K2",
+    "title": "Spec Kit — evolução de projetos",
+    "location": "https://github.github.com/spec-kit/guides/evolving-specs.html",
+    "note": "Distinguir atualizar ferramenta de evoluir specs; preservar artefatos e customizações.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "K3",
+    "title": "Spec Kit — instalação",
+    "location": "https://github.github.com/spec-kit/installation.html",
+    "note": "Fixar versão; variantes de scripts; não forçar refresh sobre trabalho local.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "S1",
+    "title": "OWASP — autenticação",
+    "location": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+    "note": "Referência para revisão de identidade e sessões do Internal.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "S2",
+    "title": "W3C — WCAG 2.2",
+    "location": "https://www.w3.org/TR/WCAG22/",
+    "note": "Referência de acessibilidade; adoção como alvo de QA, não certificação.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "S3",
+    "title": "Web.dev — métricas web",
+    "location": "https://web.dev/articles/defining-core-web-vitals-thresholds",
+    "note": "Metas de LCP, INP e CLS precisam de medição de campo; laboratório não a substitui.",
+    "consulted_on": "2026-09-28"
+  },
+  {
+    "id": "S4",
+    "title": "ANPD — guia de cookies",
+    "location": "https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-cookies-e-protecao-de-dados-pessoais.pdf",
+    "note": "Referência oficial para revisão de cookies e privacidade; este pacote não é parecer jurídico.",
+    "consulted_on": "2026-09-28"
+  }
+]

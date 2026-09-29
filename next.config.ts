@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   async redirects() {
     return [
-      { source: "/pilates", destination: "/", permanent: true },
-      { source: "/pilates/planos", destination: "/#planos", permanent: true },
-      { source: "/pilates/planos/:path*", destination: "/#como-funciona", permanent: true },
       { source: "/pilates/demonstracao", destination: "/#como-funciona", permanent: true },
     ];
   },

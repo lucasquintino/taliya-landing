@@ -1,0 +1,143 @@
+{
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_name": {
+      "type": "string",
+      "enum": [
+        "landing_viewed",
+        "primary_cta_clicked",
+        "chat_opened",
+        "material_card_displayed",
+        "material_clicked",
+        "video_started",
+        "video_progress",
+        "video_completed",
+        "conversation_started",
+        "user_message_accepted",
+        "lead_contact_created",
+        "lead_contact_updated",
+        "human_handoff_requested",
+        "human_takeover_confirmed",
+        "human_reply_delivered",
+        "ai_resumed",
+        "agent_turn_started",
+        "agent_turn_completed",
+        "agent_turn_failed",
+        "agent_reply_delivered",
+        "material_recommended",
+        "tool_operation_succeeded",
+        "tool_operation_failed",
+        "account_verified",
+        "commercial_contact_linked",
+        "checkout_started",
+        "checkout_resumed",
+        "payment_confirmed",
+        "subscription_first_activated",
+        "subscription_renewed",
+        "renewal_failed",
+        "renewal_canceled",
+        "subscription_access_ended",
+        "refund_requested",
+        "refund_completed",
+        "first_value_reached",
+        "value_action_completed",
+        "engagement_requested",
+        "engagement_suppressed",
+        "engagement_delivered",
+        "marketing_opted_out",
+        "analytics_sync_failed",
+        "analytics_reconciled"
+      ]
+    },
+    "event_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "producer": {
+      "type": "string",
+      "enum": [
+        "agent_runtime",
+        "analytics_relay",
+        "auth_backend",
+        "billing_backend",
+        "commercial_backend",
+        "engagement_backend",
+        "product_backend",
+        "web_ui"
+      ]
+    },
+    "operation_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "anonymous_session_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conversation_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "contact_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "user_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "business_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "is_test": {
+      "type": "boolean"
+    },
+    "properties": {
+      "type": "object",
+      "description": "Allowlist específica por evento no servidor; sem PII bruta, chats ou tokens de autenticação/checkout."
+    }
+  },
+  "required": [
+    "event_id",
+    "event_name",
+    "event_version",
+    "occurred_at",
+    "received_at",
+    "producer",
+    "operation_id",
+    "anonymous_session_id",
+    "conversation_id",
+    "contact_id",
+    "user_id",
+    "business_id",
+    "is_test",
+    "properties"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Taliya analytics event envelope v3 — proposed application contract"
+}

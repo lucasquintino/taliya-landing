@@ -1,0 +1,4 @@
+# Avaliações
+`acceptance-cases.json` contém 68 casos vinculados aos 68 requisitos atuais; nenhum foi executado contra o produto nesta entrega. Os 65 casos originais permanecem identificáveis e três cobrem o novo billing. `previous-53-cases.reference.json` preserva os cenários anteriores como insumo: revisar cada um, aproveitar os compatíveis e registrar supersessão dos incompatíveis. Não afirmar que testes passaram nem somar casos redundantes como maior cobertura.
+
+A implementação deve transformar casos em testes executáveis de contrato, integração, E2E e avaliações conversacionais. Repetir casos críticos com entradas/ordens distintas. Resultados de modelos são não determinísticos: registrar modelo/esforço/config, fixtures, fontes, saídas sanitizadas e julgamento humano. Juiz LLM pode auxiliar, mas não valida pagamento, identidade nem substitui os asserts do sistema.

@@ -1,0 +1,75 @@
+{
+  "scope": "foundation_local_only",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "docs/taliya-sdd/scripts/validate_plan.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"checks_passed\": 87, \"scope\": \"planning_integrity_only\"}\nCurrent progress was not reset or assessed. Runtime acceptance was not tested.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/taliya-sdd/scripts/validate_progress.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"scope\": \"execution_artifact_consistency_only\",\n  \"passed\": true,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "docs/taliya-sdd/tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_checkbox_cannot_hide_unfinished_task (test_validate_progress.ProgressGateTests.test_checkbox_cannot_hide_unfinished_task) ... ok\ntest_cycles_are_rejected (test_validate_progress.ProgressGateTests.test_cycles_are_rejected) ... ok\ntest_dependent_spec_cannot_start (test_validate_progress.ProgressGateTests.test_dependent_spec_cannot_start) ... ok\ntest_evidence_cannot_escape_repo (test_validate_progress.ProgressGateTests.test_evidence_cannot_escape_repo) ... ok\ntest_matrix_must_follow_execution (test_validate_progress.ProgressGateTests.test_matrix_must_follow_execution) ... ok\ntest_model_effort_cannot_silently_change (test_validate_progress.ProgressGateTests.test_model_effort_cannot_silently_change) ... ok\ntest_no_extra_tool (test_validate_progress.ProgressGateTests.test_no_extra_tool) ... ok\ntest_partial_execution_is_legitimate (test_validate_progress.ProgressGateTests.test_partial_execution_is_legitimate) ... ok\ntest_pass_requires_existing_evidence (test_validate_progress.ProgressGateTests.test_pass_requires_existing_evidence) ... ok\ntest_pointer_must_select_active_spec (test_validate_progress.ProgressGateTests.test_pointer_must_select_active_spec) ... ok\ntest_requirement_needs_passed_case (test_validate_progress.ProgressGateTests.test_requirement_needs_passed_case) ... ok\ntest_unfinished_spec_cannot_be_completed (test_validate_progress.ProgressGateTests.test_unfinished_spec_cannot_be_completed) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 1.490s\n\nOK\n"
+    },
+    {
+      "command": [
+        "bash",
+        ".specify/scripts/bash/check-prerequisites.sh",
+        "--json",
+        "--require-spec",
+        "--require-tasks",
+        "--include-tasks"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"FEATURE_DIR\":\"/Users/lucasquintino/Projects/taliya-copiloto-landing/specs/013-fundacao-e-contratos\",\"AVAILABLE_DOCS\":[\"research.md\",\"data-model.md\",\"contracts/\",\"quickstart.md\",\"tasks.md\"]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "preservation": {
+    "passed": true,
+    "original_files": 2822,
+    "changed": [
+      ".specify/feature.json",
+      ".specify/memory/constitution.md",
+      "AGENTS.md",
+      "docs/conversation-handoff-2026-05-14.md",
+      "specs/README.md"
+    ],
+    "missing": []
+  },
+  "runtime_tested": false,
+  "live_model_calls": 0,
+  "production_changes_by_this_session": 0
+}

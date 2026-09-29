@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: absoluteSiteUrl("/"),
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: pilatesLanding.metadata.title,
     description: pilatesLanding.metadata.description,
   },

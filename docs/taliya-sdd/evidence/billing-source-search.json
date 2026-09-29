@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-28",
+  "scope": "read_only_source_location_search_for_T013-01_T013-02_T013-07",
+  "authoritative_landing": {
+    "path": "/Users/lucasquintino/Projects/taliya-copiloto-landing",
+    "commit": "b09c4d39d0151822ab1a43f95edd68b9d4730df2",
+    "branch": "main",
+    "scanned_code_roots": [
+      "app",
+      "lib",
+      "services",
+      "data"
+    ],
+    "candidate_paths_missing": [
+      "app/api/billing/checkout/route.ts",
+      "app/api/billing/webhook/route.ts",
+      "app/api/billing/portal/route.ts",
+      "lib/billing/provider.ts",
+      "lib/billing/config.ts"
+    ],
+    "observed": "Static offer and checkout-intent presentation exist; no billing authority/handler located by this scoped search. Landing copy still contains no-charge-trial and 30-day-guarantee claims that conflict with current decisions."
+  },
+  "copiloto_app_checkout": {
+    "path": "/Users/lucasquintino/Downloads/copiloto-github",
+    "commit": "d99ef897f3033ace6a23ee009e2578ffc04a259d",
+    "branch": "codex/e02-icloud-recovery-20260928",
+    "local_changes_preserved": true,
+    "observed": "Auth, business membership and entitlement decision exist; scoped file/term search found no Asaas billing/checkout/webhook handlers. This does not negate the user's statement that published billing exists."
+  },
+  "unversioned_incomplete_copy": {
+    "path": "/Users/lucasquintino/Projects/taliya-copiloto-landing-incomplete-2026-09-28",
+    "git_metadata": false,
+    "instruction_file_sha256": "aa9a03f05c7a0066d0e4b64e2407947cc86bd1160fad41ecb2dfca38bbc434c7",
+    "legacy_billing_spec_sha256": "d97540aee46f774cc730fabe7d153433b1bece38901cfdd284a13be40c589574",
+    "legacy_billing_plan_sha256": "95031da224532d995ab4f9e4c8f381e545946f18fb5a0d013702749d6f08ab8d",
+    "legacy_contract_sha256": "beb11cdacc89e5d765771f9d3034c1bf5d87aefe04de6320d95ab8effd9129c2",
+    "billing_handlers_found": false,
+    "legacy_claims": [
+      "Asaas specified as proposed v1 provider",
+      "example checkout URL is placeholder",
+      "annual availability conditional on future configuration",
+      "30-day guarantee in old product spec"
+    ],
+    "disposition": "Historical/unversioned planning evidence only; not accepted as billing implementation, current offer, published URL, or deployment proof."
+  },
+  "github_owned_repositories": {
+    "read_only_branch_enumeration": {
+      "copiloto": [
+        "main",
+        "codex/ci-native-manual",
+        "codex/e00-fundacao",
+        "codex/e02-icloud-recovery-20260928",
+        "codex/e02-sdd",
+        "codex/e02-visual-library"
+      ],
+      "taliya-landing": [
+        "main"
+      ],
+      "taliya-internal": [
+        "main",
+        "codex/production-dast-hardening",
+        "codex/production-readonly-token",
+        "codex/production-release-dispatch",
+        "codex/production-schema-compat",
+        "codex/registry-adoption-main",
+        "codex/release-candidate",
+        "codex/006-legacy-adapter-removal",
+        "codex/006-legacy-adapter-removal-evidence",
+        "codex/007-product-validation"
+      ]
+    },
+    "writes": 0
+  },
+  "result": "B013-01 remains open. Need the repository/directory/documentation of the deployed Asaas billing service; do not infer its endpoint or recreate it from legacy specs.",
+  "remote_tests_or_transactions": 0,
+  "secrets_or_personal_data_recorded": false,
+  "github_code_search": {
+    "read_only": true,
+    "queries": [
+      "asaas",
+      "ASAAS_API_KEY"
+    ],
+    "repositories_owner": "lucasquintino",
+    "returned_paths": [],
+    "interpretation": "No indexed matching files returned; limited discovery evidence, not proof no external service exists."
+  }
+}

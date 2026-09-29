@@ -1,0 +1,166 @@
+[
+  {
+    "type": "function",
+    "name": "consultar_taliya",
+    "description": "Consulta a fonte pública atual de produto, oferta e políticas da Taliya. Não consulta dados privados de contas. Responder preços, garantias e funcionalidades a partir deste resultado, não da memória.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "type": "string",
+          "enum": [
+            "product",
+            "pricing",
+            "guarantee",
+            "whatsapp",
+            "privacy",
+            "getting_started"
+          ]
+        },
+        "question": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "topic",
+        "question"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "buscar_material",
+    "description": "Seleciona materiais realmente aprovados e publicados. Retorna IDs autorizados, resumo, tipo e classificação da evidência. Não inventa vídeo nem confirma visualização.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "explainer",
+            "demo",
+            "ugc",
+            "any"
+          ]
+        },
+        "business_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "topic",
+        "format",
+        "business_context"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "atualizar_contato",
+    "description": "Solicita alteração restrita no contato ligado à sessão autorizada. Cada valor exige evidência numa mensagem original. Backend valida contexto e permissões; não altera identidade autenticadora sem verificação, assinatura, acesso ou pagamento.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "enum": [
+                  "display_name",
+                  "business_name",
+                  "business_activity",
+                  "contact_email",
+                  "contact_whatsapp",
+                  "contact_preference"
+                ]
+              },
+              "value": {
+                "type": "string"
+              },
+              "evidence_message_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "field",
+              "value",
+              "evidence_message_id"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 6
+        }
+      },
+      "required": [
+        "changes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "preparar_proximo_passo",
+    "description": "Obtém referência segura de navegação no fluxo existente. Não compra, não cobra e não altera assinatura. O servidor resolve identidade, autorização, disponibilidade e evita segunda contratação ativa.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "destination": {
+          "type": "string",
+          "enum": [
+            "subscribe",
+            "resume_checkout",
+            "open_app",
+            "manage_subscription",
+            "verify_contact"
+          ]
+        },
+        "billing_interval": {
+          "type": "string",
+          "enum": [
+            "monthly",
+            "yearly",
+            "unspecified"
+          ]
+        }
+      },
+      "required": [
+        "destination",
+        "billing_interval"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "solicitar_atendimento_humano",
+    "description": "Registra solicitação e pausa a automação, de forma idempotente. Retorna recibo real. Não garante atribuição imediata nem prazo de atendimento.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string"
+        },
+        "evidence_message_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reason",
+        "evidence_message_id"
+      ],
+      "additionalProperties": false
+    }
+  }
+]

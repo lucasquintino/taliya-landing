@@ -1,0 +1,36 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "url": "http://127.0.0.1:3001/",
+    "status": 200,
+    "title": "Taliya | Assistente IA para quem presta serviços",
+    "horizontalOverflow": false,
+    "failedResources": [],
+    "externalRequestsBlocked": true,
+    "capture_followup": {
+      "wait_after_load_ms": 4000,
+      "first_fold_visually_inspected": true,
+      "cleanup": "Chrome exited; node hung during context/browser cleanup and was terminated after saving both screenshots",
+      "metrics_source": "prior successful capture same application hashes"
+    }
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "url": "http://127.0.0.1:3001/",
+    "status": 200,
+    "title": "Taliya | Assistente IA para quem presta serviços",
+    "horizontalOverflow": false,
+    "failedResources": [],
+    "externalRequestsBlocked": true,
+    "capture_followup": {
+      "wait_after_load_ms": 4000,
+      "first_fold_visually_inspected": true,
+      "cleanup": "Chrome exited; node hung during context/browser cleanup and was terminated after saving both screenshots",
+      "metrics_source": "prior successful capture same application hashes"
+    }
+  }
+]

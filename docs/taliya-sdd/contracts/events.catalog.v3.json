@@ -1,0 +1,303 @@
+[
+  {
+    "name": "landing_viewed",
+    "producer": "web_ui",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "primary_cta_clicked",
+    "producer": "web_ui",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "chat_opened",
+    "producer": "web_ui",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "material_card_displayed",
+    "producer": "web_ui",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "material_clicked",
+    "producer": "web_ui",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "video_started",
+    "producer": "web_ui",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "video_progress",
+    "producer": "web_ui",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "video_completed",
+    "producer": "web_ui",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "conversation_started",
+    "producer": "commercial_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "user_message_accepted",
+    "producer": "commercial_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "lead_contact_created",
+    "producer": "commercial_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "lead_contact_updated",
+    "producer": "commercial_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "human_handoff_requested",
+    "producer": "commercial_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "human_takeover_confirmed",
+    "producer": "commercial_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "human_reply_delivered",
+    "producer": "commercial_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "ai_resumed",
+    "producer": "commercial_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "agent_turn_started",
+    "producer": "agent_runtime",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "agent_turn_completed",
+    "producer": "agent_runtime",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "agent_turn_failed",
+    "producer": "agent_runtime",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "agent_reply_delivered",
+    "producer": "agent_runtime",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "material_recommended",
+    "producer": "agent_runtime",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "tool_operation_succeeded",
+    "producer": "agent_runtime",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "tool_operation_failed",
+    "producer": "agent_runtime",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "account_verified",
+    "producer": "auth_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "commercial_contact_linked",
+    "producer": "auth_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "checkout_started",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "checkout_resumed",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "payment_confirmed",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "subscription_first_activated",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "subscription_renewed",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "renewal_failed",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "renewal_canceled",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "subscription_access_ended",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "refund_requested",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "refund_completed",
+    "producer": "billing_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "first_value_reached",
+    "producer": "product_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "value_action_completed",
+    "producer": "product_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "engagement_requested",
+    "producer": "engagement_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "engagement_suppressed",
+    "producer": "engagement_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "engagement_delivered",
+    "producer": "engagement_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "marketing_opted_out",
+    "producer": "engagement_backend",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "analytics_sync_failed",
+    "producer": "analytics_relay",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  },
+  {
+    "name": "analytics_reconciled",
+    "producer": "analytics_relay",
+    "version": 1,
+    "status": "proposed_map_to_existing_before_capture",
+    "sensitive_text_allowed": false
+  }
+]

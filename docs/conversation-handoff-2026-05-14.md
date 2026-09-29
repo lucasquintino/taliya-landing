@@ -1,3 +1,151 @@
+# Checkpoint ativo — Taliya SDD / fundação 013 — 2026-09-28
+
+Este é o único arquivo de continuidade da integração. A seção de maio abaixo é histórica.
+
+## Checkpoint mais recente — correção billing e fundação — 2026-09-29
+
+- **Estado real informado pelo usuário:** ainda não existe pagamento nem Asaas. A premissa anterior de billing pronto está superada; app/Auth existentes continuam como base. A 015 agora inclui construir oferta, cartão recorrente, Pix Automático, webhooks, projeção de acesso, gestão e testes. Não foi criado serviço, endpoint, migração ou cobrança nesta entrega.
+- **Fonte comercial localizada:** `data/landing/niches/pilates.ts` e contrato aprovado do app trazem R$ 59,90/mês e R$ 599/ano. O usuário confirmou que os valores estão documentados; a vigência comercial exata para ativar oferta ainda precisa ser ratificada. Strings de trial sem cartão e garantia de 30 dias são legado divergente. Decisão vigente: cobrar na contratação e garantia de 14 dias.
+- **Recorte local fechado:** T013-02 e T013-07 concluídas como mapeamento e contrato-alvo, com evidência em `specs/013-fundacao-e-contratos/verification.md`, `docs/taliya-sdd/contracts/current-contracts.md` e `docs/taliya-sdd/DECISAO_BILLING_2026-09-29.md`. T013-03/04/05 já estavam concluídas localmente. T013-01/06/08/09 continuam abertas; 013 é a única spec ativa, G0 bloqueado.
+- **Artefatos consistentes:** 13 specs, 87 tarefas, 68 requisitos e 68 casos. Asaas passou a ser implementação da 015 após a 014; 024 homologa o resultado da 015. `validate_progress.py`, `check_readiness.py --spec 013` e `check_readiness.py --spec 024` passaram como checagens estruturais; 23 testes unitários dos validadores e `git diff --check` passaram após a correção das fixtures. Não equivalem a testes de produto.
+- **Checkout de trabalho:** landing `/Users/lucasquintino/Projects/taliya-copiloto-landing`, branch de snapshot `codex/taliya-sdd-local-snapshot-20260929`, criada de `main` no SHA `b09c4d39d0151822ab1a43f95edd68b9d4730df2`. O commit desta branch contém o diff SDD e as demais alterações locais não ignoradas solicitadas para envio ao GitHub; verificar o SHA atual com `git rev-parse HEAD`. App `/Users/lucasquintino/Downloads/copiloto-github`, branch `codex/e02-icloud-recovery-20260928`, SHA `d99ef897f3033ace6a23ee009e2578ffc04a259d`, com alterações E02 alheias preservadas. Nenhum código de runtime foi alterado pela correção documental de billing.
+- **Mudança concorrente preservada:** durante a validação final, apareceu diff de 2 linhas em `components/landing/NicheLandingPage.tsx` ajustando a espera da animação de entrada. Esta execução não editou esse arquivo nem atribui o diff à fundação; reavaliar o working tree antes de mexer na landing.
+- **Envio ao GitHub solicitado em 29/09:** snapshot completo dos arquivos locais não ignorados em branch separada, preservando `main`; o arquivo importado `evidence/CODIGO_VERIFICADO.md` teve apenas espaços finais removidos para `git diff --check`, com o ZIP original intacto em `docs/taliya-sdd/source/`. `npm run lint` passou com 6 warnings e `npm run build` passou; os 23 testes dos validadores passaram. Este envio não comprova G0–G6 nem ativa implantação ou billing.
+- **Bloqueios reais:** B013-02 (deployment/SHA e identidade staff do Internal), B013-03 (ambiente sintético, canais, permissões e orçamento de homologação); B013-01 agora bloqueia ativação/homologação da 015 (conta Asaas sandbox, elegibilidade Pix Automático, credenciais seguras, URLs e preço vigente). Materiais B013-04 continuam pendentes para 019.
+- **Próxima tarefa exata:** T013-08/T013-01: obter evidência do Internal efetivamente servido e identidade staff autorizada; em paralelo, concluir apenas documentação local de dependência/contrato ainda cabível, sem mudar spec ativa. Depois T013-09 no ambiente explicitamente autorizado, fechar G0, ativar 014 e então implementar 015. Não refazer a busca por um serviço de billing publicado: o usuário confirmou sua inexistência.
+
+---
+
+## Atualização mais recente — localização do serviço de billing — 2026-09-28
+
+Meta ativa: implementar specs 013–025, uma spec por vez. A rechecagem atual pesquisou
+a árvore de código da landing ativa e do app Copiloto, branches GitHub acessíveis e
+uma cópia adicional de landing. Não foi encontrada a implementação/deployment de
+billing Asaas. A cópia adicional não tem `.git` e contém apenas spec/contrato antigo
+com URL placeholder, garantia de 30 dias e anual condicionado. Não é fonte autoritativa.
+
+O código ativo ainda contém CTA de 14 dias grátis e conteúdo de garantia de 30 dias;
+divergência a corrigir na etapa da landing depois de conectar a oferta verdadeira.
+Nenhum código do produto foi alterado nesta rechecagem.
+
+- Evidência de pesquisa: `docs/taliya-sdd/evidence/billing-source-search.json`.
+- Mapa contratual e limitações: `docs/taliya-sdd/contracts/current-contracts.md`;
+  critérios T013-07 em `specs/013-fundacao-e-contratos/verification.md`.
+- Progresso mantém G0 bloqueado; T013-01/02/07 permanecem parciais/bloqueadas.
+  014–025 não foram ativadas. Próximo passo para avançar T013-07: apontar o repo,
+  diretório ou documento da implementação publicada de billing, sem compartilhar segredo.
+- Verificação após atualizar artefatos: execute
+  `python3 docs/taliya-sdd/scripts/validate_progress.py`,
+  `python3 docs/taliya-sdd/scripts/check_readiness.py` e `git diff --check`.
+
+## Preparação anterior — tarefas prontas para execução condicional
+
+Pedido: deixar tudo preparado para implementar as tarefas. Fonte atual confirmada:
+`main` em `b09c4d39d0151822ab1a43f95edd68b9d4730df2`; o trabalho continua como diff
+local, sem commit/push/deploy desta execução. Apenas 013 ativa; G0 bloqueado.
+
+- Entrada de execução: `docs/taliya-sdd/IMPLEMENTATION_READINESS.md`.
+- 81 tarefas / 65 requisitos-casos / 13 specs detalhados em `specs/013-*`…`025-*/execution.md`:
+  fontes reais, caminhos propostos, interfaces, migrações, erros, dependências, testes
+  esperados e evidências. `spec/plan/tasks/verification` apontam aos recortes; checklists
+  distinguem preparação de aceite. `planning/execution.json` indexa a preparação.
+- Novo `check_readiness.py` verifica cobertura, dependências e bloqueios sem executar
+  tarefas ou alterar pointer. Não é suíte de runtime nem autorização automática.
+- Resultado: `evidence/preparation-validation.json`: 23 testes offline aprovados,
+  snapshot original 87 checks, progresso/preparação consistentes, `git diff --check`
+  aprovado. `--spec 014 --require-unblocked` retornou 2 como esperado: 013 incompleta.
+  359 arquivos de aplicação comparados ao baseline, zero alterações.
+- Snapshot desta preparação: `docs/taliya-sdd/evidence/preparation-snapshot.json`.
+  `delivery-snapshot.json` anterior permanece como evidência histórica, não foi reescrito.
+- Comandos adicionais: `python3 docs/taliya-sdd/scripts/check_readiness.py` e
+  `python3 docs/taliya-sdd/scripts/check_readiness.py --spec 014 --require-unblocked`.
+  Comandos anteriores abaixo continuam válidos. Hooks de commit são opcionais e
+  foram dispensados; não estão globalmente desativados no YAML.
+
+**Próxima tarefa exata continua T013-07**, receber localização da fonte do billing
+publicado, ler instruções e registrar contratos reais conforme
+`docs/taliya-sdd/contracts/integration-handoff.md`. Depois T013-08 (deployment/staff
+Internal), T013-09 (homologação autorizada) e T013-06 (convergência/G0).
+Billing, deployment, ambiente/orçamento e mídia aprovada não foram fornecidos por
+esta preparação. Não refazer auditoria geral nem reconstruir app/billing.
+
+Não executados nesta preparação: build/lint de aplicação (nenhuma mudança de aplicação),
+suíte funcional nova, banco/migrações, integração remota, inferência Luna/max,
+PostHog, envios de canal, billing real ou deploy. Preparação técnica não comprova
+essas integrações; contratos específicos pendentes devem ser ratificados antes do código.
+
+## Onde retomar
+
+- Repositório: `/Users/lucasquintino/Projects/taliya-copiloto-landing`.
+- SHA inicial: `862095261a617a4a1a73c1ab96a914a9249c63ec`, branch main, 8 alterações de SEO.
+- SHA observado ao fechar: `b09c4d39d0151822ab1a43f95edd68b9d4730df2`, branch main.
+  Outro processo commitou o SEO e voltou à main durante a execução; não revertido.
+- Hook Spec Kit criou `015-fundacao-e-contratos` em 8620952; não usar a branch como
+  número da spec. `.specify/feature.json` seleciona `specs/013-fundacao-e-contratos`.
+- Entrega desta sessão é diff local, sem commit/push/deploy pela sessão.
+- Snapshot de 2822 arquivos antes: `docs/taliya-sdd/evidence/repository-before.json`.
+  Snapshot final do recorte: `docs/taliya-sdd/evidence/delivery-snapshot.json`.
+
+## Entregue
+
+- T013-03: adendo limitado de autoridade em AGENTS/constituição e pointer atualizado.
+- T013-04: CLI 1.0.7 constatado; Bash oficial adicionado com hashes, sem reinit;
+  PowerShell histórico preservado. Scripts de resolução/plano/prerequisites executados.
+- T013-05: inventários de mídia, fontes, ambientes e baselines desktop/mobile atuais.
+- T013-01/02 parcialmente executadas: contratos de landing/Python/Internal/Copiloto
+  mapeados por SHA; HTTP sem auth e estado dos deploys registrados.
+- T013-06 parcialmente executada: spec/plan/tasks/checklist/análise, validação de
+  progresso, snapshot original, matriz/status/verificação reconciliados.
+- 013–025 incorporadas sem sobrescrever specs anteriores. Cinco tools e Luna/max/none
+  mantidos como intenção; runtime antigo não foi habilitado como fallback.
+
+## Comandos e resultados
+
+```sh
+specify version
+specify integration status
+specify artifact list --json
+bash .specify/scripts/bash/check-prerequisites.sh --json --paths-only
+bash .specify/scripts/bash/setup-plan.sh --json
+bash .specify/scripts/bash/check-prerequisites.sh --json --require-spec --require-tasks --include-tasks
+python3 docs/taliya-sdd/scripts/validate_plan.py
+python3 docs/taliya-sdd/scripts/validate_progress.py
+python3 -m unittest discover -s docs/taliya-sdd/tests -v
+git diff --check
+```
+
+CLI 1.0.7; integração 0.8.3.dev0 com 5 arquivos previamente customizados (WARNING).
+94 hashes do pacote verificados; snapshot: 87 checks. Progresso: consistente.
+12 testes isolados do validador aprovados. Baselines /pilates→/ com 200 desktop/mobile,
+sem overflow/falhas locais e sem requests externos permitidos. Nada disso é QA integrada.
+
+## Bloqueios e próxima tarefa exata
+
+**T013-07/T013-02 — localizar o serviço publicado Asaas/assinatura**: usuário foi
+perguntado pela fonte (repo, diretório ou documentação), sem solicitar credenciais.
+Ao receber: ler instruções da fonte, registrar SHA e contratos de oferta, checkout,
+identidade/vínculo, assinatura/acesso, eventos, idempotência, estados/erros e donos.
+App/billing continuam considerados prontos conforme usuário; não reconstruir.
+
+T013-08: confirmar SHA ativo e identidade de staff do Internal. Fonte main 7cbe9e9
+localizada, mas três deployments mais recentes em failure e público retorna 401.
+T013-09: executar homologação somente com ambiente e orçamento autorizados.
+G0 bloqueado; G1–G6 não executados. Não iniciar 014/015 enquanto dependências não fecharem.
+
+Não executados: inferência paga, testes remotos de billing, compra/reembolso, login de
+staff, escrita em bancos, mensagens humanas, PostHog, publicação ou build nativo.
+
+## Arquivos e evidências
+
+- `AGENTS.md`, `.specify/memory/constitution.md`, `.specify/feature.json`, Bash oficial.
+- `specs/README.md`, `specs/013-*`…`025-*` (só 013 executada).
+- `docs/taliya-sdd/`: pacote incorporado, original em source/, contratos/ambientes,
+  scripts/testes/evidências/status/matriz; o manifesto original verifica o ZIP.
+- `specs/013-fundacao-e-contratos/verification.md`: critérios, resultados e limites.
+- `docs/taliya-sdd/contracts/current-contracts.md`: interfaces e fontes reais.
+
+## Histórico anterior preservado — não seguir como direção atual
+
 # Handoff para nova conversa Codex - Taliya Landing + Agente
 
 Data do handoff: 2026-05-14  

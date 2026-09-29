@@ -1,0 +1,114 @@
+{
+  "package_version": "3.0",
+  "state": "foundation_replanned_billing_to_build",
+  "baseline": "User correction 2026-09-29: app/Auth exist; no payment or Asaas exists; build billing in 015.",
+  "specs": [
+    {
+      "id": "013",
+      "status": "in_progress",
+      "implementation": "partial",
+      "verification": "partial",
+      "blockers": [
+        "B013-02",
+        "B013-03"
+      ]
+    },
+    {
+      "id": "014",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "015",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "016",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "017",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "018",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "019",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "020",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "021",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "022",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "023",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "024",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    },
+    {
+      "id": "025",
+      "status": "proposed",
+      "implementation": "not_started",
+      "verification": "not_run"
+    }
+  ],
+  "production_changes": 0,
+  "live_model_calls": 0,
+  "campaigns_sent": 0,
+  "active_spec": "013",
+  "execution_scope": "local_foundation",
+  "gates": {
+    "G0": "blocked",
+    "G1": "not_run",
+    "G2": "not_run",
+    "G3": "not_run",
+    "G4": "not_run",
+    "G5": "not_run",
+    "G6": "not_run"
+  },
+  "preparation": {
+    "state": "replanned_for_billing_implementation",
+    "date": "2026-09-29",
+    "spec_count": 13,
+    "task_count": 87,
+    "entrypoint": "docs/taliya-sdd/IMPLEMENTATION_READINESS.md",
+    "manifest": "docs/taliya-sdd/planning/execution.json",
+    "changes_runtime_status": false,
+    "last_follow_up": "docs/taliya-sdd/evidence/goal-continuation-2026-09-28.json",
+    "T013_07": "completed_local_target_contract"
+  }
+}

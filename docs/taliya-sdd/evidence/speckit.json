@@ -1,0 +1,39 @@
+{
+  "cli": "1.0.7",
+  "declared_integration": "0.8.3.dev0",
+  "available_commands": [
+    "speckit.analyze",
+    "speckit.checklist",
+    "speckit.clarify",
+    "speckit.constitution",
+    "speckit.converge",
+    "speckit.git.commit",
+    "speckit.git.feature",
+    "speckit.git.initialize",
+    "speckit.git.remote",
+    "speckit.git.validate",
+    "speckit.implement",
+    "speckit.plan",
+    "speckit.specify",
+    "speckit.tasks",
+    "speckit.taskstoissues"
+  ],
+  "installed_skills": [
+    "speckit-analyze",
+    "speckit-checklist",
+    "speckit-clarify",
+    "speckit-constitution",
+    "speckit-git-commit",
+    "speckit-git-feature",
+    "speckit-git-initialize",
+    "speckit-git-remote",
+    "speckit-git-validate",
+    "speckit-implement",
+    "speckit-plan",
+    "speckit-specify",
+    "speckit-tasks",
+    "speckit-taskstoissues",
+    "taliya-llm-first-agent"
+  ],
+  "pwsh_available": false
+}

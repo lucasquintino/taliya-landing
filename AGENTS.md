@@ -5,7 +5,20 @@ This version has breaking changes - APIs, conventions, and file structure may al
 <!-- END:nextjs-agent-rules -->
 
 <!-- SPECKIT START -->
-Current feature plan for this independent copy: `specs/taliya-migration/001-fundacao-migracao/plan.md`. Migration scope and preservation rules: `docs/landing-migration/plan.md` and `.specify/memory/constitution.md`. The existing commercial-agent specs and implementation remain source-project material, not authority to expand this landing migration.
+Current feature plan: `specs/013-fundacao-e-contratos/plan.md`.
+For the authorized Taliya integration program 013–025, first read `docs/taliya-sdd/EXECUTION_ADDENDUM.md`, `.specify/memory/constitution.md` and `docs/conversation-handoff-2026-05-14.md` (the existing continuity file, updated with the current checkpoint).
+The limited addendum below supersedes conflicting copy-only/Pilates rules for this program only. Historical migration and commercial specs remain preserved references, not current product requirements.
+
+## Execution addendum — 2026-09-28
+- Execute one spec at a time, starting with 013; use `.specify/feature.json` to resolve it independently of Git branch numbers.
+- Reuse existing app/auth. User correction on 2026-09-29: billing/Asaas does not yet exist and must be implemented within this program. Direct subscription does not require AI or chat. The new billing backend will own offer, payment confirmation and access facts; do not infer payment from a redirect or conversation.
+- The Taliya agent is Agents API / `gpt-6-luna` / `max`, one agent, environment `none`, exactly the five functions in `docs/taliya-sdd/contracts/tools.json`. No silent fallback, shell, generic SQL, free browsing or subagents in the product agent.
+- Local `taliya-llm-first-agent` operational guardrails remain applicable; its Pilates funnel, action/template pipeline and model recommendation do not override the current request.
+- Preserve current landing composition, design system and local changes, including current compatibility redirects. Capture desktop/mobile baselines before application behavior changes.
+- Local inspection, documentation, scoped code changes and isolated tests are authorized. No publish/push/deploy, production migration, DNS, real-person messages, financial operations or paid remote tests without specific authorization.
+- Spec Kit CLI is pinned operationally to installed 1.0.7. Use the vendored `.specify/scripts/bash/` equivalents on this Mac; do not invoke unavailable PowerShell or claim chat skills are shell commands. Integration 0.8.3.dev0 remains historical; no forced reinitialization.
+
+## Historical migration rules (superseded only where the addendum applies)
 Before implementation, also read `specs/002-floating-ai-sales-agent/spec.md`, `specs/002-floating-ai-sales-agent/tasks.md`, `specs/001-niche-landing-system/spec.md`, and the source handoff docs under `docs/landing-agentes-pilates/source/`.
 
 Taliya/Copiloto landing migration rules for this copy:

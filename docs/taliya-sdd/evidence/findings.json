@@ -1,0 +1,146 @@
+[
+  {
+    "id": "A01",
+    "priority": "P0",
+    "finding": "Governança ativa ainda é da migração copy-only.",
+    "evidence": "EV01/EV02",
+    "treatment": "Proíbe backend e destinos que agora precisam mudar. Atualizar autoridade scoped na 013, sem apagar preservação visual.",
+    "spec": "013"
+  },
+  {
+    "id": "A02",
+    "priority": "P0",
+    "finding": "Internal local usa segredo compartilhado e ator por header.",
+    "evidence": "EV05/EV06",
+    "treatment": "Token em query/frontend e x-operator-id não formam identidade de staff confiável. Substituir por auth/papéis existentes antes da exposição.",
+    "spec": "014/020"
+  },
+  {
+    "id": "A03",
+    "priority": "P0",
+    "finding": "Núcleo ativo ainda carrega papel e estados de Pilates.",
+    "evidence": "EV10/EV11",
+    "treatment": "Não trocar apenas texto inicial. Isolar agente v2, fonte e contratos; não migrar prompts históricos como conhecimento.",
+    "spec": "015/016"
+  },
+  {
+    "id": "A04",
+    "priority": "P0",
+    "finding": "Rota atual também grava conversão/lead depois da resposta.",
+    "evidence": "EV07/EV08",
+    "treatment": "Ferramentas novas somadas ao pós-processamento podem duplicar efeitos. Escolher único dono da escrita e dedup de domínio.",
+    "spec": "017"
+  },
+  {
+    "id": "A05",
+    "priority": "P1",
+    "finding": "Configuração contém Internal remoto e tela local.",
+    "evidence": "EV04/EV06",
+    "treatment": "Confirmar qual implementação atende a produção; não presumir que corrigir esta cópia corrige o app remoto.",
+    "spec": "013/020"
+  },
+  {
+    "id": "A06",
+    "priority": "P1",
+    "finding": "Transporte comercial espera JSON em chamada com timeout de 60 s.",
+    "evidence": "EV09",
+    "treatment": "Luna/max e chamadas de ferramenta exigem continuidade independente do browser; reusar fila/worker e recuperar itens.",
+    "spec": "016/018"
+  },
+  {
+    "id": "A07",
+    "priority": "P1",
+    "finding": "DDL é executado ao preparar consulta e há opção TLS sem validação.",
+    "evidence": "EV12",
+    "treatment": "Migrar schema fora do caminho de request e revisar TLS/CA real. O risco depende do perfil de configuração; não foi explorado.",
+    "spec": "014"
+  },
+  {
+    "id": "A08",
+    "priority": "P1",
+    "finding": "Medição existente é própria e o snapshot não contém PostHog nos caminhos ativos examinados.",
+    "evidence": "EV14/EV17 e varredura app/components/lib/services/app",
+    "treatment": "Instrumentar PostHog explicitamente; ausência aqui não prova ausência no app ou em outro repo.",
+    "spec": "021"
+  },
+  {
+    "id": "A09",
+    "priority": "P1",
+    "finding": "Fallback em memória aparece no registro de eventos quando não há Postgres.",
+    "evidence": "EV17",
+    "treatment": "Não confirmar persistência comercial em produção com armazenamento transitório; falhar explicitamente e alertar.",
+    "spec": "014/021"
+  },
+  {
+    "id": "A10",
+    "priority": "P1",
+    "finding": "Envio humano examinado é WhatsApp e usa lead.updatedAt na checagem da janela.",
+    "evidence": "EV13",
+    "treatment": "Provar entrega web; conferir último inbound confiável em vez de atualização genérica da ficha. Validar política do provedor antes de homologar.",
+    "spec": "020"
+  },
+  {
+    "id": "A11",
+    "priority": "P1",
+    "finding": "Contrato anterior permite três asset_ids apesar do objetivo de brevidade.",
+    "evidence": "L2 agent/config.base.json e contracts/reply.schema.json",
+    "treatment": "Novo contrato limita a um material por resposta. IDs e links são resolvidos pelo backend.",
+    "spec": "015/019"
+  },
+  {
+    "id": "A12",
+    "priority": "P1",
+    "finding": "Versão de SDK e scripts Spec Kit são do snapshot, não prova de compatibilidade atual.",
+    "evidence": "EV03/EV15",
+    "treatment": "Codex skills + scripts PowerShell; validar ambiente Mac/Linux e suporte beta.agents sem atualização indiscriminada.",
+    "spec": "013/016"
+  },
+  {
+    "id": "A13",
+    "priority": "P1",
+    "finding": "Preços de duas gerações e CTA comercial antigo convivem.",
+    "evidence": "EV11/EV18 e fonte de produto",
+    "treatment": "Uma oferta real; assinatura direta não pode virar diagnóstico/lista de espera. Não fixar preço a partir deste snapshot.",
+    "spec": "015/018"
+  },
+  {
+    "id": "A14",
+    "priority": "P1",
+    "finding": "Pacote anterior contém contratos e validação offline, não integração pronta.",
+    "evidence": "L2 evidence/validation-report.json",
+    "treatment": "Os 39 checks históricos não comprovam identidade, billing, handlers, UX, custo ou execução de modelo. Transformar casos em testes reais.",
+    "spec": "024"
+  },
+  {
+    "id": "A15",
+    "priority": "P1",
+    "finding": "Métricas financeiras e estados comerciais exigem fonte oficial distinta de browser/LLM.",
+    "evidence": "L3 e plano anterior",
+    "treatment": "Projetar billing e conferir queries contra registros canônicos. mark_won, retorno de checkout e eventos públicos não são pagamentos.",
+    "spec": "017/021/022"
+  },
+  {
+    "id": "A16",
+    "priority": "P1",
+    "finding": "Franquia PostHog não cobre automaticamente todos os usos/addons e ambientes.",
+    "evidence": "P1/P3/P4/P5",
+    "treatment": "1 projeto free; Group Analytics e outros módulos devem ser dimensionados. Teto pode descartar eventos; alertar e conciliar.",
+    "spec": "021/022"
+  },
+  {
+    "id": "A17",
+    "priority": "P2",
+    "finding": "Fontes e mídia precisam de manutenção e retirada após publicação.",
+    "evidence": "L3/L2",
+    "treatment": "Definir responsável, classificação UGC, captions/transcrição, expiração e pipeline simples de catálogo.",
+    "spec": "015/019"
+  },
+  {
+    "id": "A18",
+    "priority": "P1",
+    "finding": "App e assinatura prontos são premissa do usuário; código completo não veio neste ZIP.",
+    "evidence": "L3/EV16",
+    "treatment": "Preservar prontidão; mapear contratos reais na 013 sem exigir reconstrução ou afirmar homologação já feita.",
+    "spec": "013/024"
+  }
+]

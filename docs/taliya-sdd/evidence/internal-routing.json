@@ -1,0 +1,19 @@
+[
+  {
+    "url": "http://127.0.0.1:3001/internal",
+    "error_type": "HTTPError",
+    "status": 401
+  },
+  {
+    "url": "http://127.0.0.1:3001/internal/sales-inbox",
+    "status": 200,
+    "final_url": "http://127.0.0.1:3001/internal/sales-inbox",
+    "local_sales_inbox_marker": true,
+    "internal_token_form": false
+  },
+  {
+    "url": "https://taliya-internal.vercel.app/internal",
+    "error_type": "HTTPError",
+    "status": 401
+  }
+]

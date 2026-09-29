@@ -1,0 +1,13 @@
+{
+  "source": "installed specify-cli core_pack",
+  "version": "1.0.7",
+  "sha256": {
+    "common.sh": "170e91ece502b88d83c715e427473843e0b358f550e86e3ff524546df405a9ca",
+    "setup-plan.sh": "d0bd298c026446f3c63167130d65e49e4aa4485de6bef18bcdfd57b19aa0de96",
+    "setup-tasks.sh": "0f7d7e996ed4a26ab7bf09bf10540366ee402b930a4a9cbc0ee7bc6a8bd0013b",
+    "check-prerequisites.sh": "5e5e3dbfe29d8ca0a6f06de80fb2042cd3d26f42cff475b3a097c4aa0d70f16d",
+    "resolve-template.sh": "829e227096abc8bf0889889ec9f792f503ca5d395b7836a8a7eb739ee75214e7",
+    "create-new-feature.sh": "9f7a741d9766a6c1c5d5e44368f2c6bea6026b399ff6f0055870f760afdb8726"
+  },
+  "scope": "Added bash scripts; original ps scripts and integration manifests preserved"
+}
