@@ -431,7 +431,7 @@ export function NicheLandingPage({ config }: Props) {
 
   return (
     <>
-      <main aria-busy={!isPageReady} aria-hidden={!isPageReady} className="min-h-screen overflow-x-clip bg-[#FAF7F1] text-[#101B3A]">
+      <main aria-busy={!isPageReady} className="min-h-screen overflow-x-clip bg-[#FAF7F1] text-[#101B3A]">
       <Header config={config} onCta={trackCta} activeSection={activeSection} scrollProgress={scrollProgress} />
       <HeroSection config={config} isReady={isPageReady} onCta={trackCta} />
       <IntentSelectorSection pains={config.pains} selectedPain={selectedPain} onSelectPain={choosePain} />

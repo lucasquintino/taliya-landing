@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import { pilatesLanding } from "@/data/landing/niches/pilates";
+import { TALIYA_SITE_ORIGIN } from "@/lib/landing/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Agentes operacionais para studios",
-  description:
-    "Landings por nicho para apresentar inteligências operacionais.",
+  metadataBase: new URL(TALIYA_SITE_ORIGIN),
+  title: pilatesLanding.metadata.title,
+  description: pilatesLanding.metadata.description,
 };
 
 export const viewport: Viewport = {

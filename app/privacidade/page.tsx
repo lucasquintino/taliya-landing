@@ -1,13 +1,32 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { StructuredData } from "@/components/landing/shared/StructuredData";
+import { absoluteSiteUrl } from "@/lib/landing/seo";
+
+const privacyTitle = "Política de privacidade | Taliya";
+const privacyDescription =
+  "Saiba como a Taliya trata dados pessoais no site, no assistente de IA e nos canais de atendimento comercial.";
 
 export const metadata: Metadata = {
-  title: "Política de privacidade | Taliya",
-  description:
-    "Saiba como a Taliya trata dados pessoais no site, no assistente de IA e nos canais de atendimento comercial.",
+  title: privacyTitle,
+  description: privacyDescription,
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "/privacidade",
+  },
+  openGraph: {
+    title: privacyTitle,
+    description: privacyDescription,
+    type: "website",
+    url: absoluteSiteUrl("/privacidade"),
+  },
+  twitter: {
+    card: "summary",
+    title: privacyTitle,
+    description: privacyDescription,
   },
 };
 
@@ -61,7 +80,9 @@ const rights = [
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-[#F7F3EA] text-[#101B3A]">
+    <>
+      <StructuredData description={privacyDescription} path="/privacidade" title={privacyTitle} />
+      <main className="min-h-screen bg-[#F7F3EA] text-[#101B3A]">
       <article className="mx-auto grid max-w-6xl gap-8 px-5 py-8 sm:px-8 sm:py-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:px-12">
         <aside className="lg:sticky lg:top-8 lg:self-start">
           <a
@@ -216,7 +237,8 @@ export default function PrivacyPage() {
           </div>
         </div>
       </article>
-    </main>
+      </main>
+    </>
   );
 }
 
