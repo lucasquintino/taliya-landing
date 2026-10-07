@@ -21,7 +21,7 @@ const categoryLabel: Record<string, string> = {
   OR: "orçamentos",
   RC: "recebimentos",
   LE: "lembretes",
-  AR: "documentos",
+  AR: "produção",
 };
 
 const messageById = new Map(messageWall.messages.map((message) => [message.id, message] as const));

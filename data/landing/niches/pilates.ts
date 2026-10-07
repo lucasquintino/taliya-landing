@@ -74,7 +74,7 @@ export const pilatesLanding: NicheLandingConfig = {
       { label: "Plano", href: "#planos" },
       { label: "Dúvidas", href: "#faq" },
     ],
-    cta: { label: "Começar 14 dias grátis", href: "#vendas" },
+    cta: { label: "Começar agora", href: "#planos" },
   },
   hero: {
     eyebrow: "",
@@ -82,9 +82,9 @@ export const pilatesLanding: NicheLandingConfig = {
       "Taliya é a IA do seu negócio. É só falar.",
     highlight: "Taliya",
     centralMessage: "Você cuida do seu trabalho. A Taliya organiza sua rotina.",
-    subheadline: "Agenda, serviços, orçamentos, clientes e recebimentos em um só lugar.",
+    subheadline: "Agenda, serviços, clientes, recebimentos e materiais de trabalho em um só lugar.",
     primaryCta: {
-      label: "Começar 14 dias grátis",
+      label: "Começar agora",
       href: "#vendas",
     },
     secondaryCta: { label: "Ver como funciona", href: "#como-funciona" },
@@ -209,24 +209,32 @@ export const pilatesLanding: NicheLandingConfig = {
     }),
     createIntentPain({
       id: "documentos",
-      chip: "Documentos",
-      title: "Documentos",
-      description: "Crie e revise orçamentos, guarde contratos e encontre arquivos relacionados.",
-      result: "Orçamentos, contratos e arquivos encontrados no histórico.",
+      chip: "Produção",
+      title: "Produção",
+      description: "Prepare documentos, entenda arquivos e monte respostas.",
+      result: "Prepare documentos, entenda arquivos e monte respostas.",
       agentId: "historico-evolucao",
       steps: [
-        { type: "message", actor: "agent", speaker: "Você", text: "Cria um orçamento de consultoria avulsa por R$ 850 para a Marina." },
-        { type: "message", actor: "student", speaker: "Taliya", text: "🧾 *Orçamento criado*\n• Cliente: Marina\n• Serviço: consultoria avulsa\n• Total: R$ 850\n• Aguardando sua revisão" },
-        { type: "message", actor: "agent", speaker: "Você", text: "Adiciona uma taxa de deslocamento de R$ 50." },
-        { type: "message", actor: "student", speaker: "Taliya", text: "✏️ *Orçamento atualizado*\n• Novo total: R$ 900\n• Nova versão salva\n• Versão anterior preservada" },
-        { type: "message", actor: "agent", speaker: "Você", text: "A Marina aprovou a versão de R$ 900." },
-        { type: "message", actor: "student", speaker: "Taliya", text: "✅ *Aprovação registrada*\nOrçamento de R$ 900 marcado como aprovado." },
-        { type: "message", actor: "agent", speaker: "Você", text: "Anexei o contrato assinado. Guarda na ficha da Marina." },
-        { type: "message", actor: "student", speaker: "Taliya", text: "📁 *Documento guardado*\nContrato assinado vinculado à Marina." },
-        { type: "message", actor: "agent", speaker: "Você", text: "Encontra o orçamento aprovado." },
-        { type: "message", actor: "student", speaker: "Taliya", text: "🔎 *Encontrei*\nOrçamento aprovado · R$ 900\nA versão anterior continua no histórico." },
+        { type: "message", actor: "agent", speaker: "Você", text: "Cria um orçamento para a Marina: troca do filtro por R$ 250, com retorno no dia 15 incluído." },
+        { type: "message", actor: "student", speaker: "Taliya", text: "Preparei o orçamento de *R$ 250*, com o retorno incluído no dia 15. Confira antes de enviar.", attachment: { name: "Orçamento - Marina.pdf", format: "PDF", pages: 1, size: "84 kB" } },
+        { type: "message", actor: "agent", speaker: "Você", text: "A Marina aprovou esse orçamento." },
+        { type: "message", actor: "student", speaker: "Taliya", text: "Marquei o orçamento como aprovado e deixei junto do serviço da Marina." },
+        { type: "message", actor: "agent", speaker: "Você", text: "Monte um relatório da visita: troquei o filtro, fiz o teste e combinei retorno no dia 15." },
+        { type: "message", actor: "student", speaker: "Taliya", text: "Preparei o relatório da visita à Marina com o que você contou. Confira se está tudo certo.", attachment: { name: "Relatório - Marina - v1.pdf", format: "PDF", pages: 1, size: "76 kB" } },
+        { type: "message", actor: "agent", speaker: "Você", text: "Acrescente que o teste foi feito às 14h." },
+        { type: "message", actor: "student", speaker: "Taliya", text: "Acrescentei o horário do teste. Aqui está a nova versão para você conferir. A primeira também ficou salva.", attachment: { name: "Relatório - Marina - v2.pdf", format: "PDF", pages: 1, size: "78 kB" } },
+        { type: "message", actor: "agent", speaker: "Você", text: "Anexei a proposta dessa visita. Resuma o que combinamos.", attachment: { name: "Proposta da visita - Marina.pdf", format: "PDF", pages: 1, size: "84 kB" } },
+        { type: "message", actor: "student", speaker: "Taliya", text: "Na proposta, vocês combinaram:\n• Troca do filtro por *R$ 250*.\n• Retorno no dia *15*, incluído nesse valor." },
+        { type: "message", actor: "agent", speaker: "Você", text: "O retorno está incluído?" },
+        { type: "message", actor: "student", speaker: "Taliya", text: "Sim. A proposta diz que o retorno no dia 15 está incluído nos R$ 250." },
+        { type: "message", actor: "agent", speaker: "Você", text: "Prepare uma resposta para a Marina sobre o retorno." },
+        { type: "message", actor: "student", speaker: "Taliya", text: "Você pode responder assim:\n\n‘Oi, Marina! O retorno no dia 15 está incluído no valor que combinamos.’\n\nConfira e envie quando quiser." },
+        { type: "message", actor: "agent", speaker: "Você", text: "Agora monte uma ficha de atendimento para a Júlia com as informações que anexei.", attachment: { name: "Informações da Júlia.pdf", format: "PDF", pages: 1, size: "62 kB" } },
+        { type: "message", actor: "student", speaker: "Taliya", text: "Montei a ficha da Júlia com as informações que você enviou. Confira se falta algum detalhe.", attachment: { name: "Ficha de atendimento - Júlia.pdf", format: "PDF", pages: 1, size: "74 kB" } },
+        { type: "message", actor: "agent", speaker: "Você", text: "Monte o registro do atendimento do Roberto para o prontuário usando minhas anotações.", attachment: { name: "Anotações do atendimento - Roberto.pdf", format: "PDF", pages: 1, size: "68 kB" } },
+        { type: "message", actor: "student", speaker: "Taliya", text: "Organizei suas anotações em um registro do atendimento do Roberto. Confira antes de usar no prontuário. Não acrescentei informações além das que você enviou.", attachment: { name: "Registro do atendimento - Roberto.pdf", format: "PDF", pages: 1, size: "82 kB" } },
       ],
-      systemCards: ["Orçamento avulso: R$ 900", "Status: aprovado", "Contrato: guardado", "Versões anteriores: preservadas"],
+      systemCards: ["Orçamento: R$ 250, aprovado", "Relatório: duas versões", "Proposta: resumida", "Resposta: pronta para conferir", "Ficha de atendimento: preparada", "Registro para prontuário: preparado"],
     }),
   ],
   diagnosis: {
@@ -294,6 +302,13 @@ export const pilatesLanding: NicheLandingConfig = {
               "Conversas, serviços, pagamentos, orçamentos e outros registros ficam em lugares diferentes. Para recuperar o contexto de um cliente, é preciso procurar em cada um.",
             preview: "",
           },
+          {
+            agent: "Produção",
+            title: "Tudo precisa ser feito à mão",
+            description:
+              "Você monta fichas e relatórios, procura arquivos e relê tudo para responder ao cliente.",
+            preview: "",
+          },
         ],
       },
       {
@@ -354,6 +369,13 @@ export const pilatesLanding: NicheLandingConfig = {
             title: "Encontre o histórico do cliente",
             description:
               "Peça por voz ou texto para consultar conversas, serviços, pagamentos, orçamentos e documentos ligados ao cliente.",
+            preview: "",
+          },
+          {
+            agent: "Produção",
+            title: "Peça ajuda para preparar",
+            description:
+              "A Taliya prepara documentos, resume arquivos e sugere respostas para você conferir.",
             preview: "",
           },
         ],
@@ -852,8 +874,8 @@ export const pilatesLanding: NicheLandingConfig = {
     },
     {
       id: "historico-evolucao",
-      name: "Documentos",
-      role: "Orçamentos e arquivos",
+      name: "Produção",
+      role: "Documentos e materiais de trabalho",
       pain: "Orçamentos, contratos, arquivos e versões ficam difíceis de encontrar.",
       action:
         "Cria e ajusta propostas e mantém arquivos relacionados ao cliente e ao serviço.",
@@ -939,8 +961,7 @@ export const pilatesLanding: NicheLandingConfig = {
   agentsIntro: {
     eyebrow: "Frentes do negócio",
     title: "Uma assistente IA. Várias frentes do seu negócio.",
-    subtitle:
-      "Veja como a Taliya organiza clientes, agenda, serviços, recebimentos, lembretes, listas, resumos e documentos.",
+    subtitle: "",
   },
   howItWorks: {
       title: "Como a Taliya organiza a rotina do seu negócio",
@@ -971,8 +992,8 @@ export const pilatesLanding: NicheLandingConfig = {
           navSubtitle: "Recursos para o seu negócio",
           eyebrow: "Na prática",
           title: "Uma assistente IA para várias frentes do seu negócio.",
-          description:
-            "Por voz ou texto, pelo app ou WhatsApp, organize as tarefas que mantêm seu negócio em movimento.",
+        description:
+            "Por voz ou texto, pelo app ou WhatsApp, organize sua rotina, prepare materiais de trabalho e tire dúvidas sobre os arquivos que você enviar.",
         accent: "#008C8C",
         soft: "#E5F6F4",
         icon: "M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM5 20c1.3-3 3.7-4.5 7-4.5s5.7 1.5 7 4.5M17 10a2.5 2.5 0 1 0 0-5M20.5 18c-.7-1.6-1.9-2.7-3.5-3.2M7 10a2.5 2.5 0 1 1 0-5M3.5 18c.7-1.6 1.9-2.7 3.5-3.2",
@@ -999,9 +1020,14 @@ export const pilatesLanding: NicheLandingConfig = {
           },
           {
             id: "documentos",
-            title: "Documentos",
+            title: "Produção",
             agentId: "historico-evolucao",
-            bullets: ["Crie e revise orçamentos", "Guarde contratos e arquivos", "Encontre documentos por cliente"],
+            bullets: [
+              "Transforme suas anotações em documentos e materiais de trabalho.",
+              "Resuma arquivos e tire dúvidas sobre o conteúdo.",
+              "Prepare respostas com as informações do cliente e do serviço.",
+              "Guarde e encontre arquivos; consulte versões e aprovações.",
+            ],
           },
           {
             id: "lembretes",
@@ -1137,16 +1163,16 @@ export const pilatesLanding: NicheLandingConfig = {
         eyebrow: "Para o seu negócio",
         title: "A Taliya entende como seu negócio funciona.",
         description:
-          "Converse por voz ou texto sobre serviços, agenda, clientes e recebimentos. A Taliya organiza as informações, acompanha o histórico e ajuda você a encontrar o que precisa — pelo WhatsApp ou no app.",
+          "Pelo WhatsApp ou no app, a Taliya usa suas anotações, arquivos e informações do cliente e do serviço para ajudar a organizar sua rotina e preparar seu trabalho.",
         accent: "#8A5C2E",
         soft: "#FFF1DF",
         icon: "M12 3a9 9 0 1 0 9 9M12 7a5 5 0 1 0 5 5M12 11a1 1 0 1 0 1 1M18 3v4h4M17 8l4-4",
         visual: "pilates-focus",
         points: [
           "Serviços, horários e clientes ficam conectados.",
-          "O histórico ajuda a retomar cada conversa.",
-          "Orçamentos, recebimentos e documentos ficam organizados.",
-          "Você acompanha os registros no app e conversa com a Taliya pelo WhatsApp.",
+          "O histórico ajuda a retomar conversas e preparar respostas.",
+          "Seus documentos e arquivos ficam organizados.",
+          "Você confere os materiais e as respostas antes de usar.",
         ],
         groups: [
           {
@@ -1446,7 +1472,7 @@ export const pilatesLanding: NicheLandingConfig = {
     steps: [
       {
         title: "Crie sua conta",
-        description: "Comece com 14 dias grátis para conhecer a Taliya.",
+        description: "Comece agora com 14 dias de garantia. Se não gostar, devolvemos o valor.",
         items: [],
       },
       {
@@ -1469,7 +1495,7 @@ export const pilatesLanding: NicheLandingConfig = {
   },
   launchOffer: {
     title: "Organize seu negócio com a Taliya.",
-    body: "Clientes, serviços, agenda e recebimentos no WhatsApp e no app, em um só plano.",
+    body: "Organize sua rotina e prepare seu trabalho pelo WhatsApp ou pelo app, em um só plano.",
     name: "Taliya",
     toggleLabel: "Escolha a forma de assinatura",
     monthly: {
@@ -1491,12 +1517,12 @@ export const pilatesLanding: NicheLandingConfig = {
       { title: "Serviços", description: "Organize serviços avulsos, pacotes e planos e acompanhe os orçamentos." },
       { title: "Agenda", description: "Marque horários, faça remarcações e cancele compromissos." },
       { title: "Recebimentos", description: "Registre pagamentos e acompanhe valores recebidos e a receber." },
-      { title: "Documentos", description: "Guarde orçamentos e arquivos junto ao serviço correspondente." },
+      { title: "Produção", description: "Prepare documentos, entenda arquivos e monte respostas." },
       { title: "Lembretes", description: "Crie lembretes para retornos, tarefas e datas importantes." },
       { title: "Resumos", description: "Peça a visão do dia, a atividade da semana ou o fechamento do expediente." },
       { title: "Listagens", description: "Consulte clientes, horários, serviços prestados e documentos registrados." },
     ],
-    trial: "14 dias para testar, sem cartão.",
+    trial: "14 dias de garantia. Se não gostar, devolvemos o valor.",
     cta: "Começar",
     smallPrint: "",
   },
@@ -1505,11 +1531,11 @@ export const pilatesLanding: NicheLandingConfig = {
     title: "Quer organizar o seu negócio?",
     subtitle:
       "Conte para a Taliya como é seu dia a dia. Ela ajuda você a organizar agenda, serviços, clientes e recebimentos, com tudo à mão no app e pelo WhatsApp.",
-    primaryCta: "Começar 14 dias grátis",
+    primaryCta: "Começar agora",
     secondaryCta: "Ver como funciona",
     whatsappMessage:
       "Oi, vim pelo site da Taliya e quero entender como ela pode ajudar na rotina do meu negócio.",
-    microcopy: "Teste grátis por 14 dias, sem compromisso. Se não fizer sentido para você, é só cancelar.",
+    microcopy: "14 dias de garantia. Se não gostar, devolvemos o valor.",
     proofPoints: [
       "Organiza clientes, serviços e agenda",
       "Acompanha orçamentos, documentos e recebimentos",
@@ -1519,6 +1545,9 @@ export const pilatesLanding: NicheLandingConfig = {
   },
   floatingAgent: {
     enabled: true,
+    temporaryPause: {
+      message: "Estou temporariamente indisponível. Tente novamente mais tarde.",
+    },
     label: "Taliya",
     availability: "Assistente da Taliya",
     localeSignal: {
@@ -1828,7 +1857,7 @@ export const pilatesLanding: NicheLandingConfig = {
     {
       question: "O que é a Taliya?",
       answer:
-        "A Taliya organiza a rotina de quem trabalha por conta e presta serviços. Você registra, consulta e ajusta informações pelo WhatsApp ou pelo app, mantendo clientes, serviços, horários, documentos e recebimentos relacionados.",
+        "A Taliya ajuda quem presta serviços a organizar a rotina e a preparar o trabalho. Pelo WhatsApp ou pelo app, você registra e consulta clientes, serviços, horários e recebimentos, prepara documentos e respostas e tira dúvidas sobre os arquivos que enviar.",
     },
     {
       question: "Posso usar só pelo WhatsApp no dia a dia?",
@@ -1881,19 +1910,24 @@ export const pilatesLanding: NicheLandingConfig = {
         "Confira a resposta e informe a correção pela conversa ou edite no app. A próxima consulta usa a informação atualizada. Operações ambíguas ou sensíveis podem precisar de esclarecimento ou confirmação.",
     },
     {
-      question: "Onde ficam fotos, PDFs e documentos?",
+      question: "O que posso fazer com documentos e arquivos?",
       answer:
-        "Os materiais ficam vinculados ao contexto indicado, como o serviço de um cliente. Você pode encontrá-los depois pela conversa ou pelo app. Versões e aprovações são distintas; anexar um PDF não significa aprovar seus termos.",
+        "Transforme anotações em documentos, resuma arquivos e prepare respostas com as informações do cliente e do serviço. A Taliya usa o que você fornece, e você confere antes de usar. Os arquivos ficam ligados ao cliente ou ao serviço e podem ser encontrados pela conversa ou pelo app. Você também pode consultar versões e registrar aprovações. Anexar um arquivo não significa aprovar seu conteúdo.",
     },
     {
       question: "A Taliya fala com meus clientes ou deixa eles agendarem?",
       answer:
-        "A proposta-base é você conversando com a Taliya para organizar o trabalho. Ela pode preparar textos e documentos para você compartilhar, mas não oferece nesta versão atendimento automático aos clientes nem link público de autoagendamento.",
+        "Você conversa com a Taliya, que pode preparar textos e documentos para você conferir e compartilhar. Nesta versão, ela não atende seus clientes automaticamente nem oferece um link público para eles agendarem.",
+    },
+    {
+      question: "Os 14 dias são gratuitos?",
+      answer:
+        "A assinatura é paga desde o início. Você tem 14 dias de garantia: se não gostar, devolvemos o valor.",
     },
     {
       question: "Quanto custa e como começo?",
       answer:
-        "A Taliya custa R$59,90 por mês ou R$599 por ano, com 14 dias de teste sem cartão. Confira as condições na tela de assinatura. Para gerenciar a renovação ou cancelar, use o canal de compra indicado na sua conta.",
+        "A Taliya custa R$59,90 por mês ou R$599 por ano. A cobrança é feita na assinatura, com 14 dias de garantia. Se não gostar, devolvemos o valor. Confira as condições na tela de assinatura. Para gerenciar a renovação ou cancelar, use o canal de compra indicado na sua conta.",
     },
   ],
   finalCta: {

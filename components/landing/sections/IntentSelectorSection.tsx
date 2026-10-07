@@ -19,7 +19,7 @@ export function IntentSelectorSection({
     agenda: { agent: "agenda", label: "Marcar, remarcar e cancelar", icon: "M7 3v3M17 3v3M4.5 8h15M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2ZM8.5 14l2 2 5-5" },
     listagens: { agent: "retencao", label: "Clientes e registros", icon: "M5 5h14v14H5zM8 9h8M8 13h8M8 17h5" },
     recebimentos: { agent: "financeiro", label: "Pagamentos e saldos", icon: "M7 8h10M7 12h10M9 16h6M5 5h14v14H5z" },
-    documentos: { agent: "historico", label: "Orçamentos e arquivos", icon: "M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6" },
+    documentos: { agent: "historico", label: "Documentos e materiais de trabalho", icon: "M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6" },
   };
   const selectedPersona = painPersonaMeta[selectedPain.id];
   const selectedVisual = selectedPersona ? agentVisualTokens[selectedPersona.agent] : agentVisualTokens.agenda;
@@ -29,8 +29,8 @@ export function IntentSelectorSection({
 
   return (
     <SectionShell id="intencoes" tone="white" className="landing-take-section intent-selector-section">
-      <div className="reveal-step w-full overflow-hidden rounded-[2.5rem] border border-[#E2DED5] bg-white shadow-[0_34px_90px_rgba(16,27,58,0.12)] lg:min-h-[82.5svh]">
-        <div className="grid min-w-0 lg:min-h-[82.5svh] lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)]">
+      <div className="intent-demo-card reveal-step w-full overflow-hidden rounded-[2.5rem] border border-[#E2DED5] bg-white shadow-[0_34px_90px_rgba(16,27,58,0.12)] lg:min-h-[82.5svh]">
+        <div className="intent-demo-grid grid min-w-0 lg:min-h-[82.5svh] lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)]">
           <div className="flex min-w-0 flex-col border-b border-[#E9E4DA] p-5 sm:p-8 lg:border-b-0 lg:border-r">
             <div className="reveal-step reveal-delay-1 relative z-30 block">
               <p className="text-xl font-medium text-[#101B3A]" id="intent-pain-label">Quero que a Taliya cuide de</p>
@@ -128,7 +128,7 @@ export function IntentSelectorSection({
               })}
             </div>
           </div>
-          <div className="reveal-step reveal-delay-4 flex min-w-0 items-center justify-center overflow-hidden bg-[#F4F0FF] p-5 sm:p-8">
+          <div className="intent-phone-stage reveal-step reveal-delay-4 flex min-w-0 items-center justify-center overflow-hidden bg-[#F4F0FF] p-5 sm:p-8">
             <div className="intent-mockup-panel flex w-full min-w-0 justify-center" key={selectedPain.id}>
               {selectedFlow ? <AutonomousWhatsAppFlowMockup flow={selectedFlow} /> : null}
             </div>

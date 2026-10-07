@@ -16,6 +16,7 @@ export function FloatingAiAttendantPanel({
   onSend,
   openingPending,
   pending,
+  interactionDisabled = false,
   response,
   analysisDestination,
   humanWhatsAppDestination,
@@ -31,6 +32,7 @@ export function FloatingAiAttendantPanel({
   onSend: () => void;
   openingPending?: boolean;
   pending: boolean;
+  interactionDisabled?: boolean;
   response?: AiAttendantResponse;
   analysisDestination: TrustedDestination;
   humanWhatsAppDestination: TrustedDestination;
@@ -43,11 +45,12 @@ export function FloatingAiAttendantPanel({
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
+    if (interactionDisabled) return;
     const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
     if (isCoarsePointer) return;
 
     window.setTimeout(() => inputRef.current?.focus(), 120);
-  }, []);
+  }, [interactionDisabled]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -179,14 +182,14 @@ export function FloatingAiAttendantPanel({
             <span className="relative block h-full w-full overflow-hidden rounded-full bg-[#F0F3DF] ring-2 ring-[#6E7F2C]/18">
               <Image alt={config.avatar.alt} className="h-full w-full object-cover" height={56} priority sizes="56px" src={config.avatar.src} unoptimized width={56} />
             </span>
-            <span aria-hidden="true" className="absolute bottom-1 right-1 h-3.5 w-3.5 rounded-full border-2 border-[#FFFDF8] bg-[#6E7F2C] shadow-[0_2px_6px_rgba(16,27,58,0.18)]" />
+            <span aria-hidden="true" className="absolute bottom-1 right-1 h-3.5 w-3.5 rounded-full border-2 border-[#FFFDF8] bg-[#6E7F2C] shadow-[0_2px_6px_rgba(16,27,58,0.18)]" style={{ backgroundColor: interactionDisabled ? "#98A2B3" : undefined }} />
           </span>
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
               <h2 className="truncate text-base font-black leading-5 tracking-[-0.03em] text-[#101B3A]">{panelTitle}</h2>
-              <span className="floating-online-badge rounded-full bg-[#F0F3DF] px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-[#6E7F2C]">
+              {!interactionDisabled ? <span className="floating-online-badge rounded-full bg-[#F0F3DF] px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-[#6E7F2C]">
                 ativo
-              </span>
+              </span> : null}
             </div>
             <p className="mt-1 truncate text-sm font-bold leading-4 text-[#667085]">
               {isThinking ? "Respondendo sua dúvida" : hasFallback ? "Conversa preservada" : config.availability}
@@ -235,7 +238,7 @@ export function FloatingAiAttendantPanel({
           </div>
         ) : null}
 
-        {hasFallback && !isThinking ? <FallbackActions config={config} onQuickReply={onQuickReply} /> : null}
+        {!interactionDisabled && hasFallback && !isThinking ? <FallbackActions config={config} onQuickReply={onQuickReply} /> : null}
 
         {response?.conversionPath ? (
           <ConversionActions
@@ -247,7 +250,7 @@ export function FloatingAiAttendantPanel({
           />
         ) : null}
 
-        {!response?.conversionPath && !isThinking ? (
+        {!interactionDisabled && !response?.conversionPath && !isThinking ? (
           <NextBestAction config={config} messages={messages} onQuickReply={onQuickReply} onSuggestedInput={onSuggestedInput} response={response} />
         ) : null}
       </div>
@@ -261,7 +264,7 @@ export function FloatingAiAttendantPanel({
         data-lpignore="true"
         onSubmit={(event) => {
           event.preventDefault();
-          onSend();
+          if (!interactionDisabled) onSend();
         }}
       >
         <div className="floating-input-shell flex items-end gap-2 rounded-[1.45rem] border border-[#E5DED2] bg-[#FFFDF8] p-2 shadow-[0_10px_24px_rgba(16,27,58,0.06)]">
@@ -270,11 +273,12 @@ export function FloatingAiAttendantPanel({
             autoCapitalize="sentences"
             autoComplete="new-password"
             autoCorrect="on"
-            className="max-h-28 min-h-11 flex-1 resize-none bg-transparent px-3 py-2 text-base font-semibold leading-6 text-[#101B3A] outline-none placeholder:text-[#98A2B3] sm:text-sm sm:leading-5"
+            className="max-h-28 min-h-11 flex-1 resize-none bg-transparent px-3 py-2 text-base font-semibold leading-6 text-[#101B3A] outline-none placeholder:text-[#98A2B3] disabled:cursor-not-allowed disabled:opacity-45 sm:text-sm sm:leading-5"
             data-1p-ignore="true"
             data-bwignore="true"
             data-form-type="other"
             data-lpignore="true"
+            disabled={interactionDisabled}
             enterKeyHint="send"
             inputMode="text"
             name="taliya-chat-message"
@@ -282,11 +286,11 @@ export function FloatingAiAttendantPanel({
             onKeyDown={(event) => {
               if (event.key === "Enter" && !event.shiftKey) {
                 event.preventDefault();
-                onSend();
+                if (!interactionDisabled) onSend();
               }
             }}
             onFocus={handleInputFocus}
-            placeholder="Pergunte sobre planos ou rotina..."
+            placeholder={interactionDisabled ? "Mensagem" : "Pergunte sobre planos ou rotina..."}
             ref={inputRef}
             rows={1}
             spellCheck
@@ -295,7 +299,7 @@ export function FloatingAiAttendantPanel({
           <button
             aria-label="Enviar mensagem"
             className="floating-send-button interactive-hit grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#101B3A] text-white shadow-[0_10px_22px_rgba(16,27,58,0.16)] transition hover:bg-[#18264F] focus:outline-none focus:ring-4 focus:ring-[#FFB21A]/25 disabled:cursor-not-allowed disabled:opacity-45"
-            disabled={pending || !input.trim()}
+            disabled={interactionDisabled || pending || !input.trim()}
             type="submit"
           >
             <SendIcon className="h-5 w-5" />

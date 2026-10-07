@@ -8872,3 +8872,51 @@ body #fale-do-seu-jeito .landing-one-line-title h2 {
     white-space: nowrap !important;
   }
 }
+
+/* S03: let a readable, proportional phone determine the card height.
+   Scoped overrides replace the older viewport-height compression in this section. */
+body #intencoes.intent-selector-section {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+body #intencoes .reveal-section-content > .intent-demo-card,
+body #intencoes .reveal-section-content > .intent-demo-card > .intent-demo-grid {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+body #intencoes .reveal-section-content > .intent-demo-card > .intent-demo-grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+  overflow: visible !important;
+}
+
+body #intencoes .reveal-section-content > .intent-demo-card > .intent-demo-grid > div:first-child {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+body #intencoes .reveal-section-content > .intent-demo-card > .intent-demo-grid > .intent-phone-stage:last-child {
+  padding: clamp(16px, 2.5vw, 32px) !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+@media (min-width: 1024px) {
+  body #intencoes .reveal-section-content > .intent-demo-card > .intent-demo-grid {
+    grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr) !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  body #intencoes .reveal-section-content > .intent-demo-card > .intent-demo-grid > div:first-child {
+    border-bottom: 1px solid #e9e4da !important;
+    border-right: 0 !important;
+  }
+
+  body #intencoes .reveal-section-content > .intent-demo-card > .intent-demo-grid > div:first-child > .reveal-step.reveal-delay-3 {
+    display: none !important;
+  }
+}

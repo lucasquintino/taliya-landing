@@ -229,6 +229,9 @@ export type FloatingAgentFallbackMessages = {
 
 export type FloatingAgentConfig = {
   enabled: boolean;
+  temporaryPause?: {
+    message: string;
+  };
   label: string;
   availability: string;
   localeSignal: {
@@ -279,6 +282,12 @@ export type AutonomousFlowStep =
       actor: "student" | "agent";
       speaker?: string;
       text: string;
+      attachment?: {
+        name: string;
+        format: "PDF";
+        pages: number;
+        size: string;
+      };
     }
   | {
       type: "process";

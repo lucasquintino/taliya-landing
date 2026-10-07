@@ -8,12 +8,7 @@ import { trackLandingEvent } from "@/lib/landing/tracking";
 import { FloatingAiAttendantButton } from "./FloatingAiAttendantButton";
 import { FloatingAiAttendantPanel } from "./FloatingAiAttendantPanel";
 
-export function FloatingAiAttendant({
-  config,
-  compact: isCompact = false,
-  hideLauncher = false,
-  pageSignals,
-}: {
+type FloatingAiAttendantProps = {
   config: NicheLandingConfig;
   compact?: boolean;
   hideLauncher?: boolean;
@@ -22,7 +17,75 @@ export function FloatingAiAttendant({
     selectedAgentId?: string;
     calculatorEstimate?: number;
   };
-}) {
+};
+
+export function FloatingAiAttendant(props: FloatingAiAttendantProps) {
+  if (!props.config.floatingAgent.enabled) return null;
+  if (props.config.floatingAgent.temporaryPause) return <PausedFloatingAiAttendant {...props} />;
+  return <ActiveFloatingAiAttendant {...props} />;
+}
+
+function PausedFloatingAiAttendant({ config, compact, hideLauncher }: FloatingAiAttendantProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [viewport, setViewport] = useState<{ mobile: boolean } | null>(null);
+
+  useEffect(() => {
+    const open = () => setIsOpen(true);
+    window.addEventListener("landing:open-sales-agent", open);
+    return () => window.removeEventListener("landing:open-sales-agent", open);
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
+    const update = () => setViewport({ mobile: mediaQuery.matches });
+    update();
+    mediaQuery.addEventListener("change", update);
+    return () => mediaQuery.removeEventListener("change", update);
+  }, []);
+
+  if (isOpen) {
+    return (
+      <FloatingAiAttendantPanel
+        analysisDestination={config.assistedConversion.analysisDestination}
+        config={config.floatingAgent}
+        humanWhatsAppDestination={config.assistedConversion.humanWhatsAppDestination}
+        input=""
+        interactionDisabled
+        messages={[{
+          id: "assistant_temporarily_unavailable",
+          role: "assistant",
+          content: config.floatingAgent.temporaryPause?.message ?? "",
+          intent: "answer_question",
+        }]}
+        onClose={() => setIsOpen(false)}
+        onInputChange={ignorePausedInteraction}
+        onSuggestedInput={ignorePausedInteraction}
+        onQuickReply={ignorePausedInteraction}
+        onSend={ignorePausedInteraction}
+        pending={false}
+      />
+    );
+  }
+
+  if (hideLauncher || !viewport) return null;
+  return (
+    <FloatingAiAttendantButton
+      compact={compact}
+      config={config.floatingAgent}
+      mobileOnly={viewport.mobile}
+      onClick={() => setIsOpen(true)}
+    />
+  );
+}
+
+function ignorePausedInteraction() {}
+
+function ActiveFloatingAiAttendant({
+  config,
+  compact: isCompact = false,
+  hideLauncher = false,
+  pageSignals,
+}: FloatingAiAttendantProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<AiAttendantMessage[]>(() => readStoredMessages(config.niche));
   const [selectedPainIds, setSelectedPainIds] = useState<string[]>(() => readStoredStringArray(config.niche, "selectedPainIds"));

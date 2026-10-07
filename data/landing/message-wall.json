@@ -93,10 +93,10 @@
     },
     {
       "id": "MSG-CL09",
-      "category": "CL",
-      "targetSubtype": "CL05",
-      "text": "Aquela instalação é da Camila, não da Carla.",
-      "contextNote": "Exige resolver serviço e cliente antes de alterar."
+      "category": "AR",
+      "targetSubtype": "AR02",
+      "text": "Prepara uma resposta para a Camila com o que combinamos nesse serviço.",
+      "contextNote": "Usar o contexto registrado do cliente e serviço; profissional confere e envia."
     },
     {
       "id": "MSG-CL10",
@@ -163,10 +163,10 @@
     },
     {
       "id": "MSG-SV07",
-      "category": "SV",
-      "targetSubtype": "SV05",
-      "text": "Essa pintura vai de segunda a quarta.",
-      "contextNote": "Período sem horas não bloqueia dias inteiros."
+      "category": "AR",
+      "targetSubtype": "AR04",
+      "text": "Monte um roteiro para o ensaio com o pedido da Júlia.",
+      "contextNote": "Pedido da cliente fornecido; preparar roteiro para revisão do fotógrafo."
     },
     {
       "id": "MSG-SV08",
@@ -240,10 +240,10 @@
     },
     {
       "id": "MSG-AG06",
-      "category": "AG",
-      "targetSubtype": "AG02",
-      "text": "Quais horários já tenho ocupados na sexta?",
-      "contextNote": "Pode responder ocupações sem expediente configurado."
+      "category": "AR",
+      "targetSubtype": "AR02",
+      "text": "Nesse arquivo, o que ficou combinado sobre o prazo?",
+      "contextNote": "Responder com base no arquivo fornecido; informar se o prazo não constar."
     },
     {
       "id": "MSG-AG07",
@@ -542,9 +542,9 @@
     {
       "id": "MSG-AR01",
       "category": "AR",
-      "targetSubtype": "AR01",
-      "text": "Guarda esse PDF no serviço da Marina.",
-      "contextNote": "Arquivo realmente recebido antes da confirmação."
+      "targetSubtype": "AR04",
+      "text": "Transforma essas anotações em um documento para eu conferir.",
+      "contextNote": "Preparar apenas com as anotações fornecidas, para revisão do profissional."
     },
     {
       "id": "MSG-AR02",
@@ -599,15 +599,15 @@
       "id": "MSG-AR09",
       "category": "AR",
       "targetSubtype": "AR02",
-      "text": "Me mostra os documentos dessa instalação.",
-      "contextNote": "Lista dos documentos do serviço."
+      "text": "Resuma o arquivo que anexei e destaque os pontos principais.",
+      "contextNote": "Arquivo recebido e legível; resumir apenas o conteúdo disponível."
     },
     {
       "id": "MSG-AR10",
       "category": "AR",
       "targetSubtype": "AR03",
-      "text": "Esse PDF é uma nova versão da proposta.",
-      "contextNote": "Upload não muda combinado aprovado."
+      "text": "Atualiza esse documento com as observações que enviei.",
+      "contextNote": "Documento identificado; usar observações fornecidas e preservar versões/aprovações."
     },
     {
       "id": "MSG-AR11",

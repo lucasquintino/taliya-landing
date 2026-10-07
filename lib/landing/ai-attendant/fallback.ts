@@ -173,8 +173,8 @@ export function createGuidedFallbackTurn(config: NicheLandingConfig, request: Ai
       assistantMessages: [
         createAssistantMessage(
           config.floatingAgent.guidedDemoReady
-            ? "Hoje nao vamos trabalhar com trial publico gratuito. Para reduzir risco, existe garantia de 30 dias quando configurada e a demonstracao guiada real mostra a Taliya funcionando antes de voce decidir."
-            : "Hoje nao vamos trabalhar com trial publico gratuito. Para reduzir risco, existe garantia de 30 dias quando configurada; enquanto a demo real nao esta ativa, posso te explicar o fluxo ou continuar pelo WhatsApp com contexto.",
+            ? "Hoje nao vamos trabalhar com trial publico gratuito. Para reduzir risco, existe garantia de 14 dias quando configurada e a demonstracao guiada real mostra a Taliya funcionando antes de voce decidir."
+            : "Hoje nao vamos trabalhar com trial publico gratuito. Para reduzir risco, existe garantia de 14 dias quando configurada; enquanto a demo real nao esta ativa, posso te explicar o fluxo ou continuar pelo WhatsApp com contexto.",
           "guided_demo",
         ),
       ],

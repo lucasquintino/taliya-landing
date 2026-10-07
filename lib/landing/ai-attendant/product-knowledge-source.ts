@@ -72,7 +72,7 @@ function buildProductKnowledge(config: NicheLandingConfig) {
         "Pelo que você contou, faz sentido deixar seu studio no radar.\n\nHoje estamos trabalhando com um número pequeno de studios, para acompanhar de perto cada implantação.\n\nCaso tenha interesse, posso colocar seu studio na lista de espera e te chamar quando abrir uma próxima janela.",
     },
     commercialPolicies: {
-      guaranteeCancellation: "30 dias de garantia na primeira assinatura. Cancelamento mensal sem multa apos esse periodo, conforme politica vigente.",
+      guaranteeCancellation: "14 dias de garantia na primeira assinatura. Cancelamento mensal sem multa apos esse periodo, conforme politica vigente.",
       unsupportedClaims: [
         "ROI garantido",
         "integração específica sem confirmação",

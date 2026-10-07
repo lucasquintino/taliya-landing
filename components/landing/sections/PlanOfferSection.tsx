@@ -15,7 +15,7 @@ export function PlanOfferSection({
   const offer = config.launchOffer;
   const billingOption = billingPeriod === "annual" ? offer.annual : offer.monthly;
   const priceLabel = billingPeriod === "annual"
-    ? new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(offer.annual.priceBRL / 12)
+    ? "R$49,90"
     : billingOption.price;
   const periodLabel = billingPeriod === "annual" ? "por mês" : billingOption.period;
 

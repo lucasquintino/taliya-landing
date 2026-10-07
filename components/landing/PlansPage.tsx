@@ -55,7 +55,7 @@ const faqItems = [
   },
   {
     question: "Posso cancelar?",
-    answer: "Sim. Os planos públicos têm 30 dias de garantia na primeira assinatura, com cancelamento e reembolso conforme os termos comerciais.",
+    answer: "Sim. Os planos públicos têm 14 dias de garantia na primeira assinatura, com cancelamento e reembolso conforme os termos comerciais.",
   },
   {
     question: "Agente sob medida entra no plano?",

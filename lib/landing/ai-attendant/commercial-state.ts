@@ -1049,7 +1049,7 @@ function joinedWaitlistPatch(basePatch: CommercialPatch, draft: QualificationDra
 function postWaitlistDirectAnswer(normalized: string): string[] | undefined {
   if (/\b(garantia|reembolso|cancelar|cancelamento|cancelo|contrato|fidelidade)\b/.test(normalized)) {
     return [
-      "Sim. A regra comercial atual dos planos publicos considera 30 dias de garantia na primeira assinatura.",
+      "Sim. A regra comercial atual dos planos publicos considera 14 dias de garantia na primeira assinatura.",
       "Depois desse periodo, o plano mensal pode ser cancelado sem multa, mas reembolso nao e automatico.",
     ];
   }

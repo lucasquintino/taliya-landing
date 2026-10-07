@@ -387,7 +387,7 @@ export function NicheLandingPage({ config }: Props) {
       new CustomEvent("landing:open-sales-agent", {
         detail: {
           sourceSection: "studio_diagnostic",
-          message: "Quero começar meu teste grátis de 14 dias.",
+          message: "Quero começar a usar a Taliya.",
         },
       }),
     );
@@ -406,7 +406,7 @@ export function NicheLandingPage({ config }: Props) {
       new CustomEvent("landing:open-sales-agent", {
         detail: {
           sourceSection: "plan_offer",
-          message: `Quero começar os 14 dias grátis e seguir com o plano ${billingOption.label.toLowerCase()} da Taliya (${billingOption.price} ${billingOption.period}).`,
+          message: `Quero assinar o plano ${billingOption.label.toLowerCase()} da Taliya.`,
         },
       }),
     );

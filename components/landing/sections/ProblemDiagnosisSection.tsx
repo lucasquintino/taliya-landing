@@ -14,6 +14,7 @@ const agentMeta: Record<string, { token: keyof typeof agentVisualTokens; icon: s
   Retenção: { token: "retencao", icon: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4 20c1.4-3.2 4.2-5 8-5s6.6 1.8 8 5" },
   Gestão: { token: "gestao", icon: "M4 18h16M7 15v-4M12 15V7M17 15v-6" },
   Histórico: { token: "historico", icon: "M12 8v5l3 2M21 12a9 9 0 1 1-3-6.7" },
+  Produção: { token: "historico", icon: "M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6" },
 };
 
 export function ProblemDiagnosisSection({

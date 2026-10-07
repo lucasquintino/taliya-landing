@@ -45,7 +45,7 @@ export function Header({
           onClick={() => onCta(config.header.cta.label, config.header.cta.href)}
         >
           <span className="hidden sm:inline">{config.header.cta.label}</span>
-          <span className="sm:hidden">Consultor</span>
+          <span className="sm:hidden">{config.header.cta.label}</span>
           <span aria-hidden="true" className="ml-2 hidden sm:inline">→</span>
         </a>
       </div>

@@ -2,17 +2,20 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import { BatteryFull, Camera, CheckCheck, ChevronLeft, Mic, Phone, Plus, Signal, Sticker, Video, Wifi } from "lucide-react";
+
+import styles from "./IntentWhatsAppMockup.module.css";
 
 import { agentVisualTokens } from "@/data/landing/agentVisuals";
 import type { AutonomousFlowMockup, AutonomousFlowStep } from "@/data/landing/niches/types";
 
 const STEP_REVEAL_INTERVAL_MS = 2000;
 
-const stepBaseClass = "chat-line relative break-words [overflow-wrap:anywhere] shadow-sm";
+const stepBaseClass = styles.step;
 
 function getStepClass(step: AutonomousFlowStep) {
   if (step.type === "process") {
-    return "whatsapp-process-pill mx-auto flex max-w-[82%] items-center gap-2 rounded-full border border-[#E8D59D] bg-[#FFF8DF]/95 px-3 py-2 text-left text-[10px] font-black uppercase tracking-[0.10em] text-[#7A5600]";
+    return "mx-auto flex max-w-[82%] items-center gap-2 rounded-full border border-[#E8D59D] bg-[#FFF8DF]/95 px-3 py-2 text-left text-[10px] font-black uppercase tracking-[0.10em] text-[#7A5600]";
   }
 
   if (step.type === "switch") {
@@ -23,11 +26,7 @@ function getStepClass(step: AutonomousFlowStep) {
     return "mx-auto max-w-[84%] rounded-2xl border border-[#CCE8DF] bg-[#ECFFF8]/95 px-4 py-3 text-xs font-bold leading-5 text-[#0B6F61]";
   }
 
-  if (step.actor === "student") {
-    return "whatsapp-bubble-agent mr-auto max-w-[82%] rounded-[1.05rem] rounded-bl-[0.28rem] bg-white px-3.5 py-2.5 text-[13px] font-medium leading-5 text-[#111B21]";
-  }
-
-  return "whatsapp-bubble-user ml-auto max-w-[82%] rounded-[1.05rem] rounded-br-[0.28rem] bg-[#D9FDD3] px-3.5 py-2.5 text-[13px] font-medium leading-5 text-[#111B21]";
+  return `${styles.bubble} ${step.actor === "student" ? styles.incoming : styles.outgoing}`;
 }
 
 function WhatsAppFormattedText({ text }: { text: string }) {
@@ -72,7 +71,29 @@ function StepContent({ step }: { step: AutonomousFlowStep }) {
 
   return (
     <>
-      {step.speaker ? <p className="mb-1 text-[10px] font-bold text-[#667781]">{step.speaker}</p> : null}
+      {step.speaker ? <p className="sr-only">{step.speaker}</p> : null}
+      {step.attachment ? (
+        <div
+          className={`mb-2 flex min-w-0 items-center gap-[0.7em] rounded-lg p-[0.7em] ${step.actor === "student" ? "bg-[#F0F2F3]" : "bg-[#C7EBC1]"}`}
+          aria-label={`Arquivo anexado: ${step.attachment.name}, ${step.attachment.pages} ${step.attachment.pages === 1 ? "página" : "páginas"}, ${step.attachment.size}, ${step.attachment.format}`}
+        >
+          <span className="relative grid h-[3em] w-[2.25em] shrink-0 place-items-center rounded-sm border border-[#C9CDD0] bg-white" aria-hidden="true">
+            <span className="absolute -right-px -top-px h-[0.75em] w-[0.75em] border-b border-l border-[#C9CDD0] bg-[#E4E7E9]" />
+            <span className="relative mt-[1em] rounded-sm bg-[#E2574C] px-1 py-0.5 text-[0.65em] font-bold leading-none text-white">PDF</span>
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block break-words text-[1em] font-medium leading-tight text-[#111B21] [overflow-wrap:anywhere]">{step.attachment.name}</span>
+            <span className="mt-1 block text-[0.8em] leading-tight text-[#667781]">
+              {step.attachment.pages} {step.attachment.pages === 1 ? "página" : "páginas"} · {step.attachment.size} · {step.attachment.format}
+            </span>
+          </span>
+          <span className="grid h-[2em] w-[2em] shrink-0 place-items-center rounded-full border border-[#8696A0] text-[#667781]" aria-hidden="true">
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24">
+              <path d="M12 4v11m-4-4 4 4 4-4M5 17v3h14v-3" />
+            </svg>
+          </span>
+        </div>
+      ) : null}
       <WhatsAppFormattedText text={step.text} />
     </>
   );
@@ -124,72 +145,69 @@ function AutonomousWhatsAppFlowMockupContent({ flow }: { flow: AutonomousFlowMoc
   }, [visibleSteps, flow.title]);
 
   return (
-    <div className="autonomous-phone-mockup mockup-float relative mx-auto w-full max-w-[min(100%,390px)]">
-      <div className="absolute -inset-8 rounded-[4rem] bg-[radial-gradient(circle_at_50%_12%,rgba(255,255,255,0.96),rgba(255,255,255,0)_58%)] blur-2xl" />
-      <div className="autonomous-phone-frame relative rounded-[3.1rem] border border-black/20 bg-[#222] p-2 shadow-[0_34px_80px_rgba(16,27,58,0.28),0_8px_18px_rgba(16,27,58,0.16)]">
-        <div className="autonomous-phone-screen relative overflow-hidden rounded-[2.55rem] border border-white/10 bg-[#0B141A]">
-          <div className="autonomous-phone-notch absolute left-1/2 top-2 z-30 h-7 w-28 -translate-x-1/2 rounded-full bg-[#1D1F22] shadow-inner" />
-          <div className="autonomous-phone-statusbar flex h-11 items-center justify-between bg-[#0B141A] px-7 pt-2 text-[11px] font-black text-white">
-            <span>12:30</span>
-            <span className="flex items-center gap-1.5">
-              <span className="h-2 w-3 rounded-sm border border-white/70" />
-              <span className="h-2 w-3 rounded-sm border border-white/70 bg-white/80" />
-            </span>
+    <div className={styles.phone} aria-label="Demonstração de conversa no WhatsApp em um iPhone">
+      <div className={styles.frame}>
+        <div className={styles.screen}>
+          <div className={styles.island} aria-hidden="true"><span /></div>
+          <div className={styles.statusbar} aria-hidden="true">
+            <span>9:41</span>
+            <span className={styles.statusIcons}><Signal /><Wifi /><BatteryFull /></span>
           </div>
 
-          <div className="autonomous-phone-header flex items-center gap-2 bg-[#075E54] px-3 py-2 text-white">
-            <span className="autonomous-phone-back text-xl leading-none">&lt;</span>
-            <div className="autonomous-phone-avatar grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-full bg-white/95 text-[11px] font-black ring-2 ring-white/70" style={{ color: visual.accent }}>
+          <div className={styles.header}>
+            <ChevronLeft className={styles.back} aria-hidden="true" />
+            <div className={styles.avatar} style={{ color: visual.accent }}>
               {activeAvatar ? (
-                <Image alt="" className="h-full w-full object-cover" height={36} src={activeAvatar} width={36} />
+                <Image alt="" className="h-full w-full object-cover" height={40} src={activeAvatar} width={40} />
               ) : (
                 contactInitials
               )}
             </div>
-            <div className="autonomous-phone-contact min-w-0 flex-1">
-              <p className="truncate text-[13px] font-black">{activeContactName}</p>
-              <p className="truncate text-[10px] text-white/75">{flow.status} via {flow.title}</p>
+            <div className={styles.contact}>
+              <p>{activeContactName}</p>
+              <p>{flow.status}</p>
             </div>
-            <span className="h-2 w-2 rounded-full bg-white/80" />
-            <span className="h-2 w-2 rounded-full bg-white/80" />
+            <Video className={styles.headerIcon} aria-hidden="true" />
+            <Phone className={styles.headerIcon} aria-hidden="true" />
           </div>
 
           <div
             ref={chatScrollRef}
-            className="whatsapp-chat-bg relative h-[500px] space-y-2.5 overflow-y-auto p-3 scroll-smooth sm:h-[540px] lg:h-[430px] xl:h-[500px]"
+            className={styles.chat}
             key={flow.title}
+            role="region"
+            aria-label={`Conversa de ${flow.title}. Role para rever as mensagens.`}
+            tabIndex={0}
           >
-            <div className="sticky top-0 z-10 mx-auto mb-2 w-fit rounded-full bg-[#D9EAF4]/90 px-3 py-1 text-[10px] font-bold text-[#5B6B73] backdrop-blur">HOJE</div>
+            <div className={styles.date}>Hoje</div>
             {visibleFlowSteps.map((step, index) => (
               <div
                 className={`${stepBaseClass} ${getStepClass(step)}`}
                 key={`${flow.title}-${index}-${step.type}`}
               >
                 <StepContent step={step} />
-                {step.type === "message" ? <p className="mt-1 text-right text-[10px] leading-none text-[#667781]">14:{String(31 + index).padStart(2, "0")}</p> : null}
+                {step.type === "message" ? (
+                  <div className={styles.messageMeta}>
+                    <span>14:{String(31 + index).padStart(2, "0")}</span>
+                    {step.actor === "agent" ? <CheckCheck aria-hidden="true" /> : null}
+                  </div>
+                ) : null}
               </div>
             ))}
 
             {visibleSteps < flow.steps.length ? (
-              <div className="typing-pill mr-auto flex w-fit items-center rounded-[1.05rem] rounded-bl-[0.28rem] bg-white px-3.5 py-3 shadow-sm">
-                <span />
-                <span />
-                <span />
+              <div className={`typing-pill ${styles.typing}`} aria-label="Preparando a próxima mensagem">
+                <span /><span /><span />
               </div>
             ) : null}
           </div>
 
-          <div className="autonomous-phone-input flex items-center gap-2 bg-[#F0E9DF] px-2.5 py-2.5">
-            <div className="autonomous-phone-emoji grid h-8 w-8 place-items-center rounded-full bg-white text-xs font-black text-[#667781]">:)</div>
-            <div className="autonomous-phone-field flex min-h-9 flex-1 items-center rounded-full bg-white px-3 text-[12px] font-semibold text-[#8696A0] shadow-inner">Mensagem</div>
-            <div className="autonomous-phone-send grid h-9 w-9 place-items-center rounded-full text-white" style={{ backgroundColor: visual.accent }}>
-              <span className="text-lg leading-none">&gt;</span>
-            </div>
+          <div className={styles.composer} aria-hidden="true">
+            <Plus />
+            <div className={styles.field}><span>Mensagem</span><Sticker /></div>
+            <Camera /><Mic />
           </div>
-
-          <div className="autonomous-phone-homebar flex h-6 items-center justify-center bg-[#F0E9DF]">
-            <div className="h-1 w-28 rounded-full bg-black/80" />
-          </div>
+          <div className={styles.homebar} aria-hidden="true"><span /></div>
         </div>
       </div>
     </div>

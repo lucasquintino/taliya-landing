@@ -59,7 +59,7 @@ const agentExplainers: Record<string, string> = {
   retencao: "Criar e acompanhar lembretes",
   gestao: "Resumos do dia e do período",
   listagens: "Consultas por cliente, período e situação",
-  "historico-evolucao": "Orçamentos e arquivos",
+  "historico-evolucao": "Documentos e materiais de trabalho",
 };
 
 const flowNavLabels: Record<string, string> = {
@@ -100,10 +100,10 @@ const flowNavLabels: Record<string, string> = {
   F6: "Orçamentos aguardando resposta",
   F7: "Saldos em aberto",
   F8: "Fechamento do dia",
-  G1: "Orçamentos",
+  G1: "Preparar documento",
   G2: "Guardar arquivo",
-  G3: "Documento importante",
-  G4: "Versões do orçamento",
+  G3: "Encontrar e entender",
+  G4: "Versões do documento",
   G5: "Documentos do cliente",
   G12: "Histórico do serviço",
 };

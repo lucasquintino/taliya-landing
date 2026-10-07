@@ -28,7 +28,7 @@ class ProductKnowledgeSource(BaseModel):
     checkout_status: str = "unavailable"
     availability: str = "Limited rollout for a small number of studios."
     cancellation_or_guarantee_policy: str = (
-        "30 days of guarantee on the first subscription. Monthly cancellation "
+        "14 days of guarantee on the first subscription. Monthly cancellation "
         "without penalty after that period, according to the current policy."
     )
     privacy_or_data_notes: str = (

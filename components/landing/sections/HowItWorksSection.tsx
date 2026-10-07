@@ -408,7 +408,7 @@ function PilatesFocusVisual() {
         </div>
         <div className="how-topic-visual-part relative mt-3 rounded-[1.3rem] border border-[#E8D8C4] bg-white/86 px-4 py-3 text-center shadow-[0_12px_28px_rgba(138,92,46,0.08)]">
           <p className="text-[clamp(1rem,1.25vw,1.2rem)] font-black leading-snug tracking-[-0.045em] text-[#101B3A]">
-            Você cuida do seu trabalho. A Taliya organiza a rotina do seu negócio.
+            A Taliya ajuda a organizar sua rotina e a preparar seu trabalho.
           </p>
         </div>
       </div>
@@ -1151,9 +1151,6 @@ export function HowItWorksSection({ config, onSelectAgent }: { config: NicheLand
     <div className="how-it-works-stage grid min-w-0 gap-5 lg:grid-cols-[18rem_minmax(0,1fr)] lg:items-stretch xl:grid-cols-[20.5rem_minmax(0,1fr)]">
         <div className="reveal-step min-w-0 lg:sticky lg:top-24 lg:h-full lg:self-start">
           <TopicNavigation activeIndex={activeIndex} onSelect={selectTopic} topics={topics} />
-          <p className="mobile-topic-nav-helper mb-3 text-center text-sm font-bold leading-5 text-[#344054] lg:hidden">
-            Escolha um tópico e navegue pelas etapas para ver como a Taliya organiza cada parte da rotina.
-          </p>
         </div>
         <div className="landing-mobile-sticky-nav landing-mobile-topic-selector reveal-step min-w-0 lg:hidden">
           <MobileNavigation onMove={moveTopic} topic={activeTopic} />
