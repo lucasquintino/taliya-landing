@@ -625,8 +625,8 @@
     }
   ],
   "ui": {
-    "desktop": "Três faixas de oito balões na seleção inicial; não exibir os 84 ao mesmo tempo.",
-    "mobile": "Primeiras12 mensagens na lista acessível; mostrar mais12 com botão.",
+    "desktop": "Quatro faixas de seis balões na seleção inicial; não exibir os 84 ao mesmo tempo.",
+    "mobile": "Quatro faixas de seis balões, com links para as frentes e respeito à preferência de movimento reduzido.",
     "showMore": "Ver mais mensagens",
     "showLess": "Mostrar menos",
     "pause": "Pausar mensagens",

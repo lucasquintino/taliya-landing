@@ -24,3 +24,11 @@ As seis mensagens devem apontar para Produção pelo mapeamento de categoria exi
 - Cada exemplo usa anotações, arquivos, pedido ou registros fornecidos. A revisão profissional aparece no exemplo de documento; não anunciar envio automático ou decisões profissionais.
 - A etapa não confirma disponibilidade das capacidades do app. Essa confirmação permanece necessária antes da publicação.
 - Conferir diff, lint, seleção e resposta local. Inspeção visual desktop/mobile pendente caso o acesso do navegador ao preview esteja bloqueado.
+
+## Ajuste visual solicitado em 2026-10-07
+
+O usuário solicitou quatro linhas de mensagens em movimento e mais respiro vertical. Este pedido autoriza alterar distribuição e espaçamento somente do mural e substitui a preservação de três faixas do recorte anterior.
+
+- Distribuir as mesmas 24 mensagens em quatro faixas de seis, mantendo duplicação para loop, direções alternadas, pausa em hover/foco, movimento reduzido e links.
+- Aumentar espaço entre título e mural, entre linhas e no início/fim da seção em desktop e mobile.
+- Preservar textos, cores, tipografia e demais seções. Alteração local para revisão, sem publicação nesta etapa.

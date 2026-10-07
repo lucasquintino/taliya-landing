@@ -29,7 +29,7 @@ const initialMessages = messageWall.initialIds.flatMap((id) => {
   const message = messageById.get(id);
   return message ? [message] : [];
 });
-const messagesPerTrack = 8;
+const messagesPerTrack = 6;
 const messageTracks = Array.from(
   { length: Math.ceil(initialMessages.length / messagesPerTrack) },
   (_, index) => initialMessages.slice(index * messagesPerTrack, (index + 1) * messagesPerTrack),
@@ -42,7 +42,7 @@ export function MessageWallSection({
 }) {
   return (
     <SectionShell id="fale-do-seu-jeito" tone="white" className="landing-take-section" contentClassName="py-2">
-      <div className="grid gap-7 lg:gap-9">
+      <div className="grid gap-10 sm:gap-12 lg:gap-14">
         <div className="landing-one-line-title reveal-step mx-auto max-w-4xl">
           <SectionIntro
             align="center"
@@ -52,7 +52,7 @@ export function MessageWallSection({
           />
         </div>
 
-        <div className="message-wall grid gap-3" aria-label="Exemplos de mensagens para a Taliya" role="group">
+        <div className="message-wall grid gap-4 sm:gap-5" aria-label="Exemplos de mensagens para a Taliya" role="group">
           {messageTracks.map((track, trackIndex) => (
             <div className="message-wall-row overflow-hidden py-1" key={`track-${trackIndex}`}>
               <div className={`message-wall-track flex w-max ${trackIndex % 2 === 1 ? "message-wall-track--reverse" : ""}`}>

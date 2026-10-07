@@ -6,3 +6,8 @@
 - [x] T004 Conferir conteúdo, seleção, preservação, lint, diff e resposta local.
 - [ ] T005 Conferir visualmente desktop/mobile e receber revisão do usuário.
 - [ ] T006 Confirmar disponibilidade das capacidades antes de publicação.
+
+- [x] T007 Redistribuir 24 mensagens em quatro linhas e atualizar os metadados da distribuição.
+- [x] T008 Aumentar somente os espaçamentos verticais do mural.
+- [x] T009 Conferir diff, lint e resposta local; registrar limitações de inspeção visual.
+- [ ] T010 Revisão visual do usuário do novo espaçamento e das quatro linhas.
