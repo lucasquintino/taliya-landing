@@ -1,5 +1,17 @@
 # S03 — Quero que a Taliya cuide de: Produção
 
+## Orçamento anexado em Serviços — pedido de 2026-10-08
+
+Adicionar o arquivo “Orçamento - Marina.pdf” dentro da segunda mensagem da demonstração Serviços, usando o campo `attachment` e o renderizador já usados em Produção. Preservar o texto do orçamento de consultoria de R$ 850, os demais passos e o layout. Metadados ilustrativos: PDF, uma página, 84 kB. Sem upload ou download real.
+
+## Visibilidade e ordem — pedido de 2026-10-08
+
+Trocar Agenda e Resumos de posição nos seletores, mantendo Serviços na segunda posição e as demais opções nas posições atuais. Agenda deve ser a seleção inicial.
+
+O celular começa sem mensagens. A revelação e a rolagem só começam quando o aparelho estiver visível na janela; esperar na Hero não deve avançar a conversa. Pausar a revelação fora da tela, conservando o progresso para continuar ao voltar. Ao trocar opção, iniciar a nova conversa desde o começo. Com movimento reduzido, apresentar a conversa completa somente depois de entrar na tela, sem rolagem suave.
+
+Escopo: somente a landing, ordem dos seletores, seleção inicial e ciclo de reprodução do celular. Preservar os seis roteiros, identidade visual, anexos, controles, preços e demais seções. Ajuste local para revisão.
+
 Data: 2026-10-07. Autoridade: aprovação direta do usuário nesta conversa.
 
 ## Escopo

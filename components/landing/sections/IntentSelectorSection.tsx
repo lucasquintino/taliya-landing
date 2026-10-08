@@ -13,6 +13,11 @@ export function IntentSelectorSection({
   onSelectPain: (painId: string) => void;
 }) {
   const visiblePains = pains.filter((pain) => pain.autonomousFlow);
+  const agendaIndex = visiblePains.findIndex((pain) => pain.id === "agenda");
+  const summariesIndex = visiblePains.findIndex((pain) => pain.id === "resumos");
+  if (agendaIndex >= 0 && summariesIndex >= 0) {
+    [visiblePains[agendaIndex], visiblePains[summariesIndex]] = [visiblePains[summariesIndex], visiblePains[agendaIndex]];
+  }
   const painPersonaMeta: Record<string, { agent: keyof typeof agentVisualTokens; icon: string; label: string }> = {
     resumos: { agent: "gestao", label: "Dia, semana e serviço", icon: "M4 18h16M7 15v-4M12 15V7M17 15v-6" },
     servicos: { agent: "atendimento", label: "Pacotes e sessões", icon: "M4 7h16v13H4zM7 4h10v3M8 11h8M8 15h5" },

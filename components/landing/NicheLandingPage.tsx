@@ -39,7 +39,7 @@ const SALES_START_FIRST_CARD_DELAY_MS = 40;
 const SALES_START_CARD_INTERVAL_MS = 170;
 
 export function NicheLandingPage({ config }: Props) {
-  const [selectedPain, setSelectedPain] = useState(config.pains[0]);
+  const [selectedPain, setSelectedPain] = useState(() => config.pains.find((pain) => pain.id === "agenda") ?? config.pains[0]);
   const [selectedMode, setSelectedMode] = useState<ProblemModeId>(config.diagnosis.modes[0].id);
   const [selectedAgent, setSelectedAgent] = useState(config.agents[0]);
   const [activeSection, setActiveSection] = useState("top");

@@ -1,5 +1,16 @@
 # Tarefas — nomenclatura aprovada S03
 
+- [x] A001 Adicionar o anexo à segunda mensagem de Serviços, usando o padrão existente de Produção.
+- [x] A002 Conferir alteração focalizada, lint e preview local; revisão visual pendente.
+
+## Ordem e início por visibilidade — 2026-10-08
+
+- [x] V001 Inspecionar seleção inicial, opções e ciclo de temporizador/rolagem.
+- [x] V002 Trocar Agenda e Resumos nos seletores e iniciar com Agenda.
+- [x] V003 Revelar mensagens somente com o celular visível; pausar fora da tela; preservar reinício ao trocar opção e movimento reduzido.
+- [x] V004 Conferir tipos, lint, espera fora da tela, entrada, pausa/retomada e redução de movimento.
+- [ ] V005 Revisão visual desktop/mobile e revisão do usuário; preview local na porta 3001.
+
 - [x] T001 Conferir os campos usados pelos seletores desktop/mobile.
 - [x] T002 Alterar somente o rótulo e o título para Produção, preservando IDs e demonstração.
 - [x] T003 Conferir diff e resposta da landing local na porta 3001: HTTP 200, Produção no HTML, rótulos conferidos e diff sem erros de whitespace.

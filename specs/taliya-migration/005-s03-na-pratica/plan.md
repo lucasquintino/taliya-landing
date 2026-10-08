@@ -1,5 +1,12 @@
 # Plano — demonstração de Produção
 
+## Ordem e reprodução — 2026-10-08
+
+1. Trocar apenas as posições de Agenda e Resumos na lista renderizada e selecionar Agenda na inicialização da landing.
+2. Observar o aparelho com IntersectionObserver, descontando 80px do topo para o header e exigindo 15% de interseção. Começar com zero mensagens e bloquear temporizadores/rolagem enquanto o aparelho estiver fora da tela.
+3. Pausar os temporizadores quando sair da tela e retomar o progresso ao voltar. Preservar reinício por chave ao trocar roteiro e mostrar todo o conteúdo sem animação somente ao entrar na tela com movimento reduzido.
+4. Conferir tipos, lint e comportamento com observador/temporizadores simulados. A conferência visual permanece pendente se o navegador estiver bloqueado.
+
 1. Atualizar somente o objeto de intenção `documentos` em `pilates.ts`: linguagem comum, orçamento primeiro, arquivos gerados/anexados e revisão pelo profissional.
 2. Adicionar dados opcionais de anexo às mensagens existentes no contrato de mockup. Renderizar o cartão somente se houver anexo, dentro do balão original, com a legenda da mensagem abaixo e horário já existente.
 3. Alinhar a descrição da opção em `IntentSelectorSection.tsx` sem mudar seleção ou estrutura.

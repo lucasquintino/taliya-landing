@@ -132,7 +132,7 @@ export const pilatesLanding: NicheLandingConfig = {
       agentId: "vendas",
       steps: [
         { type: "message", actor: "agent", speaker: "Você", text: "Cria um orçamento para a Marina: 1 serviço avulso de consultoria por R$ 850." },
-        { type: "message", actor: "student", speaker: "Taliya", text: "🧾 *Orçamento · Marina*\n• Serviço: consultoria avulsa\n• Quantidade: 1\n• Valor: R$ 850\n• Total: R$ 850\n• Situação: aguardando aprovação" },
+        { type: "message", actor: "student", speaker: "Taliya", text: "🧾 *Orçamento · Marina*\n• Serviço: consultoria avulsa\n• Quantidade: 1\n• Valor: R$ 850\n• Total: R$ 850\n• Situação: aguardando aprovação", attachment: { name: "Orçamento - Marina.pdf", format: "PDF", pages: 1, size: "84 kB" } },
         { type: "message", actor: "agent", speaker: "Você", text: "A Marina aprovou. Reserva terça-feira às 14h." },
         { type: "message", actor: "student", speaker: "Taliya", text: "✅ *Orçamento aprovado*\n• Consultoria avulsa · R$ 850\n\n📅 *Horário reservado*\n• Terça-feira, às 14h" },
         { type: "message", actor: "agent", speaker: "Você", text: "Remarca para quarta-feira às 10h." },

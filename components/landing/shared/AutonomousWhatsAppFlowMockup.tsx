@@ -101,8 +101,10 @@ function StepContent({ step }: { step: AutonomousFlowStep }) {
 
 function AutonomousWhatsAppFlowMockupContent({ flow }: { flow: AutonomousFlowMockup }) {
   const visual = agentVisualTokens[flow.agentId] ?? agentVisualTokens.atendimento;
+  const phoneRef = useRef<HTMLDivElement>(null);
   const chatScrollRef = useRef<HTMLDivElement>(null);
-  const [visibleSteps, setVisibleSteps] = useState(1);
+  const [isVisible, setIsVisible] = useState(false);
+  const [visibleSteps, setVisibleSteps] = useState(0);
   const visibleFlowSteps = useMemo(() => flow.steps.slice(0, visibleSteps), [flow.steps, visibleSteps]);
   const activeContactName = useMemo(() => {
     const latestSwitch = visibleFlowSteps.findLast((step) => step.type === "switch");
@@ -119,21 +121,33 @@ function AutonomousWhatsAppFlowMockupContent({ flow }: { flow: AutonomousFlowMoc
   const activeAvatar = flow.contactAvatars?.[activeContactName];
 
   useEffect(() => {
+    const phone = phoneRef.current;
+    if (!phone) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(Boolean(entry?.isIntersecting && entry.intersectionRatio >= 0.15)),
+      { rootMargin: "-80px 0px 0px 0px", threshold: 0.15 },
+    );
+    observer.observe(phone);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible || visibleSteps >= flow.steps.length) return;
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
       const timeout = window.setTimeout(() => setVisibleSteps(flow.steps.length), 0);
       return () => window.clearTimeout(timeout);
     }
-    if (visibleSteps >= flow.steps.length) return;
-
     const timeout = window.setTimeout(() => {
       setVisibleSteps((current) => Math.min(current + 1, flow.steps.length));
-    }, STEP_REVEAL_INTERVAL_MS);
+    }, visibleSteps === 0 ? 0 : STEP_REVEAL_INTERVAL_MS);
 
     return () => window.clearTimeout(timeout);
-  }, [flow.steps.length, visibleSteps]);
+  }, [flow.steps.length, isVisible, visibleSteps]);
 
   useEffect(() => {
+    if (!isVisible || visibleSteps === 0) return;
     const chatScroll = chatScrollRef.current;
     if (!chatScroll) return;
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -142,10 +156,10 @@ function AutonomousWhatsAppFlowMockupContent({ flow }: { flow: AutonomousFlowMoc
       top: chatScroll.scrollHeight,
       behavior: prefersReducedMotion ? "auto" : "smooth",
     });
-  }, [visibleSteps, flow.title]);
+  }, [isVisible, visibleSteps, flow.title]);
 
   return (
-    <div className={styles.phone} aria-label="Demonstração de conversa no WhatsApp em um iPhone">
+    <div ref={phoneRef} className={styles.phone} aria-label="Demonstração de conversa no WhatsApp em um iPhone">
       <div className={styles.frame}>
         <div className={styles.screen}>
           <div className={styles.island} aria-hidden="true"><span /></div>
@@ -195,7 +209,7 @@ function AutonomousWhatsAppFlowMockupContent({ flow }: { flow: AutonomousFlowMoc
               </div>
             ))}
 
-            {visibleSteps < flow.steps.length ? (
+            {isVisible && visibleSteps < flow.steps.length ? (
               <div className={`typing-pill ${styles.typing}`} aria-label="Preparando a próxima mensagem">
                 <span /><span /><span />
               </div>

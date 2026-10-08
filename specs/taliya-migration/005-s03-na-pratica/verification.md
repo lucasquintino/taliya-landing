@@ -36,3 +36,17 @@ Arquivos e metadados são ilustrativos, sem geração, upload ou download reais.
 ### Limite visual desta etapa
 
 Não houve inspeção visual desktop/mobile nem comparação pixel a pixel com o WhatsApp. O acesso local foi rejeitado pela política da ferramenta de navegador nesta conversa; não foi usado outro navegador, Playwright ou renderização alternativa para contornar essa rejeição. A revisão humana permanece pendente em http://localhost:3001/#intencoes . Em telas baixas, o cartão pode ultrapassar a janela e a página rola normalmente para manter o aparelho legível. Nenhuma publicação.
+
+
+## Ordem e visibilidade — 2026-10-08
+
+- TypeScript sem emissão: passou. ESLint dos três arquivos: sem erros; um aviso preexistente sobre `trackHumanWhatsApp` não usado. Diff sem erros de whitespace.
+- Teste de comportamento com hooks, observador e relógio simulados: esperar 30 segundos fora da tela não revela mensagens nem rola; interseção abaixo de 15% não inicia; entrada revela a primeira mensagem; mensagens seguintes respeitam 2 segundos; saída cancela o temporizador; retorno retoma o progresso; término não agenda novos timers; nova instância começa vazia. Movimento reduzido só mostra todas as mensagens ao entrar, com rolagem sem suavização. Esses testes não substituem interação real no navegador.
+- Servidor local reiniciado na porta 3001: HTTP 200. HTML inicial confirma Agenda selecionada e ordem Agenda, Serviços, Resumos, Listagens, Recebimentos, Produção; a conversa começa sem mensagens renderizadas.
+- Revisão visual desktop/mobile e revisão humana pendentes. Acesso do navegador bloqueado anteriormente nesta conversa; não utilizado outro meio para contornar. Alteração somente local, sem commit/push/deploy nesta etapa.
+
+
+## Anexo em Serviços — 2026-10-08
+
+- Diff de `pilates.ts`: somente `attachment` adicionado à segunda mensagem de Serviços; texto, valor e demais passos preservados. Usa o renderizador compartilhado já existente para anexos de Produção.
+- ESLint e diff sem erros; preview local HTTP 200. Inspeção visual do balão pendente; alteração somente local nesta etapa.
