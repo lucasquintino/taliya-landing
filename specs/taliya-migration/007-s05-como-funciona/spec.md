@@ -36,3 +36,10 @@ Alterar somente “O que você pode fazer” e “Feita para o seu negócio”. 
 - Não alterar outras abas, cartões, componentes, layout, responsividade, navegação, preços ou telas do app.
 - A disponibilidade real das capacidades de leitura e preparação de materiais deve ser confirmada antes da publicação.
 - Conferir diff e resposta local. Fazer inspeção visual desktop/mobile quando o preview estiver acessível.
+
+## Correção aprovada — barra inferior do mock (2026-10-09)
+
+- Corrigir somente a posição da barra inferior do app em “WhatsApp e app”.
+- Fazer o contêiner da Agenda preencher a altura disponível no celular, mantendo a barra junto à base com seu espaçamento existente.
+- Preservar escala, conteúdo, conversa, sincronização, controles e componentes copiados do app.
+- Conferir desktop e mobile e apresentar prints locais como evidência. Este recorte não autoriza publicação.

@@ -555,7 +555,7 @@ function CopilotoAgendaPhone({ stage, topic }: { stage: AgendaDemoStage; topic: 
     <PhoneFrame compact>
       <div className="relative h-full w-full overflow-hidden bg-[#F4F8FA]">
         <div className="absolute left-0 top-0 h-[235%] w-[235%] origin-top-left scale-[0.425]">
-          <div aria-label="Agenda do Copiloto" className="relative h-full overflow-hidden bg-[#F4F8FA] text-[#14182F]">
+          <div aria-label="Agenda do Copiloto" className="relative flex h-full flex-col overflow-hidden bg-[#F4F8FA] text-[#14182F]">
             <AgendaScreen
               days={days}
               entries={entries}
