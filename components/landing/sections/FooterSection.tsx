@@ -70,6 +70,7 @@ export function FooterSection({ config }: { config: NicheLandingConfig }) {
           </div>
         </div>
         <div className="mt-8 border-t border-white/10 pt-5 text-xs font-bold leading-5 text-white/50">
+          <p className="text-white/74">TALIYA INOVA SIMPLES (I.S.) · CNPJ 69.584.998/0001-15</p>
           <p>© {currentYear} Taliya. Todos os direitos reservados.</p>
         </div>
       </div>
