@@ -6,7 +6,7 @@ import { absoluteSiteUrl } from "@/lib/landing/seo";
 
 const privacyTitle = "Política de privacidade | Taliya";
 const privacyDescription =
-  "Saiba como a Taliya trata dados pessoais no site, no assistente de IA e nos canais de atendimento comercial.";
+  "Saiba como a Taliya trata dados pessoais no aplicativo, no site, no assistente de IA e nos canais de atendimento.";
 
 export const metadata: Metadata = {
   title: privacyTitle,
@@ -38,6 +38,9 @@ const privacyEmail = "contato@taliya.com.br";
 const tableOfContents = [
   ["resumo", "Resumo"],
   ["escopo", "Escopo deste aviso"],
+  ["acesso-app", "Aplicativo e acesso"],
+  ["dados-app", "Dados do aplicativo"],
+  ["seguranca-app", "Segurança da conta"],
   ["dados", "Dados que usamos"],
   ["uso", "Como usamos"],
   ["ia-whatsapp", "IA e WhatsApp"],
@@ -119,10 +122,10 @@ export default function PrivacyPage() {
               Política de privacidade
             </h1>
             <p className="mt-5 max-w-3xl text-base font-semibold leading-7 text-[#667085]">
-              Esta página explica como a Taliya trata dados pessoais quando você acessa o site, conversa com o assistente
-              ou solicita atendimento pelos canais comerciais.
+              Esta página explica como a Taliya trata dados pessoais quando você utiliza o aplicativo, acessa o site,
+              conversa com o assistente ou solicita atendimento pelos canais comerciais.
             </p>
-            <p className="mt-4 text-sm font-black text-[#344054]">Última atualização: 28 de setembro de 2026</p>
+            <p className="mt-4 text-sm font-black text-[#344054]">Última atualização: 14 de outubro de 2026</p>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {summaryItems.map((item) => (
@@ -136,17 +139,52 @@ export default function PrivacyPage() {
           <div className="mt-8 grid gap-6">
             <PolicySection id="escopo" title="Escopo deste aviso">
               <p>
-                Este aviso cobre o site da Taliya, o assistente comercial, os formulários de interesse e o atendimento
-                pelo WhatsApp. Ele trata das informações usadas para apresentar o serviço e responder às solicitações
-                comerciais.
+                Este aviso cobre o aplicativo Taliya, o site, o assistente comercial, os formulários de interesse e o
+                atendimento pelo WhatsApp. Ele trata das informações usadas para acessar e utilizar o aplicativo,
+                apresentar o serviço e responder às solicitações comerciais.
               </p>
               <p>
-                As informações de clientes, serviços, agenda e recebimentos que uma pessoa usuária registra durante a
-                operação do negócio têm finalidade diferente. Não envie dados pessoais de clientes nem informações
+                As informações de clientes, serviços, agenda e recebimentos registradas no aplicativo apoiam a operação
+                do seu negócio, conforme descrito abaixo. Não envie dados pessoais de clientes nem informações
                 sensíveis pelo assistente comercial.
               </p>
               <p>
                 Para assuntos relacionados a estes canais, o contato de privacidade da Taliya é {privacyEmail}.
+              </p>
+            </PolicySection>
+
+            <PolicySection id="acesso-app" title="Aplicativo e acesso à conta">
+              <p>
+                Este aviso também cobre o cadastro e o uso do aplicativo Taliya. Usamos seu e-mail e número de celular
+                para identificar sua conta e confirmar seu acesso. Quando você solicita um código, o Resend processa
+                o envio por e-mail e a Meta/WhatsApp processa o envio ao seu celular, incluindo as informações
+                necessárias para informar se a mensagem foi entregue. O Supabase fornece autenticação e armazenamento
+                dos dados do aplicativo.
+              </p>
+            </PolicySection>
+
+            <PolicySection id="dados-app" title="Dados registrados no aplicativo">
+              <p>
+                Para executar as funções que você solicita, a Taliya trata as informações do seu negócio e os dados
+                de clientes, serviços, agenda e pagamentos que você registra. Você deve informar apenas os dados
+                necessários à sua operação e ter autorização ou outra base legal adequada para tratar os dados dos
+                seus clientes. Esses dados não são utilizados para enviar publicidade aos seus clientes.
+              </p>
+              <p>
+                Quando você utiliza os recursos de inteligência artificial, as informações necessárias ao seu pedido
+                podem ser processadas pela OpenAI para preparar a resposta ou a ação solicitada. Esses recursos não
+                precisam de senhas, códigos de acesso ou dados completos de cartões; não informe esses dados nas
+                conversas.
+              </p>
+            </PolicySection>
+
+            <PolicySection id="seguranca-app" title="Segurança e direitos no aplicativo">
+              <p>
+                Os registros técnicos de envio de códigos não incluem o código de acesso nem o conteúdo das
+                conversas. O acesso aos dados da sua operação é limitado à conta autorizada. Para solicitar acesso,
+                correção ou exclusão dos dados, utilize {privacyEmail}. Poderemos pedir informações suficientes para
+                confirmar sua identidade e localizar os registros. Dados poderão ser mantidos quando necessário para
+                cumprir obrigações legais ou exercer direitos.
               </p>
             </PolicySection>
 
