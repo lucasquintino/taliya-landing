@@ -4309,6 +4309,7 @@ body {
   }
 
   #intencoes .intent-selected-label {
+    line-height: 1.25;
     overflow: hidden;
     text-overflow: ellipsis;
   }

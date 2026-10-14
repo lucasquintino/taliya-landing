@@ -1,5 +1,11 @@
 # Tarefas — nomenclatura aprovada S03
 
+## Rótulo do seletor — 2026-10-14
+
+- [x] R001 Confirmar o corte: altura de linha de 0,98 com `overflow: hidden` no celular.
+- [x] R002 Ajustar somente a altura de linha do rótulo selecionado para 1,25.
+- [x] R003 Conferir em 320, 390, 768 e 1440 px: altura de linha mobile de 1,25; tablet/desktop preservados. Troca das seis opções e fechamento do menu passaram; print de Agenda conferido sem corte; `git diff --check` passou.
+
 - [x] A001 Adicionar o anexo à segunda mensagem de Serviços, usando o padrão existente de Produção.
 - [x] A002 Conferir alteração focalizada, lint e preview local; revisão visual pendente.
 

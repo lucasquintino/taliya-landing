@@ -1,5 +1,9 @@
 # S03 — Quero que a Taliya cuide de: Produção
 
+## Rótulo do seletor sem corte — 2026-10-14
+
+Corrigir somente o corte inferior de letras como o “g” de Agenda no rótulo selecionado em telas pequenas. Dar altura de linha suficiente ao texto, preservando reticências horizontais, opções, cores, fonte e comportamento do seletor. Conferir celular, tablet e desktop no preview local.
+
 ## Orçamento anexado em Serviços — pedido de 2026-10-08
 
 Adicionar o arquivo “Orçamento - Marina.pdf” dentro da segunda mensagem da demonstração Serviços, usando o campo `attachment` e o renderizador já usados em Produção. Preservar o texto do orçamento de consultoria de R$ 850, os demais passos e o layout. Metadados ilustrativos: PDF, uma página, 84 kB. Sem upload ou download real.
