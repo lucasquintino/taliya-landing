@@ -565,8 +565,8 @@ export const pilatesLanding: NicheLandingConfig = {
       role: "Avulso, pacote e plano",
       pain: "Pedidos, orçamentos e detalhes dos serviços ficam espalhados.",
       action:
-        "Organiza serviços avulsos, pacotes e planos, com escopo, valores e orçamento.",
-      result: "O combinado acompanha o serviço até a contratação e a execução.",
+        "Organiza o que você oferece, o combinado com cada cliente e o andamento dos serviços.",
+      result: "Avulso, pacote ou plano. Do combinado à conclusão.",
       accent: "#F2A93B",
       workspace: {
         title: "Interessados prontos para contato",
