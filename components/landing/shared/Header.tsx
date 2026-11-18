@@ -42,6 +42,8 @@ export function Header({
         <a
           className="interactive-hit inline-flex shrink-0 items-center justify-center rounded-full bg-[#101B3A] px-3 py-3 text-xs font-black text-white shadow-[0_18px_45px_rgba(16,27,58,0.20)] transition hover:bg-[#17254B] focus:outline-none focus:ring-2 focus:ring-[#0E8F7E] focus:ring-offset-2 sm:px-4 sm:text-sm"
           href={config.header.cta.href}
+          rel={config.header.cta.href.startsWith("http") ? "noreferrer" : undefined}
+          target={config.header.cta.href.startsWith("http") ? "_blank" : undefined}
           onClick={() => onCta(config.header.cta.label, config.header.cta.href)}
         >
           <span className="hidden sm:inline">{config.header.cta.label}</span>
@@ -86,6 +88,8 @@ export function TrackedLink({
     <a
       className={`interactive-hit group inline-flex max-w-full items-center justify-center rounded-full text-center font-black transition focus:outline-none focus:ring-2 focus:ring-[#0E8F7E] focus:ring-offset-2 ${sizeClass} ${variantClass} ${className}`}
       href={cta.href}
+      rel={cta.href.startsWith("http") ? "noreferrer" : undefined}
+      target={cta.href.startsWith("http") ? "_blank" : undefined}
       onClick={() => onCta(cta.label, cta.href)}
     >
       <span className="truncate">{cta.label}</span>
