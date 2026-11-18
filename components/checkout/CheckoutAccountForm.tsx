@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { checkoutAiNoticeVersion, type AccountAccessConfig } from "../../lib/checkout/account-config";
 import { checkoutPhone, requestCheckoutCode, verifyCheckoutCode } from "../../lib/checkout/account-client";
 import { validateCheckoutLegalAcceptance } from "../../lib/legal/documents";
+import { recordObservedAcquisition } from "../../lib/landing/acquisition";
 import { CheckoutLegalAcceptance } from "./CheckoutLegalAcceptance";
 
 export function CheckoutAccountForm({ config }: { config: AccountAccessConfig }) {
@@ -35,6 +36,8 @@ export function CheckoutAccountForm({ config }: { config: AccountAccessConfig })
         if (!normalized) throw new Error("Informe seu celular com DDD.");
         await requestCheckoutCode(config, normalized);
         setPhone(normalized); setStage("code"); setWait(30);
+        // Funnel step only: the phone is never sent with the event.
+        void recordObservedAcquisition("signup_code_requested", {});
       } else if (stage === "code") {
         // Aceite decorre deste envio explícito do cadastro, não de visitar a tela
         // ou apenas solicitar o código. Versões continuam conferidas no servidor.
@@ -59,6 +62,8 @@ export function CheckoutAccountForm({ config }: { config: AccountAccessConfig })
         }
         if (!result.receipt?.id) throw new Error("O cadastro ainda não foi confirmado. Tente salvar novamente.");
         setAccessToken(null); setCode(""); setStage("complete");
+        // Observed in the browser after the server receipt; the account itself is the source of truth.
+        void recordObservedAcquisition("signup_completed", {});
       }
     } catch (failure) {
       setError(failure instanceof Error && failure.name !== "TimeoutError" && failure.name !== "TypeError" ? failure.message : "A conexão falhou. Tente novamente; seus dados continuam nesta tela.");

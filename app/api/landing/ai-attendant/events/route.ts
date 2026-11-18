@@ -1,4 +1,5 @@
-import { recordLandingInteractionEvent } from "@/lib/landing/ai-attendant/funnel-events";
+import { recordLandingInteractionEvent, type LandingInteractionEventName } from "@/lib/landing/ai-attendant/funnel-events";
+import { isInteractionEvent } from "@/lib/landing/acquisition-events";
 
 const allowedEvents = new Set(["widget_opened", "cta_clicked", "page_viewed"]);
 
@@ -25,17 +26,18 @@ export async function POST(request: Request) {
   const eventName = text(body.eventName);
   const occurrenceId = text(body.occurrenceId);
   const sessionId = text(body.sessionId);
-  if (!allowedEvents.has(eventName) || !occurrenceId || !sessionId) {
+  if (!(allowedEvents.has(eventName) || isInteractionEvent(eventName)) || !occurrenceId || !sessionId) {
     return Response.json({ error: "Invalid landing event." }, { status: 400 });
   }
 
-  if (eventName === "page_viewed" && process.env.NEXT_PUBLIC_TALIYA_ACQUISITION_ENABLED !== "true") return Response.json({ ok: true, state: "not_configured" });
+  if ((eventName === "page_viewed" || isInteractionEvent(eventName)) && process.env.NEXT_PUBLIC_TALIYA_ACQUISITION_ENABLED !== "true") return Response.json({ ok: true, state: "not_configured" });
   await recordLandingInteractionEvent({
-    eventName: eventName as "widget_opened" | "cta_clicked" | "page_viewed",
+    eventName: eventName as LandingInteractionEventName,
     occurrenceId,
     sessionId,
-    leadId: eventName === "page_viewed" ? undefined : text(body.leadId) || undefined,
-    channel: eventName === "page_viewed" ? "web" : text(body.channel) || "web",
+    // Only the widget may tie an event to a lead; page views and interactions stay anonymous.
+    leadId: eventName === "widget_opened" || eventName === "cta_clicked" ? text(body.leadId) || undefined : undefined,
+    channel: eventName === "page_viewed" || isInteractionEvent(eventName) ? "web" : text(body.channel) || "web",
     sourcePage: text(body.sourcePage) || undefined,
     sourceSection: text(body.sourceSection) || undefined,
     metadata: record(body.metadata),
