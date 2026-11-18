@@ -1,11 +1,23 @@
 import { recordLandingInteractionEvent } from "@/lib/landing/ai-attendant/funnel-events";
 
-const allowedEvents = new Set(["widget_opened", "cta_clicked"]);
+const allowedEvents = new Set(["widget_opened", "cta_clicked", "page_viewed"]);
 
 export async function POST(request: Request) {
+  const origin = request.headers.get("origin");
+  if (origin) {
+    try {
+      const parsed = new URL(origin);
+      // Next dev may normalize request.url to localhost while Host retains 127.0.0.1.
+      if (!["http:", "https:"].includes(parsed.protocol) || parsed.host !== request.headers.get("host")) return Response.json({ error: "Invalid origin." }, { status: 403 });
+    } catch { return Response.json({ error: "Invalid origin." }, { status: 403 }); }
+  }
   let body: Record<string, unknown>;
   try {
-    body = await request.json() as Record<string, unknown>;
+    const raw = await request.text();
+    if (raw.length > 8192) return Response.json({ error: "Event too large." }, { status: 413 });
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return Response.json({ error: "Invalid event." }, { status: 400 });
+    body = parsed as Record<string, unknown>;
   } catch {
     return Response.json({ error: "Invalid JSON body." }, { status: 400 });
   }
@@ -17,12 +29,13 @@ export async function POST(request: Request) {
     return Response.json({ error: "Invalid landing event." }, { status: 400 });
   }
 
+  if (eventName === "page_viewed" && process.env.NEXT_PUBLIC_TALIYA_ACQUISITION_ENABLED !== "true") return Response.json({ ok: true, state: "not_configured" });
   await recordLandingInteractionEvent({
-    eventName: eventName as "widget_opened" | "cta_clicked",
+    eventName: eventName as "widget_opened" | "cta_clicked" | "page_viewed",
     occurrenceId,
     sessionId,
-    leadId: text(body.leadId) || undefined,
-    channel: text(body.channel) || "web",
+    leadId: eventName === "page_viewed" ? undefined : text(body.leadId) || undefined,
+    channel: eventName === "page_viewed" ? "web" : text(body.channel) || "web",
     sourcePage: text(body.sourcePage) || undefined,
     sourceSection: text(body.sourceSection) || undefined,
     metadata: record(body.metadata),

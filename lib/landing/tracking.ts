@@ -1,3 +1,4 @@
+import { recordObservedAcquisition } from "./acquisition";
 import type { TrackingContext } from "@/data/landing/niches/types";
 
 export type LandingEventName =
@@ -81,6 +82,7 @@ export function trackLandingEvent(
   };
 
   if (typeof window !== "undefined") {
+    void recordObservedAcquisition(eventName, metadata);
     window.dispatchEvent(new CustomEvent("landing:event", { detail: payload }));
     console.log("[landing:event]", payload);
   }

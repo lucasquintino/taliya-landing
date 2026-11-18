@@ -19,6 +19,7 @@ import { Header } from "./shared/Header";
 
 type Props = {
   config: NicheLandingConfig;
+  accountCheckoutEnabled?: boolean;
 };
 
 const observedSections = [
@@ -38,7 +39,7 @@ const observedSections = [
 const SALES_START_FIRST_CARD_DELAY_MS = 40;
 const SALES_START_CARD_INTERVAL_MS = 170;
 
-export function NicheLandingPage({ config }: Props) {
+export function NicheLandingPage({ config, accountCheckoutEnabled = false }: Props) {
   const [selectedPain, setSelectedPain] = useState(() => config.pains.find((pain) => pain.id === "agenda") ?? config.pains[0]);
   const [selectedMode, setSelectedMode] = useState<ProblemModeId>(config.diagnosis.modes[0].id);
   const [selectedAgent, setSelectedAgent] = useState(config.agents[0]);
@@ -374,7 +375,30 @@ export function NicheLandingPage({ config }: Props) {
     });
   }
 
+  /** Quando o "Começar agora" do topo leva ao WhatsApp, os botões de começar da página vão para o mesmo número. */
+  function startWhatsAppHref() {
+    const href = config.hero.primaryCta.href;
+    return href.startsWith("https://wa.me/") ? href : null;
+  }
+
+  function openStartWhatsApp(href: string) {
+    window.open(href, "_blank", "noopener,noreferrer");
+  }
+
   function openSalesAgent() {
+    const whatsAppHref = startWhatsAppHref();
+    if (whatsAppHref) {
+      trackLandingEvent(config.tracking, "cta_click", {
+        label: config.salesCta.primaryCta,
+        href: whatsAppHref,
+        sourceSection: "studio_diagnostic",
+        entryPath: "start_whatsapp",
+        selectedPainId: selectedPain.id,
+        selectedAgentId: selectedAgent.id,
+      });
+      openStartWhatsApp(whatsAppHref);
+      return;
+    }
     trackLandingEvent(config.tracking, "cta_click", {
       label: config.salesCta.primaryCta,
       href: "#floating-agent",
@@ -402,6 +426,15 @@ export function NicheLandingPage({ config }: Props) {
       priceBRL: billingOption.priceBRL,
       sourceSection: "plan_offer",
     });
+    const whatsAppHref = startWhatsAppHref();
+    if (whatsAppHref) {
+      openStartWhatsApp(whatsAppHref);
+      return;
+    }
+    if (accountCheckoutEnabled) {
+      window.location.assign(`/contratar?periodo=${billingPeriod}`);
+      return;
+    }
     window.dispatchEvent(
       new CustomEvent("landing:open-sales-agent", {
         detail: {

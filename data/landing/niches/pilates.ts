@@ -1,5 +1,10 @@
 import type { AutonomousFlowStep, NicheLandingConfig, PainOption } from "./types";
 
+/** "Começar agora" leva ao WhatsApp de atendimento da Taliya (18/11, Lucas), não à contratação. */
+const startWhatsAppHref = `https://wa.me/5527988822014?text=${encodeURIComponent(
+  "Oi! Vim pelo site e quero começar a usar a Taliya.",
+)}`;
+
 function createIntentPain({
   id,
   chip,
@@ -74,7 +79,7 @@ export const pilatesLanding: NicheLandingConfig = {
       { label: "Plano", href: "#planos" },
       { label: "Dúvidas", href: "#faq" },
     ],
-    cta: { label: "Começar agora", href: "#planos" },
+    cta: { label: "Começar agora", href: startWhatsAppHref },
   },
   hero: {
     eyebrow: "",
@@ -85,7 +90,7 @@ export const pilatesLanding: NicheLandingConfig = {
     subheadline: "Agenda, serviços, clientes, recebimentos e materiais de trabalho em um só lugar.",
     primaryCta: {
       label: "Começar agora",
-      href: "#vendas",
+      href: startWhatsAppHref,
     },
     secondaryCta: { label: "Ver como funciona", href: "#como-funciona" },
     proofNotes: [],
@@ -1341,7 +1346,7 @@ export const pilatesLanding: NicheLandingConfig = {
         },
         secondaryHumanCta: {
           label: "Falar com consultor",
-          href: "https://wa.me/5527920015824?text=Quero%20entender%20o%20plano%20Base%20para%20Pilates",
+          href: "https://wa.me/5527988822014?text=Quero%20entender%20o%20plano%20Base%20para%20Pilates",
           kind: "whatsapp",
         },
       },
@@ -1365,7 +1370,7 @@ export const pilatesLanding: NicheLandingConfig = {
         },
         secondaryHumanCta: {
           label: "Falar com consultor",
-          href: "https://wa.me/5527920015824?text=Quero%20entender%20o%20plano%201%20Rotina%20para%20Pilates",
+          href: "https://wa.me/5527988822014?text=Quero%20entender%20o%20plano%201%20Rotina%20para%20Pilates",
           kind: "whatsapp",
         },
       },
@@ -1389,7 +1394,7 @@ export const pilatesLanding: NicheLandingConfig = {
         },
         secondaryHumanCta: {
           label: "Falar com consultor",
-          href: "https://wa.me/5527920015824?text=Quero%20entender%20o%20plano%203%20Rotinas%20para%20Pilates",
+          href: "https://wa.me/5527988822014?text=Quero%20entender%20o%20plano%203%20Rotinas%20para%20Pilates",
           kind: "whatsapp",
         },
       },
@@ -1422,7 +1427,7 @@ export const pilatesLanding: NicheLandingConfig = {
         },
         secondaryHumanCta: {
           label: "Falar com consultor",
-          href: "https://wa.me/5527920015824?text=Quero%20entender%20o%20plano%20Taliya%20Completa%20para%20Pilates",
+          href: "https://wa.me/5527988822014?text=Quero%20entender%20o%20plano%20Taliya%20Completa%20para%20Pilates",
           kind: "whatsapp",
         },
       },
@@ -1441,7 +1446,7 @@ export const pilatesLanding: NicheLandingConfig = {
     },
     humanWhatsAppDestination: {
       label: "Falar com humano no WhatsApp",
-      href: "https://wa.me/5527920015824?text=Quero%20falar%20com%20um%20humano%20sobre%20a%20Taliya%20para%20Pilates",
+      href: "https://wa.me/5527988822014?text=Quero%20falar%20com%20um%20humano%20sobre%20a%20Taliya%20para%20Pilates",
       kind: "whatsapp",
     },
     privacyNotice: {
@@ -1857,77 +1862,82 @@ export const pilatesLanding: NicheLandingConfig = {
     {
       question: "O que é a Taliya?",
       answer:
-        "A Taliya ajuda quem presta serviços a organizar a rotina e a preparar o trabalho. Pelo WhatsApp ou pelo app, você registra e consulta clientes, serviços, horários e recebimentos, prepara documentos e respostas e tira dúvidas sobre os arquivos que enviar.",
+        "É uma assistente para quem presta serviço. Você conta para ela o que aconteceu no dia, pelo WhatsApp ou pelo app: um cliente novo, um horário marcado, um pagamento. Ela guarda tudo organizado. Também ajuda a montar orçamentos, documentos e respostas.",
     },
     {
-      question: "Posso usar só pelo WhatsApp no dia a dia?",
+      question: "Dá para usar só pelo WhatsApp?",
       answer:
-        "Depois de criar a conta e vincular seu número, você pode resolver pelo WhatsApp a rotina coberta pela Taliya: registrar serviços, consultar horários, remarcar, informar pagamentos e pedir lembretes. O app oferece visão geral e edição manual; conta, permissões, privacidade e assinatura podem exigir o app ou uma página segura.",
+        "Dá. No dia a dia você resolve por mensagem: marcar, remarcar, registrar um serviço, avisar que recebeu, pedir um lembrete. O app fica para quando você quiser ver tudo de uma vez ou corrigir alguma coisa. Assinatura e privacidade ficam no app.",
     },
     {
       question: "Preciso ter WhatsApp Business?",
       answer:
-        "Não para conversar com a Taliya. Você usa seu WhatsApp comum para falar com o número da Taliya. Não é necessário conectar as conversas do seu negócio com os clientes para usar a proposta principal.",
+        "Não. Você fala com a Taliya pelo seu WhatsApp normal, como fala com qualquer contato. Não precisa mudar nada no número que você usa com seus clientes.",
     },
     {
       question: "A Taliya lê minhas outras conversas?",
       answer:
-        "Não. Falar com a Taliya não dá acesso automático às suas outras conversas. Você precisa informar ou encaminhar o que for relevante, ou autorizar uma integração disponível.",
+        "Não. Ela só vê o que você manda para ela. Se quiser que ela saiba de algo que um cliente te disse, é só encaminhar a mensagem.",
     },
     {
-      question: "Preciso cadastrar tudo ou usar todas as funções?",
+      question: "Preciso cadastrar tudo antes de começar?",
       answer:
-        "Não. Comece pela parte de que precisa. A Taliya pergunta o dado que faltar para aquela ação; informações opcionais podem ser completadas depois. Você não precisa acompanhar início, conclusão e pagamento de todo serviço só porque o agendou.",
+        "Não. Comece pelo que mais te ajuda hoje, pode ser só a agenda. Se faltar alguma informação para o que você pediu, a Taliya pergunta. O resto você completa quando quiser.",
     },
     {
-      question: "Serve para meu jeito de prestar serviços?",
+      question: "Serve para o meu serviço?",
       answer:
-        "A Taliya atende diferentes modelos de serviço: avulso, pacote de sessões, plano por período, várias datas e recorrência. O foco desta versão é uma operação de agenda única. Ela não substitui recursos especializados de turmas, estoque, prontuário ou gestão de equipes com agendas independentes.",
+        "Se o seu serviço funciona no dia a dia com clientes, agenda, horários e pagamentos, serve. Personal, instrutora de pilates, professor particular, manicure, diarista, técnico, fotógrafo: se você atende gente e marca horário, a Taliya organiza isso para você.",
     },
     {
-      question: "Dá para preparar e revisar orçamentos?",
+      question: "Serve para o meu jeito de trabalhar?",
       answer:
-        "Você pode pedir um orçamento com as informações do serviço, revisar itens e valores, gerar uma versão e registrar quando o cliente aprovar. A proposta e o combinado ficam no mesmo serviço. O envio ao cliente é uma ação separada.",
+        "Serve se você cobra por atendimento avulso, vende pacote de sessões, cobra mensalidade ou faz um serviço em várias visitas. Hoje ela funciona melhor para quem tem uma agenda só. Turmas, estoque, prontuário e equipe com agendas separadas ainda não fazem parte dela.",
     },
     {
-      question: "Como funcionam recebimentos e cobrança?",
+      question: "Dá para fazer orçamentos?",
       answer:
-        "Você informa os pagamentos, e a Taliya mantém o saldo do serviço. Também pode criar um lembrete e preparar um texto para você enviar. Ela não movimenta seu dinheiro nem sabe automaticamente de um Pix que não foi informado ou recebido por uma integração autorizada disponível.",
+        "Dá. Você conta o que vai fazer e o valor, a Taliya monta o orçamento e você confere e ajusta. Quando o cliente aprovar, é só avisar que ela anota. Quem manda para o cliente é você.",
     },
     {
-      question: "E se eu remarcar ou cancelar?",
+      question: "Como fica a parte dos pagamentos?",
       answer:
-        "Ao remarcar, a Taliya atualiza a mesma ocorrência e verifica os conflitos conhecidos. Ao cancelar, considera o alcance do seu pedido. Cancelar um horário não cancela automaticamente o serviço nem devolve valores recebidos.",
+        "Você avisa quando recebe, e a Taliya mostra quanto já foi pago e quanto falta em cada serviço. Ela também te lembra de cobrar e escreve a mensagem de cobrança para você mandar. Ela não mexe no seu dinheiro e não vê seu banco: um Pix só aparece lá se você contar.",
+    },
+    {
+      question: "E se eu precisar remarcar ou cancelar?",
+      answer:
+        "É só pedir. Ao remarcar, ela muda o horário e avisa se bater com outro compromisso. Cancelar um horário não cancela o serviço inteiro nem devolve o que o cliente já pagou. Se for o caso, é só dizer.",
     },
     {
       question: "Posso vender pacotes ou cobrar mensalidade?",
       answer:
-        "Sim. Registre um pacote com quantidade total ou um plano por período. Os horários podem ser marcados depois. Uma sessão só conta como realizada quando esse fato é registrado; a consulta de saldo distingue realizadas, reservas e unidades disponíveis.",
+        "Pode. Você registra um pacote (por exemplo, 10 sessões) ou um plano mensal e marca os horários quando quiser. A Taliya conta as sessões que você marcar como feitas e mostra quantas já estão agendadas e quantas ainda faltam.",
     },
     {
       question: "E se a Taliya entender algo errado?",
       answer:
-        "Confira a resposta e informe a correção pela conversa ou edite no app. A próxima consulta usa a informação atualizada. Operações ambíguas ou sensíveis podem precisar de esclarecimento ou confirmação.",
+        "Acontece. É só corrigir na conversa (\"não, foi às 15h\") ou ajustar no app. Quando o pedido não está claro ou mexe em algo importante, ela pergunta antes de fazer.",
     },
     {
-      question: "O que posso fazer com documentos e arquivos?",
+      question: "O que ela faz com documentos e arquivos?",
       answer:
-        "Transforme anotações em documentos, resuma arquivos e prepare respostas com as informações do cliente e do serviço. A Taliya usa o que você fornece, e você confere antes de usar. Os arquivos ficam ligados ao cliente ou ao serviço e podem ser encontrados pela conversa ou pelo app. Você também pode consultar versões e registrar aprovações. Anexar um arquivo não significa aprovar seu conteúdo.",
+        "Você pode mandar uma anotação e pedir para virar documento, mandar um arquivo e pedir um resumo, ou pedir ajuda para responder um cliente. A Taliya usa o que você passou, e você confere antes de usar. Tudo fica guardado junto do cliente ou do serviço, fácil de achar depois.",
     },
     {
-      question: "A Taliya fala com meus clientes ou deixa eles agendarem?",
+      question: "A Taliya fala com meus clientes?",
       answer:
-        "Você conversa com a Taliya, que pode preparar textos e documentos para você conferir e compartilhar. Nesta versão, ela não atende seus clientes automaticamente nem oferece um link público para eles agendarem.",
+        "Não. Ela conversa só com você e prepara as mensagens para você mandar. Mas você pode ter um link de agendamento: o cliente escolhe um horário livre sozinho e você recebe o aviso no celular.",
     },
     {
-      question: "Os 14 dias são gratuitos?",
+      question: "Os 14 dias são grátis?",
       answer:
-        "A assinatura é paga desde o início. Você tem 14 dias de garantia: se não gostar, devolvemos o valor.",
+        "A assinatura é paga desde o primeiro dia, mas você tem 14 dias de garantia: se não gostar, devolvemos o dinheiro.",
     },
     {
-      question: "Quanto custa e como começo?",
+      question: "Quanto custa e como eu começo?",
       answer:
-        "A Taliya custa R$59,90 por mês ou R$599 por ano. A cobrança é feita na assinatura, com 14 dias de garantia. Se não gostar, devolvemos o valor. Confira as condições na tela de assinatura. Para gerenciar a renovação ou cancelar, use o canal de compra indicado na sua conta.",
+        "R$59,90 por mês ou R$599 por ano, com 14 dias de garantia. Para começar, chame a gente no WhatsApp: tiramos suas dúvidas e te ajudamos a criar a conta.",
     },
   ],
   finalCta: {

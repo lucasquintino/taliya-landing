@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import type { AiAttendantRequest, AiAttendantResponse } from "./schema";
 import { hasPostgresStorage, postgresQuery } from "./storage/postgres";
 
@@ -10,7 +11,7 @@ type FunnelEventInput = {
 };
 
 type LandingInteractionEventInput = {
-  eventName: "widget_opened" | "cta_clicked";
+  eventName: "widget_opened" | "cta_clicked" | "page_viewed";
   occurrenceId: string;
   sessionId: string;
   leadId?: string;
@@ -108,7 +109,7 @@ export async function recordFunnelEvent({ eventName, request, response, leadId, 
 export async function recordLandingInteractionEvent(input: LandingInteractionEventInput) {
   const acquisition = acquisitionMetadata(input.metadata);
   const idempotencyKey = [input.channel ?? "web", input.sessionId, input.eventName, input.occurrenceId].join(":");
-  const eventId = `funnel_${hashString(idempotencyKey)}`;
+  let eventId = `funnel_${createHash("sha256").update(idempotencyKey).digest("hex")}`;
   const payload = sanitizePayload({
     sourcePage: input.sourcePage,
     sourceSection: input.sourceSection,
@@ -116,7 +117,7 @@ export async function recordLandingInteractionEvent(input: LandingInteractionEve
   });
 
   if (hasPostgresStorage()) {
-    await postgresQuery(
+    const inserted = await postgresQuery<{ event_id: string }>(
       `INSERT INTO ai_funnel_events (
         event_id, idempotency_key, session_id, lead_id, channel, event_name,
         anonymous_session_id, message_id, page_path, source_section, cta_id,
@@ -125,7 +126,7 @@ export async function recordLandingInteractionEvent(input: LandingInteractionEve
       ) VALUES (
         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14,
         $15, $16, $17, $18::jsonb, now()
-      ) ON CONFLICT (idempotency_key) DO NOTHING`,
+      ) ON CONFLICT (idempotency_key) DO NOTHING RETURNING event_id`,
       [
         eventId,
         idempotencyKey,
@@ -147,6 +148,10 @@ export async function recordLandingInteractionEvent(input: LandingInteractionEve
         JSON.stringify(payload),
       ],
     );
+    // A retry of a pre-upgrade event returns the stored ID rather than claiming another one.
+    const existing = inserted.rows[0] ?? (await postgresQuery<{ event_id: string }>("SELECT event_id FROM ai_funnel_events WHERE idempotency_key=$1", [idempotencyKey])).rows[0];
+    if (!existing) throw new Error("landing_event_confirmation_missing");
+    eventId = existing.event_id;
   } else if (!memoryEvents.some((event) => event.idempotencyKey === idempotencyKey)) {
     memoryEvents.push({
       eventId,

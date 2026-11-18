@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { StructuredData } from "@/components/landing/shared/StructuredData";
 import { absoluteSiteUrl } from "@/lib/landing/seo";
+import { legalDocuments } from "@/lib/legal/documents";
 
 const privacyTitle = "Política de privacidade | Taliya";
 const privacyDescription =
@@ -41,6 +42,8 @@ const tableOfContents = [
   ["acesso-app", "Aplicativo e acesso"],
   ["dados-app", "Dados do aplicativo"],
   ["seguranca-app", "Segurança da conta"],
+  ["armazenamento-app", "Arquivos e backup"],
+  ["exclusao-app", "Exclusão da conta"],
   ["dados", "Dados que usamos"],
   ["uso", "Como usamos"],
   ["ia-whatsapp", "IA e WhatsApp"],
@@ -125,7 +128,11 @@ export default function PrivacyPage() {
               Esta página explica como a Taliya trata dados pessoais quando você utiliza o aplicativo, acessa o site,
               conversa com o assistente ou solicita atendimento pelos canais comerciais.
             </p>
-            <p className="mt-4 text-sm font-black text-[#344054]">Última atualização: 14 de outubro de 2026</p>
+            <p className="mt-4 text-sm font-black text-[#344054]">Última atualização: 27 de outubro de 2026</p>
+            <p className="mt-3 text-sm leading-6 text-[#344054]">
+              Versão {legalDocuments.privacy.version}. Leia também os{" "}
+              <Link className="font-bold text-[#0E8F7E] underline underline-offset-4" href="/termos">Termos de Uso</Link>.
+            </p>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {summaryItems.map((item) => (
@@ -149,7 +156,7 @@ export default function PrivacyPage() {
                 sensíveis pelo assistente comercial.
               </p>
               <p>
-                Para assuntos relacionados a estes canais, o contato de privacidade da Taliya é {privacyEmail}.
+                A responsável pelo serviço é Taliya Inova Simples (I.S.), CNPJ 69.584.998/0001-15, com endereço na Rua Maria de Oliveira Mares Guia, 44, Praia de Itaparica, Vila Velha, ES, CEP 29102-245. Para assuntos relacionados a estes canais, o contato de privacidade é {privacyEmail}.
               </p>
             </PolicySection>
 
@@ -185,6 +192,46 @@ export default function PrivacyPage() {
                 correção ou exclusão dos dados, utilize {privacyEmail}. Poderemos pedir informações suficientes para
                 confirmar sua identidade e localizar os registros. Dados poderão ser mantidos quando necessário para
                 cumprir obrigações legais ou exercer direitos.
+              </p>
+            </PolicySection>
+
+            <PolicySection id="armazenamento-app" title="Arquivos e backup do aplicativo">
+              <p>
+                Documentos, áudios e anexos ficam no armazenamento privado do aplicativo, com acesso limitado
+                à conta autorizada. A Taliya administra a capacidade e os resíduos técnicos. Documentos válidos
+                vinculados ao histórico não são removidos apenas por serem antigos ou para liberar espaço.
+              </p>
+              <p>
+                Mantemos backup do banco de dados, mas não uma cópia adicional de backup dos arquivos.
+                Restaurar o banco não recupera um arquivo definitivamente excluído do armazenamento.
+                Arquivos que você baixar ou compartilhar fora da Taliya ficam sob as condições do destino escolhido.
+              </p>
+              <p>
+                Cópias de backup do banco têm acesso restrito e expiram em até trinta dias. Não são usadas
+                para atendimento ou consulta cotidiana. Antes de liberar um ambiente recuperado, conferimos
+                as exclusões posteriores à cópia e reconciliamos os registros disponíveis. Quando faltar
+                informação suficiente para essa conferência, os dados restaurados não são liberados automaticamente.
+              </p>
+            </PolicySection>
+
+            <PolicySection id="exclusao-app" title="Exclusão da conta do aplicativo">
+              <p>
+                Lucas Quintino acompanha as solicitações de exclusão da conta e dos dados associados ao negócio.
+                O prazo de processamento é de até sete dias corridos, com confirmação da identidade e comunicação
+                da conclusão pelo canal verificado da conta. Nunca envie senhas, códigos de acesso ou chaves de API ao suporte.
+              </p>
+              <p>
+                A exclusão abrange clientes, serviços, atendimentos, cobranças, recebimentos, conversas, documentos
+                e arquivos vinculados à conta, ressalvadas as obrigações de guarda identificadas. Não apaga
+                mensagens ou documentos que você ou outras pessoas já tenham recebido fora do aplicativo.
+              </p>
+              <p>
+                Você pode solicitar a exclusão nas Configurações do aplicativo ou pela <a className="underline" href="https://www.taliya.com.br/excluir-conta">página de exclusão da conta</a>, sem precisar instalar o aplicativo. Para exercer outros direitos ou tirar dúvidas, utilize {privacyEmail}.
+              </p>
+              <p>
+                Havendo obrigação legal de conservar registros, mantemos somente o necessário, com acesso
+                restrito, finalidade e prazo próprios, e informamos as exceções aplicáveis à solicitação.
+                Fornecedores podem ter prazos independentes de segurança e cumprimento legal conforme seus contratos e políticas.
               </p>
             </PolicySection>
 

@@ -16,7 +16,7 @@ export function FAQSection({
       <SectionIntro
         eyebrow="FAQ"
         title="Dúvidas antes de começar?"
-        subtitle="Entenda os canais, o que fica registrado e os limites da proposta."
+        subtitle="As perguntas que mais ouvimos de quem está conhecendo a Taliya."
       />
       <div className="mt-10 grid gap-3 md:grid-cols-2">
         {visibleFaq.map((item) => (
