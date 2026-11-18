@@ -67,6 +67,7 @@ const dataItems = [
   "Mensagens trocadas com o assistente no site ou pelo WhatsApp e informações necessárias para manter o contexto da conversa.",
   "Identificadores de sessão e informações de origem, como página, seção, referência de acesso e parâmetros de campanha na URL.",
   "Interações com o assistente e solicitações de atendimento, inclusive registros necessários para encaminhar a conversa à equipe.",
+  "Páginas visitadas, botões clicados e etapas do cadastro concluídas, sem o conteúdo do que você digita.",
 ];
 
 const useItems = [
@@ -75,6 +76,7 @@ const useItems = [
   "Manter o contexto do atendimento e encaminhar a conversa a uma pessoa da equipe quando necessário.",
   "Registrar solicitações e interações comerciais na caixa de atendimento da Taliya.",
   "Entregar respostas pelo WhatsApp e respeitar pedidos para interromper mensagens.",
+  "Contar visitas, cliques e etapas do cadastro para saber quais páginas e canais funcionam.",
   "Manter, proteger e melhorar o funcionamento dos canais e cumprir obrigações legais aplicáveis.",
 ];
 
