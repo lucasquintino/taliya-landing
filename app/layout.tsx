@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { pilatesLanding } from "@/data/landing/niches/pilates";
 import { TALIYA_SITE_ORIGIN } from "@/lib/landing/seo";
+import { PageViewRecorder } from "@/components/landing/PageViewRecorder";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="h-full scroll-smooth antialiased">
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <PageViewRecorder />
+        {children}
+      </body>
     </html>
   );
 }

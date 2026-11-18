@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import type { AiAttendantRequest, AiAttendantResponse } from "./schema";
 import { hasPostgresStorage, postgresQuery } from "./storage/postgres";
+import type { InteractionEventName } from "../acquisition-events";
 
 type FunnelEventInput = {
   eventName: string;
@@ -10,8 +11,10 @@ type FunnelEventInput = {
   payload?: Record<string, unknown>;
 };
 
+export type LandingInteractionEventName = "widget_opened" | "cta_clicked" | "page_viewed" | InteractionEventName;
+
 type LandingInteractionEventInput = {
-  eventName: "widget_opened" | "cta_clicked" | "page_viewed";
+  eventName: LandingInteractionEventName;
   occurrenceId: string;
   sessionId: string;
   leadId?: string;
