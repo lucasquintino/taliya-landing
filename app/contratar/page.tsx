@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckoutAccountForm } from "@/components/checkout/CheckoutAccountForm";
 import { accountAccessConfig } from "@/lib/checkout/account-config";
+import * as Sentry from "@sentry/nextjs";
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Criar conta | Taliya", robots: { index: false, follow: false } };
 export default function CheckoutPage() {
   const config = accountAccessConfig();
+  // A missing sign-up configuration took /contratar down silently on 12/11; now it is reported.
+  if (!config) Sentry.captureMessage("signup_unavailable: account access config missing", "error");
   return <main className="min-h-screen bg-[#F7F3EA] px-5 py-8 text-[#101B3A] sm:py-12">
     <div className="mx-auto max-w-md">
       <Link className="inline-flex min-h-11 items-center font-bold text-[#0E8F7E] underline" href="/#planos">Voltar</Link>

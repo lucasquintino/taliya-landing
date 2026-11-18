@@ -63,6 +63,7 @@
     "cleanup:ai-test-data": "node scripts/cleanup-ai-test-data.mjs"
   },
   "dependencies": {
+    "@sentry/nextjs": "11.11.0",
     "lucide-react": "1.48.0",
     "next": "16.2.9",
     "pg": "^8.20.0",
